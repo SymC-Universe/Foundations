@@ -15,65 +15,46 @@ Frozen science, preregistrations, thresholds, exclusions, failure records, and i
 
 ## GFSA v0.7.2 state
 
-Closed PASS:
+Closed PASS: package validation, C18, OBS18, OBS19, external-interface licensing, and observable-only EP firewall.
 
-- package validation;
-- C18 calibration validity;
-- OBS18 interface admissibility;
-- OBS19 blind holdout;
-- observable-only EP firewall;
-- external interface status `LICENSED_FOR_EXTERNAL_NUMERICAL_ADMISSION`.
-
-External numerical admission remains quarantined because the exact authentic frozen v0.7 external-candidate contract and authoritative candidate-source package have not been recovered. Candidate response values must not be inspected, plotted, summarized, filtered, or scored until that contract is recovered, persisted, hashed, chronology-authenticated, and bound.
+External numerical admission remains quarantined because the exact authentic frozen v0.7 external-candidate contract and authoritative candidate-source package have not been recovered. Candidate response values remain sealed.
 
 ## Measurement-conditioned established hierarchy
 
-The outcome-free representation now contains:
+Closed outcome-free representation results support:
 
 1. separate same-noise physical and same-record inference tangent generators;
-2. a low-rank conditioning bridge;
+2. a low-rank deterministic conditioning bridge;
 3. an exact conditioning-dark factor on admitted measured-qubit controls;
 4. an exact two-dimensional stochastic active quotient `dq=A_A q dt+B_A q dW`;
-5. deterministic `chi_active=-tr(A_A)/(2 sqrt(det(A_A)))` separately licensed only under deterministic two-dimensional scalar-admissibility conditions;
-6. the stochastic pair `(A_A,B_A)` remains uncompressed;
+5. deterministic `chi_active=-tr(A_A)/(2 sqrt(det(A_A)))` separately licensed only under admitted deterministic 2D scalar conditions;
+6. stochastic pair `(A_A,B_A)` remains uncompressed;
 7. symmetric second moments evolve under a real 3x3 generator `G`;
 8. cubic mean-square stability requires `c1>0`, `c2>0`, `c3>0`, and `c1*c2>c3`.
 
 Required stochastic reporting state remains `MEAN_SQUARE_INVARIANTS_REQUIRED`. No stochastic scalar chi is licensed.
 
-## Preserved failures and bounded passes
+## Preserved failure lineage
 
-### Joint representation v0.1
+- Joint representation v0.1: permanent mathematical/specification FAIL.
+- Generalized spectral-abscissa H2: permanent `FAIL_GENERALIZED_H2`, 441 admitted counterexamples to global `alpha_rec<=alpha_phys`.
+- H3 near-boundary class test: bounded PASS on its frozen 512-case panel only.
 
-Permanent FAIL, run `33234191815`. The failure exposed an incorrect measurement-dissipator normalization, missing stochastic amplitude, and partial self-certification. Later corrective work does not erase it.
+Failures remain evidence and are not erased by narrower successor passes.
 
-### Generalized spectral-abscissa H2
-
-Permanent `FAIL_GENERALIZED_H2`, run `33256389876`, with 441 admitted counterexamples to global `alpha_rec<=alpha_phys`.
-
-The subsequent fresh weak-measurement failure-mechanism phase prospectively validated a bounded first-order coefficient explaining a structured subset of those failures. H2 itself remains failed.
-
-### H3 bounded near-boundary class test
-
-`PASS_ADVERSARIAL_CLASS_MONOTONICITY`, run `33256865456`, on the frozen 512-case panel selected physical-only from 50000 fresh candidates. All 512 remained mean-square stable under record conditioning. This is a bounded panel result, not a theorem.
-
-## H4 fresh targeted class-crossing closure
+## H4 targeted class-crossing closure
 
 Canonical result:
 `stability_arc/measurement_conditioned/class_crossing_v01/TARGETED_CLASS_CROSSING_RESULT_v0.1.md`
 
 Run `33257117162`: `PASS_TARGETED_CROSSING_H4`.
 
-H4 used a new seed and strict two-stage freeze-before-view design:
+- 100000 fresh target-region inputs, seed `2026082905`;
+- 52435 robust physical mean-square STABLE cases frozen before record reveal;
+- 50 robust physical STABLE -> record UNSTABLE crossings;
+- 50/50 independently reconstructed.
 
-- exactly 100000 fresh target-region inputs;
-- 52435 robust physical mean-square STABLE cases frozen before any record reveal;
-- exactly 50 analytic robust physical STABLE -> record UNSTABLE crossings;
-- all 50/50 independently reconstructed from full two-level Hilbert-space operators.
-
-Therefore mean-square stability-class preservation is **not universal even within this exact measured-qubit family**. The earlier H3 bounded PASS remains valid for its own panel.
-
-Post-H4 inspection found `c3_rec<0` while `c1_rec`, `c2_rec`, and `c1_rec*c2_rec-c3_rec` remained positive in all 50 crossings. That 50/50 pattern remained post-outcome relative to H4 and was not promoted directly.
+Thus stability-class preservation is not universal even within this exact measured-qubit family.
 
 ## Exact c3 boundary derivation closure
 
@@ -82,101 +63,94 @@ Canonical result:
 
 Run `33257258056`: `PASS_C3_BOUNDARY_DERIVATION`.
 
-The derivation independently reconstructed the physical and record 3x3 second-moment generators and proved the registered channel-specific quadratic forms
+The physical and record channel `c3` surfaces are exact quadratics in frequency. `c3=-det(G)` and all registered coefficient/root identities passed independent symbolic and fresh numerical checks.
 
-`c3_p(w)=A_p3*w^2+B_p3*w+C_p3`
+This licenses separate channel-specific `c3=0` surfaces, not universal c3 dominance.
 
-and
+## H5 prospective c3-gate mechanism closure
 
-`c3_r(w)=A_r3*w^2+B_r3*w+C_r3`,
+Canonical result:
+`stability_arc/measurement_conditioned/c3_gate_test_v01/C3_GATE_CROSSING_RESULT_v0.1.md`
 
-verified `c3=-det(G)`, exact coefficient identities, discriminant/root factorization, and fresh seed-`2026082906` clean-room controls. Maximum numerical formula error was `1.3657194584723663e-14` against a frozen `2e-10` gate.
+Canonical run `33263959965`: `PASS_PROSPECTIVE_C3_GATE_H5`.
 
-Artifact `9716183849`, ZIP SHA-256 `fa3a9b2814c8f6f049eb14db03a543d05f93cbd0f8507d7ab13e1f5e06153f20`.
+- new seed `2026082907`;
+- 100000 fresh unchanged target-region inputs;
+- 52944 robust physical STABLE cases frozen before record reveal;
+- 54 robust physical STABLE -> record UNSTABLE crossings;
+- 54/54 independently reconstructed;
+- zero mechanism counterexamples;
+- all 54 satisfied `c1_rec>0`, `c2_rec>0`, `c3_rec<0`, `c1_rec*c2_rec-c3_rec>0` under the frozen normalized margins;
+- exact c3 quadratic vs determinant maximum error `4.344084788515155e-13`.
 
-This licenses the separate physical and record `c3=0` boundary surfaces. It does not license the claim that `c3` is always the failure gate.
+Within this frozen target family, the class-crossing mechanism is prospectively supported as a record-channel c3-gate loss. This remains a bounded family result.
 
-## ACTIVE: H5 prospective c3-gate mechanism test
+A redundant H5 rerun triggered when the result document was persisted. It is orchestration-only and does not supersede canonical run `33263959965`. Future workflows use path-specific triggers to prevent result persistence from rerunning science.
+
+## c3 boundary-displacement representation v0.1: PERMANENT FAIL
+
+Preregistration/code run:
+`33264098911`
+
+Failure report:
+`stability_arc/measurement_conditioned/c3_displacement_v01/FAILURE_SIGNAL_REPORT_v0.1.md`
+
+Overall status: `DISPLACEMENT_MAP_FAILURE`.
+
+Frozen results:
+
+- D0 coefficient lineage: PASS;
+- D1 synthetic interval/refusal controls: PASS;
+- D2 256 fresh sign partitions: PASS, 0 disagreements;
+- D3 direct determinant reconstruction: **FAIL**, 16 comparison failures, max error `3.973577272775586e-09` vs frozen `2e-10` gate;
+- D4 channel-swap covariance: PASS;
+- D5 set coverage: PASS.
+
+Artifact `9718105705`, ZIP SHA-256 `b7545d48f9b17fb5220ae2197d161b70cbc9b79e1fd0966777d69714e11846f5`.
+
+Failure investigation found all 16 D3 failures exclusively at the preregistered two-sided probes approximately `1e-7` relative distance from `c3=0` roots. All 16 preserved the same c3 sign and joint interval label. There were zero sign disagreements and zero partition disagreements.
+
+The failure is classified `NUMERICAL / NEAR-BOUNDARY DETERMINANT CONDITIONING`: binary64 `numpy.linalg.det` did not satisfy the strict equality gate near an intentionally near-singular determinant. v0.1 remains failed and its `2e-10` gate is not loosened.
+
+## ACTIVE: c3 displacement D3 high-precision remediation v0.2
 
 Preregistration:
-`stability_arc/measurement_conditioned/c3_gate_test_v01/PREREGISTRATION_C3_GATE_CROSSING_TEST_v0.1.md`
+`stability_arc/measurement_conditioned/c3_displacement_v02/PREREGISTRATION_C3_DISPLACEMENT_D3_HIGH_PRECISION_REMEDIATION_v0.2.md`
 
-Workflow:
-`Stability Arc prospective c3-gate crossing test v0.1`
+Live workflow:
+`Stability Arc c3 displacement D3 high precision v0.2`
 
-Live run: `33263959965`
-Head commit: `ea27b9be79df3a88ce426551328c024eefce579e`
+Run: `33264252192`
+Execution commit: `7d7943aaea178e78301dc90bb34bd3aaea640329`
 
-H5 uses new seed `2026082907` and the unchanged pre-H4 target-region generator. It generates exactly 100000 fresh candidates.
+v0.2 changes no scientific formula, seed, base tuple, frequency probe, root offset, or tolerance. It retains the same `2e-10` D3 gate and independently reconstructs `-det(G)` at 80 decimal digits using pinned `mpmath==1.3.0`, while retaining NumPy 2.1.3 binary64 only as a diagnostic fingerprint of the v0.1 failure.
 
-Stage A constructs only the physical channel and freezes every robust physical STABLE eligible case plus its digest before any record channel exists.
+If v0.2 passes, the displacement map is composite-closed only by citing v0.1 structural PASS gates plus permanent D3 FAIL together with v0.2 high-precision D3 remediation. v0.1 is never rewritten as PASS.
 
-Stage B then reveals the record channel for the immutable Stage-A set. Every robust STABLE -> UNSTABLE crossing must be retained and independently reconstructed.
+If v0.2 fails in high precision, representation promotion stops and the high-precision counterexample becomes a scientific/numerical failure signal requiring investigation.
 
-The fresh H5 mechanism statement is that record endpoints of fresh robust crossings satisfy
+## Next justified step after composite displacement closure
 
-`c1_rec>0`, `c2_rec>0`, `c3_rec<0`, `c1_rec*c2_rec-c3_rec>0`
+Freeze a new untouched-seed prospective test in which the set-valued physical-vs-record c3 map predicts `I_destab`, `I_stab`, and agreement regions **before** full four-gate mean-square classification is revealed. Preserve all other Routh-Hurwitz margins as mandatory admissibility information. Measure prediction success/failure without averaging the physical and record channels or compressing them to a stochastic scalar.
 
-with frozen normalized margin tolerance `1e-9`. A minimum of 20 independently reconstructed crossings is required for population-level promotion in this target family. Any reconstructed counterexample makes H5 FAIL; it may not be removed or repaired.
-
-## Continuity incident
-
-The Stability Arc continuity controller became disabled after the c3 derivation run completed, leaving GitHub Actions idle and this state file stale. This is classified **MECHANICAL / CONTINUITY AUTOMATION**, not scientific. No frozen scientific input or result was altered or lost. The missing c3 result record has now been persisted and H5 launched.
-
-The controller must remain enabled and, when a workflow finishes, inspect/persist its result and advance the next justified safe phase rather than stopping at an idle Actions page.
+Only after this representation-level prospective test is closed should any localization/interface prediction phase be designed.
 
 ## QuTiP state
 
-QuTiP 5.3.1 runtime admission remains `RUNTIME_ADMITTED`.
-
-Historical v0.6 notebook reproduction remains open. Expected original notebook SHA-256:
+QuTiP 5.3.1 runtime is admitted. Historical v0.6 notebook reproduction remains open because the authentic original notebook/source is absent. Expected historical notebook SHA-256:
 `be5b0eb655dc7ab2212a5176123804f798992dbe3e4e5a8bda56537d65bc9d82`.
 
-Runtime admission is not a substitute for authentic notebook recovery/reproduction.
+## Current external blockers
 
-## Anti-circularity state
-
-- same-noise and same-record channels remain separately recoverable in every joint analysis;
-- joint/conglomerate analysis is permitted only while channel identity is preserved;
-- generalized H2 remains permanently failed;
-- H3 remains bounded to its preregistered panel;
-- H4 used a fresh seed and physical-only freeze before record reveal;
-- the c3 mechanism observation from H4 was not promoted until an independent equation-level derivation closed;
-- H5 is a new-seed prospective test of the learned mechanism;
-- no stochastic scalar has been promoted;
-- no historical localization outcome has selected the current representation or thresholds;
-- GFSA external candidate values remain sealed.
-
-## Current blockers
-
-- GFSA external numerical admission: exact authentic v0.7 contract/source package absent;
-- historical QuTiP comparison: authentic original notebook/source absent;
+- GFSA external admission: exact frozen v0.7 contract/source package absent;
+- historical QuTiP reproduction: authentic original notebook/source absent;
 - historical Phase 4A: PENDING/INCOMPLETE.
 
-None blocks H5 or continued measurement-conditioned derivation/testing.
+None blocks the current measurement-conditioned v0.2 remediation.
 
-## Queue
+## Continuity state
 
-### COMPLETED
-
-- stochastic active quotient closure;
-- mean-square invariant geometry;
-- generalized H2 falsification and fresh bounded failure-mechanism test;
-- H3 bounded 512-case class-preservation PASS;
-- H4 fresh targeted class-crossing PASS with 50/50 independent reconstructions;
-- exact physical/record `c3=0` boundary derivation PASS.
-
-### ACTIVE
-
-- H5 fresh prospective c3-gate crossing mechanism test, run `33263959965`.
-
-### NEXT IF H5 PASSES
-
-Derive and freeze a boundary-displacement map comparing the separate physical and record `c3=0` root surfaces, while retaining the other Routh-Hurwitz margins as mandatory admissibility conditions. Then test that map on another untouched seed before any attempt to connect it to localization/interface behavior.
-
-### NEXT IF H5 FAILS
-
-Preserve every counterexample, classify which alternate or mixed Routh-Hurwitz gate fails, derive the smallest mechanism refinement from the failure, and require a new frozen fresh test. Do not repair H5.
+The earlier disabled-controller incident is classified MECHANICAL / CONTINUITY_AUTOMATION. The controller has been re-enabled and is bound to run `33264252192`. It must inspect/persist completion and advance to the next justified safe phase rather than leaving the Actions page idle.
 
 ## User action
 
