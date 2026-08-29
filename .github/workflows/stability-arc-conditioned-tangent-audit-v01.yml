@@ -1,0 +1,74 @@
+name: Stability Arc conditional tangent derivation audit v0.1
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - agent/stability-arc-gfsa-v072
+    paths:
+      - 'stability_arc/measurement_conditioned/**'
+      - '.github/workflows/stability-arc-conditioned-tangent-audit-v01.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout frozen branch state
+        uses: actions/checkout@v4
+
+      - name: Record frozen source identities
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p stability_arc/measurement_conditioned/results
+          {
+            echo "commit=${GITHUB_SHA}"
+            echo "ref=${GITHUB_REF}"
+            echo "prereg_sha256=$(sha256sum stability_arc/measurement_conditioned/PREREGISTRATION_CONDITIONAL_TANGENT_DERIVATION_AUDIT_v0.1.md | awk '{print $1}')"
+            echo "code_sha256=$(sha256sum stability_arc/measurement_conditioned/code/conditional_tangent_audit_v01.py | awk '{print $1}')"
+          } | tee stability_arc/measurement_conditioned/results/source_identity.txt
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install fixed audit dependency
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --upgrade pip
+          python -m pip install 'numpy==2.1.3'
+          python -m pip freeze | tee stability_arc/measurement_conditioned/results/environment_lock.txt
+
+      - name: Execute frozen derivation audit
+        shell: bash
+        run: |
+          set -euo pipefail
+          python stability_arc/measurement_conditioned/code/conditional_tangent_audit_v01.py \
+            | tee stability_arc/measurement_conditioned/results/stdout.txt
+
+      - name: Preserve result hashes
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd stability_arc/measurement_conditioned/results
+          find . -maxdepth 1 -type f ! -name SHA256.txt -print0 \
+            | sort -z \
+            | xargs -0 sha256sum > SHA256.txt
+          cat SHA256.txt
+
+      - name: Upload derivation-audit evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stability-arc-conditional-tangent-audit-v01
+          path: stability_arc/measurement_conditioned/results/
+          if-no-files-found: error
+          retention-days: 90
