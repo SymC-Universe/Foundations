@@ -1,0 +1,45 @@
+{
+  "schema": "stability-arc-project-queue-v0.1",
+  "updated": "2026-08-29",
+  "branch": "agent/stability-arc-gfsa-v072",
+  "scientific_rules_changed": false,
+  "candidate_values_inspected": false,
+  "completed": [
+    "v0.7.2 clean-extract package validation PASS",
+    "OBS18 frozen rescore byte-identical to stored result",
+    "OBS19 frozen rescore byte-identical to stored result",
+    "source-package hash capsule recorded",
+    "anti-circularity execution guard recorded",
+    "fail-closed pre-admission provenance guard recorded",
+    "historical closure statuses reconciled without retroactive promotion",
+    "sealed external-admission recovery lane created"
+  ],
+  "active": [
+    "recover exact frozen v0.7 external-candidate admission contract and referenced source/configuration",
+    "preserve candidate numerical response values from inspection during recovery"
+  ],
+  "blocked": [
+    {
+      "item": "external numerical admission",
+      "state": "PROVENANCE_HOLD",
+      "reason": "exact frozen v0.7 external-candidate contract not yet recovered"
+    },
+    {
+      "item": "historical QuTiP independent-engine comparison",
+      "state": "PENDING_HISTORICAL",
+      "reason": "executed independent-engine output not presently recovered"
+    },
+    {
+      "item": "historical Phase 4A",
+      "state": "PENDING_INCOMPLETE_HISTORICAL",
+      "reason": "historical source/result preservation incomplete; new complete preregistered package required if restarted"
+    }
+  ],
+  "next": [
+    "continue provenance-only search for exact v0.7 contract",
+    "hash exact recovered contract and every load-bearing referenced file before candidate-value inspection",
+    "populate CONTRACT_RECOVERED.json only from recovered historical sources",
+    "require pre_admission_guard_v01.py to emit READY_FOR_FROZEN_EXTERNAL_ADMISSION before scoring",
+    "execute frozen external admission only after the guard opens"
+  ]
+}
