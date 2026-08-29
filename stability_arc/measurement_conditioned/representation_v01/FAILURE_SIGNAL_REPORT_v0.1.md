@@ -8,9 +8,9 @@
 
 ## Classification
 
-**MATHEMATICAL SPECIFICATION / NORMALIZATION ERROR, with a second latent representation-normalization defect found during failure investigation.**
+**MATHEMATICAL SPECIFICATION / NORMALIZATION ERROR, with two additional representation-audit weaknesses found during failure investigation before any v0.2 execution.**
 
-This is not a CI failure. It does not overturn the earlier v0.1 conditional-tangent finite-difference derivation, but it does prevent the new joint-channel representation from being considered closed.
+This is not a CI failure. It does not overturn the earlier v0.1 conditional-tangent finite-difference derivation, but it prevents the new joint-channel representation from being considered closed.
 
 ## Exact failed gate
 
@@ -52,7 +52,7 @@ which exactly matches the reconstructed physical drift entries `A_phys[0,0]=A_ph
 
 The incorrect preregistered expression used `gamma/2 + 2 kappa = 0.935`; its discrepancy from the reconstructed rate is exactly `0.41 = kappa`, explaining the failed R0 residual.
 
-## Additional latent issue found before any v0.2 execution
+## Additional latent issue 1: diffusion normalization
 
 During adversarial review of the failed v0.1 package, a second normalization problem was found in the reported diffusion matrix `B`.
 
@@ -70,16 +70,33 @@ The v0.1 implementation stored only the Bloch matrix of `deltaH_x`, omitting tha
 
 This does **not** alter the earlier derivation identity itself. It means the newly introduced matrix representation in v0.1 mislabeled an unscaled derivative operator as the full stochastic diffusion matrix.
 
-Because this issue was found after v0.1 execution but before any v0.2 execution, v0.2 must correct it prospectively. The v0.1 R1 PASS remains historically recorded but is not sufficient evidence for the correctly normalized `B` representation.
+## Additional latent issue 2: R2 self-certification
+
+The v0.1 R2 implementation formed
+
+`Delta_expected = -4 eta kappa h m^T`
+
+then defined
+
+`A_rec = A_phys + Delta_expected`
+
+and finally checked
+
+`A_rec-A_phys` against `Delta_expected`.
+
+That comparison is algebraically guaranteed by construction and therefore is not an independent verification of the same-record drift representation. The rank-one result is still a valid property of the constructed update, but the v0.1 R2 PASS cannot by itself establish that the full nonlinear same-record map has that local drift.
+
+A corrective audit must reconstruct `A_rec` independently from the full same-record map while holding detector records fixed, then compare that independently obtained drift against the analytic conditioning formula.
 
 ## Signal interpretation
 
-The v0.1 failure and latent review finding expose the same broader hazard: coefficients in stochastic/Lindblad equations cannot be promoted into Stability Arc coordinates by visual inspection of prefactors. Operator normalization and SDE amplitude factors must be carried through the actual tangent map.
+The v0.1 failure and latent review findings expose a broader hazard: coefficients in stochastic/Lindblad equations cannot be promoted into Stability Arc coordinates by visual inspection, and an audit cannot certify a formula using an object defined from that same formula.
 
-This constrains future measurement work in two ways:
+This constrains future measurement work in three ways:
 
 1. damping rates must be derived from the generator action in the chosen operator normalization, not inferred from the coefficient written in front of a dissipator;
-2. stochastic tangent matrices must include their full noise amplitude before any spectrum, norm, cross-channel comparison, or candidate scalar is interpreted.
+2. stochastic tangent matrices must include their full noise amplitude before any spectrum, norm, cross-channel comparison, or candidate scalar is interpreted;
+3. joint-channel identities require an independent reconstruction route, not construction-then-comparison to the same expression.
 
 ## Next justified action
 
@@ -91,4 +108,6 @@ and the correctly normalized diffusion matrix
 
 `B = sqrt(2 eta kappa) * D(H_x)[rho]`
 
-using fresh parameter/base-state fixtures chosen before execution. The v0.1 failure and its latent diffusion-normalization defect must remain preserved and may not be counted as support for the corrected formulas. Fresh v0.2 fixtures are required for the corrected identities.
+using fresh parameter/base-state fixtures chosen before execution. It must independently recover same-noise and same-record local drifts/diffusions from the full nonlinear maps using fixed `+/-dW` detector increments, rather than defining `A_rec` from the formula being tested.
+
+The v0.1 failure and all latent weaknesses must remain preserved and may not be counted as support for the corrected formulas. Fresh v0.2 fixtures are required for corrective evidence.
