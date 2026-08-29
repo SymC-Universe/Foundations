@@ -1,0 +1,77 @@
+name: Stability Arc stochastic dark-active quotient audit v0.1
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - agent/stability-arc-gfsa-v072
+    paths:
+      - 'stability_arc/measurement_conditioned/stochastic_dark_active_v01/PREREGISTRATION_STOCHASTIC_DARK_ACTIVE_QUOTIENT_AUDIT_v0.1.md'
+      - 'stability_arc/measurement_conditioned/stochastic_dark_active_v01/stochastic_dark_active_quotient_audit_v01.py'
+      - '.github/workflows/stability-arc-stochastic-dark-active-quotient-audit-v01.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout frozen branch state
+        uses: actions/checkout@v4
+
+      - name: Record frozen source identities
+        shell: bash
+        run: |
+          set -euo pipefail
+          R=stability_arc/measurement_conditioned/stochastic_dark_active_v01/results
+          mkdir -p "$R"
+          {
+            echo "commit=${GITHUB_SHA}"
+            echo "ref=${GITHUB_REF}"
+            echo "prereg_sha256=$(sha256sum stability_arc/measurement_conditioned/stochastic_dark_active_v01/PREREGISTRATION_STOCHASTIC_DARK_ACTIVE_QUOTIENT_AUDIT_v0.1.md | awk '{print $1}')"
+            echo "code_sha256=$(sha256sum stability_arc/measurement_conditioned/stochastic_dark_active_v01/stochastic_dark_active_quotient_audit_v01.py | awk '{print $1}')"
+            echo "workflow_sha256=$(sha256sum .github/workflows/stability-arc-stochastic-dark-active-quotient-audit-v01.yml | awk '{print $1}')"
+            echo "active_scalar_result_sha256=$(sha256sum stability_arc/measurement_conditioned/active_quotient_scalar_v01/ACTIVE_QUOTIENT_SCALAR_ADMISSIBILITY_RESULT_v0.1.md | awk '{print $1}')"
+          } | tee "$R/source_identity.txt"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install fixed audit dependency
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --upgrade pip
+          python -m pip install 'numpy==2.1.3'
+          python -m pip freeze | tee stability_arc/measurement_conditioned/stochastic_dark_active_v01/results/environment_lock.txt
+
+      - name: Execute frozen stochastic quotient audit
+        shell: bash
+        run: |
+          set -euo pipefail
+          python stability_arc/measurement_conditioned/stochastic_dark_active_v01/stochastic_dark_active_quotient_audit_v01.py \
+            | tee stability_arc/measurement_conditioned/stochastic_dark_active_v01/results/stdout.txt
+
+      - name: Preserve and independently verify evidence hashes
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd stability_arc/measurement_conditioned/stochastic_dark_active_v01/results
+          find . -maxdepth 1 -type f ! -name SHA256.txt ! -name MANIFEST_VERIFIED.txt -print0 \
+            | sort -z \
+            | xargs -0 sha256sum > SHA256.txt
+          sha256sum -c SHA256.txt | tee MANIFEST_VERIFIED.txt
+
+      - name: Upload stochastic quotient evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stability-arc-stochastic-dark-active-quotient-audit-v01
+          path: stability_arc/measurement_conditioned/stochastic_dark_active_v01/results/
+          if-no-files-found: error
+          retention-days: 90
