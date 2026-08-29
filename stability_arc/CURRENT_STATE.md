@@ -36,6 +36,8 @@ The search and exact recovery targets are now durable and machine-readable:
 
 Historical continuity was also materially improved. `stability_arc/HISTORICAL_FAILURE_SIGNAL_RECOVERY_v0.1.md` now preserves the recovered Phase 3Y Y2 failure -> fresh Phase 3Z refinement sequence as the canonical example of learning from failure without threshold repair or evidentiary recycling. It also preserves the historical QuTiP and Phase 4A open states.
 
+The provenance-guard CI run `33230951500` completed successfully on recovery-target commit `7079921645ebaf3e463714325fd134210421cbf3`. The guard compiled, returned exactly `PROVENANCE_HOLD / missing_recovered_contract`, and the workflow accepted that as the correct sealed state. Candidate numerical admission therefore remains mechanically prevented while the exact contract is absent.
+
 ## Active frontier
 
 Recover and bind the exact frozen v0.7 external-candidate admission contract before inspecting candidate response values, then stage the reproducible external-admission runner around the already-validated v0.7.2 observer interface.
@@ -69,11 +71,11 @@ This is not a scientific failure and must not be repaired by reconstructing thre
 5. Added machine-readable recovery targets and stop conditions.
 6. Recovered and persisted historical failure-signal lineage, including Phase 3Y Y2 FAIL -> fresh Phase 3Z refinement, QuTiP pending status, and Phase 4A incomplete status.
 7. Preserved candidate-value quarantine throughout.
+8. Verified provenance-guard CI closes cleanly in `PROVENANCE_HOLD` while the contract is absent.
 
 ### ACTIVE
 
 - Continue exact-source recovery using only sources capable of authenticating the frozen v0.7 contract and chronology.
-- Verify provenance-guard CI for new GFSA recovery-control commits.
 - Prepare only outcome-free mechanical scaffolding that cannot encode guessed scientific rules.
 
 ### BLOCKED
