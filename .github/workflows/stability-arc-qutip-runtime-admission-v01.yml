@@ -1,0 +1,116 @@
+name: Stability Arc QuTiP 5.3.1 runtime admission v0.1
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - agent/stability-arc-gfsa-v072
+    paths:
+      - 'stability_arc/qutip_runtime/**'
+      - '.github/workflows/stability-arc-qutip-runtime-admission-v01.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  runtime-admission:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout frozen branch state
+        uses: actions/checkout@v4
+
+      - name: Record frozen source identities
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p stability_arc/qutip_runtime/results
+          {
+            echo "commit=${GITHUB_SHA}"
+            echo "ref=${GITHUB_REF}"
+            echo "prereg_sha256=$(sha256sum stability_arc/qutip_runtime/PREREGISTRATION_QUTIP_RUNTIME_ADMISSION_v0.1.md | awk '{print $1}')"
+            echo "code_sha256=$(sha256sum stability_arc/qutip_runtime/code/qutip_runtime_admission_v01.py | awk '{print $1}')"
+            echo "workflow_sha256=$(sha256sum .github/workflows/stability-arc-qutip-runtime-admission-v01.yml | awk '{print $1}')"
+          } | tee stability_arc/qutip_runtime/results/source_identity.txt
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install pinned QuTiP runtime
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --upgrade pip
+          python -m pip install 'qutip==5.3.1'
+          python -m pip freeze | tee stability_arc/qutip_runtime/results/environment_lock.txt
+          python - <<'PY' | tee stability_arc/qutip_runtime/results/import_check.txt
+          import platform, qutip
+          print('python=' + platform.python_version())
+          print('qutip=' + qutip.__version__)
+          raise SystemExit(0 if qutip.__version__ == '5.3.1' else 1)
+          PY
+
+      - name: Execute frozen analytic runtime test
+        id: scientific_test
+        shell: bash
+        run: |
+          set -euo pipefail
+          python stability_arc/qutip_runtime/code/qutip_runtime_admission_v01.py \
+            | tee stability_arc/qutip_runtime/results/stdout.txt
+
+      - name: Verify provenance capture and write Q3
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          R=stability_arc/qutip_runtime/results
+          test -s "$R/source_identity.txt"
+          test -s "$R/environment_lock.txt"
+          test -s "$R/import_check.txt"
+          test -s "$R/qutip_runtime_result_v01.json"
+          test -s "$R/stdout.txt"
+          grep -q '^commit=' "$R/source_identity.txt"
+          grep -q '^ref=' "$R/source_identity.txt"
+          grep -q '^prereg_sha256=' "$R/source_identity.txt"
+          grep -q '^code_sha256=' "$R/source_identity.txt"
+          grep -q '^workflow_sha256=' "$R/source_identity.txt"
+          grep -qi '^qutip==5.3.1$' "$R/environment_lock.txt"
+          printf '%s\n' 'Q3=PASS' 'scope=RUNTIME_ADMISSION_ONLY' > "$R/Q3_STATUS.txt"
+
+      - name: Preserve and independently verify evidence hashes
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd stability_arc/qutip_runtime/results
+          find . -maxdepth 1 -type f ! -name SHA256.txt ! -name MANIFEST_VERIFIED.txt -print0 \
+            | sort -z \
+            | xargs -0 sha256sum > SHA256.txt
+          sha256sum -c SHA256.txt | tee MANIFEST_VERIFIED.txt
+
+      - name: Determine final runtime admission status
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          R=stability_arc/qutip_runtime/results
+          if grep -q '"scientific_runtime_status": "PASS_Q0_Q1_Q2"' "$R/qutip_runtime_result_v01.json" \
+             && grep -q '^Q3=PASS$' "$R/Q3_STATUS.txt" \
+             && test -s "$R/SHA256.txt" \
+             && test -s "$R/MANIFEST_VERIFIED.txt"; then
+            printf '%s\n' 'RUNTIME_ADMITTED' 'HISTORICAL_NOTEBOOK_CROSSCHECK_STILL_PENDING' | tee "$R/FINAL_STATUS.txt"
+          else
+            printf '%s\n' 'RUNTIME_NOT_ADMITTED' 'INVESTIGATE_FAILURE_SIGNAL' | tee "$R/FINAL_STATUS.txt"
+            exit 1
+          fi
+
+      - name: Upload runtime-admission evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stability-arc-qutip-runtime-admission-v01
+          path: stability_arc/qutip_runtime/results/
+          if-no-files-found: error
+          retention-days: 90
