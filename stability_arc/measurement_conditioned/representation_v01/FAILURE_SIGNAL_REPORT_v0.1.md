@@ -8,13 +8,13 @@
 
 ## Classification
 
-**MATHEMATICAL SPECIFICATION / ANALYTIC CONTROL ERROR.**
+**MATHEMATICAL SPECIFICATION / NORMALIZATION ERROR, with a second latent representation-normalization defect found during failure investigation.**
 
-This is not a CI failure and not a failure of the already-validated same-noise/same-record tangent identities. The frozen v0.1 analytic unconditional-control formula contained a factor-of-two error in the measurement-dephasing contribution.
+This is not a CI failure. It does not overturn the earlier v0.1 conditional-tangent finite-difference derivation, but it does prevent the new joint-channel representation from being considered closed.
 
 ## Exact failed gate
 
-Only `R0` failed.
+Only `R0` failed numerically in the frozen run.
 
 - frozen v0.1 R0 error: `0.4099999999999999`
 - frozen R0 gate: `5e-13`
@@ -26,7 +26,7 @@ Only `R0` failed.
 
 Overall v0.1 remains **FAIL** and is not retroactively repaired.
 
-## What the failure revealed
+## What R0 revealed
 
 The preregistration asserted that the unconditional measurement term `2 kappa D[x]`, with `x=sigma_z/2`, contributes `-2 kappa` to the Bloch-x and Bloch-y tangent rates. Direct operator algebra shows that this is wrong.
 
@@ -52,11 +52,34 @@ which exactly matches the reconstructed physical drift entries `A_phys[0,0]=A_ph
 
 The incorrect preregistered expression used `gamma/2 + 2 kappa = 0.935`; its discrepancy from the reconstructed rate is exactly `0.41 = kappa`, explaining the failed R0 residual.
 
+## Additional latent issue found before any v0.2 execution
+
+During adversarial review of the failed v0.1 package, a second normalization problem was found in the reported diffusion matrix `B`.
+
+The registered tangent equation is
+
+`d(delta rho) = L(delta rho) dt + sqrt(2 eta kappa) deltaH_x dW`
+
+for the same-noise channel, with the same stochastic coefficient in the same-record channel. Therefore, if the Bloch-coordinate representation is written as
+
+`d r = A r dt + B r dW`,
+
+then the matrix `B` must include the prefactor `sqrt(2 eta kappa)`.
+
+The v0.1 implementation stored only the Bloch matrix of `deltaH_x`, omitting that prefactor, while labeling the result as the full SDE diffusion matrix `B`. Its R1 finite-difference test compared the unscaled derivative of `H_x` against the same unscaled matrix, so R1 could pass without detecting the representational omission.
+
+This does **not** alter the earlier derivation identity itself. It means the newly introduced matrix representation in v0.1 mislabeled an unscaled derivative operator as the full stochastic diffusion matrix.
+
+Because this issue was found after v0.1 execution but before any v0.2 execution, v0.2 must correct it prospectively. The v0.1 R1 PASS remains historically recorded but is not sufficient evidence for the correctly normalized `B` representation.
+
 ## Signal interpretation
 
-This failure is useful because it exposed a normalization hazard in carrying Lindblad measurement coefficients into Bloch-coordinate damping rates. The factor multiplying `D[x]` cannot be read directly as the transverse Bloch damping rate when the measured operator itself contains a scale factor (`x=sigma_z/2`).
+The v0.1 failure and latent review finding expose the same broader hazard: coefficients in stochastic/Lindblad equations cannot be promoted into Stability Arc coordinates by visual inspection of prefactors. Operator normalization and SDE amplitude factors must be carried through the actual tangent map.
 
-The failure therefore constrains future Stability Arc measurement work: damping coordinates must be derived from the actual generator action in the chosen operator normalization, not inferred from the coefficient written in front of a dissipator.
+This constrains future measurement work in two ways:
+
+1. damping rates must be derived from the generator action in the chosen operator normalization, not inferred from the coefficient written in front of a dissipator;
+2. stochastic tangent matrices must include their full noise amplitude before any spectrum, norm, cross-channel comparison, or candidate scalar is interpreted.
 
 ## Next justified action
 
@@ -64,4 +87,8 @@ A new version may test the corrected algebraic control
 
 `A_control = [[-(gamma/2+kappa),0,omega],[0,-(gamma/2+kappa),0],[-omega,0,-gamma]]`
 
-using fresh parameter fixtures chosen before execution. The v0.1 failure must remain preserved and may not be counted as support for the corrected formula. The other v0.1 gates may be retained as regression checks, but their previous PASS values are not new prospective evidence.
+and the correctly normalized diffusion matrix
+
+`B = sqrt(2 eta kappa) * D(H_x)[rho]`
+
+using fresh parameter/base-state fixtures chosen before execution. The v0.1 failure and its latent diffusion-normalization defect must remain preserved and may not be counted as support for the corrected formulas. Fresh v0.2 fixtures are required for the corrected identities.
