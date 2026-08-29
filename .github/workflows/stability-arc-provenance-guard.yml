@@ -1,0 +1,65 @@
+name: Stability Arc provenance guard
+
+on:
+  push:
+    branches:
+      - agent/stability-arc-gfsa-v072
+    paths:
+      - 'stability_arc/gfsa_v0.7.2/**'
+      - '.github/workflows/stability-arc-provenance-guard.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  provenance-guard:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Compile mechanical guard
+        run: python -m py_compile stability_arc/gfsa_v0.7.2/code/pre_admission_guard_v01.py
+
+      - name: Verify sealed or ready state
+        shell: bash
+        run: |
+          set +e
+          python stability_arc/gfsa_v0.7.2/code/pre_admission_guard_v01.py > guard_state.json
+          rc=$?
+          set -e
+          cat guard_state.json
+          python - "$rc" <<'PY'
+          import json
+          import sys
+
+          rc = int(sys.argv[1])
+          with open('guard_state.json', encoding='utf-8') as f:
+              state = json.load(f)
+
+          status = state.get('status')
+          reason = state.get('reason')
+
+          if status == 'READY_FOR_FROZEN_EXTERNAL_ADMISSION' and rc == 0:
+              print('PASS: exact recovered contract and hashes satisfy the pre-view guard.')
+              raise SystemExit(0)
+
+          if status == 'PROVENANCE_HOLD' and reason == 'missing_recovered_contract' and rc == 2:
+              print('PASS: external candidate remains correctly sealed while the exact v0.7 contract is absent.')
+              raise SystemExit(0)
+
+          print(f'FAIL: unexpected provenance state status={status!r} reason={reason!r} rc={rc}')
+          raise SystemExit(1)
+          PY
+
+      - name: Confirm anti-circularity control is present
+        run: |
+          test -s stability_arc/gfsa_v0.7.2/ANTI_CIRCULARITY_GUARD_v0.1.md
+          test -s stability_arc/gfsa_v0.7.2/CLOSURE_RECONCILIATION_v0.1.md
+          test -s stability_arc/gfsa_v0.7.2/SOURCE_PACKAGE_PROVENANCE_v0.1.md
