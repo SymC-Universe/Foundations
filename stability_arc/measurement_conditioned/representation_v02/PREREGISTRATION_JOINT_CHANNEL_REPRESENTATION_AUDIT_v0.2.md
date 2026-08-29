@@ -7,9 +7,12 @@
 
 Audit v0.1 failed R0 because its preregistered analytic control treated the coefficient `2 kappa D[sigma_z/2]` as though it produced transverse Bloch damping `2 kappa`. Operator algebra shows the correct transverse Bloch damping is `kappa` because the measured operator includes the factor `1/2`.
 
-Adversarial review of the failed v0.1 package also found that the reported diffusion matrix `B` omitted the required SDE prefactor `sqrt(2 eta kappa)`. That issue was found before any v0.2 execution. It is preserved in `representation_v01/FAILURE_SIGNAL_REPORT_v0.1.md`.
+Adversarial review of the failed v0.1 package also found two additional weaknesses before any v0.2 execution:
 
-The v0.1 result remains failed. No v0.1 threshold, output, or interpretation is rewritten.
+1. the reported diffusion matrix `B` omitted the required SDE prefactor `sqrt(2 eta kappa)`;
+2. the v0.1 conditioning-difference check constructed `A_rec` from the same formula it then checked, so that gate was not sufficiently independent.
+
+These issues are preserved in the v0.1 failure record. The v0.1 result remains failed. No v0.1 threshold, output, or interpretation is rewritten.
 
 ## Representation convention
 
@@ -69,6 +72,45 @@ All base Bloch vectors lie strictly inside the Bloch ball. For every fixture use
 
 No parameter was selected from a v0.2 outcome.
 
+## Independent full-map decomposition fixture
+
+To avoid self-certification, v0.2 must independently recover local drift and diffusion matrices from the full nonlinear one-step maps, not only from the analytic tangent formulas.
+
+Freeze:
+
+- `dt = 1e-3`
+- normalized innovation magnitude `z = 0.43`
+- `dW = z sqrt(dt)` and `-dW`
+- centered state perturbation `epsilon = 1e-5`
+
+For same-noise maps, construct centered state Jacobians `J_noise+` and `J_noise-` at `+dW` and `-dW`.
+
+Recover
+
+`A_phys_FD = ((J_noise+ + J_noise-)/2 - I)/dt`
+
+and
+
+`B_noise_FD = (J_noise+ - J_noise-)/(2 dW)`.
+
+For same-record maps, hold the base detector records
+
+`dY+ = sqrt(8 eta kappa) mu(rho) dt + dW`
+
+and
+
+`dY- = sqrt(8 eta kappa) mu(rho) dt - dW`
+
+fixed while each perturbed candidate state constructs its own innovation. Build `J_record+` and `J_record-`, then recover
+
+`A_rec_FD = ((J_record+ + J_record-)/2 - I)/dt`
+
+and
+
+`B_record_FD = (J_record+ - J_record-)/(2 dW)`.
+
+These finite-difference matrices are the independent comparison route for R1 and R2.
+
 ## Frozen gates
 
 ### R0 corrected unconditional-control reconstruction
@@ -79,29 +121,37 @@ PASS requires maximum absolute matrix-entry error <= `5e-13` for every fixture.
 
 ### R1 fully normalized diffusion reconstruction
 
+For every fresh fixture, construct the analytic full diffusion matrix
+
+`B = sqrt(2 eta kappa) * D(H_x)[rho]`.
+
+Compare it independently against both `B_noise_FD` and `B_record_FD` recovered from the full nonlinear maps above.
+
+PASS requires maximum absolute entry error <= `2e-6` for each comparison and maximum difference between `B_noise_FD` and `B_record_FD` <= `2e-6`.
+
+### R2 independent same-record drift / conditioning-difference identity
+
 For every fresh fixture, construct
 
-`B = sqrt(2 eta kappa) * D(H_x)[rho]`
+`A_rec_formula = A_phys - 4 eta kappa h m^T`.
 
-analytically from `deltaH_x`. Independently reconstruct it with a centered finite difference of the **full stochastic map coefficient** `sqrt(2 eta kappa) H_x(rho)` using `epsilon=1e-6`.
+Compare it against independently recovered `A_rec_FD` from the full same-record map. Also compare `A_phys` against `A_phys_FD` from the full same-noise map.
 
-PASS requires maximum absolute entry error <= `5e-10` for every fixture.
+PASS requires maximum absolute entry error <= `2e-6` for both drift comparisons.
 
-### R2 conditioning-difference identity
+For the analytic difference
 
-For every fresh fixture, verify
+`DeltaA = A_rec_formula-A_phys`,
 
-`DeltaA = -4 eta kappa h m^T`.
-
-PASS requires maximum absolute entry residual <= `5e-13` and numerical rank <=1 using absolute singular-value tolerance `1e-12`.
+PASS additionally requires agreement with `-4 eta kappa h m^T` to `5e-13` and numerical rank <=1 using absolute singular-value tolerance `1e-12`.
 
 ### R3 joint characteristic-polynomial identity
 
-For every fresh fixture construct `A_joint=diag(A_phys,A_rec)`.
+For every fresh fixture construct `A_joint=diag(A_phys,A_rec_formula)`.
 
 PASS requires
 
-`poly(A_joint)=convolution(poly(A_phys),poly(A_rec))`
+`poly(A_joint)=convolution(poly(A_phys),poly(A_rec_formula))`
 
 with maximum absolute coefficient residual <= `5e-10`.
 
@@ -111,10 +161,10 @@ Apply the same fixed orthogonal rotation
 
 `Q=Rz(0.37) Ry(-0.52) Rx(0.29)`
 
-to all matrices by similarity. For every fresh fixture PASS requires:
+to all analytic representation matrices by similarity. For every fresh fixture PASS requires:
 
-- characteristic-polynomial coefficient changes for `A_phys`, `A_rec`, and `DeltaA` <= `5e-10`;
-- Frobenius-norm changes for `DeltaA` and the **fully normalized** `B` <= `5e-13`.
+- characteristic-polynomial coefficient changes for `A_phys`, `A_rec_formula`, and `DeltaA` <= `5e-10`;
+- Frobenius-norm changes for `DeltaA` and the fully normalized `B` <= `5e-13`.
 
 ### R5 exact second-order recovery and scalar refusal
 
@@ -130,7 +180,7 @@ Verify exact recovery of `Gamma/(2 Omega)` to `1e-14` for:
 
 The extractor must REFUSE wrong-shape matrices, materially complex 2x2 matrices, `tr>=0`, or `det<=0`.
 
-The full 3x3 `A_phys` and `A_rec` from every fresh fixture remain `FULL_MATRIX_REQUIRED`. No invariant-subspace discovery or scalar compression is licensed here.
+The full 3x3 `A_phys` and `A_rec_formula` from every fresh fixture remain `FULL_MATRIX_REQUIRED`. No invariant-subspace discovery or scalar compression is licensed here.
 
 ## Decision rule
 
@@ -140,6 +190,6 @@ No parameter, fixture, coefficient, threshold, rotation, scalar-admission rule, 
 
 ## Anti-circularity firewall
 
-This audit reads no historical localization outcome, no E16-E27 error, and no GFSA v0.7 external-candidate response. Both corrections are explicitly post-v0.1-failure. Only the three fresh v0.2 fixtures may provide new corrective evidence for those identities.
+This audit reads no historical localization outcome, no E16-E27 error, and no GFSA v0.7 external-candidate response. All corrections are explicitly post-v0.1-failure and were frozen before v0.2 execution. Only the three fresh v0.2 fixtures may provide new corrective evidence for those identities.
 
 A v0.2 PASS would license only the corrected local separate-plus-joint matrix representation and its algebraic invariants. It would not establish predictive value for localization, a universal scalar chi, or an optimum at chi=1.
