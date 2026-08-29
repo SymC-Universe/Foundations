@@ -6,7 +6,8 @@ on:
     branches:
       - agent/stability-arc-gfsa-v072
     paths:
-      - 'stability_arc/measurement_conditioned/representation_v01/**'
+      - 'stability_arc/measurement_conditioned/representation_v01/PREREGISTRATION_JOINT_CHANNEL_REPRESENTATION_AUDIT_v0.1.md'
+      - 'stability_arc/measurement_conditioned/representation_v01/joint_channel_representation_audit_v01.py'
       - '.github/workflows/stability-arc-joint-channel-representation-audit-v01.yml'
 
 permissions:
