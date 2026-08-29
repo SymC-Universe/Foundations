@@ -1,0 +1,20 @@
+{
+  "contract_status": "TEMPLATE_ONLY_NOT_RECOVERED",
+  "candidate_values_inspected": false,
+  "historical_contract_identity": null,
+  "historical_contract_recovery_source": null,
+  "rule_sources": {
+    "file_provenance": null,
+    "channel_mapping": null,
+    "numerical_quality": null,
+    "uncertainty_handling": null,
+    "bandwidth": null,
+    "observer_surrogate_order": null,
+    "decision_logic": null,
+    "exclusions_stop_conditions": null
+  },
+  "hashed_files": [],
+  "execution_entrypoint": null,
+  "environment_identity": null,
+  "recovery_notes": "Template only. Do not replace nulls from memory or candidate outcomes. contract_status may become RECOVERED_EXACT_FROZEN_V0.7 only after exact historical sources are recovered and hashed before candidate-value inspection."
+}
