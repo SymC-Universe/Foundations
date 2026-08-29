@@ -1,0 +1,55 @@
+{
+  "schema": "gfsa-v07-external-admission-recovery-targets-v0.1",
+  "date": "2026-08-29",
+  "branch": "agent/stability-arc-gfsa-v072",
+  "gate_state": "PROVENANCE_HOLD",
+  "candidate_values_inspected": false,
+  "scientific_rules_reconstructed": false,
+  "known_gate_names_only": [
+    "file_provenance",
+    "channel_mapping",
+    "numerical_quality",
+    "uncertainty",
+    "bandwidth"
+  ],
+  "warning": "Gate names are continuity metadata only. They do not authorize inferred thresholds, algorithms, schemas, or decision logic.",
+  "required_recovery_targets": [
+    {
+      "id": "R1",
+      "target": "exact_v07_external_candidate_contract",
+      "status": "MISSING",
+      "acceptable_evidence": [
+        "original preregistration/configuration/source bytes with authentic chronology",
+        "v0.7 or v0.7.1 package/repository snapshot containing exact contract",
+        "Git history/bundle containing exact pre-outcome contract"
+      ],
+      "blocks_execution": true
+    },
+    {
+      "id": "R2",
+      "target": "load_bearing_contract_hashes_and_lineage",
+      "status": "MISSING_UNTIL_R1_RECOVERED",
+      "acceptable_evidence": [
+        "historical manifest/execution record plus exact recovered bytes",
+        "Git object identity and chronology plus SHA-256 verification"
+      ],
+      "blocks_execution": true
+    },
+    {
+      "id": "R3",
+      "target": "authoritative_external_candidate_source_package",
+      "status": "NOT_BOUND",
+      "inspection_rule": "Before R1 closes, inspect only non-outcome metadata explicitly licensed by historical provenance. Do not open numerical response values.",
+      "blocks_execution": true
+    },
+    {
+      "id": "R4",
+      "target": "exact_external_admission_entrypoint_environment_and_schema",
+      "status": "MISSING_UNTIL_R1_RECOVERED",
+      "blocks_execution": true
+    }
+  ],
+  "durable_search_record": "stability_arc/gfsa_v0.7.2/PROVENANCE_RECOVERY_SEARCH_LOG_v0.1.md",
+  "guard": "stability_arc/gfsa_v0.7.2/code/pre_admission_guard_v01.py",
+  "ready_condition": "All load-bearing frozen contract artifacts recovered and hash-verified with candidate_values_inspected=false; guard returns READY_FOR_FROZEN_EXTERNAL_ADMISSION."
+}
