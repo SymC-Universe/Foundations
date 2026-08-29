@@ -1,0 +1,66 @@
+{
+  "architecture_reporting_schema": {
+    "C": "scalar-to-mode assignment/coupling",
+    "G": "governing generator/response operator",
+    "R": "inter-channel relations",
+    "U": "uncertainty, admissibility, provenance, and refusal state",
+    "V": "modal, vector, tangent, and subspace geometry",
+    "s": "scalar coordinates, invariants, margins, boundary distances"
+  },
+  "canonical_branch": "agent/stability-arc-gfsa-v072",
+  "canonical_internal_language": "coupled scalar-modal stability architecture",
+  "canonical_repository": "SymC-Universe/Foundations",
+  "closed_measurement_sequence": {
+    "final_same_family_phase": "H12",
+    "h11_blind_reveal": {
+      "correct": 64,
+      "counterexamples": 0,
+      "status": "PASS",
+      "total": 64
+    },
+    "h12_blind_reveal": {
+      "correct": 64,
+      "counterexamples": 0,
+      "status": "PASS_H12D_REPLICATION",
+      "total": 64
+    },
+    "same_family_replication_complete": true
+  },
+  "created_date": "2026-08-29",
+  "forbidden_shortcuts": [
+    "scalar-only system verdict without modal assignment",
+    "vector-only verdict without scalar magnitude/margins",
+    "outcome-driven threshold or mode selection",
+    "same-family repetition only to increase N",
+    "calling QuTiP runtime admission historical reproduction",
+    "opening quarantined GFSA external response values before contract recovery"
+  ],
+  "internal_handoff_use": "AUTHORIZED_WITH_CONTRACT",
+  "next_research_state": "BRAINSTORMING_DECISION_REQUIRED_BEFORE_NEW_PHYSICS",
+  "open_project_holds": {
+    "gfsa_v07_external_admission": "PROVENANCE_HOLD",
+    "historical_phase_4a": "PENDING_INCOMPLETE",
+    "historical_qutip_reproduction": "SOURCE_HOLD"
+  },
+  "package_version": "1.0",
+  "permanent_failures_or_holds": [
+    "joint representation v0.1 FAIL",
+    "generalized spectral-abscissa H2 FAIL with 441 counterexamples",
+    "c3 displacement v0.1 binary64 numerical-oracle FAIL",
+    "H6 c3-only full-class sufficiency FAIL",
+    "H7 SELECTION_HOLD",
+    "H8 high-radius existence FAIL / H8F INSUFFICIENT",
+    "dephasing parent AUDIT_IMPLEMENTATION_FAILURE"
+  ],
+  "program_state": "PAUSED_FOR_PROGRAM_FOCUS",
+  "publication_extension_queue": [
+    "finite-temperature generalized amplitude damping",
+    "non-planar measurement / no guaranteed 1D dark factor",
+    "fresh independently frozen QuTiP validation",
+    "fresh untouched physical relevance test after representation closure"
+  ],
+  "science_freeze_commit": "5a1c0d3a579f0251374544973c1ff53194bba722",
+  "science_freeze_tree": "3b53fd068ce7b372f6ea5ef26245ed5e12c81623",
+  "status": "INTERNAL_HANDOFF_CLOSED",
+  "user_action_required": false
+}
