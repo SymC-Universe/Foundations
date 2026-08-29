@@ -12,273 +12,231 @@ Canonical working branch: `agent/stability-arc-gfsa-v072`
 - `stability_arc/gfsa_v0.7.2/PROVENANCE_RECOVERY_SEARCH_LOG_v0.1.md`
 - `stability_arc/gfsa_v0.7.2/external_admission/v0.7/RECOVERY_TARGETS_v0.1.json`
 
-Frozen science, preregistrations, thresholds, exclusions, failure records, and interpretation firewalls remain controlling. FAIL, HOLD, null, NONIDENTIFIABLE, and REFUSE are admissible results and may not be repaired by retuning against observed outcomes.
+Frozen science, preregistrations, thresholds, exclusions, failure records, and interpretation firewalls remain controlling. FAIL, HOLD, null, NONIDENTIFIABLE, and REFUSE are admissible evidence and may not be repaired by retuning against outcomes.
 
-## Closed measurement-conditioned lineage
+## GFSA v0.7.2 closed state
 
-### Conditional tangent derivation v0.1
+- executable package validation: PASS;
+- C18 calibration validity: PASS;
+- OBS18 interface admissibility: PASS;
+- OBS19 blind holdout: PASS;
+- external interface: `LICENSED_FOR_EXTERNAL_NUMERICAL_ADMISSION`;
+- observable-only EP firewall: PASS.
 
-**PASS** under frozen T0-T4 gates.
+The GFSA external numerical-admission lane remains quarantined because the exact authentic frozen v0.7 external-candidate contract and authoritative candidate-source package have not been recovered. Candidate response values must not be inspected, plotted, summarized, filtered, or scored until that contract is recovered, persisted, hashed, chronology-authenticated, and bound.
 
+## Measurement-conditioned lineage
+
+### Preserved failures
+
+- joint-channel representation v0.1, run `33234191815`: **FAIL**, permanently preserved. It exposed an incorrect measurement-dissipator normalization, missing stochastic amplitude, and partial self-certification.
+- generalized conditioning spectral-abscissa H2, run `33256389876`: **FAIL_GENERALIZED_H2**, permanently preserved and described below.
+
+Failures are not superseded by later corrective or narrower PASS results.
+
+### Closed constructive phases
+
+1. conditional tangent derivation v0.1: PASS;
+2. corrective joint-channel representation v0.2: PASS;
+3. stochastic second-moment lift v0.1: PASS;
+4. information-rank secular bridge v0.1: PASS;
+5. secular continuation / mode correspondence v0.1: PASS_WITH_ALL_FRESH_PATHS_ADMISSIBLE;
+6. conditioning-dark / active-sector factorization v0.1: PASS;
+7. deterministic active-quotient scalar admissibility v0.1: PASS;
+8. stochastic dark/active compatibility v0.1: PASS;
+9. mean-square stability geometry v0.1: PASS;
+10. bounded prospective conditioning directionality H1 v0.1: PASS_PROSPECTIVE_H1 on 24/24 fresh registered fixtures.
+
+The physical same-noise and same-record inference channels remain separately auditable throughout. Joint/conglomerate analysis is licensed only when the channel identities remain recoverable.
+
+## Current licensed representation hierarchy
+
+For an admitted measured-qubit control:
+
+1. separate local tangent generators are retained as `A_phys` and `A_rec`;
+2. conditioning enters the deterministic drift by a low-rank bridge `DeltaA=A_rec-A_phys`;
+3. the maximal conditioning-dark factor is reconstructed outcome-free from the physical generator and measurement functional;
+4. on admitted controls, the full local multiplicative-noise SDE descends exactly to a 2D active quotient
+   `dq = A_A q dt + B_A q dW`;
+5. deterministic `chi_active=-tr(A_A)/(2 sqrt(det(A_A)))` is licensed separately for physical and record channels only when the deterministic 2D scalar-admissibility conditions pass;
+6. the stochastic pair `(A_A,B_A)` is **not** compressed to a scalar;
+7. its symmetric second moment is governed by a real 3x3 generator `G(A_A,B_A)` with coordinate-invariant cubic coefficients `(c1,c2,c3)`;
+8. strict mean-square asymptotic stability uses the cubic Routh-Hurwitz conditions
+   `c1>0`, `c2>0`, `c3>0`, `c1*c2>c3`.
+
+Required stochastic reporting state remains:
+
+`MEAN_SQUARE_INVARIANTS_REQUIRED`.
+
+## Mean-square geometry result
+
+Canonical run `33256099802`: PASS.
 Canonical result:
-`stability_arc/measurement_conditioned/CONDITIONAL_TANGENT_DERIVATION_AUDIT_RESULT_v0.1.md`
+`stability_arc/measurement_conditioned/mean_square_geometry_v01/MEAN_SQUARE_STABILITY_GEOMETRY_RESULT_v0.1.md`
 
-This closes the separate same-noise physical tangent and same-record inference tangent identities plus the exact real 2x2 reduction only.
+The noiseless oscillator controls separated two different notions of boundary:
 
-### Joint-channel representation v0.1
+- `chi=0.5`: mean-square STABLE;
+- `chi=1`: mean-square STABLE;
+- `chi=1.5`: mean-square STABLE;
+- `Gamma=0`: mean-square BOUNDARY.
 
-**FAIL, permanently preserved.**
+Therefore deterministic critical damping at `chi=1` is a repeated-root/damping-morphology boundary, not the mean-square asymptotic-stability boundary. The two coordinates answer different questions and may not be conflated.
 
-Canonical failed run: `33234191815`
-Artifact: `9709402456`
-Artifact SHA-256: `f95209cf3ae0480722e0391224e78ba663136387c141891bbc47f614e05f6f98`
+## Bounded prospective H1 result
 
-Canonical failure analysis:
-`stability_arc/measurement_conditioned/representation_v01/FAILURE_SIGNAL_REPORT_v0.1.md`
-
-The failure exposed an incorrect measurement-dissipator normalization, a missing stochastic amplitude in the matrix labeled `B`, and partial self-certification of the same-record comparative gate. It remains failed.
-
-### Corrective joint-channel representation v0.2
-
-**PASS** under frozen R0-R5 gates on fresh fixtures with independent full-map reconstruction.
-
-Canonical run: `33234401976`
-Artifact: `9709462702`
-Artifact SHA-256: `0ae0bf6cb694aacada0ad54427d3d56ae694868e5179702ef7d12159e4f56be9`
+Canonical run `33256215609`: `PASS_PROSPECTIVE_H1`.
 Canonical result:
-`stability_arc/measurement_conditioned/representation_v02/JOINT_CHANNEL_REPRESENTATION_AUDIT_RESULT_v0.2.md`
+`stability_arc/measurement_conditioned/conditioning_directionality_v01/CONDITIONING_MEAN_SQUARE_DIRECTIONALITY_RESULT_v0.1.md`
 
-Licensed full representation remains
+The preregistered 24-fixture sample had 24/24 admitted fixtures satisfying
 
-`C = (A_phys, A_rec, DeltaA, B, A_joint)`.
+`alpha_rec <= alpha_phys + 1e-10`,
 
-Full 3x3 channel matrices remain `FULL_MATRIX_REQUIRED`.
+where `alpha=max Re eig(G)`.
 
-### Stochastic second-moment lift v0.1
+This remains valid as a bounded prospective result inside that exact registered sample. It was never licensed as universal.
 
-**PASS** under frozen M0-M6 gates.
+## Generalized H2 stress failure
 
-Canonical run: `33234878303`
-Artifact: `9709601806`
-Canonical result:
-`stability_arc/measurement_conditioned/moment_lift_v01/STOCHASTIC_MOMENT_LIFT_AUDIT_RESULT_v0.1.md`
+Canonical run: `33256389876`
+Execution commit: `ba9d07b10e5828867c720f213d488146cb999ff0`
+Canonical preserved result and failure analysis:
+`stability_arc/measurement_conditioned/conditioning_structural_stress_v01/CONDITIONING_STRUCTURAL_STRESS_RESULT_v0.1.md`
 
-Closed lift:
+Artifact ID: `9715934331`
+Artifact ZIP SHA-256: `a14675b7957776cb552f94a14b1345361b6b0a018ee4466a82594e05978323eb`
 
-`dP/dt = A P + P A^T + B P B^T`
+Preregistered gates:
 
-with column-major generator
+- S0 structural identity: PASS;
+- S1 4096-case seeded generator determinism: PASS;
+- S2 admission: PASS, `4096/4096` seeded plus `16/16` corners;
+- S3 second-moment audit: PASS;
+- S4 adversarial comparator: PASS;
+- S5 generalized H2: **FAIL**, 441 counterexamples.
 
-`K(A,B) = I tensor A + A tensor I + B tensor B`.
+Permanent phase status:
 
-Moment objects remain full operators.
+`FAIL_GENERALIZED_H2`.
 
-### Information-rank secular bridge v0.1
+### Signal extracted without rescuing H2
 
-**PASS** under frozen I0-I6 gates.
+Of 4112 admitted stress/corner cases:
 
-Canonical run: `33245531943`
-Canonical result:
-`stability_arc/measurement_conditioned/information_rank_v01/INFORMATION_RANK_SECULAR_BRIDGE_RESULT_v0.1.md`
+- `3146` physical STABLE -> record STABLE;
+- `584` physical UNSTABLE -> record STABLE;
+- `382` physical UNSTABLE -> record UNSTABLE;
+- `0` physical STABLE -> record UNSTABLE.
 
-Closed identities include
+Among the 441 H2 counterexamples, 440 were STABLE -> STABLE and one was UNSTABLE -> UNSTABLE. Thus H2 usually failed because the spectral decay rate became less negative, not because mean-square stability was lost.
 
-`A_rec = A_phys + U V^T`,
+For all 440 stable H2 counterexamples, every cubic Routh-Hurwitz margin increased even while the spectral abscissa became less negative. This demonstrates that stability margin and decay-rate ordering are not one-dimensional in this stochastic joint representation.
 
-`rank(UV^T) <= m`,
+### Post-hoc failure localization
 
-and away from physical poles
+The following is discovery only and does not count as confirmation.
 
-`det(zI-A_rec)/det(zI-A_phys) = det(I_m - V^T (zI-A_phys)^(-1) U)`.
+All 439 seeded H2 counterexamples satisfied
 
-Closed second-moment rank bounds:
+`omega + kappa < gamma/2`.
 
-`rank(DeltaK) <= 2 n r-r^2`
+On the low-kappa active branch, with
 
-and
+`delta = gamma/2-kappa`,
 
-`rank(DeltaK_sym) <= r(2 n-r+1)/2`.
+the deterministic repeated-root condition is
 
-Observed saturation remains observation only.
+`delta = 2 omega`.
 
-### Secular-continuation / mode-correspondence v0.1
+`421/439` seeded counterexamples were on the deterministic active `chi_active>1` side; the remaining 18 were close to the boundary on the opposite side. `312/439` had `x*z<0`.
 
-**PASS_WITH_ALL_FRESH_PATHS_ADMISSIBLE** under frozen S0-S6 gates.
+A post-hoc weak-measurement perturbative derivation gives
 
-Canonical run: `33248271329`
-Artifact: `9713536443`
-Artifact SHA-256: `a40752981daa19f768c4216effff311c07671fb8bf494d20957a958208644581`
-Canonical result:
-`stability_arc/measurement_conditioned/secular_continuation_v01/SECULAR_CONTINUATION_MODE_CORRESPONDENCE_RESULT_v0.1.md`
+`S = -(1-z^2) + ((1-z^2)*delta - 2*omega*x*z)/sqrt(delta^2-4*omega^2)`
 
-The audit tracked invariant spectral clusters on fresh controls, preserved conjugate pairs, and refused degeneracy, collision, and exact physical-resolvent poles where preregistered.
+and predicts
 
-### Conditioning-dark / active-sector factorization v0.1
+`(alpha_rec-alpha_phys)/q -> 2*S`, `q=eta*kappa`,
 
-**PASS** under frozen F0-F7 gates.
+on the low-kappa overdamped branch away from the repeated-root singularity.
 
-Canonical run: `33250353613`
-Execution commit: `6d8cb0020038e0e0831fe858890c009e48247fd3`
-Artifact: `9714162157`
-Artifact SHA-256: `134a131d17ee9e5ca45a0cbbe4830f199a30df256194eb465999b6fb42dd3429`
-Result JSON SHA-256: `59644460988d8775fa2b72e3d51b8eea480d3fa83bfb64bea17339208f125fda`
-Canonical result:
-`stability_arc/measurement_conditioned/dark_active_factor_v01/CONDITIONING_DARK_ACTIVE_FACTOR_RESULT_v0.1.md`
+On the exposed stress data this post-hoc predictor localized most counterexamples, but those checks are discovery evidence only. They generated the next fresh preregistered test.
 
-The maximal conditioning-dark subspace is reconstructed outcome-free as
+## ACTIVE: prospective failure-mechanism test v0.1
 
-`D = ker([V^T; V^T A; ...; V^T A^(n-1)])`.
+Live workflow:
 
-For the fresh qubit controls, `dim ker(V^T)=2` but only a one-dimensional subspace is dynamically invariant. The common dark factor is exact and all deterministic conditioning-induced characteristic change is confined to the remaining 2D active quotient. Degenerate and defective attribution controls REFUSED as required.
+- run `33256684197`;
+- workflow `Stability Arc conditioning failure mechanism v0.1`;
+- head commit `1574ca67fd37e7ded46a886b8056cbbfac9bce8f`.
 
-### Active-quotient scalar admissibility v0.1
+Preregistration:
+`stability_arc/measurement_conditioned/conditioning_failure_mechanism_v01/PREREGISTRATION_CONDITIONING_FAILURE_MECHANISM_v0.1.md`
 
-**PASS** under frozen A0-A7 gates.
+This uses fresh seed `2026082903` and an outcome-free balanced panel of 64 analytic `S>=+0.10` fixtures plus 64 `S<=-0.10` fixtures, all safely on the low-kappa overdamped branch away from the repeated-root singularity. Each is evaluated at `eta={1e-3,1e-4,1e-5}`.
 
-Canonical first run: `33252642667`
-Execution commit: `e6833f60cb6591dc00b6be9e6403a6e5ed48b867`
-Artifact: `9714831463`
-Artifact SHA-256: `9aa92ed8d0a8f851b06c4723d161a350049fb9fbc453d64a3106af2d39e77c6c`
-Result JSON SHA-256: `66ef426d61d0e1a850a4abe1a7fcfe09bccd88d6f870b0a4b0fb2024c406fa34`
-Canonical result:
-`stability_arc/measurement_conditioned/active_quotient_scalar_v01/ACTIVE_QUOTIENT_SCALAR_ADMISSIBILITY_RESULT_v0.1.md`
+It prospectively tests:
 
-When the independently reconstructed active quotient is exactly 2D, real, asymptotically stable, identifiable, nondefective, and coordinate-valid, the deterministic coordinate
+1. sign of `alpha_rec-alpha_phys` against sign of `S`;
+2. convergence of `(alpha_rec-alpha_phys)/q` to `2*S`;
+3. first-order magnitude accuracy as `q -> 0`.
 
-`chi_active = -tr(A_A)/(2 sqrt(det(A_A)))`
+No parameter, acceptance rule, sign threshold, magnitude threshold, or eta level may change after outcome exposure. A failure becomes the next mechanism-boundary signal.
 
-is licensed separately for physical and record-conditioned channels. The full 3x3 generators remain `FULL_MATRIX_REQUIRED`; the stochastic term remained uncompressed at this stage.
+## Post-hoc class-monotonicity candidate
 
-A redundant orchestration-only run `33252664549` reproduced the identical result JSON hash and does not supersede the first canonical execution.
+The H2 stress result observed no STABLE -> UNSTABLE transitions and 584 UNSTABLE -> STABLE transitions. This was not preregistered and is not promoted.
 
-### Stochastic dark/active compatibility and quotient closure v0.1
-
-**PASS** under frozen S0-S7 gates.
-
-Canonical run: `33255726584`
-Execution commit: `2394f836902bddc934eda3fae1cd31e71a7c27d9`
-Artifact: `9715736382`
-Artifact SHA-256: `2572a5197475e6d586663b4607f4ce5ff087a302fead240ccb7b39900674d360`
-Result JSON SHA-256: `985f21fdd278c44503045716eb124b6a9906202b642da3775e8bd623dbdfc21e`
-Canonical result:
-`stability_arc/measurement_conditioned/stochastic_dark_active_v01/STOCHASTIC_DARK_ACTIVE_QUOTIENT_RESULT_v0.1.md`
-
-Frozen source identities:
-
-- preregistration SHA-256 `cd201a8279860dbf14708c7c744fdc8fa59487b4f8bf52b2546fcf078ab6e40a`;
-- code SHA-256 `3a8b969d656d9035050fe66073dc1bf3ae9735906b7432a7211b3e671a135164`;
-- workflow SHA-256 `e67708350d88f3b141205a38d36af8133a0e12c1ec6a1f13755509a502d5bdef`.
-
-For all three fresh quantum controls, the independently reconstructed deterministic dark subspace also satisfied
-
-`B D subset D`.
-
-The maximum stochastic leakage residual was `2.900837493222097e-17`. Therefore the full local multiplicative-noise SDE descends exactly to the same two-dimensional quotient:
-
-`d q = A_A q dt + B_A q dW`.
-
-The quotient intertwining identities
-
-`L A = A_A L`
-
-and
-
-`L B = B_A L`
-
-held to `2.669225551699129e-16`, and the second-moment intertwining
-
-`(L tensor L) K(A,B) = K(A_A,B_A) (L tensor L)`
-
-held to `2.72301505788164e-16`. Direct full-vs-quotient stochastic trajectories and covariance propagation agreed to `5.551115123125783e-17`.
-
-The result survived the frozen non-orthogonal complement shear and active-basis change at roundoff. All refusal controls returned exactly the preregistered states, including `REFUSE_STOCHASTIC_LEAKAGE`.
-
-The dark coordinate is **not** claimed to be noise-free. The licensed statement is exact stochastic quotient closure: active projected dynamics do not depend on which representative is chosen along the dark fiber.
-
-The stochastic pair remains
-
-`STOCHASTIC_PAIR_NOT_COMPRESSED`.
-
-No noise-aware scalar is licensed.
-
-## Current theoretical consequence
-
-The measurement-conditioned branch now supports the following outcome-free hierarchy:
-
-1. separate physical and same-record tangent dynamics are valid;
-2. measurement conditioning enters the deterministic drift through a low-rank bridge;
-3. an exact dynamically invariant conditioning-dark factor can be reconstructed from the physical generator and measurement functional;
-4. all deterministic conditioning-induced spectral change lies in a 2D active quotient for the admitted qubit controls;
-5. a deterministic `chi_active` is licensed only on that admitted 2D quotient;
-6. the same dark factor is also invariant under the multiplicative stochastic tangent matrix for fresh controls;
-7. therefore the **full stochastic local tangent SDE**, not merely its drift, descends exactly to the same 2D active quotient.
-
-This removes the previous stochastic-leakage objection to using the active quotient as the correct reduced state space. It does **not** remove stochasticity from the problem and does not make deterministic `chi_active` a complete stochastic stability coordinate.
-
-## Next justified frontier
-
-The next safe question is the **mean-square stability geometry of the exact 2D stochastic active quotient**.
-
-The quotient second moment is three-dimensional. A new outcome-free phase should derive and freeze the real 3x3 symmetric second-moment generator for `(A_A,B_A)`, its coordinate-invariant characteristic coefficients, and the exact cubic Routh-Hurwitz stability conditions. It should explicitly distinguish deterministic damping morphology (`chi_active`, including the critical-damping boundary) from stochastic mean-square stability loss.
-
-A suitable next audit must, before execution:
-
-- use fresh quantum fixtures and independent synthetic controls;
-- verify induced-coordinate invariance of the quotient second-moment characteristic polynomial;
-- verify the cubic Routh-Hurwitz classifier against direct eigenvalue signs and direct covariance evolution;
-- include exact stable, unstable, and boundary controls;
-- include noiseless oscillator controls on both sides of and at `chi=1` to test whether critical damping is or is not a mean-square stability boundary;
-- preserve physical and record-conditioned channels separately;
-- return `MEAN_SQUARE_INVARIANTS_REQUIRED` unless a later independently derived scalar is mathematically justified;
-- use no historical localization or measurement-performance outcome to choose coefficients, margins, thresholds, or preferred channel.
-
-No claim connecting `chi_active` to localization, collapse, or measurement quality is licensed yet.
-
-## GFSA state
-
-GFSA v0.7.2 package validation, C18, OBS18, OBS19, external-interface licensing, and observable-only EP firewall remain closed PASS.
-
-The external numerical-admission lane remains quarantined because the exact authentic frozen v0.7 external-candidate contract has not been recovered. Candidate response values must not be inspected, plotted, summarized, filtered, or scored until that contract is recovered, persisted, hashed, and bound.
-
-No missing scientific rule may be reconstructed from memory, gate names, or outcomes.
+It may become a future fresh prospective hypothesis or symbolic proof target after the current failure-mechanism test. It may not be treated as established from the H2 stress data alone.
 
 ## QuTiP state
 
-QuTiP 5.3.1 runtime admission v0.1 remains `RUNTIME_ADMITTED`.
+QuTiP 5.3.1 runtime admission remains `RUNTIME_ADMITTED`.
 
 Historical v0.6 notebook reproduction remains open. Expected historical notebook SHA-256:
 `be5b0eb655dc7ab2212a5176123804f798992dbe3e4e5a8bda56537d65bc9d82`.
 
-Runtime admission is not a substitute for recovering/reproducing the historical notebook.
-
-## Failure-signal state
-
-Failures remain evidence and cannot be deleted by later PASS results.
-
-- run `33231598000`: **MECHANICAL / CI CONFIGURATION**, before scientific execution;
-- run `33234191815`: **MATHEMATICAL SPECIFICATION / REPRESENTATION FAIL**, permanently retained;
-- historical Phase 3Y Y2 FAIL -> fresh Phase 3Z remains the canonical precedent for failure-driven refinement without evidentiary recycling.
-
-Stochastic leakage, degeneracy, defectivity, collision, non-invariant nullspace, physical-pole, quotient-dimension, instability, nonpositive determinant, non-real quotient, coordinate failure, and nonidentifiable-dark-factor states are explicit refusal regions, not invitations to loosen thresholds.
+Runtime admission is not a substitute for authentic notebook recovery/reproduction.
 
 ## Anti-circularity state
 
-- same-noise and same-record channels remain separate inside every joint representation;
-- joint/conglomerate analysis is allowed, but constituent identities may not be erased;
-- no average, weighting, mode pairing, scalar reduction, branch label, threshold, or preferred representation is selected from localization outcomes;
-- the v0.1 joint failure remains failed;
-- successor audits use fresh outcome-free controls and frozen gates;
-- deterministic `chi_active_phys` and `chi_active_rec` are separately licensed only on admitted deterministic 2D quotients;
-- stochastic quotient closure is now independently licensed, but the pair `(A_A,B_A)` remains uncompressed;
+- the 24/24 H1 support remains bounded to its original sample;
+- generalized H2 remains failed despite the earlier H1 pass;
+- all 441 H2 counterexamples are retained;
+- the perturbative mechanism is explicitly post-hoc until the fresh run resolves it;
+- same-noise and same-record channels remain separate inside all joint analysis;
+- no stochastic scalar is licensed;
+- no localization outcome has been used to choose the measurement-conditioned representations, failure wedge, or current mechanism panel;
 - GFSA external candidate values remain sealed.
 
-## Blockers
+## Current blockers
 
-- GFSA external admission: exact v0.7 contract/source package absent;
-- historical QuTiP reproduction: authentic original notebook/source absent;
+- GFSA external numerical admission: exact frozen v0.7 contract/source package absent;
+- historical QuTiP comparison: authentic original notebook/source absent;
 - historical Phase 4A: PENDING/INCOMPLETE.
 
-None blocks the mean-square stability geometry audit.
+None blocks the active fresh failure-mechanism test.
+
+## Queue
+
+### COMPLETED
+
+- stochastic active quotient closure;
+- mean-square 3x3 invariant geometry;
+- bounded 24-case prospective H1 PASS;
+- broad 4112-case generalized H2 falsification;
+- full preservation and post-hoc investigation of the H2 failure.
+
+### ACTIVE
+
+- run `33256684197`: prospective weak-measurement mechanism falsification/validation.
+
+### NEXT
+
+- if mechanism PASS: preserve it as a bounded mechanistic closure, then preregister an adversarial class-monotonicity test or attempt a symbolic sufficient-condition proof;
+- if mechanism FAIL: retain the failure and investigate the mismatch region before any new hypothesis;
+- independently continue authentic v0.7 contract and historical QuTiP-source recovery when durable source material becomes available.
 
 ## User action
 
