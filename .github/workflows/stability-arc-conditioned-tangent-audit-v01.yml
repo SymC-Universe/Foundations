@@ -6,7 +6,8 @@ on:
     branches:
       - agent/stability-arc-gfsa-v072
     paths:
-      - 'stability_arc/measurement_conditioned/**'
+      - 'stability_arc/measurement_conditioned/PREREGISTRATION_CONDITIONAL_TANGENT_DERIVATION_AUDIT_v0.1.md'
+      - 'stability_arc/measurement_conditioned/code/conditional_tangent_audit_v01.py'
       - '.github/workflows/stability-arc-conditioned-tangent-audit-v01.yml'
 
 permissions:
