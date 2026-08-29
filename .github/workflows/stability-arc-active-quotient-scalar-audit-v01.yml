@@ -76,3 +76,5 @@ jobs:
           path: stability_arc/measurement_conditioned/active_quotient_scalar_v01/results/
           if-no-files-found: error
           retention-days: 90
+
+# orchestration-only launch marker; no scientific input changed
