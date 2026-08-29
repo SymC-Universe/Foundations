@@ -16,12 +16,12 @@ Canonical working branch: `agent/stability-arc-gfsa-v072`
 
 ### Conditional tangent derivation v0.1
 
-PASS under frozen T0-T4 gates.
+**PASS** under frozen T0-T4 gates.
 
 Canonical result:
 `stability_arc/measurement_conditioned/CONDITIONAL_TANGENT_DERIVATION_AUDIT_RESULT_v0.1.md`
 
-This closes the registered same-noise and same-record tangent identities and exact real 2x2 reduction only. It does not establish localization prediction or a general scalar chi.
+This closes the registered same-noise physical tangent and same-record inference tangent identities plus the exact real 2x2 reduction. It does not establish localization prediction or a general scalar chi.
 
 ### Joint-channel representation v0.1
 
@@ -40,11 +40,11 @@ Failure investigation established three issues:
 Canonical failure analysis:
 `stability_arc/measurement_conditioned/representation_v01/FAILURE_SIGNAL_REPORT_v0.1.md`
 
-The v0.1 FAIL is not erased by later correction.
+The v0.1 FAIL remains failed and is not erased by later correction.
 
 ### Corrective joint-channel representation v0.2
 
-**PASS** under frozen R0-R5 gates using three fresh parameter/base-state fixtures and an independent full-map finite-difference reconstruction.
+**PASS** under frozen R0-R5 gates on fresh fixtures with independent full-map reconstruction.
 
 Canonical run: `33234401976`
 Execution commit: `1840750ce94ad5f3a62d9199ab14c9aee81dfe68`
@@ -59,66 +59,116 @@ Licensed representation:
 
 `C = (A_phys, A_rec, DeltaA, B, A_joint)`
 
-where the same-noise and same-record channels remain individually recoverable, `DeltaA=A_rec-A_phys` is the conditioning contribution, `B` is the fully normalized shared stochastic tangent matrix for the registered convention, and `A_joint=diag(A_phys,A_rec)` preserves both channel spectra.
-
-For the three fresh v0.2 fixtures:
-
-- corrected unconditional-control max error: `1.1102230246251565e-16`;
-- fully normalized `B` reconstruction max error: `3.209545684779158e-10`;
-- independently reconstructed `A_phys` max error: `3.1673200728832285e-09`;
-- independently reconstructed `A_rec` max error: `2.632416729042575e-09`;
-- `DeltaA` identity max residual: `5.551115123125783e-17`;
-- `DeltaA` numerical rank: 1 for all fresh fixtures under the frozen convention;
-- joint characteristic-polynomial max residual: `3.552713678800501e-15`;
-- all registered scalar-refusal controls passed.
-
-Full 3x3 channel matrices remain `FULL_MATRIX_REQUIRED`. No combined scalar is licensed.
-
-## Current frozen next frontier
+with constituent channel identities preserved. Full 3x3 channel matrices remain `FULL_MATRIX_REQUIRED`; no combined scalar is licensed.
 
 ### Stochastic second-moment / covariance lift v0.1
 
-**PREREGISTERED / FROZEN BEFORE EXECUTION.**
+**PASS** under frozen M0-M6 gates.
 
-Preregistration:
-`stability_arc/measurement_conditioned/moment_lift_v01/PREREGISTRATION_STOCHASTIC_MOMENT_LIFT_AUDIT_v0.1.md`
+Canonical run: `33234878303`
+Execution commit: `68d1eb37df71b308add030e6bf9e7064b91faa3e`
+Artifact: `9709601806`
+Artifact SHA-256: `c95b21a8d54480b5e36443c278d5b90a0f6e631d6bcd3df29db7237179484bed`
+Result JSON SHA-256: `0caf92f2ab9d7667b472124340176d30cf500f5c41e083ae2a1e7113496c2316`
 
-The reason for this phase is mathematical, not outcome-driven: drift spectra alone do not contain the full stability information of the multiplicative-noise local SDE
+Canonical result:
+`stability_arc/measurement_conditioned/moment_lift_v01/STOCHASTIC_MOMENT_LIFT_AUDIT_RESULT_v0.1.md`
 
-`d r = A r dt + B r dW`.
+The closed stochastic tangent
 
-The frozen Itô lift is
+`d r = A r dt + B r dW`
+
+has the consistent second-moment lift
 
 `dP/dt = A P + P A^T + B P B^T`
 
-for `P=E[r r^T]`, with column-major vectorization
+and column-major generator
 
 `K(A,B) = I tensor A + A tensor I + B tensor B`.
 
-The preregistration preserves separate and joint moment objects:
+Key frozen audit values:
 
-- `K_phys`;
-- `K_rec`;
-- `DeltaK=K_rec-K_phys`;
-- 6x6 symmetric-covariance projections `K_phys_sym` and `K_rec_sym`;
-- `DeltaK_sym`;
-- `K_joint_sym=diag(K_phys_sym,K_rec_sym)`.
+- M0 vectorization max residual `0.0`;
+- M1 symmetric projection max residual `2.220446049250313e-16`;
+- M2 independent Richardson covariance reconstruction max residual `1.0191847366058937e-12` versus gate `2e-9`;
+- M3 comparative moment identity max residual `2.220446049250313e-16`;
+- M4 coordinate-similarity max residual `6.661338147750939e-16`;
+- M5 joint block recovery max residual `0.0`;
+- M6 noiseless spectral-inheritance max mismatch `2.673771110915334e-15`.
 
-No scalar compression is licensed.
+All 6x6 and 12x12 moment objects remain `FULL_MOMENT_OPERATOR_REQUIRED`.
 
-The moment-lift audit is frozen on three fresh parameter/base-state fixtures not used in joint-channel v0.1 or v0.2. It includes:
+### Information-rank secular bridge v0.1
 
-- explicit column-major vectorization checks;
-- symmetric covariance-subspace closure;
-- independent deterministic sigma-point plus `+/-sqrt(dt)` noise-node covariance propagation;
-- Richardson removal of the known Euler remainder with fixed `dt=1e-3` and `5e-4`;
-- comparative `DeltaK` identity checks;
-- common-coordinate covariance checks;
-- joint block-identity preservation;
-- scalar refusal;
-- a noiseless 2x2 pairwise-eigenvalue-sum inheritance control that does not license applying the original scalar chi directly to the moment operator.
+**PASS** under frozen I0-I6 gates. This is the current theoretical frontier milestone.
 
-No localization outcome was consulted in choosing this phase, fixtures, metrics, or gates.
+Canonical run: `33245531943`
+Execution commit: `3667e3a41f73e66552bd0c94cc8dfcfa61aff77e`
+Artifact: `9712708402`
+Artifact SHA-256: `465e5bf237e202e3d04855b0dc4f512962c3778cf4ec57697f14c1bfe11365a7`
+Result JSON SHA-256: `8a07e8833ca67f7ca13aacd939e4cd5194de9d56afac2e84d794e119a12fdfb2`
+
+Canonical preregistration:
+`stability_arc/measurement_conditioned/information_rank_v01/PREREGISTRATION_INFORMATION_RANK_SECULAR_BRIDGE_v0.1.md`
+
+Canonical result:
+`stability_arc/measurement_conditioned/information_rank_v01/INFORMATION_RANK_SECULAR_BRIDGE_RESULT_v0.1.md`
+
+The frozen audit establishes the following local comparative structure under the registered continuous-measurement convention.
+
+Each scalar measurement record contributes one outer-product conditioning correction. For `m` scalar records,
+
+`DeltaA = U V^T = sum_j u_j v_j^T`
+
+and therefore
+
+`rank(DeltaA) <= m`.
+
+The same-record inference generator is thus a rank-limited update of the same-noise physical generator:
+
+`A_rec = A_phys + U V^T`.
+
+Away from physical resolvent poles,
+
+`det(zI-A_rec)/det(zI-A_phys) = det(I_m - V^T (zI-A_phys)^(-1) U)`.
+
+For one scalar record, the comparative bridge is a scalar meromorphic secular factor, but this does **not** scalarize either full generator. At physical poles the resolvent ratio is refused and the global adjugate characteristic-polynomial identity remains the valid representation.
+
+Frozen audit values:
+
+- independent quantum Jacobian reconstruction max error `1.0115218218587074e-08`;
+- rank-one global characteristic identity max residual `3.794299872214038e-15`;
+- determinant-lemma secular residual max `7.020296723414116e-16`;
+- coordinate-invariance residual max `2.2215299868541707e-16`;
+- all three fresh quantum fixtures had `rank(DeltaA)=1`;
+- the `m=2` and `m=3` controls had update ranks 2 and 3, satisfying the registered information-rank bound.
+
+The second-moment conditioning change obeys the registered bounds
+
+`rank(DeltaK) <= 2 n r-r^2`
+
+and
+
+`rank(DeltaK_sym) <= r(2 n-r+1)/2`,
+
+where `r=rank(DeltaA)`. For one effective scalar record these reduce to `<=2n-1` and `<=n`.
+
+In all five executed controls the registered upper bounds were numerically saturated. That saturation is retained as an observation only; equality was not preregistered as a universal claim and is not promoted.
+
+Interpretation remains:
+
+- `PHYSICAL_GENERATOR=FULL_MATRIX_REQUIRED`;
+- `RECORD_GENERATOR=FULL_MATRIX_REQUIRED`;
+- `MOMENT_GENERATOR=FULL_MOMENT_OPERATOR_REQUIRED`;
+- `SECULAR_OBJECT=COMPARATIVE_ONLY`.
+
+No localization predictor, preferred mode, scalar chi, or chi=1 optimum is licensed by this result.
+
+## Scientific significance of the current frontier
+
+The same-noise and same-record descriptions are now connected without conflation. The information carried by the measurement record enters the local inference-stability drift through a rank-limited bridge whose rank is bounded by the number of scalar record channels. Consequently, the **comparative** spectral relation can be represented through an `m x m` secular determinant even though the physical, inference, and moment generators themselves remain full-dimensional objects.
+
+This is a new structural result inside the measurement-conditioned Stability Arc investigation. It is theoretical/local and still requires prospective connection to physical measurement behavior before any stronger Stability Arc claim is warranted.
 
 ## GFSA state
 
@@ -153,24 +203,20 @@ Failures remain evidence and cannot be deleted by later PASS results.
 ## Anti-circularity state
 
 - same-noise and same-record channels remain separate inside every joint representation;
-- joint/conglomerate analysis is allowed and required, but constituent identities may not be erased;
+- joint/conglomerate analysis is required, but constituent identities may not be erased;
 - no average, weighting, mode pairing, scalar reduction, or preferred representation may be selected from localization outcomes;
 - v0.1 failure remains failed;
 - v0.2 corrective PASS used fresh fixtures and independent reconstruction;
-- moment-lift v0.1 is frozen before execution on fresh fixtures;
+- moment-lift v0.1 and information-rank v0.1 were frozen before execution on fresh controls;
 - GFSA external candidate values remain sealed.
 
-## Workflow hygiene
+## Next justified frontier
 
-Broad path triggers that caused redundant reruns of frozen audits were narrowed mechanically. This changed orchestration only, not scientific inputs or conclusions.
-
-## Active work
-
-1. adversarially review the frozen moment-lift v0.1 preregistration for algebraic orientation, self-certification, hidden scalar assumptions, and failure modes;
-2. implement the frozen moment-lift audit without changing its scientific contract;
-3. launch it in GitHub Actions only after the implementation matches the frozen contract;
-4. preserve PASS/FAIL/HOLD exactly and investigate any failure before formulating a successor;
-5. after moment-level closure, develop outcome-free cross-channel mode correspondence with ambiguity/degeneracy refusal before any prospective localization test.
+1. Freeze an outcome-free **secular-continuation / mode-correspondence audit** that uses the information-rank bridge to track physical-to-inference spectral motion while explicitly refusing ambiguous, degenerate, near-pole, or branch-collision cases.
+2. Preserve conjugate-pair / invariant-subspace structure rather than forcing one-to-one eigenvector matches when the mathematics does not support them.
+3. Treat the observed saturation of the moment-rank bounds as a post-hoc hypothesis only. If pursued, test equality on genuinely fresh controls under a new version.
+4. Only after representation and correspondence closure, preregister a prospective measurement/localization test on untouched systems. Historical localization outcomes remain unavailable for choosing metrics, modes, thresholds, or combinations.
+5. Independently continue exact-source recovery for the authentic GFSA v0.7 external-admission contract.
 
 ## Blockers
 
@@ -178,7 +224,7 @@ Broad path triggers that caused redundant reruns of frozen audits were narrowed 
 - historical QuTiP reproduction: authentic original notebook/source absent;
 - historical Phase 4A: PENDING/INCOMPLETE.
 
-None blocks the moment-lift audit.
+None blocks the outcome-free secular-continuation work.
 
 ## User action
 
