@@ -1,0 +1,44 @@
+# Operating-system and editor files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Python transient files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+.venv/
+venv/
+
+# LaTeX transient build products
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.lot
+*.nav
+*.out
+*.run.xml
+*.snm
+*.synctex.gz
+*.toc
+*.vrb
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# Do not ignore evidence-bearing PDF, ZIP, JSON, CSV, or data artifacts globally.
+# Those files may be intentional parts of the scientific record.
