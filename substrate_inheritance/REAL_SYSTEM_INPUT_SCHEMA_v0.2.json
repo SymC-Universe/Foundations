@@ -1,0 +1,94 @@
+{
+  "schema": "substrate-inheritance-real-system-input-v0.2",
+  "status": "FROZEN_INPUT_CONTRACT_BEFORE_REAL_SYSTEM_INGESTION",
+  "supersedes": "REAL_SYSTEM_INPUT_SCHEMA_v0.1.json",
+  "supersession_reason": "The pre-ingestion review found that v0.1 referred to a supplied matrix-symmetry tolerance without requiring one. v0.2 makes the numerical tolerance explicit before any real-system record is ingested. No physical result was available or used.",
+  "purpose": "Define the minimum provenance and carrier data required to ingest a real mechanical parent/child system without selecting favorable modes or retroactively filling missing evidence.",
+  "supported_channel": "mechanical_harmonic",
+  "required_top_level_fields": [
+    "schema",
+    "system_id",
+    "system_role",
+    "channel",
+    "correspondence_protocol",
+    "parent",
+    "child",
+    "shared_coordinate_map",
+    "provenance"
+  ],
+  "allowed_system_roles": [
+    "development_only",
+    "prospective_validation",
+    "contrast_limit"
+  ],
+  "correspondence_protocol_required": "substrate_inheritance/CORRESPONDENCE_PROTOCOL_v0.2.json",
+  "parent_required_fields": [
+    "object_id",
+    "object_kind",
+    "coordinate_ids",
+    "masses",
+    "stiffness_matrix",
+    "matrix_units",
+    "mass_units",
+    "symmetry_absolute_tolerance",
+    "source_artifact_sha256"
+  ],
+  "child_required_fields": [
+    "object_id",
+    "object_kind",
+    "coordinate_ids",
+    "masses",
+    "stiffness_matrix",
+    "matrix_units",
+    "mass_units",
+    "symmetry_absolute_tolerance",
+    "source_artifact_sha256"
+  ],
+  "allowed_object_kinds": [
+    "mass_weightable_hessian",
+    "harmonic_force_constant_matrix"
+  ],
+  "shared_coordinate_map_definition": "List of objects with parent_coordinate_id and child_coordinate_id. Every parent coordinate must be mapped exactly once to a unique child coordinate by physical identity before target carrier inspection. If the physical calculations do not share a complete comparable parent coordinate set, construct or justify the comparable object upstream rather than optimizing a subset here.",
+  "provenance_required_fields": [
+    "source_repository",
+    "source_ref",
+    "source_commit",
+    "mapping_frozen_before_target_carrier_inspection",
+    "target_kinetics_used_to_choose_mapping",
+    "chi_used_to_choose_mapping"
+  ],
+  "hard_refusals": [
+    "missing source hashes",
+    "invalid SHA-256 syntax",
+    "duplicate coordinate IDs",
+    "non-square or dimensionally inconsistent matrices",
+    "nonpositive masses",
+    "negative or nonfinite numerical tolerance",
+    "matrix asymmetry outside the declared software/numerical tolerance",
+    "unit mismatch between parent and child without an explicit conversion upstream",
+    "incomplete or duplicate parent coordinate mapping",
+    "duplicate child coordinates in the shared mapping",
+    "mapping not frozen before target carrier inspection",
+    "target kinetics used to choose mapping",
+    "chi used to choose mapping"
+  ],
+  "computed_outputs": [
+    "mass_weighted_parent_eigenvalues",
+    "mass_weighted_child_eigenvalues",
+    "parent_to_child_projected_modal_overlap_matrix",
+    "child_substrate_participation_weights",
+    "shared_coordinate_mapping_record",
+    "software_admissibility_status"
+  ],
+  "not_computed_or_inferred": [
+    "physical inheritance pass threshold",
+    "substrate inheritance promotion label",
+    "mechanical damping coefficient",
+    "chi",
+    "reaction rate",
+    "barrier height",
+    "electronic hybridization"
+  ],
+  "physical_thresholds_frozen": false,
+  "real_system_result_established": false
+}
