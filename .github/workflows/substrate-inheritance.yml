@@ -66,6 +66,9 @@ jobs:
       - name: Run separate electronic inheritance validation
         run: python -m substrate_inheritance.electronic_validation
 
+      - name: Run real-system adapter validation record
+        run: python -m substrate_inheritance.adapter_validation
+
       - name: Verify outputs are explicitly non-physical
         run: |
           python - <<'PY'
@@ -82,6 +85,7 @@ jobs:
               "discriminability_validation.json": "synthetic_discriminability_strength_validation_only",
               "nonnormal_validation.json": "synthetic_nonnormal_biorthogonal_validation_only",
               "electronic_validation.json": "synthetic_electronic_inheritance_validation_only",
+              "adapter_validation.json": "synthetic_real_system_adapter_validation_only",
           }
           records = {}
           for filename, scope in expected.items():
@@ -98,6 +102,11 @@ jobs:
           assert records["identifiability_validation.json"]["single_scalar_response_identifies_unique_coupling"] is False
           assert records["electronic_validation.json"]["mechanical_damping_inferred"] is False
           assert records["electronic_validation.json"]["electronic_hybridization_identified_with_mechanical_gamma"] is False
+          adapter = records["adapter_validation.json"]["analysis"]
+          assert adapter["physical_inheritance_threshold_applied"] is False
+          assert adapter["inheritance_promotion_label_assigned"] is False
+          assert adapter["chi_computed"] is False
+          assert adapter["damping_computed"] is False
           print("Synthetic evidence guards passed")
           PY
 
@@ -115,3 +124,4 @@ jobs:
             substrate_inheritance/results/discriminability_validation.json
             substrate_inheritance/results/nonnormal_validation.json
             substrate_inheritance/results/electronic_validation.json
+            substrate_inheritance/results/adapter_validation.json
