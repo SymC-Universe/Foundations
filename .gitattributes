@@ -1,0 +1,23 @@
+# Normalize text files across platforms
+* text=auto
+
+*.md text eol=lf
+*.txt text eol=lf
+*.tex text eol=lf
+*.bib text eol=lf
+*.py text eol=lf
+*.json text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.cff text eol=lf
+*.csv text eol=lf
+*.tsv text eol=lf
+
+# Preserve binary scientific and archival artifacts as binary
+*.pdf binary
+*.zip binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
