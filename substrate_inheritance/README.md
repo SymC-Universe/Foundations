@@ -2,6 +2,8 @@
 
 Status: ACTIVE INVESTIGATION. Computational evidence is being developed prospectively. Nothing in this directory establishes a universal substrate-inheritance law.
 
+Current-status authority: this README, the active contract, and the current computational records govern the present program. Older papers, repository metadata, release text, or prior README language are OUTDATED wherever they conflict with these current qualifications. Historical artifacts remain preserved for provenance rather than silently rewritten.
+
 This branch consolidates the current Foundations generator-first framework with the parts of Stability Arc, Chemistry/ChemSA, and the Atlas program that are needed to test substrate inheritance without pooling physically distinct coordinates.
 
 ## Core distinction
@@ -50,7 +52,24 @@ The initial engine implements mathematics that can be validated without physical
 - eigenvalue-preserving modal-scramble controls;
 - promotion logic that distinguishes influence, conditional inheritance, and inheritance.
 
-The synthetic validation suite is a software and identifiability test only. Its numerical thresholds are not physical preregistrations and must not be reused as real-system inheritance criteria.
+The base synthetic validation and adversarial unit tests are established in GitHub Actions and have passed CI. They remain software and identifiability validation only, not physical evidence.
+
+## Ground-truth adversarial benchmark battery
+
+A second synthetic layer now tests ten deliberately constructed cases with known ground truth before any real-system inheritance threshold is frozen:
+
+1. No coupling: verifies that zero substrate coupling does not manufacture influence.
+2. Influence only: verifies that a nonzero parent-to-child response is not automatically promoted to inheritance.
+3. Scalar conditional mapping: verifies that accurate prediction without intervention or specificity remains conditional.
+4. Modal inheritance with changed scalar values: verifies that carrier inheritance does not require numerical scalar equality.
+5. Frequency false friend: preserves eigenvalues while scrambling modal geometry to test whether frequency agreement can create a false inheritance claim.
+6. Mode splitting: tests one parent carrier distributed across a child subspace rather than forcing one-to-one vector matching.
+7. Degenerate-subspace rotation: tests whether basis rotation inside the same physical subspace is correctly retained rather than mislabeled as inheritance loss.
+8. Coupling rewiring: keeps substrate structure fixed while changing coupling assignment to test the conglomeration layer separately from the spectrum.
+9. Finite-bath recurrence: verifies that a finite harmonic bath retains recurrence and is not silently converted into irreversible friction.
+10. Full prospective synthetic inheritance: combines frozen mapping, exact child prediction, intervention sensitivity, and an eigenvalue-preserving specificity null.
+
+These benchmark cases use software-level numerical tolerances only. They do not establish or imply physical acceptance thresholds for Na/Cu, CO/Cu, H/Ru, or any other real system.
 
 ## Physical-system sequence
 
@@ -90,7 +109,8 @@ Current program status is an ongoing investigation aimed at developing computati
 ## Current branch status
 
 - Architecture: active and prospective.
-- Synthetic mathematics/software validation: being established in GitHub Actions.
+- Base synthetic mathematics/software validation: established and CI-tested.
+- Ten-case adversarial ground-truth benchmark battery: implemented and under CI validation.
 - Physical inheritance thresholds: not frozen yet.
 - Real-system inheritance result: not established.
 - Universal inheritance claim: not established.
