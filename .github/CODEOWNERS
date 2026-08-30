@@ -1,0 +1,6 @@
+# Default repository owner
+* @SymCUniverse
+
+# Active scientific-program and workflow changes require owner review
+/.github/ @SymCUniverse
+/substrate_inheritance/ @SymCUniverse
