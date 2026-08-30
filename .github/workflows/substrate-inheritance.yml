@@ -43,7 +43,7 @@ jobs:
         run: python substrate_inheritance/inheritance_engine.py
 
       - name: Run ground-truth benchmark battery
-        run: python substrate_inheritance/ground_truth_benchmarks.py
+        run: python -m substrate_inheritance.ground_truth_benchmarks
 
       - name: Verify outputs are explicitly non-physical
         run: |
