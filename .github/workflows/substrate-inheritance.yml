@@ -36,25 +36,36 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install numpy pytest
 
-      - name: Run adversarial unit tests
-        run: python -m pytest -q substrate_inheritance/test_inheritance_engine.py
+      - name: Run adversarial unit and benchmark tests
+        run: python -m pytest -q substrate_inheritance/test_*.py
 
       - name: Run synthetic inheritance validation
         run: python substrate_inheritance/inheritance_engine.py
 
-      - name: Verify output is explicitly non-physical
+      - name: Run ground-truth benchmark battery
+        run: python substrate_inheritance/ground_truth_benchmarks.py
+
+      - name: Verify outputs are explicitly non-physical
         run: |
           python - <<'PY'
           import json
           from pathlib import Path
-          p = Path("substrate_inheritance/results/synthetic_validation.json")
-          data = json.loads(p.read_text())
-          assert data["scope"] == "synthetic_software_validation_only"
-          print("Synthetic scope guard passed")
+
+          base = json.loads(Path("substrate_inheritance/results/synthetic_validation.json").read_text())
+          bench = json.loads(Path("substrate_inheritance/results/ground_truth_benchmarks.json").read_text())
+
+          assert base["scope"] == "synthetic_software_validation_only"
+          assert bench["scope"] == "synthetic_ground_truth_benchmark_only"
+          assert bench["case_count"] == 10
+          assert bench["physical_thresholds_frozen"] is False
+          assert bench["real_system_evidence"] is False
+          print("Synthetic evidence guards passed")
           PY
 
-      - name: Upload synthetic validation record
+      - name: Upload synthetic validation records
         uses: actions/upload-artifact@v4
         with:
           name: substrate-inheritance-synthetic-validation
-          path: substrate_inheritance/results/synthetic_validation.json
+          path: |
+            substrate_inheritance/results/synthetic_validation.json
+            substrate_inheritance/results/ground_truth_benchmarks.json
