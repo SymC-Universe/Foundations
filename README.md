@@ -8,6 +8,19 @@ SymC does **not** currently assert that a single scalar damping ratio universall
 
 Domain-specific applications are maintained separately.
 
+## Research navigation
+
+- **Repository map:** [`REPOSITORY_GUIDE.md`](./REPOSITORY_GUIDE.md)
+- **Scientific and evidence governance:** [`GOVERNANCE.md`](./GOVERNANCE.md)
+- **Contribution and correction policy:** [`CONTRIBUTING.md`](./CONTRIBUTING.md)
+- **Citation metadata:** [`CITATION.cff`](./CITATION.cff)
+- **Security reporting:** [`SECURITY.md`](./SECURITY.md)
+- **Community conduct:** [`CODE_OF_CONDUCT.md`](./CODE_OF_CONDUCT.md)
+- **Intended GitHub-hosting settings:** [`REPOSITORY_SETTINGS.md`](./REPOSITORY_SETTINGS.md)
+- **Active prospective substrate-inheritance program:** [`substrate-inheritance` branch](https://github.com/SymC-Universe/Foundations/tree/substrate-inheritance)
+
+For scientific use, cite the specific paper, dataset, code artifact, DOI, and version whenever available rather than citing the repository generically.
+
 ## Current-status authority
 
 This README and later explicit contracts, reproducibility records, and active investigation records govern the present interpretation of the Foundations program. Historical PDFs, older README language, release notes, and repository metadata may lag the active work and are **OUTDATED wherever they conflict with the current generator-first, carrier-resolved, prospective framework**. Historical artifacts remain preserved for provenance rather than silently rewritten.
@@ -20,7 +33,7 @@ The investigation is ongoing and aims to develop computational evidence for or a
 
 The program retains a coupled **modal + scalar + conglomeration** description. Scalars such as mechanical χ are used only where the governing dynamics license that reduction and remain attached to identified modes or subspaces. Collective coupling, memory, bath structure, non-normal carrier geometry, and electronic versus phononic channel identity are retained rather than forced into one scalar.
 
-The first nine computational method-validation layers and the fail-closed real-system ingestion layer are now closed as successful **synthetic/mathematical/software validation**. The latest full suite passed **62 adversarial/unit tests** in GitHub Actions run `33290655196`. It includes a ten-case ground-truth battery; same-spectrum modal scrambles; coupling rewiring; analytic intervention cross-checks; single-scalar nonidentifiability; coordinate invariance; near-degenerate subspace robustness; finite-bath recurrence; finite-depth versus analytic semi-infinite substrate embedding; weakened-carrier discriminability; non-normal/biorthogonal carrier geometry; a separate electronic block-Hamiltonian inheritance channel; and a provenance-enforcing real-system mechanical adapter.
+The first nine computational method-validation layers and the fail-closed real-system ingestion layer are closed as successful **synthetic/mathematical/software validation**. A hardened reference validation at commit `9a1f357e73a27e532c755649568dde8af0b229cd` passed **62 adversarial/unit tests** in GitHub Actions run `33292821080` under the pinned validation environment. It includes a ten-case ground-truth battery; same-spectrum modal scrambles; coupling rewiring; analytic intervention cross-checks; single-scalar nonidentifiability; coordinate invariance; near-degenerate subspace robustness; finite-bath recurrence; finite-depth versus analytic semi-infinite substrate embedding; weakened-carrier discriminability; non-normal/biorthogonal carrier geometry; a separate electronic block-Hamiltonian inheritance channel; and a provenance-enforcing real-system mechanical adapter.
 
 These computations are **not physical inheritance evidence and do not set physical-system thresholds**. The active branch freezes `CORRESPONDENCE_PROTOCOL_v0.2.json` and `REAL_SYSTEM_INPUT_SCHEMA_v0.2.json` before first real-system inheritance ingestion. The adapter computes carrier and participation information only and explicitly does not assign an inheritance label, damping coefficient, or χ.
 
