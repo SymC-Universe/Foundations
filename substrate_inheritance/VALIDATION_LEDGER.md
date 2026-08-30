@@ -4,7 +4,7 @@ Status: active computational-method evidence record. This ledger does not contai
 
 ## Evidence classes
 
-The records below are classified as software, mathematical, synthetic ground-truth, ensemble-discriminability, identifiability, robustness, embedding-depth, non-normal-carrier, or electronic-channel evidence. None may be promoted to physical substrate-inheritance evidence merely because a validation passes.
+The records below are classified as software, mathematical, synthetic ground-truth, ensemble-discriminability, identifiability, robustness, embedding-depth, non-normal-carrier, electronic-channel, or ingestion-boundary evidence. None may be promoted to physical substrate-inheritance evidence merely because a validation passes.
 
 ## V1: Base mathematical and software validation
 
@@ -84,9 +84,9 @@ Interpretation: in the specified synthetic ensemble, conglomerated response depe
 
 The numerical finite-difference parent-to-child transfer map was compared with an analytic derivative for a diagonal synthetic substrate.
 
-- maximum relative error: approximately `1.12e-9`;
-- mean relative error: approximately `4.17e-10`;
-- 95th percentile relative error: approximately `7.70e-10`.
+- maximum relative error: approximately `1.38e-9` in the current full-suite run;
+- mean relative error: approximately `4.97e-10`;
+- the result remains at numerical-validation precision far below any physical interpretation.
 
 Interpretation: the implemented numerical intervention map reproduces the analytic result to substantially better precision than needed for the current synthetic validation.
 
@@ -125,10 +125,7 @@ Status: PASS as synthetic identifiability validation only.
 
 Across 256 seeded trials, the substrate self-energy was recomputed after consistent orthogonal basis changes and invertible coordinate scalings.
 
-- maximum orthogonal-basis residual: approximately `1.78e-15`;
-- mean orthogonal-basis residual: approximately `2.03e-16`;
-- maximum coordinate-scaling residual: approximately `1.78e-15`;
-- mean coordinate-scaling residual: approximately `1.34e-16`.
+- maximum residuals remained at approximately `1e-15` to `2e-15` numerical scale in the current suite.
 
 Interpretation: the implemented embedding observable is representation-invariant to numerical precision under the tested coordinate transformations.
 
@@ -145,8 +142,7 @@ Near-degenerate sector:
 
 Separated sector:
 
-- mean individual-mode assignment score: approximately `0.999999999222`;
-- 5th percentile individual-mode assignment score: approximately `0.999999997420`.
+- mean individual-mode assignment score remained essentially `1.0`.
 
 Interpretation: near-degenerate individual eigenvectors can rotate strongly under perturbations far smaller than the overall spectral scale while the physical subspace remains essentially unchanged. This validates the frozen rule that crowded or degenerate sectors must be compared as subspaces instead of forcing one-to-one vector identity.
 
@@ -171,7 +167,7 @@ Relative finite-depth error:
 - depth 2: approximately `3.0717e-3`;
 - depth 4: approximately `9.9971e-6`;
 - depth 8: approximately `1.0593e-10`;
-- depth 16: approximately `1.41e-16`.
+- depth 16: approximately machine scale.
 
 Direct matrix inversion and recursive surface-Green-function evaluation agreed at zero or machine-scale residual throughout the tested depths.
 
@@ -211,8 +207,6 @@ Status: PASS as synthetic failure-boundary validation only.
 
 This layer tests a major failure mode of ordinary eigenvector comparison. In a non-normal generator, distinct right eigenvectors can become nearly parallel, while meaningful spectral coordinates require left/right or invariant-projector geometry and explicit conditioning.
 
-### Non-normality sweep
-
 For a three-mode triangular family:
 
 - shear `0.0`: right-eigenvector condition number `1.0`, maximum off-diagonal right-vector overlap `0.0`;
@@ -221,20 +215,9 @@ For a three-mode triangular family:
 - shear `10.0`: condition number approximately `213.770`, off-diagonal overlap approximately `0.990099`;
 - shear `30.0`: condition number approximately `1925.741`, off-diagonal overlap approximately `0.998890`.
 
-The biorthogonal self-correspondence remained the identity to numerical precision for these constructed diagonalizable cases.
+For the near-defective two-dimensional family `[[1,1],[epsilon,1]]`, the condition number rose from approximately `3.16228` at `epsilon=1e-1` to approximately `10000` at `epsilon=1e-8` while the eigenvalue gap collapsed from approximately `0.632456` to `0.0002`.
 
-### Near-defective sweep
-
-For the two-dimensional family `[[1,1],[epsilon,1]]`:
-
-- `epsilon=1e-1`: eigenvalue gap approximately `0.632456`, condition number approximately `3.16228`;
-- `epsilon=1e-4`: gap approximately `0.02`, condition number approximately `100`;
-- `epsilon=1e-6`: gap approximately `0.002`, condition number approximately `1000`;
-- `epsilon=1e-8`: gap approximately `0.0002`, condition number approximately `10000`.
-
-Biorthogonal normalization remained algebraically possible to machine precision, but the exploding condition number is retained as an uncertainty/refusal signal.
-
-A common invertible similarity transformation changed the biorthogonal parent-child correspondence by only approximately `1.11e-16`.
+A common invertible similarity transformation changed the scale-invariant biorthogonal parent-child correspondence only at machine scale.
 
 Interpretation: right eigenvectors alone are insufficient for non-normal inheritance claims. Future non-normal physical records must retain left and right carriers or equivalent invariant projectors/subspaces plus conditioning. Near defectiveness, an algebraically normalized mode is not automatically a robust physical carrier.
 
@@ -244,48 +227,77 @@ Status: PASS as synthetic non-normal method validation only.
 
 The electronic branch uses a block Hamiltonian and retarded Green-function reduction rather than importing mechanical damping language.
 
-### Exact block reduction
+Across the synthetic validation:
 
-Across 81 energy points, the adsorbate Green function from the full block Hamiltonian and the substrate-self-energy reduction agreed with maximum residual approximately `2.84e-15`.
+- the full block-Hamiltonian and reduced adsorbate Green functions agree at approximately `1e-15` numerical scale;
+- basis-transformed electronic self-energy curves agree at approximately `1e-14` numerical scale;
+- in 256 same-spectrum electronic carrier scrambles, the substrate eigenvalue spectrum was preserved at machine scale while the median relative self-energy-curve change was approximately `0.98147`;
+- all 256 same-spectrum electronic scrambles changed the interface response above machine scale.
 
-### Basis invariance
-
-A common basis transformation of the substrate Hamiltonian and interface coupling changed the electronic self-energy curve by at most approximately `4.62e-14`.
-
-### Same-spectrum electronic carrier scramble
-
-Across 256 trials in dimension 5:
-
-- maximum numerical change in the substrate eigenvalue spectrum: approximately `2.66e-15`;
-- mean relative electronic self-energy-curve gap after carrier scrambling: approximately `0.99168`;
-- median relative gap: approximately `0.98147`;
-- 5th to 95th percentile range: approximately `0.46160` to `1.55368`;
-- all 256 trials changed above machine scale.
-
-The finite-system broadening parameter `eta=0.08` is explicitly a resolvent regularizer in this synthetic calculation and is not interpreted as mechanical damping.
+The finite-system broadening parameter is explicitly a resolvent regularizer in this synthetic calculation and is not interpreted as mechanical damping.
 
 Interpretation: in the tested synthetic electronic model, the same scalar energy spectrum does not determine the interface response. Orbital/carrier geometry and coupling matter strongly. Electronic self-energy and hybridization remain electronic-channel objects and are not renamed mechanical `gamma` or automatically added to a phononic damping constant.
 
 Status: PASS as synthetic electronic-channel validation only.
 
+## V10: Fail-closed real-system ingestion adapter validation
+
+A separate real-system input contract and adapter were created before any admissible physical parent/child Hessian entered Foundations.
+
+The active input contract is `REAL_SYSTEM_INPUT_SCHEMA_v0.2.json`. It supersedes v0.1 because a pre-ingestion review found that the first draft referred to a matrix-symmetry tolerance without making that tolerance mandatory. The correction was made before any physical record existed or was inspected.
+
+The mechanical adapter refuses, among other conditions:
+
+- incomplete or duplicate shared-coordinate mappings;
+- mappings chosen after target-carrier inspection;
+- mappings selected using target kinetics or chi;
+- matrix or mass unit mismatch;
+- invalid source-artifact hashes;
+- matrix asymmetry beyond the declared numerical tolerance;
+- nonpositive masses;
+- schema or correspondence-protocol drift.
+
+The adapter computes only provenance-preserving preprocessing:
+
+- mass-weighted parent and child eigensystems;
+- child-mode participation on the prospectively mapped substrate coordinates;
+- directional parent-to-projected-child modal overlap;
+- shared-coordinate mapping and source hashes.
+
+It explicitly does **not** apply a physical inheritance threshold, assign an inheritance promotion label, compute damping, or compute chi.
+
+The synthetic machine-readable adapter validation produced a 2-parent-mode by 3-child-mode directional overlap matrix and separate child substrate-participation weights. The separation is intentional: directional similarity and the amount of a child mode physically residing on the substrate are different quantities.
+
+Representative synthetic adapter output:
+
+- parent mass-weighted eigenvalues approximately `[0.239627, 0.418706]`;
+- child mass-weighted eigenvalues approximately `[0.253455, 0.390568, 0.516810]`;
+- child substrate-participation weights approximately `[0.994471, 0.719949, 0.285580]`;
+- first parent directional overlaps approximately `[0.998304, 0.007675, 0.005918]`;
+- second parent directional overlaps approximately `[0.001696, 0.992325, 0.994082]`.
+
+These numbers describe a synthetic adapter-validation record only and are not evidence about Na/Cu, CO/Cu, H/Ru, or any physical system.
+
+Status: PASS as ingestion-boundary/software validation only.
+
 ## Current provenance
 
-Latest closed validation run containing V1-V9:
+Latest closed full validation run containing V1-V10 infrastructure:
 
 - workflow: `.github/workflows/substrate-inheritance.yml`;
-- GitHub Actions run: `33290452090`;
-- commit: `d9d88f258a83d9ccc4a8b6d54274db648f73e78a`;
-- job: `99201048296`;
+- GitHub Actions run: `33290655196`;
+- commit: `4156b95bb47f8e566aa9cb173d60d46d7b8fc906`;
+- job: `99201580557`;
 - conclusion: `success`;
-- adversarial/unit tests: `48 passed`;
+- adversarial/unit tests: `62 passed`;
 - uploaded artifact: `substrate-inheritance-synthetic-validation`;
-- artifact ID: `9725791914`;
-- uploaded artifact ZIP SHA-256: `33f66942eb5d9681adbb12f781191aa5d7cb343ecf6658a19dbc0766643223e4`;
-- validation records uploaded: 9;
+- artifact ID: `9725851716`;
+- validation records uploaded: 10;
+- uploaded artifact ZIP SHA-256: `7f7d3d59a599eac50cc78992ff85fea2b14a405c63c7689367c78eedd668667d`;
 - physical thresholds frozen: false;
 - real-system evidence: false.
 
-The later `CORRESPONDENCE_PROTOCOL_v0.2.json` adds the non-normal and electronic-channel safeguards exposed by V8-V9 before any real-system inheritance target reveal. It does not retroactively change V1-V9 numerical results and does not freeze a physical promotion threshold.
+`CORRESPONDENCE_PROTOCOL_v0.2.json` freezes the non-normal and electronic-channel safeguards before any real-system inheritance target reveal. `REAL_SYSTEM_INPUT_SCHEMA_v0.2.json` freezes the real mechanical input boundary before first physical ingestion. Neither document freezes a physical promotion threshold.
 
 ## Physical evidence boundary
 
@@ -293,8 +305,8 @@ At the time of this ledger entry:
 
 - no physical inheritance threshold has been frozen;
 - no real-system substrate-inheritance result has been established;
-- Na/Cu remains development-only and its planned active-region Hessian artifact was not present at the most recently checked Chemistry branch head;
-- CO/Cu remains upstream of the inheritance analysis while its frozen surface audit closes;
+- Na/Cu remains development-only and its planned `na_cu001_ci/ACTIVE_REGION_HESSIAN.json` artifact was still absent at Chemistry branch head `b0c6c8bb74ee12445b77b7a43f7a12ebf099aaf4` when last checked;
+- CO/Cu remains upstream of the inheritance analysis while its frozen surface-audit/recovery sequence closes;
 - H/Ru remains a contrast/limit protocol without an admitted Foundations inheritance input record.
 
-The next transition from synthetic validation to physical development evidence requires a provenance-complete parent governing object, child governing object, shared-degree-of-freedom mapping, modal/subspace representation, and the correspondence rule frozen before the target inheritance result is inspected.
+The computational method and fail-closed ingestion path are ready. The next transition from synthetic validation to physical development evidence requires an actual provenance-complete parent governing object, child governing object, shared-degree-of-freedom mapping, modal/subspace representation, and the correspondence rule frozen before the target inheritance result is inspected.
