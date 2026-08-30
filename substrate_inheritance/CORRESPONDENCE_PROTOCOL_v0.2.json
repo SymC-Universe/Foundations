@@ -1,0 +1,136 @@
+{
+  "schema": "substrate-inheritance-correspondence-protocol-v0.2",
+  "status": "FROZEN_DEFINITIONS_BEFORE_REAL_SYSTEM_INHERITANCE_TARGET_REVEAL",
+  "supersedes": "CORRESPONDENCE_PROTOCOL_v0.1.json",
+  "supersession_reason": "Add non-normal/biorthogonal and channel-separation rules identified by synthetic stress validation before any real-system inheritance target reveal. No physical-system outcome or target kinetic result was used.",
+  "purpose": "Define how parent and child carriers are compared without using chi, kinetic outcomes, favorable frequencies, or target-system results to choose the correspondence.",
+  "scientific_scope": {
+    "applies_to": [
+      "future parent-to-child modal comparisons",
+      "future subspace inheritance comparisons",
+      "future non-normal generator carrier comparisons",
+      "future scalar-to-carrier inheritance tests",
+      "future conglomeration and coupling-specificity tests",
+      "future electronic and phononic substrate-inheritance analyses"
+    ],
+    "does_not_retroactively_promote": [
+      "historical Noughts claims",
+      "historical Stability Arc results outside their registered domain",
+      "Na/Cu(001) development outputs",
+      "ARC Atlas coordinates",
+      "Barrier-Height/Rate Atlas coordinates"
+    ]
+  },
+  "shared_degree_of_freedom_rule": {
+    "primary": "Establish the shared parent degrees of freedom from atom/coordinate identity, geometry mapping, boundary convention, and mass convention before modal comparison.",
+    "forbidden": [
+      "choosing shared degrees of freedom because they maximize modal overlap",
+      "changing atom or coordinate mapping after inspecting chi or target kinetics",
+      "dropping low-overlap coordinates solely to improve inheritance evidence"
+    ]
+  },
+  "mass_normalization_rule": {
+    "individual_modes": "For mechanical/Hessian carriers, normalize parent and child carriers in the same positive mass metric on the shared physical degrees of freedom before overlap is computed.",
+    "overlap_definition": "O_ij = |v_i(parent)^H M P_parent v_j(child)|^2 after compatible mass normalization for a normal/Hermitian carrier problem.",
+    "frequency_only_matching_forbidden": true
+  },
+  "individual_mode_rule": {
+    "use_when": "Modes are sufficiently isolated and numerically identifiable for an individual carrier comparison and the generator geometry permits a right-vector comparison.",
+    "assignment": "Report the complete overlap matrix and a permutation-invariant maximum-total-overlap assignment as a diagnostic. The assignment does not by itself establish inheritance.",
+    "mandatory_companions": [
+      "parent and child eigenvalue/frequency",
+      "full overlap row and column context",
+      "conditioning or numerical sensitivity",
+      "local spectral crowding information",
+      "shared-degree-of-freedom projection used"
+    ]
+  },
+  "subspace_rule": {
+    "use_when": "Exact or practical degeneracy, spectral crowding, mode splitting, mode merging, unstable basis orientation, or poor individual-vector identifiability makes a one-to-one carrier comparison unreliable.",
+    "comparison": "Compare the relevant parent and child subspaces using projector overlap and singular values/principal-angle cosines or the appropriate invariant subspace generalization rather than forcing one-to-one vector identity.",
+    "basis_rotation_within_same_subspace": "must not be classified as inheritance loss solely because individual eigenvectors rotate",
+    "split_or_merge": "retain the resolved overlap weights and subspace relation; do not force a single descendant label"
+  },
+  "nonnormal_rule": {
+    "trigger": "The governing generator is non-normal, has materially non-orthogonal right eigenvectors, or approaches defectiveness/exceptional-point conditioning.",
+    "required_geometry": "Retain both right and left eigenvectors normalized biorthogonally, or equivalent invariant spectral projectors/subspaces, together with eigenvector/projector conditioning.",
+    "cross_carrier_diagnostic": "A scale-invariant symmetric left/right diagnostic may use |(w_i^P)^H v_j^C * (w_j^C)^H v_i^P|, but it is not a probability and receives no universal physical threshold in this protocol.",
+    "right_vectors_alone_sufficient": false,
+    "conditioning_rule": "Increasing eigenvector or invariant-subspace condition number is an uncertainty/refusal signal. Algebraic normalization alone does not license a stable carrier identity near defectiveness.",
+    "similarity_invariance": "Any promoted non-normal carrier comparison must be invariant under a common invertible coordinate transformation of parent and child descriptions, within numerical uncertainty."
+  },
+  "scalar_rule": {
+    "ordering": "Carrier correspondence is established without using scalar closeness to chi=1 or any other favored scalar value. Scalar inheritance is evaluated only after the carrier map is frozen.",
+    "scalar_equality_required": false,
+    "required_for_scalar_inheritance": [
+      "licensed scalar in parent description",
+      "licensed scalar in child description",
+      "frozen carrier or subspace correspondence",
+      "pre-specified parent-to-child scalar transformation or prediction",
+      "uncertainty/provenance for both scalar values"
+    ],
+    "if_scalar_not_licensed": "retain modal/conglomeration result and return scalar NOT_APPLICABLE or NONIDENTIFIABLE"
+  },
+  "conglomeration_rule": {
+    "objects": [
+      "parent-to-child coupling matrix or equivalent interaction operator",
+      "frequency- or energy-dependent substrate self-energy/embedding contribution where defined",
+      "memory kernel or spectral-density object where independently derived",
+      "network or sequence of modal/subspace relations across assembly or reaction-path states"
+    ],
+    "no_single_index_required": true,
+    "coupling_specificity_required_for_full_inheritance": true
+  },
+  "channel_separation_rule": {
+    "phononic_mechanical": "Mechanical Hessian/dynamical-matrix embedding, phonon spectral density, and memory/friction objects remain in the mechanical/phononic channel.",
+    "electronic": "Electronic Hamiltonian embedding, retarded electronic self-energy, hybridization function, projected density of states, and orbital/band carrier geometry remain electronic-channel objects.",
+    "electronic_hybridization_equals_mechanical_gamma": false,
+    "automatic_sum_into_one_gamma": false,
+    "combined_reduction": "A combined scalar damping description requires an independent derivation showing that the relevant channels can be projected and combined on the same physical coordinate and timescale."
+  },
+  "nulls": {
+    "same_spectrum_modal_scramble": "Preserve parent eigenvalues while randomizing modal/orbital geometry to test whether scalar spectral resemblance alone explains the observed correspondence.",
+    "coupling_rewire": "Preserve the parent operator while changing carrier-to-child coupling assignment to test conglomeration specificity.",
+    "zero_coupling": "Set the parent-child coupling to zero where the model permits it to verify that the analysis does not manufacture influence.",
+    "generic_or_alternative_parent": "When a physically defensible alternative exists, compare predictive performance without tuning the alternative after target reveal.",
+    "basis_change_control": "Transform both operator and coupling/carriers consistently to verify that a claimed effect is physical rather than a coordinate representation artifact."
+  },
+  "statistical_reporting": {
+    "current_rule": "Report continuous observed scores and their position relative to preregistered synthetic/null distributions. No physical inheritance pass threshold is frozen in v0.2.",
+    "reason": "A numerical cutoff chosen before physical calibration would be arbitrary; a cutoff chosen after target reveal would be circular.",
+    "future_threshold_rule": "Any later physical promotion threshold must be frozen before the corresponding real-system target result is inspected and must document how it was calibrated."
+  },
+  "promotion_rule": {
+    "influence": "nonzero causal/interventional response without complete prospective correspondence",
+    "conditional_inheritance": "parent characterization, carrier correspondence, frozen mapping, and successful prospective prediction without complete intervention/specificity closure",
+    "substrate_inheritance": "all influence, carrier, prospective prediction, intervention, and specificity requirements pass under the active contract",
+    "refusal_states": [
+      "NONIDENTIFIABLE",
+      "INSUFFICIENT_SHARED_DOF",
+      "SUBSPACE_ONLY",
+      "NONNORMAL_CONDITIONING_HOLD",
+      "MIXED",
+      "SPLIT",
+      "MERGED",
+      "LOST",
+      "SCALAR_NOT_APPLICABLE",
+      "DISSIPATION_NOT_ADMISSIBLE",
+      "CHANNEL_COMBINATION_NOT_ADMISSIBLE"
+    ]
+  },
+  "forbidden_target_leakage": [
+    "using chi proximity to choose a mode",
+    "using reaction rate or barrier agreement to choose a modal mapping",
+    "using a known child frequency to redefine the parent carrier",
+    "using an electronic hybridization peak to retroactively choose a mechanical carrier",
+    "changing a correspondence rule after seeing whether it supports inheritance"
+  ],
+  "provenance": {
+    "real_system_inheritance_target_revealed_before_v0_2": false,
+    "physical_thresholds_changed": false,
+    "other_repository_scientific_settings_changed": false,
+    "synthetic_stress_results_used_only_to_identify_method_failure_modes": true
+  },
+  "physical_thresholds_frozen": false,
+  "scientific_settings_changed_in_other_repositories": false
+}
