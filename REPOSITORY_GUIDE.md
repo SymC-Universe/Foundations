@@ -1,8 +1,8 @@
 # Repository Guide
 
-This repository contains published papers, historical research versions, LaTeX sources, figures, archives, reproducibility materials, and active computational-development branches. The root directory is intentionally archival and therefore contains multiple generations of work.
+This repository contains published papers, historical research versions, LaTeX sources, figures, archives, reproducibility materials, active computational-development branches, and preserved program handoffs. The root directory is intentionally archival and therefore contains multiple generations of work.
 
-This guide explains how to navigate the repository without mistaking an older artifact for the current scientific position.
+This guide explains how to navigate the repository without mistaking an older artifact, a development branch, or a paused handoff branch for the current scientific position.
 
 ## Start here
 
@@ -22,6 +22,22 @@ The public archival and governance branch. It contains the Foundations research 
 The active prospective substrate-inheritance program. It contains computational validation, frozen correspondence rules, real-system ingestion contracts, machine-readable evidence records, and its own current-status README.
 
 Material on an active branch is not automatically a promoted physical result. Read the program-specific status and evidence ledger before interpreting it.
+
+### `agent/stability-arc-gfsa-v072`
+
+Canonical preserved Stability Arc internal-handoff branch. Its own `stability_arc/CURRENT_STATE.md` records the measurement-conditioned expansion as `INTERNAL HANDOFF CLOSED / RESEARCH INTENTIONALLY PAUSED` after H12, with the scientific state frozen before the handoff documentation and with explicit open provenance/source holds retained.
+
+The branch is intentionally long-lived because it preserves preregistrations, failures, remediation records, workflows, provenance recovery, the GFSA v0.7.2 material, and the v1.0 internal handoff package in their native lineage. It is not an abandoned temporary agent branch.
+
+Repository-maintenance rule for this branch:
+
+- do not delete it as stale branch cleanup;
+- do not force-push or rewrite its history;
+- do not rebase it merely to make it visually current with `main`;
+- do not merge the entire branch wholesale into `main` merely to reduce branch count;
+- if Stability Arc research resumes, begin from its own `RESUME_INSTRUCTIONS_v1.0.md`, governing controls, and a fresh freeze-before-view design decision where required.
+
+The wider program may use the frozen handoff architecture, but bounded Stability Arc results remain bounded to their registered evidence class and do not become universal or chemical evidence by branch inheritance.
 
 ## Root artifact conventions
 
@@ -63,7 +79,8 @@ Use GitHub Issues for specific, evaluable problems. Structured templates are pro
 
 - scientific corrections;
 - reproducibility or computational defects;
-- documentation and metadata improvements.
+- documentation and metadata improvements;
+- prospective research extensions.
 
 Use GitHub Discussions for exploratory questions or ideas that are not yet a specific correction.
 
