@@ -1,0 +1,72 @@
+name: Scientific correction
+description: Report a mathematical, physical, statistical, interpretive, or evidentiary problem.
+title: "[Scientific correction] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for examining the work critically. Please make the issue specific enough to reproduce or evaluate.
+
+  - type: input
+    id: location
+    attributes:
+      label: Affected file, claim, equation, figure, or record
+      description: Identify the exact location when possible.
+      placeholder: "Example: README.md, Current Mathematical Core; Eq. 3; or file/path.json"
+    validations:
+      required: true
+
+  - type: textarea
+    id: current
+    attributes:
+      label: Current statement or behavior
+      description: Quote briefly or summarize the current claim or result.
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Why it is incorrect or insufficient
+      description: Provide the mathematical, physical, statistical, or evidentiary reason.
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Supporting evidence or derivation
+      description: Include a derivation, reproducible calculation, DOI/source, counterexample, or other evidence.
+    validations:
+      required: true
+
+  - type: textarea
+    id: correction
+    attributes:
+      label: Proposed correction
+      description: State what you believe should change, including scope and any uncertainty.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: impact
+    attributes:
+      label: Expected impact
+      options:
+        - Presentation or wording only
+        - Method or implementation, conclusion unchanged
+        - Evidentiary classification may change
+        - Scientific conclusion may change
+        - Unsure
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: integrity
+    attributes:
+      label: Research-integrity confirmation
+      options:
+        - label: I have not selected this correction merely because it favors or disfavors a preferred SymC conclusion.
+          required: true
+        - label: I have identified any target result I inspected while developing this correction.
+          required: true
