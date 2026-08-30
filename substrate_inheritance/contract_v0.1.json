@@ -1,0 +1,75 @@
+{
+  "title": "Substrate Inheritance Prospective Contract v0.1",
+  "status": "ACTIVE_PROSPECTIVE_ARCHITECTURE",
+  "scope": "Foundations-level substrate inheritance program",
+  "claim_state": {
+    "universal_inheritance": "NOT_ESTABLISHED",
+    "real_system_inheritance": "NOT_YET_TESTED_UNDER_THIS_CONTRACT",
+    "synthetic_validation": "SOFTWARE_AND_IDENTIFIABILITY_ONLY"
+  },
+  "required_levels": ["modal", "scalar", "conglomeration"],
+  "evidence_labels": {
+    "SUBSTRATE_INFLUENCE": "Parent intervention changes child behavior but stable predictive parent-to-child correspondence is not established.",
+    "CONDITIONAL_INHERITANCE": "A specified carrier-resolved feature is prospectively transmitted under stated conditions through a frozen mapping rule.",
+    "SUBSTRATE_INHERITANCE": "Carrier-resolved parent architecture prospectively predicts child architecture, survives intervention and specificity/null tests, and generic or scrambled controls do not perform equally well."
+  },
+  "promotion_gates": [
+    "independent_parent_characterization",
+    "explicit_carrier_correspondence",
+    "mapping_rule_frozen_before_target_reveal",
+    "prospective_child_prediction",
+    "intervention_or_counterfactual_confirmation",
+    "specificity_against_scrambled_or_generic_controls"
+  ],
+  "modal_requirements": [
+    "mass_normalization_or_equivalent_metric",
+    "mode_or_subspace_identity",
+    "degeneracy_and_near_degeneracy_handling",
+    "conditioning_and_numerical_uncertainty",
+    "no_frequency_only_mode_matching"
+  ],
+  "scalar_requirements": [
+    "scalar_attached_to_identified_carrier",
+    "mechanical_chi_only_for_licensed_second_order_mode_or_equivalent_quotient",
+    "no_system_wide_chi_when_modes_are_unresolved",
+    "no_barrier_local_interpretation_from_well_side_chi",
+    "no_rate_optimum_claim_from_chi_without_derivation"
+  ],
+  "conglomeration_requirements": [
+    "coupling_structure_retained",
+    "mode_participation_or_localization_retained",
+    "frequency_dependent_memory_retained_when_present",
+    "no_forced_single_index_for_collective_architecture",
+    "assembly_or_reaction_path_genealogy_when_data_exist"
+  ],
+  "bath_rules": [
+    "finite_harmonic_mode_set_is_not_automatically_irreversible_friction",
+    "finite_recurrence_must_not_be_hidden",
+    "Markovian_scalar_reduction_requires_independent_admissibility_test"
+  ],
+  "channel_rules": [
+    "phononic_and_electronic_channels_are_distinct",
+    "combined_damping_requires_explicit_derivation_and_provenance"
+  ],
+  "physical_sequence": [
+    {"system": "Na/Cu(001)", "role": "development_only"},
+    {"system": "CO/Cu(111)", "role": "prospective_target_after_existing_upstream_gates"},
+    {"system": "H/Ru(0001)", "role": "contrast_limit_target"}
+  ],
+  "atlas_relationship": {
+    "ARC_Atlas": "independent stability or dissipation coordinates where licensed",
+    "Barrier_Height_Rate_Atlas": "independent barrier, prefactor, rate, and provenance coordinates",
+    "inheritance_program": "parent-to-child carrier, transformation, intervention, and specificity evidence",
+    "rule": "Atlas membership alone does not establish inheritance"
+  },
+  "forbidden_promotions": [
+    "similar_numbers_without_carrier_identity",
+    "post_hoc_mapping_fitted_to_child_outcome",
+    "frequency_only_mode_matching",
+    "finite_bath_recurrence_relabelled_as_irreversible_damping",
+    "scrambled_control_performing_equally_well",
+    "historical_hypothesis_treated_as_prospective_evidence"
+  ],
+  "historical_status_rule": "Older claims that conflict with this contract are OUTDATED and retained only as research history.",
+  "failure_policy": "Influence-only, nonidentifiable, refusal, null, or failed inheritance outcomes are valid and retained."
+}
