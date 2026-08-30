@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: >-
+  If you use material from this repository, cite the specific paper, dataset,
+  software artifact, DOI, and version when available. For repository-level
+  citation, use the metadata below.
+title: "SymC Foundations Research Repository"
+type: software
+authors:
+  - family-names: Christensen
+    given-names: Nate
+repository-code: "https://github.com/SymC-Universe/Foundations"
+url: "https://github.com/SymC-Universe/Foundations"
+license: CC-BY-4.0
+version: "2026.08"
+date-released: 2026-08-29
+keywords:
+  - stability theory
+  - exceptional points
+  - dissipative systems
+  - substrate inheritance
+  - mathematical physics
+  - open quantum systems
+  - computational reproducibility
+preferred-citation:
+  type: article
+  title: "Exceptional-point stability boundaries from quantum dissipation to cosmological acceleration"
+  authors:
+    - family-names: Christensen
+      given-names: Nate
+  journal: Scientific Reports
+  year: 2026
+  doi: "10.1038/s41598-026-56887-7"

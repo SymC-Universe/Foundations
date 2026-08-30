@@ -1,0 +1,63 @@
+name: Reproducibility or computational defect
+description: Report a code, workflow, environment, data, provenance, hash, schema, or reconstruction problem.
+title: "[Reproducibility] "
+body:
+  - type: input
+    id: artifact
+    attributes:
+      label: Affected artifact or workflow
+      description: Identify the file, script, workflow, archive, commit, run, or evidence record.
+      placeholder: "Example: substrate_inheritance/..., workflow run 12345, or archive filename"
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What should an independent reconstruction produce?
+    validations:
+      required: true
+
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed behavior
+      description: Include the failure, mismatch, error message, or provenance discrepancy.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Minimal reproduction
+      description: Provide commands, environment details, inputs, hashes, seeds, or steps needed to reproduce the problem.
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Operating system, runtime versions, package versions, runner image, or other relevant environment details.
+
+  - type: dropdown
+    id: scientific_impact
+    attributes:
+      label: Possible scientific impact
+      options:
+        - No scientific impact known
+        - Evidence provenance or reproducibility affected
+        - Numerical result may be affected
+        - Evidentiary label or conclusion may be affected
+        - Unsure
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: sensitive
+    attributes:
+      label: Sensitive information
+      options:
+        - label: This report contains no credentials, private keys, tokens, or private personal information. If it does, I will use the security-reporting path instead.
+          required: true

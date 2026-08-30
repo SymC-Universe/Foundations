@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Research discussion
+    url: https://github.com/SymC-Universe/Foundations/discussions
+    about: Use Discussions for exploratory questions or ideas that are not yet a specific correction or reproducibility defect.

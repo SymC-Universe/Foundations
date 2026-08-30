@@ -1,0 +1,38 @@
+name: Documentation or metadata improvement
+description: Report unclear wording, navigation, citation, formatting, or repository metadata that does not require a scientific-method change.
+title: "[Documentation] "
+body:
+  - type: input
+    id: location
+    attributes:
+      label: Location
+      description: Identify the file, section, link, metadata field, or page.
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: Explain what is unclear, outdated, inconsistent, inaccessible, or misleading.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Suggested improvement
+      description: Provide replacement wording, a corrected link, a navigation suggestion, or the intended presentation.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Does this change scientific meaning?
+      options:
+        - No, documentation or metadata only
+        - Possibly, scientific review is needed
+        - Yes, this should be filed as a scientific correction
+    validations:
+      required: true
