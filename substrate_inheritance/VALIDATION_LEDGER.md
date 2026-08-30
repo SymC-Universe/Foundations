@@ -4,7 +4,7 @@ Status: active computational-method evidence record. This ledger does not contai
 
 ## Evidence classes
 
-The records below are classified as software, mathematical, synthetic ground-truth, ensemble-discriminability, identifiability, robustness, or embedding-depth evidence. None may be promoted to physical substrate-inheritance evidence merely because a validation passes.
+The records below are classified as software, mathematical, synthetic ground-truth, ensemble-discriminability, identifiability, robustness, embedding-depth, non-normal-carrier, or electronic-channel evidence. None may be promoted to physical substrate-inheritance evidence merely because a validation passes.
 
 ## V1: Base mathematical and software validation
 
@@ -181,21 +181,111 @@ Interpretation: the machinery can ask how the child embedding response converges
 
 Status: PASS as synthetic embedding-depth validation only.
 
+## V7: Carrier-discriminability strength sweep
+
+The planted parent-to-child carrier relation was progressively randomized while the parent and null scalar eigenvalue spectra remained identical. The purpose was to map the failure boundary of the correspondence statistic rather than test only easy positive examples.
+
+Configuration:
+
+- dimension 5;
+- 256 trials per synthetic strength;
+- angle scales from `0.0` through `1.8` radians;
+- no physical threshold was fitted or inferred.
+
+Results:
+
+- maximum threshold-free AUC: `1.0`;
+- minimum threshold-free AUC: approximately `0.911835`;
+- maximum mean planted-minus-null score gap: approximately `0.463865`;
+- minimum mean score gap: approximately `0.191899`;
+- at angle scale `0.0`, planted mean score was `1.0` and AUC was `1.0`;
+- at `0.35`, planted mean score was approximately `0.83641` and AUC approximately `0.98473`;
+- at `0.55`, planted mean score was approximately `0.75646` and AUC approximately `0.93237`;
+- at `1.2`, planted mean score was approximately `0.73821` and AUC approximately `0.91183`.
+
+Interpretation: the modal-correspondence statistic loses discriminability as the planted carrier relation weakens. It is therefore not treated as a magic or universally decisive inheritance score. The synthetic strength parameter is not a physical inheritance coordinate and supplies no physical cutoff.
+
+Status: PASS as synthetic failure-boundary validation only.
+
+## V8: Non-normal and biorthogonal carrier validation
+
+This layer tests a major failure mode of ordinary eigenvector comparison. In a non-normal generator, distinct right eigenvectors can become nearly parallel, while meaningful spectral coordinates require left/right or invariant-projector geometry and explicit conditioning.
+
+### Non-normality sweep
+
+For a three-mode triangular family:
+
+- shear `0.0`: right-eigenvector condition number `1.0`, maximum off-diagonal right-vector overlap `0.0`;
+- shear `1.0`: condition number approximately `3.77667`, off-diagonal overlap `0.5`;
+- shear `3.0`: condition number approximately `20.5441`, off-diagonal overlap `0.9`;
+- shear `10.0`: condition number approximately `213.770`, off-diagonal overlap approximately `0.990099`;
+- shear `30.0`: condition number approximately `1925.741`, off-diagonal overlap approximately `0.998890`.
+
+The biorthogonal self-correspondence remained the identity to numerical precision for these constructed diagonalizable cases.
+
+### Near-defective sweep
+
+For the two-dimensional family `[[1,1],[epsilon,1]]`:
+
+- `epsilon=1e-1`: eigenvalue gap approximately `0.632456`, condition number approximately `3.16228`;
+- `epsilon=1e-4`: gap approximately `0.02`, condition number approximately `100`;
+- `epsilon=1e-6`: gap approximately `0.002`, condition number approximately `1000`;
+- `epsilon=1e-8`: gap approximately `0.0002`, condition number approximately `10000`.
+
+Biorthogonal normalization remained algebraically possible to machine precision, but the exploding condition number is retained as an uncertainty/refusal signal.
+
+A common invertible similarity transformation changed the biorthogonal parent-child correspondence by only approximately `1.11e-16`.
+
+Interpretation: right eigenvectors alone are insufficient for non-normal inheritance claims. Future non-normal physical records must retain left and right carriers or equivalent invariant projectors/subspaces plus conditioning. Near defectiveness, an algebraically normalized mode is not automatically a robust physical carrier.
+
+Status: PASS as synthetic non-normal method validation only.
+
+## V9: Separate electronic substrate-inheritance channel
+
+The electronic branch uses a block Hamiltonian and retarded Green-function reduction rather than importing mechanical damping language.
+
+### Exact block reduction
+
+Across 81 energy points, the adsorbate Green function from the full block Hamiltonian and the substrate-self-energy reduction agreed with maximum residual approximately `2.84e-15`.
+
+### Basis invariance
+
+A common basis transformation of the substrate Hamiltonian and interface coupling changed the electronic self-energy curve by at most approximately `4.62e-14`.
+
+### Same-spectrum electronic carrier scramble
+
+Across 256 trials in dimension 5:
+
+- maximum numerical change in the substrate eigenvalue spectrum: approximately `2.66e-15`;
+- mean relative electronic self-energy-curve gap after carrier scrambling: approximately `0.99168`;
+- median relative gap: approximately `0.98147`;
+- 5th to 95th percentile range: approximately `0.46160` to `1.55368`;
+- all 256 trials changed above machine scale.
+
+The finite-system broadening parameter `eta=0.08` is explicitly a resolvent regularizer in this synthetic calculation and is not interpreted as mechanical damping.
+
+Interpretation: in the tested synthetic electronic model, the same scalar energy spectrum does not determine the interface response. Orbital/carrier geometry and coupling matter strongly. Electronic self-energy and hybridization remain electronic-channel objects and are not renamed mechanical `gamma` or automatically added to a phononic damping constant.
+
+Status: PASS as synthetic electronic-channel validation only.
+
 ## Current provenance
 
-Latest closed validation run containing V1-V6:
+Latest closed validation run containing V1-V9:
 
 - workflow: `.github/workflows/substrate-inheritance.yml`;
-- GitHub Actions run: `33290269457`;
-- commit: `d76e2317817d91911c104ad8dcd23bba29b8fae1`;
-- job: `99200574195`;
+- GitHub Actions run: `33290452090`;
+- commit: `d9d88f258a83d9ccc4a8b6d54274db648f73e78a`;
+- job: `99201048296`;
 - conclusion: `success`;
-- adversarial/unit tests: `36 passed`;
+- adversarial/unit tests: `48 passed`;
 - uploaded artifact: `substrate-inheritance-synthetic-validation`;
-- artifact ID: `9725736036`;
-- uploaded artifact ZIP SHA-256: `8adc5e7135a824f8f3f726e8abd2ba60dbc64aacfae86a4db992ae9449e0343d`;
+- artifact ID: `9725791914`;
+- uploaded artifact ZIP SHA-256: `33f66942eb5d9681adbb12f781191aa5d7cb343ecf6658a19dbc0766643223e4`;
+- validation records uploaded: 9;
 - physical thresholds frozen: false;
 - real-system evidence: false.
+
+The later `CORRESPONDENCE_PROTOCOL_v0.2.json` adds the non-normal and electronic-channel safeguards exposed by V8-V9 before any real-system inheritance target reveal. It does not retroactively change V1-V9 numerical results and does not freeze a physical promotion threshold.
 
 ## Physical evidence boundary
 
@@ -203,8 +293,8 @@ At the time of this ledger entry:
 
 - no physical inheritance threshold has been frozen;
 - no real-system substrate-inheritance result has been established;
-- Na/Cu remains development-only and its planned active-region Hessian artifact is not yet present at the checked Chemistry branch head;
+- Na/Cu remains development-only and its planned active-region Hessian artifact was not present at the most recently checked Chemistry branch head;
 - CO/Cu remains upstream of the inheritance analysis while its frozen surface audit closes;
 - H/Ru remains a contrast/limit protocol without an admitted Foundations inheritance input record.
 
-The next transition from synthetic validation to physical development evidence requires a provenance-complete parent governing object, child governing object, shared-degree-of-freedom mapping, modal/subspace representation, and a correspondence rule frozen before the target inheritance result is inspected.
+The next transition from synthetic validation to physical development evidence requires a provenance-complete parent governing object, child governing object, shared-degree-of-freedom mapping, modal/subspace representation, and the correspondence rule frozen before the target inheritance result is inspected.
