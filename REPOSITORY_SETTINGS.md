@@ -66,10 +66,27 @@ Recommended controls for the active prospective branch:
 - block branch deletion;
 - require pull requests for changes to frozen contracts, workflows, inference code, or evidence logic;
 - require the `validate` GitHub Actions job before merging changes that trigger the substrate-inheritance workflow;
+- require the branch to be current with its target before a protected merge when GitHub can enforce that check reliably;
 - require conversation resolution;
 - preserve an administrator recovery path for infrastructure failures.
 
 A failed scientific or computational validation should not be bypassed merely to obtain a green branch. Mechanical CI failure may be repaired, but scientific criteria should remain frozen unless an explicit science-affecting revision is recorded.
+
+## `agent/stability-arc-gfsa-v072` protection
+
+This is a canonical paused research-lineage branch, not a temporary automation branch. Its current-state record declares the internal handoff closed and the research intentionally paused while preserving a separate science-freeze anchor and open historical provenance/source holds.
+
+Recommended controls:
+
+- block force pushes;
+- block branch deletion;
+- require pull requests for future changes once branch protection is enabled;
+- require conversation resolution for any future resumption or maintenance PR;
+- do not require an unrelated current `main` CI check;
+- preserve an administrator recovery path;
+- do not rebase or merge the branch merely to eliminate its divergence from `main`.
+
+If Stability Arc work resumes, any new required status check should be added only after an actual validation workflow exists for the resumed campaign. Historical workflows and frozen results should not be mechanically rerun and reinterpreted merely to satisfy a newly invented branch rule.
 
 ## Actions
 
@@ -100,6 +117,6 @@ Review these settings when:
 
 - the project gains additional maintainers;
 - a new required CI workflow is introduced;
-- an active research branch becomes archival;
+- an active research branch becomes archival or a paused branch resumes;
 - repository permissions or security requirements materially change;
 - a current metadata field no longer matches the scientific position documented in `README.md` and `GOVERNANCE.md`.
