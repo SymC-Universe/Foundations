@@ -57,6 +57,12 @@ jobs:
       - name: Run substrate-depth embedding validation
         run: python -m substrate_inheritance.depth_validation
 
+      - name: Run carrier discriminability-strength sweep
+        run: python -m substrate_inheritance.discriminability_validation
+
+      - name: Run non-normal biorthogonal carrier validation
+        run: python -m substrate_inheritance.nonnormal_validation
+
       - name: Verify outputs are explicitly non-physical
         run: |
           python - <<'PY'
@@ -70,6 +76,8 @@ jobs:
               "identifiability_validation.json": "synthetic_identifiability_validation_only",
               "robustness_validation.json": "synthetic_robustness_validation_only",
               "depth_validation.json": "synthetic_inheritance_depth_validation_only",
+              "discriminability_validation.json": "synthetic_discriminability_strength_validation_only",
+              "nonnormal_validation.json": "synthetic_nonnormal_biorthogonal_validation_only",
           }
           records = {}
           for filename, scope in expected.items():
@@ -77,8 +85,7 @@ jobs:
               assert record["scope"] == scope
               records[filename] = record
 
-          bench = records["ground_truth_benchmarks.json"]
-          assert bench["case_count"] == 10
+          assert records["ground_truth_benchmarks.json"]["case_count"] == 10
           for record in records.values():
               if "physical_thresholds_frozen" in record:
                   assert record["physical_thresholds_frozen"] is False
@@ -99,3 +106,5 @@ jobs:
             substrate_inheritance/results/identifiability_validation.json
             substrate_inheritance/results/robustness_validation.json
             substrate_inheritance/results/depth_validation.json
+            substrate_inheritance/results/discriminability_validation.json
+            substrate_inheritance/results/nonnormal_validation.json
