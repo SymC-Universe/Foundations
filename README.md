@@ -10,7 +10,7 @@ Domain-specific applications are maintained separately.
 
 ## Current-status authority
 
-This README, the active substrate-inheritance contract, and current reproducibility/computational records govern the present interpretation of this branch. Historical PDFs, older README language, release notes, and repository metadata may lag the active investigation and are **OUTDATED wherever they conflict with the current generator-first, carrier-resolved, prospective framework**. Historical artifacts remain preserved for provenance.
+This README, the active substrate-inheritance contract, the frozen correspondence protocol, and current reproducibility/computational records govern the present interpretation of this branch. Historical PDFs, older README language, release notes, and repository metadata may lag the active investigation and are **OUTDATED wherever they conflict with the current generator-first, carrier-resolved, prospective framework**. Historical artifacts remain preserved for provenance.
 
 ## Active substrate-inheritance investigation
 
@@ -23,7 +23,9 @@ The investigation is ongoing and is intended to develop prospective computationa
 
 The program preserves a coupled **modal + scalar + conglomeration** representation. Scalars such as mechanical χ are reported only where the governing dynamics license that reduction and remain attached to identified modes or subspaces. Collective coupling, memory, and bath structure are retained rather than forced into a single scalar.
 
-The base synthetic/adversarial mathematics and software validation has passed GitHub Actions. A ten-case ground-truth benchmark battery is now implemented to attack influence-only false promotion, scalar-only mapping, modal inheritance with changed scalars, frequency-only false friends, mode splitting, degenerate-subspace rotation, coupling rewiring, finite-bath recurrence, and a full prospective synthetic inheritance case. These computations are **not physical inheritance evidence and do not set physical-system thresholds**.
+The V1-V6 computational validation suite is now closed as a successful **synthetic/mathematical method validation**, with 36 adversarial/unit tests passing in GitHub Actions run `33290269457`. The suite covers ground-truth influence/inheritance cases, same-spectrum modal scrambles, coupling rewiring, analytic intervention cross-checks, single-scalar nonidentifiability, coordinate invariance, near-degenerate subspace robustness, finite-bath recurrence, and finite-depth versus analytic semi-infinite substrate embedding.
+
+These computations are **not physical inheritance evidence and do not set physical-system thresholds**. They establish that the current machinery can distinguish several known false-positive routes and can refuse scalar or one-to-one modal interpretations when the information does not identify them.
 
 Existing Na/Cu work remains development evidence; CO/Cu(111) is reserved for prospective application after its already-frozen upstream chemistry gates; H/Ru(0001) remains a contrast/limit system.
 
