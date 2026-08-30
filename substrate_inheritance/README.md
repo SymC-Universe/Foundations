@@ -2,7 +2,7 @@
 
 Status: ACTIVE INVESTIGATION. Computational evidence is being developed prospectively. Nothing in this directory establishes a universal substrate-inheritance law.
 
-Current-status authority: this README, the active contract, `CORRESPONDENCE_PROTOCOL_v0.2.json`, and the current computational records govern the present program. Older papers, repository metadata, release text, prior README language, and `CORRESPONDENCE_PROTOCOL_v0.1.json` are OUTDATED wherever they conflict with these current qualifications. Historical artifacts remain preserved for provenance rather than silently rewritten.
+Current-status authority: this README, the active contract, `CORRESPONDENCE_PROTOCOL_v0.2.json`, `REAL_SYSTEM_INPUT_SCHEMA_v0.2.json`, and the current computational records govern the present program. Older papers, repository metadata, release text, prior README language, `CORRESPONDENCE_PROTOCOL_v0.1.json`, and `REAL_SYSTEM_INPUT_SCHEMA_v0.1.json` are OUTDATED wherever they conflict with these current qualifications. Historical artifacts remain preserved for provenance rather than silently rewritten.
 
 This branch consolidates the current Foundations generator-first framework with the parts of Stability Arc, Chemistry/ChemSA, and the Atlas program needed to test substrate inheritance without pooling physically distinct coordinates.
 
@@ -60,11 +60,12 @@ The current engine and validation suite implement:
 - finite-depth versus analytic semi-infinite embedding validation;
 - carrier-discriminability failure-boundary sweeps;
 - a separate electronic block-Hamiltonian and retarded-Green-function validation channel;
+- a fail-closed real-system mechanical ingestion adapter;
 - promotion logic that distinguishes influence, conditional inheritance, and inheritance.
 
-Latest closed V1-V9 validation: GitHub Actions run `33290452090`, conclusion `success`, with 48 adversarial/unit tests passing. The archived validation artifact is `substrate-inheritance-synthetic-validation`, artifact ID `9725791914`, ZIP SHA-256 `33f66942eb5d9681adbb12f781191aa5d7cb343ecf6658a19dbc0766643223e4`.
+Latest closed full validation: GitHub Actions run `33290655196`, conclusion `success`, with 62 adversarial/unit tests passing. The archived validation artifact is `substrate-inheritance-synthetic-validation`, artifact ID `9725851716`, ZIP SHA-256 `7f7d3d59a599eac50cc78992ff85fea2b14a405c63c7689367c78eedd668667d`.
 
-These are software, mathematical, synthetic, identifiability, robustness, and channel-separation results. They are not physical substrate-inheritance evidence.
+These are software, mathematical, synthetic, identifiability, robustness, channel-separation, and ingestion-boundary results. They are not physical substrate-inheritance evidence.
 
 ## Current computational findings
 
@@ -82,7 +83,7 @@ Rewiring the child coupling while keeping the substrate operator fixed changed t
 
 ### Intervention consistency
 
-The finite-difference parent-to-child transfer map agrees with an independent analytic derivative to a worst relative error of approximately `1.12e-9` in the tested synthetic ensemble.
+The finite-difference parent-to-child transfer map agrees with an independent analytic derivative to approximately `1e-9` worst relative error in the tested synthetic ensemble.
 
 ### Scalar nonidentifiability
 
@@ -92,7 +93,7 @@ This supplies a direct computational boundary between influence and inheritance:
 
 ### Coordinate and degeneracy robustness
 
-The substrate self-energy is invariant under the tested consistent coordinate transformations to approximately `1.78e-15` maximum residual.
+The substrate self-energy is invariant under the tested consistent coordinate transformations at machine-scale numerical residual.
 
 For a near-degenerate two-mode sector with gap approximately `1e-8`, tiny perturbations reduced the 5th-percentile individual-mode assignment score to approximately `0.53924`, while the 5th-percentile minimum subspace cosine remained approximately `0.999999999747`. This validates using subspace geometry rather than forced one-to-one eigenvectors in crowded sectors.
 
@@ -106,21 +107,29 @@ These depths are model sizes, not physical inheritance lengths for any material.
 
 The planted carrier relation was progressively randomized while the scalar spectrum remained identical to the null. The threshold-free AUC fell from `1.0` to a minimum of approximately `0.91183`, and the mean planted-minus-null score gap fell from approximately `0.46386` to approximately `0.19190` in the specified synthetic family.
 
-This is important because the modal statistic does not remain perfectly discriminating as the carrier relation weakens. The sweep is a method failure-boundary study, not a calibration of a physical inheritance cutoff.
+This is a method failure-boundary study, not a calibration of a physical inheritance cutoff.
 
 ### Non-normal carrier geometry
 
 In a synthetic non-normal generator family, increasing non-normality made distinct right eigenvectors nearly parallel. At shear `30`, the maximum off-diagonal squared right-vector overlap was approximately `0.99889` while the right-eigenvector condition number reached approximately `1925.74`. In a separate near-defective family, the condition number increased to approximately `10000` as the eigenvalue gap collapsed to approximately `0.0002`.
 
-The scale-invariant biorthogonal correspondence was stable under a common similarity transformation to approximately `1.11e-16`. The result does not make biorthogonal overlap a universal score. It establishes that future non-normal physical records must carry left and right carriers or invariant projectors/subspaces plus conditioning, and may require a refusal near defectiveness.
+The scale-invariant biorthogonal correspondence remained invariant under a common similarity transformation at machine scale. This establishes that future non-normal physical records must carry left and right carriers or invariant projectors/subspaces plus conditioning, and may require a refusal near defectiveness.
 
 ### Separate electronic channel
 
-A block-Hamiltonian electronic calculation was validated independently of the phononic/mechanical branch. The full and reduced adsorbate Green functions agreed to approximately `2.84e-15`, and a common basis transformation changed the electronic self-energy curve by at most approximately `4.62e-14`.
+A block-Hamiltonian electronic calculation was validated independently of the phononic/mechanical branch. The full and reduced adsorbate Green functions and common-basis-transform checks agree at numerical precision.
 
-Across 256 same-spectrum electronic carrier scrambles, the substrate spectrum was preserved to approximately `2.66e-15` while the median relative self-energy-curve change was approximately `0.98147`. Every trial changed above machine scale in the specified synthetic ensemble.
+Across 256 same-spectrum electronic carrier scrambles, the substrate spectrum was preserved at machine scale while the median relative self-energy-curve change was approximately `0.98147`. Every trial changed above machine scale in the specified synthetic ensemble.
 
 Electronic self-energy and hybridization are retained as electronic-channel objects. They are not mechanical gamma and are not automatically combined with a phononic damping coefficient.
+
+### Fail-closed real-system ingestion
+
+`REAL_SYSTEM_INPUT_SCHEMA_v0.2.json` and `real_system_adapter.py` define the pre-physical ingestion boundary. The adapter requires source hashes, compatible units, positive masses, declared symmetry tolerances, a complete one-to-one mapping for every parent coordinate, and provenance showing that the mapping was frozen before target-carrier inspection and was not chosen using target kinetics or chi.
+
+It computes mass-weighted eigensystems, projected parent-to-child directional overlap, and separate child substrate-participation weights. It does not apply a physical inheritance threshold, assign an inheritance label, compute damping, or compute chi.
+
+The adapter's synthetic machine-readable validation is archived in the current CI artifact. This validates the input/output path only. It is not a physical-system result.
 
 Detailed numerical provenance is retained in `VALIDATION_LEDGER.md`.
 
@@ -130,8 +139,8 @@ Detailed numerical provenance is retained in `VALIDATION_LEDGER.md`.
 
 Current status:
 
-1. Na/Cu(001): development-only and not ready for physical ingestion because the planned active-region Hessian artifact was not present at the most recently checked Chemistry head. It may later exercise the adapter as development evidence but cannot be retroactively promoted.
-2. CO/Cu(111): prospective validation target, still upstream of inheritance analysis while its already-frozen Chemistry surface audit closes. This branch must not alter that route.
+1. Na/Cu(001): development-only and not ready for physical ingestion because the planned `na_cu001_ci/ACTIVE_REGION_HESSIAN.json` artifact was still absent at the most recently checked Chemistry head `b0c6c8bb74ee12445b77b7a43f7a12ebf099aaf4`. It may later exercise the adapter as development evidence but cannot be retroactively promoted.
+2. CO/Cu(111): prospective validation target, still upstream of inheritance analysis while its already-frozen Chemistry surface-audit/recovery sequence closes. This branch must not alter that route.
 3. H/Ru(0001): contrast/limit target with protocol-level preparation but no admitted Foundations inheritance input record yet.
 
 Mechanical chi or a damping scalar is not required to begin modal or conglomerative inheritance analysis. Any later scalar inheritance claim requires its own independent admissibility and dissipation provenance.
@@ -167,8 +176,10 @@ Current program status is an ongoing investigation aimed at developing computati
 
 - Architecture and evidentiary ladder: active and prospective.
 - Carrier correspondence definitions: v0.2 frozen before real-system target reveal.
+- Real-system input contract: v0.2 frozen before first physical ingestion.
 - V1-V9 synthetic/mathematical validation: PASS.
-- Latest closed suite: 48 tests passed.
+- Fail-closed ingestion adapter validation: PASS.
+- Latest closed full suite: 62 tests passed.
 - Physical inheritance thresholds: not frozen.
 - Real-system inheritance result: not established.
 - Universal inheritance claim: not established.
