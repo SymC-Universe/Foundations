@@ -20,7 +20,11 @@ The investigation is ongoing and aims to develop computational evidence for or a
 
 The program retains a coupled **modal + scalar + conglomeration** description. Scalars such as mechanical χ are used only where the governing dynamics license that reduction and remain attached to identified modes or subspaces. Collective coupling, memory, and bath structure are retained rather than forced into one scalar.
 
-The base GitHub computations on that branch are synthetic/adversarial software and identifiability validations and have passed CI. A ten-case ground-truth benchmark battery is now implemented to challenge influence-only promotion, scalar-only mapping, modal inheritance with changed scalars, frequency-only false friends, mode splitting, degenerate-subspace rotation, coupling rewiring, finite-bath recurrence, and full prospective synthetic inheritance. These computations are **not physical inheritance evidence and do not set physical-system thresholds**.
+The first six computational validation layers on that branch are closed as successful **synthetic/mathematical method validation**. The latest closed V1-V6 suite passed 36 adversarial/unit tests and includes: a ten-case ground-truth battery; same-spectrum modal scrambles; coupling rewiring; analytic intervention cross-checks; single-scalar nonidentifiability; coordinate invariance; near-degenerate subspace robustness; finite-bath recurrence; and finite-depth versus analytic semi-infinite substrate embedding.
+
+These computations are **not physical inheritance evidence and do not set physical-system thresholds**. They establish that the current machinery can identify several known false-positive routes and can refuse scalar or one-to-one modal interpretations when the available information does not identify them. Additional stress testing remains active on the dedicated branch, including weakened-carrier discriminability and non-normal/biorthogonal generator geometry.
+
+Existing Na/Cu work remains development evidence; CO/Cu(111) is reserved for prospective application after its already-frozen upstream chemistry gates; H/Ru(0001) remains a contrast/limit system.
 
 Older documents that imply broader inheritance, universal χ control, or unqualified cross-domain transfer are **OUTDATED wherever they conflict with the current generator-first and prospective-inheritance framework**. They remain available as research-history artifacts.
 
