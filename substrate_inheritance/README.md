@@ -2,7 +2,7 @@
 
 Status: ACTIVE INVESTIGATION. Computational evidence is being developed prospectively. Nothing in this directory establishes a universal substrate-inheritance law.
 
-Current-status authority: this README, the active contract, and the current computational records govern the present program. Older papers, repository metadata, release text, or prior README language are OUTDATED wherever they conflict with these current qualifications. Historical artifacts remain preserved for provenance rather than silently rewritten.
+Current-status authority: this README, the active contract, the frozen correspondence protocol, and the current computational records govern the present program. Older papers, repository metadata, release text, or prior README language are OUTDATED wherever they conflict with these current qualifications. Historical artifacts remain preserved for provenance rather than silently rewritten.
 
 This branch consolidates the current Foundations generator-first framework with the parts of Stability Arc, Chemistry/ChemSA, and the Atlas program that are needed to test substrate inheritance without pooling physically distinct coordinates.
 
@@ -39,45 +39,79 @@ A proposed inherited quantity must pass the following gates before promotion bey
 
 Failure at a higher gate does not erase lower-level evidence. It changes the label.
 
+The current carrier correspondence definitions are frozen in `CORRESPONDENCE_PROTOCOL_v0.1.json` before a real-system inheritance target has been revealed. No physical promotion threshold is frozen yet.
+
 ## Computational program
 
-The initial engine implements mathematics that can be validated without physical target data:
+The current engine and validation suite implement:
 
 - mass-normalized modal overlap matrices;
 - subspace comparison using principal-angle cosines for degenerate or crowded sectors;
 - frequency-domain dynamic stiffness construction;
 - Schur-complement elimination of substrate degrees of freedom;
+- substrate self-energy/embedding calculations;
 - explicit finite-bath memory-kernel calculations without mislabeling a finite harmonic bath as irreversible friction;
 - parent-parameter intervention and finite-difference transfer maps;
 - eigenvalue-preserving modal-scramble controls;
+- coupling-rewire controls;
+- coordinate-representation invariance checks;
+- near-degeneracy robustness checks;
+- finite-depth versus analytic semi-infinite embedding validation;
 - promotion logic that distinguishes influence, conditional inheritance, and inheritance.
 
-The base synthetic validation and adversarial unit tests are established in GitHub Actions and have passed CI. They remain software and identifiability validation only, not physical evidence.
+Latest closed V1-V6 validation: GitHub Actions run `33290269457`, conclusion `success`, with 36 adversarial/unit tests passing. The archived validation artifact is `substrate-inheritance-synthetic-validation`, artifact ID `9725736036`, ZIP SHA-256 `8adc5e7135a824f8f3f726e8abd2ba60dbc64aacfae86a4db992ae9449e0343d`.
 
-## Ground-truth adversarial benchmark battery
+These are software, mathematical, synthetic, identifiability, and robustness results. They are not physical substrate-inheritance evidence.
 
-A second synthetic layer now tests ten deliberately constructed cases with known ground truth before any real-system inheritance threshold is frozen:
+## Current computational findings
 
-1. No coupling: verifies that zero substrate coupling does not manufacture influence.
-2. Influence only: verifies that a nonzero parent-to-child response is not automatically promoted to inheritance.
-3. Scalar conditional mapping: verifies that accurate prediction without intervention or specificity remains conditional.
-4. Modal inheritance with changed scalar values: verifies that carrier inheritance does not require numerical scalar equality.
-5. Frequency false friend: preserves eigenvalues while scrambling modal geometry to test whether frequency agreement can create a false inheritance claim.
-6. Mode splitting: tests one parent carrier distributed across a child subspace rather than forcing one-to-one vector matching.
-7. Degenerate-subspace rotation: tests whether basis rotation inside the same physical subspace is correctly retained rather than mislabeled as inheritance loss.
-8. Coupling rewiring: keeps substrate structure fixed while changing coupling assignment to test the conglomeration layer separately from the spectrum.
-9. Finite-bath recurrence: verifies that a finite harmonic bath retains recurrence and is not silently converted into irreversible friction.
-10. Full prospective synthetic inheritance: combines frozen mapping, exact child prediction, intervention sensitivity, and an eigenvalue-preserving specificity null.
+### Ground-truth adversarial battery
 
-These benchmark cases use software-level numerical tolerances only. They do not establish or imply physical acceptance thresholds for Na/Cu, CO/Cu, H/Ru, or any other real system.
+Ten deliberately constructed cases test no coupling, influence only, conditional scalar mapping, modal inheritance with changed scalar values, same-spectrum false friends, mode splitting, degenerate-subspace rotation, coupling rewiring, finite-bath recurrence, and a full prospective synthetic inheritance case. All behave according to their intended evidence class under the current suite.
 
-## Physical-system sequence
+### Same-spectrum modal ensemble
 
-The intended real-system sequence is:
+Across 256 seeded dimension-5 trials, a planted carrier map had mean permutation-invariant assignment score approximately `0.94981`, while eigenvalue-identical scrambled carriers had mean approximately `0.53907`. The threshold-free pairwise AUC was `1.0` for this specified synthetic generator. This demonstrates method discriminability under the synthetic construction, not a physical threshold.
 
-1. Development-only validation using existing Na/Cu nested Hessian structures where available. Na/Cu remains development evidence and is not retroactively promoted to an independent prospective test.
-2. Prospective application to CO/Cu(111) only after the currently frozen upstream chemistry gates produce the required clean-substrate and coupled-system objects. The current CO/Cu method-selection and surface-audit work must not be altered by this branch.
-3. Independent contrast/limit application to H/Ru(0001), retaining the existing requirement for explicit quantum-nuclear treatment and independently justified dissipation before any scalar damping reduction.
+### Coupling-specificity ensemble
+
+Rewiring the child coupling while keeping the substrate operator fixed changed the normalized substrate self-energy in 255/256 trials above machine scale. The median relative change was approximately `0.20734`. This shows that the conglomeration layer contains information not fixed by substrate spectrum alone in the tested synthetic ensemble.
+
+### Intervention consistency
+
+The finite-difference parent-to-child transfer map agrees with an independent analytic derivative to a worst relative error of approximately `1.12e-9` in the tested synthetic ensemble.
+
+### Scalar nonidentifiability
+
+Across 256 trials, distinct coupling geometries were constructed to reproduce the same scalar child self-energy at one frequency with maximum mismatch approximately `1.67e-16`. Their median absolute coupling-direction cosine was only approximately `0.30763`. At a second frequency every pair separated above machine scale, with median relative response difference approximately `0.03263`.
+
+This supplies a direct computational boundary between influence and inheritance: one perfectly matched scalar response can demonstrate influence while remaining non-identifying for conglomerative inheritance.
+
+### Coordinate and degeneracy robustness
+
+The substrate self-energy is invariant under the tested consistent coordinate transformations to approximately `1.78e-15` maximum residual.
+
+For a near-degenerate two-mode sector with gap approximately `1e-8`, tiny perturbations reduced the 5th-percentile individual-mode assignment score to approximately `0.53924`, while the 5th-percentile minimum subspace cosine remained approximately `0.999999999747`. This validates using subspace geometry rather than forced one-to-one eigenvectors in crowded sectors.
+
+### Synthetic inheritance depth
+
+A finite substrate-chain embedding was compared against an analytic semi-infinite surface Green function. In the reference synthetic case, relative self-energy error fell from approximately `5.40e-2` at depth 1 to `3.07e-3` at depth 2, `1.00e-5` at depth 4, `1.06e-10` at depth 8, and machine scale by depth 16. Stronger synthetic inter-site coupling required greater retained depth.
+
+These depths are model sizes, not physical inheritance lengths for any material. The calculation validates the method that will later ask how much substrate must be retained before a real child embedding response converges.
+
+Detailed numerical provenance is retained in `VALIDATION_LEDGER.md`.
+
+## Physical-system readiness
+
+`PHYSICAL_INPUT_READINESS_v0.1.json` prevents planned or upstream calculations from being mistaken for inheritance evidence.
+
+Current status:
+
+1. Na/Cu(001): development-only and not ready for physical ingestion because the planned active-region Hessian artifact is not present at the checked Chemistry head. It may later exercise the adapter as development evidence but cannot be retroactively promoted.
+2. CO/Cu(111): prospective validation target, still upstream of inheritance analysis while its already-frozen Chemistry surface audit closes. This branch must not alter that route.
+3. H/Ru(0001): contrast/limit target with protocol-level preparation but no admitted Foundations inheritance input record yet.
+
+Mechanical chi or a damping scalar is not required to begin modal or conglomerative inheritance analysis. Any later scalar inheritance claim requires its own independent admissibility and dissipation provenance.
 
 ## Relationship to the Atlas program
 
@@ -108,10 +142,11 @@ Current program status is an ongoing investigation aimed at developing computati
 
 ## Current branch status
 
-- Architecture: active and prospective.
-- Base synthetic mathematics/software validation: established and CI-tested.
-- Ten-case adversarial ground-truth benchmark battery: implemented and under CI validation.
-- Physical inheritance thresholds: not frozen yet.
+- Architecture and evidentiary ladder: active and prospective.
+- Carrier correspondence definitions: frozen before real-system target reveal.
+- V1-V6 synthetic/mathematical validation: PASS.
+- Latest closed suite: 36 tests passed.
+- Physical inheritance thresholds: not frozen.
 - Real-system inheritance result: not established.
 - Universal inheritance claim: not established.
 
