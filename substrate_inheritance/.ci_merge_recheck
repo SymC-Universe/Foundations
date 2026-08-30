@@ -1,0 +1,1 @@
+Temporary CI trigger used to validate the ledger-only pull request against the current substrate-inheritance base. This file is removed in the immediately following commit and is not intended for merge.
