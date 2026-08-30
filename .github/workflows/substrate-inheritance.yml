@@ -63,6 +63,9 @@ jobs:
       - name: Run non-normal biorthogonal carrier validation
         run: python -m substrate_inheritance.nonnormal_validation
 
+      - name: Run separate electronic inheritance validation
+        run: python -m substrate_inheritance.electronic_validation
+
       - name: Verify outputs are explicitly non-physical
         run: |
           python - <<'PY'
@@ -78,6 +81,7 @@ jobs:
               "depth_validation.json": "synthetic_inheritance_depth_validation_only",
               "discriminability_validation.json": "synthetic_discriminability_strength_validation_only",
               "nonnormal_validation.json": "synthetic_nonnormal_biorthogonal_validation_only",
+              "electronic_validation.json": "synthetic_electronic_inheritance_validation_only",
           }
           records = {}
           for filename, scope in expected.items():
@@ -92,6 +96,8 @@ jobs:
               if "real_system_evidence" in record:
                   assert record["real_system_evidence"] is False
           assert records["identifiability_validation.json"]["single_scalar_response_identifies_unique_coupling"] is False
+          assert records["electronic_validation.json"]["mechanical_damping_inferred"] is False
+          assert records["electronic_validation.json"]["electronic_hybridization_identified_with_mechanical_gamma"] is False
           print("Synthetic evidence guards passed")
           PY
 
@@ -108,3 +114,4 @@ jobs:
             substrate_inheritance/results/depth_validation.json
             substrate_inheritance/results/discriminability_validation.json
             substrate_inheritance/results/nonnormal_validation.json
+            substrate_inheritance/results/electronic_validation.json
