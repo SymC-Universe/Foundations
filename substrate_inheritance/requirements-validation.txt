@@ -1,0 +1,9 @@
+# Dependency set reproduced from successful GitHub Actions validation runs on 2026-08-30.
+# Keep this file version-pinned. A dependency change is a mechanical reproducibility change
+# and should be validated before promotion.
+numpy==2.5.2
+pytest==9.1.1
+iniconfig==2.3.0
+packaging==26.3
+pluggy==1.6.0
+Pygments==2.21.0
