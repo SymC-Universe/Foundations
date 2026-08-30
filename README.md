@@ -8,15 +8,19 @@ SymC does **not** currently assert that a single scalar damping ratio universall
 
 Domain-specific applications are maintained separately.
 
+## Current-status authority
+
+This README and later explicit contracts, reproducibility records, and active investigation records govern the present interpretation of the Foundations program. Historical PDFs, older README language, release notes, and repository metadata may lag the active work and are **OUTDATED wherever they conflict with the current generator-first, carrier-resolved, prospective framework**. Historical artifacts remain preserved for provenance rather than silently rewritten.
+
 ## Active substrate-inheritance investigation
 
-A dedicated [`substrate-inheritance`](https://github.com/SymC-Universe/Foundations/tree/substrate-inheritance) branch now hosts the prospective Foundations-level substrate-inheritance program and its computational validation layer.
+A dedicated [`substrate-inheritance`](https://github.com/SymC-Universe/Foundations/tree/substrate-inheritance) branch hosts the prospective Foundations-level substrate-inheritance program and its computational validation layer.
 
 The investigation is ongoing and aims to develop computational evidence for or against substrate-inheritance claims. It formally distinguishes **substrate influence** from **substrate inheritance**. Influence means a defined substrate property demonstrably changes child or coupled-system behavior. Inheritance additionally requires independently characterized parent structure, explicit carrier correspondence, a parent-to-child mapping frozen before target reveal, successful prospective child prediction, intervention/counterfactual confirmation, and specificity against scrambled or generic controls.
 
 The program retains a coupled **modal + scalar + conglomeration** description. Scalars such as mechanical χ are used only where the governing dynamics license that reduction and remain attached to identified modes or subspaces. Collective coupling, memory, and bath structure are retained rather than forced into one scalar.
 
-The first GitHub computations on that branch are synthetic/adversarial software and identifiability validations only. They are not physical inheritance evidence and do not set physical-system thresholds.
+The base GitHub computations on that branch are synthetic/adversarial software and identifiability validations and have passed CI. A ten-case ground-truth benchmark battery is now implemented to challenge influence-only promotion, scalar-only mapping, modal inheritance with changed scalars, frequency-only false friends, mode splitting, degenerate-subspace rotation, coupling rewiring, finite-bath recurrence, and full prospective synthetic inheritance. These computations are **not physical inheritance evidence and do not set physical-system thresholds**.
 
 Older documents that imply broader inheritance, universal χ control, or unqualified cross-domain transfer are **OUTDATED wherever they conflict with the current generator-first and prospective-inheritance framework**. They remain available as research-history artifacts.
 
