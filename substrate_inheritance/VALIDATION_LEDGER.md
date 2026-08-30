@@ -4,7 +4,7 @@ Status: active computational-method evidence record. This ledger does not contai
 
 ## Evidence classes
 
-The records below are classified as software, mathematical, synthetic ground-truth, ensemble-discriminability, or identifiability evidence. None may be promoted to physical substrate-inheritance evidence merely because a validation passes.
+The records below are classified as software, mathematical, synthetic ground-truth, ensemble-discriminability, identifiability, robustness, or embedding-depth evidence. None may be promoted to physical substrate-inheritance evidence merely because a validation passes.
 
 ## V1: Base mathematical and software validation
 
@@ -37,32 +37,30 @@ The battery contains ten constructed cases with known intended interpretation:
 9. finite-bath recurrence;
 10. full prospective synthetic inheritance.
 
-GitHub Actions run `33290141338` executed the battery successfully as part of commit `58b3feb9976ee6b4783a4e04fc2c19e740871981`.
-
-Key observations from that run:
+Key observations:
 
 - zero coupling produced zero substrate self-energy and was not labeled influence;
 - the influence-only case produced a nonzero transfer map but was labeled `SUBSTRATE_INFLUENCE`, not inheritance;
 - the conditional scalar case predicted the synthetic child scalar exactly but remained `CONDITIONAL_INHERITANCE` because intervention and specificity were absent;
 - the modal-inheritance case preserved the known carrier map with zero mapping residual even though the scalar values were deliberately changed;
-- the frequency-false-friend case preserved eigenvalues to approximately `4.44e-16` while producing a strongly non-identity modal-overlap structure;
-- the split-mode case had only 0.5 individual-vector overlap with each child vector but principal-angle cosine 1.0 for the containing child subspace;
+- the frequency-false-friend case preserved eigenvalues to machine precision while producing a strongly non-identity modal-overlap structure;
+- the split-mode case had 0.5 individual-vector overlap with each child vector but principal-angle cosine 1.0 for the containing child subspace;
 - the degenerate-subspace case rotated the basis while retaining principal-angle cosines `[1.0, 1.0]`;
-- the coupling-rewire case changed the scalar self-energy by approximately `0.01650` despite preserving the substrate operator;
-- the finite-bath case retained late recurrence with maximum late absolute kernel approximately `0.94766`;
+- the coupling-rewire case changed the scalar self-energy by approximately `0.0165012` despite preserving the substrate operator;
+- the finite-bath case retained late recurrence with maximum late absolute kernel approximately `0.947656`;
 - the full prospective synthetic case had zero Schur prediction error, a nonzero intervention transfer, and a nonzero eigenvalue-preserving scramble specificity gap.
 
 Status: PASS as synthetic ground-truth validation only.
 
 ## V3: Same-spectrum modal ensemble and coupling-specificity ensemble
 
-GitHub Actions run `33290141338` also executed 256-trial seeded ensembles in dimension 5.
+A seeded 256-trial ensemble was run in dimension 5.
 
 ### Same-spectrum modal null
 
 The null preserves the parent eigenvalue spectrum while randomizing carrier geometry.
 
-- maximum numerical difference between parent and null spectra: approximately `6.22e-15`;
+- maximum numerical difference between parent and null spectra: approximately `7.11e-15`;
 - planted carrier-map mean assignment score: approximately `0.94981`;
 - planted median assignment score: approximately `0.95614`;
 - same-spectrum scrambled mean assignment score: approximately `0.53907`;
@@ -78,7 +76,7 @@ The parent substrate operator is held fixed while the child-coupling assignment 
 - mean relative self-energy change: approximately `0.22004`;
 - median relative self-energy change: approximately `0.20734`;
 - 5th to 95th percentile range: approximately `0.02431` to `0.46536`;
-- fraction nonzero above machine-scale criterion: `0.99609375` or 255/256 trials.
+- fraction nonzero above machine-scale criterion: `0.99609375`, or 255/256 trials.
 
 Interpretation: in the specified synthetic ensemble, conglomerated response depends on the coupling architecture and is not determined by substrate spectrum alone.
 
@@ -86,35 +84,118 @@ Interpretation: in the specified synthetic ensemble, conglomerated response depe
 
 The numerical finite-difference parent-to-child transfer map was compared with an analytic derivative for a diagonal synthetic substrate.
 
-- maximum relative error: approximately `1.38e-9`;
-- mean relative error: approximately `4.97e-10`;
-- 95th percentile relative error: approximately `9.30e-10`.
+- maximum relative error: approximately `1.12e-9`;
+- mean relative error: approximately `4.17e-10`;
+- 95th percentile relative error: approximately `7.70e-10`.
 
-Interpretation: the implemented numerical intervention map reproduces the analytic result to substantially better than the precision needed for the current synthetic validation.
+Interpretation: the implemented numerical intervention map reproduces the analytic result to substantially better precision than needed for the current synthetic validation.
 
 Status: PASS as synthetic ensemble/method validation only.
 
-## Provenance for V1-V3
-
-- workflow: `.github/workflows/substrate-inheritance.yml`;
-- successful run: `33290141338`;
-- successful job: `99200237146`;
-- test count in that run: 26 passed;
-- uploaded artifact: `substrate-inheritance-synthetic-validation`;
-- artifact ID: `9725698262`;
-- uploaded artifact ZIP SHA-256: `8a4f1417e6ea7d27eeabd057f0eaaddf51bdf9e5ca2fa4fde4393d74e656d822`;
-- physical thresholds frozen: false;
-- real-system evidence: false.
-
 ## V4: Single-response identifiability challenge
 
-Status: active validation layer added after V3.
+Distinct substrate-to-child coupling geometries were scaled to produce the same scalar substrate self-energy at one synthetic probe frequency and then compared at a second frequency.
 
-Purpose: construct distinct substrate-to-child coupling geometries that produce exactly the same scalar substrate self-energy at one synthetic probe frequency, then test whether a second frequency separates them.
+Configuration:
 
-This directly attacks the inference that one matched scalar response could identify inheritance. If the construction succeeds, the correct conclusion is that one scalar response may demonstrate influence but is insufficient to uniquely identify conglomerative inheritance.
+- 256 seeded trials;
+- dimension 5;
+- match frequency `0.4`;
+- second probe frequency `0.9`.
 
-The numerical result is not entered here until the corresponding GitHub Actions execution passes.
+Results:
+
+- maximum self-energy mismatch at the matched frequency: approximately `1.67e-16`;
+- mean mismatch at the matched frequency: approximately `3.37e-17`;
+- median absolute coupling-direction cosine: approximately `0.30763`;
+- mean absolute coupling-direction cosine: approximately `0.34741`;
+- 5th to 95th percentile coupling-direction cosine: approximately `0.03492` to `0.75918`;
+- median relative response difference at the second frequency: approximately `0.03263`;
+- mean relative response difference at the second frequency: approximately `0.04378`;
+- 5th to 95th percentile second-frequency difference: approximately `0.00306` to `0.11937`;
+- all 256 pairs separated above machine-scale criterion at the second frequency.
+
+Interpretation: one scalar child response can be perfectly matched by substantially different parent-to-child coupling geometries. A single scalar response may demonstrate influence, but it does not uniquely identify conglomerative inheritance.
+
+Status: PASS as synthetic identifiability validation only.
+
+## V5: Coordinate and degeneracy robustness
+
+### Coordinate invariance
+
+Across 256 seeded trials, the substrate self-energy was recomputed after consistent orthogonal basis changes and invertible coordinate scalings.
+
+- maximum orthogonal-basis residual: approximately `1.78e-15`;
+- mean orthogonal-basis residual: approximately `2.03e-16`;
+- maximum coordinate-scaling residual: approximately `1.78e-15`;
+- mean coordinate-scaling residual: approximately `1.34e-16`.
+
+Interpretation: the implemented embedding observable is representation-invariant to numerical precision under the tested coordinate transformations.
+
+### Near-degenerate carrier robustness
+
+A two-mode sector with eigenvalue gap approximately `1e-8` was subjected to perturbations with Frobenius norm `1e-4` and compared with a separated sector having gap `0.7`.
+
+Near-degenerate sector:
+
+- mean individual-mode assignment score: approximately `0.82506`;
+- 5th percentile individual-mode assignment score: approximately `0.53924`;
+- mean minimum principal-angle cosine of the two-dimensional subspace: approximately `0.999999999893`;
+- 5th percentile minimum subspace cosine: approximately `0.999999999747`.
+
+Separated sector:
+
+- mean individual-mode assignment score: approximately `0.999999999222`;
+- 5th percentile individual-mode assignment score: approximately `0.999999997420`.
+
+Interpretation: near-degenerate individual eigenvectors can rotate strongly under perturbations far smaller than the overall spectral scale while the physical subspace remains essentially unchanged. This validates the frozen rule that crowded or degenerate sectors must be compared as subspaces instead of forcing one-to-one vector identity.
+
+Status: PASS as synthetic robustness validation only.
+
+## V6: Synthetic substrate-depth embedding validation
+
+A finite uniform nearest-neighbor substrate chain was compared with its analytic semi-infinite surface Green function. The complex probe frequency contains an explicit imaginary regularizer for the resolvent and is not interpreted as physical damping.
+
+Reference configuration:
+
+- onsite stiffness `4.0`;
+- substrate hopping `0.8`;
+- child coupling `0.6`;
+- probe frequency `0.7 + 0.15 i`;
+- semi-infinite self-energy real part approximately `0.107248931361`;
+- semi-infinite self-energy imaginary part approximately `0.00714727299806`.
+
+Relative finite-depth error:
+
+- depth 1: approximately `5.3999e-2`;
+- depth 2: approximately `3.0717e-3`;
+- depth 4: approximately `9.9971e-6`;
+- depth 8: approximately `1.0593e-10`;
+- depth 16: approximately `1.41e-16`.
+
+Direct matrix inversion and recursive surface-Green-function evaluation agreed at zero or machine-scale residual throughout the tested depths.
+
+A coupling-strength sweep showed that stronger substrate hopping required more retained substrate depth for equivalent convergence. This is a property of the specified synthetic chain, not a physical inheritance length for Cu or any other material.
+
+Interpretation: the machinery can ask how the child embedding response converges as progressively more parent substrate degrees of freedom are retained and can validate that convergence against an independent analytic semi-infinite result.
+
+Status: PASS as synthetic embedding-depth validation only.
+
+## Current provenance
+
+Latest closed validation run containing V1-V6:
+
+- workflow: `.github/workflows/substrate-inheritance.yml`;
+- GitHub Actions run: `33290269457`;
+- commit: `d76e2317817d91911c104ad8dcd23bba29b8fae1`;
+- job: `99200574195`;
+- conclusion: `success`;
+- adversarial/unit tests: `36 passed`;
+- uploaded artifact: `substrate-inheritance-synthetic-validation`;
+- artifact ID: `9725736036`;
+- uploaded artifact ZIP SHA-256: `8adc5e7135a824f8f3f726e8abd2ba60dbc64aacfae86a4db992ae9449e0343d`;
+- physical thresholds frozen: false;
+- real-system evidence: false.
 
 ## Physical evidence boundary
 
