@@ -63,7 +63,13 @@ The current engine and validation suite implement:
 - a fail-closed real-system mechanical ingestion adapter;
 - promotion logic that distinguishes influence, conditional inheritance, and inheritance.
 
-Latest closed full validation: GitHub Actions run `33290655196`, conclusion `success`, with 62 adversarial/unit tests passing. The archived validation artifact is `substrate-inheritance-synthetic-validation`, artifact ID `9725851716`, ZIP SHA-256 `7f7d3d59a599eac50cc78992ff85fea2b14a405c63c7689367c78eedd668667d`.
+### Hardened reference validation
+
+The fixed reproducibility reference for the current 62-test method suite is commit `9a1f357e73a27e532c755649568dde8af0b229cd`, GitHub Actions run `33292821080`, conclusion `success`. The archived artifact is `substrate-inheritance-synthetic-validation`, artifact ID `9726488007`, ZIP SHA-256 `332e5c463c597015a5cbe832b84ce8843be4eef688c8f62ca2e3ef4df18b7635`.
+
+That run used CPython 3.12.14 on Ubuntu 24.04 with the validation dependencies pinned in `requirements-validation.txt`; `pip check` reported no broken requirements. The uploaded artifact contains the realized runtime environment in `validation_environment.txt`. The workflow also pins the external GitHub Actions by commit SHA. See `VALIDATION_ENVIRONMENT.md` for the environment and change-control rule.
+
+This is a fixed reference milestone, not a moving claim that the cited run will always be the most recent CI execution. Later successful CI runs are additional regression evidence unless a new reference milestone is explicitly recorded.
 
 These are software, mathematical, synthetic, identifiability, robustness, channel-separation, and ingestion-boundary results. They are not physical substrate-inheritance evidence.
 
@@ -129,7 +135,7 @@ Electronic self-energy and hybridization are retained as electronic-channel obje
 
 It computes mass-weighted eigensystems, projected parent-to-child directional overlap, and separate child substrate-participation weights. It does not apply a physical inheritance threshold, assign an inheritance label, compute damping, or compute chi.
 
-The adapter's synthetic machine-readable validation is archived in the current CI artifact. This validates the input/output path only. It is not a physical-system result.
+The adapter's synthetic machine-readable validation is archived in the reference CI artifact. This validates the input/output path only. It is not a physical-system result.
 
 Detailed numerical provenance is retained in `VALIDATION_LEDGER.md`.
 
@@ -179,7 +185,7 @@ Current program status is an ongoing investigation aimed at developing computati
 - Real-system input contract: v0.2 frozen before first physical ingestion.
 - V1-V9 synthetic/mathematical validation: PASS.
 - Fail-closed ingestion adapter validation: PASS.
-- Latest closed full suite: 62 tests passed.
+- Hardened reference suite: 62 tests passed under the pinned validation environment.
 - Physical inheritance thresholds: not frozen.
 - Real-system inheritance result: not established.
 - Universal inheritance claim: not established.
