@@ -1,0 +1,69 @@
+name: Proposed research extension
+description: Propose a new system, derivation, dataset, or prospective test before target-result inspection.
+title: "[Research extension] "
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Research question
+      description: State the specific question or falsifiable hypothesis being proposed.
+    validations:
+      required: true
+
+  - type: textarea
+    id: system
+    attributes:
+      label: Proposed system or evidence source
+      description: Identify the physical system, mathematical class, dataset, literature source, or computational object.
+    validations:
+      required: true
+
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Independent rationale for selection
+      description: Explain why this target is scientifically appropriate without using the desired target outcome as the selection reason.
+    validations:
+      required: true
+
+  - type: textarea
+    id: observables
+    attributes:
+      label: Governing object and observables
+      description: Identify the governing operator/equations and the quantities intended to be measured or computed. State any proposed scalar, modal, subspace, or conglomeration representation.
+    validations:
+      required: true
+
+  - type: textarea
+    id: prediction
+    attributes:
+      label: Prospective prediction or decision rule
+      description: State what will be frozen before target inspection, including mapping, comparison, null, or failure criteria when applicable.
+    validations:
+      required: true
+
+  - type: textarea
+    id: falsification
+    attributes:
+      label: Falsification and refusal conditions
+      description: Describe outcomes that would count against the hypothesis, produce an influence-only result, or require a nonidentifiable/refusal label.
+    validations:
+      required: true
+
+  - type: textarea
+    id: resources
+    attributes:
+      label: Computational and data requirements
+      description: Note software, compute, data access, provenance, licensing, or experimental dependencies.
+
+  - type: checkboxes
+    id: prospectivity
+    attributes:
+      label: Prospectivity declaration
+      options:
+        - label: The proposed target was not selected because I already know it produces the desired SymC result.
+          required: true
+        - label: I have disclosed any target outcomes or literature values I have already inspected.
+          required: true
+        - label: I understand that a null, failed, influence-only, or nonidentifiable result is an acceptable outcome.
+          required: true
