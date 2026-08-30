@@ -54,6 +54,9 @@ jobs:
       - name: Run coordinate and degeneracy robustness validation
         run: python -m substrate_inheritance.robustness_validation
 
+      - name: Run substrate-depth embedding validation
+        run: python -m substrate_inheritance.depth_validation
+
       - name: Verify outputs are explicitly non-physical
         run: |
           python - <<'PY'
@@ -66,6 +69,7 @@ jobs:
               "ensemble_validation.json": "synthetic_ensemble_validation_only",
               "identifiability_validation.json": "synthetic_identifiability_validation_only",
               "robustness_validation.json": "synthetic_robustness_validation_only",
+              "depth_validation.json": "synthetic_inheritance_depth_validation_only",
           }
           records = {}
           for filename, scope in expected.items():
@@ -94,3 +98,4 @@ jobs:
             substrate_inheritance/results/ensemble_validation.json
             substrate_inheritance/results/identifiability_validation.json
             substrate_inheritance/results/robustness_validation.json
+            substrate_inheritance/results/depth_validation.json
