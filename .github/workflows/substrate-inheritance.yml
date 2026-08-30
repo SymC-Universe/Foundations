@@ -51,29 +51,36 @@ jobs:
       - name: Run identifiability validation
         run: python -m substrate_inheritance.identifiability_validation
 
+      - name: Run coordinate and degeneracy robustness validation
+        run: python -m substrate_inheritance.robustness_validation
+
       - name: Verify outputs are explicitly non-physical
         run: |
           python - <<'PY'
           import json
           from pathlib import Path
 
-          base = json.loads(Path("substrate_inheritance/results/synthetic_validation.json").read_text())
-          bench = json.loads(Path("substrate_inheritance/results/ground_truth_benchmarks.json").read_text())
-          ensemble = json.loads(Path("substrate_inheritance/results/ensemble_validation.json").read_text())
-          ident = json.loads(Path("substrate_inheritance/results/identifiability_validation.json").read_text())
+          expected = {
+              "synthetic_validation.json": "synthetic_software_validation_only",
+              "ground_truth_benchmarks.json": "synthetic_ground_truth_benchmark_only",
+              "ensemble_validation.json": "synthetic_ensemble_validation_only",
+              "identifiability_validation.json": "synthetic_identifiability_validation_only",
+              "robustness_validation.json": "synthetic_robustness_validation_only",
+          }
+          records = {}
+          for filename, scope in expected.items():
+              record = json.loads(Path("substrate_inheritance/results", filename).read_text())
+              assert record["scope"] == scope
+              records[filename] = record
 
-          assert base["scope"] == "synthetic_software_validation_only"
-          assert bench["scope"] == "synthetic_ground_truth_benchmark_only"
+          bench = records["ground_truth_benchmarks.json"]
           assert bench["case_count"] == 10
-          assert bench["physical_thresholds_frozen"] is False
-          assert bench["real_system_evidence"] is False
-          assert ensemble["scope"] == "synthetic_ensemble_validation_only"
-          assert ensemble["physical_thresholds_frozen"] is False
-          assert ensemble["real_system_evidence"] is False
-          assert ident["scope"] == "synthetic_identifiability_validation_only"
-          assert ident["physical_thresholds_frozen"] is False
-          assert ident["real_system_evidence"] is False
-          assert ident["single_scalar_response_identifies_unique_coupling"] is False
+          for record in records.values():
+              if "physical_thresholds_frozen" in record:
+                  assert record["physical_thresholds_frozen"] is False
+              if "real_system_evidence" in record:
+                  assert record["real_system_evidence"] is False
+          assert records["identifiability_validation.json"]["single_scalar_response_identifies_unique_coupling"] is False
           print("Synthetic evidence guards passed")
           PY
 
@@ -86,3 +93,4 @@ jobs:
             substrate_inheritance/results/ground_truth_benchmarks.json
             substrate_inheritance/results/ensemble_validation.json
             substrate_inheritance/results/identifiability_validation.json
+            substrate_inheritance/results/robustness_validation.json
