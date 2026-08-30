@@ -1,0 +1,59 @@
+{
+  "schema": "substrate-inheritance-physical-input-readiness-v0.1",
+  "status": "ACTIVE_NO_REAL_SYSTEM_INHERITANCE_RESULT_YET",
+  "purpose": "Prevent planned, partial, historical, or upstream calculations from being mistaken for real-system substrate-inheritance evidence.",
+  "current_rules": {
+    "synthetic_results_are_physical_evidence": false,
+    "planned_artifacts_count_as_observed_results": false,
+    "historical_development_outputs_can_be_retroactively_promoted": false,
+    "upstream_surface_convergence_counts_as_inheritance": false,
+    "absence_or_nonidentifiability_is_a_valid_result": true
+  },
+  "source_snapshot": {
+    "chemistry_repository": "SymC-Universe/Chemistry",
+    "chemistry_branch": "agent/na-cu001-integration",
+    "chemistry_head_checked": "e4137b37dbdc808b258d238e42c11f93a9b8046d",
+    "chemistry_head_message": "Recover CO Cu111 continuation v2 closure audit"
+  },
+  "systems": [
+    {
+      "system": "Na/Cu(001)",
+      "role": "development_only",
+      "inheritance_input_status": "NOT_READY",
+      "relevant_planned_artifact": "na_cu001_ci/ACTIVE_REGION_HESSIAN.json",
+      "planned_schema": "na-cu001-active-region-hessian-v0.2",
+      "repository_presence_at_checked_head": false,
+      "reason": "The frozen integration plan places the mass-weighted active-region Hessian at Stage 14 after substrate-mobility convergence. The expected artifact is not present at the checked repository head. Existing Na/Cu calculations may later exercise the adapter as development evidence but cannot be retroactively promoted to prospective validation."
+    },
+    {
+      "system": "CO/Cu(111)",
+      "role": "prospective_external_validation_target",
+      "inheritance_input_status": "UPSTREAM_GATE_IN_PROGRESS",
+      "active_upstream_workflow_run": 33289747543,
+      "active_upstream_workflow_name": "CO Cu111 PBE surface audit continuation extension v2 closure recovery v1",
+      "reason": "The current work is still an upstream surface-audit closure/recovery stage. No coupled parent-child modal inheritance result may be claimed from it. The inheritance analysis waits for independently admitted clean-substrate and coupled-system modal or Hessian objects without changing the frozen chemistry route."
+    },
+    {
+      "system": "H/Ru(0001)",
+      "role": "contrast_limit_target",
+      "inheritance_input_status": "PROTOCOL_ONLY_NOT_READY",
+      "reason": "The selected contrast system has a frozen method and quantum-treatment protocol, but no admitted real-system substrate-inheritance input record is present in Foundations. Quantum reaction-coordinate validity and independent dissipation requirements remain separate gates."
+    }
+  ],
+  "next_real_system_entry_condition": {
+    "required": [
+      "independently characterized parent substrate governing object",
+      "child or coupled-system governing object computed without using inheritance outcome to tune the parent model",
+      "explicit shared-degree-of-freedom map or justified projection",
+      "mass normalization and modal/subspace representation",
+      "source commit and artifact hashes",
+      "system role declaration: development, prospective validation, or contrast",
+      "outcome-blinding or temporal freeze record for the correspondence rule"
+    ],
+    "chi_required_for_entry": false,
+    "damping_required_for_entry": false,
+    "note": "Modal and conglomeration inheritance can be tested before a scalar damping reduction exists. Any later scalar inheritance claim requires its own admissibility and dissipation provenance."
+  },
+  "physical_thresholds_frozen": false,
+  "real_system_inheritance_result": "NOT_ESTABLISHED"
+}
