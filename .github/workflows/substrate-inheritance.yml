@@ -9,10 +9,8 @@ on:
       - ".github/workflows/substrate-inheritance.yml"
       - "README.md"
   pull_request:
-    paths:
-      - "substrate_inheritance/**"
-      - ".github/workflows/substrate-inheritance.yml"
-      - "README.md"
+    branches:
+      - substrate-inheritance
   workflow_dispatch:
 
 permissions:
