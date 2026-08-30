@@ -8,6 +8,10 @@ SymC does **not** currently assert that a single scalar damping ratio universall
 
 Domain-specific applications are maintained separately.
 
+## Current-status authority
+
+This README, the active substrate-inheritance contract, and current reproducibility/computational records govern the present interpretation of this branch. Historical PDFs, older README language, release notes, and repository metadata may lag the active investigation and are **OUTDATED wherever they conflict with the current generator-first, carrier-resolved, prospective framework**. Historical artifacts remain preserved for provenance.
+
 ## Active substrate-inheritance investigation
 
 This branch contains the current Foundations-level substrate-inheritance program in [`substrate_inheritance/`](./substrate_inheritance/README.md).
@@ -19,7 +23,9 @@ The investigation is ongoing and is intended to develop prospective computationa
 
 The program preserves a coupled **modal + scalar + conglomeration** representation. Scalars such as mechanical χ are reported only where the governing dynamics license that reduction and remain attached to identified modes or subspaces. Collective coupling, memory, and bath structure are retained rather than forced into a single scalar.
 
-The initial GitHub computations are synthetic/adversarial validation of the mathematics and software only. They do not constitute physical inheritance evidence and do not set physical acceptance thresholds. Existing Na/Cu work is development evidence; CO/Cu(111) is reserved for prospective application after its already-frozen upstream chemistry gates; H/Ru(0001) remains a contrast/limit system.
+The base synthetic/adversarial mathematics and software validation has passed GitHub Actions. A ten-case ground-truth benchmark battery is now implemented to attack influence-only false promotion, scalar-only mapping, modal inheritance with changed scalars, frequency-only false friends, mode splitting, degenerate-subspace rotation, coupling rewiring, finite-bath recurrence, and a full prospective synthetic inheritance case. These computations are **not physical inheritance evidence and do not set physical-system thresholds**.
+
+Existing Na/Cu work remains development evidence; CO/Cu(111) is reserved for prospective application after its already-frozen upstream chemistry gates; H/Ru(0001) remains a contrast/limit system.
 
 Older documents that imply broader inheritance, universal χ control, or unqualified cross-domain transfer are **OUTDATED where they conflict with this current program**. They remain in the repository as research-history artifacts rather than being silently rewritten.
 
