@@ -12,8 +12,9 @@
   "source_snapshot": {
     "chemistry_repository": "SymC-Universe/Chemistry",
     "chemistry_branch": "agent/na-cu001-integration",
-    "chemistry_head_checked": "e4137b37dbdc808b258d238e42c11f93a9b8046d",
-    "chemistry_head_message": "Recover CO Cu111 continuation v2 closure audit"
+    "chemistry_head_checked": "b0c6c8bb74ee12445b77b7a43f7a12ebf099aaf4",
+    "chemistry_head_message": "Wire CO Cu111 site handoff to recovery audit",
+    "na_cu001_active_region_hessian_presence_at_checked_head": false
   },
   "systems": [
     {
@@ -23,7 +24,7 @@
       "relevant_planned_artifact": "na_cu001_ci/ACTIVE_REGION_HESSIAN.json",
       "planned_schema": "na-cu001-active-region-hessian-v0.2",
       "repository_presence_at_checked_head": false,
-      "reason": "The frozen integration plan places the mass-weighted active-region Hessian at Stage 14 after substrate-mobility convergence. The expected artifact is not present at the checked repository head. Existing Na/Cu calculations may later exercise the adapter as development evidence but cannot be retroactively promoted to prospective validation."
+      "reason": "The frozen integration plan places the mass-weighted active-region Hessian at Stage 14 after substrate-mobility convergence. The expected artifact is still not present at the checked repository head. Existing Na/Cu calculations may later exercise the adapter as development evidence but cannot be retroactively promoted to prospective validation."
     },
     {
       "system": "CO/Cu(111)",
@@ -31,7 +32,9 @@
       "inheritance_input_status": "UPSTREAM_GATE_IN_PROGRESS",
       "active_upstream_workflow_run": 33289747543,
       "active_upstream_workflow_name": "CO Cu111 PBE surface audit continuation extension v2 closure recovery v1",
-      "reason": "The current work is still an upstream surface-audit closure/recovery stage. No coupled parent-child modal inheritance result may be claimed from it. The inheritance analysis waits for independently admitted clean-substrate and coupled-system modal or Hessian objects without changing the frozen chemistry route."
+      "active_upstream_workflow_head": "e4137b37dbdc808b258d238e42c11f93a9b8046d",
+      "branch_has_advanced_beyond_workflow_head": true,
+      "reason": "The active recovery workflow remains an upstream surface-audit closure stage, while the branch has since advanced to wire the site handoff to that recovery audit. Neither state supplies a coupled parent-child modal inheritance result. The inheritance analysis waits for independently admitted clean-substrate and coupled-system modal or Hessian objects without changing the frozen chemistry route."
     },
     {
       "system": "H/Ru(0001)",
@@ -40,11 +43,18 @@
       "reason": "The selected contrast system has a frozen method and quantum-treatment protocol, but no admitted real-system substrate-inheritance input record is present in Foundations. Quantum reaction-coordinate validity and independent dissipation requirements remain separate gates."
     }
   ],
+  "real_system_adapter": {
+    "schema": "substrate_inheritance/REAL_SYSTEM_INPUT_SCHEMA_v0.2.json",
+    "implementation": "substrate_inheritance/real_system_adapter.py",
+    "status": "READY_FOR_FAIL_CLOSED_INGESTION_ONCE_SOURCE_ARTIFACTS_EXIST",
+    "physical_threshold_applied_by_adapter": false,
+    "inheritance_label_assigned_by_adapter": false
+  },
   "next_real_system_entry_condition": {
     "required": [
       "independently characterized parent substrate governing object",
       "child or coupled-system governing object computed without using inheritance outcome to tune the parent model",
-      "explicit shared-degree-of-freedom map or justified projection",
+      "complete prospective shared-degree-of-freedom map for the parent coordinates",
       "mass normalization and modal/subspace representation",
       "source commit and artifact hashes",
       "system role declaration: development, prospective validation, or contrast",
