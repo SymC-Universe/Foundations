@@ -1,0 +1,107 @@
+{
+  "schema": "substrate-inheritance-correspondence-protocol-v0.1",
+  "status": "FROZEN_DEFINITIONS_BEFORE_REAL_SYSTEM_INHERITANCE_TARGET_REVEAL",
+  "purpose": "Define how parent and child carriers are compared without using chi, kinetic outcomes, favorable frequencies, or target-system results to choose the correspondence.",
+  "scientific_scope": {
+    "applies_to": [
+      "future parent-to-child modal comparisons",
+      "future subspace inheritance comparisons",
+      "future scalar-to-carrier inheritance tests",
+      "future conglomeration and coupling-specificity tests"
+    ],
+    "does_not_retroactively_promote": [
+      "historical Noughts claims",
+      "historical Stability Arc results outside their registered domain",
+      "Na/Cu(001) development outputs",
+      "ARC Atlas coordinates",
+      "Barrier-Height/Rate Atlas coordinates"
+    ]
+  },
+  "shared_degree_of_freedom_rule": {
+    "primary": "Establish the shared parent degrees of freedom from atom/coordinate identity, geometry mapping, boundary convention, and mass convention before modal comparison.",
+    "forbidden": [
+      "choosing shared degrees of freedom because they maximize modal overlap",
+      "changing atom or coordinate mapping after inspecting chi or target kinetics",
+      "dropping low-overlap coordinates solely to improve inheritance evidence"
+    ]
+  },
+  "mass_normalization_rule": {
+    "individual_modes": "Normalize parent and child carriers in the same positive mass metric on the shared physical degrees of freedom before overlap is computed.",
+    "overlap_definition": "O_ij = |v_i(parent)^T M P_parent v_j(child)|^2 after compatible mass normalization, with conjugate transpose used for complex carriers.",
+    "frequency_only_matching_forbidden": true
+  },
+  "individual_mode_rule": {
+    "use_when": "Modes are sufficiently isolated and numerically identifiable for an individual carrier comparison.",
+    "assignment": "Report the complete overlap matrix and a permutation-invariant maximum-total-overlap assignment as a diagnostic. The assignment does not by itself establish inheritance.",
+    "mandatory_companions": [
+      "parent and child eigenvalue/frequency",
+      "full overlap row and column context",
+      "conditioning or numerical sensitivity",
+      "local spectral crowding information",
+      "shared-degree-of-freedom projection used"
+    ]
+  },
+  "subspace_rule": {
+    "use_when": "Exact or practical degeneracy, spectral crowding, mode splitting, mode merging, or unstable basis orientation makes individual eigenvectors non-identifiable.",
+    "comparison": "Compare the relevant parent and child subspaces using projector overlap and singular values/principal-angle cosines rather than forcing one-to-one vector identity.",
+    "basis_rotation_within_same_subspace": "must not be classified as inheritance loss solely because individual eigenvectors rotate",
+    "split_or_merge": "retain the resolved overlap weights and subspace relation; do not force a single descendant label"
+  },
+  "scalar_rule": {
+    "ordering": "Carrier correspondence is established without using scalar closeness to chi=1 or any other favored scalar value. Scalar inheritance is evaluated only after the carrier map is frozen.",
+    "scalar_equality_required": false,
+    "required_for_scalar_inheritance": [
+      "licensed scalar in parent description",
+      "licensed scalar in child description",
+      "frozen carrier or subspace correspondence",
+      "pre-specified parent-to-child scalar transformation or prediction",
+      "uncertainty/provenance for both scalar values"
+    ],
+    "if_scalar_not_licensed": "retain modal/conglomeration result and return scalar NOT_APPLICABLE or NONIDENTIFIABLE"
+  },
+  "conglomeration_rule": {
+    "objects": [
+      "parent-to-child coupling matrix or equivalent interaction operator",
+      "frequency-dependent substrate self-energy/embedding contribution where defined",
+      "memory kernel or spectral-density object where independently derived",
+      "network or sequence of modal/subspace relations across assembly or reaction-path states"
+    ],
+    "no_single_index_required": true,
+    "coupling_specificity_required_for_full_inheritance": true
+  },
+  "nulls": {
+    "same_spectrum_modal_scramble": "Preserve parent eigenvalues while randomizing modal geometry to test whether scalar spectral resemblance alone explains the observed correspondence.",
+    "coupling_rewire": "Preserve the parent operator while changing carrier-to-child coupling assignment to test conglomeration specificity.",
+    "zero_coupling": "Set the parent-child coupling to zero where the model permits it to verify that the analysis does not manufacture influence.",
+    "generic_or_alternative_parent": "When a physically defensible alternative exists, compare predictive performance without tuning the alternative after target reveal."
+  },
+  "statistical_reporting": {
+    "current_rule": "Report continuous observed scores and their position relative to preregistered synthetic/null distributions. No physical inheritance pass threshold is frozen in v0.1.",
+    "reason": "A numerical cutoff chosen before physical calibration would be arbitrary; a cutoff chosen after target reveal would be circular.",
+    "future_threshold_rule": "Any later physical promotion threshold must be frozen before the corresponding real-system target result is inspected and must document how it was calibrated."
+  },
+  "promotion_rule": {
+    "influence": "nonzero causal/interventional response without complete prospective correspondence",
+    "conditional_inheritance": "parent characterization, carrier correspondence, frozen mapping, and successful prospective prediction without complete intervention/specificity closure",
+    "substrate_inheritance": "all influence, carrier, prospective prediction, intervention, and specificity requirements pass under the active contract",
+    "refusal_states": [
+      "NONIDENTIFIABLE",
+      "INSUFFICIENT_SHARED_DOF",
+      "SUBSPACE_ONLY",
+      "MIXED",
+      "SPLIT",
+      "MERGED",
+      "LOST",
+      "SCALAR_NOT_APPLICABLE",
+      "DISSIPATION_NOT_ADMISSIBLE"
+    ]
+  },
+  "forbidden_target_leakage": [
+    "using chi proximity to choose a mode",
+    "using reaction rate or barrier agreement to choose a modal mapping",
+    "using a known child frequency to redefine the parent carrier",
+    "changing a correspondence rule after seeing whether it supports inheritance"
+  ],
+  "physical_thresholds_frozen": false,
+  "scientific_settings_changed_in_other_repositories": false
+}
