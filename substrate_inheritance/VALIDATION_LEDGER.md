@@ -280,22 +280,28 @@ These numbers describe a synthetic adapter-validation record only and are not ev
 
 Status: PASS as ingestion-boundary/software validation only.
 
-## Current provenance
+## Reference validation provenance
 
-Latest closed full validation run containing V1-V10 infrastructure:
+The fixed hardened reference for the V1-V10 method and ingestion-boundary suite is:
 
 - workflow: `.github/workflows/substrate-inheritance.yml`;
-- GitHub Actions run: `33290655196`;
-- commit: `4156b95bb47f8e566aa9cb173d60d46d7b8fc906`;
-- job: `99201580557`;
+- GitHub Actions run: `33292821080`;
+- reference commit: `9a1f357e73a27e532c755649568dde8af0b229cd`;
 - conclusion: `success`;
 - adversarial/unit tests: `62 passed`;
+- Python: `3.12.14`;
+- runner family: Ubuntu `24.04`;
+- dependency integrity: `pip check` reported no broken requirements;
 - uploaded artifact: `substrate-inheritance-synthetic-validation`;
-- artifact ID: `9725851716`;
-- validation records uploaded: 10;
-- uploaded artifact ZIP SHA-256: `7f7d3d59a599eac50cc78992ff85fea2b14a405c63c7689367c78eedd668667d`;
+- artifact ID: `9726488007`;
+- validation records uploaded: 10 plus `validation_environment.txt`;
+- uploaded artifact ZIP SHA-256: `332e5c463c597015a5cbe832b84ce8843be4eef688c8f62ca2e3ef4df18b7635`;
 - physical thresholds frozen: false;
 - real-system evidence: false.
+
+The dependency set is pinned in `requirements-validation.txt`, the realized runtime environment is archived with the reference artifact, and the external GitHub Actions are pinned by commit SHA. `VALIDATION_ENVIRONMENT.md` records the environment and the rule for future dependency or runner changes.
+
+This is a fixed reproducibility milestone rather than a moving `latest run` pointer. Later successful CI executions are regression evidence unless a new reference milestone is explicitly designated.
 
 `CORRESPONDENCE_PROTOCOL_v0.2.json` freezes the non-normal and electronic-channel safeguards before any real-system inheritance target reveal. `REAL_SYSTEM_INPUT_SCHEMA_v0.2.json` freezes the real mechanical input boundary before first physical ingestion. Neither document freezes a physical promotion threshold.
 
