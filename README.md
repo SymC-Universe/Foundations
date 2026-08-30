@@ -8,6 +8,21 @@ SymC does **not** currently assert that a single scalar damping ratio universall
 
 Domain-specific applications are maintained separately.
 
+## Active substrate-inheritance investigation
+
+This branch contains the current Foundations-level substrate-inheritance program in [`substrate_inheritance/`](./substrate_inheritance/README.md).
+
+The investigation is ongoing and is intended to develop prospective computational evidence for or against substrate-inheritance claims. It formally distinguishes **substrate influence** from **substrate inheritance**:
+
+- influence means an independently defined parent/substrate property demonstrably changes child or coupled-system behavior;
+- inheritance requires an independently characterized parent, explicit carrier correspondence, a parent-to-child mapping frozen before target reveal, successful prospective child prediction, intervention/counterfactual confirmation, and specificity against scrambled or generic controls.
+
+The program preserves a coupled **modal + scalar + conglomeration** representation. Scalars such as mechanical χ are reported only where the governing dynamics license that reduction and remain attached to identified modes or subspaces. Collective coupling, memory, and bath structure are retained rather than forced into a single scalar.
+
+The initial GitHub computations are synthetic/adversarial validation of the mathematics and software only. They do not constitute physical inheritance evidence and do not set physical acceptance thresholds. Existing Na/Cu work is development evidence; CO/Cu(111) is reserved for prospective application after its already-frozen upstream chemistry gates; H/Ru(0001) remains a contrast/limit system.
+
+Older documents that imply broader inheritance, universal χ control, or unqualified cross-domain transfer are **OUTDATED where they conflict with this current program**. They remain in the repository as research-history artifacts rather than being silently rewritten.
+
 ---
 
 ## Contents
@@ -17,7 +32,7 @@ Domain-specific applications are maintained separately.
 | Title | Description | PDF |
 |-------|-------------|-----|
 | **SymC Postulate (v3)** | Historical foundational statement of the χ = 1 hypothesis and exceptional-point framing. Current use of χ is restricted by the generator and domain-licensing rules described below. | [PDF](./SymC_Posv3.pdf) |
-| **SymC Noughts** | Introduces substrate noughts and the inheritance hypothesis. Current inheritance work requires explicit operator projection before assigning descendant stability coordinates. | [PDF](./SymC_Noughts.pdf) |
+| **SymC Noughts** | Historical introduction of substrate noughts and the inheritance hypothesis. Current inheritance claims are governed by the active prospective program above; broader or less-qualified inheritance language in this artifact is OUTDATED where it conflicts with that program. | [PDF](./SymC_Noughts.pdf) |
 | **Closing Critical Gaps (v3)** | Historical particle-sector extension involving electron, quark, and neutrino scales. Current interpretation distinguishes spectral-width ratios from mechanically licensed χ unless an appropriate generator is independently derived. | [PDF](./SymC_Gapsv3.pdf) / [Supps](./SymC_Supmats.pdf) |
 | **SymC AIF** | Explores connections between SymC, predictive processing, and active inference. Domain-specific stability claims require their own generator and empirical validation. | [PDF](./SymC_AIFv3.pdf) |
 
@@ -157,24 +172,24 @@ The following distinctions are part of the current SymC framework:
 
 - The positive-curvature mechanical χ = 1 boundary is an exact dynamical result.
 - The normalized underdamped poles of the canonical scalar generator trace a well-defined stability arc in the complex plane.
-- Operator-first inheritance has prospective computational support within its registered passive-mechanical test domain, but is not presently claimed as a universal cross-domain inheritance law.
+- Earlier operator-first inheritance results remain bounded to their registered passive-mechanical domain; the current substrate-inheritance program is a broader prospective investigation and has not established a universal inheritance law.
 - Preferential natural occupancy near χ = 1 remains an open empirical question requiring an independently justified population or control null.
 - A universal adaptive band such as **0.8 ≤ χ ≤ 1.0 is not a current general claim**.
 - A universal maximum of information efficiency near χ = 1 is **not a current supported claim** for the proxies previously tested.
 - Chemical barrier coordinates, cosmological balance coordinates, particle spectral-width ratios, and mechanical χ are not pooled as though they were the same physical observable.
 - SymC is not presently asserted as a universal law of nature.
 
-Negative results, retractions, failed prospective criteria, and domain restrictions are retained as part of the research record rather than removed or reclassified as successes.
+Negative results, retractions, failed prospective criteria, influence-only results, nonidentifiability, and domain restrictions are retained as part of the research record rather than removed or reclassified as successes.
 
 ---
 
 ## Historical Scope Note
 
-Several PDFs in this repository are versioned research artifacts produced before the current generator-first domain-licensing framework was completed. They may therefore contain broader language or hypotheses that have since been narrowed, reclassified, or retracted.
+Several PDFs in this repository are versioned research artifacts produced before the current generator-first domain-licensing and prospective inheritance frameworks were completed. They may therefore contain broader language or hypotheses that have since been narrowed, reclassified, retracted, or superseded.
 
-The files are retained unchanged to preserve the research history.
+Such broader language is **OUTDATED wherever it conflicts with a later explicit correction, retraction, domain license, reproducibility record, or the active substrate-inheritance contract**.
 
-When an older document conflicts with a later explicit correction, retraction, domain license, or reproducibility record, the later qualified interpretation should be used when describing the current SymC framework.
+The files are retained unchanged to preserve the research history. Historical statements are not prospective evidence simply because they anticipated a later hypothesis.
 
 ---
 
@@ -185,6 +200,7 @@ When an older document conflicts with a later explicit correction, retraction, d
 - Host supplementary derivations and supporting materials.
 - Separate exact mathematical results from hypotheses and empirical claims.
 - Record revisions, negative results, and scope corrections transparently.
+- Develop prospective computational tests of substrate influence and inheritance.
 - Provide a common theoretical base for independently tested domain-level applications.
 
 ---
