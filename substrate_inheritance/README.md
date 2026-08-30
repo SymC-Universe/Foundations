@@ -2,9 +2,9 @@
 
 Status: ACTIVE INVESTIGATION. Computational evidence is being developed prospectively. Nothing in this directory establishes a universal substrate-inheritance law.
 
-Current-status authority: this README, the active contract, the frozen correspondence protocol, and the current computational records govern the present program. Older papers, repository metadata, release text, or prior README language are OUTDATED wherever they conflict with these current qualifications. Historical artifacts remain preserved for provenance rather than silently rewritten.
+Current-status authority: this README, the active contract, `CORRESPONDENCE_PROTOCOL_v0.2.json`, and the current computational records govern the present program. Older papers, repository metadata, release text, prior README language, and `CORRESPONDENCE_PROTOCOL_v0.1.json` are OUTDATED wherever they conflict with these current qualifications. Historical artifacts remain preserved for provenance rather than silently rewritten.
 
-This branch consolidates the current Foundations generator-first framework with the parts of Stability Arc, Chemistry/ChemSA, and the Atlas program that are needed to test substrate inheritance without pooling physically distinct coordinates.
+This branch consolidates the current Foundations generator-first framework with the parts of Stability Arc, Chemistry/ChemSA, and the Atlas program needed to test substrate inheritance without pooling physically distinct coordinates.
 
 ## Core distinction
 
@@ -20,9 +20,9 @@ Inheritance therefore requires influence, but influence does not by itself estab
 
 The program retains three coupled levels rather than reducing the system to one number:
 
-1. Modal: eigenvectors, mode shapes, eigenspaces or subspaces, participation, localization, degeneracy, and conditioning.
+1. Modal: eigenvectors, mode shapes, left/right carrier geometry where required, eigenspaces or subspaces, participation, localization, degeneracy, and conditioning.
 2. Scalar: licensed coordinates attached to their physical carriers, including mechanical chi only where a stable second-order reduction or equivalent admitted quotient exists.
-3. Conglomeration: the organization of modes, couplings, bath response, memory, and collective system structure across assembly or reaction-path evolution.
+3. Conglomeration: the organization of modes, couplings, embedding response, bath memory, and collective system structure across assembly or reaction-path evolution.
 
 No level is permitted to substitute automatically for the others.
 
@@ -39,7 +39,7 @@ A proposed inherited quantity must pass the following gates before promotion bey
 
 Failure at a higher gate does not erase lower-level evidence. It changes the label.
 
-The current carrier correspondence definitions are frozen in `CORRESPONDENCE_PROTOCOL_v0.1.json` before a real-system inheritance target has been revealed. No physical promotion threshold is frozen yet.
+The current correspondence definitions are frozen in `CORRESPONDENCE_PROTOCOL_v0.2.json` before a real-system inheritance target has been revealed. No physical promotion threshold is frozen.
 
 ## Computational program
 
@@ -47,9 +47,10 @@ The current engine and validation suite implement:
 
 - mass-normalized modal overlap matrices;
 - subspace comparison using principal-angle cosines for degenerate or crowded sectors;
+- left/right biorthogonal carrier diagnostics and conditioning for non-normal generators;
 - frequency-domain dynamic stiffness construction;
 - Schur-complement elimination of substrate degrees of freedom;
-- substrate self-energy/embedding calculations;
+- substrate self-energy and embedding calculations;
 - explicit finite-bath memory-kernel calculations without mislabeling a finite harmonic bath as irreversible friction;
 - parent-parameter intervention and finite-difference transfer maps;
 - eigenvalue-preserving modal-scramble controls;
@@ -57,11 +58,13 @@ The current engine and validation suite implement:
 - coordinate-representation invariance checks;
 - near-degeneracy robustness checks;
 - finite-depth versus analytic semi-infinite embedding validation;
+- carrier-discriminability failure-boundary sweeps;
+- a separate electronic block-Hamiltonian and retarded-Green-function validation channel;
 - promotion logic that distinguishes influence, conditional inheritance, and inheritance.
 
-Latest closed V1-V6 validation: GitHub Actions run `33290269457`, conclusion `success`, with 36 adversarial/unit tests passing. The archived validation artifact is `substrate-inheritance-synthetic-validation`, artifact ID `9725736036`, ZIP SHA-256 `8adc5e7135a824f8f3f726e8abd2ba60dbc64aacfae86a4db992ae9449e0343d`.
+Latest closed V1-V9 validation: GitHub Actions run `33290452090`, conclusion `success`, with 48 adversarial/unit tests passing. The archived validation artifact is `substrate-inheritance-synthetic-validation`, artifact ID `9725791914`, ZIP SHA-256 `33f66942eb5d9681adbb12f781191aa5d7cb343ecf6658a19dbc0766643223e4`.
 
-These are software, mathematical, synthetic, identifiability, and robustness results. They are not physical substrate-inheritance evidence.
+These are software, mathematical, synthetic, identifiability, robustness, and channel-separation results. They are not physical substrate-inheritance evidence.
 
 ## Current computational findings
 
@@ -99,6 +102,26 @@ A finite substrate-chain embedding was compared against an analytic semi-infinit
 
 These depths are model sizes, not physical inheritance lengths for any material. The calculation validates the method that will later ask how much substrate must be retained before a real child embedding response converges.
 
+### Carrier-discriminability failure boundary
+
+The planted carrier relation was progressively randomized while the scalar spectrum remained identical to the null. The threshold-free AUC fell from `1.0` to a minimum of approximately `0.91183`, and the mean planted-minus-null score gap fell from approximately `0.46386` to approximately `0.19190` in the specified synthetic family.
+
+This is important because the modal statistic does not remain perfectly discriminating as the carrier relation weakens. The sweep is a method failure-boundary study, not a calibration of a physical inheritance cutoff.
+
+### Non-normal carrier geometry
+
+In a synthetic non-normal generator family, increasing non-normality made distinct right eigenvectors nearly parallel. At shear `30`, the maximum off-diagonal squared right-vector overlap was approximately `0.99889` while the right-eigenvector condition number reached approximately `1925.74`. In a separate near-defective family, the condition number increased to approximately `10000` as the eigenvalue gap collapsed to approximately `0.0002`.
+
+The scale-invariant biorthogonal correspondence was stable under a common similarity transformation to approximately `1.11e-16`. The result does not make biorthogonal overlap a universal score. It establishes that future non-normal physical records must carry left and right carriers or invariant projectors/subspaces plus conditioning, and may require a refusal near defectiveness.
+
+### Separate electronic channel
+
+A block-Hamiltonian electronic calculation was validated independently of the phononic/mechanical branch. The full and reduced adsorbate Green functions agreed to approximately `2.84e-15`, and a common basis transformation changed the electronic self-energy curve by at most approximately `4.62e-14`.
+
+Across 256 same-spectrum electronic carrier scrambles, the substrate spectrum was preserved to approximately `2.66e-15` while the median relative self-energy-curve change was approximately `0.98147`. Every trial changed above machine scale in the specified synthetic ensemble.
+
+Electronic self-energy and hybridization are retained as electronic-channel objects. They are not mechanical gamma and are not automatically combined with a phononic damping coefficient.
+
 Detailed numerical provenance is retained in `VALIDATION_LEDGER.md`.
 
 ## Physical-system readiness
@@ -107,7 +130,7 @@ Detailed numerical provenance is retained in `VALIDATION_LEDGER.md`.
 
 Current status:
 
-1. Na/Cu(001): development-only and not ready for physical ingestion because the planned active-region Hessian artifact is not present at the checked Chemistry head. It may later exercise the adapter as development evidence but cannot be retroactively promoted.
+1. Na/Cu(001): development-only and not ready for physical ingestion because the planned active-region Hessian artifact was not present at the most recently checked Chemistry head. It may later exercise the adapter as development evidence but cannot be retroactively promoted.
 2. CO/Cu(111): prospective validation target, still upstream of inheritance analysis while its already-frozen Chemistry surface audit closes. This branch must not alter that route.
 3. H/Ru(0001): contrast/limit target with protocol-level preparation but no admitted Foundations inheritance input record yet.
 
@@ -143,9 +166,9 @@ Current program status is an ongoing investigation aimed at developing computati
 ## Current branch status
 
 - Architecture and evidentiary ladder: active and prospective.
-- Carrier correspondence definitions: frozen before real-system target reveal.
-- V1-V6 synthetic/mathematical validation: PASS.
-- Latest closed suite: 36 tests passed.
+- Carrier correspondence definitions: v0.2 frozen before real-system target reveal.
+- V1-V9 synthetic/mathematical validation: PASS.
+- Latest closed suite: 48 tests passed.
 - Physical inheritance thresholds: not frozen.
 - Real-system inheritance result: not established.
 - Universal inheritance claim: not established.
