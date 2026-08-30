@@ -48,6 +48,9 @@ jobs:
       - name: Run ensemble falsification validation
         run: python -m substrate_inheritance.ensemble_validation
 
+      - name: Run identifiability validation
+        run: python -m substrate_inheritance.identifiability_validation
+
       - name: Verify outputs are explicitly non-physical
         run: |
           python - <<'PY'
@@ -57,6 +60,7 @@ jobs:
           base = json.loads(Path("substrate_inheritance/results/synthetic_validation.json").read_text())
           bench = json.loads(Path("substrate_inheritance/results/ground_truth_benchmarks.json").read_text())
           ensemble = json.loads(Path("substrate_inheritance/results/ensemble_validation.json").read_text())
+          ident = json.loads(Path("substrate_inheritance/results/identifiability_validation.json").read_text())
 
           assert base["scope"] == "synthetic_software_validation_only"
           assert bench["scope"] == "synthetic_ground_truth_benchmark_only"
@@ -66,6 +70,10 @@ jobs:
           assert ensemble["scope"] == "synthetic_ensemble_validation_only"
           assert ensemble["physical_thresholds_frozen"] is False
           assert ensemble["real_system_evidence"] is False
+          assert ident["scope"] == "synthetic_identifiability_validation_only"
+          assert ident["physical_thresholds_frozen"] is False
+          assert ident["real_system_evidence"] is False
+          assert ident["single_scalar_response_identifies_unique_coupling"] is False
           print("Synthetic evidence guards passed")
           PY
 
@@ -77,3 +85,4 @@ jobs:
             substrate_inheritance/results/synthetic_validation.json
             substrate_inheritance/results/ground_truth_benchmarks.json
             substrate_inheritance/results/ensemble_validation.json
+            substrate_inheritance/results/identifiability_validation.json
