@@ -53,19 +53,35 @@ def test_perturbation_envelope_reports_spread_without_applying_threshold():
     assert result["range"] == pytest.approx(0.2)
 
 
-def test_dominant_lineage_tracks_unique_correspondence():
+def test_dominant_lineage_tracks_unique_correspondence_when_uncertainty_is_resolved():
     transition = np.array([[0.9, 0.1], [0.2, 0.8]])
-    steps = dominant_lineage_transition(transition)
+    steps = dominant_lineage_transition(transition, margin_uncertainty=0.0)
+    assert steps[0].unique_dominant is True
     assert steps[0].identifiable is True
     assert steps[0].child_index == 0
     assert steps[1].child_index == 1
 
 
 def test_exact_lineage_tie_is_refused_not_broken_arbitrarily():
-    step = dominant_lineage_transition(np.array([[0.5, 0.5]]))[0]
+    step = dominant_lineage_transition(np.array([[0.5, 0.5]]), margin_uncertainty=0.0)[0]
+    assert step.unique_dominant is False
     assert step.identifiable is False
     assert step.child_index is None
     assert step.margin == 0.0
+
+
+def test_unique_dominant_without_uncertainty_is_not_called_identifiable():
+    step = dominant_lineage_transition(np.array([[0.51, 0.49]]))[0]
+    assert step.unique_dominant is True
+    assert step.child_index == 0
+    assert step.identifiable is None
+
+
+def test_lineage_margin_below_uncertainty_is_refused():
+    step = dominant_lineage_transition(np.array([[0.51, 0.49]]), margin_uncertainty=0.03)[0]
+    assert step.unique_dominant is True
+    assert step.margin == pytest.approx(0.02)
+    assert step.identifiable is False
 
 
 def test_lineage_trace_stops_at_first_nonidentifiable_transition():
@@ -76,6 +92,7 @@ def test_lineage_trace_stops_at_first_nonidentifiable_transition():
             np.eye(2),
         ),
         start_parent=0,
+        margin_uncertainties=(0.0, 0.0, 0.0),
     )
     assert len(path) == 2
     assert path[-1].identifiable is False
