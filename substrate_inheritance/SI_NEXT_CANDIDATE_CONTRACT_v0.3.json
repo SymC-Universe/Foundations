@@ -35,7 +35,8 @@
     "purpose": "Track dominant carrier correspondence across multiple parent-child transitions.",
     "promotion_semantics": false,
     "tie_policy": "Exact top-score ties are NONIDENTIFIABLE and are not broken arbitrarily.",
-    "threshold_policy": "No physical correspondence threshold is introduced by this candidate."
+    "uncertainty_policy": "A unique dominant correspondence is not called identifiable unless a supplied uncertainty bound is smaller than its dominance margin.",
+    "threshold_policy": "No physical correspondence threshold is introduced by this candidate; uncertainty bounds must come from the relevant measurement or numerical analysis."
   },
   "multi_parent_attribution": {
     "purpose": "Measure source-specific and interaction-specific response contributions when multiple candidate parents are present.",
