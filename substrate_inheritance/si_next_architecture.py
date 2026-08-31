@@ -201,15 +201,22 @@ def source_inclusion_exclusion(
 
     empty = frozenset()
     baseline = evaluate(empty)
-    singles = {name: evaluate(frozenset({name})) for name in names}
+
+    def evaluate_like_baseline(active: frozenset[str]) -> np.ndarray:
+        value = evaluate(active)
+        if value.shape != baseline.shape:
+            raise ValueError("all response_fn outputs must have the same shape")
+        return value
+
+    singles = {name: evaluate_like_baseline(frozenset({name})) for name in names}
     main = {name: singles[name] - baseline for name in names}
 
     pair_interactions: dict[tuple[str, str], np.ndarray] = {}
     for left, right in combinations(names, 2):
-        both = evaluate(frozenset({left, right}))
+        both = evaluate_like_baseline(frozenset({left, right}))
         pair_interactions[(left, right)] = both - singles[left] - singles[right] + baseline
 
-    full = evaluate(frozenset(names))
+    full = evaluate_like_baseline(frozenset(names))
     reconstructed = baseline.copy()
     for effect in main.values():
         reconstructed = reconstructed + effect
@@ -236,10 +243,14 @@ def source_ablation_effects(
         raise ValueError("sources must be a non-empty sequence of unique names")
     full_set = frozenset(names)
     full = np.asarray(response_fn(full_set), dtype=float)
+    if not np.all(np.isfinite(full)):
+        raise ValueError("response_fn must return finite values")
     effects: dict[str, np.ndarray] = {}
     for name in names:
         without = np.asarray(response_fn(full_set.difference({name})), dtype=float)
         if without.shape != full.shape:
             raise ValueError("all response_fn outputs must have the same shape")
+        if not np.all(np.isfinite(without)):
+            raise ValueError("response_fn must return finite values")
         effects[name] = full - without
     return effects
