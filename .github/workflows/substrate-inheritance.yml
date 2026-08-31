@@ -77,6 +77,9 @@ jobs:
       - name: Run real-system adapter validation record
         run: python -m substrate_inheritance.adapter_validation
 
+      - name: Run SI-next candidate architecture validation
+        run: python -m substrate_inheritance.si_next_validation
+
       - name: Verify outputs are explicitly non-physical
         run: |
           python - <<'PY'
@@ -94,6 +97,7 @@ jobs:
               "nonnormal_validation.json": "synthetic_nonnormal_biorthogonal_validation_only",
               "electronic_validation.json": "synthetic_electronic_inheritance_validation_only",
               "adapter_validation.json": "synthetic_real_system_adapter_validation_only",
+              "si_next_validation.json": "synthetic_si_next_architecture_validation_only",
           }
           records = {}
           for filename, scope in expected.items():
@@ -115,6 +119,13 @@ jobs:
           assert adapter["inheritance_promotion_label_assigned"] is False
           assert adapter["chi_computed"] is False
           assert adapter["damping_computed"] is False
+
+          si_next = records["si_next_validation.json"]
+          assert si_next["status"] == "candidate_v0.3_non_authoritative"
+          assert si_next["frozen_v0.2_changed"] is False
+          assert si_next["inheritance_promotion_rule_changed"] is False
+          assert si_next["lineage"]["exact_tie_refused"] is True
+          assert si_next["multi_parent"]["effects_forced_to_sum_to_one"] is False
           print("Synthetic evidence guards passed")
           PY
 
@@ -133,4 +144,5 @@ jobs:
             substrate_inheritance/results/nonnormal_validation.json
             substrate_inheritance/results/electronic_validation.json
             substrate_inheritance/results/adapter_validation.json
+            substrate_inheritance/results/si_next_validation.json
             substrate_inheritance/results/validation_environment.txt
