@@ -32,10 +32,17 @@
     "RELATIONSHIP_UNRESOLVED"
   ],
   "lineage": {
-    "purpose": "Track dominant carrier correspondence across multiple parent-child transitions.",
+    "purpose": "Track carrier correspondence across multiple parent-child transitions while retaining persistence, splitting, mixing, reconvergence, and extinction information.",
     "promotion_semantics": false,
     "tie_policy": "Exact top-score ties are NONIDENTIFIABLE and are not broken arbitrarily.",
-    "uncertainty_policy": "A unique dominant correspondence is not called identifiable unless a supplied uncertainty bound is smaller than its dominance margin.",
+    "uncertainty_policy": "A unique dominant correspondence is not called identifiable unless a supplied uncertainty bound is smaller than its dominance margin. Interval-resolved identification additionally requires one candidate lower bound to exceed every competitor upper bound.",
+    "dispersion_diagnostics": [
+      "dominant relative fraction",
+      "Shannon entropy",
+      "normalized entropy",
+      "inverse-participation effective child count"
+    ],
+    "flow_policy": "Row-normalized multi-generation correspondence flow is descriptive only. It is not a probability, causal fraction, inheritance percentage, or promotion score.",
     "threshold_policy": "No physical correspondence threshold is introduced by this candidate; uncertainty bounds must come from the relevant measurement or numerical analysis."
   },
   "multi_parent_attribution": {
@@ -44,9 +51,11 @@
       "leave-one-source-out ablation",
       "subset inclusion-exclusion main effects",
       "pair interaction terms",
-      "higher-order residual retention"
+      "higher-order residual retention",
+      "bounded exhaustive subset Mobius decomposition for exact higher-order interactions"
     ],
     "normalization_policy": "Source effects are not forced to sum to one because interactions may be real and non-additive.",
+    "exhaustive_decomposition_policy": "Exact Mobius decomposition evaluates every source subset and therefore uses an explicit default source-count guard of 10. The guard is computational, not physical.",
     "promotion_semantics": false
   },
   "evidence_scope": "software, mathematical, and synthetic architecture validation only until independently frozen real-system inputs are available",
