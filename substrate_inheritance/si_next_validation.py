@@ -16,6 +16,12 @@ from substrate_inheritance.si_next_architecture import (
     source_inclusion_exclusion,
     trace_dominant_lineage,
 )
+from substrate_inheritance.si_next_higher_order import (
+    interval_dominant_lineage,
+    lineage_dispersion,
+    mobius_source_decomposition,
+    propagate_relative_lineage,
+)
 
 
 def synthetic_si_next_validation() -> dict:
@@ -40,6 +46,19 @@ def synthetic_si_next_validation() -> dict:
     )
     exact_tie = dominant_lineage_transition(np.array([[0.5, 0.5]]), margin_uncertainty=0.0)[0]
 
+    split = lineage_dispersion(np.array([[0.5, 0.5]]))[0]
+    robust_interval = interval_dominant_lineage(
+        np.array([[0.80, 0.10]]),
+        np.array([[0.90, 0.20]]),
+    )[0]
+    relative_flow = propagate_relative_lineage(
+        (
+            np.array([[0.5, 0.5], [0.0, 1.0]]),
+            np.array([[1.0, 0.0], [1.0, 0.0]]),
+        ),
+        start_parent=0,
+    )
+
     weights = {"substrate_A": 2.0, "substrate_B": -0.5}
 
     def additive_response(active: frozenset[str]) -> np.ndarray:
@@ -54,6 +73,17 @@ def synthetic_si_next_validation() -> dict:
 
     interacting = source_inclusion_exclusion(interacting_response, tuple(weights))
     ablation = source_ablation_effects(interacting_response, tuple(weights))
+
+    def three_source_response(active: frozenset[str]) -> np.ndarray:
+        a = 1.0 if "substrate_A" in active else 0.0
+        b = 1.0 if "substrate_B" in active else 0.0
+        c = 1.0 if "substrate_C" in active else 0.0
+        return np.array([1.0 + 2.0 * a + 3.0 * b + 4.0 * c + 0.5 * a * b + 0.75 * a * c + 1.0 * b * c + 2.5 * a * b * c])
+
+    mobius = mobius_source_decomposition(
+        three_source_response,
+        ("substrate_A", "substrate_B", "substrate_C"),
+    )
 
     return {
         "scope": "synthetic_si_next_architecture_validation_only",
@@ -83,6 +113,14 @@ def synthetic_si_next_validation() -> dict:
                 for step in lineage
             ],
             "exact_tie_refused": exact_tie.unique_dominant is False and exact_tie.identifiable is False and exact_tie.child_index is None,
+            "split_effective_child_count": split.effective_child_count,
+            "split_normalized_entropy": split.normalized_entropy,
+            "robust_interval_identifiable": robust_interval.identifiable,
+            "robust_interval_gap": robust_interval.robust_gap,
+            "relative_flow_first_step": list(relative_flow["steps"][0].descendant_weights),
+            "relative_flow_second_step": list(relative_flow["steps"][1].descendant_weights),
+            "relative_flow_threshold_applied": relative_flow["threshold_applied"],
+            "relative_flow_normalization_role": relative_flow["normalization_role"],
         },
         "multi_parent": {
             "additive_pair_interaction_norm": float(np.linalg.norm(next(iter(additive.pair_interactions.values())))),
@@ -91,6 +129,10 @@ def synthetic_si_next_validation() -> dict:
             "interacting_higher_order_residual_norm": float(np.linalg.norm(interacting.higher_order_residual)),
             "ablation_effect_norms": {name: float(np.linalg.norm(effect)) for name, effect in ablation.items()},
             "effects_forced_to_sum_to_one": False,
+            "mobius_three_way_effect_norm": float(np.linalg.norm(mobius.effects[("substrate_A", "substrate_B", "substrate_C")])),
+            "mobius_reconstruction_residual_norm": float(np.linalg.norm(mobius.reconstruction_residual)),
+            "mobius_evaluation_count": mobius.evaluation_count,
+            "mobius_exhaustive_source_limit": 10,
         },
     }
 
