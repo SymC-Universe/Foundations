@@ -125,7 +125,11 @@ jobs:
           assert si_next["frozen_v0.2_changed"] is False
           assert si_next["inheritance_promotion_rule_changed"] is False
           assert si_next["lineage"]["exact_tie_refused"] is True
+          assert si_next["lineage"]["split_effective_child_count"] > 1.0
+          assert si_next["lineage"]["relative_flow_threshold_applied"] is False
           assert si_next["multi_parent"]["effects_forced_to_sum_to_one"] is False
+          assert si_next["multi_parent"]["mobius_reconstruction_residual_norm"] < 1e-12
+          assert si_next["multi_parent"]["mobius_evaluation_count"] == 8
           print("Synthetic evidence guards passed")
           PY
 
