@@ -40,7 +40,9 @@ class LineageStep:
     dominant_score: float | None
     runner_up_score: float | None
     margin: float | None
-    identifiable: bool
+    margin_uncertainty: float | None
+    unique_dominant: bool
+    identifiable: bool | None
 
 
 @dataclass(frozen=True)
@@ -103,48 +105,81 @@ def perturbation_envelope(samples: np.ndarray | Iterable[float]) -> dict:
     }
 
 
-def dominant_lineage_transition(correspondence: np.ndarray) -> tuple[LineageStep, ...]:
+def dominant_lineage_transition(
+    correspondence: np.ndarray,
+    margin_uncertainty: float | Sequence[float] | None = None,
+) -> tuple[LineageStep, ...]:
     matrix = np.asarray(correspondence, dtype=float)
     if matrix.ndim != 2 or matrix.shape[1] == 0:
         raise ValueError("correspondence must be a non-empty two-dimensional matrix")
     if np.any(~np.isfinite(matrix)) or np.any(matrix < 0.0):
         raise ValueError("correspondence entries must be finite and non-negative")
 
+    uncertainty: np.ndarray | None
+    if margin_uncertainty is None:
+        uncertainty = None
+    else:
+        raw = np.asarray(margin_uncertainty, dtype=float)
+        if raw.ndim == 0:
+            uncertainty = np.full(matrix.shape[0], float(raw))
+        elif raw.shape == (matrix.shape[0],):
+            uncertainty = raw
+        else:
+            raise ValueError("margin_uncertainty must be scalar or one value per parent row")
+        if np.any(~np.isfinite(uncertainty)) or np.any(uncertainty < 0.0):
+            raise ValueError("margin_uncertainty must be finite and non-negative")
+
     steps: list[LineageStep] = []
     for parent_index, row in enumerate(matrix):
-        if row.size == 0 or np.all(row == 0.0):
-            steps.append(LineageStep(parent_index, None, None, None, None, False))
+        row_uncertainty = None if uncertainty is None else float(uncertainty[parent_index])
+        if np.all(row == 0.0):
+            steps.append(LineageStep(parent_index, None, None, None, None, row_uncertainty, False, False))
             continue
         order = np.argsort(row)[::-1]
         best_index = int(order[0])
         best = float(row[best_index])
         runner = float(row[int(order[1])]) if row.size > 1 else 0.0
         margin = best - runner
+        unique = margin > 0.0
+        if not unique:
+            identifiable: bool | None = False
+            child_index: int | None = None
+        else:
+            child_index = best_index
+            identifiable = None if row_uncertainty is None else margin > row_uncertainty
         steps.append(
             LineageStep(
                 parent_index=parent_index,
-                child_index=best_index if margin > 0.0 else None,
+                child_index=child_index,
                 dominant_score=best,
                 runner_up_score=runner,
                 margin=margin,
-                identifiable=margin > 0.0,
+                margin_uncertainty=row_uncertainty,
+                unique_dominant=unique,
+                identifiable=identifiable,
             )
         )
     return tuple(steps)
 
 
-def trace_dominant_lineage(correspondences: Sequence[np.ndarray], start_parent: int) -> tuple[LineageStep, ...]:
+def trace_dominant_lineage(
+    correspondences: Sequence[np.ndarray],
+    start_parent: int,
+    margin_uncertainties: Sequence[float | Sequence[float]],
+) -> tuple[LineageStep, ...]:
     if start_parent < 0:
         raise ValueError("start_parent must be non-negative")
+    if len(correspondences) != len(margin_uncertainties):
+        raise ValueError("one uncertainty specification is required per correspondence matrix")
     current = start_parent
     path: list[LineageStep] = []
-    for correspondence in correspondences:
-        transitions = dominant_lineage_transition(correspondence)
+    for correspondence, uncertainty in zip(correspondences, margin_uncertainties):
+        transitions = dominant_lineage_transition(correspondence, uncertainty)
         if current >= len(transitions):
             raise ValueError("lineage index is outside the next correspondence matrix")
         step = transitions[current]
         path.append(step)
-        if not step.identifiable or step.child_index is None:
+        if step.identifiable is not True or step.child_index is None:
             break
         current = step.child_index
     return tuple(path)
