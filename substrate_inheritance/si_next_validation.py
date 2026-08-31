@@ -33,8 +33,12 @@ def synthetic_si_next_validation() -> dict:
 
     transition_1 = np.array([[0.96, 0.04], [0.05, 0.95]])
     transition_2 = np.array([[0.93, 0.07], [0.08, 0.92]])
-    lineage = trace_dominant_lineage((transition_1, transition_2), start_parent=0)
-    exact_tie = dominant_lineage_transition(np.array([[0.5, 0.5]]))[0]
+    lineage = trace_dominant_lineage(
+        (transition_1, transition_2),
+        start_parent=0,
+        margin_uncertainties=(0.0, 0.0),
+    )
+    exact_tie = dominant_lineage_transition(np.array([[0.5, 0.5]]), margin_uncertainty=0.0)[0]
 
     weights = {"substrate_A": 2.0, "substrate_B": -0.5}
 
@@ -72,11 +76,13 @@ def synthetic_si_next_validation() -> dict:
                     "dominant_score": step.dominant_score,
                     "runner_up_score": step.runner_up_score,
                     "margin": step.margin,
+                    "margin_uncertainty": step.margin_uncertainty,
+                    "unique_dominant": step.unique_dominant,
                     "identifiable": step.identifiable,
                 }
                 for step in lineage
             ],
-            "exact_tie_refused": not exact_tie.identifiable and exact_tie.child_index is None,
+            "exact_tie_refused": exact_tie.unique_dominant is False and exact_tie.identifiable is False and exact_tie.child_index is None,
         },
         "multi_parent": {
             "additive_pair_interaction_norm": float(np.linalg.norm(next(iter(additive.pair_interactions.values())))),
