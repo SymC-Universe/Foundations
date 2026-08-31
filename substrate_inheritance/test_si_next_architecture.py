@@ -129,6 +129,35 @@ def test_ablation_effects_are_not_normalized_into_fake_percentages():
     assert effects["B"][0] == pytest.approx(3.0)
 
 
+def test_three_way_source_interaction_is_retained_as_higher_order_residual():
+    def response(active):
+        a = 1.0 if "A" in active else 0.0
+        b = 1.0 if "B" in active else 0.0
+        c = 1.0 if "C" in active else 0.0
+        return np.array([a + b + c + 5.0 * a * b * c])
+
+    result = source_inclusion_exclusion(response, ("A", "B", "C"))
+    assert np.allclose(result.higher_order_residual, np.array([5.0]))
+
+
+def test_source_attribution_rejects_shape_drift():
+    def response(active):
+        if "B" in active:
+            return np.array([1.0, 2.0])
+        return np.array([1.0])
+
+    with pytest.raises(ValueError, match="same shape"):
+        source_inclusion_exclusion(response, ("A", "B"))
+
+
+def test_source_ablation_rejects_nonfinite_response():
+    def response(active):
+        return np.array([np.nan if "A" not in active else 1.0])
+
+    with pytest.raises(ValueError, match="finite"):
+        source_ablation_effects(response, ("A", "B"))
+
+
 def test_candidate_validation_cannot_promote_or_redefine_v02():
     result = synthetic_si_next_validation()
     assert result["scope"] == "synthetic_si_next_architecture_validation_only"
