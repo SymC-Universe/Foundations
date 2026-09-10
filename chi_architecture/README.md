@@ -160,6 +160,7 @@ See:
 
 - `GENERAL_PROTOCOL_AUDIT_20260910.md`
 - `CIRCULARITY_AUDIT_20260910.md`
+- `CROSS_PROJECT_UPDATE_AUDIT_20260910.md`
 - `POST_RESULT_DISCOVERY_LEDGER.md`
 - `P0_FALSIFIABILITY_CHARTER_v0.1.md`
 - `P0_EXPERIMENT_PLAN_v0.1.json` for preserved historical v0.1 provenance
@@ -167,7 +168,7 @@ See:
 
 ## Project control
 
-**Current status:** P0 governance, known-truth mechanical qualification, and the first circularity hardening pass are complete; generalized chi architecture remains unconfirmed.  
-**Next scientific/computational step:** evaluate the raw F0-F8 fixtures only as method checks against native mathematics, then design the first separate evaluative synthetic experiment whose target, parameter rule, architecture metrics, native comparator, and negative result are frozen before decisive outcomes are opened.  
-**What can advance immediately:** native-comparator method checks and design of a non-fixture synthetic evaluation with independent outcome and preserved calibration/holdout separation.  
+**Current status:** P0 governance, known-truth mechanical qualification, circularity hardening, and the GRI/Barrier-Atlas/NSD cross-project calibration audit are complete; generalized chi architecture remains unconfirmed.  
+**Next scientific/computational step:** design the first separate evaluative synthetic experiment using the newly documented adequacy, identifiability, independence, exchangeability, shared-input, and native-comparator safeguards; freeze its target and negative result before decisive outputs are opened.  
+**What can advance immediately:** build the new evaluative design as a separately versioned protocol without altering the already-viewed v0.2 fixture plan.  
 **User action required:** none. A separate decision will be requested only if a future move would freeze a confirmatory P1 claim, comparator, threshold, or untouched validation target.
