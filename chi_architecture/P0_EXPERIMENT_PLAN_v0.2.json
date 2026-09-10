@@ -1,0 +1,210 @@
+{
+  "schema": "chi-architecture-p0-experiment-plan-v0.2",
+  "status": "P0_EXPLORATORY_NOT_CONFIRMATORY",
+  "supersedes_for_future_runs": "P0_EXPERIMENT_PLAN_v0.1.json",
+  "v0_1_preservation": "historical; do not rewrite or reinterpret its completed artifacts",
+  "revision_reason": [
+    "separate designed method fixtures from evaluative scientific experiments",
+    "remove hard-coded interpretive result states from generated outputs",
+    "make the plan the single source of parameter values",
+    "correct F6 implementation drift from the v0.1 parameter list",
+    "strengthen noise-entry controls with a no-noise physical baseline and multiple fixed seeds",
+    "expand second-order chi admission checks beyond the chi=1 fixture and refuse negative damping as a damping-ratio chi"
+  ],
+  "purpose": [
+    "HYPOTHESIS_GENERATION",
+    "FEASIBILITY",
+    "KNOWN_TRUTH_METHOD_STRESS"
+  ],
+  "protocol_authority": "General Cross-Project Research Protocol v0.7.1",
+  "mfr14_activated": false,
+  "claim_ceiling": "method qualification and exploratory architecture analysis only",
+  "anti_circularity": {
+    "designed_fixture_rule": "F0-F8 are deliberately constructed known-truth fixtures. Recovery of their built-in behavior validates implementation only and cannot confirm chi architecture, compensation, cross-regime transportability, or ADDS.",
+    "parameter_single_source": "all runner parameter values must be read from this plan; duplicated hidden parameter lists are forbidden",
+    "raw_output_rule": "F0-F6 result records contain measured/native quantities, not hard-coded scientific interpretation labels",
+    "interpretation_rule": "scientific classifications beyond exact mathematical refusal/admission are assigned only by a separately versioned evaluation rule",
+    "outcome_independence": "future evaluative targets must be defined independently of the S/M/C/R quantities claimed to explain them",
+    "no_retuning": "after a result is viewed, changing parameters, metrics, mappings, thresholds, or labels starts a new version and preserves the prior outcome",
+    "no_scalar_mining": "no scalar may be called chi because it was selected for favorable association with an already-viewed architecture or target",
+    "fixture_to_evidence_prohibition": "a behavior intentionally encoded into a fixture may not be counted as evidence that the corresponding general hypothesis is true",
+    "future_evaluative_split": "before a P1 claim, freeze discovery/calibration/untouched-holdout separation under a complete MFR-14; F0-F8 cannot serve as the untouched holdout"
+  },
+  "parameter_provenance_classes": {
+    "ANALYTIC_FIXTURE": "chosen from known native mathematics to exercise a specific branch; implementation evidence only",
+    "STRUCTURAL_SWEEP": "chosen prospectively to vary one declared construction axis while retaining all cases",
+    "FIXED_SEED_SET": "seed set fixed for robustness and all seeds retained; no seed may be discarded for an unfavorable outcome",
+    "FUTURE_UNTOUCHED": "not present in F0-F8; requires a later freeze before target reveal"
+  },
+  "chi_policy": {
+    "default": "NO_ADMISSIBLE_CHI_UNLESS_NATIVE_MODEL_LICENSES_IT",
+    "licensed_demo": "second_order_restoring_dissipative_factor_only",
+    "canonical_demo_equation": "x_ddot + gamma x_dot + kappa x = 0",
+    "canonical_demo_conditions": ["kappa > 0", "gamma >= 0"],
+    "canonical_demo_coordinate": "chi_s = gamma / (2 * sqrt(kappa))",
+    "negative_gamma_rule": "negative gamma is active antidamping and is not admitted here as a damping-ratio chi",
+    "no_cross_regime_scalar_formula_is_assumed": true,
+    "scalar_chi_required": false
+  },
+  "representation_policy": {
+    "S": "named scalar representation derived from the native model",
+    "M": "named vector/modal/subspace representation derived from the native model",
+    "C": "named interaction/coupling/system representation; never arbitrary feature concatenation",
+    "R": "cross-representation relationship diagnostics; not automatically a chi component",
+    "U": "uncertainty, residuals, conditioning, refusal, and nonidentifiability",
+    "smc_exhaustive": false,
+    "smc_literal_chi_formula": false
+  },
+  "families": [
+    {
+      "id": "F0",
+      "role": "DESIGNED_FIXTURE",
+      "parameter_provenance": "ANALYTIC_FIXTURE",
+      "name": "normal_decoupled_baseline",
+      "governing_object": "continuous-time linear generator A",
+      "matrix": [[-1.0, 0.0], [0.0, -2.0]],
+      "native_truth": "asymptotically stable, normal, uncoupled",
+      "primary_task": "verify the implementation does not require extra architecture where eigenvalue stability is sufficient",
+      "native_comparator_candidate": "eigenvalue real-part test"
+    },
+    {
+      "id": "F1",
+      "role": "DESIGNED_FIXTURE",
+      "parameter_provenance": "STRUCTURAL_SWEEP",
+      "name": "same_spectrum_different_modal_geometry",
+      "governing_object": "A(k) = [[-1,k],[0,-2]]",
+      "parameter_values": {"k": [0.0, 1.0, 4.0, 8.0]},
+      "invariant": "eigenvalues are exactly {-1,-2} for every k",
+      "primary_task": "measure maximum finite-time two-norm gain on the fixed grid",
+      "time_grid": {"start": 0.0, "stop": 8.0, "points": 4001},
+      "native_comparator_candidate": "largest singular value of exp(A t)"
+    },
+    {
+      "id": "F2",
+      "role": "DESIGNED_FIXTURE",
+      "parameter_provenance": "STRUCTURAL_SWEEP",
+      "name": "same_modal_geometry_different_scalar_spectrum",
+      "governing_object": "diagonal continuous-time linear generator",
+      "matrices": [
+        [[-0.25, 0.0], [0.0, -2.0]],
+        [[-1.0, 0.0], [0.0, -2.0]],
+        [[-1.75, 0.0], [0.0, -2.0]]
+      ],
+      "x0": [1.0, 0.0],
+      "evaluation_time": 4.0,
+      "invariant": "canonical coordinate basis is the modal basis",
+      "primary_task": "compare state norm at the fixed evaluation time",
+      "native_comparator_candidate": "closed-form exponential decay"
+    },
+    {
+      "id": "F3",
+      "role": "DESIGNED_FIXTURE",
+      "parameter_provenance": "ANALYTIC_FIXTURE",
+      "name": "same_local_subsystems_different_coupling",
+      "governing_object": "A(b,c) = [[-1,b],[c,-2]]",
+      "fixed_local_terms": {"a11": -1.0, "a22": -2.0},
+      "coupling_cases": [
+        {"label": "zero", "b": 0.0, "c": 0.0},
+        {"label": "symmetric_mild", "b": 0.5, "c": 0.5},
+        {"label": "antisymmetric", "b": 2.0, "c": -2.0},
+        {"label": "symmetric_destabilizing", "b": 2.0, "c": 2.0}
+      ],
+      "primary_task": "verify that whole-system behavior can depend on coupling while isolated local terms are fixed",
+      "native_comparator_candidate": "trace-determinant/eigenvalue stability"
+    },
+    {
+      "id": "F4",
+      "role": "DESIGNED_FIXTURE_NOT_COMPENSATION_EVIDENCE",
+      "parameter_provenance": "ANALYTIC_FIXTURE",
+      "name": "feedback_stability_control",
+      "governing_object": "A(k,h) = [[0.3,-k],[h,-1.0]]",
+      "fixed_local_terms": {"plant_rate": 0.3, "feedback_state_rate": -1.0},
+      "cases": [
+        {"label": "feedback_absent", "k": 0.0, "h": 0.0},
+        {"label": "insufficient_feedback", "k": 0.4, "h": 0.4},
+        {"label": "stabilizing_feedback", "k": 0.6, "h": 0.6},
+        {"label": "strong_stabilizing_feedback", "k": 1.0, "h": 1.0},
+        {"label": "sign_reversed_feedback", "k": -0.6, "h": 0.6}
+      ],
+      "known_hurwitz_condition": "trace=-0.7<0 and determinant=-0.3+k*h>0; stability requires k*h>0.3",
+      "primary_task": "verify recovery of the native coupling-dependent stability criterion",
+      "prohibited_inference": "these analytically selected cases do not establish compensatory discordance",
+      "native_comparator_candidate": "Hurwitz trace-determinant criterion"
+    },
+    {
+      "id": "F5",
+      "role": "DESIGNED_FIXTURE",
+      "parameter_provenance": "FIXED_SEED_SET",
+      "name": "noise_entry_point",
+      "governing_object": "stable feedback state model plus observation model",
+      "x0": [1.0, 0.0],
+      "noise_cases": ["NO_NOISE", "PROCESS_NOISE", "FEEDBACK_OR_SENSOR_NOISE", "OBSERVER_ONLY_NOISE"],
+      "seeds": [1729, 271828, 314159, 20260910],
+      "simulation": {"dt": 0.002, "steps": 5000, "sigma": 0.35, "feedback_k": 0.8, "feedback_h": 0.8},
+      "primary_task": "verify that observer-only noise leaves the physical trajectory equal to the no-noise control while process and feedback/sensor disturbances enter the physical state",
+      "native_comparator_candidate": "known noise-injection path and state trajectory",
+      "retain_all_seeds": true
+    },
+    {
+      "id": "F6",
+      "role": "DESIGNED_FIXTURE",
+      "parameter_provenance": "STRUCTURAL_SWEEP",
+      "name": "nonnormal_transient_growth",
+      "governing_object": "upper-triangular stable generator A(k)",
+      "parameter_values": {"k": [0.0, 2.0, 4.0, 8.0, 12.0]},
+      "time_grid": {"start": 0.0, "stop": 8.0, "points": 4001},
+      "primary_task": "compare fixed-spectrum asymptotic stability with exact finite-time singular-value amplification",
+      "native_comparator_candidate": "transient norm / singular-value analysis",
+      "prohibited_inference": "recovery of standard non-normal behavior does not by itself establish added architecture value"
+    },
+    {
+      "id": "F7",
+      "role": "DESIGNED_FIXTURE",
+      "parameter_provenance": "ANALYTIC_FIXTURE",
+      "name": "degenerate_subspace_refusal",
+      "governing_object": "A = -I_2",
+      "matrix": [[-1.0, 0.0], [0.0, -1.0]],
+      "native_truth": "the full eigenspace is identifiable but individual eigenvectors are not unique",
+      "primary_task": "verify refusal of unique individual-mode identity",
+      "native_comparator_candidate": "exact eigenspace algebra"
+    },
+    {
+      "id": "F8",
+      "role": "DESIGNED_FIXTURE",
+      "parameter_provenance": "ANALYTIC_FIXTURE",
+      "name": "chi_admission_and_refusal",
+      "cases": [
+        {"label": "underdamped", "gamma": 1.0, "kappa": 1.0},
+        {"label": "critical", "gamma": 2.0, "kappa": 1.0},
+        {"label": "overdamped", "gamma": 4.0, "kappa": 1.0},
+        {"label": "undamped", "gamma": 0.0, "kappa": 1.0},
+        {"label": "active_antidamping", "gamma": -2.0, "kappa": 1.0},
+        {"label": "anti_restoring", "gamma": 2.0, "kappa": -1.0},
+        {"label": "single_real_pole", "pole": -1.0}
+      ],
+      "primary_task": "verify mathematically licensed scalar admission and explicit refusal without privileging chi=1 as the only positive case",
+      "native_comparator_candidate": "characteristic-polynomial/discriminant analysis"
+    }
+  ],
+  "future_evaluative_experiment_requirements": {
+    "status": "NOT_YET_RUN",
+    "must_not_reuse_fixture_success_as_confirmation": true,
+    "must_define_independent_outcome": true,
+    "must_freeze_architecture_metrics_before_untouched_outcomes": true,
+    "must_include_native_comparator": true,
+    "must_include_null_or_negative_cases": true,
+    "must_retain_all_predeclared_parameter_cases": true,
+    "must_preserve_parameter_selection_provenance": true,
+    "must_have_a_result_that_counts_against_the_hypothesis": true,
+    "p1_requires_complete_mfr14": true
+  },
+  "reporting_rules": {
+    "retain_every_family": true,
+    "retain_negative_results": true,
+    "retain_native_comparator_result": true,
+    "synthetic_fixture_success_counts_as_empirical_confirmation": false,
+    "synthetic_fixture_success_counts_as_program_portfolio_ADDS": false,
+    "parameter_changes_after_result_require_new_p0_version": true,
+    "no_empirical_gri_target_is_used_in_this_plan": true
+  }
+}
