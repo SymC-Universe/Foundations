@@ -4,12 +4,25 @@
 **Protocol authority:** General Cross-Project Research Protocol v0.7.1, Sections 9.1-9.3  
 **Rule:** No entry in this ledger is confirmatory evidence. Each entry preserves the trigger that generated the hypothesis and the promotion debt created by seeing that trigger first.
 
+## Historical provenance note
+
+The current generalized architecture hypothesis has two different kinds of provenance that must not be conflated.
+
+1. **User-reported preexisting conceptual premise, documentary verification pending:** before the later scalar mathematics, the motivating idea was that systems are shaped by pressure, influence, coupling, and feedback from other systems/components, and that coupled or grouped systems can contain scientifically important organization not visible from isolated systems alone.
+2. **Post-result mathematical/generalized formulation:** the present scalar/modal/conglomerate-plus-relationships architecture was sharpened after the Stability Arc, GRI, and substrate-inheritance results and therefore carries the post-result promotion debt recorded below.
+
+The scalar-first research phase is recorded as an investigative strategy, not as evidence that the scalar was ever assumed to be the fundamental ontology. The damping-ratio construction provided a tractable mathematical probe that was investigated aggressively and has since been shown to be insufficient as a complete description outside its licensed role.
+
+If the original dated paper or other pre-mathematical record is recovered, it should be preserved unchanged and linked here as hypothesis-provenance evidence. It would establish chronology only, not validate the current hypothesis.
+
+Universality is not a promotion target. The architecture may earn broader scope only through additional bounded tests. `BROAD != UNIVERSAL`.
+
 ---
 
 ## CA-D001: Progressive cross-regime chi architecture
 
 **Selection status:** POST_RESULT_DISCOVERY  
-**Hypothesis provenance:** DATA_DERIVED + FRAMEWORK_DERIVED + CROSS_DOMAIN_TRANSFER  
+**Hypothesis provenance:** DATA_DERIVED + FRAMEWORK_DERIVED + CROSS_DOMAIN_TRANSFER, with an earlier user-reported systems/coupling conceptual prior awaiting documentary verification  
 **Observed trigger:** The rebuilt GRI program retained reproducible static scalar, modal, and cross-layer/system organization while explicitly withholding any biological chi coordinate. Existing Stability Arc and substrate-inheritance work supplied separate examples of licensed scalar dynamics and carrier/coupling structure.  
 **Reason selected:** This combination suggested that the recurring scientific object may be a progressively reconstructed stability architecture rather than one fixed scalar formula.
 
@@ -17,7 +30,7 @@
 
 Materially different native regimes may admit useful stability architectures that can be progressively reconstructed from scalar, vector/modal, conglomerate/system, and additional relationship/coupling structure where those objects are natively licensed.
 
-A regime-specific chi may emerge as one compressed coordinate of that architecture, but no regime is required to admit one.
+A regime-specific scalar chi may emerge as one compressed coordinate of that architecture, but no regime is required to admit one and no scalar is required for the architecture to remain scientifically meaningful.
 
 ### Native explanations to investigate first
 
