@@ -7,7 +7,7 @@
 
 ## Executive result
 
-The current chi-architecture investigation is **not in confirmatory protocol violation** because it remains P0 exploratory work. The underlying projects already contain unusually strong anti-retuning and layer-separation safeguards. The main problem is that the generalized cross-regime interpretation has advanced beyond its dedicated repository record and therefore needs explicit P0 classification, post-result provenance, failure states, and known-truth stress tests before substantial new computation is treated as evidence for it.
+The current chi-architecture investigation is **not in confirmatory protocol violation** because it remains P0 exploratory work. The underlying projects already contain strong anti-retuning and layer-separation safeguards. The main pre-audit problem was that the generalized cross-regime interpretation had advanced beyond its dedicated repository record. This audit has now closed that P0 governance gap and established the first reproducible known-truth harness.
 
 The principal conceptual correction is that scalar, vector/modal, and conglomerate/system are the current **starting representation components**, not a complete decomposition of chi. Their relationships, feedback, disagreement, inheritance, emergence, and additional structure remain objects of investigation.
 
@@ -15,29 +15,29 @@ The principal governance correction is narrower than initially suspected: GRI al
 
 ## Audit matrix
 
-| Area | Protocol expectation | Current state before this audit | Audit result | Required action |
+| Area | Protocol expectation | Current state after remediation | Audit result | Next requirement |
 |---|---|---|---|---|
-| Scientific maturity | P0 exploration may remain open-ended but must not use confirmatory language | Discussion was exploratory but the generalized workstream was not formally recorded | GAP CLOSED IN THIS BRANCH | Maintain explicit P0 status and purpose record |
-| Truth over continuity | Prior SymC claims receive no protection | Current work allows old chi interpretations to fail; GRI has already retired historical CV/2 as biological chi | STRONG COMPLIANCE | Preserve |
-| Chi construction | Scalar/modal/conglomerate are starting representations, not final decomposition | Recent conversational shorthand occasionally treated the triplet as the architecture itself | CORRECTED | Use progressive reconstruction from starting representations |
-| Native-model-first | Domain-native science precedes chi naming | GRI withholds biological chi; SI uses native carrier/coupling objects; licensed second-order chi remains bounded | STRONG COMPLIANCE | Preserve |
-| Chi naming discipline | Only licensed objects are called chi | Generalized discussion risked calling all S/M/C objects forms of chi | CORRECTED | Keep S/M/C named by native object; reserve chi for admitted constructions |
-| Layer-separable validation | Scalar, modal, and conglomerate claims can fail separately | SI and GRI explicitly preserve separate layers and disagreement | STRONG COMPLIANCE | Reuse; no master validity score |
-| Open channel | Residuals, anomalies, refusals, nonidentifiability remain visible | Existing projects preserve them; generalized workstream previously lacked its own vocabulary | GAP CLOSED IN CHARTER | Keep explicit refusal, null, and unresolved states |
-| Post-result discoveries | Unexpected concordance/discordance enters promotion debt | GRI already marks latent-state/chi interpretation as future hypothesis; generalized cross-regime and compensation extensions were not separately logged | PARTIAL COMPLIANCE -> GAP CLOSED | Maintain dedicated post-result ledger |
-| Hypothesis provenance | Each hypothesis records origin | Existing domain records do this unevenly for the new generalized ideas | GAP CLOSED | Retain DATA_DERIVED / FRAMEWORK_DERIVED / CROSS_DOMAIN_TRANSFER provenance |
-| Anti-circularity | Discovery/calibration/holdout/confirmation separated | GRI already demonstrates proper retirement of a failed attractive bridge; generalized return to GRI could still become circular if rules are derived from the same result | STRONG DOMAIN COMPLIANCE / GENERALIZED HIGH-RISK CONTROL NEEDED | Known-truth synthetic work before a future frozen empirical confirmation; never choose chi from favorable GRI outcomes |
-| Interpretive elasticity | Falsifier must be capable of occurring without being redescribed as success | GRI latent-state/chi section already gives failure criteria; compensatory-discordance vocabulary was not operationally constrained | PARTIAL COMPLIANCE -> GAP CLOSED IN CHARTER | Preserve neutral/destabilizing/nonfunctional/epistemic discordance and no-added-value outcomes |
-| Comparator | Strongest native comparator frozen for P1 | Prior-art sweep exists, but no confirmatory cross-regime task or comparator is frozen | ACCEPTABLE P0 GAP | Record candidate comparator families; freeze only with a P1 scientific question |
-| Engine qualification | Known-truth recovery, negative controls, refusal, adversarial calibration before deployment | GRI has prior known-truth qualification; generalized chi-architecture Engine does not yet exist | GENERALIZED ENGINE NOT YET QUALIFIED | Build synthetic Engine before real-data deployment |
-| Demonstrated-failing checks | Every future production check must fail on known-bad input | Existing mature pipelines contain adversarial tests; generalized Engine has no checks yet | NOT YET APPLICABLE | Mandatory for first executable harness |
-| Atlas independence | System Model/Engine and Atlas remain independent | No generalized chi atlas exists | NOT YET APPLICABLE | Do not construct a validating Atlas from synthetic outcomes |
-| System Model / Engine / Atlas / Tool | System Model -> Engine; System Model + Independent Atlas -> Tool | New workstream is a candidate System Model investigation only | COMPLIANT IF LABELED | No tool or predictive-tool claim |
-| MFR-14 | Required before confirmatory/predictive claims | Not activated for generalized architecture | COMPLIANT AT P0 | Do not use P1 language until full MFR-14 is frozen |
-| Program-level portfolio | At least three materially different domains frozen before cross-domain ADDS evaluation | Not defined | NOT YET APPLICABLE | Required before any cross-domain added-value claim |
-| Standard-toolkit value | ADDS/EQUIVALENT/SUBTRACTS/NOT_TESTED on untouched evidence | Not evaluated for generalized architecture | NOT TESTED | No generalized added-value claim |
-| Reproducibility | R1/R2/R3 required as maturity increases | No executable generalized Engine yet | NOT YET APPLICABLE | Add with first computational package |
-| Frozen historical records | Do not rewrite pre-result contracts after seeing results | Existing GRI and SI frozen records remain unchanged | STRONG COMPLIANCE | Add new records instead of editing historical freezes |
+| Scientific maturity | P0 exploration may remain open-ended but must not use confirmatory language | Dedicated P0 branch, README, claim ceiling, and machine-readable plan now exist | COMPLIANT | Preserve P0 ceiling until a full MFR-14 is frozen |
+| Truth over continuity | Prior SymC claims receive no protection | Old biological chi is not protected; negative and refusal states are explicit | STRONG COMPLIANCE | Preserve |
+| Chi construction | Scalar/modal/conglomerate are starting representations, not final decomposition | All new records now use progressive reconstruction language | COMPLIANT | Keep architecture open to additional components and NOT_APPLICABLE states |
+| Native-model-first | Domain-native science precedes chi naming | GRI withholds biological chi; synthetic harness licenses second-order chi only where the native factor permits it | STRONG COMPLIANCE | Apply same rule in every later domain |
+| Chi naming discipline | Only licensed objects are called chi | F8 explicitly admits restoring second-order chi and refuses anti-restoring/single-pole cases | COMPLIANT AT P0 | Domain-specific admission rule required for every future chi class |
+| Layer-separable validation | Scalar, modal, and conglomerate claims can fail separately | P0 families independently manipulate spectrum, modal geometry, and coupling | COMPLIANT AT P0 | Do not convert this into a master score |
+| Open channel | Residuals, anomalies, refusals, nonidentifiability remain visible | Charter and plan contain explicit negative/refusal outcomes | COMPLIANT | Preserve every family/result |
+| Post-result discoveries | Unexpected findings enter promotion debt | Generalized architecture, compensatory discordance, noise-entry distinction, and conglomerate irreducibility are ledgered | COMPLIANT | No post-result item can promote itself |
+| Hypothesis provenance | Each hypothesis records origin | Dedicated ledger records DATA_DERIVED, FRAMEWORK_DERIVED, CROSS_DOMAIN_TRANSFER, and external-theory context where applicable | COMPLIANT | Preserve provenance through any later MFR |
+| Anti-circularity | Discovery/calibration/holdout/confirmation separated | GRI already demonstrated proper retirement of a failed attractive bridge; generalized work is isolated as P0 and no empirical target is used in the F0-F8 plan | STRONG CURRENT COMPLIANCE | Future empirical return requires a frozen MFR and untouched decisive evidence |
+| Interpretive elasticity | Falsifier must occur without being redescribed as success | Neutral, compensatory-candidate, destabilizing, nonfunctional, and epistemic discordance are separated; no-added-value states are explicit | COMPLIANT AT P0 | Outcome definitions must stay fixed within each version |
+| Comparator | Strongest native comparator frozen for P1 | Each synthetic family names a native comparator candidate, but no P1 scientific task is yet frozen | ACCEPTABLE P0 | Freeze exact comparison question and comparator route under MFR-05 before P1 |
+| Engine qualification | Known-truth recovery, negative controls, refusal, adversarial calibration before deployment | First P0 known-truth implementation exists and passes its declared battery | P0 MECHANICAL QUALIFICATION COMPLETE | Scientific added value against native comparators remains to be evaluated |
+| Demonstrated-failing checks | Every production check must fail on known-bad input | Four known-bad/refusal tests call production functions and pass only when bad input is rejected | COMPLIANT AT P0 | Extend failing checks with each new capability |
+| Atlas independence | System Model/Engine and Atlas remain independent | No generalized chi Atlas has been constructed | COMPLIANT | Future Atlas must remain independent of Engine development/validation targets |
+| System Model / Engine / Atlas / Tool | System Model -> Engine; System Model + Independent Atlas -> Tool | Current branch is a candidate System Model plus P0 Engine prototype only | COMPLIANT | No Tool or Predictive Tool label |
+| MFR-14 | Required before confirmatory/predictive claims | Not activated | COMPLIANT AT P0 | Full MFR-14 required for any P1 hypothesis |
+| Program-level portfolio | At least three materially different domains frozen before cross-domain ADDS evaluation | Not defined | NOT YET APPLICABLE | Freeze later if a cross-domain value claim matures |
+| Standard-toolkit value | ADDS/EQUIVALENT/SUBTRACTS/NOT_TESTED on untouched evidence | F0 deliberately returns standard-toolkit equivalence; broader generalized value remains NOT_TESTED | APPROPRIATELY UNRESOLVED | Native-comparator analysis is next |
+| Reproducibility | Environment, code, result, and evidence lineage remain reconstructable | Dependencies pinned; CI records realized environment; source/result manifest and artifact generated | P0 REPRODUCIBILITY BASELINE ESTABLISHED | Formal R1/R2/R3 claims remain future maturity gates |
+| Frozen historical records | Do not rewrite pre-result contracts after seeing results | GRI, Stability Arc, active SI, and SI-next records were not altered | STRONG COMPLIANCE | Continue adding new records rather than rewriting historical freezes |
 
 ## Positive evidence-governance finding from GRI
 
@@ -72,22 +72,15 @@ The possibility that disagreement may participate in compensatory whole-system b
 
 It does not yet establish feedback, compensation, homeostasis, synergy, causality, or a new chi component.
 
-Later tests must distinguish at least:
-
-- epistemic/measurement disagreement;
-- process-noise disagreement;
-- destabilizing discordance;
-- compensatory response;
-- redundant information;
-- synergistic joint information;
-- coupling-specific effects;
-- and nonidentifiability.
+The current P0 battery now separates process noise, feedback/sensor noise, observer-only noise, absent/insufficient/stabilizing/sign-reversed feedback, and explicit nonfunctional/destabilizing/epistemic alternatives. These are known-truth method tests, not biological findings.
 
 ### 3. Algebraic conglomeration is not scientific added value
 
 If a full operator is reconstructed algebraically from its spectrum and modes, then showing that the operator contains both is tautological.
 
 A scientific conglomerate claim requires an independently defined property or outcome for which the coupling/whole-system object adds information, mechanism, robustness, transfer, uncertainty calibration, boundary localization, or prediction beyond the lower-level representations and the appropriate native comparator.
+
+F0 and F6 deliberately protect this distinction: a standard method can be `EQUIVALENT`, and standard non-normal analysis is allowed to explain the effect unless the architecture adds value on a separately declared axis.
 
 ### 4. GRI is a discovery source for generalized chi architecture, not its untouched confirmation
 
@@ -107,14 +100,33 @@ Until source identities and an exact comparison question are committed in a P1 c
 
 1. Created isolated branch `chi-architecture-p0` from protected `main` rather than altering the published lineage or SI-next branch.
 2. Added `chi_architecture/README.md` with explicit P0 status, claim ceiling, naming rules, anti-circularity direction, and project-control state.
-3. Added this audit record and reconciled it with the current GRI anti-circularity evidence.
+3. Added and reconciled this General Protocol audit with the current GRI anti-circularity evidence.
 4. Added `POST_RESULT_DISCOVERY_LEDGER.md` for the generalized architecture, compensatory-discordance, noise-entry, and conglomerate-irreducibility hypotheses.
 5. Added `P0_FALSIFIABILITY_CHARTER_v0.1.md` with explicit negative outcomes and known-truth families F0-F8.
-6. Next in the same audit pass: add a machine-readable P0 experiment plan and begin the exact known-truth implementation.
+6. Added `P0_EXPERIMENT_PLAN_v0.1.json` with fixed exploratory cases, native comparator candidates, chi admission/refusal rules, and evidence-class guards.
+7. Added the P0 production harness, 14 known-truth/known-bad tests, result runner, pinned dependencies, and source/result manifesting.
+8. Added a pinned GitHub Actions workflow. Push run `34476690436` passed; PR-head run `34476824680` also passed at commit `9a359346aa12b714a59cda3a6e7237328d5dd8ef` before the final prose resynchronization commits.
+9. Opened draft PR #16, `Establish P0 chi-architecture falsification workstream`, against `main`. It remains draft and unmerged.
+10. Updated `REPOSITORY_GUIDE.md` to classify this branch correctly and prevent synthetic P0 work from being mistaken for a promoted physical result.
+11. Resynchronized workstream prose after executable capability was added.
+
+## Remaining changes required before any P1 or generalized scientific claim
+
+The following are **not defects at P0**. They are future gates that must remain open until the work earns them:
+
+- analyze F0-F8 against the strongest native comparator for each declared task rather than merely verifying expected algebra;
+- expand the known-truth battery where current cases reveal blind spots or triviality;
+- define a narrow P1 scientific question only if the P0 result supports one;
+- freeze the complete MFR-14, including comparator-selection route, decision rule, multiplicity/search space, explicit falsifier, and failure consequence;
+- identify untouched decisive evidence not used to formulate the mapping;
+- construct any future Atlas independently from the System Model/Engine;
+- complete domain-specific evidence and, only if a cross-domain `ADDS` claim is attempted, freeze the required minimum three-domain portfolio;
+- distinguish method-validity outcomes from system-behavior/empirical confirmations;
+- complete formal R1/R2/R3 reproducibility gates when the maturity tier requires them.
 
 ## Current project-control state
 
-**Current status:** P0 governance hardening substantially closed; generalized architecture remains unconfirmed.  
-**Next step:** freeze only the exploratory implementation schema, then execute exact known-truth families F0-F8 without promoting their results.  
-**Immediate assistant-side work:** machine-readable experiment plan, production functions, known-bad tests, and CI harness.  
-**User action:** none at this stage.
+**Current status:** General Protocol audit remediation is complete at P0; first known-truth mechanical qualification is reproducible and green; generalized chi architecture remains unconfirmed.  
+**Next step:** move from mechanical qualification to scientific analysis of the F0-F8 synthetic outputs against their native comparators, explicitly identifying equivalence, redundancy, subtraction, and any nontrivial added information.  
+**Immediate assistant-side work:** inspect the archived synthetic results, calculate native-comparator relationships, add any exact controls required by observed weaknesses, and preserve the analysis without promotion.  
+**User action:** none. User input becomes necessary only before a move that freezes a P1 claim, comparator, threshold, or untouched validation target.
