@@ -205,14 +205,12 @@ The following are legitimate negative outcomes and may not be reinterpreted as h
 - `DISCORDANCE_NONFUNCTIONAL`: disagreement does not predict preservation, recovery, or another predeclared outcome;
 - `DISCORDANCE_DESTABILIZING`: disagreement tracks deterioration rather than compensation;
 - `NO_COUPLING_SPECIFICITY`: apparent compensation persists when the proposed feedback/coupling path is ablated or rewired;
-- `EPistemic_noise_explains_result`: observer-only noise reproduces the apparent architecture effect;
+- `EPISTEMIC_NOISE_EXPLAINS_RESULT`: observer-only noise reproduces the apparent architecture effect;
 - `NO_ADMISSIBLE_CHI`: no defensible chi coordinate arises in the regime;
 - `NOT_APPLICABLE`: a proposed starting representation is not meaningful for the native model;
 - `NONIDENTIFIABLE`: data/model conditioning cannot support the requested representation;
 - `STANDARD_TOOLKIT_EQUIVALENT`: the construction reproduces native results in different notation without additional scientific content;
 - `STANDARD_TOOLKIT_SUBTRACTS`: the construction performs worse or misleads relative to the native method.
-
-Case spelling in software will be standardized before implementation; this document records the scientific states first.
 
 ## 10. Prohibited rescue moves
 
