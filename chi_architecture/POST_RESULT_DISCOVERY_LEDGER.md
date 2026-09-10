@@ -160,6 +160,50 @@ A conglomerate/system representation earns a distinct scientific role only if it
 
 ---
 
+## CA-D005: Cross-project identifiability and independence constraints
+
+**Selection status:** POST_RESULT_METHOD_UPDATE  
+**Hypothesis provenance:** DATA_DERIVED + FRAMEWORK_DERIVED + CROSS_PROJECT_AUDIT  
+**Observed trigger:** Current review of GRI, Chemistry Barrier-Height/Rate Atlas, and NSD exposed recurring failure modes that can manufacture or erase apparent architecture if they are not controlled before interpretation. The detailed source audit is preserved in `CROSS_PROJECT_UPDATE_AUDIT_20260910.md`.
+
+### Methodological proposition
+
+A future architecture claim is admissible only to the extent that the native model is adequate, the reported structure is observable/identifiable, experimental units and null exchangeability are valid, predictor/outcome constructions do not create unexamined shared-input dependence, and every required evidence axis remains independently satisfied.
+
+### New constraints entering future experiment design
+
+1. **Model adequacy precedes architecture interpretation.** Estimator/model inadequacy can mimic layer disagreement or apparent system reorganization.
+2. **Observable rank may be lower than latent rank.** Hidden structure may not be manufactured because a simulator or theory contains it.
+3. **Identifiability propagates upward.** A conglomerate representation cannot reintroduce individual modal detail already refused as non-identifiable; use invariant subspaces/clusters/projectors or return PARTIAL/UNRESOLVED.
+4. **Independent units must be declared before inference.** Technical replicates, repeated measures, ordered conditions, and independent biological/physical replicates are not interchangeable.
+5. **Permutation exchangeability is structural.** Nulls must preserve the dependence structure of the actual experimental design.
+6. **Shared-input algebra requires an explicit audit.** A target and predictor sharing denominators, baselines, normalizations, or sample-derived references can create association without new physical/biological information.
+7. **Atlas evidence is read-only relative to Engine rules.** Reference values may not tune the System Model/Engine that is later evaluated against those same references.
+8. **Evidence axes do not compensate for one another.** Provenance, mechanism identity, condition match, model adequacy, uncertainty, and comparator independence remain separately adjudicated.
+9. **Network/system topology is domain licensed.** A network-resolved representation is required where native chemistry/dynamics demand it, not inserted merely because richer conglomeration is attractive.
+10. **Prospective failures remain failures.** Post-hoc mechanism diagnosis can justify a new version but cannot reverse the official prospective result that motivated the diagnosis.
+
+### Evidence-status firewall
+
+The reviewed projects are now calibration/provenance inputs for generalized chi-architecture work. In particular:
+
+- GRI C1/FINAL_HOLDOUT do not become confirmation of generalized chi architecture or biological feedback;
+- GRI Stage D has not yet produced licensed biological recovery/compensation evidence;
+- Barrier Atlas conglomerate evidence integration is not a physical chi conglomerate validation;
+- NSD Phase 0C v0.2 remains official prospective `FAIL / FAIL / FAIL`; its post-hoc local-order dissociations are development evidence only.
+
+### Consequence for current P0 plan
+
+`P0_EXPERIMENT_PLAN_v0.2.json` is preserved unchanged because these constraints were reviewed after that plan existed. Any evaluative experiment that incorporates them must receive a new version and identify GRI, Barrier Atlas, and NSD as calibration sources.
+
+### Untouched confirmation requirement
+
+Future decisive evidence must be a new system/domain, or a genuinely untouched future partition/perturbation whose rules and mappings are frozen before outcome inspection and that was not used to generate these method constraints.
+
+**Current promotion status:** EXPLORATORY_METHOD_RULE / CALIBRATION_ONLY
+
+---
+
 ## Ledger-wide promotion rule
 
 No entry can be promoted by reinterpretation of the result that generated it.
