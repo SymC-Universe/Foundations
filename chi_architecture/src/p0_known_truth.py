@@ -20,6 +20,13 @@ def _matrix(a: Any) -> np.ndarray:
     return arr
 
 
+def _family(plan: dict[str, Any], family_id: str) -> dict[str, Any]:
+    matches = [x for x in plan.get("families", []) if x.get("id") == family_id]
+    if len(matches) != 1:
+        raise ArchitectureRefusal(f"plan must contain exactly one {family_id} family")
+    return matches[0]
+
+
 def eigensystem(a: Any) -> dict[str, Any]:
     arr = _matrix(a)
     values, vectors = np.linalg.eig(arr)
@@ -89,29 +96,51 @@ def two_state_hurwitz(a: Any, tol: float = 1e-12) -> dict[str, Any]:
     return {"trace": tr, "determinant": det, "hurwitz_stable": bool(stable)}
 
 
-def second_order_chi(gamma: float, kappa: float) -> dict[str, Any]:
-    """License chi only for x'' + gamma x' + kappa x = 0 with kappa>0."""
+def second_order_chi(gamma: float, kappa: float, tol: float = 1e-12) -> dict[str, Any]:
+    """License damping-ratio chi only for x'' + gamma x' + kappa x = 0.
+
+    This demo requires a positive restoring term and nonnegative dissipative
+    coefficient. Negative gamma is active antidamping and requires a separate
+    construction rather than inheriting passive damping semantics.
+    """
     if not math.isfinite(gamma) or not math.isfinite(kappa):
         raise ArchitectureRefusal("gamma and kappa must be finite")
     discriminant = gamma * gamma / 4.0 - kappa
     if kappa <= 0.0:
         return {
             "status": "NO_ADMISSIBLE_CHI",
-            "reason": "restoring term is not positive; critical-damping boundary is not licensed",
+            "reason": "restoring term is not positive; passive critical-damping interpretation is not licensed",
+            "discriminant": discriminant,
+        }
+    if gamma < 0.0:
+        return {
+            "status": "NO_ADMISSIBLE_CHI",
+            "reason": "negative gamma is active antidamping; passive damping-ratio chi is not licensed by this demo",
             "discriminant": discriminant,
         }
     omega0 = math.sqrt(kappa)
     chi = gamma / (2.0 * omega0)
+    scale = max(1.0, abs(kappa), abs(gamma * gamma / 4.0))
+    critical = abs(discriminant) <= tol * scale
+    if critical:
+        regime = "CRITICAL"
+    elif discriminant < 0.0:
+        regime = "UNDERDAMPED"
+    else:
+        regime = "OVERDAMPED"
     return {
         "status": "ADMISSIBLE_SECOND_ORDER_CHI",
         "omega0": omega0,
         "chi": chi,
         "discriminant": discriminant,
-        "critical_boundary": bool(abs(discriminant) <= 1e-12),
+        "regime": regime,
+        "critical_boundary": bool(critical),
     }
 
 
-def single_pole_chi(_: float) -> dict[str, str]:
+def single_pole_chi(pole: float) -> dict[str, str]:
+    if not math.isfinite(pole):
+        raise ArchitectureRefusal("pole must be finite")
     return {
         "status": "NO_ADMISSIBLE_CHI",
         "reason": "a single real pole does not identify a licensed second-order factor",
@@ -138,6 +167,7 @@ class NoiseExperimentResult:
     state_rms: float
     observation_rms: float
     final_state_norm: float
+    final_state: tuple[float, float]
 
 
 def _rms(arr: np.ndarray) -> float:
@@ -147,26 +177,29 @@ def _rms(arr: np.ndarray) -> float:
 def simulate_noise_entry(
     kind: str,
     *,
-    seed: int = 20260910,
-    dt: float = 0.002,
-    steps: int = 5000,
-    sigma: float = 0.35,
-    feedback_k: float = 0.8,
-    feedback_h: float = 0.8,
+    seed: int,
+    x0: Iterable[float],
+    dt: float,
+    steps: int,
+    sigma: float,
+    feedback_k: float,
+    feedback_h: float,
 ) -> NoiseExperimentResult:
-    """Separate process, feedback-sensor, and observer-only noise paths.
-
-    State is [x,y]. The nominal closed-loop generator is
-    [[0.3, -k], [h, -1]]. Sensor noise enters the y feedback equation via h*(x+eta).
-    Observer-only noise is added after the physical update and never enters the state.
-    """
-    if kind not in {"PROCESS_NOISE", "FEEDBACK_OR_SENSOR_NOISE", "OBSERVER_ONLY_NOISE"}:
+    """Separate no-noise, process, feedback-sensor, and observer-only paths."""
+    allowed = {"NO_NOISE", "PROCESS_NOISE", "FEEDBACK_OR_SENSOR_NOISE", "OBSERVER_ONLY_NOISE"}
+    if kind not in allowed:
         raise ArchitectureRefusal(f"unsupported noise entry kind: {kind}")
     if dt <= 0 or steps <= 0 or sigma < 0:
         raise ArchitectureRefusal("invalid simulation controls")
+    if not all(math.isfinite(v) for v in (dt, sigma, feedback_k, feedback_h)):
+        raise ArchitectureRefusal("simulation controls must be finite")
 
-    rng = np.random.default_rng(seed)
-    x = np.zeros(2, dtype=float)
+    initial = np.asarray(list(x0), dtype=float)
+    if initial.shape != (2,) or not np.all(np.isfinite(initial)):
+        raise ArchitectureRefusal("x0 must be a finite length-2 vector")
+
+    rng = np.random.default_rng(int(seed))
+    x = initial.copy()
     states = np.zeros((steps, 2), dtype=float)
     obs = np.zeros((steps, 2), dtype=float)
 
@@ -175,15 +208,13 @@ def simulate_noise_entry(
         dx = 0.3 * x[0] - feedback_k * x[1]
         dy = feedback_h * x[0] - x[1]
 
+        x[0] += dt * dx
+        x[1] += dt * dy
+
         if kind == "PROCESS_NOISE":
-            x[0] += dt * dx + sigma * math.sqrt(dt) * z
-            x[1] += dt * dy
+            x[0] += sigma * math.sqrt(dt) * z
         elif kind == "FEEDBACK_OR_SENSOR_NOISE":
-            x[0] += dt * dx
-            x[1] += dt * dy + feedback_h * sigma * math.sqrt(dt) * z
-        else:
-            x[0] += dt * dx
-            x[1] += dt * dy
+            x[1] += feedback_h * sigma * math.sqrt(dt) * z
 
         states[i] = x
         obs[i] = x
@@ -194,106 +225,163 @@ def simulate_noise_entry(
         state_rms=_rms(states),
         observation_rms=_rms(obs),
         final_state_norm=float(np.linalg.norm(states[-1])),
+        final_state=(float(states[-1, 0]), float(states[-1, 1])),
     )
 
 
-def run_f0_f8() -> dict[str, Any]:
+def _time_grid(spec: dict[str, Any]) -> np.ndarray:
+    start = float(spec["start"])
+    stop = float(spec["stop"])
+    points = int(spec["points"])
+    if start < 0.0 or stop < start or points < 2:
+        raise ArchitectureRefusal("invalid time grid in plan")
+    return np.linspace(start, stop, points)
+
+
+def run_f0_f8(plan: dict[str, Any]) -> dict[str, Any]:
+    """Run v0.2 plan-driven designed fixtures and emit raw/native metrics.
+
+    F0-F8 are method fixtures. Their outputs must not contain prewritten
+    architecture-success labels. Exact refusal/admission statuses remain
+    permitted because they are returned by the mathematical guard itself.
+    """
+    if plan.get("schema") != "chi-architecture-p0-experiment-plan-v0.2":
+        raise ArchitectureRefusal("runner requires P0 experiment plan v0.2")
+
     results: dict[str, Any] = {}
 
-    a0 = np.diag([-1.0, -2.0])
+    f0 = _family(plan, "F0")
+    a0 = _matrix(f0["matrix"])
     results["F0"] = {
         "stability": asymptotic_stability(a0),
+        "eigenvalues": [[float(v.real), float(v.imag)] for v in np.linalg.eigvals(a0)],
         "normality_defect_fro": eigensystem(a0)["normality_defect_fro"],
-        "state": "STANDARD_TOOLKIT_EQUIVALENT",
     }
 
-    times = np.linspace(0.0, 8.0, 4001)
+    f1 = _family(plan, "F1")
+    times1 = _time_grid(f1["time_grid"])
     f1_cases = []
-    for k in [0.0, 1.0, 4.0, 8.0, 12.0]:
-        a = np.array([[-1.0, k], [0.0, -2.0]])
+    for k in f1["parameter_values"]["k"]:
+        kf = float(k)
+        a = np.array([[-1.0, kf], [0.0, -2.0]])
         es = eigensystem(a)
-        tg = max_transient_gain_upper(k, times)
+        tg = max_transient_gain_upper(kf, times1)
         f1_cases.append({
-            "k": k,
-            "eigenvalues": [float(v.real) for v in np.linalg.eigvals(a)],
+            "k": kf,
+            "eigenvalues": [[float(v.real), float(v.imag)] for v in np.linalg.eigvals(a)],
             "normality_defect_fro": es["normality_defect_fro"],
             **tg,
         })
-    results["F1"] = {
-        "cases": f1_cases[:4],
-        "state": "SCALAR_SPECTRUM_INSUFFICIENT_FOR_TRANSIENT_TASK",
-    }
-    results["F6"] = {
-        "cases": f1_cases,
-        "state": "STANDARD_NONNORMAL_ANALYSIS_EXPLAINS_EFFECT_UNLESS_ARCHITECTURE_ADDS_A_SEPARATE_VALUE_AXIS",
-    }
+    results["F1"] = {"cases": f1_cases}
 
-    f2 = []
-    for rate in [-0.25, -1.0, -1.75]:
-        f2.append({
-            "rates": [rate, -2.0],
-            "norm_t4": diagonal_state_norm([rate, -2.0], 4.0, [1.0, 0.0]),
+    f2 = _family(plan, "F2")
+    f2_cases = []
+    x0 = [float(x) for x in f2["x0"]]
+    eval_time = float(f2["evaluation_time"])
+    for matrix in f2["matrices"]:
+        arr = _matrix(matrix)
+        if not np.allclose(arr, np.diag(np.diag(arr)), atol=0.0, rtol=0.0):
+            raise ArchitectureRefusal("F2 matrices must be exactly diagonal")
+        rates = np.diag(arr)
+        f2_cases.append({
+            "rates": [float(v) for v in rates],
+            "norm_at_evaluation_time": diagonal_state_norm(rates, eval_time, x0),
         })
-    results["F2"] = {
-        "cases": f2,
-        "state": "MODAL_GEOMETRY_INSUFFICIENT_FOR_DECAY_TASK",
-    }
+    results["F2"] = {"evaluation_time": eval_time, "x0": x0, "cases": f2_cases}
 
-    f3 = []
-    for label, b, c in [
-        ("zero", 0.0, 0.0),
-        ("symmetric_mild", 0.5, 0.5),
-        ("antisymmetric", 2.0, -2.0),
-        ("symmetric_destabilizing", 2.0, 2.0),
-    ]:
-        a = np.array([[-1.0, b], [c, -2.0]])
-        f3.append({
-            "label": label,
+    f3 = _family(plan, "F3")
+    a11 = float(f3["fixed_local_terms"]["a11"])
+    a22 = float(f3["fixed_local_terms"]["a22"])
+    f3_cases = []
+    for case in f3["coupling_cases"]:
+        b = float(case["b"])
+        c = float(case["c"])
+        a = np.array([[a11, b], [c, a22]])
+        f3_cases.append({
+            "label": case["label"],
             "b": b,
             "c": c,
+            "eigenvalues": [[float(v.real), float(v.imag)] for v in np.linalg.eigvals(a)],
             "stability": asymptotic_stability(a),
             **two_state_hurwitz(a),
         })
-    results["F3"] = {"cases": f3, "state": "COUPLING_SPECIFIC_SYSTEM_RESPONSE"}
+    results["F3"] = {"fixed_local_terms": {"a11": a11, "a22": a22}, "cases": f3_cases}
 
-    f4 = []
-    for label, k, h in [
-        ("feedback_absent", 0.0, 0.0),
-        ("insufficient_feedback", 0.4, 0.4),
-        ("stabilizing_feedback", 0.6, 0.6),
-        ("strong_stabilizing_feedback", 1.0, 1.0),
-        ("sign_reversed_feedback", -0.6, 0.6),
-    ]:
-        a = np.array([[0.3, -k], [h, -1.0]])
-        f4.append({
-            "label": label,
+    f4 = _family(plan, "F4")
+    plant = float(f4["fixed_local_terms"]["plant_rate"])
+    feedback_rate = float(f4["fixed_local_terms"]["feedback_state_rate"])
+    f4_cases = []
+    for case in f4["cases"]:
+        k = float(case["k"])
+        h = float(case["h"])
+        a = np.array([[plant, -k], [h, feedback_rate]])
+        f4_cases.append({
+            "label": case["label"],
             "k": k,
             "h": h,
             "feedback_product": k * h,
+            "eigenvalues": [[float(v.real), float(v.imag)] for v in np.linalg.eigvals(a)],
             "stability": asymptotic_stability(a),
             **two_state_hurwitz(a),
         })
     results["F4"] = {
-        "cases": f4,
-        "state": "COMPENSATION_REQUIRES_COUPLING_SPECIFICITY",
+        "fixed_local_terms": {"plant_rate": plant, "feedback_state_rate": feedback_rate},
+        "cases": f4_cases,
     }
 
-    f5 = {}
-    for kind in ["PROCESS_NOISE", "FEEDBACK_OR_SENSOR_NOISE", "OBSERVER_ONLY_NOISE"]:
-        r = simulate_noise_entry(kind)
-        f5[kind] = {
-            "state_rms": r.state_rms,
-            "observation_rms": r.observation_rms,
-            "final_state_norm": r.final_state_norm,
-        }
-    results["F5"] = {"cases": f5, "state": "NOISE_ENTRY_POINT_MUST_CHANGE_INTERPRETATION"}
+    f5 = _family(plan, "F5")
+    sim = f5["simulation"]
+    f5_cases: dict[str, list[dict[str, Any]]] = {}
+    for kind in f5["noise_cases"]:
+        seed_records = []
+        for seed in f5["seeds"]:
+            r = simulate_noise_entry(
+                kind,
+                seed=int(seed),
+                x0=f5["x0"],
+                dt=float(sim["dt"]),
+                steps=int(sim["steps"]),
+                sigma=float(sim["sigma"]),
+                feedback_k=float(sim["feedback_k"]),
+                feedback_h=float(sim["feedback_h"]),
+            )
+            seed_records.append({
+                "seed": int(seed),
+                "state_rms": r.state_rms,
+                "observation_rms": r.observation_rms,
+                "final_state_norm": r.final_state_norm,
+                "final_state": list(r.final_state),
+            })
+        f5_cases[kind] = seed_records
+    results["F5"] = {"cases": f5_cases}
 
-    results["F7"] = exact_degenerate_mode_status(-np.eye(2))
+    f6 = _family(plan, "F6")
+    times6 = _time_grid(f6["time_grid"])
+    f6_cases = []
+    for k in f6["parameter_values"]["k"]:
+        kf = float(k)
+        a = np.array([[-1.0, kf], [0.0, -2.0]])
+        es = eigensystem(a)
+        tg = max_transient_gain_upper(kf, times6)
+        f6_cases.append({
+            "k": kf,
+            "eigenvalues": [[float(v.real), float(v.imag)] for v in np.linalg.eigvals(a)],
+            "normality_defect_fro": es["normality_defect_fro"],
+            **tg,
+        })
+    results["F6"] = {"cases": f6_cases}
 
-    results["F8"] = {
-        "restoring_second_order": second_order_chi(2.0, 1.0),
-        "anti_restoring_second_order": second_order_chi(2.0, -1.0),
-        "single_real_pole": single_pole_chi(-1.0),
-    }
+    f7 = _family(plan, "F7")
+    results["F7"] = exact_degenerate_mode_status(f7["matrix"])
+
+    f8 = _family(plan, "F8")
+    f8_cases: dict[str, Any] = {}
+    for case in f8["cases"]:
+        label = case["label"]
+        if "pole" in case:
+            f8_cases[label] = single_pole_chi(float(case["pole"]))
+        else:
+            f8_cases[label] = second_order_chi(float(case["gamma"]), float(case["kappa"]))
+    results["F8"] = {"cases": f8_cases}
 
     return results
