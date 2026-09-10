@@ -46,25 +46,37 @@ jobs:
           } > chi_architecture/results/P0_VALIDATION_ENVIRONMENT.txt
           cat chi_architecture/results/P0_VALIDATION_ENVIRONMENT.txt
 
-      - name: Validate machine-readable experiment plan
+      - name: Validate v0.2 anti-circularity experiment plan
         run: |
           python - <<'PY'
           import json
           from pathlib import Path
 
-          p = Path("chi_architecture/P0_EXPERIMENT_PLAN_v0.1.json")
-          record = json.loads(p.read_text(encoding="utf-8"))
-          assert record["status"] == "P0_EXPLORATORY_NOT_CONFIRMATORY"
-          assert record["mfr14_activated"] is False
-          assert record["representation_policy"]["smc_exhaustive"] is False
-          assert record["representation_policy"]["smc_literal_chi_formula"] is False
-          assert record["reporting_rules"]["retain_every_family"] is True
-          assert record["reporting_rules"]["retain_negative_results"] is True
-          assert record["reporting_rules"]["synthetic_success_counts_as_empirical_confirmation"] is False
-          assert record["reporting_rules"]["synthetic_success_counts_as_program_portfolio_ADDS"] is False
-          ids = [x["id"] for x in record["families"]]
+          p = Path("chi_architecture/P0_EXPERIMENT_PLAN_v0.2.json")
+          r = json.loads(p.read_text(encoding="utf-8"))
+          assert r["schema"] == "chi-architecture-p0-experiment-plan-v0.2"
+          assert r["status"] == "P0_EXPLORATORY_NOT_CONFIRMATORY"
+          assert r["mfr14_activated"] is False
+          assert r["anti_circularity"]["parameter_single_source"]
+          assert r["anti_circularity"]["raw_output_rule"]
+          assert r["anti_circularity"]["fixture_to_evidence_prohibition"]
+          assert r["chi_policy"]["scalar_chi_required"] is False
+          assert r["representation_policy"]["smc_exhaustive"] is False
+          assert r["representation_policy"]["smc_literal_chi_formula"] is False
+          assert r["future_evaluative_experiment_requirements"]["status"] == "NOT_YET_RUN"
+          assert r["future_evaluative_experiment_requirements"]["must_define_independent_outcome"] is True
+          assert r["future_evaluative_experiment_requirements"]["must_have_a_result_that_counts_against_the_hypothesis"] is True
+          assert r["reporting_rules"]["retain_every_family"] is True
+          assert r["reporting_rules"]["retain_negative_results"] is True
+          assert r["reporting_rules"]["synthetic_fixture_success_counts_as_empirical_confirmation"] is False
+          assert r["reporting_rules"]["synthetic_fixture_success_counts_as_program_portfolio_ADDS"] is False
+          ids = [x["id"] for x in r["families"]]
           assert ids == [f"F{i}" for i in range(9)]
-          print("P0 experiment-plan guards passed")
+          f4 = next(x for x in r["families"] if x["id"] == "F4")
+          assert f4["role"] == "DESIGNED_FIXTURE_NOT_COMPENSATION_EVIDENCE"
+          f6 = next(x for x in r["families"] if x["id"] == "F6")
+          assert f6["parameter_values"]["k"] == [0.0, 2.0, 4.0, 8.0, 12.0]
+          print("P0 v0.2 anti-circularity plan guards passed")
           PY
 
       - name: Run known-truth and demonstrated-failing tests
@@ -72,29 +84,39 @@ jobs:
           PYTHONPATH: chi_architecture/src
         run: python -m pytest -q chi_architecture/tests/test_p0_known_truth.py
 
-      - name: Generate exploratory known-truth result record
+      - name: Generate plan-driven raw fixture record
         run: python chi_architecture/run_p0_known_truth.py
 
-      - name: Guard evidence class and refusal outcomes
+      - name: Guard evidence class parameter sync and refusal outcomes
         run: |
           python - <<'PY'
           import json
           from pathlib import Path
 
-          p = Path("chi_architecture/results/P0_KNOWN_TRUTH_RESULTS_v0.1.json")
-          r = json.loads(p.read_text(encoding="utf-8"))
-          assert r["status"] == "P0_EXPLORATORY_SYNTHETIC_ONLY"
+          plan = json.loads(Path("chi_architecture/P0_EXPERIMENT_PLAN_v0.2.json").read_text(encoding="utf-8"))
+          r = json.loads(Path("chi_architecture/results/P0_KNOWN_TRUTH_RESULTS_v0.2.json").read_text(encoding="utf-8"))
+          assert r["status"] == "P0_EXPLORATORY_SYNTHETIC_FIXTURES_ONLY"
           assert r["scope"] == "known_truth_method_stress_not_empirical_confirmation"
+          assert r["experiment_plan"] == "P0_EXPERIMENT_PLAN_v0.2.json"
           assert r["mfr14_activated"] is False
           assert r["program_portfolio_adds_credit"] is False
           assert r["real_system_evidence"] is False
-          assert r["results"]["F0"]["state"] == "STANDARD_TOOLKIT_EQUIVALENT"
+          assert r["fixture_success_confirms_architecture"] is False
+          for family_id in [f"F{i}" for i in range(7)]:
+              assert "state" not in r["results"][family_id]
+          f1 = next(x for x in plan["families"] if x["id"] == "F1")
+          f6 = next(x for x in plan["families"] if x["id"] == "F6")
+          assert [x["k"] for x in r["results"]["F1"]["cases"]] == f1["parameter_values"]["k"]
+          assert [x["k"] for x in r["results"]["F6"]["cases"]] == f6["parameter_values"]["k"]
           assert r["results"]["F7"]["status"] == "SUBSPACE_ONLY"
-          assert r["results"]["F7"]["individual_mode_identity"] == "NONIDENTIFIABLE"
-          assert r["results"]["F8"]["restoring_second_order"]["status"] == "ADMISSIBLE_SECOND_ORDER_CHI"
-          assert r["results"]["F8"]["anti_restoring_second_order"]["status"] == "NO_ADMISSIBLE_CHI"
-          assert r["results"]["F8"]["single_real_pole"]["status"] == "NO_ADMISSIBLE_CHI"
-          print("P0 evidence-class and refusal guards passed")
+          f8 = r["results"]["F8"]["cases"]
+          assert f8["underdamped"]["status"] == "ADMISSIBLE_SECOND_ORDER_CHI"
+          assert f8["critical"]["status"] == "ADMISSIBLE_SECOND_ORDER_CHI"
+          assert f8["overdamped"]["status"] == "ADMISSIBLE_SECOND_ORDER_CHI"
+          assert f8["active_antidamping"]["status"] == "NO_ADMISSIBLE_CHI"
+          assert f8["anti_restoring"]["status"] == "NO_ADMISSIBLE_CHI"
+          assert f8["single_real_pole"]["status"] == "NO_ADMISSIBLE_CHI"
+          print("P0 v0.2 evidence-class and circularity guards passed")
           PY
 
       - name: Build source and result manifest
@@ -102,23 +124,25 @@ jobs:
           sha256sum \
             chi_architecture/README.md \
             chi_architecture/GENERAL_PROTOCOL_AUDIT_20260910.md \
+            chi_architecture/CIRCULARITY_AUDIT_20260910.md \
             chi_architecture/POST_RESULT_DISCOVERY_LEDGER.md \
             chi_architecture/P0_FALSIFIABILITY_CHARTER_v0.1.md \
             chi_architecture/P0_EXPERIMENT_PLAN_v0.1.json \
+            chi_architecture/P0_EXPERIMENT_PLAN_v0.2.json \
             chi_architecture/requirements-p0.txt \
             chi_architecture/src/p0_known_truth.py \
             chi_architecture/tests/test_p0_known_truth.py \
             chi_architecture/run_p0_known_truth.py \
-            chi_architecture/results/P0_KNOWN_TRUTH_RESULTS_v0.1.json \
+            chi_architecture/results/P0_KNOWN_TRUTH_RESULTS_v0.2.json \
             chi_architecture/results/P0_VALIDATION_ENVIRONMENT.txt \
-            > chi_architecture/results/P0_MANIFEST.sha256
-          cat chi_architecture/results/P0_MANIFEST.sha256
+            > chi_architecture/results/P0_MANIFEST_v0.2.sha256
+          cat chi_architecture/results/P0_MANIFEST_v0.2.sha256
 
-      - name: Upload P0 validation record
+      - name: Upload P0 v0.2 validation record
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
-          name: chi-architecture-p0-known-truth
+          name: chi-architecture-p0-known-truth-v02
           path: |
-            chi_architecture/results/P0_KNOWN_TRUTH_RESULTS_v0.1.json
+            chi_architecture/results/P0_KNOWN_TRUTH_RESULTS_v0.2.json
             chi_architecture/results/P0_VALIDATION_ENVIRONMENT.txt
-            chi_architecture/results/P0_MANIFEST.sha256
+            chi_architecture/results/P0_MANIFEST_v0.2.sha256
