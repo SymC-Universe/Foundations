@@ -1,0 +1,124 @@
+name: Chi Architecture P0 Known-Truth Validation
+
+on:
+  push:
+    branches:
+      - chi-architecture-p0
+    paths:
+      - "chi_architecture/**"
+      - ".github/workflows/chi-architecture-p0.yml"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "chi_architecture/**"
+      - ".github/workflows/chi-architecture-p0.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12.14"
+
+      - name: Install pinned P0 dependencies
+        run: |
+          python -m pip install --disable-pip-version-check -r chi_architecture/requirements-p0.txt
+          python -m pip check
+
+      - name: Record realized environment
+        run: |
+          mkdir -p chi_architecture/results
+          {
+            python --version
+            python -m pip --version
+            python -m pip freeze --all | sort
+          } > chi_architecture/results/P0_VALIDATION_ENVIRONMENT.txt
+          cat chi_architecture/results/P0_VALIDATION_ENVIRONMENT.txt
+
+      - name: Validate machine-readable experiment plan
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          p = Path("chi_architecture/P0_EXPERIMENT_PLAN_v0.1.json")
+          record = json.loads(p.read_text(encoding="utf-8"))
+          assert record["status"] == "P0_EXPLORATORY_NOT_CONFIRMATORY"
+          assert record["mfr14_activated"] is False
+          assert record["representation_policy"]["smc_exhaustive"] is False
+          assert record["representation_policy"]["smc_literal_chi_formula"] is False
+          assert record["reporting_rules"]["retain_every_family"] is True
+          assert record["reporting_rules"]["retain_negative_results"] is True
+          assert record["reporting_rules"]["synthetic_success_counts_as_empirical_confirmation"] is False
+          assert record["reporting_rules"]["synthetic_success_counts_as_program_portfolio_ADDS"] is False
+          ids = [x["id"] for x in record["families"]]
+          assert ids == [f"F{i}" for i in range(9)]
+          print("P0 experiment-plan guards passed")
+          PY
+
+      - name: Run known-truth and demonstrated-failing tests
+        env:
+          PYTHONPATH: chi_architecture/src
+        run: python -m pytest -q chi_architecture/tests/test_p0_known_truth.py
+
+      - name: Generate exploratory known-truth result record
+        run: python chi_architecture/run_p0_known_truth.py
+
+      - name: Guard evidence class and refusal outcomes
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          p = Path("chi_architecture/results/P0_KNOWN_TRUTH_RESULTS_v0.1.json")
+          r = json.loads(p.read_text(encoding="utf-8"))
+          assert r["status"] == "P0_EXPLORATORY_SYNTHETIC_ONLY"
+          assert r["scope"] == "known_truth_method_stress_not_empirical_confirmation"
+          assert r["mfr14_activated"] is False
+          assert r["program_portfolio_adds_credit"] is False
+          assert r["real_system_evidence"] is False
+          assert r["results"]["F0"]["state"] == "STANDARD_TOOLKIT_EQUIVALENT"
+          assert r["results"]["F7"]["status"] == "SUBSPACE_ONLY"
+          assert r["results"]["F7"]["individual_mode_identity"] == "NONIDENTIFIABLE"
+          assert r["results"]["F8"]["restoring_second_order"]["status"] == "ADMISSIBLE_SECOND_ORDER_CHI"
+          assert r["results"]["F8"]["anti_restoring_second_order"]["status"] == "NO_ADMISSIBLE_CHI"
+          assert r["results"]["F8"]["single_real_pole"]["status"] == "NO_ADMISSIBLE_CHI"
+          print("P0 evidence-class and refusal guards passed")
+          PY
+
+      - name: Build source and result manifest
+        run: |
+          sha256sum \
+            chi_architecture/README.md \
+            chi_architecture/GENERAL_PROTOCOL_AUDIT_20260910.md \
+            chi_architecture/POST_RESULT_DISCOVERY_LEDGER.md \
+            chi_architecture/P0_FALSIFIABILITY_CHARTER_v0.1.md \
+            chi_architecture/P0_EXPERIMENT_PLAN_v0.1.json \
+            chi_architecture/requirements-p0.txt \
+            chi_architecture/src/p0_known_truth.py \
+            chi_architecture/tests/test_p0_known_truth.py \
+            chi_architecture/run_p0_known_truth.py \
+            chi_architecture/results/P0_KNOWN_TRUTH_RESULTS_v0.1.json \
+            chi_architecture/results/P0_VALIDATION_ENVIRONMENT.txt \
+            > chi_architecture/results/P0_MANIFEST.sha256
+          cat chi_architecture/results/P0_MANIFEST.sha256
+
+      - name: Upload P0 validation record
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: chi-architecture-p0-known-truth
+          path: |
+            chi_architecture/results/P0_KNOWN_TRUTH_RESULTS_v0.1.json
+            chi_architecture/results/P0_VALIDATION_ENVIRONMENT.txt
+            chi_architecture/results/P0_MANIFEST.sha256
