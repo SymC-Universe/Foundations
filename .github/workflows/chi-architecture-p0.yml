@@ -108,6 +108,25 @@ jobs:
           print("Domain-first schema and D01 plan guards passed")
           PY
 
+      - name: Validate D01B pre-execution freeze
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          r = json.loads(Path("chi_architecture/D01B_EXECUTION_FREEZE_v0.1.json").read_text(encoding="utf-8"))
+          assert r["schema"] == "d01b-execution-freeze-v0.1"
+          assert r["status"] == "P0_D_PREEXECUTION_FROZEN_BEFORE_D01B_OUTPUT"
+          assert r["scientific_parameter_source"] == "parent_plan_only"
+          assert r["parameter_overrides"] is False
+          assert r["observation_grid"] == {"time_start": 0.0, "time_stop": 240.0, "time_points": 2401, "reason": r["observation_grid"]["reason"], "post_result_window_extension_allowed_for_current_result": False}
+          assert r["modal_scalar_admission"]["master_scalar_search_in_d01b"] is False
+          assert r["anti_circularity"]["no_nsdp0d16_17_19_parameter_tuning"] is True
+          assert r["anti_circularity"]["no_atlas_target_or_range_used"] is True
+          assert r["anti_circularity"]["all_parent_grid_cases_retained"] is True
+          print("D01B pre-execution freeze guards passed")
+          PY
+
       - name: Run known-truth domain-map and demonstrated-failing tests
         env:
           PYTHONPATH: chi_architecture/src
@@ -173,6 +192,34 @@ jobs:
           print("D01A scope and coordinate-collapse guards passed")
           PY
 
+      - name: Generate D01B coupled mechanical domain map
+        run: python chi_architecture/run_d01b_coupled_domain_map.py
+
+      - name: Guard D01B scope, completeness, and no-master-scalar policy
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          r = json.loads(Path("chi_architecture/results/D01B_COUPLED_2DOF_DOMAIN_MAP_v0.1.json").read_text(encoding="utf-8"))
+          assert r["domain_id"] == "D01_LINEAR_DYNAMICS"
+          assert r["phase_id"] == "D01B_COUPLED_2DOF"
+          assert r["status"] == "P0_DOMAIN_MAP_COUPLED_MECHANICAL"
+          assert r["atlas_blind"] is True
+          assert r["cross_domain_confirmation"] is False
+          assert r["master_scalar_predeclared"] is False
+          assert r["parameter_case_count"] == 1152
+          assert r["perturbation_count_per_case"] == 2
+          assert len(r["records"]) == 1152
+          assert all(len(x["responses"]) == 2 for x in r["records"])
+          assert all("system_chi" not in x and "master_chi" not in x for x in r["records"])
+          assert r["scientific_parameter_source"] == "D01_LINEAR_DYNAMICS_DOMAIN_MAP_PLAN_v0.1.json"
+          assert set(r["known_context_before_execution"]) == {"NSD_P0D14", "NSD_P0D15", "NSD_P0D16", "NSD_P0D17", "NSD_P0D19"}
+          assert r["descriptive_summary"]["response_count"] == 2304
+          assert r["descriptive_summary"]["maximum_energy_balance_residual_fraction"]["value"] < 0.02
+          print("D01B scope, completeness, and no-master-scalar guards passed")
+          PY
+
       - name: Build historical P0 fixture manifest
         run: |
           sha256sum \
@@ -206,6 +253,22 @@ jobs:
             > chi_architecture/results/D01A_DOMAIN_MAP_MANIFEST_v0.1.sha256
           cat chi_architecture/results/D01A_DOMAIN_MAP_MANIFEST_v0.1.sha256
 
+      - name: Build D01B domain-map manifest
+        run: |
+          sha256sum \
+            chi_architecture/CROSS_PROJECT_SYNTHESIS_20260911.md \
+            chi_architecture/ORGANIZATION_CHI_PREVALENCE_HYPOTHESIS_v0.1.md \
+            chi_architecture/D01B_PREEXECUTION_KNOWN_CONTEXT_20260911.md \
+            chi_architecture/D01_LINEAR_DYNAMICS_DOMAIN_MAP_PLAN_v0.1.json \
+            chi_architecture/D01B_EXECUTION_FREEZE_v0.1.json \
+            chi_architecture/src/domain_map_linear.py \
+            chi_architecture/tests/test_domain_map_linear_d01b.py \
+            chi_architecture/run_d01b_coupled_domain_map.py \
+            chi_architecture/results/D01B_COUPLED_2DOF_DOMAIN_MAP_v0.1.json \
+            chi_architecture/results/P0_VALIDATION_ENVIRONMENT.txt \
+            > chi_architecture/results/D01B_DOMAIN_MAP_MANIFEST_v0.1.sha256
+          cat chi_architecture/results/D01B_DOMAIN_MAP_MANIFEST_v0.1.sha256
+
       - name: Upload historical P0 v0.2 validation record
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
@@ -223,3 +286,12 @@ jobs:
             chi_architecture/results/D01A_SDOF_DOMAIN_MAP_v0.1.json
             chi_architecture/results/P0_VALIDATION_ENVIRONMENT.txt
             chi_architecture/results/D01A_DOMAIN_MAP_MANIFEST_v0.1.sha256
+
+      - name: Upload D01B coupled mechanical domain map
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: chi-architecture-d01b-domain-map-v01
+          path: |
+            chi_architecture/results/D01B_COUPLED_2DOF_DOMAIN_MAP_v0.1.json
+            chi_architecture/results/P0_VALIDATION_ENVIRONMENT.txt
+            chi_architecture/results/D01B_DOMAIN_MAP_MANIFEST_v0.1.sha256
