@@ -1,4 +1,4 @@
-name: Chi Architecture P0 Known-Truth Validation
+name: Chi Architecture P0 Validation and Domain Mapping
 
 on:
   push:
@@ -79,10 +79,39 @@ jobs:
           print("P0 v0.2 anti-circularity plan guards passed")
           PY
 
-      - name: Run known-truth and demonstrated-failing tests
+      - name: Validate domain-first map schema and D01 plan
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          schema = json.loads(Path("chi_architecture/DOMAIN_CHI_MAP_SCHEMA_v0.1.json").read_text(encoding="utf-8"))
+          assert schema["schema"] == "domain-chi-map-v0.1"
+          assert schema["forbidden_dependency"] == "desired_cross_domain_atlas_alignment_may_not_select_or_tune_domain_coordinate"
+          assert schema["scalar_admission_rule"]["default"] == "NO_ADMISSIBLE_SCALAR_CHI"
+          assert schema["atlas_rule"]["atlas_is_downstream"] is True
+          assert schema["atlas_rule"]["common_axis_not_required"] is True
+
+          plan = json.loads(Path("chi_architecture/D01_LINEAR_DYNAMICS_DOMAIN_MAP_PLAN_v0.1.json").read_text(encoding="utf-8"))
+          assert plan["schema"] == "domain-chi-map-plan-v0.1"
+          assert plan["domain_id"] == "D01_LINEAR_DYNAMICS"
+          assert plan["atlas_blind"] is True
+          assert plan["cross_domain_alignment_used_for_parameter_or_metric_selection"] is False
+          d01a = next(p for p in plan["phases"] if p["id"] == "D01A_SDOF_SCALE_COLLAPSE")
+          assert d01a["native_coordinate"]["definition"] == "gamma/(2*omega0)"
+          assert d01a["parameter_grid"]["chi_start"] == 0.0
+          assert d01a["parameter_grid"]["chi_stop"] == 4.0
+          assert d01a["parameter_grid"]["chi_step"] == 0.05
+          d01b = next(p for p in plan["phases"] if p["id"] == "D01B_COUPLED_2DOF")
+          assert d01b["coordinate_policy"]["master_scalar_predeclared"] is False
+          assert d01b["coordinate_policy"]["no_admissible_scalar_allowed"] is True
+          print("Domain-first schema and D01 plan guards passed")
+          PY
+
+      - name: Run known-truth domain-map and demonstrated-failing tests
         env:
           PYTHONPATH: chi_architecture/src
-        run: python -m pytest -q chi_architecture/tests/test_p0_known_truth.py
+        run: python -m pytest -q chi_architecture/tests
 
       - name: Generate plan-driven raw fixture record
         run: python chi_architecture/run_p0_known_truth.py
@@ -119,7 +148,32 @@ jobs:
           print("P0 v0.2 evidence-class and circularity guards passed")
           PY
 
-      - name: Build source and result manifest
+      - name: Generate D01A exact-anchor domain map
+        run: python chi_architecture/run_d01_linear_domain_map.py
+
+      - name: Guard D01A map scope and coordinate collapse
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          r = json.loads(Path("chi_architecture/results/D01A_SDOF_DOMAIN_MAP_v0.1.json").read_text(encoding="utf-8"))
+          assert r["domain_id"] == "D01_LINEAR_DYNAMICS"
+          assert r["phase_id"] == "D01A_SDOF_SCALE_COLLAPSE"
+          assert r["status"] == "P0_DOMAIN_MAP_EXACT_ANCHOR"
+          assert r["atlas_blind"] is True
+          assert r["cross_domain_confirmation"] is False
+          assert len(r["chi_grid"]) == 81
+          assert len(r["records"]) == 162
+          assert len(r["scale_collapse"]) == 162
+          assert r["maximum_scale_collapse_error"]["x"] <= 1e-12
+          assert r["maximum_scale_collapse_error"]["u"] <= 1e-12
+          assert len(r["descriptive_landmarks"]) == 2
+          assert all(x["maximum_slowest_dimensionless_decay_rate"]["chi"] == 1.0 for x in r["descriptive_landmarks"])
+          print("D01A scope and coordinate-collapse guards passed")
+          PY
+
+      - name: Build historical P0 fixture manifest
         run: |
           sha256sum \
             chi_architecture/README.md \
@@ -138,7 +192,21 @@ jobs:
             > chi_architecture/results/P0_MANIFEST_v0.2.sha256
           cat chi_architecture/results/P0_MANIFEST_v0.2.sha256
 
-      - name: Upload P0 v0.2 validation record
+      - name: Build D01A domain-map manifest
+        run: |
+          sha256sum \
+            chi_architecture/DOMAIN_FIRST_CHI_COORDINATE_PROGRAM_v0.1.md \
+            chi_architecture/DOMAIN_CHI_MAP_SCHEMA_v0.1.json \
+            chi_architecture/D01_LINEAR_DYNAMICS_DOMAIN_MAP_PLAN_v0.1.json \
+            chi_architecture/src/domain_map_linear.py \
+            chi_architecture/tests/test_domain_map_linear.py \
+            chi_architecture/run_d01_linear_domain_map.py \
+            chi_architecture/results/D01A_SDOF_DOMAIN_MAP_v0.1.json \
+            chi_architecture/results/P0_VALIDATION_ENVIRONMENT.txt \
+            > chi_architecture/results/D01A_DOMAIN_MAP_MANIFEST_v0.1.sha256
+          cat chi_architecture/results/D01A_DOMAIN_MAP_MANIFEST_v0.1.sha256
+
+      - name: Upload historical P0 v0.2 validation record
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: chi-architecture-p0-known-truth-v02
@@ -146,3 +214,12 @@ jobs:
             chi_architecture/results/P0_KNOWN_TRUTH_RESULTS_v0.2.json
             chi_architecture/results/P0_VALIDATION_ENVIRONMENT.txt
             chi_architecture/results/P0_MANIFEST_v0.2.sha256
+
+      - name: Upload D01A domain map
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: chi-architecture-d01a-domain-map-v01
+          path: |
+            chi_architecture/results/D01A_SDOF_DOMAIN_MAP_v0.1.json
+            chi_architecture/results/P0_VALIDATION_ENVIRONMENT.txt
+            chi_architecture/results/D01A_DOMAIN_MAP_MANIFEST_v0.1.sha256
