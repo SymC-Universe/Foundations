@@ -1,6 +1,6 @@
 # Chi Architecture Investigation
 
-**Status:** P0-D / P0-Q EXPLORATORY ARCHITECTURE MAPPING  
+**Status:** P0-D / P0-Q DOMAIN-FIRST ARCHITECTURE MAPPING  
 **Branch:** `chi-architecture-p0`  
 **Authority:** General Cross-Project Research Protocol v0.7.1 FINAL + v0.7.1A Functional Mapping and Natural Limit-Testbed Addendum  
 **Claim ceiling:** exploratory and qualification evidence only  
@@ -108,6 +108,35 @@ The objective is to map the phenomenon, not only to attack it.
 
 Qualified rare natural occurrences are high-information limit testbeds. They must be selected using domain-native rarity/extremeness rather than favorable chi placement. Already-viewed rare events are P0-D/P0-Q evidence; P1 use requires independent prospective selection/freeze.
 
+## D01 linear-dynamics map
+
+`D01_LINEAR_DYNAMICS_DOMAIN_MAP_PLAN_v0.1.json` is the first domain-map plan.
+
+### D01A exact SDOF anchor: complete
+
+The frozen D01A plan scanned `chi=0...4` in increments of `0.05`, four values of `omega0`, and two normalized initial conditions.
+
+GitHub Actions run `34615114508` completed successfully. Artifact `chi-architecture-d01a-domain-map-v01`, ID `10269408539`, digest `sha256:fcaefcb95485a390b79530a890fad3dff5f4419fc3d31749c9240eeec8a7012c`.
+
+Observed within-domain results:
+
+- normalized trajectories at fixed chi collapse across `omega0=0.5,1,2,5` to machine precision;
+- maximum normalized displacement collapse error = `0.0`;
+- maximum normalized velocity collapse error = `1.1102230246251565e-16`;
+- `chi=1` is the exact first nonoscillatory grid point and maximizes the slowest dimensionless decay rate;
+- for initial displacement `(x0,u0)=(1,0)`, the frozen grid gives minimum 2% state-settling time at `chi=0.80`, minimum integrated absolute displacement at `chi=0.65`, and minimum integrated energy at `chi=0.70`;
+- for initial normalized velocity `(x0,u0)=(0,1)`, minimum 2% state-settling time occurs at `chi=0.75`, while two integrated metrics continue improving through the upper scanned boundary and therefore do not license an interior optimum claim.
+
+Interpretation: within the exact oscillator, chi earns its existence as a dimensionless response-placement coordinate, while different function metrics and perturbations value different locations on that coordinate. `chi=1` is structurally special but is not a task-independent optimum.
+
+See `D01A_SDOF_DOMAIN_MAP_READOUT_v0.1.md`.
+
+### D01B coupled 2DOF extension: next
+
+D01B deliberately predeclares no master scalar. It will map scalar/spectral information, modal carriers/subspaces, physical coupling, energy redistribution, transient response, and whole-system recovery over a broad coupled parameter surface.
+
+Its central question is whether one-dimensional placement remains adequate after coupling, or whether the scientifically adequate Chi coordinate becomes multidimensional.
+
 ## Anti-circularity position
 
 The workstream must not follow these invalid chains:
@@ -137,9 +166,7 @@ Therefore:
 
 `P0_EXPERIMENT_PLAN_v0.2.json` remains the immutable current fixture source. It is not silently rewritten around the new domain-first program.
 
-## Current domain sequence
-
-The developmental sequence is now domain-first rather than Atlas-first:
+## Current developmental domain sequence
 
 1. second-order damped dynamics, exact scalar anchor;
 2. coupled/non-normal linear dynamics;
@@ -156,6 +183,9 @@ Already-viewed GRI, Barrier Atlas, and NSD evidence remains calibration/provenan
 See:
 
 - `DOMAIN_FIRST_CHI_COORDINATE_PROGRAM_v0.1.md`
+- `DOMAIN_CHI_MAP_SCHEMA_v0.1.json`
+- `D01_LINEAR_DYNAMICS_DOMAIN_MAP_PLAN_v0.1.json`
+- `D01A_SDOF_DOMAIN_MAP_READOUT_v0.1.md`
 - `GENERAL_PROTOCOL_AUDIT_20260910.md`
 - `CIRCULARITY_AUDIT_20260910.md`
 - `CROSS_PROJECT_UPDATE_AUDIT_20260910.md`
@@ -166,7 +196,8 @@ See:
 
 ## Project control
 
-**Current status:** P0 known-truth qualification, circularity hardening, cross-project calibration audit, and the v0.7.1A function/limit protocol correction are complete. The domain-first Chi coordinate program is now the active scientific direction.  
-**Next scientific/computational step:** construct the first Domain Chi Map from an exact/native system without using any desired cross-domain Atlas placement, beginning with the second-order/coupled-linear anchor and expanding across its Function and Limit Maps.  
-**What can advance immediately:** define the domain-map schema and compute independently derived coordinate candidates/response surfaces before any cross-domain alignment analysis.  
-**User action required:** none. A separate decision will be requested only if a future move would freeze a confirmatory P1 claim, comparator, threshold, or untouched validation target.
+**Current status:** D01A is mapped and validated as the exact within-domain scalar anchor. The domain-first program is active; no cross-domain Atlas has been constructed.  
+**Next scientific/computational step:** execute D01B, the coupled two-degree-of-freedom Function/Limit Map, without predeclaring a master scalar.  
+**Why:** this is the first direct test of whether a coordinate that is sufficient for an isolated exact system remains sufficient once multiple functioning components exchange energy and influence one another.  
+**What can advance immediately:** implement the D01B raw architecture map, preserve the full parameter surface, and only afterward ask whether any lower-dimensional Chi coordinate earns adequate compression.  
+**User action required:** none.
