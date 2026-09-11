@@ -9,13 +9,43 @@
 
 Everything summarized here was known before any future test designed from this synthesis. It is therefore hypothesis-generating, method-development, or calibration evidence for generalized Chi architecture. It is not untouched confirmation of a rule learned from it.
 
-No result below licenses a universal claim, a universal scalar chi, a cross-domain target range, or a biological chi.
+No result below licenses a universal claim, a universal scalar chi, a cross-domain target range, a biological chi, or a claim that lack of an admitted chi implies lack of organization.
 
 ---
 
-## 1. Neural Stability Dynamics: component chi, feedback closure, and recovery
+## 1. Neural Stability Dynamics: component chi, feedback closure, hierarchy, and recovery
 
 Current source branch: `SymC-Universe/Biomedical:neural-stability-dynamics-phase0d-v0.2-protocol-v0.7.1`.
+
+The current NSD sequence is scientifically important partly because it contains explicit failures and separations before the later feedback results. The lineage should not be represented as a monotonic march toward a preferred chi result.
+
+### P0-D11: the first structured conglomeration scalar did not earn admission
+
+The initial multi-component construction recovered the known constituent pairs at ground truth, but the finite-sample heterogeneous two-component estimator did not recover the proposed aggregate reliably. Equal-weight aggregation was especially unjustified because participation was unequal by construction.
+
+The result retained the structured component object while refusing the aggregate scalar. It did not license RMS aggregation, a chi=1 optimum, or an Atlas target.
+
+Program consequence:
+
+`structured organization can survive while a proposed scalar compression fails`
+
+### P0-D12: participation balance matters but is not sufficient
+
+Balancing component participation substantially improved multi-component recovery relative to strong imbalance, but an intentionally hard equal-participation high/high-chi condition still failed. Thus participation imbalance explained an important mechanism of failure without becoming a universal rescue rule.
+
+Program consequence:
+
+`participation affects identifiability, but equal participation does not guarantee identifiability`
+
+### P0-D13: lineage identity and scalar recovery separate
+
+A branch-complete second-order chi can be attached to an admitted two-pole lineage across complex-conjugate, repeated-root, and real-split regimes. Finite-sample scalar recovery degraded near and above the repeated-root boundary, often compressing estimates toward the neighborhood of chi approximately 1, while lineage assignment remained substantially more reliable.
+
+Program consequence:
+
+`carrier/lineage identity != scalar-coordinate precision`
+
+A mode or lineage may be identifiable even when its scalar placement is not.
 
 ### P0-D14: population coordinate versus finite-sample recoverability
 
@@ -63,6 +93,16 @@ Program consequence:
 
 The conglomerate must preserve the directed transformation, the receiving/intermediary dynamics, return pathway, and frequency dependence where those are physically relevant. Basis relabeling must remain distinguishable from a physical pathway change.
 
+### P0-D18: a conglomerate can become a subsystem of a larger conglomerate
+
+The hierarchical feedback construction compared direct full-system dynamics with grouped/intermediary reductions. The nested reduction and grouped reduction agreed to numerical precision. Changing the internal coupling of the intermediary group changed the effective feedback-return operator seen by the outer system and shifted the global chi lineages even though the outer edge strengths were held fixed.
+
+Program consequence:
+
+`grouped internal organization can survive into an effective return operator at the next hierarchical level`
+
+The grouped subsystem is therefore not generally replaceable by a static scalar connection magnitude in this construction.
+
 ### P0-D19: feedback creates a functioning region and a limit region
 
 The P0-D19 workflow completed successfully on 2026-09-11. For the one-way architecture, the asymptotic decay rate remained essentially fixed across coupling. For the bidirectional closed loop, moderate coupling improved asymptotic recovery and stronger coupling later degraded it while the tested system remained asymptotically stable.
@@ -79,7 +119,7 @@ Representative closed-loop recovery time `tau = 1/|spectral_abscissa|`:
 
 No recovery or chi rule was frozen.
 
-This is a concrete P0-D example of why Function Map and Limit Map are coequal. The scientifically informative object is not merely the eventual failure boundary. The interior contains a feedback-dependent recovery optimum/turnover for this constructed system.
+This is a concrete P0-D example of why Function Map and Limit Map are coequal. The scientifically informative object is not merely the eventual failure boundary. The interior contains a feedback-dependent recovery turnover for this constructed system.
 
 ### NSD claim ceiling retained
 
@@ -143,25 +183,50 @@ This reinforces a program-level principle: coupled-system organization may be sc
 
 ---
 
-## 5. Cross-project synthesis
+## 5. Domain Atlas versus cross-domain Atlas
+
+The word `Atlas` is now used at two distinct levels and must not be allowed to blur them.
+
+### Domain Atlas
+
+A within-domain Atlas, such as the active NSD Neurostability Atlas, may organize conditions after its native coordinates and admission rules have been defined within that domain. It maps the Function and Limit landscape of that domain and may include null, weak, conflicting, and refusal states.
+
+### Cross-domain Stability Architecture Atlas
+
+The cross-domain Atlas proposed in Foundations is a later object. It compares independently earned domain maps and asks whether nontrivial correspondences or transformation rules survive across materially different generators/domains.
+
+Required ordering:
+
+`native domain science -> domain coordinates/admission -> within-domain map -> cross-domain comparison`
+
+Thus an active NSD domain Atlas is not a contradiction of the domain-first Chi rule. What is forbidden is using a desired cross-domain pattern to construct the domain coordinate that later appears to recover that same pattern.
+
+---
+
+## 6. Cross-project synthesis
 
 The newest results support the following P0-D architecture picture without proving it across nature:
 
 1. A scalar chi can be exact and highly useful for an admitted second-order lineage.
-2. A mathematically real chi may still be practically non-identifiable because of finite resolution or observability.
-3. Coupling can reorganize emergent global lineages while constituent local chi values remain fixed.
-4. Closed feedback is structurally different from one-way influence.
-5. Coupling magnitude alone is insufficient; transformation geometry and receiving-system dynamics can matter.
-6. The same feedback architecture can create both a functioning region and a limit region.
-7. Rich organization need not admit a single scalar compression.
-8. Uncertainty, model adequacy, and identifiability must remain separate from the physical coordinate itself.
-9. A cross-domain Atlas must remain downstream of independently derived domain coordinates.
+2. A proposed scalar aggregate can fail while structured component organization remains useful.
+3. Carrier/lineage identity and scalar-coordinate precision are separable.
+4. A mathematically real chi may still be practically non-identifiable because of finite resolution or observability.
+5. Coupling can reorganize emergent global lineages while constituent local chi values remain fixed.
+6. Closed feedback is structurally different from one-way influence.
+7. Coupling magnitude alone is insufficient; transformation geometry and receiving-system dynamics can matter.
+8. A grouped conglomerate can act as a subsystem of a larger conglomerate while retaining internal-organization effects in its effective feedback-return operator.
+9. The same feedback architecture can create both a functioning region and a limit/degradation region.
+10. Rich organization need not admit a single scalar compression.
+11. Uncertainty, model adequacy, and identifiability must remain separate from the physical coordinate itself.
+12. A cross-domain Atlas must remain downstream of independently derived domain coordinates.
 
 These observations motivate, but do not confirm, a new prevalence hypothesis: organized systems that are adequately modeled and observable may frequently admit a Chi architecture or coordinate structure, while a one-dimensional scalar is only one possible projection.
 
+They do not yet specify what makes a representation uniquely a `Chi architecture` rather than generic systems theory. That definitional problem remains open and must be solved without making Chi synonymous with "any organization."
+
 ---
 
-## 6. Required absence taxonomy
+## 7. Required absence taxonomy
 
 A future statement that a system "has no chi" is too ambiguous to be scientifically useful. At minimum distinguish:
 
@@ -176,21 +241,22 @@ No transition among these states may be inferred from preferred Atlas placement.
 
 ---
 
-## 7. Consequence for Foundations D01B
+## 8. Consequence for Foundations D01B
 
-D01B remains scientifically useful despite the NSD P0-D16/P0-D17 results because its native generator is different. D01B uses a mechanical two-degree-of-freedom `M q_ddot + C q_dot + K q = 0` construction with stiffness/damping coupling, energy exchange, modal participation, transient response, and perturbation recovery. NSD used directed state-space feedback between fixed second-order subsystems.
+D01B remains scientifically useful despite the NSD P0-D16/P0-D17/P0-D19 results because its native generator is different. D01B uses a mechanical two-degree-of-freedom `M q_ddot + C q_dot + K q = 0` construction with stiffness/damping coupling, energy exchange, modal participation, transient response, and perturbation recovery. NSD used directed state-space feedback between fixed second-order subsystems.
 
-However, NSD P0-D16/P0-D17/P0-D19 were viewed before D01B execution. Therefore D01B cannot be represented as an untouched confirmation of the general claim that coupling reorganizes global coordinates. Its value is within-domain P0 mapping and generator-geometry comparison.
+However, NSD P0-D14 through P0-D19 were viewed before D01B execution. Therefore D01B cannot be represented as an untouched confirmation of the general claim that coupling reorganizes global coordinates. Its value is within-domain P0 mapping and generator-geometry comparison.
 
-The D01B parameter grid and metrics were already recorded in `D01_LINEAR_DYNAMICS_DOMAIN_MAP_PLAN_v0.1.json` before this synthesis. They should not be changed to resemble the NSD result.
+The D01B parameter grid and metrics were already recorded in `D01_LINEAR_DYNAMICS_DOMAIN_MAP_PLAN_v0.1.json` before this synthesis. They are not changed to resemble the NSD result.
 
 ---
 
 ## Current status
 
 - D01A remains complete and unchanged.
-- D01B remains the next Foundations computation.
+- D01B is executing under its pre-result parameter grid and separately frozen numerical observation/metric specification.
 - The September 10 cross-project audit remains historical and is not rewritten.
 - This September 11 synthesis is additive.
 - No MFR-14 confirmation has been activated.
 - No universal or prevalence claim has been earned.
+- The specific non-tautological definition of `Chi architecture` remains an open P0-D problem rather than a frozen conclusion.
