@@ -1,25 +1,33 @@
 # Chi Architecture Investigation
 
-**Status:** P0 EXPLORATORY / POST-RESULT HYPOTHESIS GENERATION  
+**Status:** P0-D / P0-Q EXPLORATORY ARCHITECTURE MAPPING  
 **Branch:** `chi-architecture-p0`  
-**Authority:** General Cross-Project Research Protocol v0.7.1, Final Baseline, 10 September 2026  
-**Claim ceiling:** exploratory only  
+**Authority:** General Cross-Project Research Protocol v0.7.1 FINAL + v0.7.1A Functional Mapping and Natural Limit-Testbed Addendum  
+**Claim ceiling:** exploratory and qualification evidence only  
 **Confirmatory MFR-14:** not yet activated  
-**Predictive tool status:** not a tool; no independent atlas; no prospective validation
+**Predictive tool status:** not a tool; no validated cross-domain Atlas; no prospective cross-domain confirmation
 
 ## Current scientific question
 
-Does stability across materially different native regimes admit a useful architecture that can be progressively reconstructed from independently interpretable scalar, vector/modal, and conglomerate/system starting representations, together with their coupling, feedback, disagreement, inheritance, emergence, and any additional structure that earns admission?
+Can materially different domains each generate a scientifically useful stability-coordinate map from their own native scalar content, modal/vector carriers, coupling/system organization, feedback/relationships, uncertainty, and other structure that earns admission, and do those independently derived domain maps later admit meaningful cross-domain alignment?
 
-This workstream does **not** assume that the three current starting representations are a complete decomposition of chi, a universal ontology, or a literal formula for chi.
+The program does **not** assume that every domain has the same formula, dimensionality, components, or scalar chi.
+
+The current ordering is:
+
+`native domain science -> Function Map + Limit Map -> candidate Chi_d coordinate map -> within-domain qualification -> frozen domain map -> cross-domain Stability Architecture Atlas`
+
+The inverse dependency is forbidden:
+
+`desired Atlas pattern -> tune Chi_d -> rediscover desired Atlas pattern`
+
+See `DOMAIN_FIRST_CHI_COORDINATE_PROGRAM_v0.1.md`.
 
 ## Scope discipline
 
 Universality is **not** a research target or promotion criterion.
 
 The architecture is being investigated because it may be unusually broad across otherwise different systems and regimes. Its scope must be earned one regime, mechanism, and untouched test at a time. A result that works in several domains remains a bounded cross-regime result unless additional evidence extends that boundary.
-
-If the architecture ultimately proves extremely broad, that conclusion must emerge from continued successful testing, failures, domain limits, mathematical development, independent replication, and peer review rather than from a prior universal claim.
 
 `BROAD != UNIVERSAL`
 
@@ -29,6 +37,8 @@ A scientifically valuable outcome may therefore be any of the following:
 - domain-family architecture;
 - regime-specific architecture;
 - partial transportability of selected components;
+- multidimensional rather than scalar coordinate structure;
+- no admissible chi coordinate in a particular domain;
 - or failure of the proposed architecture outside a narrow class.
 
 None is treated as a continuity failure.
@@ -45,13 +55,25 @@ The damped oscillator supplied an early mathematically tractable realization in 
 
 That success motivated an extended **scalar-first investigation** because the scalar was measurable, compact, and analytically useful. It did not establish that the scalar was ontologically primary.
 
-The present investigation therefore records the historical progression as:
+The historical progression is recorded as:
 
-`systems/feedback/coupling premise -> tractable scalar probe -> scalar-first testing -> evidence that scalar alone is insufficient -> modal/carrier and conglomerate/system structure -> progressive architecture reconstruction`
-
-The current result is not that a once-fundamental scalar has been replaced. It is that the program tested the scalar as though it might carry the deeper structure and has accumulated reasons to conclude that scalar-only description is not generally sufficient.
+`systems/feedback/coupling premise -> tractable scalar probe -> scalar-first testing -> evidence that scalar alone is insufficient -> modal/carrier and conglomerate/system structure -> domain-first architecture/coordinate reconstruction`
 
 Documentary provenance for the earliest pre-mathematical formulation should be added separately if the original paper or dated record is recovered. Such provenance would establish hypothesis history, not empirical correctness.
+
+## Working Chi object
+
+For a domain `d`, the working hypothesis is that native measurable architecture `A_d` may generate a coordinate object
+
+`Chi_d : A_d -> Z_d`.
+
+`Z_d` is the smallest scientifically adequate coordinate space supported by that domain. It is not required to be one-dimensional.
+
+Possible outcomes include scalar, vector, subspace/projector, graph/network, operator/manifold, hybrid discrete-continuous, or refused coordinate structures.
+
+A lowercase scalar `chi_d` is admitted only if one-dimensional compression earns its existence from the native mathematics and preserves the information needed for the declared scientific task.
+
+The cross-domain Atlas is downstream of these independently derived coordinates. The Atlas records placements; it does not create them.
 
 ## Current starting basis
 
@@ -59,11 +81,12 @@ Where native science supports them, inspect:
 
 - **scalar:** compressed stability coordinates, invariants, rates, ratios, spectra, or other defensibly derived scalar summaries;
 - **vector/modal:** resolved carrier structure such as eigenvectors, invariant subspaces, projectors, participation structure, latent modes, or other domain-native multidimensional objects;
-- **conglomerate/system:** organization created by coupling, feedback, networks, subsystem interaction, memory, environmental structure, cross-layer mappings, or collective behavior.
+- **conglomerate/system:** organization created by coupling, feedback, networks, subsystem interaction, memory, environmental structure, cross-layer mappings, or collective behavior;
+- **relationships/open channels:** feedback paths, coupling direction, disagreement, inheritance, uncertainty/nonidentifiability, adequacy, and other domain-native structure not reducible to the first three views.
 
-The scientifically important target is increasingly the relationship among these representations and any higher-order architecture that survives falsification.
+These are starting representations, not a mandated complete decomposition.
 
-## Chi naming rule
+## Chi naming and admission rule
 
 An object is not called chi merely because it is a useful stability quantity.
 
@@ -71,38 +94,35 @@ An object is not called chi merely because it is a useful stability quantity.
 - A different regime may generate a different candidate scalar chi only through its own native model, derivation, validity conditions, uncertainty treatment, nulls, and admission rules.
 - A scalar chi is not required for an architecture to be scientifically meaningful.
 - Any proposed scalar compression must earn its existence by preserving or adding scientifically useful information beyond the richer native representation.
-- Modal and conglomerate objects can belong to the stability architecture without being renamed chi.
-- A domain may legitimately return `NOT_APPLICABLE` or `NO_ADMISSIBLE_CHI`.
+- A domain may legitimately return `NO_ADMISSIBLE_SCALAR_CHI` or `NO_ADMISSIBLE_CHI_COORDINATE`.
+- A visually attractive cross-domain alignment cannot be used to retrofit a domain coordinate.
 
-The working architectural hypothesis is therefore not "find a scalar chi everywhere." It is to determine whether a deeper stability architecture can be identified across regimes and, only where justified, whether that architecture admits a useful scalar projection.
+## Function Map and Limit Map
 
-## Why this workstream exists now
+Under General Protocol v0.7.1A, every mature domain investigation should characterize both:
 
-Three current program observations motivated the investigation but do not confirm it:
+1. **Function Map:** ordinary supported operation, variation, perturbation response, compensation/redistribution where present, alternate stable organizations, and trajectories through the functioning regime;
+2. **Limit Map:** transitions, saturation, model breakdown, loss of identifiability, refusal, instability, and qualified rare natural limit states.
 
-1. The published Stability Arc work established a bounded cross-domain role for a licensed damping-ratio construction in the systems studied there.
-2. The rebuilt GRI program recovered reproducible static scalar, modal, and cross-layer organization while explicitly withholding a biological chi coordinate. This makes GRI a post-result hypothesis source, not prospective confirmation of generalized chi architecture.
-3. The substrate-inheritance program developed independent carrier, coupling, uncertainty, and refusal machinery that may later be reusable, but its SI-next branch remains non-authoritative and is not inherited into this branch as evidence.
+The objective is to map the phenomenon, not only to attack it.
 
-## Post-result hypothesis under investigation
-
-A recent observation suggested that scalar/modal disagreement may sometimes coincide with a conglomerate response that preserves system organization. This is currently **only a mechanistic hypothesis**.
-
-The project does not equate disagreement with compensation.
-
-A disagreement can be called compensatory only after a prospectively specified coupling-dependent response predicts an independently measured future or held-out stability outcome. Observation noise, estimation error, destabilizing discordance, redundancy, and ordinary native-domain explanations remain competing explanations.
+Qualified rare natural occurrences are high-information limit testbeds. They must be selected using domain-native rarity/extremeness rather than favorable chi placement. Already-viewed rare events are P0-D/P0-Q evidence; P1 use requires independent prospective selection/freeze.
 
 ## Anti-circularity position
 
-The workstream must not follow this invalid chain:
+The workstream must not follow these invalid chains:
 
 `inspect favorable architecture -> choose a scalar that matches it -> call that scalar chi -> use the match as evidence for chi architecture`
 
+or
+
+`inspect desired cross-domain Atlas alignment -> alter domain coordinate -> claim the altered coordinate independently aligns across domains`.
+
 Instead:
 
-`native model -> native observables -> independently defined representations -> explicit relationships/nulls -> exploratory qualification -> frozen evaluative rule -> untouched decisive evidence`
+`native model -> native observables -> Function/Limit Map -> candidate domain coordinate -> within-domain qualification -> freeze -> cross-domain comparison`.
 
-Likewise, the conglomerate cannot mean "whatever combination performs best." It must be a named native mathematical or physical object whose construction is fixed independently of the outcome being used to test it.
+The conglomerate cannot mean "whatever combination performs best." It must be a named native mathematical or physical relationship whose construction is fixed independently of the outcome being used to test it.
 
 ### Designed fixtures are not evidence for the hypothesis they encode
 
@@ -115,49 +135,27 @@ Therefore:
 - F8 verifies admission/refusal behavior for a licensed second-order scalar; it does not establish cross-regime chi.
 - no F0-F8 success counts as empirical confirmation, P1 evidence, or program-level `ADDS`.
 
-`P0_EXPERIMENT_PLAN_v0.2.json` is now the single source of executable fixture parameters. The runner may not maintain hidden duplicate parameter lists.
+`P0_EXPERIMENT_PLAN_v0.2.json` remains the immutable current fixture source. It is not silently rewritten around the new domain-first program.
 
-The complete review is recorded in `CIRCULARITY_AUDIT_20260910.md`.
+## Current domain sequence
 
-## P0 known-truth battery
+The developmental sequence is now domain-first rather than Atlas-first:
 
-The circularity-hardened v0.2 battery retains F0-F8 and adds stronger execution controls:
+1. second-order damped dynamics, exact scalar anchor;
+2. coupled/non-normal linear dynamics;
+3. NSD synthetic known-truth dynamics and observable-rank/refusal architecture;
+4. GRI static multi-omic architecture with biological chi withheld;
+5. substrate-inheritance coupled dynamics;
+6. Chemistry single-barrier versus network-resolved systems;
+7. additional mature domains such as power-grid, seismological, quantum/open-system, and cosmological systems after native-domain audit.
 
-- a normal decoupled case where ordinary eigenvalue stability should remain sufficient;
-- same-spectrum/different-modal-geometry cases;
-- same-modal-basis/different-spectrum cases;
-- fixed-local-subsystem/different-coupling cases;
-- a feedback stability fixture explicitly barred from compensation inference;
-- no-noise, process-noise, feedback/sensor-noise, and observer-only paths using a nonzero initial perturbation and four retained seeds;
-- non-normal transient-growth cases using the declared F6 parameter list;
-- exact degenerate-subspace refusal;
-- underdamped, critical, overdamped, undamped, active-antidamping, anti-restoring, and single-pole chi admission/refusal cases.
-
-F0-F6 emit raw/native measurements rather than prewritten scientific outcome labels. Exact admission/refusal states remain allowed where they are directly generated by the mathematical guard.
-
-### Validation status
-
-The circularity-hardened v0.2 head passed GitHub Actions run `34534717778` at commit `83886a4d14d520a5151751437d02018e8bdaf4f3`.
-
-The validated job included:
-
-- v0.2 anti-circularity experiment-plan guards;
-- 23/23 known-truth, plan-synchronization, and demonstrated-failing tests;
-- plan-driven raw fixture result generation;
-- evidence-class, parameter-synchronization, and refusal guards;
-- source/result manifest generation;
-- artifact upload.
-
-Artifact: `chi-architecture-p0-known-truth-v02`  
-Artifact ID: `10174926702`  
-Artifact SHA-256: `2589275e2a032e168ea852d32eaed746e1173b7926d709d2648ba3346a6d2b51`
-
-This validation establishes implementation behavior only. It does not establish generalized chi architecture, empirical added value, compensation in GRI, or cross-domain validity.
+Already-viewed GRI, Barrier Atlas, and NSD evidence remains calibration/provenance evidence for rules learned from it, not pristine confirmation.
 
 ## Current status against the General Protocol
 
 See:
 
+- `DOMAIN_FIRST_CHI_COORDINATE_PROGRAM_v0.1.md`
 - `GENERAL_PROTOCOL_AUDIT_20260910.md`
 - `CIRCULARITY_AUDIT_20260910.md`
 - `CROSS_PROJECT_UPDATE_AUDIT_20260910.md`
@@ -168,7 +166,7 @@ See:
 
 ## Project control
 
-**Current status:** P0 governance, known-truth mechanical qualification, circularity hardening, and the GRI/Barrier-Atlas/NSD cross-project calibration audit are complete; generalized chi architecture remains unconfirmed.  
-**Next scientific/computational step:** design the first separate evaluative synthetic experiment using the newly documented adequacy, identifiability, independence, exchangeability, shared-input, and native-comparator safeguards; freeze its target and negative result before decisive outputs are opened.  
-**What can advance immediately:** build the new evaluative design as a separately versioned protocol without altering the already-viewed v0.2 fixture plan.  
+**Current status:** P0 known-truth qualification, circularity hardening, cross-project calibration audit, and the v0.7.1A function/limit protocol correction are complete. The domain-first Chi coordinate program is now the active scientific direction.  
+**Next scientific/computational step:** construct the first Domain Chi Map from an exact/native system without using any desired cross-domain Atlas placement, beginning with the second-order/coupled-linear anchor and expanding across its Function and Limit Maps.  
+**What can advance immediately:** define the domain-map schema and compute independently derived coordinate candidates/response surfaces before any cross-domain alignment analysis.  
 **User action required:** none. A separate decision will be requested only if a future move would freeze a confirmatory P1 claim, comparator, threshold, or untouched validation target.
