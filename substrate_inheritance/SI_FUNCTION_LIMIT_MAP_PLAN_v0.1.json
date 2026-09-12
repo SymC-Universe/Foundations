@@ -1,0 +1,160 @@
+{
+  "schema": "substrate-inheritance-function-limit-map-plan-v0.1",
+  "date": "2026-09-12",
+  "status": "P0_D_EXPLORATORY_FUNCTION_MAPPING",
+  "purpose_tag": "FUNCTION_MAPPING",
+  "general_protocol": "General Cross-Project Research Protocol v0.7.4 FINAL",
+  "confirmatory_language_allowed": false,
+  "mfr14_activated": false,
+  "physical_inheritance_claim": false,
+  "goal": "Map ordinary supported SI behavior and failure/transition structure with equal seriousness, rather than concentrating only on refusal boundaries.",
+  "global_firewalls": {
+    "no_master_score": true,
+    "no_physical_threshold_fitting": true,
+    "no_atlas_target_used_for_parameter_selection": true,
+    "no_lower_level_scalar_average_used_as_system_scalar": true,
+    "function_map_is_mechanistic_confirmation": false,
+    "synthetic_success_is_physical_confirmation": false,
+    "rare_or_extreme_cases_are_default_center": false
+  },
+  "maps": [
+    {
+      "id": "FM1_COUPLING_RESPONSE_LANDSCAPE",
+      "type": "FUNCTION_AND_LIMIT",
+      "question": "Across an ordinary synthetic coupling range, how do carrier correspondence, participation, embedded response, and source specificity change before any correspondence becomes weak or nonidentifiable?",
+      "native_objects": [
+        "parent operator",
+        "child operator",
+        "parent-child coupling",
+        "substrate self-energy or equivalent embedded response",
+        "carrier/subspace correspondence"
+      ],
+      "independent_axes": [
+        "coupling scale",
+        "carrier-geometry perturbation"
+      ],
+      "function_outputs": [
+        "full correspondence matrix",
+        "per-mode or subspace participation",
+        "embedded response change",
+        "intervention transfer",
+        "coupling-rewire specificity gap"
+      ],
+      "limit_outputs": [
+        "nonidentifiability",
+        "correspondence collapse",
+        "representation refusal",
+        "conditioning deterioration"
+      ],
+      "epistemic_status": "DESCRIPTIVE_OR_STRUCTURAL_P0D"
+    },
+    {
+      "id": "FM2_EMBEDDING_DEPTH_LANDSCAPE",
+      "type": "FUNCTION_AND_LIMIT",
+      "question": "How much parent depth is required to preserve the embedded child response as substrate coupling and probe condition change?",
+      "independent_axes": [
+        "retained substrate depth",
+        "substrate coupling strength",
+        "probe condition"
+      ],
+      "function_outputs": [
+        "response convergence surface",
+        "effective-parent depth needed for declared tolerance",
+        "stable interior where added depth is negligible for the declared task"
+      ],
+      "limit_outputs": [
+        "insufficient-depth region",
+        "slow-convergence region",
+        "finite-bath recurrence or model-class warning where applicable"
+      ],
+      "hierarchical_closure_relevance": true,
+      "epistemic_status": "DESCRIPTIVE_OR_STRUCTURAL_P0D"
+    },
+    {
+      "id": "FM3_LINEAGE_FLOW_LANDSCAPE",
+      "type": "FUNCTION_AND_LIMIT",
+      "question": "How do persistence, splitting, mixing, reconvergence, and extinction evolve across repeated parent-child transformations without forcing a single descendant?",
+      "independent_axes": [
+        "transformation strength",
+        "spectral crowding",
+        "uncertainty magnitude"
+      ],
+      "function_outputs": [
+        "relative correspondence flow",
+        "dominant margin",
+        "lineage entropy",
+        "effective child count",
+        "subspace preservation"
+      ],
+      "limit_outputs": [
+        "nonidentifiable transition",
+        "lineage ambiguity",
+        "subspace-only regime",
+        "loss/extinction"
+      ],
+      "flow_is_probability": false,
+      "flow_is_inheritance_percentage": false,
+      "epistemic_status": "DESCRIPTIVE_OR_STRUCTURAL_P0D"
+    },
+    {
+      "id": "FM4_HIERARCHICAL_CLOSURE_LANDSCAPE",
+      "type": "FUNCTION_AND_LIMIT",
+      "question": "When can a coupled lower-scale parent-child subsystem be replaced by an effective reduced component without losing the quantities required by a declared higher-level question?",
+      "reference": "unreduced block-system response",
+      "candidate_reduction": "Schur-complement or domain-native effective subsystem",
+      "preservation_targets": [
+        "input-output response",
+        "feedback return",
+        "poles or invariant subspace where licensed",
+        "perturbation propagation",
+        "recovery order or timescale where licensed",
+        "finite-time amplification where licensed"
+      ],
+      "function_outputs": [
+        "supported closure region",
+        "quantity-specific reduction error surfaces"
+      ],
+      "limit_outputs": [
+        "partial closure",
+        "failed closure",
+        "unresolved closure"
+      ],
+      "allowed_statuses": [
+        "HIERARCHICAL_REDUCTION_SUPPORTED_IN_REGIME",
+        "PARTIAL_HIERARCHICAL_CLOSURE",
+        "HIERARCHICAL_REDUCTION_FAILED",
+        "UNRESOLVED"
+      ],
+      "epistemic_status": "DESCRIPTIVE_OR_STRUCTURAL_P0D"
+    },
+    {
+      "id": "FM5_RECOVERY_RESILIENCE_LANDSCAPE",
+      "type": "FUNCTION_AND_LIMIT",
+      "question": "Where a native dynamical model supports perturbation response, how do asymptotic return and finite-time amplification change with embedding and coupling?",
+      "function_outputs": [
+        "asymptotic return measure",
+        "finite-time amplification",
+        "recovery trajectory",
+        "settled state or reorganization"
+      ],
+      "limit_outputs": [
+        "slow recovery",
+        "large transient amplification despite asymptotic stability",
+        "nonreturn or reorganization",
+        "model refusal"
+      ],
+      "asymptotic_return_equals_finite_time_resilience": false,
+      "universal_resilience_metric": false,
+      "epistemic_status": "DESCRIPTIVE_OR_STRUCTURAL_P0D"
+    }
+  ],
+  "balance_rule": "Every substantial SI mapping milestone reports both the supported-function interior and the relevant limits, or records a scientific reason why one side is not applicable or presently testable.",
+  "next_execution_order": [
+    "FM4_HIERARCHICAL_CLOSURE_LANDSCAPE",
+    "FM1_COUPLING_RESPONSE_LANDSCAPE",
+    "FM3_LINEAGE_FLOW_LANDSCAPE",
+    "FM2_EMBEDDING_DEPTH_LANDSCAPE",
+    "FM5_RECOVERY_RESILIENCE_LANDSCAPE"
+  ],
+  "ordering_reason": "Hierarchical closure is the largest v0.7.4-specific scientific gap and directly tests whether SI information survives grouping before expanding to broader functioning landscapes."
+}
