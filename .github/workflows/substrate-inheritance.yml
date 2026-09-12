@@ -44,6 +44,47 @@ jobs:
           } > substrate_inheritance/results/validation_environment.txt
           cat substrate_inheritance/results/validation_environment.txt
 
+      - name: Validate SI-next v0.4 protocol documents
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          candidate = json.loads(Path("substrate_inheritance/SI_NEXT_CANDIDATE_CONTRACT_v0.4.json").read_text())
+          diagnostic = json.loads(Path("substrate_inheritance/SI_NEXT_DIAGNOSTIC_INPUT_CONTRACT_v0.4.json").read_text())
+          readiness = json.loads(Path("substrate_inheritance/PHYSICAL_INPUT_READINESS_v0.2.json").read_text())
+          function_map = json.loads(Path("substrate_inheritance/SI_FUNCTION_LIMIT_MAP_PLAN_v0.1.json").read_text())
+
+          assert candidate["version"] == "0.4-candidate"
+          assert candidate["status"] == "NON_AUTHORITATIVE_P0Q_CANDIDATE"
+          assert candidate["science_firewall"]["v0.2_promotion_gates_changed"] is False
+          assert candidate["science_firewall"]["v0.2_physical_thresholds_changed"] is False
+          assert candidate["representation_policy"]["not_applicable_allowed"] is True
+          assert candidate["representation_policy"]["all_slots_must_be_physically_instantiated"] is False
+          assert candidate["representation_policy"]["lower_level_scalar_average_may_define_system_scalar"] is False
+          assert candidate["relational_stability"]["local_identity_separate_from_embedded_behavior"] is True
+          assert candidate["hierarchical_closure"]["gate_required_when_effective_subsystem_is_reused_at_higher_scale"] is True
+          assert candidate["recovery_resilience"]["asymptotic_return_equals_finite_time_resilience"] is False
+          assert candidate["cross_scale_firewall"]["automatic_promotion_between_levels"] is False
+          assert candidate["function_limit_balance"]["function_map_and_limit_map_coequal"] is True
+          assert candidate["experimental_opportunity"]["literature_may_retroactively_create_independent_game_plan"] is False
+
+          assert diagnostic["schema"] == "substrate-inheritance-si-next-diagnostic-input-v0.4-candidate"
+          assert "NOT_APPLICABLE" in diagnostic["relationship_R"]["allowed_view_states"]
+          assert "NOT_APPLICABLE" in diagnostic["uncertainty_U"]["allowed_statuses"]
+          assert diagnostic["science_firewall"]["candidate_output_counts_as_empirical_confirmation"] is False
+
+          assert readiness["real_system_inheritance_result"] == "NOT_ESTABLISHED"
+          assert readiness["source_snapshot"]["chemistry_head_checked"] == "65a4a5104d32207e2014f8b5b694db544d35392e"
+          assert readiness["source_snapshot"]["active_region_hessian_presence_at_checked_head"] is False
+
+          assert function_map["status"] == "P0_D_EXPLORATORY_FUNCTION_MAPPING"
+          assert function_map["global_firewalls"]["no_master_score"] is True
+          assert function_map["global_firewalls"]["function_map_is_mechanistic_confirmation"] is False
+          assert function_map["next_execution_order"][0] == "FM4_HIERARCHICAL_CLOSURE_LANDSCAPE"
+          print("SI-next v0.4 protocol document guards passed")
+          PY
+
       - name: Run adversarial unit and benchmark tests
         run: python -m pytest -q substrate_inheritance/test_*.py
 
@@ -77,11 +118,14 @@ jobs:
       - name: Run real-system adapter validation record
         run: python -m substrate_inheritance.adapter_validation
 
-      - name: Run SI-next candidate architecture validation
+      - name: Run SI-next v0.3 candidate architecture validation
         run: python -m substrate_inheritance.si_next_validation
 
-      - name: Run SI-next diagnostic contract validation
+      - name: Run SI-next v0.3 diagnostic contract validation
         run: python -m substrate_inheritance.si_next_contract_validation
+
+      - name: Run SI-next v0.4 GP 0.7.4 semantic validation
+        run: python -m substrate_inheritance.si_v04_validation
 
       - name: Verify outputs are explicitly non-physical
         run: |
@@ -102,6 +146,7 @@ jobs:
               "adapter_validation.json": "synthetic_real_system_adapter_validation_only",
               "si_next_validation.json": "synthetic_si_next_architecture_validation_only",
               "si_next_contract_validation.json": "synthetic_si_next_diagnostic_contract_validation_only",
+              "si_v04_validation.json": "synthetic_si_v04_gp074_semantic_validation_only",
           }
           records = {}
           for filename, scope in expected.items():
@@ -146,7 +191,23 @@ jobs:
           assert contract_analysis["multi_parent"]["exact_mobius_requested"] is True
           assert contract["refusal_checks"]["lineage_identifiability_without_uncertainty"] == "MISSING_LINEAGE_UNCERTAINTY"
           assert contract["refusal_checks"]["incomplete_exact_mobius"] == "INCOMPLETE_EXACT_MOBIUS"
-          print("Synthetic evidence guards passed")
+
+          v04 = records["si_v04_validation.json"]
+          assert v04["status"] == "candidate_v0.4_non_authoritative_p0q"
+          assert v04["general_protocol"] == "v0.7.4"
+          assert v04["frozen_v0.2_changed"] is False
+          assert v04["physical_inheritance_claim"] is False
+          assert v04["relationship_pattern"] == "MODAL_CONGLOMERATION_WITHOUT_SCALAR"
+          assert v04["uncertainty"]["scalar"] == "NOT_APPLICABLE"
+          assert v04["hierarchical_closure_status"] == "HIERARCHICAL_REDUCTION_SUPPORTED_IN_REGIME"
+          assert v04["recovery_semantics_separated"] is True
+          assert v04["known_bad_refusals"]["lower_level_scalar_averaging"] == "SYSTEM_SCALAR_AGGREGATION"
+          assert v04["known_bad_refusals"]["atlas_coordinate_leakage"] == "ATLAS_COORDINATE_LEAKAGE"
+          assert v04["known_bad_refusals"]["unlicensed_system_scalar"] == "UNLICENSED_SYSTEM_SCALAR"
+          assert v04["known_bad_refusals"]["disabled_hierarchy_with_decision"] == "DISABLED_HIERARCHY_WITH_DECISION"
+          assert v04["known_bad_refusals"]["asymptotic_transient_conflation"] == "ASYMPTOTIC_TRANSIENT_CONFLATION"
+          assert v04["known_bad_refusals"]["universality_from_recurrence"] == "UNIVERSALITY_FIREWALL"
+          print("Synthetic evidence and GP v0.7.4 guards passed")
           PY
 
       - name: Upload synthetic validation records
@@ -166,4 +227,5 @@ jobs:
             substrate_inheritance/results/adapter_validation.json
             substrate_inheritance/results/si_next_validation.json
             substrate_inheritance/results/si_next_contract_validation.json
+            substrate_inheritance/results/si_v04_validation.json
             substrate_inheritance/results/validation_environment.txt
