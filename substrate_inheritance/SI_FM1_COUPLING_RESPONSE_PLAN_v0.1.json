@@ -1,0 +1,82 @@
+{
+  "schema": "substrate-inheritance-fm1-coupling-response-plan-v0.1",
+  "date": "2026-09-12",
+  "status": "P0_D_EXPLORATORY_FUNCTION_AND_LIMIT_MAPPING",
+  "purpose_tag": "FUNCTION_MAPPING",
+  "general_protocol": "General Cross-Project Research Protocol v0.7.4 FINAL",
+  "parent_map_plan": "SI_FUNCTION_LIMIT_MAP_PLAN_v0.1.json",
+  "literature_collision": "SI_LITERATURE_COLLISION_v0.1.md",
+  "confirmatory_language_allowed": false,
+  "mfr14_activated": false,
+  "physical_inheritance_claim": false,
+  "question": "Across an ordinary synthetic coupling and carrier-geometry landscape, how do carrier correspondence, participation, embedded response, intervention response, and coupling specificity change before and through regions of weak or ambiguous correspondence?",
+  "model": {
+    "kind": "four_mode_parent_plus_one_child_linear_mechanical_system",
+    "parent_masses": [1.0, 1.0, 1.0, 1.0],
+    "parent_stiffness_eigenvalues": [1.0, 2.0, 3.6, 5.2],
+    "child_local_mass": 1.0,
+    "child_local_stiffness": 2.7,
+    "rayleigh_damping_alpha": 0.02,
+    "rayleigh_damping_beta": 0.01,
+    "base_coupling_weights": [0.45, 0.30, 0.18, 0.07],
+    "rewired_coupling_weights": [0.07, 0.18, 0.30, 0.45],
+    "coupling_scale_values": [0.0, 0.05, 0.15, 0.35, 0.70, 1.20],
+    "carrier_geometry_angle_values_radians": [0.0, 0.08, 0.20, 0.40, 0.70, 1.00],
+    "geometry_transform": "orthogonal rotation of clean substrate carrier geometry in planes (0,1) by theta and (2,3) by 0.6*theta while preserving the clean substrate eigenvalue spectrum before parent-child coupling is added",
+    "shared_coordinate_mapping": "identity physical coordinate map; only the substrate stiffness geometry is changed, so the geometry transform is a physical synthetic perturbation rather than a coordinate relabeling"
+  },
+  "probe_frequencies": [0.50, 0.90, 1.30, 1.80, 2.30],
+  "intervention": {
+    "kind": "symmetric finite_difference_parent_coordinate_stiffness_perturbation",
+    "shared_coordinate_index": 0,
+    "delta": 0.001,
+    "probe_frequency": 1.30,
+    "response": "complex child substrate self-energy",
+    "rule": "The intervention coordinate, delta, probe frequency, and response are fixed before FM1 output is opened."
+  },
+  "carrier_metrics": {
+    "parent_to_child_directional_overlap": "squared overlap between parent clean modes and normalized child substrate projections",
+    "child_substrate_participation": "mass-weighted fraction of each full child mode supported on the four substrate coordinates",
+    "carrier_assignment": "injective parent-to-child assignment maximizing total directional overlap; full overlap matrix and participation remain separately retained",
+    "frequency_only_comparator": "injective assignment minimizing total absolute natural-frequency difference; the carrier overlap of that assignment is reported separately",
+    "frequency_only_comparator_role": "simple native baseline for the scalar/frequency false-friend question only; it is not asserted to be the strongest future P1 standard toolkit"
+  },
+  "embedded_response_metrics": {
+    "response_curve": "complex substrate self-energy on the child coordinate across the frozen probe frequencies",
+    "response_curve_norm": "Euclidean norm of the complex self-energy curve",
+    "coupling_rewire_specificity": "relative Euclidean change in the self-energy curve after the frozen coupling-weight permutation at the same total coupling scale",
+    "intervention_response": "Euclidean magnitude of the complex finite-difference derivative of child self-energy with respect to the frozen parent-coordinate stiffness perturbation"
+  },
+  "function_map_targets": [
+    "ordinary regions with high carrier correspondence and nontrivial substrate participation",
+    "continuous growth or redistribution of embedded response with coupling",
+    "regions where coupling rewiring changes embedded response despite preserved total coupling scale",
+    "regions where parent intervention produces measurable child response",
+    "cases where frequency matching remains good while carrier correspondence changes"
+  ],
+  "limit_map_targets": [
+    "weak or ambiguous carrier correspondence",
+    "low substrate participation despite apparently favorable directional overlap",
+    "frequency-only false-friend regions",
+    "response regions with weak coupling specificity",
+    "ill-conditioned dynamic-stiffness probe points if encountered"
+  ],
+  "controls": [
+    "coupling_scale=0 must produce zero child substrate self-energy, zero rewire specificity, and zero intervention transfer",
+    "theta=0 and coupling_scale=0 must reproduce the parent carrier basis exactly on the substrate-supported child modes",
+    "at coupling_scale=0 the carrier-geometry transform preserves the clean substrate eigenvalue spectrum to numerical precision",
+    "all 36 theta-by-coupling cases retained",
+    "no Atlas coordinate or chi used for parameter selection",
+    "no master relationship score",
+    "no system scalar chi constructed"
+  ],
+  "reporting": {
+    "binary_physical_pass_threshold": false,
+    "post_result_favorable_region_promotion": false,
+    "report_every_case": true,
+    "summary_by_coupling": true,
+    "summary_by_geometry_angle": true,
+    "mechanistic_confirmation_from_function_map": false
+  },
+  "promotion_ceiling": "P0_D_DESCRIPTIVE_OR_STRUCTURAL_FUNCTION_LIMIT_LANDSCAPE"
+}
