@@ -44,7 +44,7 @@ jobs:
           } > substrate_inheritance/results/validation_environment.txt
           cat substrate_inheritance/results/validation_environment.txt
 
-      - name: Validate SI-next v0.4 protocol documents
+      - name: Validate SI-next v0.4 protocol documents and FM4 plan
         run: |
           python - <<'PY'
           import json
@@ -54,6 +54,7 @@ jobs:
           diagnostic = json.loads(Path("substrate_inheritance/SI_NEXT_DIAGNOSTIC_INPUT_CONTRACT_v0.4.json").read_text())
           readiness = json.loads(Path("substrate_inheritance/PHYSICAL_INPUT_READINESS_v0.2.json").read_text())
           function_map = json.loads(Path("substrate_inheritance/SI_FUNCTION_LIMIT_MAP_PLAN_v0.1.json").read_text())
+          fm4 = json.loads(Path("substrate_inheritance/SI_FM4_HIERARCHICAL_CLOSURE_PLAN_v0.1.json").read_text())
 
           assert candidate["version"] == "0.4-candidate"
           assert candidate["status"] == "NON_AUTHORITATIVE_P0Q_CANDIDATE"
@@ -82,7 +83,15 @@ jobs:
           assert function_map["global_firewalls"]["no_master_score"] is True
           assert function_map["global_firewalls"]["function_map_is_mechanistic_confirmation"] is False
           assert function_map["next_execution_order"][0] == "FM4_HIERARCHICAL_CLOSURE_LANDSCAPE"
-          print("SI-next v0.4 protocol document guards passed")
+
+          assert fm4["schema"] == "substrate-inheritance-fm4-hierarchical-closure-plan-v0.1"
+          assert fm4["status"] == "P0_D_EXPLORATORY_FUNCTION_AND_LIMIT_MAPPING"
+          assert fm4["mfr14_activated"] is False
+          assert fm4["physical_inheritance_claim"] is False
+          assert fm4["approximation_reporting"]["binary_physical_pass_threshold"] is False
+          assert fm4["expected_method_truth"]["approximation_ordering_predeclared"] is False
+          assert fm4["controls"][1] == "all grid cases retained"
+          print("SI-next v0.4 and FM4 protocol document guards passed")
           PY
 
       - name: Run adversarial unit and benchmark tests
@@ -126,6 +135,9 @@ jobs:
 
       - name: Run SI-next v0.4 GP 0.7.4 semantic validation
         run: python -m substrate_inheritance.si_v04_validation
+
+      - name: Run FM4 hierarchical closure landscape
+        run: python -m substrate_inheritance.hierarchical_closure_validation
 
       - name: Verify outputs are explicitly non-physical
         run: |
@@ -207,7 +219,25 @@ jobs:
           assert v04["known_bad_refusals"]["disabled_hierarchy_with_decision"] == "DISABLED_HIERARCHY_WITH_DECISION"
           assert v04["known_bad_refusals"]["asymptotic_transient_conflation"] == "ASYMPTOTIC_TRANSIENT_CONFLATION"
           assert v04["known_bad_refusals"]["universality_from_recurrence"] == "UNIVERSALITY_FIREWALL"
-          print("Synthetic evidence and GP v0.7.4 guards passed")
+
+          fm4 = json.loads(Path("substrate_inheritance/results/SI_FM4_HIERARCHICAL_CLOSURE_RESULTS_v0.1.json").read_text())
+          assert fm4["schema"] == "substrate-inheritance-fm4-hierarchical-closure-result-v0.1"
+          assert fm4["scope"] == "synthetic_si_fm4_hierarchical_closure_landscape_p0d_only"
+          assert fm4["status"] == "P0_D_DESCRIPTIVE_OR_STRUCTURAL_METHOD_LANDSCAPE"
+          assert fm4["experiment_plan"] == "SI_FM4_HIERARCHICAL_CLOSURE_PLAN_v0.1.json"
+          assert fm4["record_count"] == 1936
+          assert fm4["parameter_case_count"] == 16
+          assert fm4["frequency_count_per_case"] == 121
+          assert fm4["exact_closure"]["status"] == "HIERARCHICAL_REDUCTION_SUPPORTED_IN_REGIME"
+          assert fm4["exact_closure"]["maximum_exact_identity_error"] <= fm4["exact_closure"]["numerical_tolerance"]
+          assert fm4["zero_outer_coupling_control"]["maximum_absolute_group_return"] < 1e-13
+          assert fm4["approximation_surfaces"]["binary_physical_pass_threshold_applied"] is False
+          assert fm4["approximation_surfaces"]["approximation_ordering_predeclared"] is False
+          assert fm4["system_scalar_chi_constructed"] is False
+          assert fm4["atlas_used_for_parameter_selection"] is False
+          assert fm4["real_system_evidence"] is False
+          assert fm4["physical_inheritance_claim"] is False
+          print("Synthetic evidence and GP v0.7.4 FM4 guards passed")
           PY
 
       - name: Upload synthetic validation records
@@ -228,4 +258,13 @@ jobs:
             substrate_inheritance/results/si_next_validation.json
             substrate_inheritance/results/si_next_contract_validation.json
             substrate_inheritance/results/si_v04_validation.json
+            substrate_inheritance/results/validation_environment.txt
+
+      - name: Upload FM4 hierarchical closure landscape
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: substrate-inheritance-fm4-hierarchical-closure-v01
+          path: |
+            substrate_inheritance/SI_FM4_HIERARCHICAL_CLOSURE_PLAN_v0.1.json
+            substrate_inheritance/results/SI_FM4_HIERARCHICAL_CLOSURE_RESULTS_v0.1.json
             substrate_inheritance/results/validation_environment.txt
