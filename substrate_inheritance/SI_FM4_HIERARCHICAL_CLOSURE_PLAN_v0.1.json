@@ -1,0 +1,115 @@
+{
+  "schema": "substrate-inheritance-fm4-hierarchical-closure-plan-v0.1",
+  "date": "2026-09-12",
+  "status": "P0_D_EXPLORATORY_FUNCTION_AND_LIMIT_MAPPING",
+  "purpose_tag": "FUNCTION_MAPPING",
+  "general_protocol": "General Cross-Project Research Protocol v0.7.4 FINAL",
+  "parent_map_plan": "SI_FUNCTION_LIMIT_MAP_PLAN_v0.1.json",
+  "literature_collision": "SI_LITERATURE_COLLISION_v0.1.md",
+  "confirmatory_language_allowed": false,
+  "mfr14_activated": false,
+  "physical_inheritance_claim": false,
+  "question": "When a lower-scale linear mechanical subsystem is reduced to an effective boundary component and then re-embedded into a larger system, which declared higher-level response quantities are preserved exactly, approximately, or poorly across an ordinary coupling/frequency landscape?",
+  "native_comparator_context": {
+    "exact_reference": "unreduced full dynamic-stiffness response",
+    "exact_reduction": "nested frequency-domain Schur condensation",
+    "approximate_comparator_1": "Guyan-style static condensation transformed consistently for mass, stiffness, and damping",
+    "approximate_comparator_2": "one-internal-mode truncated modal resolvent",
+    "not_claimed_as_new": [
+      "Schur condensation",
+      "dynamic substructuring",
+      "component mode synthesis",
+      "static condensation",
+      "modal tracking",
+      "surface or subsystem embedding"
+    ]
+  },
+  "model": {
+    "kind": "four_degree_of_freedom_linear_mechanical_chain",
+    "dof_order": [
+      "inner_0",
+      "inner_1",
+      "boundary",
+      "outer"
+    ],
+    "masses": [
+      1.0,
+      1.3,
+      0.9,
+      1.1
+    ],
+    "ground_stiffness": [
+      2.4,
+      1.9,
+      1.5,
+      1.1
+    ],
+    "inner1_boundary_coupling": 0.75,
+    "rayleigh_damping_alpha": 0.03,
+    "rayleigh_damping_beta": 0.015,
+    "internal_coupling_values": [
+      0.15,
+      0.5,
+      1.0,
+      2.0
+    ],
+    "boundary_outer_coupling_values": [
+      0.0,
+      0.2,
+      0.8,
+      1.6
+    ]
+  },
+  "frequency_grid": {
+    "omega_start": 0.0,
+    "omega_stop": 3.0,
+    "points": 121,
+    "units": "synthetic_angular_frequency_units"
+  },
+  "declared_higher_level_quantities": [
+    "outer compliance H_oo(omega)",
+    "group-to-outer return/self-energy Sigma_group_to_outer(omega)",
+    "outer effective dynamic stiffness D_outer_eff(omega)"
+  ],
+  "exact_closure_tests": [
+    "full inverse outer compliance versus direct one-step Schur elimination",
+    "direct one-step Schur elimination versus nested inner-then-boundary Schur elimination",
+    "direct group-to-outer return versus nested group-to-outer return"
+  ],
+  "exact_numerical_tolerance": 5e-11,
+  "exact_tolerance_role": "software/mathematical identity tolerance only; not a physical inheritance threshold",
+  "approximation_reporting": {
+    "binary_physical_pass_threshold": false,
+    "report": [
+      "relative outer-compliance error across every grid point",
+      "relative return/self-energy error across every grid point",
+      "median error",
+      "95th-percentile error",
+      "maximum error",
+      "frequency and coupling coordinates of maximum error"
+    ],
+    "rule": "No arbitrary approximation error cutoff will be introduced after inspecting the landscape. Approximate methods remain descriptive P0-D surfaces until a task-specific tolerance is independently justified."
+  },
+  "function_map_targets": [
+    "regions where exact nested closure remains numerically identical to the unreduced system",
+    "ordinary regions where approximate reductions closely follow the unreduced higher-level response",
+    "how approximation error changes with internal coupling, outer coupling, and frequency"
+  ],
+  "limit_map_targets": [
+    "frequencies/couplings where static condensation loses higher-level response fidelity",
+    "frequencies/couplings where one-mode internal truncation loses higher-level response fidelity",
+    "numerical nonidentifiability or singular/ill-conditioned regions if encountered"
+  ],
+  "controls": [
+    "boundary_outer_coupling=0 control, where the lower subsystem cannot alter the outer response through the removed coupling path",
+    "all grid cases retained",
+    "no Atlas coordinate or chi used for parameter selection",
+    "no system scalar chi constructed"
+  ],
+  "expected_method_truth": {
+    "nested_exact_schur_should_match_direct_full_elimination": true,
+    "guyan_and_one_mode_approximations_are_not_expected_to_be_exact_over_the_full_frequency_landscape": true,
+    "approximation_ordering_predeclared": false
+  },
+  "promotion_ceiling": "P0_D_DESCRIPTIVE_OR_STRUCTURAL_METHOD_LANDSCAPE"
+}
