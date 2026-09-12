@@ -44,7 +44,7 @@ jobs:
           } > substrate_inheritance/results/validation_environment.txt
           cat substrate_inheritance/results/validation_environment.txt
 
-      - name: Validate SI-next v0.4 protocol documents and FM4 plan
+      - name: Validate SI-next v0.4 protocol documents and Function Map plans
         run: |
           python - <<'PY'
           import json
@@ -55,6 +55,7 @@ jobs:
           readiness = json.loads(Path("substrate_inheritance/PHYSICAL_INPUT_READINESS_v0.2.json").read_text())
           function_map = json.loads(Path("substrate_inheritance/SI_FUNCTION_LIMIT_MAP_PLAN_v0.1.json").read_text())
           fm4 = json.loads(Path("substrate_inheritance/SI_FM4_HIERARCHICAL_CLOSURE_PLAN_v0.1.json").read_text())
+          fm1 = json.loads(Path("substrate_inheritance/SI_FM1_COUPLING_RESPONSE_PLAN_v0.1.json").read_text())
 
           assert candidate["version"] == "0.4-candidate"
           assert candidate["status"] == "NON_AUTHORITATIVE_P0Q_CANDIDATE"
@@ -83,6 +84,7 @@ jobs:
           assert function_map["global_firewalls"]["no_master_score"] is True
           assert function_map["global_firewalls"]["function_map_is_mechanistic_confirmation"] is False
           assert function_map["next_execution_order"][0] == "FM4_HIERARCHICAL_CLOSURE_LANDSCAPE"
+          assert function_map["next_execution_order"][1] == "FM1_COUPLING_RESPONSE_LANDSCAPE"
 
           assert fm4["schema"] == "substrate-inheritance-fm4-hierarchical-closure-plan-v0.1"
           assert fm4["status"] == "P0_D_EXPLORATORY_FUNCTION_AND_LIMIT_MAPPING"
@@ -91,7 +93,18 @@ jobs:
           assert fm4["approximation_reporting"]["binary_physical_pass_threshold"] is False
           assert fm4["expected_method_truth"]["approximation_ordering_predeclared"] is False
           assert fm4["controls"][1] == "all grid cases retained"
-          print("SI-next v0.4 and FM4 protocol document guards passed")
+
+          assert fm1["schema"] == "substrate-inheritance-fm1-coupling-response-plan-v0.1"
+          assert fm1["status"] == "P0_D_EXPLORATORY_FUNCTION_AND_LIMIT_MAPPING"
+          assert fm1["mfr14_activated"] is False
+          assert fm1["physical_inheritance_claim"] is False
+          assert fm1["reporting"]["binary_physical_pass_threshold"] is False
+          assert fm1["reporting"]["report_every_case"] is True
+          assert len(fm1["model"]["coupling_scale_values"]) == 6
+          assert len(fm1["model"]["carrier_geometry_angle_values_radians"]) == 6
+          assert fm1["controls"][3] == "all 36 theta-by-coupling cases retained"
+          assert fm1["carrier_metrics"]["frequency_only_comparator_role"].startswith("simple native baseline")
+          print("SI-next v0.4 FM4 and FM1 protocol document guards passed")
           PY
 
       - name: Run adversarial unit and benchmark tests
@@ -138,6 +151,9 @@ jobs:
 
       - name: Run FM4 hierarchical closure landscape
         run: python -m substrate_inheritance.hierarchical_closure_validation
+
+      - name: Run FM1 coupling response landscape
+        run: python -m substrate_inheritance.coupling_response_landscape
 
       - name: Verify outputs are explicitly non-physical
         run: |
@@ -237,7 +253,26 @@ jobs:
           assert fm4["atlas_used_for_parameter_selection"] is False
           assert fm4["real_system_evidence"] is False
           assert fm4["physical_inheritance_claim"] is False
-          print("Synthetic evidence and GP v0.7.4 FM4 guards passed")
+
+          fm1 = json.loads(Path("substrate_inheritance/results/SI_FM1_COUPLING_RESPONSE_RESULTS_v0.1.json").read_text())
+          assert fm1["schema"] == "substrate-inheritance-fm1-coupling-response-result-v0.1"
+          assert fm1["scope"] == "synthetic_si_fm1_coupling_response_landscape_p0d_only"
+          assert fm1["status"] == "P0_D_DESCRIPTIVE_OR_STRUCTURAL_FUNCTION_LIMIT_LANDSCAPE"
+          assert fm1["experiment_plan"] == "SI_FM1_COUPLING_RESPONSE_PLAN_v0.1.json"
+          assert fm1["case_count"] == 36
+          assert fm1["same_spectrum_control"]["maximum_clean_substrate_eigenvalue_error_across_geometry_angles"] < 1e-12
+          assert fm1["zero_coupling_controls"]["maximum_embedded_response_curve_norm"] < 1e-14
+          assert fm1["zero_coupling_controls"]["maximum_coupling_rewire_relative_curve_change"] < 1e-14
+          assert fm1["zero_coupling_controls"]["maximum_intervention_derivative_magnitude"] < 1e-12
+          assert abs(fm1["origin_control"]["carrier_assignment_mean_overlap"] - 1.0) < 1e-12
+          assert fm1["system_scalar_chi_constructed"] is False
+          assert fm1["master_relationship_score_constructed"] is False
+          assert fm1["atlas_used_for_parameter_selection"] is False
+          assert fm1["reporting_firewall"]["binary_physical_pass_threshold_applied"] is False
+          assert fm1["reporting_firewall"]["post_result_favorable_region_promoted"] is False
+          assert fm1["real_system_evidence"] is False
+          assert fm1["physical_inheritance_claim"] is False
+          print("Synthetic evidence and GP v0.7.4 FM4/FM1 guards passed")
           PY
 
       - name: Upload synthetic validation records
@@ -267,4 +302,13 @@ jobs:
           path: |
             substrate_inheritance/SI_FM4_HIERARCHICAL_CLOSURE_PLAN_v0.1.json
             substrate_inheritance/results/SI_FM4_HIERARCHICAL_CLOSURE_RESULTS_v0.1.json
+            substrate_inheritance/results/validation_environment.txt
+
+      - name: Upload FM1 coupling response landscape
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: substrate-inheritance-fm1-coupling-response-v01
+          path: |
+            substrate_inheritance/SI_FM1_COUPLING_RESPONSE_PLAN_v0.1.json
+            substrate_inheritance/results/SI_FM1_COUPLING_RESPONSE_RESULTS_v0.1.json
             substrate_inheritance/results/validation_environment.txt
