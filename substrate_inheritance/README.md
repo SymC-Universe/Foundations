@@ -8,9 +8,9 @@ Current-status authority: this README, the frozen v0.2 physical-promotion contra
 
 ## Project control
 
-STATUS | Frozen v0.2 physical route unchanged; SI-next v0.4 is a P0-Q candidate; no real-system inheritance result is established.
+STATUS | GP v0.7.4 migration is qualified; frozen v0.2 physical route is unchanged; FM4 hierarchical-closure P0-D mapping and the initial targeted literature collision are complete; no real-system inheritance result is established.
 PURPOSE | Determine when independently characterized parent/substrate organization predicts, transforms, or fails to predict carrier-resolved child/coupled-system organization, without confusing generic influence with inheritance.
-NEXT ACTION | Qualify the v0.4 semantic update in CI, then resume the P0-D Function/Limit investigation beginning with hierarchical closure and literature collision of the independently preserved experimental game plans.
+NEXT ACTION | Continue the P0-D Function/Limit investigation with `FM1_COUPLING_RESPONSE_LANDSCAPE`, mapping the ordinary supported interior of coupling, carrier correspondence, participation, embedded response, intervention response, and specificity before returning to later lineage/depth/recovery maps.
 USER ACTION | NONE.
 
 ## System Model and Engine
@@ -114,6 +114,8 @@ The v0.4 candidate adds or clarifies:
 
 The v0.4 candidate may not rescue, promote, demote, re-score, or reinterpret any physical target frozen under v0.2.
 
+The v0.4 semantic candidate was qualified in CI without changing frozen v0.2 science. Run `34698958008` completed successfully before the subsequent FM4 extension; the current FM4-integrated validation also remains green.
+
 ## Hierarchical closure
 
 A lower-scale coupled system can be reused as an effective higher-scale component only when it preserves the quantities required by the declared higher-level question in a stated validity regime.
@@ -129,6 +131,18 @@ Allowed candidate statuses are:
 Possible preservation targets include poles/eigenvalues or invariant subspaces, transfer response, perturbation propagation, feedback return, transition boundaries, recovery order/timescale, finite-time amplification, and decision-relevant uncertainty.
 
 Passing this gate means only that the required higher-level information was preserved in the tested regime. It does not imply microscopic completeness.
+
+### FM4 P0-D result
+
+`SI_FM4_HIERARCHICAL_CLOSURE_PLAN_v0.1.json` tested exact and approximate grouping/re-embedding across 16 coupling cases and 121 frequencies per case, retaining 1,936 records.
+
+For the declared synthetic linear response quantities, full-system, direct Schur, and nested Schur calculations agreed with a maximum exact identity error of approximately `1.87e-14`, well inside the frozen `5e-11` software/mathematical tolerance. The zero outer-coupling control produced zero group return.
+
+Approximate closure was strongly regime dependent. Guyan-style static condensation had a small median outer-compliance relative error but a 95th-percentile error above one and a maximum above ten in this landscape. The one-internal-mode dynamic approximation performed better over much of this particular grid but still reached an outer-compliance relative error close to one and multi-fold return/self-energy error in its worst regions.
+
+No physical adequacy cutoff and no approximation ordering were introduced after inspection. The result therefore remains a P0-D Function/Limit map rather than an inherited physical threshold or a universal reduction claim.
+
+See `SI_FM4_HIERARCHICAL_CLOSURE_SUMMARY_v0.1.md` for the complete numerical summary.
 
 ## Recovery and resilience
 
@@ -177,7 +191,8 @@ The current engine and validation suite implement:
 - a fail-closed real-system mechanical ingestion adapter;
 - promotion logic that distinguishes influence, conditional inheritance, and inheritance;
 - SI-next relationship/uncertainty/lineage/multi-parent diagnostics;
-- GP v0.7.4 candidate semantic guards for NOT_APPLICABLE views, Atlas leakage, system-scalar aggregation, hierarchical closure, recovery semantics, and cross-scale scope.
+- GP v0.7.4 candidate semantic guards for NOT_APPLICABLE views, Atlas leakage, system-scalar aggregation, hierarchical closure, recovery semantics, and cross-scale scope;
+- exact and approximate hierarchical-closure Function/Limit mapping.
 
 ### Hardened reference validation
 
@@ -187,7 +202,9 @@ That run used CPython 3.12.14 on Ubuntu 24.04 with validation dependencies pinne
 
 This is a fixed reference milestone, not a moving claim that the cited run will always be the most recent CI execution. Later successful CI runs are additional regression/qualification evidence unless a new reference milestone is explicitly recorded.
 
-These are software, mathematical, synthetic, identifiability, robustness, channel-separation, and ingestion-boundary results. They are not physical substrate-inheritance evidence.
+The FM4-integrated candidate validation at head `0603ff5ef3b449a97f08cf32b78eb01fc691f89d` completed successfully in run `34699314595`, with `137 passed`. The FM4 artifact is `substrate-inheritance-fm4-hierarchical-closure-v01`, artifact ID `10300070726`, SHA-256 `4b52b683e7f4635ea76ca4d1c05d8d2210589ddda8ac7dd418bad5201a33c181`. The associated synthetic-regression artifact ID is `10300145609` with SHA-256 `ff351bc208d13693ba10717eed11bec0db0100be1aacb11852d77b654d708358`.
+
+These are software, mathematical, synthetic, identifiability, robustness, channel-separation, ingestion-boundary, and P0-D method-landscape results. They are not physical substrate-inheritance evidence.
 
 ## Current computational findings
 
@@ -257,15 +274,17 @@ Detailed numerical provenance is retained in `VALIDATION_LEDGER.md`.
 
 ## Function Map and Limit Map
 
-The pre-v0.7.4 SI program is stronger on Limit Map qualification than on ordinary-function mapping. That imbalance is now explicit rather than hidden.
+The pre-v0.7.4 SI program was stronger on Limit Map qualification than on ordinary-function mapping. That imbalance is now explicit and is being corrected rather than hidden.
 
-`SI_FUNCTION_LIMIT_MAP_PLAN_v0.1.json` makes the next P0-D targets coequal:
+`SI_FUNCTION_LIMIT_MAP_PLAN_v0.1.json` defines:
 
 - coupling-response landscape;
 - embedding-depth landscape;
 - lineage-flow landscape;
 - hierarchical-closure landscape;
 - recovery/resilience landscape where licensed.
+
+FM4 hierarchical closure is now complete at P0-D. It demonstrated both a functioning interior and reduction-specific limit regions. FM1 coupling response is next so the program continues mapping ordinary supported organization rather than drifting back toward limit-only scrutiny.
 
 Function-map outputs remain descriptive or structural by default. A rich functioning landscape does not itself establish mechanism or physical inheritance.
 
@@ -296,23 +315,30 @@ Barrier height, reaction rate, damping morphology, turnover, transmission, excep
 
 ## Experimental opportunity and literature collision
 
-`SI_EXPERIMENTAL_OPPORTUNITY_v0.1.md` preserves independent experimental game plans before the targeted prior-experiment search. Candidate questions include:
+`SI_EXPERIMENTAL_OPPORTUNITY_v0.1.md` preserved independent experimental game plans before the targeted prior-experiment search.
 
-- carrier-resolved vibrational inheritance across clean substrate -> adsorbate-coupled system;
-- depth/thickness inheritance and hierarchical closure;
-- a controlled coupled-oscillator analogue for method qualification only;
-- multi-parent source attribution;
-- qualified rare/extreme limit probes.
+The initial targeted collision is now recorded in `SI_LITERATURE_COLLISION_v0.1.md`. It found substantial prior art for:
 
-The literature collision now determines what has already been answered, what established methods should be inherited, what residual question remains, and whether any new physical experiment is justified.
+- adsorbate-substrate vibrational coupling and hybridization;
+- isotope controls separating coupling effects from simpler frequency/chemical shifts;
+- substrate excitation followed by adsorbate vibrational response;
+- modal-vector comparison, mode tracking, clustered-subspace handling, and modal-correlation uncertainty;
+- static/dynamic substructuring, component-mode synthesis, and input-output model reduction;
+- surface Green-function and embedding methods.
+
+Those primitives are therefore inherited native science, not SI novelty targets.
+
+The residual question has narrowed to whether an independently characterized parent/substrate architecture provides prospectively useful, uncertainty-aware, carrier-resolved information about a child/coupled system beyond ordinary frequency matching or generic coupling influence, and which declared higher-level quantities remain preserved after grouping/re-embedding.
 
 A physical analogue validates only the shared mathematical/measurement property. It cannot by itself validate another domain's physical interpretation.
 
 ## Attribution and novelty
 
-`SI_ATTRIBUTION_RESIDUAL_NOVELTY_LEDGER_v0.1.md` prevents broad novelty language before nearest-prior-art accounting.
+`SI_ATTRIBUTION_RESIDUAL_NOVELTY_LEDGER_v0.2.md` records the first post-collision adjudication.
 
-Established mathematics and methods receive their own credit. Any SI novelty claim is limited to residual formalization, integration, predictive rule, validation, or tool utility that remains after the literature collision.
+Established methods receive their own credit. SI does not claim novelty for Schur/static condensation, dynamic substructuring, Component Mode Synthesis, Green-function embedding, MAC/mode tracking, clustered-subspace methods, or the generic existence of adsorbate-substrate coupling.
+
+Any future SI novelty claim is limited to residual formalization, evidence architecture, predictive rule, validation, hierarchical-closure question, or measurable tool utility that remains after deeper nearest-prior-art accounting and prospective testing.
 
 ## Non-Markovian and bath rule
 
@@ -354,16 +380,18 @@ Current program status is an ongoing investigation aimed at developing computati
 
 ## Current branch status
 
-- General Protocol audit: v0.7.4 audit recorded.
+- General Protocol audit: v0.7.4 audit recorded and migration qualified.
 - Frozen physical correspondence definitions: v0.2, unchanged.
 - Frozen real-system input contract: v0.2, unchanged.
-- SI-next candidate architecture: v0.4 P0-Q, non-authoritative.
-- V1-V10 synthetic/mathematical validation: PASS at the retained reference milestone.
-- Fail-closed ingestion adapter validation: PASS at the retained reference milestone.
+- SI-next candidate architecture: v0.4 P0-Q, non-authoritative, semantic qualification green.
+- V1-V10 synthetic/mathematical validation: PASS at the retained reference milestone and current regression run.
+- Fail-closed ingestion adapter validation: PASS.
 - SI-next v0.3 candidate qualification: historical P0-Q evidence, not physical evidence.
-- SI-next v0.4 semantic qualification: pending/current CI until a successful run is recorded.
-- Function/Limit P0-D plan: active.
-- Experimental opportunity plan: preserved before targeted literature collision.
+- SI-next v0.4 semantic qualification: PASS as P0-Q method/governance qualification only.
+- Initial experimental literature collision: complete; residual question narrowed, not declared novel.
+- FM4 hierarchical-closure Function/Limit map: complete at P0-D.
+- Current full validation: run `34699314595`, `137 passed`, conclusion `success`.
+- Function/Limit P0-D program: active; FM1 is next.
 - Physical inheritance thresholds: not frozen.
 - Real-system inheritance result: not established.
 - Universal inheritance claim: not established and not a program target.
