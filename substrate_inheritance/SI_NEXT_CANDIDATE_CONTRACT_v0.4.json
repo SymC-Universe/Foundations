@@ -1,0 +1,184 @@
+{
+  "name": "Substrate Inheritance SI-next candidate architecture",
+  "version": "0.4-candidate",
+  "status": "NON_AUTHORITATIVE_P0Q_CANDIDATE",
+  "general_protocol": "General Cross-Project Research Protocol v0.7.4 FINAL",
+  "supersedes_candidate": "SI_NEXT_CANDIDATE_CONTRACT_v0.3.json",
+  "base_contract": "frozen v0.2 substrate-inheritance program",
+  "science_firewall": {
+    "v0.2_promotion_gates_changed": false,
+    "v0.2_physical_thresholds_changed": false,
+    "co_cu111_scoring_changed": false,
+    "retroactive_reinterpretation_allowed": false,
+    "candidate_output_may_override_v0.2_label": false,
+    "candidate_output_is_physical_confirmation": false,
+    "rule": "Any physical target already frozen under v0.2 remains judged only under its preregistered v0.2 contract. SI-next v0.4 outputs are additional P0 diagnostics and cannot rescue, promote, demote, or reinterpret that target."
+  },
+  "maturity": {
+    "candidate_architecture": "P0-Q",
+    "function_limit_mapping": "P0-D",
+    "p1_confirmation_activated": false,
+    "mfr14_activated": false
+  },
+  "representation_policy": {
+    "starting_reporting_slots": [
+      "scalar",
+      "modal",
+      "conglomeration"
+    ],
+    "starting_slots_are_exhaustive_ontology": false,
+    "all_slots_must_be_physically_instantiated": false,
+    "not_applicable_allowed": true,
+    "additional_architectural_objects_allowed": true,
+    "open_channel_required": true,
+    "system_scalar_required": false,
+    "lower_level_scalar_average_may_define_system_scalar": false,
+    "rule": "Scalar, modal, and conglomeration are starting representations. A slot may be explicitly NOT_APPLICABLE. A system scalar requires an independent native derivation and cannot be manufactured from local scalar values for completeness or Atlas convenience."
+  },
+  "relationship_states": [
+    "CROSS_VIEW_COHERENCE",
+    "SCALAR_ONLY",
+    "MODAL_ONLY",
+    "CONGLOMERATION_ONLY",
+    "SCALAR_MODAL_WITHOUT_CONGLOMERATION",
+    "SCALAR_CONGLOMERATION_WITHOUT_MODAL",
+    "MODAL_CONGLOMERATION_WITHOUT_SCALAR",
+    "SINGLE_APPLICABLE_VIEW_SUPPORTED",
+    "NO_APPLICABLE_VIEW_SUPPORT",
+    "NO_VIEW_SUPPORT",
+    "RELATIONSHIP_UNRESOLVED"
+  ],
+  "view_states": [
+    "SUPPORTED",
+    "DISRUPTED",
+    "NONIDENTIFIABLE",
+    "NOT_MEASURED",
+    "NOT_APPLICABLE"
+  ],
+  "relational_stability": {
+    "local_identity_separate_from_embedded_behavior": true,
+    "minimum_audit_objects_where_applicable": [
+      "local_or_intrinsic_subsystem_model",
+      "outward_coupling_or_signal",
+      "environment_or_connected_system_transformation",
+      "feedback_or_return",
+      "embedded_or_closed_loop_model",
+      "surviving_transformed_disappearing_or_emergent_properties"
+    ],
+    "isolated_component_properties_sufficient_for_system_claim": false,
+    "atlas_may_define_or_tune_coordinate": false,
+    "atlas_may_define_or_tune_mapping": false
+  },
+  "audit_dimension_policy": {
+    "separate_where_applicable": [
+      "object_existence_or_admission",
+      "participation_or_contribution",
+      "observability",
+      "identifiability",
+      "coordinate_estimation",
+      "regime_or_branch_placement",
+      "uncertainty_or_tolerance",
+      "final_admission_or_refusal"
+    ],
+    "weak_observability_equals_physical_absence": false,
+    "strong_participation_implies_identifiability": false,
+    "coordinate_estimate_implies_resolved_regime": false
+  },
+  "lineage": {
+    "purpose": "Track carrier correspondence across multiple parent-child transitions while retaining persistence, splitting, mixing, reconvergence, extinction, uncertainty, and NOT_APPLICABLE structure.",
+    "promotion_semantics": false,
+    "tie_policy": "Exact top-score ties are NONIDENTIFIABLE and are not broken arbitrarily.",
+    "uncertainty_policy": "A unique dominant correspondence is not called identifiable unless a supplied uncertainty bound is smaller than its dominance margin. Interval-resolved identification additionally requires one candidate lower bound to exceed every competitor upper bound.",
+    "flow_policy": "Row-normalized multi-generation correspondence flow is descriptive only. It is not probability, causal fraction, inheritance percentage, a system scalar, or a promotion score.",
+    "threshold_policy": "No physical correspondence threshold is introduced by this candidate; uncertainty bounds must come from the relevant measurement or numerical analysis."
+  },
+  "multi_parent_attribution": {
+    "purpose": "Measure source-specific and interaction-specific response contributions when multiple candidate parents are present.",
+    "methods": [
+      "leave-one-source-out ablation",
+      "subset inclusion-exclusion main effects",
+      "pair interaction terms",
+      "higher-order residual retention",
+      "bounded exhaustive subset Mobius decomposition for exact higher-order interactions"
+    ],
+    "normalization_policy": "Source effects are not forced to sum to one because interactions may be real and non-additive.",
+    "exhaustive_decomposition_policy": "Exact Mobius decomposition evaluates every source subset and therefore uses an explicit default source-count guard of 10. The guard is computational, not physical.",
+    "promotion_semantics": false
+  },
+  "hierarchical_closure": {
+    "gate_required_when_effective_subsystem_is_reused_at_higher_scale": true,
+    "required_record_fields": [
+      "higher_level_question",
+      "validity_regime",
+      "preservation_targets",
+      "unreduced_or_independent_reference",
+      "reduced_representation",
+      "uncertainty_or_tolerance",
+      "closure_status"
+    ],
+    "allowed_statuses": [
+      "HIERARCHICAL_REDUCTION_SUPPORTED_IN_REGIME",
+      "PARTIAL_HIERARCHICAL_CLOSURE",
+      "HIERARCHICAL_REDUCTION_FAILED",
+      "UNRESOLVED",
+      "NOT_APPLICABLE"
+    ],
+    "passing_implies_microscopic_completeness": false
+  },
+  "recovery_resilience": {
+    "separate_from_state_classification": true,
+    "separate_outputs_where_applicable": [
+      "current_state",
+      "stability_characterization",
+      "perturbation_response",
+      "recovery_or_reorganization",
+      "resilience_erosion"
+    ],
+    "asymptotic_return_equals_finite_time_resilience": false,
+    "universal_resilience_metric_introduced": false
+  },
+  "cross_scale_firewall": {
+    "distinct_claim_levels": [
+      "repeated_mathematical_motif",
+      "preserved_architecture_across_grouping_or_scale",
+      "common_physical_mechanism",
+      "common_numerical_chi_region"
+    ],
+    "automatic_promotion_between_levels": false,
+    "universal_claim_from_finite_recurrence_allowed": false
+  },
+  "function_limit_balance": {
+    "function_map_and_limit_map_coequal": true,
+    "function_map_default_status": "DESCRIPTIVE_OR_STRUCTURAL_P0D",
+    "ordinary_supported_regions_required_when_feasible": true,
+    "rare_or_extreme_cases_are_default_center": false,
+    "rare_or_extreme_cases_role": "qualified_limit_probe_only_unless_the_scientific_question_requires_otherwise"
+  },
+  "experimental_opportunity": {
+    "required_sequence_for_substantial_directly_testable_questions": [
+      "baseline_native_science_orientation",
+      "independent_experimental_game_plan_preserved",
+      "targeted_prior_experiment_literature_collision",
+      "residual_question_isolation",
+      "experiment_disposition",
+      "prospective_physical_test_only_if_residual_question_remains"
+    ],
+    "literature_may_retroactively_create_independent_game_plan": false
+  },
+  "attribution_novelty": {
+    "nearest_legitimate_prior_art_required_before_major_novelty_claim": true,
+    "residual_contribution_only": true,
+    "no_close_precedent_found_proves_novelty": false,
+    "venue_prestige_may_erase_legitimate_priority_work": false
+  },
+  "run_economy": {
+    "small_current_synthetic_ci_requires_heavy_release_orchestration": false,
+    "future_substantial_compute_requires_preflight": true,
+    "future_substantial_compute_requires_representative_pilot": true,
+    "future_substantial_compute_requires_bounded_retry_logic": true,
+    "future_substantial_compute_requires_resumable_checkpointing": true,
+    "future_asynchronous_compute_requires_supersession_guard_where_supported": true
+  },
+  "evidence_scope": "software, mathematical, synthetic, P0-D, and P0-Q architecture validation only until independently frozen real-system inputs are available",
+  "physical_inheritance_claim": false
+}
