@@ -1,0 +1,42 @@
+{
+  "schema": "substrate-inheritance-fm2-execution-freeze-v0.1",
+  "date": "2026-09-13",
+  "status": "P0_D_PREEXECUTION_NUMERICAL_FREEZE",
+  "parent_plan": "substrate_inheritance/SI_FM2_EMBEDDING_DEPTH_PLAN_v0.1.json",
+  "parameter_overrides": false,
+  "finite_method_agreement": {
+    "object": "surface Green function from direct matrix solve versus recursive continued fraction at every finite depth",
+    "absolute_tolerance": 1e-09,
+    "failure_disposition": "NUMERICAL_VERIFICATION_FAILURE",
+    "role": "software/mathematical consistency check only, not a physical threshold"
+  },
+  "semi_infinite_reference": {
+    "method": "analytic stable-root surface Green function",
+    "selection_rule": "choose the quadratic root with smaller magnitude, matching the stable continued-fraction branch",
+    "post_result_root_switching_allowed": false
+  },
+  "conditioning": {
+    "report_matrix_2norm_condition_number": true,
+    "condition_number_is_physical_failure_threshold": false,
+    "automatic_case_deletion_from_condition_number": false
+  },
+  "effective_depth": {
+    "use_parent_plan_tolerances_only": true,
+    "require_current_and_all_deeper_listed_depths_to_remain_within_tolerance": true,
+    "single_early_crossing_counts_as_converged": false,
+    "post_result_tolerance_addition_for_current_map": false
+  },
+  "completeness": {
+    "retain_all_384_depth_records": true,
+    "retain_all_48_hopping_probe_cases": true,
+    "retain_nonmonotonic_error_sequences": true,
+    "retain_not_reached_states": true
+  },
+  "firewalls": {
+    "imaginary_probe_is_damping": false,
+    "numerical_effective_depth_is_physical_inheritance_length": false,
+    "atlas_used": false,
+    "chi_used": false,
+    "physical_inheritance_claim": false
+  }
+}
