@@ -8,9 +8,9 @@ Current-status authority: this README, the frozen v0.2 physical-promotion contra
 
 ## Project control
 
-STATUS | GP v0.7.4 migration is qualified; frozen v0.2 physical route is unchanged; FM4 hierarchical-closure P0-D mapping and the initial targeted literature collision are complete; no real-system inheritance result is established.
+STATUS | GP v0.7.4 migration is qualified; frozen v0.2 physical route is unchanged; FM4 hierarchical closure, FM1 coupling response, FM3 lineage flow, and FM2 embedding depth are complete at P0-D; no real-system inheritance result is established.
 PURPOSE | Determine when independently characterized parent/substrate organization predicts, transforms, or fails to predict carrier-resolved child/coupled-system organization, without confusing generic influence with inheritance.
-NEXT ACTION | Continue the P0-D Function/Limit investigation with `FM1_COUPLING_RESPONSE_LANDSCAPE`, mapping the ordinary supported interior of coupling, carrier correspondence, participation, embedded response, intervention response, and specificity before returning to later lineage/depth/recovery maps.
+NEXT ACTION | Complete the frozen Function/Limit sequence with `FM5_RECOVERY_RESILIENCE_LANDSCAPE`, separating asymptotic return from finite-time amplification and retaining nonreturn, reorganization, and refusal states where the synthetic native model produces them.
 USER ACTION | NONE.
 
 ## System Model and Engine
@@ -114,7 +114,7 @@ The v0.4 candidate adds or clarifies:
 
 The v0.4 candidate may not rescue, promote, demote, re-score, or reinterpret any physical target frozen under v0.2.
 
-The v0.4 semantic candidate was qualified in CI without changing frozen v0.2 science. Run `34698958008` completed successfully before the subsequent FM4 extension; the current FM4-integrated validation also remains green.
+The v0.4 semantic candidate was qualified in CI without changing frozen v0.2 science. Run `34698958008` completed successfully before the subsequent Function/Limit extensions. Later dedicated FM1, FM3, and FM2 workflows also completed successfully under their frozen P0-D records.
 
 ## Hierarchical closure
 
@@ -192,17 +192,25 @@ The current engine and validation suite implement:
 - promotion logic that distinguishes influence, conditional inheritance, and inheritance;
 - SI-next relationship/uncertainty/lineage/multi-parent diagnostics;
 - GP v0.7.4 candidate semantic guards for NOT_APPLICABLE views, Atlas leakage, system-scalar aggregation, hierarchical closure, recovery semantics, and cross-scale scope;
-- exact and approximate hierarchical-closure Function/Limit mapping.
+- exact and approximate hierarchical-closure Function/Limit mapping;
+- coupling-response Function/Limit mapping with same-spectrum, zero-coupling, intervention, and rewire controls;
+- multi-generation lineage Function/Limit mapping with direct-reconvergence and uncertainty-envelope stress tests;
+- task-dependent finite-depth embedding Function/Limit mapping against an analytic semi-infinite parent reference.
 
 ### Hardened reference validation
 
 The fixed reproducibility reference for the frozen v0.2-era 62-test method suite is commit `9a1f357e73a27e532c755649568dde8af0b229cd`, GitHub Actions run `33292821080`, conclusion `success`. The archived artifact is `substrate-inheritance-synthetic-validation`, artifact ID `9726488007`, ZIP SHA-256 `332e5c463c597015a5cbe832b84ce8843be4eef688c8f62ca2e3ef4df18b7635`.
 
-That run used CPython 3.12.14 on Ubuntu 24.04 with validation dependencies pinned in `requirements-validation.txt`; `pip check` reported no broken requirements. The uploaded artifact contains the realized runtime environment in `validation_environment.txt`. The workflow also pins external GitHub Actions by commit SHA. See `VALIDATION_ENVIRONMENT.md` for the environment and change-control rule.
+That run used CPython 3.12.14 on Ubuntu 24.04 with the validation dependencies pinned in `requirements-validation.txt`; `pip check` reported no broken requirements. The uploaded artifact contains the realized runtime environment in `validation_environment.txt`. The workflow also pins external GitHub Actions by commit SHA. See `VALIDATION_ENVIRONMENT.md` for the environment and change-control rule.
 
 This is a fixed reference milestone, not a moving claim that the cited run will always be the most recent CI execution. Later successful CI runs are additional regression/qualification evidence unless a new reference milestone is explicitly recorded.
 
-The FM4-integrated candidate validation at head `0603ff5ef3b449a97f08cf32b78eb01fc691f89d` completed successfully in run `34699314595`, with `137 passed`. The FM4 artifact is `substrate-inheritance-fm4-hierarchical-closure-v01`, artifact ID `10300070726`, SHA-256 `4b52b683e7f4635ea76ca4d1c05d8d2210589ddda8ac7dd418bad5201a33c181`. The associated synthetic-regression artifact ID is `10300145609` with SHA-256 `ff351bc208d13693ba10717eed11bec0db0100be1aacb11852d77b654d708358`.
+Dedicated current P0-D map records include:
+
+- FM4 hierarchical closure: summary in `SI_FM4_HIERARCHICAL_CLOSURE_SUMMARY_v0.1.md`;
+- FM1 coupling response: run `34699663974`, `149 passed` in the then-current full validation, dedicated artifact ID `10300106281`, artifact SHA-256 `f34d2dfa48a22d70b6b8cf14d63a13fc0f0321843bfb65fcdf0a257f738586db`;
+- FM3 lineage flow: dedicated run `34756644076`, `6 passed`, artifact ID `10317572637`, artifact SHA-256 `21e4c21b318cd86cc1ed83ecf05d242ebc26d705f7c1b270fec8ac2c5e320049`;
+- FM2 embedding depth: dedicated run `34756837555`, `5 passed`, artifact ID `10317721694`, artifact SHA-256 `b897ddf7a70c21949bf93b689a59c20d62c2474c7d73bb6cc09cb7fb43a60d65`.
 
 These are software, mathematical, synthetic, identifiability, robustness, channel-separation, ingestion-boundary, and P0-D method-landscape results. They are not physical substrate-inheritance evidence.
 
@@ -238,9 +246,11 @@ For a near-degenerate two-mode sector with gap approximately `1e-8`, tiny pertur
 
 ### Synthetic inheritance depth
 
-A finite substrate-chain embedding was compared against an analytic semi-infinite surface Green function. In the reference synthetic case, relative self-energy error fell from approximately `5.40e-2` at depth 1 to `3.07e-3` at depth 2, `1.00e-5` at depth 4, `1.06e-10` at depth 8, and machine scale by depth 16. Stronger synthetic inter-site coupling required greater retained depth.
+A finite substrate-chain embedding was compared against an analytic semi-infinite surface Green function. In the original reference synthetic case, relative self-energy error fell from approximately `5.40e-2` at depth 1 to `3.07e-3` at depth 2, `1.00e-5` at depth 4, `1.06e-10` at depth 8, and machine scale by depth 16. Stronger synthetic inter-site coupling required greater retained depth.
 
-These depths are model sizes, not physical inheritance lengths for any material. The calculation validates the method that will later ask how much substrate must be retained before a real child embedding response converges.
+FM2 has now expanded this into a 48-case Function/Limit landscape with 384 depth records. The retained depth required for a declared numerical task is strongly task- and regime-dependent: at relative error `0.1`, median effective depth is 1 and maximum 32; at `1e-4`, median is 4 and maximum 64. Two cases showed non-monotonic finite-depth error, validating the pre-frozen rule that convergence requires the selected depth and all deeper listed depths to remain within tolerance.
+
+These depths are model sizes for the declared synthetic reduction task, not physical inheritance lengths for any material.
 
 ### Carrier-discriminability failure boundary
 
@@ -253,6 +263,16 @@ This is a method failure-boundary study, not a calibration of a physical inherit
 In a synthetic non-normal generator family, increasing non-normality made distinct right eigenvectors nearly parallel. At shear `30`, the maximum off-diagonal squared right-vector overlap was approximately `0.99889` while the right-eigenvector condition number reached approximately `1925.74`. In a separate near-defective family, the condition number increased to approximately `10000` as the eigenvalue gap collapsed to approximately `0.0002`.
 
 The scale-invariant biorthogonal correspondence remained invariant under a common similarity transformation at machine scale. This establishes that future non-normal physical records must carry left and right carriers or invariant projectors/subspaces plus conditioning, and may require a refusal near defectiveness.
+
+### Multi-generation lineage-flow limitation
+
+FM3 held the scalar spectrum fixed while transforming carrier geometry across multiple generations and then returned the exact final carrier basis to the starting basis.
+
+Direct start-to-final carrier correspondence reconverged exactly to identity, with zero exact reconvergence error. Sequential row-normalized relative lineage flow did not generally recover that same end state: the exact flow-versus-direct L1 discrepancy had median approximately `0.43986` and maximum `1.25` across the frozen map.
+
+This is retained as a method limitation. Relative lineage flow remains useful for descriptive local split/mix tracking, but it is not a complete conserved lineage state and may not be interpreted as physical lineage loss when direct carrier/subspace geometry demonstrates reconvergence.
+
+See `SI_FM3_LINEAGE_FLOW_SUMMARY_v0.1.md`.
 
 ### Separate electronic channel
 
@@ -284,7 +304,15 @@ The pre-v0.7.4 SI program was stronger on Limit Map qualification than on ordina
 - hierarchical-closure landscape;
 - recovery/resilience landscape where licensed.
 
-FM4 hierarchical closure is now complete at P0-D. It demonstrated both a functioning interior and reduction-specific limit regions. FM1 coupling response is next so the program continues mapping ordinary supported organization rather than drifting back toward limit-only scrutiny.
+Current frozen sequence status:
+
+1. `FM4_HIERARCHICAL_CLOSURE_LANDSCAPE` — COMPLETE;
+2. `FM1_COUPLING_RESPONSE_LANDSCAPE` — COMPLETE;
+3. `FM3_LINEAGE_FLOW_LANDSCAPE` — COMPLETE;
+4. `FM2_EMBEDDING_DEPTH_LANDSCAPE` — COMPLETE;
+5. `FM5_RECOVERY_RESILIENCE_LANDSCAPE` — NEXT.
+
+The completed maps show both functioning interiors and method/representation limits. FM3 in particular found a limitation in sequential normalized lineage flow rather than only a favorable SI pattern. FM2 showed that retained parent depth is a declared-task and regime-dependent numerical reduction quantity rather than a single intrinsic number.
 
 Function-map outputs remain descriptive or structural by default. A rich functioning landscape does not itself establish mechanism or physical inheritance.
 
@@ -380,18 +408,20 @@ Current program status is an ongoing investigation aimed at developing computati
 
 ## Current branch status
 
-- General Protocol audit: v0.7.4 audit recorded and migration qualified.
+- General Protocol audit: v0.7.4 migration implemented and qualified on SI-next.
 - Frozen physical correspondence definitions: v0.2, unchanged.
 - Frozen real-system input contract: v0.2, unchanged.
 - SI-next candidate architecture: v0.4 P0-Q, non-authoritative, semantic qualification green.
-- V1-V10 synthetic/mathematical validation: PASS at the retained reference milestone and current regression run.
+- V1-V10 synthetic/mathematical validation: PASS at the retained reference milestone and current regression lineage.
 - Fail-closed ingestion adapter validation: PASS.
 - SI-next v0.3 candidate qualification: historical P0-Q evidence, not physical evidence.
 - SI-next v0.4 semantic qualification: PASS as P0-Q method/governance qualification only.
 - Initial experimental literature collision: complete; residual question narrowed, not declared novel.
 - FM4 hierarchical-closure Function/Limit map: complete at P0-D.
-- Current full validation: run `34699314595`, `137 passed`, conclusion `success`.
-- Function/Limit P0-D program: active; FM1 is next.
+- FM1 coupling-response Function/Limit map: complete at P0-D.
+- FM3 lineage-flow Function/Limit map: complete at P0-D; sequential normalized flow has a documented reconvergence information-loss limit.
+- FM2 embedding-depth Function/Limit map: complete at P0-D; effective depth is task/regime dependent and is not a physical inheritance length.
+- FM5 recovery/resilience Function/Limit map: next.
 - Physical inheritance thresholds: not frozen.
 - Real-system inheritance result: not established.
 - Universal inheritance claim: not established and not a program target.
