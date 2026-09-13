@@ -46,7 +46,9 @@ This is not a P1 confirmation and does not establish a real-system substrate-inh
 
 7. **Function/Limit balance**
    - `SI_FUNCTION_LIMIT_MAP_PLAN_v0.1.json` defines coequal functioning-interior and limit mapping;
-   - FM4 hierarchical closure and FM1 coupling-response mapping have now both been executed as P0-D landscapes rather than boundary-only tests.
+   - FM4 hierarchical closure, FM1 coupling response, FM3 lineage flow, and FM2 embedding depth have all now been executed as P0-D landscapes rather than boundary-only tests;
+   - FM3 retained a negative method-limit result in which sequential normalized flow lost exact end-to-end reconvergence information;
+   - FM2 retained non-monotonic finite-depth behavior and task-dependent effective reduction depth rather than forcing one depth number.
 
 8. **Cross-scale recurrence firewall**
    - repeated mathematical motif, preserved architecture across grouping, common physical mechanism, and shared numerical chi region are distinct claim classes;
@@ -81,11 +83,11 @@ The frozen P0-D execution order is:
 
 1. `FM4_HIERARCHICAL_CLOSURE_LANDSCAPE` — **COMPLETE**
 2. `FM1_COUPLING_RESPONSE_LANDSCAPE` — **COMPLETE**
-3. `FM3_LINEAGE_FLOW_LANDSCAPE` — **NEXT**
-4. `FM2_EMBEDDING_DEPTH_LANDSCAPE` — pending
-5. `FM5_RECOVERY_RESILIENCE_LANDSCAPE` — pending
+3. `FM3_LINEAGE_FLOW_LANDSCAPE` — **COMPLETE**
+4. `FM2_EMBEDDING_DEPTH_LANDSCAPE` — **COMPLETE**
+5. `FM5_RECOVERY_RESILIENCE_LANDSCAPE` — **NEXT**
 
-FM1 and FM4 are synthetic Function/Limit maps. They do not count as physical SI evidence.
+FM1-FM4 are synthetic Function/Limit maps. They do not count as physical SI evidence.
 
 ## Frozen material not changed
 
@@ -104,8 +106,6 @@ Candidate v0.4 remains non-authoritative for physical promotion and cannot rescu
 
 The principal remaining gaps are scientific rather than GP-migration defects:
 
-- complete FM3 lineage-flow Function/Limit mapping;
-- complete FM2 embedding-depth Function/Limit mapping;
 - complete FM5 recovery/resilience Function/Limit mapping;
 - continue source-readiness monitoring without altering upstream Chemistry routes;
 - obtain and ingest an independently admissible real-system parent/child record when one actually exists;
