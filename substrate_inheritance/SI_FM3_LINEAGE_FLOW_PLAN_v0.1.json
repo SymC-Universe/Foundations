@@ -1,0 +1,90 @@
+{
+  "schema": "substrate-inheritance-fm3-lineage-flow-plan-v0.1",
+  "date": "2026-09-13",
+  "status": "P0_D_EXPLORATORY_FUNCTION_MAPPING",
+  "purpose_tag": "FUNCTION_MAPPING",
+  "parent_program_plan": "substrate_inheritance/SI_FUNCTION_LIMIT_MAP_PLAN_v0.1.json",
+  "general_protocol": "General Cross-Project Research Protocol v0.7.4 FINAL",
+  "map_id": "FM3_LINEAGE_FLOW_LANDSCAPE",
+  "confirmatory_language_allowed": false,
+  "mfr14_activated": false,
+  "physical_inheritance_claim": false,
+  "question": "How do carrier persistence, splitting/mixing, apparent reconvergence, and lineage identifiability change across repeated same-spectrum carrier transformations as transformation strength, spectral crowding, and numerical/measurement-like perturbation magnitude vary?",
+  "native_synthetic_construction": {
+    "dimension": 3,
+    "operator_class": "real_symmetric_same_spectrum_carrier_transformations",
+    "base_eigenvalues": "[1.0, 1.0 + spectral_gap, 3.0]",
+    "generation_0_basis": "identity",
+    "generation_1_basis": "R13(theta)",
+    "generation_2_basis": "R23(theta) @ R13(theta)",
+    "generation_3_basis": "identity_reconvergence_reference",
+    "operator_at_generation": "Q @ diag(eigenvalues) @ Q.T",
+    "correspondence": "squared absolute carrier overlap |V_parent.T @ V_child|^2 after eigenvalue-order alignment",
+    "same_spectrum_across_generations": true,
+    "reason": "Hold scalar spectrum fixed while transforming carrier geometry so lineage diagnostics cannot be credited to spectral change alone."
+  },
+  "parameter_grid": {
+    "transformation_strength_theta_radians": [0.0, 0.15, 0.35, 0.6, 0.7853981633974483],
+    "spectral_gap": [1.0, 0.3, 0.1, 0.03, 0.01],
+    "perturbation_relative_frobenius": [0.0, 0.0001, 0.001, 0.01, 0.05],
+    "perturbation_seeds": [101, 211, 307, 401, 503, 601, 701, 809, 907, 1009, 1103, 1201, 1301, 1409, 1511, 1601, 1709, 1801, 1901, 2003, 2111, 2203, 2309, 2411, 2503, 2609, 2707, 2801, 2903, 3001, 3109, 3203],
+    "case_count_without_seed_expansion": 125
+  },
+  "perturbation_rule": {
+    "construction": "For each generation operator independently, add a seeded symmetric Gaussian perturbation scaled to the declared relative Frobenius magnitude times the unperturbed operator Frobenius norm; diagonalize the perturbed symmetric operator and order carriers by ascending eigenvalue.",
+    "zero_perturbation_rule": "At epsilon=0 the exact unperturbed carrier bases are used without random perturbation.",
+    "bounds": "For each correspondence entry, retain the minimum and maximum across all frozen seeds as a descriptive perturbation envelope. These are not confidence intervals.",
+    "post_result_seed_selection_allowed": false
+  },
+  "function_outputs": [
+    "generationwise correspondence matrices",
+    "dominant fraction",
+    "dominant margin",
+    "Shannon entropy",
+    "normalized entropy",
+    "inverse-participation effective child count",
+    "threshold-free relative lineage flow",
+    "direct generation-0 to generation-3 correspondence",
+    "direct end-to-end carrier reconvergence"
+  ],
+  "limit_outputs": [
+    "interval-resolved lineage nonidentifiability under the frozen perturbation envelope",
+    "exact-tie or ambiguous dominant lineage",
+    "subspace-preserved but individual-carrier-ambiguous crowded regime",
+    "loss of agreement between sequential normalized flow and direct end-to-end carrier correspondence",
+    "conditioning/crowding diagnostics"
+  ],
+  "reconvergence_check": {
+    "purpose": "Test whether sequential row-normalized relative-flow propagation preserves the same information as direct carrier comparison when the final exact basis returns to the initial basis.",
+    "direct_reference": "|V0.T @ V3|^2",
+    "sequential_flow": "propagate_relative_lineage over generationwise correspondence matrices",
+    "comparison_metric": "L1 distance between the final descendant-weight vector and the direct start-parent row of the end-to-end correspondence",
+    "interpretation_firewall": "A discrepancy is information about the descriptive-flow reduction. It is not physical lineage loss if the direct carrier relation reconverges."
+  },
+  "subspace_check": {
+    "crowded_sector": "first two eigenvalue-ordered carriers",
+    "metric": "minimum singular value of V_parent_sector.T @ V_child_sector",
+    "purpose": "Distinguish individual-carrier ambiguity from preservation of the two-dimensional crowded subspace."
+  },
+  "anti_circularity": {
+    "no_master_score": true,
+    "no_physical_threshold": true,
+    "no_atlas_target_used": true,
+    "no_chi_used_for_mapping": true,
+    "same_spectrum_control_retained": true,
+    "all_grid_cases_retained": true,
+    "all_frozen_seeds_retained": true,
+    "relative_flow_is_probability": false,
+    "relative_flow_is_causal_fraction": false,
+    "relative_flow_is_inheritance_percentage": false,
+    "relative_flow_is_promotion_score": false,
+    "post_result_threshold_fitting": false
+  },
+  "known_context_before_execution": [
+    "historical SI-next lineage validation",
+    "FM4 hierarchical closure result",
+    "FM1 coupling-response result",
+    "NSD hierarchical and feedback P0-D work already reviewed in the broader program"
+  ],
+  "claim_ceiling": "P0-D synthetic lineage Function/Limit mapping only. The map may qualify or falsify descriptive lineage reductions but cannot establish physical substrate inheritance or a universal cross-scale lineage rule."
+}
