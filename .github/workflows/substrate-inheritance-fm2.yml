@@ -1,0 +1,136 @@
+name: Substrate Inheritance FM2 Embedding Depth
+
+on:
+  push:
+    branches:
+      - substrate-inheritance-next
+    paths:
+      - "substrate_inheritance/SI_FM2_EMBEDDING_DEPTH_PLAN_v0.1.json"
+      - "substrate_inheritance/SI_FM2_EXECUTION_FREEZE_v0.1.json"
+      - "substrate_inheritance/embedding_depth_landscape.py"
+      - "substrate_inheritance/test_embedding_depth_landscape.py"
+      - "substrate_inheritance/depth_validation.py"
+      - "substrate_inheritance/requirements-validation.txt"
+      - ".github/workflows/substrate-inheritance-fm2.yml"
+  pull_request:
+    branches:
+      - substrate-inheritance
+    paths:
+      - "substrate_inheritance/SI_FM2_EMBEDDING_DEPTH_PLAN_v0.1.json"
+      - "substrate_inheritance/SI_FM2_EXECUTION_FREEZE_v0.1.json"
+      - "substrate_inheritance/embedding_depth_landscape.py"
+      - "substrate_inheritance/test_embedding_depth_landscape.py"
+      - "substrate_inheritance/depth_validation.py"
+      - "substrate_inheritance/requirements-validation.txt"
+      - ".github/workflows/substrate-inheritance-fm2.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  fm2:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12.14"
+
+      - name: Install pinned validation dependencies
+        run: |
+          python -m pip install --disable-pip-version-check -r substrate_inheritance/requirements-validation.txt
+          python -m pip check
+
+      - name: Preflight frozen FM2 plan and execution freeze
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          plan = json.loads(Path("substrate_inheritance/SI_FM2_EMBEDDING_DEPTH_PLAN_v0.1.json").read_text())
+          freeze = json.loads(Path("substrate_inheritance/SI_FM2_EXECUTION_FREEZE_v0.1.json").read_text())
+          assert plan["schema"] == "substrate-inheritance-fm2-embedding-depth-plan-v0.1"
+          assert plan["status"] == "P0_D_EXPLORATORY_FUNCTION_MAPPING"
+          assert plan["physical_inheritance_claim"] is False
+          assert plan["parameter_grid"]["parameter_case_count_excluding_depth"] == 48
+          assert plan["parameter_grid"]["total_depth_records"] == 384
+          assert plan["declared_numerical_task_tolerances"] == [0.1, 0.01, 0.001, 0.0001]
+          assert plan["controls"]["all_grid_cases_retained"] is True
+          assert plan["controls"]["no_atlas_target_used"] is True
+          assert plan["controls"]["no_chi_used"] is True
+          assert plan["reporting_firewall"]["synthetic_depth_is_physical_length"] is False
+          assert plan["reporting_firewall"]["imaginary_regularizer_is_mechanical_gamma"] is False
+
+          assert freeze["schema"] == "substrate-inheritance-fm2-execution-freeze-v0.1"
+          assert freeze["parameter_overrides"] is False
+          assert freeze["finite_method_agreement"]["absolute_tolerance"] == 1e-9
+          assert freeze["effective_depth"]["post_result_tolerance_addition_for_current_map"] is False
+          assert freeze["completeness"]["retain_all_384_depth_records"] is True
+          assert freeze["firewalls"]["physical_inheritance_claim"] is False
+          print("FM2 preflight passed")
+          PY
+
+      - name: Run FM2 tests
+        run: python -m pytest -q substrate_inheritance/test_embedding_depth_landscape.py
+
+      - name: Generate FM2 embedding-depth Function Limit landscape
+        run: python -m substrate_inheritance.embedding_depth_landscape
+
+      - name: Guard FM2 evidence class completeness and numerical verification
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          r = json.loads(Path("substrate_inheritance/results/fm2_embedding_depth_landscape.json").read_text())
+          assert r["scope"] == "synthetic_fm2_embedding_depth_function_limit_map_only"
+          assert r["status"] == "P0_D_DESCRIPTIVE_STRUCTURAL"
+          assert r["physical_inheritance_claim"] is False
+          assert r["physical_thresholds_frozen"] is False
+          assert r["atlas_target_used"] is False
+          assert r["chi_used"] is False
+          assert r["imaginary_probe_is_damping"] is False
+          assert r["numerical_effective_depth_is_physical_inheritance_length"] is False
+          assert r["case_count"] == 48
+          assert r["depth_record_count"] == 384
+          assert len(r["cases"]) == 48
+          assert all(len(case["depth_records"]) == 8 for case in r["cases"])
+          assert r["numerical_verification"]["status"] == "FINITE_METHODS_AGREE_WITHIN_FROZEN_TOLERANCE"
+          assert r["numerical_verification"]["maximum_matrix_vs_recursive_surface_green_residual"] <= r["numerical_verification"]["frozen_absolute_tolerance"]
+          print(json.dumps({"numerical_verification": r["numerical_verification"], "summary": r["summary"]}, indent=2, sort_keys=True))
+          PY
+
+      - name: Record realized FM2 environment and manifest
+        run: |
+          mkdir -p substrate_inheritance/results
+          {
+            python --version
+            python -m pip --version
+            python -m pip freeze --all | sort
+          } > substrate_inheritance/results/fm2_validation_environment.txt
+          sha256sum \
+            substrate_inheritance/SI_FM2_EMBEDDING_DEPTH_PLAN_v0.1.json \
+            substrate_inheritance/SI_FM2_EXECUTION_FREEZE_v0.1.json \
+            substrate_inheritance/embedding_depth_landscape.py \
+            substrate_inheritance/test_embedding_depth_landscape.py \
+            substrate_inheritance/depth_validation.py \
+            substrate_inheritance/results/fm2_embedding_depth_landscape.json \
+            substrate_inheritance/results/fm2_validation_environment.txt \
+            > substrate_inheritance/results/FM2_MANIFEST_v0.1.sha256
+          cat substrate_inheritance/results/FM2_MANIFEST_v0.1.sha256
+
+      - name: Upload FM2 embedding-depth landscape
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: substrate-inheritance-fm2-embedding-depth-v01
+          path: |
+            substrate_inheritance/SI_FM2_EMBEDDING_DEPTH_PLAN_v0.1.json
+            substrate_inheritance/SI_FM2_EXECUTION_FREEZE_v0.1.json
+            substrate_inheritance/results/fm2_embedding_depth_landscape.json
+            substrate_inheritance/results/fm2_validation_environment.txt
+            substrate_inheritance/results/FM2_MANIFEST_v0.1.sha256
