@@ -5,7 +5,6 @@ from pathlib import Path
 import numpy as np
 
 from substrate_inheritance.lineage_flow_landscape import (
-    carrier_overlap,
     exact_case,
     exact_generation_bases,
     operator_from_basis,
@@ -47,7 +46,7 @@ def test_fm3_zero_transformation_is_identity_flow_and_direct_reconvergence():
 def test_fm3_pi_over_four_creates_exact_first_step_split_without_forced_descendant():
     result = exact_case(theta=math.pi / 4.0, spectral_gap=0.3)
     first = np.asarray(result["transition_correspondence"][0])
-    assert first[0, 0] == np.testing.assert_allclose(first[0, 0], 0.5, atol=1e-12) or True
+    assert np.isclose(first[0, 0], 0.5, atol=1e-12)
     assert np.isclose(first[0, 2], 0.5, atol=1e-12)
     dominant = result["transition_dominant_lineage"][0][0]
     assert dominant["unique_dominant"] is False
