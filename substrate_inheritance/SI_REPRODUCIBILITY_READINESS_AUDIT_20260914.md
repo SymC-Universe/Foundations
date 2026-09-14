@@ -8,9 +8,9 @@
 
 ## Executive result
 
-The SI repository has strong reproducibility structure for its existing synthetic/mathematical program: source code, tests, frozen plans for current Function/Limit maps, validation environment records, workflow provenance, summary documents, and fail-closed physical-ingestion schemas are all present. The principal remaining reproducibility debt is not missing computation. It is **reader-level unification**: connecting each manuscript-facing result to its exact plan, implementation, run/artifact, summary, interpretation ceiling, and regeneration path in one place.
+The SI repository has strong reproducibility structure for its existing synthetic/mathematical program: source code, tests, frozen plans for current Function/Limit maps, validation environment records, workflow provenance, summary documents, fail-closed physical-ingestion schemas, a living manuscript evidence matrix, and now a consolidated clean-room regeneration index are present.
 
-The living manuscript evidence matrix now begins that consolidation.
+The principal remaining reproducibility debt is no longer command discovery. `SI_REGENERATION_INDEX_v0.1.md` now consolidates the qualified local commands and semantic checks for the existing evidence. Remaining work is release-hardening: final figure provenance, line-by-line bibliographic verification, complete manuscript claim tracing at freeze, and explicit source/result manifests where an eventual release needs more than the current workflow artifacts already provide.
 
 ## 1. Environment and validation controls
 
@@ -20,7 +20,8 @@ Present:
 - `VALIDATION_ENVIRONMENT.md`;
 - GitHub Actions workflow(s) for the SI validation suite;
 - pinned/frozen historical reference run information in the README;
-- test modules for ground truth, correspondence, embedding, robustness, non-normal cases, SI-next semantics, and Function/Limit modules.
+- test modules for ground truth, correspondence, embedding, robustness, non-normal cases, SI-next semantics, and Function/Limit modules;
+- consolidated regeneration instructions in `SI_REGENERATION_INDEX_v0.1.md`.
 
 Historical fixed reference for the frozen v0.2-era method suite remains recorded as:
 
@@ -72,7 +73,7 @@ Source-of-record set:
 
 Readiness: **GOOD**.
 
-Remaining reader-level debt: add a compact regeneration command/index entry if not already explicit in the validation ledger.
+Regeneration path: **DOCUMENTED** in `SI_REGENERATION_INDEX_v0.1.md`.
 
 ### FM2 embedding depth
 
@@ -90,6 +91,8 @@ Source-of-record set:
 - generated result SHA-256: `4415074b6ce0007bfcb07daa96e2e94daa10c04618fe683e2fdc72123ea58847`.
 
 Readiness: **GOOD**.
+
+Regeneration path and manifest logic: **DOCUMENTED** in `SI_REGENERATION_INDEX_v0.1.md` and the dedicated FM2 workflow.
 
 ### FM3 lineage flow
 
@@ -109,6 +112,8 @@ Readiness: **GOOD**.
 
 Important semantic validator: direct reconvergence and normalized-flow disagreement must remain separately represented. A reproduction that emits only the normalized-flow result is scientifically incomplete.
 
+Regeneration path and manifest logic: **DOCUMENTED** in `SI_REGENERATION_INDEX_v0.1.md` and the dedicated FM3 workflow.
+
 ### FM4 hierarchical closure
 
 Source-of-record set:
@@ -125,6 +130,8 @@ Source-of-record set:
 Readiness: **GOOD**.
 
 Important semantic validator: exact closure and approximate-method error surfaces must not be collapsed into one binary “closure works” statement.
+
+Regeneration path: **DOCUMENTED** in `SI_REGENERATION_INDEX_v0.1.md`.
 
 ## 5. Baseline synthetic/adversarial findings
 
@@ -143,6 +150,8 @@ Implemented and test-backed:
 
 Readiness: **GOOD FOR P0-Q CLAIMS**, subject to keeping each result attached to its synthetic generator and refusing physical promotion.
 
+The consolidated regeneration index now also lists the corresponding module commands and evidence-class checks.
+
 ## 6. Literature and attribution reproducibility
 
 Present:
@@ -150,7 +159,8 @@ Present:
 - pre-search experimental record: `SI_EXPERIMENTAL_OPPORTUNITY_v0.1.md`;
 - first collision: `SI_LITERATURE_COLLISION_v0.1.md`;
 - deeper collision: `SI_LITERATURE_COLLISION_v0.2.md`;
-- attribution ledgers through v0.3.
+- attribution ledgers through v0.3;
+- task-specific comparator preparation in `SI_NATIVE_COMPARATOR_MAP_v0.1.md`.
 
 Sequence integrity is preserved: experimental ideation preceded the targeted prior-experiment collision.
 
@@ -160,7 +170,7 @@ Remaining requirement before manuscript freeze: bibliographic line-by-line verif
 
 ## 7. Manuscript traceability
 
-New canonical working sources:
+Canonical working sources:
 
 - `manuscript/SI_MANUSCRIPT_WORKING.md`;
 - `manuscript/SI_MANUSCRIPT_EVIDENCE_MATRIX_v0.1.md`;
@@ -170,13 +180,15 @@ The manuscript is explicitly non-final and P0-D/P0-Q only.
 
 Readiness: **ACTIVE WORKING STATE**.
 
-## 8. Missing or incomplete reproducibility elements
+The evidence matrix currently covers the major quantitative and interpretive claims. It must be completed at sentence/claim level only when the manuscript approaches freeze; continuously forcing every prose edit into the matrix would add process without changing evidence.
 
-### R1. Single regeneration index
+## 8. Remaining or intentionally not-yet-applicable reproducibility elements
 
-There is no single compact file yet listing the exact local commands/workflows required to regenerate each FM output from a clean environment. The constituent information exists, but a release-quality reproduction guide should consolidate it.
+### R1. Consolidated regeneration index
 
-Disposition: `DOCUMENTATION_DEBT; NOT_A_SCIENTIFIC_BLOCKER`.
+`SI_REGENERATION_INDEX_v0.1.md` now lists the clean-room environment setup, full synthetic suite commands, FM1-FM4 regeneration commands, fail-closed adapter validation, semantic checks, and release-grade manifest guidance.
+
+Disposition: `CLOSED_FOR_CURRENT_P0D_P0Q_SCOPE`.
 
 ### R2. FM5
 
@@ -192,26 +204,32 @@ Disposition: `NOT_APPLICABLE_YET`, not missing-data failure.
 
 ### R4. Final manuscript figures
 
-No manuscript figure freeze exists. Figure specifications should derive from source-of-record data, and generated figure artifacts should be hashed once the manuscript enters evidence-complete internal draft status.
+No manuscript figure freeze exists. Figure specifications derive from the Function/Limit balance audit and the manuscript figure plan. Generated figure artifacts should be hashed once the manuscript enters evidence-complete internal draft status.
 
 Disposition: `PENDING_MANUSCRIPT_DEVELOPMENT`.
+
+### R5. Final release manifest symmetry
+
+FM2/FM3 dedicated workflows already generate explicit manifests. FM1/FM4 have strong workflow/artifact provenance but should receive equally compact explicit source/result manifests at release-hardening if the final package uses those outputs directly.
+
+Disposition: `RELEASE_HARDENING_DEBT; NOT_CURRENT_SCIENTIFIC_BLOCKER`.
 
 ## 9. Release-quality checklist for existing P0-D/P0-Q evidence
 
 Before an SI methods/architecture release:
 
 - [ ] all environment/dependency versions verified;
-- [ ] clean-room regeneration commands consolidated;
-- [ ] plans/freeze files linked from each generated result;
+- [x] clean-room regeneration commands consolidated;
+- [ ] plans/freeze files linked from each final generated manuscript result;
 - [ ] output hashes recorded for every manuscript-used generated file;
 - [ ] semantic validators confirm the quantity described in prose is the quantity computed;
 - [ ] mutation/known-bad tests preserved for fail-closed gates;
 - [ ] every negative result remains reproducible rather than only narrated;
-- [ ] no synthetic threshold is relabeled physical;
+- [x] no synthetic threshold is relabeled physical in the current manuscript/control records;
 - [ ] literature references verified against primary bibliographic sources;
 - [ ] living manuscript evidence matrix complete at sentence/claim level for quantitative results;
 - [ ] manuscript figures generated from current source-of-record outputs;
-- [ ] no stale GP authority reference presented as current GOM authority.
+- [x] current authority records identify GOM v0.8.0 rather than stale GP authority.
 
 ## 10. Verdict
 
@@ -219,10 +237,12 @@ Before an SI methods/architecture release:
 
 `MAJOR_MISSING_SCIENTIFIC_ARTIFACT = NONE_FOR_FM1_FM4`
 
-`MAJOR_DOCUMENTATION_DEBT = CONSOLIDATED_REGENERATION_INDEX_AND_FINAL_MANUSCRIPT_FIGURE_PROVENANCE`
+`CONSOLIDATED_REGENERATION_INDEX = COMPLETE_FOR_CURRENT_SCOPE`
+
+`CURRENT_REMAINING_REPRODUCIBILITY_DEBT = FINAL_FIGURE_PROVENANCE + RELEASE_MANIFEST_HARDENING + FINAL_CLAIM/CITATION_AUDIT`
 
 `PHYSICAL_REPRODUCIBILITY = NOT_APPLICABLE_NO_REAL_SYSTEM_RESULT`
 
 `FM5_REPRODUCIBILITY = NOT_APPLICABLE_NOT_YET_EXECUTED`
 
-The next reproducibility work can proceed without a new scientific computation by consolidating the clean-room regeneration index and finalizing manuscript claim/figure provenance.
+No new scientific computation is needed to continue the remaining release-hardening work for the evidence that already exists.
