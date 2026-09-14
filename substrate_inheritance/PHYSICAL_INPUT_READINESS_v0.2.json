@@ -1,0 +1,86 @@
+{
+  "schema": "substrate-inheritance-physical-input-readiness-v0.2",
+  "status": "ACTIVE_NO_REAL_SYSTEM_INHERITANCE_RESULT_YET",
+  "date": "2026-09-12",
+  "supersedes_status_snapshot": "PHYSICAL_INPUT_READINESS_v0.1.json",
+  "general_protocol": "General Cross-Project Research Protocol v0.7.4 FINAL",
+  "purpose": "Refresh the provenance/status snapshot without changing any frozen physical route, and prevent planned, partial, historical, upstream, or stale calculations from being mistaken for real-system substrate-inheritance evidence.",
+  "current_rules": {
+    "synthetic_results_are_physical_evidence": false,
+    "planned_artifacts_count_as_observed_results": false,
+    "historical_development_outputs_can_be_retroactively_promoted": false,
+    "upstream_surface_convergence_counts_as_inheritance": false,
+    "absence_or_nonidentifiability_is_a_valid_result": true,
+    "not_applicable_is_a_valid_representation_state": true,
+    "atlas_may_define_or_tune_inheritance_coordinate": false,
+    "lower_level_scalars_may_be_averaged_into_system_scalar": false
+  },
+  "source_snapshot": {
+    "chemistry_repository": "SymC-Universe/Chemistry",
+    "chemistry_branch": "agent/na-cu001-integration",
+    "chemistry_head_checked": "65a4a5104d32207e2014f8b5b694db544d35392e",
+    "chemistry_head_message": "Emergency stop stale Na Cu001 recovery queue",
+    "chemistry_pr": 3,
+    "chemistry_pr_state": "OPEN_DRAFT_UNMERGED",
+    "active_region_hessian_repository_search_result": "NOT_FOUND",
+    "active_region_hessian_presence_at_checked_head": false,
+    "checked_artifact_name": "ACTIVE_REGION_HESSIAN.json",
+    "foundations_real_system_si_record_present": false
+  },
+  "systems": [
+    {
+      "system": "Na/Cu(001)",
+      "role": "development_only",
+      "inheritance_input_status": "NOT_READY",
+      "relevant_planned_artifact": "na_cu001_ci/ACTIVE_REGION_HESSIAN.json",
+      "repository_presence_at_checked_head": false,
+      "reason": "The Chemistry route still lists nested mass-weighted Hessians as downstream work, but the planned SI ingestion artifact is not present at the checked head. The branch is currently stopped at an upstream computational-control state. Existing Na/Cu calculations may later exercise SI as development evidence but cannot be retroactively promoted to prospective inheritance validation."
+    },
+    {
+      "system": "CO/Cu(111)",
+      "role": "prospective_external_validation_target",
+      "inheritance_input_status": "UPSTREAM_NOT_ADMITTED_TO_SI",
+      "reason": "The Chemistry branch contains CO/Cu(111) surface-audit, site-ordering, restart, observable-sufficiency, and recovery machinery, but no provenance-complete parent/child SI v0.2 input record is currently admitted in Foundations. SI does not alter the frozen Chemistry route and waits for independently admitted governing objects and shared-coordinate provenance."
+    },
+    {
+      "system": "H/Ru(0001)",
+      "role": "contrast_limit_target",
+      "inheritance_input_status": "PROTOCOL_ONLY_NOT_READY",
+      "reason": "A contrast/limit role has been identified, but no admitted real-system SI input record is present in Foundations. Any rare or extreme behavior remains a qualified limit probe rather than representative evidence by rarity alone."
+    }
+  ],
+  "real_system_adapter": {
+    "schema": "substrate_inheritance/REAL_SYSTEM_INPUT_SCHEMA_v0.2.json",
+    "implementation": "substrate_inheritance/real_system_adapter.py",
+    "status": "READY_FOR_FAIL_CLOSED_INGESTION_ONCE_SOURCE_ARTIFACTS_EXIST",
+    "physical_threshold_applied_by_adapter": false,
+    "inheritance_label_assigned_by_adapter": false,
+    "chi_required_for_ingestion": false,
+    "damping_required_for_ingestion": false
+  },
+  "si_next_candidate": {
+    "contract": "substrate_inheritance/SI_NEXT_CANDIDATE_CONTRACT_v0.4.json",
+    "status": "P0Q_CANDIDATE_ONLY",
+    "may_override_v0.2_physical_route": false,
+    "may_retroactively_promote_existing_targets": false
+  },
+  "next_real_system_entry_condition": {
+    "required": [
+      "independently characterized parent substrate governing object",
+      "child or coupled-system governing object computed without using inheritance outcome to tune the parent model",
+      "complete prospective shared-degree-of-freedom map for the parent coordinates where that map is applicable",
+      "mass normalization and modal/subspace representation where mechanically applicable",
+      "source commit and artifact hashes",
+      "system role declaration: development, prospective validation, or contrast",
+      "outcome-blinding or temporal freeze record for the correspondence rule",
+      "explicit local-versus-embedded record",
+      "separate participation, observability, identifiability, estimation, and uncertainty states where applicable",
+      "hierarchical-closure record if a reduced subsystem is reused at a higher scale"
+    ],
+    "chi_required_for_entry": false,
+    "damping_required_for_entry": false,
+    "note": "Modal and conglomeration inheritance can be investigated without a scalar damping reduction. Any later scalar inheritance or system-chi claim requires its own independent admissibility, derivation, dissipation provenance where relevant, and uncertainty."
+  },
+  "physical_thresholds_frozen": false,
+  "real_system_inheritance_result": "NOT_ESTABLISHED"
+}

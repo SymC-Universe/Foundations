@@ -44,6 +44,69 @@ jobs:
           } > substrate_inheritance/results/validation_environment.txt
           cat substrate_inheritance/results/validation_environment.txt
 
+      - name: Validate SI-next v0.4 protocol documents and Function Map plans
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          candidate = json.loads(Path("substrate_inheritance/SI_NEXT_CANDIDATE_CONTRACT_v0.4.json").read_text())
+          diagnostic = json.loads(Path("substrate_inheritance/SI_NEXT_DIAGNOSTIC_INPUT_CONTRACT_v0.4.json").read_text())
+          readiness = json.loads(Path("substrate_inheritance/PHYSICAL_INPUT_READINESS_v0.2.json").read_text())
+          function_map = json.loads(Path("substrate_inheritance/SI_FUNCTION_LIMIT_MAP_PLAN_v0.1.json").read_text())
+          fm4 = json.loads(Path("substrate_inheritance/SI_FM4_HIERARCHICAL_CLOSURE_PLAN_v0.1.json").read_text())
+          fm1 = json.loads(Path("substrate_inheritance/SI_FM1_COUPLING_RESPONSE_PLAN_v0.1.json").read_text())
+
+          assert candidate["version"] == "0.4-candidate"
+          assert candidate["status"] == "NON_AUTHORITATIVE_P0Q_CANDIDATE"
+          assert candidate["science_firewall"]["v0.2_promotion_gates_changed"] is False
+          assert candidate["science_firewall"]["v0.2_physical_thresholds_changed"] is False
+          assert candidate["representation_policy"]["not_applicable_allowed"] is True
+          assert candidate["representation_policy"]["all_slots_must_be_physically_instantiated"] is False
+          assert candidate["representation_policy"]["lower_level_scalar_average_may_define_system_scalar"] is False
+          assert candidate["relational_stability"]["local_identity_separate_from_embedded_behavior"] is True
+          assert candidate["hierarchical_closure"]["gate_required_when_effective_subsystem_is_reused_at_higher_scale"] is True
+          assert candidate["recovery_resilience"]["asymptotic_return_equals_finite_time_resilience"] is False
+          assert candidate["cross_scale_firewall"]["automatic_promotion_between_levels"] is False
+          assert candidate["function_limit_balance"]["function_map_and_limit_map_coequal"] is True
+          assert candidate["experimental_opportunity"]["literature_may_retroactively_create_independent_game_plan"] is False
+
+          assert diagnostic["schema"] == "substrate-inheritance-si-next-diagnostic-input-v0.4-candidate"
+          assert "NOT_APPLICABLE" in diagnostic["relationship_R"]["allowed_view_states"]
+          assert "NOT_APPLICABLE" in diagnostic["uncertainty_U"]["allowed_statuses"]
+          assert diagnostic["science_firewall"]["candidate_output_counts_as_empirical_confirmation"] is False
+
+          assert readiness["real_system_inheritance_result"] == "NOT_ESTABLISHED"
+          assert readiness["source_snapshot"]["chemistry_head_checked"] == "65a4a5104d32207e2014f8b5b694db544d35392e"
+          assert readiness["source_snapshot"]["active_region_hessian_presence_at_checked_head"] is False
+
+          assert function_map["status"] == "P0_D_EXPLORATORY_FUNCTION_MAPPING"
+          assert function_map["global_firewalls"]["no_master_score"] is True
+          assert function_map["global_firewalls"]["function_map_is_mechanistic_confirmation"] is False
+          assert function_map["next_execution_order"][0] == "FM4_HIERARCHICAL_CLOSURE_LANDSCAPE"
+          assert function_map["next_execution_order"][1] == "FM1_COUPLING_RESPONSE_LANDSCAPE"
+
+          assert fm4["schema"] == "substrate-inheritance-fm4-hierarchical-closure-plan-v0.1"
+          assert fm4["status"] == "P0_D_EXPLORATORY_FUNCTION_AND_LIMIT_MAPPING"
+          assert fm4["mfr14_activated"] is False
+          assert fm4["physical_inheritance_claim"] is False
+          assert fm4["approximation_reporting"]["binary_physical_pass_threshold"] is False
+          assert fm4["expected_method_truth"]["approximation_ordering_predeclared"] is False
+          assert fm4["controls"][1] == "all grid cases retained"
+
+          assert fm1["schema"] == "substrate-inheritance-fm1-coupling-response-plan-v0.1"
+          assert fm1["status"] == "P0_D_EXPLORATORY_FUNCTION_AND_LIMIT_MAPPING"
+          assert fm1["mfr14_activated"] is False
+          assert fm1["physical_inheritance_claim"] is False
+          assert fm1["reporting"]["binary_physical_pass_threshold"] is False
+          assert fm1["reporting"]["report_every_case"] is True
+          assert len(fm1["model"]["coupling_scale_values"]) == 6
+          assert len(fm1["model"]["carrier_geometry_angle_values_radians"]) == 6
+          assert fm1["controls"][3] == "all 36 theta-by-coupling cases retained"
+          assert fm1["carrier_metrics"]["frequency_only_comparator_role"].startswith("simple native baseline")
+          print("SI-next v0.4 FM4 and FM1 protocol document guards passed")
+          PY
+
       - name: Run adversarial unit and benchmark tests
         run: python -m pytest -q substrate_inheritance/test_*.py
 
@@ -77,6 +140,21 @@ jobs:
       - name: Run real-system adapter validation record
         run: python -m substrate_inheritance.adapter_validation
 
+      - name: Run SI-next v0.3 candidate architecture validation
+        run: python -m substrate_inheritance.si_next_validation
+
+      - name: Run SI-next v0.3 diagnostic contract validation
+        run: python -m substrate_inheritance.si_next_contract_validation
+
+      - name: Run SI-next v0.4 GP 0.7.4 semantic validation
+        run: python -m substrate_inheritance.si_v04_validation
+
+      - name: Run FM4 hierarchical closure landscape
+        run: python -m substrate_inheritance.hierarchical_closure_validation
+
+      - name: Run FM1 coupling response landscape
+        run: python -m substrate_inheritance.coupling_response_landscape
+
       - name: Verify outputs are explicitly non-physical
         run: |
           python - <<'PY'
@@ -94,6 +172,9 @@ jobs:
               "nonnormal_validation.json": "synthetic_nonnormal_biorthogonal_validation_only",
               "electronic_validation.json": "synthetic_electronic_inheritance_validation_only",
               "adapter_validation.json": "synthetic_real_system_adapter_validation_only",
+              "si_next_validation.json": "synthetic_si_next_architecture_validation_only",
+              "si_next_contract_validation.json": "synthetic_si_next_diagnostic_contract_validation_only",
+              "si_v04_validation.json": "synthetic_si_v04_gp074_semantic_validation_only",
           }
           records = {}
           for filename, scope in expected.items():
@@ -115,7 +196,83 @@ jobs:
           assert adapter["inheritance_promotion_label_assigned"] is False
           assert adapter["chi_computed"] is False
           assert adapter["damping_computed"] is False
-          print("Synthetic evidence guards passed")
+
+          si_next = records["si_next_validation.json"]
+          assert si_next["status"] == "candidate_v0.3_non_authoritative"
+          assert si_next["frozen_v0.2_changed"] is False
+          assert si_next["inheritance_promotion_rule_changed"] is False
+          assert si_next["lineage"]["exact_tie_refused"] is True
+          assert si_next["lineage"]["split_effective_child_count"] > 1.0
+          assert si_next["lineage"]["relative_flow_threshold_applied"] is False
+          assert si_next["multi_parent"]["effects_forced_to_sum_to_one"] is False
+          assert si_next["multi_parent"]["mobius_reconstruction_residual_norm"] < 1e-12
+          assert si_next["multi_parent"]["mobius_evaluation_count"] == 8
+
+          contract = records["si_next_contract_validation.json"]
+          assert contract["status"] == "candidate_v0.3_non_authoritative"
+          contract_analysis = contract["analysis"]
+          assert contract_analysis["physical_inheritance_threshold_applied"] is False
+          assert contract_analysis["inheritance_promotion_label_assigned"] is False
+          assert contract_analysis["v0_2_result_overridden"] is False
+          assert contract_analysis["physical_inheritance_claim"] is False
+          assert contract_analysis["multi_parent"]["subset_manifest_complete"] is True
+          assert contract_analysis["multi_parent"]["exact_mobius_requested"] is True
+          assert contract["refusal_checks"]["lineage_identifiability_without_uncertainty"] == "MISSING_LINEAGE_UNCERTAINTY"
+          assert contract["refusal_checks"]["incomplete_exact_mobius"] == "INCOMPLETE_EXACT_MOBIUS"
+
+          v04 = records["si_v04_validation.json"]
+          assert v04["status"] == "candidate_v0.4_non_authoritative_p0q"
+          assert v04["general_protocol"] == "v0.7.4"
+          assert v04["frozen_v0.2_changed"] is False
+          assert v04["physical_inheritance_claim"] is False
+          assert v04["relationship_pattern"] == "MODAL_CONGLOMERATION_WITHOUT_SCALAR"
+          assert v04["uncertainty"]["scalar"] == "NOT_APPLICABLE"
+          assert v04["hierarchical_closure_status"] == "HIERARCHICAL_REDUCTION_SUPPORTED_IN_REGIME"
+          assert v04["recovery_semantics_separated"] is True
+          assert v04["known_bad_refusals"]["lower_level_scalar_averaging"] == "SYSTEM_SCALAR_AGGREGATION"
+          assert v04["known_bad_refusals"]["atlas_coordinate_leakage"] == "ATLAS_COORDINATE_LEAKAGE"
+          assert v04["known_bad_refusals"]["unlicensed_system_scalar"] == "UNLICENSED_SYSTEM_SCALAR"
+          assert v04["known_bad_refusals"]["disabled_hierarchy_with_decision"] == "DISABLED_HIERARCHY_WITH_DECISION"
+          assert v04["known_bad_refusals"]["asymptotic_transient_conflation"] == "ASYMPTOTIC_TRANSIENT_CONFLATION"
+          assert v04["known_bad_refusals"]["universality_from_recurrence"] == "UNIVERSALITY_FIREWALL"
+
+          fm4 = json.loads(Path("substrate_inheritance/results/SI_FM4_HIERARCHICAL_CLOSURE_RESULTS_v0.1.json").read_text())
+          assert fm4["schema"] == "substrate-inheritance-fm4-hierarchical-closure-result-v0.1"
+          assert fm4["scope"] == "synthetic_si_fm4_hierarchical_closure_landscape_p0d_only"
+          assert fm4["status"] == "P0_D_DESCRIPTIVE_OR_STRUCTURAL_METHOD_LANDSCAPE"
+          assert fm4["experiment_plan"] == "SI_FM4_HIERARCHICAL_CLOSURE_PLAN_v0.1.json"
+          assert fm4["record_count"] == 1936
+          assert fm4["parameter_case_count"] == 16
+          assert fm4["frequency_count_per_case"] == 121
+          assert fm4["exact_closure"]["status"] == "HIERARCHICAL_REDUCTION_SUPPORTED_IN_REGIME"
+          assert fm4["exact_closure"]["maximum_exact_identity_error"] <= fm4["exact_closure"]["numerical_tolerance"]
+          assert fm4["zero_outer_coupling_control"]["maximum_absolute_group_return"] < 1e-13
+          assert fm4["approximation_surfaces"]["binary_physical_pass_threshold_applied"] is False
+          assert fm4["approximation_surfaces"]["approximation_ordering_predeclared"] is False
+          assert fm4["system_scalar_chi_constructed"] is False
+          assert fm4["atlas_used_for_parameter_selection"] is False
+          assert fm4["real_system_evidence"] is False
+          assert fm4["physical_inheritance_claim"] is False
+
+          fm1 = json.loads(Path("substrate_inheritance/results/SI_FM1_COUPLING_RESPONSE_RESULTS_v0.1.json").read_text())
+          assert fm1["schema"] == "substrate-inheritance-fm1-coupling-response-result-v0.1"
+          assert fm1["scope"] == "synthetic_si_fm1_coupling_response_landscape_p0d_only"
+          assert fm1["status"] == "P0_D_DESCRIPTIVE_OR_STRUCTURAL_FUNCTION_LIMIT_LANDSCAPE"
+          assert fm1["experiment_plan"] == "SI_FM1_COUPLING_RESPONSE_PLAN_v0.1.json"
+          assert fm1["case_count"] == 36
+          assert fm1["same_spectrum_control"]["maximum_clean_substrate_eigenvalue_error_across_geometry_angles"] < 1e-12
+          assert fm1["zero_coupling_controls"]["maximum_embedded_response_curve_norm"] < 1e-14
+          assert fm1["zero_coupling_controls"]["maximum_coupling_rewire_relative_curve_change"] < 1e-14
+          assert fm1["zero_coupling_controls"]["maximum_intervention_derivative_magnitude"] < 1e-12
+          assert abs(fm1["origin_control"]["carrier_assignment_mean_overlap"] - 1.0) < 1e-12
+          assert fm1["system_scalar_chi_constructed"] is False
+          assert fm1["master_relationship_score_constructed"] is False
+          assert fm1["atlas_used_for_parameter_selection"] is False
+          assert fm1["reporting_firewall"]["binary_physical_pass_threshold_applied"] is False
+          assert fm1["reporting_firewall"]["post_result_favorable_region_promoted"] is False
+          assert fm1["real_system_evidence"] is False
+          assert fm1["physical_inheritance_claim"] is False
+          print("Synthetic evidence and GP v0.7.4 FM4/FM1 guards passed")
           PY
 
       - name: Upload synthetic validation records
@@ -133,4 +290,25 @@ jobs:
             substrate_inheritance/results/nonnormal_validation.json
             substrate_inheritance/results/electronic_validation.json
             substrate_inheritance/results/adapter_validation.json
+            substrate_inheritance/results/si_next_validation.json
+            substrate_inheritance/results/si_next_contract_validation.json
+            substrate_inheritance/results/si_v04_validation.json
+            substrate_inheritance/results/validation_environment.txt
+
+      - name: Upload FM4 hierarchical closure landscape
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: substrate-inheritance-fm4-hierarchical-closure-v01
+          path: |
+            substrate_inheritance/SI_FM4_HIERARCHICAL_CLOSURE_PLAN_v0.1.json
+            substrate_inheritance/results/SI_FM4_HIERARCHICAL_CLOSURE_RESULTS_v0.1.json
+            substrate_inheritance/results/validation_environment.txt
+
+      - name: Upload FM1 coupling response landscape
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: substrate-inheritance-fm1-coupling-response-v01
+          path: |
+            substrate_inheritance/SI_FM1_COUPLING_RESPONSE_PLAN_v0.1.json
+            substrate_inheritance/results/SI_FM1_COUPLING_RESPONSE_RESULTS_v0.1.json
             substrate_inheritance/results/validation_environment.txt

@@ -1,0 +1,68 @@
+{
+  "schema": "substrate-inheritance-fm2-embedding-depth-plan-v0.1",
+  "date": "2026-09-13",
+  "status": "P0_D_EXPLORATORY_FUNCTION_MAPPING",
+  "purpose_tag": "FUNCTION_MAPPING",
+  "parent_program_plan": "substrate_inheritance/SI_FUNCTION_LIMIT_MAP_PLAN_v0.1.json",
+  "general_protocol": "General Cross-Project Research Protocol v0.7.4 FINAL",
+  "map_id": "FM2_EMBEDDING_DEPTH_LANDSCAPE",
+  "confirmatory_language_allowed": false,
+  "mfr14_activated": false,
+  "physical_inheritance_claim": false,
+  "question": "How much of a synthetic nearest-neighbor parent substrate must be retained to reproduce the analytic semi-infinite embedded child response across substrate coupling and probe conditions, and where does a finite-depth reduction cease to be adequate for declared numerical tasks?",
+  "native_synthetic_construction": {
+    "substrate_model": "uniform_nearest_neighbor_chain",
+    "substrate_onsite_stiffness": 4.0,
+    "child_coupling": 0.6,
+    "finite_reference": "direct matrix surface Green function",
+    "independent_finite_check": "recursive continued-fraction surface Green function",
+    "infinite_reference": "analytic semi-infinite surface Green function stable root",
+    "self_energy": "child_coupling^2 * surface_green",
+    "imaginary_probe_component_role": "resolvent regularization only, not physical damping",
+    "physical_inheritance_length_interpretation_allowed": false
+  },
+  "parameter_grid": {
+    "retained_depth_dof": [1, 2, 4, 8, 16, 32, 64, 128],
+    "substrate_hopping": [0.35, 0.65, 0.95, 1.25],
+    "probe_real_frequency": [0.2, 0.7, 1.2, 1.6],
+    "probe_imaginary_regularizer": [0.05, 0.15, 0.3],
+    "parameter_case_count_excluding_depth": 48,
+    "total_depth_records": 384
+  },
+  "declared_numerical_task_tolerances": [0.1, 0.01, 0.001, 0.0001],
+  "effective_depth_rule": "For each declared tolerance, report the shallowest listed depth for which that depth and every deeper listed depth remain at or below the tolerance. If no such depth exists, return NOT_REACHED_WITHIN_GRID. A single early threshold crossing is not called converged if a deeper listed depth violates it.",
+  "function_outputs": [
+    "semi-infinite self-energy",
+    "finite-depth self-energy trajectory",
+    "relative error to semi-infinite reference",
+    "matrix-versus-recursive residual",
+    "effective retained depth for each declared numerical task tolerance",
+    "stable interior where additional listed depth is negligible for the declared task"
+  ],
+  "limit_outputs": [
+    "insufficient-depth region",
+    "slow-convergence region",
+    "NOT_REACHED_WITHIN_GRID for declared numerical task tolerance",
+    "finite-matrix conditioning",
+    "nonmonotonic finite-depth convergence if present",
+    "finite-bath recurrence explicitly NOT_EVALUATED by this frequency-domain map"
+  ],
+  "controls": {
+    "all_grid_cases_retained": true,
+    "direct_matrix_and_recursive_finite_methods_both_run": true,
+    "analytic_semi_infinite_reference_used": true,
+    "no_atlas_target_used": true,
+    "no_chi_used": true,
+    "no_physical_depth_threshold": true,
+    "no_post_result_grid_extension_for_current_v0_1_map": true
+  },
+  "reporting_firewall": {
+    "numerical_task_tolerance_is_physical_inheritance_threshold": false,
+    "synthetic_depth_is_physical_length": false,
+    "imaginary_regularizer_is_mechanical_gamma": false,
+    "finite_chain_is_irreversible_bath": false,
+    "function_map_is_mechanistic_confirmation": false,
+    "synthetic_success_is_physical_confirmation": false
+  },
+  "claim_ceiling": "P0-D synthetic embedding-depth Function/Limit mapping only. The result may characterize numerical reduction depth and its limits in this declared chain model but cannot establish a physical inheritance depth, damping law, or real-material substrate-inheritance claim."
+}

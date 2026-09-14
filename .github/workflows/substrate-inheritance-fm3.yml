@@ -1,0 +1,132 @@
+name: Substrate Inheritance FM3 Lineage Flow
+
+on:
+  # Run-economy rule: this long-lived development PR already carries FM3 changes
+  # relative to its base, so a pull_request paths filter re-ran FM3 after every
+  # unrelated documentation/manuscript synchronize event. The branch push
+  # filter below runs FM3 only when its scientific/execution files actually
+  # change. workflow_dispatch remains available for an explicit audit.
+  push:
+    branches:
+      - substrate-inheritance-next
+    paths:
+      - "substrate_inheritance/SI_FM3_LINEAGE_FLOW_PLAN_v0.1.json"
+      - "substrate_inheritance/lineage_flow_landscape.py"
+      - "substrate_inheritance/test_lineage_flow_landscape.py"
+      - "substrate_inheritance/si_next_architecture.py"
+      - "substrate_inheritance/si_next_higher_order.py"
+      - "substrate_inheritance/requirements-validation.txt"
+      - ".github/workflows/substrate-inheritance-fm3.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  fm3:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12.14"
+
+      - name: Install pinned validation dependencies
+        run: |
+          python -m pip install --disable-pip-version-check -r substrate_inheritance/requirements-validation.txt
+          python -m pip check
+
+      - name: Preflight frozen FM3 plan
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          plan = json.loads(Path("substrate_inheritance/SI_FM3_LINEAGE_FLOW_PLAN_v0.1.json").read_text())
+          assert plan["schema"] == "substrate-inheritance-fm3-lineage-flow-plan-v0.1"
+          assert plan["status"] == "P0_D_EXPLORATORY_FUNCTION_MAPPING"
+          assert plan["mfr14_activated"] is False
+          assert plan["physical_inheritance_claim"] is False
+          assert plan["native_synthetic_construction"]["same_spectrum_across_generations"] is True
+          assert plan["parameter_grid"]["case_count_without_seed_expansion"] == 125
+          assert len(plan["parameter_grid"]["perturbation_seeds"]) == 32
+          firewall = plan["anti_circularity"]
+          assert firewall["no_master_score"] is True
+          assert firewall["no_physical_threshold"] is True
+          assert firewall["no_atlas_target_used"] is True
+          assert firewall["no_chi_used_for_mapping"] is True
+          assert firewall["all_grid_cases_retained"] is True
+          assert firewall["all_frozen_seeds_retained"] is True
+          assert firewall["relative_flow_is_probability"] is False
+          assert firewall["relative_flow_is_causal_fraction"] is False
+          assert firewall["relative_flow_is_inheritance_percentage"] is False
+          assert firewall["relative_flow_is_promotion_score"] is False
+          print("FM3 frozen-plan preflight passed")
+          PY
+
+      - name: Run FM3 tests
+        run: python -m pytest -q substrate_inheritance/test_lineage_flow_landscape.py
+
+      - name: Generate FM3 lineage Function Limit landscape
+        run: python -m substrate_inheritance.lineage_flow_landscape
+
+      - name: Guard FM3 evidence class and completeness
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path("substrate_inheritance/results/fm3_lineage_flow_landscape.json")
+          r = json.loads(path.read_text())
+          assert r["scope"] == "synthetic_fm3_lineage_function_limit_map_only"
+          assert r["status"] == "P0_D_DESCRIPTIVE_STRUCTURAL"
+          assert r["physical_inheritance_claim"] is False
+          assert r["physical_thresholds_frozen"] is False
+          assert r["atlas_target_used"] is False
+          assert r["master_score_computed"] is False
+          assert r["relative_flow_is_probability"] is False
+          assert r["relative_flow_is_causal_fraction"] is False
+          assert r["relative_flow_is_inheritance_percentage"] is False
+          assert r["relative_flow_is_promotion_score"] is False
+          assert r["summary"]["case_count"] == 125
+          assert r["summary"]["seed_count_per_case"] == 32
+          assert r["summary"]["seed_expanded_evaluations"] == 4000
+          assert len(r["records"]) == 125
+          assert all(len(x["perturbation_ensemble"]["seed_records"]) == 32 for x in r["records"])
+          assert r["summary"]["maximum_exact_direct_reconvergence_error_from_identity_fro"] < 1e-12
+          assert r["summary"]["extinction_constructed"] is False
+          print(json.dumps(r["summary"], indent=2, sort_keys=True))
+          PY
+
+      - name: Record realized FM3 environment and manifest
+        run: |
+          mkdir -p substrate_inheritance/results
+          {
+            python --version
+            python -m pip --version
+            python -m pip freeze --all | sort
+          } > substrate_inheritance/results/fm3_validation_environment.txt
+          sha256sum \
+            substrate_inheritance/SI_FM3_LINEAGE_FLOW_PLAN_v0.1.json \
+            substrate_inheritance/lineage_flow_landscape.py \
+            substrate_inheritance/test_lineage_flow_landscape.py \
+            substrate_inheritance/si_next_architecture.py \
+            substrate_inheritance/si_next_higher_order.py \
+            substrate_inheritance/results/fm3_lineage_flow_landscape.json \
+            substrate_inheritance/results/fm3_validation_environment.txt \
+            > substrate_inheritance/results/FM3_MANIFEST_v0.1.sha256
+          cat substrate_inheritance/results/FM3_MANIFEST_v0.1.sha256
+
+      - name: Upload FM3 lineage landscape
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: substrate-inheritance-fm3-lineage-flow-v01
+          path: |
+            substrate_inheritance/SI_FM3_LINEAGE_FLOW_PLAN_v0.1.json
+            substrate_inheritance/results/fm3_lineage_flow_landscape.json
+            substrate_inheritance/results/fm3_validation_environment.txt
+            substrate_inheritance/results/FM3_MANIFEST_v0.1.sha256
