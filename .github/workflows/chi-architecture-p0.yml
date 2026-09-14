@@ -1,0 +1,297 @@
+name: Chi Architecture P0 Validation and Domain Mapping
+
+on:
+  push:
+    branches:
+      - chi-architecture-p0
+    paths:
+      - "chi_architecture/**"
+      - ".github/workflows/chi-architecture-p0.yml"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "chi_architecture/**"
+      - ".github/workflows/chi-architecture-p0.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12.14"
+
+      - name: Install pinned P0 dependencies
+        run: |
+          python -m pip install --disable-pip-version-check -r chi_architecture/requirements-p0.txt
+          python -m pip check
+
+      - name: Record realized environment
+        run: |
+          mkdir -p chi_architecture/results
+          {
+            python --version
+            python -m pip --version
+            python -m pip freeze --all | sort
+          } > chi_architecture/results/P0_VALIDATION_ENVIRONMENT.txt
+          cat chi_architecture/results/P0_VALIDATION_ENVIRONMENT.txt
+
+      - name: Validate v0.2 anti-circularity experiment plan
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          p = Path("chi_architecture/P0_EXPERIMENT_PLAN_v0.2.json")
+          r = json.loads(p.read_text(encoding="utf-8"))
+          assert r["schema"] == "chi-architecture-p0-experiment-plan-v0.2"
+          assert r["status"] == "P0_EXPLORATORY_NOT_CONFIRMATORY"
+          assert r["mfr14_activated"] is False
+          assert r["anti_circularity"]["parameter_single_source"]
+          assert r["anti_circularity"]["raw_output_rule"]
+          assert r["anti_circularity"]["fixture_to_evidence_prohibition"]
+          assert r["chi_policy"]["scalar_chi_required"] is False
+          assert r["representation_policy"]["smc_exhaustive"] is False
+          assert r["representation_policy"]["smc_literal_chi_formula"] is False
+          assert r["future_evaluative_experiment_requirements"]["status"] == "NOT_YET_RUN"
+          assert r["future_evaluative_experiment_requirements"]["must_define_independent_outcome"] is True
+          assert r["future_evaluative_experiment_requirements"]["must_have_a_result_that_counts_against_the_hypothesis"] is True
+          assert r["reporting_rules"]["retain_every_family"] is True
+          assert r["reporting_rules"]["retain_negative_results"] is True
+          assert r["reporting_rules"]["synthetic_fixture_success_counts_as_empirical_confirmation"] is False
+          assert r["reporting_rules"]["synthetic_fixture_success_counts_as_program_portfolio_ADDS"] is False
+          ids = [x["id"] for x in r["families"]]
+          assert ids == [f"F{i}" for i in range(9)]
+          f4 = next(x for x in r["families"] if x["id"] == "F4")
+          assert f4["role"] == "DESIGNED_FIXTURE_NOT_COMPENSATION_EVIDENCE"
+          f6 = next(x for x in r["families"] if x["id"] == "F6")
+          assert f6["parameter_values"]["k"] == [0.0, 2.0, 4.0, 8.0, 12.0]
+          print("P0 v0.2 anti-circularity plan guards passed")
+          PY
+
+      - name: Validate domain-first map schema and D01 plan
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          schema = json.loads(Path("chi_architecture/DOMAIN_CHI_MAP_SCHEMA_v0.1.json").read_text(encoding="utf-8"))
+          assert schema["schema"] == "domain-chi-map-v0.1"
+          assert schema["forbidden_dependency"] == "desired_cross_domain_atlas_alignment_may_not_select_or_tune_domain_coordinate"
+          assert schema["scalar_admission_rule"]["default"] == "NO_ADMISSIBLE_SCALAR_CHI"
+          assert schema["atlas_rule"]["atlas_is_downstream"] is True
+          assert schema["atlas_rule"]["common_axis_not_required"] is True
+
+          plan = json.loads(Path("chi_architecture/D01_LINEAR_DYNAMICS_DOMAIN_MAP_PLAN_v0.1.json").read_text(encoding="utf-8"))
+          assert plan["schema"] == "domain-chi-map-plan-v0.1"
+          assert plan["domain_id"] == "D01_LINEAR_DYNAMICS"
+          assert plan["atlas_blind"] is True
+          assert plan["cross_domain_alignment_used_for_parameter_or_metric_selection"] is False
+          d01a = next(p for p in plan["phases"] if p["id"] == "D01A_SDOF_SCALE_COLLAPSE")
+          assert d01a["native_coordinate"]["definition"] == "gamma/(2*omega0)"
+          assert d01a["parameter_grid"]["chi_start"] == 0.0
+          assert d01a["parameter_grid"]["chi_stop"] == 4.0
+          assert d01a["parameter_grid"]["chi_step"] == 0.05
+          d01b = next(p for p in plan["phases"] if p["id"] == "D01B_COUPLED_2DOF")
+          assert d01b["coordinate_policy"]["master_scalar_predeclared"] is False
+          assert d01b["coordinate_policy"]["no_admissible_scalar_allowed"] is True
+          print("Domain-first schema and D01 plan guards passed")
+          PY
+
+      - name: Validate D01B pre-execution freeze
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          r = json.loads(Path("chi_architecture/D01B_EXECUTION_FREEZE_v0.1.json").read_text(encoding="utf-8"))
+          assert r["schema"] == "d01b-execution-freeze-v0.1"
+          assert r["status"] == "P0_D_PREEXECUTION_FROZEN_BEFORE_D01B_OUTPUT"
+          assert r["scientific_parameter_source"] == "parent_plan_only"
+          assert r["parameter_overrides"] is False
+          assert r["observation_grid"] == {"time_start": 0.0, "time_stop": 240.0, "time_points": 2401, "reason": r["observation_grid"]["reason"], "post_result_window_extension_allowed_for_current_result": False}
+          assert r["modal_scalar_admission"]["master_scalar_search_in_d01b"] is False
+          assert r["anti_circularity"]["no_nsdp0d16_17_19_parameter_tuning"] is True
+          assert r["anti_circularity"]["no_atlas_target_or_range_used"] is True
+          assert r["anti_circularity"]["all_parent_grid_cases_retained"] is True
+          print("D01B pre-execution freeze guards passed")
+          PY
+
+      - name: Run known-truth domain-map and demonstrated-failing tests
+        env:
+          PYTHONPATH: chi_architecture/src
+        run: python -m pytest -q chi_architecture/tests
+
+      - name: Generate plan-driven raw fixture record
+        run: python chi_architecture/run_p0_known_truth.py
+
+      - name: Guard evidence class parameter sync and refusal outcomes
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          plan = json.loads(Path("chi_architecture/P0_EXPERIMENT_PLAN_v0.2.json").read_text(encoding="utf-8"))
+          r = json.loads(Path("chi_architecture/results/P0_KNOWN_TRUTH_RESULTS_v0.2.json").read_text(encoding="utf-8"))
+          assert r["status"] == "P0_EXPLORATORY_SYNTHETIC_FIXTURES_ONLY"
+          assert r["scope"] == "known_truth_method_stress_not_empirical_confirmation"
+          assert r["experiment_plan"] == "P0_EXPERIMENT_PLAN_v0.2.json"
+          assert r["mfr14_activated"] is False
+          assert r["program_portfolio_adds_credit"] is False
+          assert r["real_system_evidence"] is False
+          assert r["fixture_success_confirms_architecture"] is False
+          for family_id in [f"F{i}" for i in range(7)]:
+              assert "state" not in r["results"][family_id]
+          f1 = next(x for x in plan["families"] if x["id"] == "F1")
+          f6 = next(x for x in plan["families"] if x["id"] == "F6")
+          assert [x["k"] for x in r["results"]["F1"]["cases"]] == f1["parameter_values"]["k"]
+          assert [x["k"] for x in r["results"]["F6"]["cases"]] == f6["parameter_values"]["k"]
+          assert r["results"]["F7"]["status"] == "SUBSPACE_ONLY"
+          f8 = r["results"]["F8"]["cases"]
+          assert f8["underdamped"]["status"] == "ADMISSIBLE_SECOND_ORDER_CHI"
+          assert f8["critical"]["status"] == "ADMISSIBLE_SECOND_ORDER_CHI"
+          assert f8["overdamped"]["status"] == "ADMISSIBLE_SECOND_ORDER_CHI"
+          assert f8["active_antidamping"]["status"] == "NO_ADMISSIBLE_CHI"
+          assert f8["anti_restoring"]["status"] == "NO_ADMISSIBLE_CHI"
+          assert f8["single_real_pole"]["status"] == "NO_ADMISSIBLE_CHI"
+          print("P0 v0.2 evidence-class and circularity guards passed")
+          PY
+
+      - name: Generate D01A exact-anchor domain map
+        run: python chi_architecture/run_d01_linear_domain_map.py
+
+      - name: Guard D01A map scope and coordinate collapse
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          r = json.loads(Path("chi_architecture/results/D01A_SDOF_DOMAIN_MAP_v0.1.json").read_text(encoding="utf-8"))
+          assert r["domain_id"] == "D01_LINEAR_DYNAMICS"
+          assert r["phase_id"] == "D01A_SDOF_SCALE_COLLAPSE"
+          assert r["status"] == "P0_DOMAIN_MAP_EXACT_ANCHOR"
+          assert r["atlas_blind"] is True
+          assert r["cross_domain_confirmation"] is False
+          assert len(r["chi_grid"]) == 81
+          assert len(r["records"]) == 162
+          assert len(r["scale_collapse"]) == 162
+          assert r["maximum_scale_collapse_error"]["x"] <= 1e-12
+          assert r["maximum_scale_collapse_error"]["u"] <= 1e-12
+          assert len(r["descriptive_landmarks"]) == 2
+          assert all(x["maximum_slowest_dimensionless_decay_rate"]["chi"] == 1.0 for x in r["descriptive_landmarks"])
+          print("D01A scope and coordinate-collapse guards passed")
+          PY
+
+      - name: Generate D01B coupled mechanical domain map
+        run: python chi_architecture/run_d01b_coupled_domain_map.py
+
+      - name: Guard D01B scope, completeness, and no-master-scalar policy
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          r = json.loads(Path("chi_architecture/results/D01B_COUPLED_2DOF_DOMAIN_MAP_v0.1.json").read_text(encoding="utf-8"))
+          assert r["domain_id"] == "D01_LINEAR_DYNAMICS"
+          assert r["phase_id"] == "D01B_COUPLED_2DOF"
+          assert r["status"] == "P0_DOMAIN_MAP_COUPLED_MECHANICAL"
+          assert r["atlas_blind"] is True
+          assert r["cross_domain_confirmation"] is False
+          assert r["master_scalar_predeclared"] is False
+          assert r["parameter_case_count"] == 1152
+          assert r["perturbation_count_per_case"] == 2
+          assert len(r["records"]) == 1152
+          assert all(len(x["responses"]) == 2 for x in r["records"])
+          assert all("system_chi" not in x and "master_chi" not in x for x in r["records"])
+          assert r["scientific_parameter_source"] == "D01_LINEAR_DYNAMICS_DOMAIN_MAP_PLAN_v0.1.json"
+          assert set(r["known_context_before_execution"]) == {"NSD_P0D14", "NSD_P0D15", "NSD_P0D16", "NSD_P0D17", "NSD_P0D19"}
+          assert r["descriptive_summary"]["response_count"] == 2304
+          assert r["descriptive_summary"]["maximum_energy_balance_residual_fraction"]["value"] < 0.02
+          print("D01B scope, completeness, and no-master-scalar guards passed")
+          PY
+
+      - name: Build historical P0 fixture manifest
+        run: |
+          sha256sum \
+            chi_architecture/README.md \
+            chi_architecture/GENERAL_PROTOCOL_AUDIT_20260910.md \
+            chi_architecture/CIRCULARITY_AUDIT_20260910.md \
+            chi_architecture/POST_RESULT_DISCOVERY_LEDGER.md \
+            chi_architecture/P0_FALSIFIABILITY_CHARTER_v0.1.md \
+            chi_architecture/P0_EXPERIMENT_PLAN_v0.1.json \
+            chi_architecture/P0_EXPERIMENT_PLAN_v0.2.json \
+            chi_architecture/requirements-p0.txt \
+            chi_architecture/src/p0_known_truth.py \
+            chi_architecture/tests/test_p0_known_truth.py \
+            chi_architecture/run_p0_known_truth.py \
+            chi_architecture/results/P0_KNOWN_TRUTH_RESULTS_v0.2.json \
+            chi_architecture/results/P0_VALIDATION_ENVIRONMENT.txt \
+            > chi_architecture/results/P0_MANIFEST_v0.2.sha256
+          cat chi_architecture/results/P0_MANIFEST_v0.2.sha256
+
+      - name: Build D01A domain-map manifest
+        run: |
+          sha256sum \
+            chi_architecture/DOMAIN_FIRST_CHI_COORDINATE_PROGRAM_v0.1.md \
+            chi_architecture/DOMAIN_CHI_MAP_SCHEMA_v0.1.json \
+            chi_architecture/D01_LINEAR_DYNAMICS_DOMAIN_MAP_PLAN_v0.1.json \
+            chi_architecture/src/domain_map_linear.py \
+            chi_architecture/tests/test_domain_map_linear.py \
+            chi_architecture/run_d01_linear_domain_map.py \
+            chi_architecture/results/D01A_SDOF_DOMAIN_MAP_v0.1.json \
+            chi_architecture/results/P0_VALIDATION_ENVIRONMENT.txt \
+            > chi_architecture/results/D01A_DOMAIN_MAP_MANIFEST_v0.1.sha256
+          cat chi_architecture/results/D01A_DOMAIN_MAP_MANIFEST_v0.1.sha256
+
+      - name: Build D01B domain-map manifest
+        run: |
+          sha256sum \
+            chi_architecture/CROSS_PROJECT_SYNTHESIS_20260911.md \
+            chi_architecture/ORGANIZATION_CHI_PREVALENCE_HYPOTHESIS_v0.1.md \
+            chi_architecture/D01B_PREEXECUTION_KNOWN_CONTEXT_20260911.md \
+            chi_architecture/D01_LINEAR_DYNAMICS_DOMAIN_MAP_PLAN_v0.1.json \
+            chi_architecture/D01B_EXECUTION_FREEZE_v0.1.json \
+            chi_architecture/src/domain_map_linear.py \
+            chi_architecture/tests/test_domain_map_linear_d01b.py \
+            chi_architecture/run_d01b_coupled_domain_map.py \
+            chi_architecture/results/D01B_COUPLED_2DOF_DOMAIN_MAP_v0.1.json \
+            chi_architecture/results/P0_VALIDATION_ENVIRONMENT.txt \
+            > chi_architecture/results/D01B_DOMAIN_MAP_MANIFEST_v0.1.sha256
+          cat chi_architecture/results/D01B_DOMAIN_MAP_MANIFEST_v0.1.sha256
+
+      - name: Upload historical P0 v0.2 validation record
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: chi-architecture-p0-known-truth-v02
+          path: |
+            chi_architecture/results/P0_KNOWN_TRUTH_RESULTS_v0.2.json
+            chi_architecture/results/P0_VALIDATION_ENVIRONMENT.txt
+            chi_architecture/results/P0_MANIFEST_v0.2.sha256
+
+      - name: Upload D01A domain map
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: chi-architecture-d01a-domain-map-v01
+          path: |
+            chi_architecture/results/D01A_SDOF_DOMAIN_MAP_v0.1.json
+            chi_architecture/results/P0_VALIDATION_ENVIRONMENT.txt
+            chi_architecture/results/D01A_DOMAIN_MAP_MANIFEST_v0.1.sha256
+
+      - name: Upload D01B coupled mechanical domain map
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: chi-architecture-d01b-domain-map-v01
+          path: |
+            chi_architecture/results/D01B_COUPLED_2DOF_DOMAIN_MAP_v0.1.json
+            chi_architecture/results/P0_VALIDATION_ENVIRONMENT.txt
+            chi_architecture/results/D01B_DOMAIN_MAP_MANIFEST_v0.1.sha256

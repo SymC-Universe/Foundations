@@ -1,0 +1,97 @@
+{
+  "schema": "d01b-execution-freeze-v0.1",
+  "date": "2026-09-11",
+  "status": "P0_D_PREEXECUTION_FROZEN_BEFORE_D01B_OUTPUT",
+  "parent_plan": "D01_LINEAR_DYNAMICS_DOMAIN_MAP_PLAN_v0.1.json",
+  "phase_id": "D01B_COUPLED_2DOF",
+  "known_context_attestation": "D01B_PREEXECUTION_KNOWN_CONTEXT_20260911.md",
+  "scientific_parameter_source": "parent_plan_only",
+  "parameter_overrides": false,
+  "governing_construction": {
+    "M": "identity_2",
+    "K": "[[k1+kc,-kc],[-kc,k2+kc]]",
+    "C": "[[c1+cc,-cc],[-cc,c2+cc]]",
+    "state": "x=[q1,q2,v1,v2]",
+    "A": "[[0,I],[-K,-C]]",
+    "unforced": true,
+    "passive": true
+  },
+  "observation_grid": {
+    "time_start": 0.0,
+    "time_stop": 240.0,
+    "time_points": 2401,
+    "reason": "Fixed pre-result window selected to resolve the slowest nominal low-damping component scale in the declared grid without extending individual cases after results are viewed.",
+    "post_result_window_extension_allowed_for_current_result": false
+  },
+  "stability_and_spectral_metrics": {
+    "asymptotic_stability": "all real(lambda)<0 within numerical tolerance 1e-10",
+    "spectral_abscissa": "max real(lambda(A))",
+    "minimum_normalized_eigenvalue_separation": "min_i!=j |lambda_i-lambda_j| / max(1,max|lambda|)",
+    "state_eigenvector_condition_number": "cond(V_right)",
+    "spectral_displacement_from_uncoupled": "minimum-sum bipartite matching of coupled poles to poles from kc=cc=0 with the same k1,k2,c1,c2, reported as RMS matched complex-plane displacement"
+  },
+  "isolated_component_coordinates": {
+    "chi1": "c1/(2*sqrt(k1))",
+    "chi2": "c2/(2*sqrt(k2))",
+    "role": "constituent isolated-component coordinates only; not a system chi"
+  },
+  "modal_scalar_admission": {
+    "exact_real_modal_decoupling_test": "||CK-KC||_F / max(1,||C||_F*||K||_F) <= 1e-12",
+    "if_pass": "diagonalize K by an orthonormal basis; verify transformed C off-diagonal Frobenius norm <= 1e-10; for each real decoupled mode report chi_mode=c_modal/(2*sqrt(k_modal))",
+    "if_fail": "NO_EXACT_REAL_MODAL_SCALARIZATION",
+    "complex_pole_pair_diagnostic": "for each positive-imaginary conjugate pole lambda, report -Re(lambda)/|lambda| as COMPLEX_PAIR_DAMPING_RATIO; do not use this to pair real poles or define a master system chi",
+    "master_scalar_search_in_d01b": false
+  },
+  "modal_participation": {
+    "definition": "for each reported right eigenvector, normalize the displacement block q and report |q_i|^2/sum_j|q_j|^2",
+    "interpretation": "descriptive carrier participation only; not causal source fraction"
+  },
+  "energy_metrics": {
+    "component_1_energy": "0.5*v1^2 + 0.5*k1*q1^2",
+    "component_2_energy": "0.5*v2^2 + 0.5*k2*q2^2",
+    "coupling_spring_energy": "0.5*kc*(q1-q2)^2",
+    "total_mechanical_energy": "component_1_energy + component_2_energy + coupling_spring_energy",
+    "instantaneous_dissipation_power": "c1*v1^2 + c2*v2^2 + cc*(v1-v2)^2",
+    "energy_balance_residual": "max_t |E(t)+integral_0^t P_diss ds-E(0)| / max(E(0),1e-15)",
+    "max_transient_gain": "max_t E(t)/E(0) for each declared perturbation",
+    "receiving_component_peak_fraction": "max_t E_unperturbed_component(t)/E(0)",
+    "coupling_spring_peak_fraction": "max_t E_coupling(t)/E(0)",
+    "coupling_dissipation_fraction": "integral cc*(v1-v2)^2 dt / E(0) over the fixed window"
+  },
+  "recovery_metrics": {
+    "normalized_energy_state_norm": "sqrt(E(t)/E(0))",
+    "settling_time_2pct": "first sampled time after which normalized_energy_state_norm remains <=0.02; null if not settled in fixed window",
+    "state_norm_integral": "integral sqrt(E(t)/E(0)) dt over fixed window"
+  },
+  "function_map_outputs": [
+    "local_chi1",
+    "local_chi2",
+    "spectral_abscissa",
+    "modal_participation",
+    "exact_modal_scalarization_status",
+    "component_energy_redistribution",
+    "coupling_spring_energy",
+    "coupling_dissipation",
+    "settling_time_2pct",
+    "state_norm_integral",
+    "max_transient_energy_gain"
+  ],
+  "limit_map_outputs": [
+    "minimum_normalized_eigenvalue_separation",
+    "state_eigenvector_condition_number",
+    "real_or_complex_pole_structure",
+    "loss_of_exact_real_modal_scalarization",
+    "not_settled_within_fixed_window",
+    "energy_balance_failure_if_any"
+  ],
+  "anti_circularity": {
+    "no_nsdp0d16_17_19_parameter_tuning": true,
+    "no_atlas_target_or_range_used": true,
+    "no_master_scalar_predeclared": true,
+    "all_parent_grid_cases_retained": true,
+    "both_parent_perturbations_retained": true,
+    "no_post_result_window_extension_for_current_map": true,
+    "coordinate_compression_candidates_after_this_run_are_discovery_only": true
+  },
+  "claim_ceiling": "Within-domain P0 mechanical Function/Limit mapping only. D01B is not untouched confirmation of general feedback/coupling claims and does not establish Chi prevalence."
+}

@@ -17,6 +17,22 @@ This guide explains how to navigate the repository without mistaking an older ar
 
 The public archival and governance branch. It contains the Foundations research record and the current top-level qualification of historical claims.
 
+### `chi-architecture-p0`
+
+Isolated P0 exploratory branch for the post-result generalized chi-architecture investigation. It starts from protected `main` and does not rewrite the published Foundations lineage, the active substrate-inheritance contracts, or the non-authoritative SI-next branch.
+
+The branch currently contains:
+
+- a General Protocol v0.7.1 compliance audit;
+- a post-result discovery/promotion-debt ledger;
+- a falsifiability and anti-hand-waving charter;
+- a machine-readable F0-F8 known-truth experiment plan;
+- a pinned, tested synthetic harness and CI record.
+
+Its scalar, vector/modal, and conglomerate/system objects are **starting representations only**. The branch does not claim that these exhaust chi, that every domain admits chi, or that a generalized chi architecture has been confirmed.
+
+Synthetic passes on this branch are method-development evidence only. They do not count as real-system confirmation, a program-level `ADDS` result, an independent Atlas, or a predictive Tool.
+
 ### `substrate-inheritance`
 
 The active prospective substrate-inheritance program. It contains computational validation, frozen correspondence rules, real-system ingestion contracts, machine-readable evidence records, and its own current-status README.

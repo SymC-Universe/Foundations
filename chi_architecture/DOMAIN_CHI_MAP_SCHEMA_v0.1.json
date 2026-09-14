@@ -1,0 +1,110 @@
+{
+  "schema": "domain-chi-map-v0.1",
+  "status": "P0_D_P0_Q_SCHEMA_NOT_CONFIRMATION",
+  "authority": [
+    "General Cross-Project Research Protocol v0.7.1 FINAL",
+    "General Cross-Project Research Protocol v0.7.1A"
+  ],
+  "core_dependency": [
+    "native_domain_science",
+    "function_map",
+    "limit_map",
+    "candidate_coordinate_map",
+    "within_domain_qualification",
+    "frozen_domain_map",
+    "cross_domain_atlas"
+  ],
+  "forbidden_dependency": "desired_cross_domain_atlas_alignment_may_not_select_or_tune_domain_coordinate",
+  "required_record_fields": {
+    "domain_id": "string",
+    "system_id": "string",
+    "state_id": "string",
+    "native_model_id": "string",
+    "native_model_validity": "object",
+    "condition_class": [
+      "NOMINAL_FUNCTION",
+      "PERTURBED_FUNCTION",
+      "ALTERNATE_STABLE_ORGANIZATION",
+      "BOUNDARY_OR_TRANSITION",
+      "POST_TRANSITION_OR_FAILURE",
+      "RARE_NATURAL_LIMIT",
+      "UNRESOLVED"
+    ],
+    "architecture": {
+      "scalar_content": "object_or_null",
+      "modal_vector_content": "object_or_null",
+      "conglomerate_system_content": "object_or_null",
+      "relationships_feedback_coupling": "object_or_null",
+      "uncertainty_nonidentifiability": "object",
+      "open_channels": "array"
+    },
+    "candidate_chi_coordinate": {
+      "status": [
+        "NOT_YET_PROPOSED",
+        "SCALAR",
+        "VECTOR",
+        "SUBSPACE_PROJECTOR",
+        "GRAPH_NETWORK",
+        "OPERATOR_MANIFOLD",
+        "HYBRID",
+        "NO_ADMISSIBLE_SCALAR_CHI",
+        "NO_ADMISSIBLE_CHI_COORDINATE",
+        "UNRESOLVED"
+      ],
+      "definition": "object_or_null",
+      "dimensionality": "integer_or_null",
+      "native_derivation": "string_or_null",
+      "inputs": "array",
+      "outputs": "array",
+      "uncertainty": "object_or_null"
+    },
+    "coordinate_role": [
+      "ADDED_MECHANISM",
+      "ADDED_PREDICTION",
+      "BOUNDARY_COORDINATE",
+      "ROBUSTNESS_COORDINATE",
+      "COMPRESSION",
+      "DESCRIPTIVE_ONLY",
+      "NO_ADDED_VALUE",
+      "NOT_APPLICABLE",
+      "UNRESOLVED"
+    ],
+    "native_outcome": "object",
+    "native_comparator": "object",
+    "qualification": "object",
+    "provenance": "object",
+    "evidence_maturity": ["P0_D", "P0_Q", "P1", "P2"]
+  },
+  "anti_circularity_checks": [
+    "outcome_defined_independently_of_coordinate",
+    "coordinate_inputs_selected_without_desired_atlas_placement",
+    "native_model_selected_independently_of_candidate_chi_result",
+    "shared_input_or_denominator_coupling_audited",
+    "coordinate_does_not_directly_encode_test_outcome_without_declared_role",
+    "hyperparameter_training_and_evaluation_sets_separated_where_required",
+    "native_comparator_fair_for_declared_task",
+    "independent_units_and_exchangeability_valid_where_statistical_claims_are_made",
+    "method_can_return_no_admissible_coordinate",
+    "atlas_alignment_can_fail_without_forcing_domain_coordinate_revision"
+  ],
+  "rare_natural_limit_requirements": [
+    "rarity_defined_by_domain_native_criteria_not_chi_result",
+    "event_authenticity_and_provenance_checked",
+    "base_rate_or_prevalence_preserved_when_known",
+    "ordinary_or_lower_extreme_comparator_included_when_feasible",
+    "already_viewed_event_labeled_P0_D_or_P0_Q_if_rules_are_learned_from_it",
+    "P1_selection_frozen_before_decisive_coordinate_or_atlas_result"
+  ],
+  "scalar_admission_rule": {
+    "default": "NO_ADMISSIBLE_SCALAR_CHI",
+    "require_native_derivation": true,
+    "require_declared_information_preservation_or_added_value": true,
+    "cross_domain_visual_alignment_is_not_admission_evidence": true
+  },
+  "atlas_rule": {
+    "atlas_is_downstream": true,
+    "retain_native_dimensionality": true,
+    "common_axis_not_required": true,
+    "cross_domain_alignment_is_separate_scientific_problem": true
+  }
+}

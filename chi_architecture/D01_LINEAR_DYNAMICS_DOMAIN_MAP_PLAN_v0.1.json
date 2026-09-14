@@ -1,0 +1,161 @@
+{
+  "schema": "domain-chi-map-plan-v0.1",
+  "domain_id": "D01_LINEAR_DYNAMICS",
+  "status": "P0_D_P0_Q_NOT_CONFIRMATORY",
+  "authority": [
+    "General Cross-Project Research Protocol v0.7.1 FINAL",
+    "General Cross-Project Research Protocol v0.7.1A",
+    "DOMAIN_FIRST_CHI_COORDINATE_PROGRAM_v0.1"
+  ],
+  "purpose": "Map how independently justified stability coordinates behave across the functioning interior and limits of exact and coupled linear dynamics before any cross-domain Atlas comparison.",
+  "atlas_blind": true,
+  "cross_domain_alignment_used_for_parameter_or_metric_selection": false,
+  "phases": [
+    {
+      "id": "D01A_SDOF_SCALE_COLLAPSE",
+      "role": "EXACT_FIRST_PRINCIPLES_ANCHOR",
+      "governing_model": "x_ddot + gamma*x_dot + omega0^2*x = 0",
+      "native_coordinate": {
+        "name": "chi",
+        "definition": "gamma/(2*omega0)",
+        "derivation_status": "FIRST_PRINCIPLES_WITHIN_DECLARED_LINEAR_PASSIVE_MODEL",
+        "coordinate_role_to_test": [
+          "DIMENSIONLESS_DYNAMIC_SIMILARITY_COORDINATE",
+          "REGIME_BOUNDARY_COORDINATE",
+          "RESPONSE_SHAPE_COMPRESSION"
+        ]
+      },
+      "normalization": {
+        "time": "tau=omega0*t",
+        "velocity": "u=dx/dtau",
+        "normalized_equation": "d2x/dtau2 + 2*chi*dx/dtau + x = 0"
+      },
+      "parameter_grid": {
+        "omega0": [0.5, 1.0, 2.0, 5.0],
+        "chi_start": 0.0,
+        "chi_stop": 4.0,
+        "chi_step": 0.05,
+        "normalized_initial_conditions": [
+          {"x0": 1.0, "u0": 0.0},
+          {"x0": 0.0, "u0": 1.0}
+        ],
+        "tau_start": 0.0,
+        "tau_stop": 30.0,
+        "tau_points": 6001
+      },
+      "function_map_metrics": [
+        "normalized_trajectory",
+        "normalized_energy_trajectory",
+        "zero_crossing_count",
+        "first_zero_crossing_tau",
+        "settling_tau_2pct",
+        "integral_abs_x_dtau",
+        "integral_x2_dtau",
+        "max_abs_u",
+        "slowest_dimensionless_decay_rate"
+      ],
+      "limit_map_metrics": [
+        "root_discriminant",
+        "root_coalescence_at_chi_1",
+        "oscillatory_to_nonoscillatory_transition",
+        "large_chi_slow_mode_behavior"
+      ],
+      "coordinate_adequacy_tests": [
+        "same_chi_different_omega0_normalized_trajectory_collapse",
+        "same_chi_different_omega0_normalized_metric_collapse",
+        "different_chi_resolve_distinct_normalized_response_where_native_dynamics_differ"
+      ],
+      "expected_exact_fact_not_discovery": "The normalized equation depends on chi but not separately on omega0; numerical collapse verifies implementation and maps the response surface, not a new law.",
+      "can_refuse_scalar": false
+    },
+    {
+      "id": "D01B_COUPLED_2DOF",
+      "role": "DOMAIN_EXTENSION_WITHOUT_PREDECLARED_MASTER_SCALAR",
+      "governing_model": "M*q_ddot + C*q_dot + K*q = 0 with M=I for first pass",
+      "native_architecture": [
+        "state_space_generator",
+        "complex_spectrum",
+        "right_and_left_modal_structure_where_needed",
+        "invariant_subspaces_under_crowding",
+        "component_energy_and_energy_transfer",
+        "coupling_stiffness_and_coupling_damping",
+        "state_transition_operator",
+        "transient_gain",
+        "response_to_single_component_perturbation"
+      ],
+      "parameter_grid": {
+        "k1": [1.0],
+        "k2": [0.5, 1.0, 2.0],
+        "local_damping_c1": [0.1, 0.5, 1.0, 2.0],
+        "local_damping_c2": [0.1, 0.5, 1.0, 2.0],
+        "coupling_stiffness_kc": [0.0, 0.1, 0.25, 0.5, 1.0, 2.0],
+        "coupling_damping_cc": [0.0, 0.1, 0.5, 1.0]
+      },
+      "perturbations": [
+        {"q0": [1.0, 0.0], "qdot0": [0.0, 0.0], "meaning": "perturb_component_1"},
+        {"q0": [0.0, 1.0], "qdot0": [0.0, 0.0], "meaning": "perturb_component_2"}
+      ],
+      "function_map_metrics": [
+        "asymptotic_stability",
+        "spectral_abscissa",
+        "complex_mode_decay_and_frequency_where_identifiable",
+        "modal_participation",
+        "subspace_geometry_where_crowded",
+        "component_energy_redistribution",
+        "coupling_energy_exchange",
+        "settling_time",
+        "max_transient_gain",
+        "state_norm_integral"
+      ],
+      "limit_map_metrics": [
+        "mode_coalescence_or_near_degeneracy",
+        "loss_of_individual_modal_identifiability",
+        "overdamped_or_nonoscillatory_modal_transition_where_defined",
+        "strong_coupling_reorganization",
+        "large_transient_amplification_despite_asymptotic_stability"
+      ],
+      "coordinate_policy": {
+        "master_scalar_predeclared": false,
+        "mode_specific_damping_ratios_allowed_only_where_licensed": true,
+        "multidimensional_coordinate_allowed": true,
+        "no_admissible_scalar_allowed": true,
+        "coordinate_inputs_may_not_be_weighted_using_cross_domain_atlas_alignment": true
+      },
+      "native_comparators": [
+        "full_state_space_response",
+        "eigenvalue_spectrum",
+        "modal_analysis",
+        "transient_gain_or_resolvent_analysis_where_applicable"
+      ],
+      "questions": [
+        "When do independently adequate scalar/modal summaries cease to reconstruct the perturbation response?",
+        "Which coupling-sensitive quantities are needed to place otherwise similar component systems at different locations in domain stability space?",
+        "Can a lower-dimensional coordinate preserve recovery and redistribution behavior across the functioning region without being tuned to a desired boundary?",
+        "Where does a scalar compression fail while a multidimensional coordinate remains adequate?"
+      ]
+    },
+    {
+      "id": "D01C_NONNORMAL_EXTENSION",
+      "role": "TRANSIENT_AND_OPERATOR_GEOMETRY_STRESS_TEST",
+      "reuse_policy": "F1/F6 fixtures may be used for method calibration only; evaluative mapping receives independently specified parameter ranges before decisive output interpretation.",
+      "native_targets": [
+        "transient_amplification",
+        "eigenvector_conditioning",
+        "resolvent_gain",
+        "pseudospectral_sensitivity",
+        "recovery_trajectory"
+      ],
+      "scalar_policy": "No scalar chi is assumed or sought unless a within-domain compression later earns admission."
+    }
+  ],
+  "anti_circularity": {
+    "atlas_blind_domain_mapping": true,
+    "native_outcomes_defined_before_coordinate_compression": true,
+    "no_target_derived_weighting": true,
+    "no_cross_domain_alignment_tuning": true,
+    "designed_exact_anchor_not_counted_as_cross_domain_confirmation": true,
+    "negative_and_no_compression_outcomes_retained": true
+  },
+  "current_gate": "IMPLEMENT_D01A_FUNCTION_AND_LIMIT_MAP_THEN_D01B_RAW_ARCHITECTURE_MAP",
+  "claim_ceiling": "Within-domain P0 mapping and method qualification only. No cross-domain Atlas claim."
+}

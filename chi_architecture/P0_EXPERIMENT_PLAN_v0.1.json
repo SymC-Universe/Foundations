@@ -1,0 +1,188 @@
+{
+  "schema": "chi-architecture-p0-experiment-plan-v0.1",
+  "status": "P0_EXPLORATORY_NOT_CONFIRMATORY",
+  "purpose": [
+    "HYPOTHESIS_GENERATION",
+    "FEASIBILITY",
+    "KNOWN_TRUTH_METHOD_STRESS"
+  ],
+  "protocol_authority": "General Cross-Project Research Protocol v0.7.1",
+  "mfr14_activated": false,
+  "claim_ceiling": "exploratory method and architecture evidence only",
+  "chi_policy": {
+    "default": "NO_ADMISSIBLE_CHI_UNLESS_NATIVE_MODEL_LICENSES_IT",
+    "licensed_demo": "second_order_restoring_factor_only",
+    "canonical_demo_equation": "x_ddot + gamma x_dot + kappa x = 0",
+    "canonical_demo_condition": "kappa > 0",
+    "canonical_demo_coordinate": "chi = gamma / (2 * sqrt(kappa))",
+    "anti_restoring_condition": "kappa <= 0 refuses critical-damping chi interpretation",
+    "no_cross_regime_scalar_formula_is_assumed": true
+  },
+  "representation_policy": {
+    "S": "named scalar representation derived from the native model",
+    "M": "named vector/modal/subspace representation derived from the native model",
+    "C": "named interaction/coupling/system representation; never arbitrary feature concatenation",
+    "R": "cross-representation relationship diagnostics; not automatically a chi component",
+    "U": "uncertainty, residuals, conditioning, refusal, and nonidentifiability",
+    "smc_exhaustive": false,
+    "smc_literal_chi_formula": false
+  },
+  "families": [
+    {
+      "id": "F0",
+      "name": "normal_decoupled_baseline",
+      "governing_object": "continuous-time linear generator A",
+      "matrix": [[-1.0, 0.0], [0.0, -2.0]],
+      "native_truth": "asymptotically stable, normal, uncoupled; eigenvalue stability is sufficient for the declared task",
+      "primary_task": "classify asymptotic stability and detect whether extra architecture is needed",
+      "native_comparator_candidate": "eigenvalue real-part test",
+      "expected_p0_state": "STANDARD_TOOLKIT_EQUIVALENT",
+      "negative_requirement": "must not manufacture conglomerate added value"
+    },
+    {
+      "id": "F1",
+      "name": "same_spectrum_different_modal_geometry",
+      "governing_object": "A(k) = [[-1,k],[0,-2]]",
+      "parameter_values": {"k": [0.0, 1.0, 4.0, 8.0]},
+      "invariant": "eigenvalues are exactly {-1,-2} for every k",
+      "changed_structure": "eigenvector geometry, non-normality, and transient response",
+      "primary_task": "measure maximum finite-time two-norm gain on a fixed time grid",
+      "time_grid": {"start": 0.0, "stop": 8.0, "points": 4001},
+      "native_comparator_candidate": "largest singular value of exp(A t)",
+      "expected_p0_state": "SCALAR_SPECTRUM_INSUFFICIENT_FOR_TRANSIENT_TASK"
+    },
+    {
+      "id": "F2",
+      "name": "same_modal_geometry_different_scalar_spectrum",
+      "governing_object": "diagonal continuous-time linear generator",
+      "matrices": [
+        [[-0.25, 0.0], [0.0, -2.0]],
+        [[-1.0, 0.0], [0.0, -2.0]],
+        [[-1.75, 0.0], [0.0, -2.0]]
+      ],
+      "invariant": "canonical coordinate basis is the modal basis",
+      "changed_structure": "scalar decay spectrum",
+      "primary_task": "compare state norm at t=4 from x0=[1,0]",
+      "native_comparator_candidate": "closed-form exponential decay",
+      "expected_p0_state": "MODAL_GEOMETRY_INSUFFICIENT_FOR_DECAY_TASK"
+    },
+    {
+      "id": "F3",
+      "name": "same_local_subsystems_different_coupling",
+      "governing_object": "A(b,c) = [[-1,b],[c,-2]]",
+      "fixed_local_terms": {"a11": -1.0, "a22": -2.0},
+      "coupling_cases": [
+        {"label": "zero", "b": 0.0, "c": 0.0},
+        {"label": "symmetric_mild", "b": 0.5, "c": 0.5},
+        {"label": "antisymmetric", "b": 2.0, "c": -2.0},
+        {"label": "symmetric_destabilizing", "b": 2.0, "c": 2.0}
+      ],
+      "primary_task": "determine how system stability and finite-time response change while isolated local terms are fixed",
+      "native_comparator_candidate": "trace-determinant/eigenvalue stability plus state-transition norm",
+      "expected_p0_state": "COUPLING_SPECIFIC_SYSTEM_RESPONSE"
+    },
+    {
+      "id": "F4",
+      "name": "feedback_compensation_vs_destabilization",
+      "governing_object": "A(k,h) = [[0.3,-k],[h,-1.0]]",
+      "fixed_local_terms": {"plant_rate": 0.3, "feedback_state_rate": -1.0},
+      "cases": [
+        {"label": "feedback_absent", "k": 0.0, "h": 0.0},
+        {"label": "insufficient_feedback", "k": 0.4, "h": 0.4},
+        {"label": "stabilizing_feedback", "k": 0.6, "h": 0.6},
+        {"label": "strong_stabilizing_feedback", "k": 1.0, "h": 1.0},
+        {"label": "sign_reversed_feedback", "k": -0.6, "h": 0.6}
+      ],
+      "known_hurwitz_condition": "trace=-0.7<0 and determinant=-0.3+k*h>0, so stability requires k*h>0.3",
+      "primary_task": "distinguish coupling-dependent recovery from absent, insufficient, and sign-reversed feedback",
+      "native_comparator_candidate": "Hurwitz trace-determinant criterion and exact eigenvalue test",
+      "expected_p0_state": "COMPENSATION_REQUIRES_COUPLING_SPECIFICITY"
+    },
+    {
+      "id": "F5",
+      "name": "noise_entry_point",
+      "governing_object": "stable linear stochastic state model plus observation model",
+      "base_matrix": [[-1.0, 0.0], [0.0, -2.0]],
+      "noise_cases": ["PROCESS_NOISE", "OBSERVER_ONLY_NOISE", "FEEDBACK_OR_SENSOR_NOISE"],
+      "random_seed": 20260910,
+      "primary_task": "separate perturbations that alter the physical state from perturbations that alter only observation, and separately test sensor noise that enters feedback",
+      "native_comparator_candidate": "known state/noise injection path and state covariance",
+      "expected_p0_state": "NOISE_ENTRY_POINT_MUST_CHANGE_INTERPRETATION"
+    },
+    {
+      "id": "F6",
+      "name": "nonnormal_transient_growth",
+      "governing_object": "upper-triangular stable generator family A(k)",
+      "parameter_values": {"k": [0.0, 2.0, 4.0, 8.0, 12.0]},
+      "primary_task": "compare eigenvalue-only asymptotic stability with exact finite-time singular-value amplification",
+      "native_comparator_candidate": "transient norm / singular-value analysis",
+      "expected_p0_state": "STANDARD_NONNORMAL_ANALYSIS_EXPLAINS_EFFECT_UNLESS_ARCHITECTURE_ADDS_A_SEPARATE_VALUE_AXIS"
+    },
+    {
+      "id": "F7",
+      "name": "degenerate_subspace_refusal",
+      "governing_object": "A = -I_2",
+      "matrix": [[-1.0, 0.0], [0.0, -1.0]],
+      "native_truth": "the full two-dimensional eigenspace is identifiable but individual eigenvectors are not uniquely defined",
+      "primary_task": "refuse unique individual-mode identity and retain the invariant subspace",
+      "native_comparator_candidate": "exact eigenspace algebra",
+      "expected_p0_state": "SUBSPACE_ONLY"
+    },
+    {
+      "id": "F8",
+      "name": "chi_nonapplicability_and_boundary_refusal",
+      "cases": [
+        {
+          "label": "restoring_second_order",
+          "gamma": 2.0,
+          "kappa": 1.0,
+          "native_truth": "licensed second-order factor with chi=1 and zero discriminant"
+        },
+        {
+          "label": "anti_restoring_second_order",
+          "gamma": 2.0,
+          "kappa": -1.0,
+          "native_truth": "saddle; discriminant cannot vanish for real gamma; critical-damping chi interpretation refused"
+        },
+        {
+          "label": "single_real_pole",
+          "pole": -1.0,
+          "native_truth": "single pole alone does not define the second-order chi coordinate"
+        }
+      ],
+      "primary_task": "demonstrate that chi admission and chi=1 boundary language can refuse mathematically invalid cases",
+      "native_comparator_candidate": "characteristic-polynomial/discriminant analysis",
+      "expected_p0_state": "NO_ADMISSIBLE_CHI_WHERE_SECOND_ORDER_BOUNDARY_IS_NOT_LICENSED"
+    }
+  ],
+  "mandatory_output_states": [
+    "STANDARD_TOOLKIT_EQUIVALENT",
+    "STANDARD_TOOLKIT_SUBTRACTS",
+    "NO_ADDED_ARCHITECTURE_VALUE",
+    "SCALAR_SPECTRUM_INSUFFICIENT_FOR_TRANSIENT_TASK",
+    "MODAL_GEOMETRY_INSUFFICIENT_FOR_DECAY_TASK",
+    "COUPLING_SPECIFIC_SYSTEM_RESPONSE",
+    "COMPENSATORY_DISCORDANCE_CANDIDATE",
+    "DISCORDANCE_DESTABILIZING",
+    "DISCORDANCE_NONFUNCTIONAL",
+    "EPISTEMIC_DISCORDANCE",
+    "EPISTEMIC_NOISE_EXPLAINS_RESULT",
+    "NO_COUPLING_SPECIFICITY",
+    "CONGLOMERATE_REDUNDANT",
+    "NO_ADMISSIBLE_CHI",
+    "NOT_APPLICABLE",
+    "NONIDENTIFIABLE",
+    "SUBSPACE_ONLY",
+    "DOMAIN_LIMITED",
+    "NO_STABLE_CROSS_REGIME_MAPPING"
+  ],
+  "reporting_rules": {
+    "retain_every_family": true,
+    "retain_negative_results": true,
+    "retain_native_comparator_result": true,
+    "synthetic_success_counts_as_empirical_confirmation": false,
+    "synthetic_success_counts_as_program_portfolio_ADDS": false,
+    "parameter_changes_after_result_require_new_p0_version": true,
+    "no_empirical_gri_target_is_used_in_this_plan": true
+  }
+}
