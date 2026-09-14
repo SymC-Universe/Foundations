@@ -2,16 +2,43 @@
 
 Status: ACTIVE P0-D / P0-Q INVESTIGATION. Computational evidence is being developed prospectively. Nothing in this directory establishes a universal substrate-inheritance law or a real-system inheritance result.
 
-General Protocol authority: `General_Cross_Project_Research_Protocol_v0.7.4_FINAL.pdf`, dated 2026-09-12.
+Program authority: **SymC General Operations Manual v0.8.0**, Definitive Active Baseline, dated 2026-09-14. Authoritative Markdown SHA-256: `ee3d9955e19f280ad385488180800d1cdb2d5054823cfa2fa6a697ab3f51d396`. The SI migration record is `SI_GOM_V0.8.0_MIGRATION_AUDIT_20260914.md`.
 
-Current-status authority: this README, the frozen v0.2 physical-promotion contracts (`CORRESPONDENCE_PROTOCOL_v0.2.json` and `REAL_SYSTEM_INPUT_SCHEMA_v0.2.json`), the non-authoritative SI-next v0.4 candidate contract, the current validation/audit records, and current computational records govern the present program. Older papers, repository metadata, release text, prior README language, v0.1 contracts, and superseded SI-next candidates are OUTDATED wherever they conflict with these current qualifications. Historical artifacts remain preserved for provenance rather than silently rewritten.
+Historical references to General Cross-Project Research Protocol v0.7.4 remain valid as governance provenance for records created under that version, but GOM v0.8.0 is the active program authority.
+
+Current-status authority: this README, the frozen v0.2 physical-promotion contracts (`CORRESPONDENCE_PROTOCOL_v0.2.json` and `REAL_SYSTEM_INPUT_SCHEMA_v0.2.json`), the non-authoritative SI-next v0.4 candidate contract, the current validation/audit records, the living manuscript evidence controls, and current computational records govern the present program. Older papers, repository metadata, release text, prior README language, v0.1 contracts, and superseded SI-next candidates are OUTDATED wherever they conflict with these current qualifications. Historical artifacts remain preserved for provenance rather than silently rewritten.
 
 ## Project control
 
-STATUS | GP v0.7.4 migration is qualified; frozen v0.2 physical route is unchanged; FM4 hierarchical closure, FM1 coupling response, FM3 lineage flow, and FM2 embedding depth are complete at P0-D; no real-system inheritance result is established.
+STATUS | GOM v0.8.0 migration is recorded; frozen v0.2 physical route is unchanged; FM4 hierarchical closure, FM1 coupling response, FM3 lineage flow, and FM2 embedding depth are complete at P0-D; no real-system inheritance result is established.
 PURPOSE | Determine when independently characterized parent/substrate organization predicts, transforms, or fails to predict carrier-resolved child/coupled-system organization, without confusing generic influence with inheritance.
-NEXT ACTION | Complete the frozen Function/Limit sequence with `FM5_RECOVERY_RESILIENCE_LANDSCAPE`, separating asymptotic return from finite-time amplification and retaining nonreturn, reorganization, and refusal states where the synthetic native model produces them.
-USER ACTION | NONE.
+NEXT COMPUTATIONAL ACTION | Prospectively specify and execute `FM5_RECOVERY_RESILIENCE_LANDSCAPE`, separating asymptotic return from finite-time amplification and retaining nonreturn, reorganization, and refusal states where the synthetic native model produces them.
+PARALLEL NON-COMPUTE ACTION | Maintain the living manuscript, evidence matrix, reproducibility/open-channel records, task-specific native-comparator map, and physical-source readiness without changing frozen v0.2 science.
+USER ACTION | NONE for current P0-D/P0-Q documentation, literature, reproducibility, and manuscript work. A new physical P1 freeze or science-changing computational specification remains a separate decision.
+
+## Living manuscript
+
+The canonical editable working manuscript now lives in:
+
+`manuscript/SI_MANUSCRIPT_WORKING.md`
+
+It is explicitly an **active working draft**, not a submission-ready product, preprint release, or physical inheritance claim. Its control files are:
+
+- `manuscript/README.md`;
+- `manuscript/SI_MANUSCRIPT_EVIDENCE_MATRIX_v0.1.md`.
+
+The manuscript may be updated in meaningful evidence batches rather than every commit. Numerical and interpretive claims must remain traceable to source-of-record evidence and the current claim ceiling.
+
+## Current non-compute control records
+
+- `SI_NONCOMPUTE_WORK_REGISTER_20260914.md`;
+- `SI_REPRODUCIBILITY_READINESS_AUDIT_20260914.md`;
+- `SI_OPEN_CHANNEL_DEPENDENCY_LEDGER_v0.1.md`;
+- `SI_FUNCTION_LIMIT_BALANCE_AUDIT_v0.1.md`;
+- `SI_NATIVE_COMPARATOR_MAP_v0.1.md`;
+- `SI_P1_MFR14_PREFREEZE_TEMPLATE_v0.1.md`.
+
+These records keep work moving without treating missing physical evidence as a field to be filled by assumption.
 
 ## System Model and Engine
 
@@ -47,7 +74,7 @@ No level substitutes automatically for the others.
 
 ## Local identity versus embedded realized behavior
 
-GP v0.7.4 makes this distinction first-class in SI:
+GOM v0.8.0 preserves this distinction as first-class in SI:
 
 `LOCAL DYNAMICAL IDENTITY != EMBEDDED REALIZED BEHAVIOR`
 
@@ -191,7 +218,7 @@ The current engine and validation suite implement:
 - a fail-closed real-system mechanical ingestion adapter;
 - promotion logic that distinguishes influence, conditional inheritance, and inheritance;
 - SI-next relationship/uncertainty/lineage/multi-parent diagnostics;
-- GP v0.7.4 candidate semantic guards for NOT_APPLICABLE views, Atlas leakage, system-scalar aggregation, hierarchical closure, recovery semantics, and cross-scale scope;
+- candidate semantic guards for NOT_APPLICABLE views, Atlas leakage, system-scalar aggregation, hierarchical closure, recovery semantics, and cross-scale scope, first developed under the GP v0.7.4 migration and retained under GOM v0.8.0;
 - exact and approximate hierarchical-closure Function/Limit mapping;
 - coupling-response Function/Limit mapping with same-spectrum, zero-coupling, intervention, and rewire controls;
 - multi-generation lineage Function/Limit mapping with direct-reconvergence and uncertainty-envelope stress tests;
@@ -294,7 +321,7 @@ Detailed numerical provenance is retained in `VALIDATION_LEDGER.md`.
 
 ## Function Map and Limit Map
 
-The pre-v0.7.4 SI program was stronger on Limit Map qualification than on ordinary-function mapping. That imbalance is now explicit and is being corrected rather than hidden.
+The pre-v0.7.4 SI program was stronger on Limit Map qualification than on ordinary-function mapping. That imbalance was made explicit and corrected rather than hidden.
 
 `SI_FUNCTION_LIMIT_MAP_PLAN_v0.1.json` defines:
 
@@ -310,7 +337,7 @@ Current frozen sequence status:
 2. `FM1_COUPLING_RESPONSE_LANDSCAPE` — COMPLETE;
 3. `FM3_LINEAGE_FLOW_LANDSCAPE` — COMPLETE;
 4. `FM2_EMBEDDING_DEPTH_LANDSCAPE` — COMPLETE;
-5. `FM5_RECOVERY_RESILIENCE_LANDSCAPE` — NEXT.
+5. `FM5_RECOVERY_RESILIENCE_LANDSCAPE` — NEXT COMPUTATIONAL MAP.
 
 The completed maps show both functioning interiors and method/representation limits. FM3 in particular found a limitation in sequential normalized lineage flow rather than only a favorable SI pattern. FM2 showed that retained parent depth is a declared-task and regime-dependent numerical reduction quantity rather than a single intrinsic number.
 
@@ -318,14 +345,16 @@ Function-map outputs remain descriptive or structural by default. A rich functio
 
 Rare/extreme systems are limit probes, not representative centers merely because they are unusual.
 
+The current balance audit is `SI_FUNCTION_LIMIT_BALANCE_AUDIT_v0.1.md`.
+
 ## Physical-system readiness
 
 `PHYSICAL_INPUT_READINESS_v0.2.json` supersedes the older status snapshot while leaving all frozen science unchanged.
 
-Current checked state as of 2026-09-12:
+Current checked state as of the source-readiness snapshot retained in that file:
 
-1. **Na/Cu(001):** development-only and not ready for SI physical ingestion. Chemistry head `65a4a5104d32207e2014f8b5b694db544d35392e` is an upstream computational-control state, and repository inspection did not find the planned `ACTIVE_REGION_HESSIAN.json` SI input artifact. Existing development outputs cannot be retroactively promoted.
-2. **CO/Cu(111):** prospective external validation target, but no provenance-complete SI v0.2 real-system input record is admitted in Foundations. SI does not alter the upstream Chemistry route.
+1. **Na/Cu(001):** development-only and not ready for SI physical ingestion. Existing development outputs cannot be retroactively promoted.
+2. **CO/Cu(111):** prospective external validation target, but no provenance-complete SI v0.2 real-system input record is admitted in Foundations. SI does not alter an upstream route to satisfy SI.
 3. **H/Ru(0001):** contrast/limit target with no admitted real-system SI input record. Its contrast role does not grant representative evidentiary weight.
 
 Mechanical chi or a damping scalar is not required to begin modal or conglomerative inheritance analysis. Any later scalar inheritance or system-chi claim requires its own independent admissibility, derivation, and dissipation provenance where relevant.
@@ -345,28 +374,38 @@ Barrier height, reaction rate, damping morphology, turnover, transmission, excep
 
 `SI_EXPERIMENTAL_OPPORTUNITY_v0.1.md` preserved independent experimental game plans before the targeted prior-experiment search.
 
-The initial targeted collision is now recorded in `SI_LITERATURE_COLLISION_v0.1.md`. It found substantial prior art for:
+The targeted collision records are now:
+
+- `SI_LITERATURE_COLLISION_v0.1.md`;
+- `SI_LITERATURE_COLLISION_v0.2.md`.
+
+Together they identify substantial prior art for:
 
 - adsorbate-substrate vibrational coupling and hybridization;
+- clean-versus-adsorbate-covered surface phonon comparison;
+- adsorbate-specific mode tracking;
 - isotope controls separating coupling effects from simpler frequency/chemical shifts;
 - substrate excitation followed by adsorbate vibrational response;
 - modal-vector comparison, mode tracking, clustered-subspace handling, and modal-correlation uncertainty;
-- static/dynamic substructuring, component-mode synthesis, and input-output model reduction;
+- component-level uncertainty propagation into assembled dynamics;
+- static/dynamic substructuring, Component Mode Synthesis, response-dependent reduction, and multilevel transfer-path analysis;
 - surface Green-function and embedding methods.
 
-Those primitives are therefore inherited native science, not SI novelty targets.
+Those primitives are inherited native science, not SI novelty targets.
 
-The residual question has narrowed to whether an independently characterized parent/substrate architecture provides prospectively useful, uncertainty-aware, carrier-resolved information about a child/coupled system beyond ordinary frequency matching or generic coupling influence, and which declared higher-level quantities remain preserved after grouping/re-embedding.
+The residual question has narrowed to whether an independently characterized parent/substrate architecture provides prospectively useful, uncertainty-aware, carrier-resolved information about a child/coupled system beyond established mode tracking, response reduction, transfer-path analysis, frequency matching, or generic coupling influence, and which declared inherited quantities remain preserved after grouping/re-embedding.
 
 A physical analogue validates only the shared mathematical/measurement property. It cannot by itself validate another domain's physical interpretation.
 
 ## Attribution and novelty
 
-`SI_ATTRIBUTION_RESIDUAL_NOVELTY_LEDGER_v0.2.md` records the first post-collision adjudication.
+`SI_ATTRIBUTION_RESIDUAL_NOVELTY_LEDGER_v0.3.md` is the current attribution ceiling.
 
-Established methods receive their own credit. SI does not claim novelty for Schur/static condensation, dynamic substructuring, Component Mode Synthesis, Green-function embedding, MAC/mode tracking, clustered-subspace methods, or the generic existence of adsorbate-substrate coupling.
+Established methods receive their own credit. SI does not claim novelty for Schur/static condensation, dynamic substructuring, Component Mode Synthesis, Green-function embedding, MAC/mode tracking, adsorbate-specific mode tracking, clustered-subspace methods, component-to-system uncertainty propagation, multilevel transfer-path tracing, or the generic existence of adsorbate-substrate coupling.
 
-Any future SI novelty claim is limited to residual formalization, evidence architecture, predictive rule, validation, hierarchical-closure question, or measurable tool utility that remains after deeper nearest-prior-art accounting and prospective testing.
+Any future SI novelty claim is limited to residual formalization, prospective evidence architecture, predictive rule, physical validation, information-loss-aware lineage, SI-specific hierarchical-closure question, or measurable tool utility that remains after deeper claim-specific prior-art accounting and prospective testing.
+
+The current task-specific comparator preparation is `SI_NATIVE_COMPARATOR_MAP_v0.1.md`.
 
 ## Non-Markovian and bath rule
 
@@ -408,7 +447,7 @@ Current program status is an ongoing investigation aimed at developing computati
 
 ## Current branch status
 
-- General Protocol audit: v0.7.4 migration implemented and qualified on SI-next.
+- Program authority: **GOM v0.8.0 adopted for current SI work**; GP v0.7.4 audit retained as historical migration provenance.
 - Frozen physical correspondence definitions: v0.2, unchanged.
 - Frozen real-system input contract: v0.2, unchanged.
 - SI-next candidate architecture: v0.4 P0-Q, non-authoritative, semantic qualification green.
@@ -416,16 +455,19 @@ Current program status is an ongoing investigation aimed at developing computati
 - Fail-closed ingestion adapter validation: PASS.
 - SI-next v0.3 candidate qualification: historical P0-Q evidence, not physical evidence.
 - SI-next v0.4 semantic qualification: PASS as P0-Q method/governance qualification only.
-- Initial experimental literature collision: complete; residual question narrowed, not declared novel.
+- Targeted experimental literature collision: v0.1 plus v0.2 complete for current broad P0 scope; residual question narrowed, publication-level novelty not certified.
+- Attribution/residual novelty: current ledger v0.3.
 - FM4 hierarchical-closure Function/Limit map: complete at P0-D.
 - FM1 coupling-response Function/Limit map: complete at P0-D.
 - FM3 lineage-flow Function/Limit map: complete at P0-D; sequential normalized flow has a documented reconvergence information-loss limit.
 - FM2 embedding-depth Function/Limit map: complete at P0-D; effective depth is task/regime dependent and is not a physical inheritance length.
-- FM5 recovery/resilience Function/Limit map: next.
+- FM5 recovery/resilience Function/Limit map: next computational map, not yet a result.
+- Living manuscript: active working draft in `manuscript/SI_MANUSCRIPT_WORKING.md`.
+- Reproducibility readiness: strong for FM1-FM4, not release-frozen.
 - Physical inheritance thresholds: not frozen.
 - Real-system inheritance result: not established.
 - Universal inheritance claim: not established and not a program target.
 - P1 confirmation: not activated.
-- MFR-14: not activated for current P0-D/P0-Q work.
+- MFR-14: not activated for current P0-D/P0-Q work; prefreeze template only.
 
 A refusal, `NOT_APPLICABLE`, nonidentifiable correspondence, influence-only result, failed hierarchical closure, failed recovery prediction, or failed inheritance test is a valid scientific outcome and remains in the record.
