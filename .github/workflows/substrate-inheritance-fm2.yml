@@ -1,20 +1,14 @@
 name: Substrate Inheritance FM2 Embedding Depth
 
 on:
+  # Run-economy rule: this long-lived development PR already carries FM2 changes
+  # relative to its base, so a pull_request paths filter re-ran FM2 after every
+  # unrelated documentation/manuscript synchronize event. The branch push
+  # filter below is stricter: FM2 runs only when its scientific/execution files
+  # actually change. workflow_dispatch remains available for an explicit audit.
   push:
     branches:
       - substrate-inheritance-next
-    paths:
-      - "substrate_inheritance/SI_FM2_EMBEDDING_DEPTH_PLAN_v0.1.json"
-      - "substrate_inheritance/SI_FM2_EXECUTION_FREEZE_v0.1.json"
-      - "substrate_inheritance/embedding_depth_landscape.py"
-      - "substrate_inheritance/test_embedding_depth_landscape.py"
-      - "substrate_inheritance/depth_validation.py"
-      - "substrate_inheritance/requirements-validation.txt"
-      - ".github/workflows/substrate-inheritance-fm2.yml"
-  pull_request:
-    branches:
-      - substrate-inheritance
     paths:
       - "substrate_inheritance/SI_FM2_EMBEDDING_DEPTH_PLAN_v0.1.json"
       - "substrate_inheritance/SI_FM2_EXECUTION_FREEZE_v0.1.json"
