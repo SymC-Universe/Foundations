@@ -1,20 +1,14 @@
 name: Substrate Inheritance FM3 Lineage Flow
 
 on:
+  # Run-economy rule: this long-lived development PR already carries FM3 changes
+  # relative to its base, so a pull_request paths filter re-ran FM3 after every
+  # unrelated documentation/manuscript synchronize event. The branch push
+  # filter below runs FM3 only when its scientific/execution files actually
+  # change. workflow_dispatch remains available for an explicit audit.
   push:
     branches:
       - substrate-inheritance-next
-    paths:
-      - "substrate_inheritance/SI_FM3_LINEAGE_FLOW_PLAN_v0.1.json"
-      - "substrate_inheritance/lineage_flow_landscape.py"
-      - "substrate_inheritance/test_lineage_flow_landscape.py"
-      - "substrate_inheritance/si_next_architecture.py"
-      - "substrate_inheritance/si_next_higher_order.py"
-      - "substrate_inheritance/requirements-validation.txt"
-      - ".github/workflows/substrate-inheritance-fm3.yml"
-  pull_request:
-    branches:
-      - substrate-inheritance
     paths:
       - "substrate_inheritance/SI_FM3_LINEAGE_FLOW_PLAN_v0.1.json"
       - "substrate_inheritance/lineage_flow_landscape.py"
