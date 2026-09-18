@@ -6,30 +6,24 @@ Program authority: **SymC General Operations Manual v0.8.0**, Definitive Active 
 
 Historical references to General Cross-Project Research Protocol v0.7.4 remain valid as governance provenance for records created under that version, but GOM v0.8.0 is the active program authority.
 
-Current-status authority: this README, the frozen v0.2 physical-promotion contracts (`CORRESPONDENCE_PROTOCOL_v0.2.json` and `REAL_SYSTEM_INPUT_SCHEMA_v0.2.json`), the non-authoritative SI-next v0.4 candidate contract, the current validation/audit records, the living manuscript evidence controls, and current computational records govern the present program. Older papers, repository metadata, release text, prior README language, v0.1 contracts, and superseded SI-next candidates are OUTDATED wherever they conflict with these current qualifications. Historical artifacts remain preserved for provenance rather than silently rewritten.
+Current public-status authority: this README, the frozen v0.2 physical-promotion contracts (`CORRESPONDENCE_PROTOCOL_v0.2.json` and `REAL_SYSTEM_INPUT_SCHEMA_v0.2.json`), the non-authoritative SI-next v0.4 candidate contract, and the validation/audit records preserved through the 14 September public snapshot. Active unpublished manuscript work and later exploratory development are maintained outside the public repository until release-ready. Older papers, repository metadata, release text, prior README language, v0.1 contracts, superseded SI-next candidates, and earlier working-manuscript copies are OUTDATED wherever they conflict with the current qualified public record. Historical artifacts remain preserved for provenance rather than silently rewritten.
 
 ## Project control
 
-STATUS | GOM v0.8.0 migration is recorded; frozen v0.2 physical route is unchanged; FM4 hierarchical closure, FM1 coupling response, FM3 lineage flow, and FM2 embedding depth are complete at P0-D; no real-system inheritance result is established.
-PURPOSE | Determine when independently characterized parent/substrate organization predicts, transforms, or fails to predict carrier-resolved child/coupled-system organization, without confusing generic influence with inheritance.
-NEXT COMPUTATIONAL ACTION | Prospectively specify and execute `FM5_RECOVERY_RESILIENCE_LANDSCAPE`, separating asymptotic return from finite-time amplification and retaining nonreturn, reorganization, and refusal states where the synthetic native model produces them.
-PARALLEL NON-COMPUTE ACTION | Maintain the living manuscript, evidence matrix, reproducibility/open-channel records, task-specific native-comparator map, and physical-source readiness without changing frozen v0.2 science.
-USER ACTION | NONE for current P0-D/P0-Q documentation, literature, reproducibility, and manuscript work. A new physical P1 freeze or science-changing computational specification remains a separate decision.
+STATUS | This public development branch is retained as a historical P0-D/P0-Q snapshot through 14 September 2026. Frozen v0.2 physical science is unchanged; FM1-FM4 are the completed public Function/Limit maps in this snapshot; no real-system inheritance result is established.
+PURPOSE | Preserve a reader-checkable public record of the SI architecture and completed public qualification work without publishing the active unfinished manuscript or later exploratory work.
+PUBLIC NEXT ACTION | No new unpublished development is staged here. A later public update should be release-ready or otherwise explicitly approved for public release.
+USER ACTION | NONE for this public snapshot. Any future P1 physical freeze remains a separate scientific decision.
 
-## Living manuscript
+## Working manuscript status
 
-The canonical editable working manuscript now lives in:
+As of 18 September 2026, the active unfinished SI manuscript and its live editing controls are maintained in a private working workspace rather than in this public repository.
 
-`manuscript/SI_MANUSCRIPT_WORKING.md`
+The public `manuscript/` directory is retained only as a status/provenance surface. Git history contains the superseded 14 September working draft, but that draft is **not** the canonical manuscript and must not be treated as a current preprint or submission source.
 
-It is explicitly an **active working draft**, not a submission-ready product, preprint release, or physical inheritance claim. Its control files are:
+A public manuscript source should return here only after an explicit evidence-complete/release-ready transition.
 
-- `manuscript/README.md`;
-- `manuscript/SI_MANUSCRIPT_EVIDENCE_MATRIX_v0.1.md`.
-
-The manuscript may be updated in meaningful evidence batches rather than every commit. Numerical and interpretive claims must remain traceable to source-of-record evidence and the current claim ceiling.
-
-## Current non-compute control records
+## Historical public P0 support records
 
 - `SI_NONCOMPUTE_WORK_REGISTER_20260914.md`;
 - `SI_REPRODUCIBILITY_READINESS_AUDIT_20260914.md`;
@@ -38,7 +32,7 @@ The manuscript may be updated in meaningful evidence batches rather than every c
 - `SI_NATIVE_COMPARATOR_MAP_v0.1.md`;
 - `SI_P1_MFR14_PREFREEZE_TEMPLATE_v0.1.md`.
 
-These records keep work moving without treating missing physical evidence as a field to be filled by assumption.
+These records document the public P0-D/P0-Q state through 14 September. Later unpublished working controls are intentionally not synchronized into this public branch.
 
 ## System Model and Engine
 
@@ -461,9 +455,10 @@ Current program status is an ongoing investigation aimed at developing computati
 - FM1 coupling-response Function/Limit map: complete at P0-D.
 - FM3 lineage-flow Function/Limit map: complete at P0-D; sequential normalized flow has a documented reconvergence information-loss limit.
 - FM2 embedding-depth Function/Limit map: complete at P0-D; effective depth is task/regime dependent and is not a physical inheritance length.
-- FM5 recovery/resilience Function/Limit map: next computational map, not yet a result.
-- Living manuscript: active working draft in `manuscript/SI_MANUSCRIPT_WORKING.md`.
-- Reproducibility readiness: strong for FM1-FM4, not release-frozen.
+- Public Function/Limit snapshot: FM1-FM4 complete at P0-D in this branch.
+- Active unfinished manuscript: moved to a private working workspace on 18 September 2026; the prior public working draft is superseded and noncanonical.
+- Later exploratory work: intentionally withheld from this public development branch until release-ready.
+- Reproducibility readiness: strong for the public FM1-FM4 snapshot, not a physical release freeze.
 - Physical inheritance thresholds: not frozen.
 - Real-system inheritance result: not established.
 - Universal inheritance claim: not established and not a program target.
