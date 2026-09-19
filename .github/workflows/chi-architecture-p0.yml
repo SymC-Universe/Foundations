@@ -7,12 +7,6 @@ on:
     paths:
       - "chi_architecture/**"
       - ".github/workflows/chi-architecture-p0.yml"
-  pull_request:
-    branches:
-      - main
-    paths:
-      - "chi_architecture/**"
-      - ".github/workflows/chi-architecture-p0.yml"
   workflow_dispatch:
 
 permissions:
