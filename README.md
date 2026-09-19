@@ -234,6 +234,8 @@ Published stability-architecture work:
 *Scientific Reports* (2026)  
 DOI: 10.1038/s41598-026-56887-7
 
+**Current post-publication mathematical note:** [`SCIENTIFIC_REPORTS_2026_COSMOLOGY_REINTERPRETATION_20260919.md`](./SCIENTIFIC_REPORTS_2026_COSMOLOGY_REINTERPRETATION_20260919.md). The flat-ΛCDM `q=0` algebraic identity is retained, but the density-growth crossing is no longer classified by the current program as a mechanical critical-damping EP because the native growth equation contains a negative-curvature term and its characteristic discriminant does not vanish.
+
 ---
 
 ## License
