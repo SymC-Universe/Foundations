@@ -17,7 +17,7 @@ Domain-specific applications are maintained separately.
 - **Security reporting:** [`SECURITY.md`](./SECURITY.md)
 - **Community conduct:** [`CODE_OF_CONDUCT.md`](./CODE_OF_CONDUCT.md)
 - **Intended GitHub-hosting settings:** [`REPOSITORY_SETTINGS.md`](./REPOSITORY_SETTINGS.md)
-- **Active prospective substrate-inheritance program:** [`substrate-inheritance` branch](https://github.com/SymC-Universe/Foundations/tree/substrate-inheritance)
+- **Active prospective substrate-inheritance program:** [`substrate-inheritance-next` branch](https://github.com/SymC-Universe/Foundations/tree/substrate-inheritance-next)
 
 For scientific use, cite the specific paper, dataset, code artifact, DOI, and version whenever available rather than citing the repository generically.
 
@@ -27,7 +27,7 @@ This README and later explicit contracts, reproducibility records, and active in
 
 ## Active substrate-inheritance investigation
 
-A dedicated [`substrate-inheritance`](https://github.com/SymC-Universe/Foundations/tree/substrate-inheritance) branch hosts the prospective Foundations-level substrate-inheritance program and its computational validation layer.
+A dedicated [`substrate-inheritance-next`](https://github.com/SymC-Universe/Foundations/tree/substrate-inheritance-next) branch hosts the prospective Foundations-level substrate-inheritance program and its computational validation layer.
 
 The investigation is ongoing and aims to develop computational evidence for or against substrate-inheritance claims. It formally distinguishes **substrate influence** from **substrate inheritance**. Influence means a defined substrate property demonstrably changes child or coupled-system behavior. Inheritance additionally requires independently characterized parent structure, explicit carrier correspondence, a parent-to-child mapping frozen before target reveal, successful prospective child prediction, intervention/counterfactual confirmation, and specificity against scrambled or generic controls.
 
