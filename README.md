@@ -2,7 +2,7 @@
 
 The **SymC Foundations** repository contains the core theoretical works underlying the Symmetry of Criticality (SymC) research program. All titles are a continuous work in progress open to outside scrutiny and perspective.
 
-The current SymC framework is **generator-first**. It studies stability boundaries, damping, spectral structure, exceptional points, and inheritance mechanisms while requiring each proposed stability coordinate to be derived from the dynamics of the system being studied.
+The current SymC framework is **generator-first** and governed by **SymC GOM v0.8.3**. It studies stability boundaries, damping, spectral structure, exceptional points, and inheritance mechanisms while requiring each proposed stability coordinate to be derived from the dynamics of the system being studied.
 
 SymC does **not** currently assert that a single scalar damping ratio universally governs quantum, biological, cosmological, chemical, or informational systems.
 
@@ -21,7 +21,7 @@ The investigation is ongoing and is intended to develop prospective computationa
 - influence means an independently defined parent/substrate property demonstrably changes child or coupled-system behavior;
 - inheritance requires an independently characterized parent, explicit carrier correspondence, a parent-to-child mapping frozen before target reveal, successful prospective child prediction, intervention/counterfactual confirmation, and specificity against scrambled or generic controls.
 
-The program preserves a coupled **modal + scalar + conglomeration** representation. Scalars such as mechanical χ are reported only where the governing dynamics license that reduction and remain attached to identified modes or subspaces. Collective coupling, memory, bath structure, non-normal carrier geometry, and electronic versus phononic channel identity are retained rather than forced into a single scalar.
+The program preserves a coupled **modal + scalar + conglomeration** representation. Under GOM v0.8.3, the joint meaning of any licensed local/modal chi and the broader coupled-system Chi architecture is itself a research target; perturbation/recovery evidence is kept separate from inheritance evidence rather than used as a synonym for it. Scalars such as mechanical χ are reported only where the governing dynamics license that reduction and remain attached to identified modes or subspaces. Collective coupling, memory, bath structure, non-normal carrier geometry, and electronic versus phononic channel identity are retained rather than forced into a single scalar.
 
 The V1-V9 computational validation suite and the fail-closed real-system ingestion layer are now closed as successful **synthetic/mathematical/software validation**. The latest full suite passed **62 adversarial/unit tests** in GitHub Actions run `33290655196`. It includes ground-truth influence/inheritance cases, same-spectrum modal scrambles, coupling rewiring, analytic intervention cross-checks, single-scalar nonidentifiability, coordinate invariance, near-degenerate subspace robustness, finite-bath recurrence, finite-depth versus analytic semi-infinite substrate embedding, weakening-carrier discriminability, non-normal/biorthogonal carrier geometry, a separate electronic block-Hamiltonian inheritance channel, and a provenance-enforcing real-system mechanical adapter.
 
