@@ -1,7 +1,7 @@
 # Chi Architecture Post-Result Discovery Ledger
 
 **Status:** P0 EXPLORATORY  
-**Protocol authority:** General Cross-Project Research Protocol v0.7.1, Sections 9.1-9.3  
+**Protocol authority:** SymC General Operations Manual v0.8.3, especially Sections 9.1-9.3 and the v0.8.3 joint chi/Chi and perturbation/recovery controls  
 **Rule:** No entry in this ledger is confirmatory evidence. Each entry preserves the trigger that generated the hypothesis and the promotion debt created by seeing that trigger first.
 
 ## Historical provenance note
@@ -18,6 +18,18 @@ If the original dated paper or other pre-mathematical record is recovered, it sh
 Universality is not a promotion target. The architecture may earn broader scope only through additional bounded tests. `BROAD != UNIVERSAL`.
 
 ---
+
+## v0.8.3 application note
+
+The existing discovery entries remain post-result and their promotion debt is unchanged. v0.8.3 adds a stricter interpretation for entries involving local coordinates, broader organization, perturbation, or recovery:
+
+- the relationship between lowercase local/modal chi and broader Chi architecture is itself a hypothesis to test;
+- disagreement between layers is not compensation unless an independent consequence supports that interpretation;
+- perturbation response must be defined natively;
+- when return/resilience/adaptation is claimed, resistance, response, first reclaim, sustained recovery, reorganization, basin robustness, and repeated-perturbation behavior should be distinguished where measurable;
+- stability is not defined as recovery.
+
+These rules narrow interpretation; they do not promote any existing entry.
 
 ## CA-D001: Progressive cross-regime chi architecture
 
