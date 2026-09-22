@@ -2,7 +2,7 @@
 
 **Status:** P0-D / P0-Q DOMAIN-FIRST ARCHITECTURE MAPPING  
 **Branch:** `chi-architecture-p0`  
-**Authority:** General Cross-Project Research Protocol v0.7.1 FINAL + v0.7.1A Functional Mapping and Natural Limit-Testbed Addendum  
+**Authority:** SymC General Operations Manual v0.8.3  
 **Claim ceiling:** exploratory and qualification evidence only  
 **Confirmatory MFR-14:** not yet activated  
 **Predictive tool status:** not a tool; no validated cross-domain Atlas; no prospective cross-domain confirmation
@@ -97,9 +97,25 @@ An object is not called chi merely because it is a useful stability quantity.
 - A domain may legitimately return `NO_ADMISSIBLE_SCALAR_CHI` or `NO_ADMISSIBLE_CHI_COORDINATE`.
 - A visually attractive cross-domain alignment cannot be used to retrofit a domain coordinate.
 
+## Joint lowercase chi / broader Chi target
+
+Where a domain admits a local/modal lowercase `chi` and also supports a broader domain/system `Chi` architecture, their relationship is itself a research target rather than an after-the-fact comparison.
+
+Each applicable domain map should ask:
+- what information the local/modal coordinate contributes to the broader organization;
+- how coupling, hierarchy, environment, or system organization changes the realized meaning of the local/modal coordinate;
+- whether perturbation exposes that relationship more clearly than static placement;
+- whether response/recovery behavior is stable, reorganized, or non-identifiable.
+
+No domain is required to produce a scalar. `NOT_APPLICABLE`, `NO_ADMISSIBLE_SCALAR_CHI`, `NO_ADMISSIBLE_CHI_COORDINATE`, and `NON_IDENTIFIABLE` remain valid outcomes.
+
+When a claim involves recovery/resilience, report resistance, finite-time response, first reclaim, sustained recovery, reorganization, basin robustness, and repeated-perturbation behavior separately where measurable. Do not equate stability with recovery by definition.
+
+Current migration record: `GOM_V0.8.3_MIGRATION_20260921.md`.
+
 ## Function Map and Limit Map
 
-Under General Protocol v0.7.1A, every mature domain investigation should characterize both:
+Under SymC GOM v0.8.3, every mature domain investigation should characterize both:
 
 1. **Function Map:** ordinary supported operation, variation, perturbation response, compensation/redistribution where present, alternate stable organizations, and trajectories through the functioning regime;
 2. **Limit Map:** transitions, saturation, model breakdown, loss of identifiability, refusal, instability, and qualified rare natural limit states.
