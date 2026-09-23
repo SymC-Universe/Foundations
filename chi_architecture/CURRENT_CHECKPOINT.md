@@ -1,33 +1,28 @@
 # Chi Architecture Active Checkpoint
 
-**Checkpoint ID:** D02B-CP5-EXACT-MAPPING-FROZEN  
+**Checkpoint ID:** D02B-CP6-PROCESSED-SNAPSHOT-IMPLEMENTED  
 **Date:** 2026-09-22  
 **Branch:** chi-architecture-p0  
 **Protocol:** SymC GOM v0.8.3
 
-## Stage A status
+## State
 
-Stage A completed successfully without emitting scientific CSV values.
+The processed-value extraction is implemented only after CP5 froze the exact mapping and scalar algorithm.
 
-Workflow: 35819369668  
-Artifact ID: 10732747680  
-Artifact digest: sha256:47a5c916566541b422e0429e37d34012350b78da69e935f6b4ad1d965be0bb7f
+This workflow reads:
+- torque_states.csv;
+- retained rows from resonance_group_selection_audit.csv;
+- adaptive_tracking_windows.csv;
+- tracked_frequencies.csv;
+- per_case_metrics.csv;
+- dose_response.csv.
 
-## Frozen mapping
+It explicitly does not download or open the raw FRF archive.
 
-Exact file/column selection and the raw half-power scalar algorithm are frozen in:
+## Resume rule
 
-chi_architecture/d02b/D02B_EXACT_SOURCE_MAPPING_v0.1.md
-
-## Permission boundary
-
-Processed table numerical values may now be inspected under the frozen mapping.
-
-The 635.4 MB raw archive remains unopened.
-
-Before raw extraction:
-1. inspect processed values;
-2. record retained group IDs and torque-state identifiers;
-3. implement raw archive acquisition/checksum logic;
-4. checkpoint that implementation;
-5. only then read raw FRFs.
+1. Archive the successful processed snapshot with run/artifact/digest.
+2. Record retained family IDs and exact torque case names.
+3. Do not change CP5 mappings.
+4. Implement raw archive acquisition and half-power extraction.
+5. Commit that implementation before raw FRF execution.

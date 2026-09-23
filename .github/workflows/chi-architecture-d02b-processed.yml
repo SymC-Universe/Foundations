@@ -1,0 +1,52 @@
+name: D02B Processed Snapshot
+
+on:
+  push:
+    branches:
+      - chi-architecture-p0
+    paths:
+      - "chi_architecture/d02b/processed_snapshot.py"
+      - "chi_architecture/d02b/D02B_EXACT_SOURCE_MAPPING_v0.1.md"
+      - ".github/workflows/chi-architecture-d02b-processed.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  processed:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: "3.12.14"
+      - name: Install pinned dependencies
+        run: |
+          python -m pip install --disable-pip-version-check -r chi_architecture/requirements-p0.txt
+          python -m pip check
+      - name: Archive frozen processed layer
+        run: python chi_architecture/d02b/processed_snapshot.py
+      - name: Guard processed snapshot
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path("chi_architecture/results/D02B_PROCESSED_SNAPSHOT_v0.1.json").read_text())
+          assert r["status"]=="PROCESSED_VALUES_ARCHIVED_BEFORE_RAW_FRF_INSPECTION"
+          assert r["counts"]["retained_families"]==7
+          assert r["counts"]["torque_states"]==18
+          assert r["counts"]["per_case_rows"]==28
+          assert r["counts"]["dose_response_rows"]==84
+          print("D02B processed snapshot guards passed")
+          PY
+      - name: Upload processed snapshot
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: d02b-processed-snapshot-v01
+          path: chi_architecture/results/D02B_PROCESSED_SNAPSHOT_v0.1.json
+          retention-days: 90
+          if-no-files-found: error
