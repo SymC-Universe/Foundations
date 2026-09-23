@@ -22,7 +22,7 @@ sys.path.insert(0, str(SRC))
 
 from domain_map_nonnormal import load_freeze, run_d01c  # noqa: E402
 from d02a_physical import fetch_locked_source, load_json as load_d02a_json  # noqa: E402
-from d02a_physical_v02 import run_d02a_v02  # noqa: E402
+from d02a_physical_v02 import run_d02a_v02  # noqa: E402\nfrom d02b_four_bolt import run_d02b  # noqa: E402
 
 
 def sha256(path: Path) -> str:
@@ -305,11 +305,114 @@ def reproduce_d02a(skip_tests: bool = False) -> dict:
     return result
 
 
+
+def d02b_result_card(result: dict) -> str:
+    s = result["primary_summary"]
+    lines = [
+        "# D02B Four-Bolt Physical Result Card v0.1",
+        "",
+        f"**Status:** {result['status']}",
+        f"**Evidence class:** {result['evidence_class']}",
+        f"**Retained families:** {len(result['retained_families_hz'])}",
+        f"**Torque states:** {result['torque_state_count']}",
+        f"**Admitted scalar records:** {result['scalar_status_counts'].get('ADMITTED', 0)} / {len(result['scalar_records'])}",
+        "",
+        "## Frozen primary map",
+        "",
+        f"- primary comparisons: {s['primary_pair_count']}",
+        f"- comparable chi pairs: {s['comparable_chi_pair_count']}",
+        f"- similar-chi pairs: {s['similar_chi_pair_count']}",
+        f"- transformed-chi pairs: {s['transformed_chi_pair_count']}",
+        f"- response-reorganized pairs: {s['response_reorganized_pair_count']}",
+        f"- similar-chi + reorganized pairs: {s['similar_chi_and_reorganized_pair_count']}",
+        "",
+        "## Family labels",
+        "",
+    ]
+    for fam in result["family_results"]:
+        lines.append(
+            f"- {fam['family_hz']} Hz: "
+            + (", ".join(fam["labels"]) if fam["labels"] else "NO_FAMILY_LABEL_TRIGGERED")
+        )
+    lines.extend([
+        "",
+        "## Interpretation ceiling",
+        "",
+        "Physical P0-Q qualification only. Added-value interpretation is deliberately not assigned by the runner.",
+        "",
+    ])
+    return "\n".join(lines)
+
+
+def reproduce_d02b(skip_tests: bool = False) -> dict:
+    if not skip_tests:
+        run_pytest("chi_architecture/tests/test_d02b_four_bolt.py")
+
+    cache = ROOT / "cache" / "d02b"
+    result = run_d02b(cache)
+
+    RESULTS.mkdir(parents=True, exist_ok=True)
+    full = RESULTS / "D02B_FOUR_BOLT_PHYSICAL_RESULT_v0.1.json"
+    summary = RESULTS / "D02B_SUMMARY_v0.1.json"
+    card = RESULTS / "D02B_RESULT_CARD_v0.1.md"
+    environment = RESULTS / "D02B_ENVIRONMENT_v0.1.txt"
+    manifest = RESULTS / "D02B_REPRO_MANIFEST_v0.1.json"
+
+    write_json(full, result)
+    write_json(summary, {
+        "schema": result["schema"],
+        "status": result["status"],
+        "evidence_class": result["evidence_class"],
+        "retained_families_hz": result["retained_families_hz"],
+        "scalar_status_counts": result["scalar_status_counts"],
+        "primary_summary": result["primary_summary"],
+        "family_results": result["family_results"],
+        "tracked_frequency_crosschecks": result["tracked_frequency_crosschecks"],
+        "source_files": result["source_files"],
+        "scope": result["scope"],
+    })
+    card.write_text(d02b_result_card(result), encoding="utf-8")
+    environment.write_text(
+        "\n".join([
+            f"python={platform.python_version()}",
+            f"implementation={platform.python_implementation()}",
+            f"platform={platform.platform()}",
+            f"numpy={np.__version__}",
+            f"scipy={scipy.__version__}",
+        ]) + "\n",
+        encoding="utf-8",
+    )
+
+    tracked = [
+        ROOT / "d02b" / "D02B_CANDIDATE_SELECTION_FREEZE_v0.1.md",
+        ROOT / "d02b" / "D02B_CANDIDATE_SELECTION_CORRECTION_v0.3.md",
+        ROOT / "d02b" / "D02B_FOUR_BOLT_SOURCE_CONTRACT_v0.3.md",
+        ROOT / "d02b" / "D02B_EXACT_SOURCE_MAPPING_v0.1.md",
+        ROOT / "d02b" / "D02B_RAW_PARSER_AND_CLASSIFICATION_FREEZE_v0.1.md",
+        ROOT / "src" / "d02b_four_bolt.py",
+        ROOT / "tests" / "test_d02b_four_bolt.py",
+        Path(__file__).resolve(),
+        full,
+        summary,
+        card,
+        environment,
+    ]
+    write_json(manifest, {
+        "schema": "d02b-repro-manifest-v0.1",
+        "entrypoint": "python chi_architecture/reproduce.py d02b",
+        "files": {
+            str(p.relative_to(ROOT.parent)): sha256(p)
+            for p in tracked
+        },
+        "source_files": result["source_files"],
+    })
+    return result
+
 def main() -> None:
     parser = argparse.ArgumentParser(
         description="Single-entry reproducibility interface for Chi Architecture experiments."
     )
-    parser.add_argument("experiment", choices=["d01c", "d02a"])
+    parser.add_argument("experiment", choices=["d01c", "d02a", "d02b"])
     parser.add_argument(
         "--skip-tests",
         action="store_true",
@@ -326,15 +429,24 @@ def main() -> None:
             "result_card": "chi_architecture/results/D01C_RESULT_CARD_v0.1.md",
             "manifest": "chi_architecture/results/D01C_REPRO_MANIFEST_v0.1.json",
         }, indent=2))
-    else:
+    elif args.experiment == "d02a":
         result = reproduce_d02a(skip_tests=args.skip_tests)
         print(json.dumps({
             "status": result["status"],
             "evidence_class": result["evidence_class"],
             "lowercase_chi": result["lowercase_chi"]["status"],
             "dho_license": result["dho_license"]["status"],
-            "result_card": "chi_architecture/results/D02A_RESULT_CARD_v0.1.md",
-            "manifest": "chi_architecture/results/D02A_REPRO_MANIFEST_v0.1.json",
+            "result_card": "chi_architecture/results/D02A_RESULT_CARD_v0.2.md",
+            "manifest": "chi_architecture/results/D02A_REPRO_MANIFEST_v0.2.json",
+        }, indent=2))
+    else:
+        result = reproduce_d02b(skip_tests=args.skip_tests)
+        print(json.dumps({
+            "status": result["status"],
+            "evidence_class": result["evidence_class"],
+            "primary_summary": result["primary_summary"],
+            "result_card": "chi_architecture/results/D02B_RESULT_CARD_v0.1.md",
+            "manifest": "chi_architecture/results/D02B_REPRO_MANIFEST_v0.1.json",
         }, indent=2))
 
 

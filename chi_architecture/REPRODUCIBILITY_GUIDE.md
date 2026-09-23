@@ -149,3 +149,22 @@ Reference workflow:
 - manifest SHA-256: `c3ac58b6b9779412dc8541644a6cb26cb5976b2093f2f97b3b976b9277821442`
 
 D02A does not require manual spreadsheet editing or manual figure digitization.
+
+
+## D02B: four-bolt physical inheritance test
+
+Reviewer-facing reproduction remains one scientific command:
+
+```bash
+git clone https://github.com/SymC-Universe/Foundations.git
+cd Foundations
+git checkout chi-architecture-p0
+python -m pip install -r chi_architecture/requirements-p0.txt
+python chi_architecture/reproduce.py d02b
+```
+
+The D02B wrapper automatically downloads the public Zenodo support bundles and 635 MB raw archive, verifies the published checksums, uses the exact 51-point intersection across all 18 torque states, reconstructs the seven source-retained resonance families, applies the frozen half-power admission/refusal rules, and emits one compact result bundle.
+
+Reviewers do not select or unpack the 1,838 raw response files manually.
+
+The frozen scientific contract is in `chi_architecture/d02b/`. The raw source is DOI `10.5281/zenodo.20038951`.
