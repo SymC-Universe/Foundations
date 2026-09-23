@@ -46,3 +46,12 @@ D02A is P0-D physical calibration. It may validate or reject the proposed inheri
 ## Immediate next action
 
 Run source integrity/schema inventory against the two frozen publisher workbooks.
+
+
+## CP0.1 mechanical source-fetch hardening
+
+The first source-schema run was slow on the primary Springer Nature media host before any scientific values were emitted.
+
+The schema workflow now tries the exact frozen publisher URL first and the standard Springer static-content mirror second, with bounded connect/read timeouts and a browser-like User-Agent.
+
+This is a transport-only change. The frozen source filenames, DOI, scientific question, ranges, metrics, chi-admission rules, comparators, falsifiers, and evidence class are unchanged.
