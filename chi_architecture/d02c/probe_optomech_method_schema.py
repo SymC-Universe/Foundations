@@ -29,7 +29,7 @@ FILES = {
     },
     "detuning_5p24mW": {
         "url": "https://ndownloader.figshare.com/files/53674640",
-        "md5": null,
+        "md5": None,
     },
 }
 
