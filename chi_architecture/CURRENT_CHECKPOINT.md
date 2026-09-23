@@ -1,76 +1,48 @@
 # Chi Architecture Active Checkpoint
 
-**Checkpoint ID:** D01C-CP4-CLOSED-CI-HARDENED  
+**Checkpoint ID:** D02A-CP0-PHYSICAL-FREEZE  
 **Date:** 2026-09-22  
 **Branch:** `chi-architecture-p0`  
-**Scientific freeze:** `b8bf36c2776e2d788cdbf7a5f33e4254d1cb5f9b`  
-**Execution commit:** `9818612abae93e460af7ab45281fd9a5e4ae68e7`  
-**Execution archive commit:** `df29383f7c060a8a8e52034deeed6d67a17dd8cc`  
+**Parent checkpoint:** D01C-CP4-CLOSED-CI-HARDENED  
 **Protocol:** SymC GOM v0.8.3
 
-## D01C closure
+## Active experiment
 
-D01C is complete.
+`D02A_CSPBBR3_PHONON_INHERITANCE`
 
-Frozen result:
+This is the first post-D01 domain-native physical calibration test.
 
-- 26/26 cases executed;
-- spectrum preserved to maximum residual `2.22e-16`;
-- fixed-spectrum N1 gain range: 1.0 to 28.6524936;
-- fixed-spectrum N2 gain range: 1.0 to 74.5003624;
-- eigenvalue-only sufficiency: `REFUTED_WITHIN_FROZEN_CONSTRUCTION`.
+Scientific freeze:
 
-Comparator verdict:
+`chi_architecture/d02_cspbbr3/D02A_PREEXECUTION_FREEZE_v0.1.json`
 
-`STANDARD_NONMODAL_TOOLKIT_SUFFICIENT_FOR_D01C`
+Literature / novelty firewall:
 
-No new non-normal chi, transient-growth law, resolvent quantity, or pseudospectral quantity is admitted.
+`chi_architecture/d02_cspbbr3/D02A_LITERATURE_POSITION.md`
 
-## Joint chi / Chi interpretation
+## Important evidence status
 
-D01C supports a representation rule:
+The broad qualitative result of the 2021 CsPbBr3 paper was already known before this freeze.
 
-A scalar/spectrum may remain valid for asymptotic placement while being insufficient for a finite-time or robustness question. When that happens, broader Chi must retain the native carrier/operator structure required by the question rather than inventing a replacement scalar.
+Therefore:
 
-This is architecture discipline, not evidence for a new physical agent.
+`PHYSICAL != UNTOUCHED_CONFIRMATION`
 
-## Reproduction
-
-Supported reviewer command:
-
-`python chi_architecture/reproduce.py d01c`
-
-Guide:
-
-`chi_architecture/REPRODUCIBILITY_GUIDE.md`
-
-Permanent archival metadata:
-
-`chi_architecture/results/D01C_ARCHIVAL_RECORD_v0.1.json`
-
-Scientific readout:
-
-`chi_architecture/D01C_NONNORMAL_DOMAIN_MAP_READOUT_v0.1.md`
+D02A is P0-D physical calibration. It may validate or reject the proposed inheritance/refusal representation on real material data but cannot pay prospective confirmation debt.
 
 ## Resume rule
 
-Do not reopen D01C merely to add more synthetic non-normal families.
+1. Read this checkpoint and the D02A freeze.
+2. Do not inspect numerical source values manually before the schema checkpoint is archived.
+3. Run the source-schema workflow.
+4. Archive exact source-file SHA-256 hashes plus workbook sheet/dimension/text-header inventory as D02A-CP1.
+5. Build the parser from schema only. No value-dependent sheet/range selection.
+6. Execute every frozen applicable source range.
+7. Fail closed on DHO convention ambiguity or missing omega0/Gamma.
+8. Archive execution as D02A-CP2 before interpretation.
+9. Interpret only against the frozen native comparator and novelty firewall.
+10. Reviewer-facing reproduction must converge to `python chi_architecture/reproduce.py d02a`.
 
-A new D01 version is justified only by a genuinely new scientific question.
+## Immediate next action
 
-The next high-information move is a prospectively frozen physical/domain-native test with independently grounded:
-
-1. local or spectral coordinate;
-2. carrier/coupling/system organization;
-3. perturbation/recovery outcome;
-4. native comparator.
-
-Any such experiment requires its own pre-result checkpoint and freeze before decisive outcome inspection.
-
-## CI hardening after closure
-
-The umbrella P0 workflow previously reran the full 1,152-case D01B map on every `chi_architecture/**` change under a 10-minute timeout. That created non-scientific timeout/cancellation noise on otherwise valid commits.
-
-CP4 removes the expensive D01B full-map execution from the fast umbrella lane. The umbrella lane still runs the complete unit/scientific-guard test suite, including D01B tests and freeze validation, plus the D01A exact map. Full D01B reproduction remains in its dedicated archival workflow.
-
-This is a mechanical CI separation only. No D01A, D01B, or D01C scientific parameter, metric, result, threshold, or interpretation changed.
+Run source integrity/schema inventory against the two frozen publisher workbooks.

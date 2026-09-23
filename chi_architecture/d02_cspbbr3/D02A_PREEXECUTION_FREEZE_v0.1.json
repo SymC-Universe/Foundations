@@ -1,0 +1,145 @@
+{
+  "schema": "d02a-cspbbr3-physical-preexecution-freeze-v0.1",
+  "date": "2026-09-22",
+  "status": "P0_D_PHYSICAL_CALIBRATION_FROZEN_BEFORE_SOURCE_VALUE_INSPECTION",
+  "authority": "SymC General Operations Manual v0.8.3",
+  "parent_program": "chi_architecture",
+  "experiment_id": "D02A_CSPBBR3_PHONON_INHERITANCE",
+  "evidence_class": "P0_D_PHYSICAL_CALIBRATION_ALREADY_VIEWED_BROAD_CONCLUSION",
+  "confirmatory_credit": false,
+  "reason_not_confirmatory": "The paper's broad qualitative conclusion and material identity were reviewed before this freeze. D02A can test implementation and bounded physical interpretation but cannot pay untouched promotion debt.",
+  "source": {
+    "primary_article": {
+      "citation": "Lanigan-Atkins T. et al. Two-dimensional overdamped fluctuations of the soft perovskite lattice in CsPbBr3. Nature Materials 20, 977-983 (2021).",
+      "doi": "10.1038/s41563-021-00947-y",
+      "article_url": "https://www.nature.com/articles/s41563-021-00947-y"
+    },
+    "publisher_source_data": [
+      {
+        "id": "FIG3",
+        "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41563-021-00947-y/MediaObjects/41563_2021_947_MOESM6_ESM.xlsx",
+        "declared_role": "momentum-resolved overdamping / M-R carrier information"
+      },
+      {
+        "id": "FIG4",
+        "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41563-021-00947-y/MediaObjects/41563_2021_947_MOESM7_ESM.xlsx",
+        "declared_role": "temperature-resolved M-point damping and related physical observables"
+      }
+    ],
+    "source_data_rule": "Use publisher-supplied numerical source data only. Do not digitize plotted pixels if source values are present."
+  },
+  "known_context_before_freeze": [
+    "paper reports overdamped low-energy Br-dominated phonons along Brillouin-zone edges",
+    "paper links the reciprocal-space continuum to two-dimensional sheets of correlated octahedral rotations",
+    "paper reports temperature-dependent DHO linewidths near the M point",
+    "approximate structural transitions near 360 K and 410 K are established material context",
+    "D01A_D01B_D01C_results_are_known_context"
+  ],
+  "scientific_question": "When the CsPbBr3 lattice is thermally driven across structural regimes, which aspects of a local DHO stability coordinate remain identifiable, which carrier-resolved features persist or reorganize across momentum/phase, and does the joint local-coordinate plus carrier-organization description add a physically meaningful inheritance/refusal statement beyond the native q-resolved phonon analysis?",
+  "native_model": {
+    "primary": "damped harmonic oscillator where licensed by the authors' source data and parameter convention",
+    "carrier_space": "reciprocal-space phonon wavevector / branch along the M-R zone-edge family",
+    "organization_space": "momentum-resolved continuum and corresponding correlated octahedral-rotation sheet structure",
+    "control_variable": "temperature / structural phase",
+    "recovery_claim": false,
+    "recovery_note": "The available source is a temperature/phase sweep, not a controlled remove-and-recover perturbation trajectory. No resilience/recovery claim is permitted."
+  },
+  "lowercase_chi_policy": {
+    "candidate_definition": "chi_DHO = Gamma/(2*omega0)",
+    "admission_requirements": [
+      "Gamma and omega0 must refer to the same DHO convention and same mode/condition",
+      "the paper/source convention must make Gamma the damping coefficient entering omega_e^2 = omega0^2 - Gamma^2/4 or an exactly convertible equivalent",
+      "both parameters must be numerically identifiable from publisher source data or a prospectively specified fit",
+      "uncertainty must be propagated where available",
+      "overdamped / relaxational points remain admissible if the DHO model itself is licensed and identifiable"
+    ],
+    "refusal_states": [
+      "NO_ADMISSIBLE_SCALAR_CHI",
+      "DHO_CONVENTION_AMBIGUOUS",
+      "OMEGA0_NOT_IDENTIFIABLE",
+      "GAMMA_NOT_IDENTIFIABLE",
+      "MODE_CORRESPONDENCE_UNRESOLVED",
+      "MODEL_INADEQUATE"
+    ],
+    "no_backsolving_from_desired_chi": true,
+    "no_boundary_tuning": true
+  },
+  "broader_Chi_policy": {
+    "master_scalar_predeclared": false,
+    "object": "native carrier-resolved architecture only",
+    "minimum_fields_if_available": [
+      "temperature",
+      "structural_phase",
+      "wavevector_or_path_position",
+      "mode_or_branch_identity",
+      "omega0_or_peak_energy",
+      "Gamma_or_linewidth",
+      "DHO_regime_if_licensed",
+      "uncertainty",
+      "carrier_continuity_or_refusal"
+    ],
+    "interpretation_target": "preservation, transformation, reorganization, or refusal of local/modal stability information under thermal embedding"
+  },
+  "predeclared_tests": [
+    {
+      "id": "T1_SOURCE_INTEGRITY",
+      "question": "Can the exact publisher workbooks be fetched and hashed reproducibly?"
+    },
+    {
+      "id": "T2_DHO_LICENSE",
+      "question": "Do the source data and methods provide enough same-condition information to compute or prospectively fit omega0 and Gamma without convention ambiguity?"
+    },
+    {
+      "id": "T3_LOCAL_REGIME_MAP",
+      "question": "Where licensed, map chi_DHO and under/critical/overdamped classification versus temperature and/or momentum with uncertainty."
+    },
+    {
+      "id": "T4_CARRIER_CONTINUITY",
+      "question": "Can the same physical carrier/branch be tracked across the frozen q/T contrasts without post-hoc relabeling?"
+    },
+    {
+      "id": "T5_JOINT_CHI_CHI",
+      "question": "Does local DHO placement alone determine the observed carrier-resolved organization, or is q/phase organization required to state what persists or reorganizes?"
+    },
+    {
+      "id": "T6_NATIVE_COMPARATOR",
+      "question": "Does the proposed inheritance/refusal framing add any reproducible statement beyond the standard q-resolved linewidth/frequency/phase map?"
+    }
+  ],
+  "native_comparators": [
+    "authors' q-resolved phonon dispersion / linewidth representation",
+    "authors' temperature-resolved DHO linewidth representation",
+    "structural phase identity",
+    "momentum-resolved diffuse/inelastic scattering organization"
+  ],
+  "decision_rules": {
+    "inheritance": "A carrier is called inherited only if its identity/correspondence is defined independently of the target scalar value and remains traceable across the declared contrast while a stated dynamical property is preserved within uncertainty.",
+    "transformation": "A carrier is transformed when correspondence remains traceable but its local dynamical coordinate changes beyond uncertainty.",
+    "reorganization": "Reorganization requires a change in carrier/organization structure not reducible to the local scalar change alone.",
+    "refusal": "If carrier correspondence or DHO parameters are not identifiable, retain a refusal rather than interpolate a favorable result.",
+    "added_value": "If standard q-resolved phonon analysis already states the entire physical result, report NATIVE_PHONON_TOOLKIT_SUFFICIENT and do not manufacture a new Chi quantity."
+  },
+  "falsifiers": [
+    "source workbooks do not contain or permit reproducible extraction of the required same-condition DHO quantities",
+    "the DHO convention cannot be mapped unambiguously to chi_DHO",
+    "carrier identity cannot be frozen independently of the observed chi pattern",
+    "apparent persistence disappears when uncertainty is propagated",
+    "the broader inheritance language adds no information beyond standard phonon analysis",
+    "model adequacy fails in the regime where the strongest claim would otherwise occur"
+  ],
+  "anti_circularity": {
+    "source_files_frozen_before_numeric_inspection_in_this_workstream": true,
+    "schema_inventory_before_value_analysis": true,
+    "no_value_dependent_parser_rules": true,
+    "no_post_result_mode_selection": true,
+    "no_post_result_temperature_selection": true,
+    "no_Atlas_alignment_used": true,
+    "negative_and_refusal_outcomes_retained": true
+  },
+  "reproducibility_target": {
+    "reviewer_entrypoint": "python chi_architecture/reproduce.py d02a",
+    "network_rule": "The entrypoint may download the two frozen publisher source workbooks automatically and verify hashes recorded after first successful archival fetch.",
+    "reviewer_artifacts": "one compact artifact bundle",
+    "no_manual_spreadsheet_steps": true
+  }
+}
