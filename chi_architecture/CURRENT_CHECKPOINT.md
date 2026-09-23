@@ -1,34 +1,42 @@
 # Chi Architecture Active Checkpoint
 
-**Checkpoint ID:** D02B-CP0-CANDIDATE-SELECTION-FROZEN  
+**Checkpoint ID:** D02B-CP1-SYSTEM-AND-SOURCE-CONTRACT-FROZEN  
 **Date:** 2026-09-22  
 **Branch:** chi-architecture-p0  
-**Protocol:** SymC GOM v0.8.3  
-**Parent state:** D02A-CP4-CLOSED
+**Protocol:** SymC GOM v0.8.3
 
-## Active task
+## Selected D02B system
 
-Identify D02B using the frozen eligibility/ranking contract:
+Zhang et al. 2025 coupled nonlinear MEMS resonators.
 
-chi_architecture/d02b/D02B_CANDIDATE_SELECTION_FREEZE_v0.1.md
+Article DOI: 10.1038/s41467-025-59292-2  
+Source-data DOI: 10.6084/m9.figshare.28714484  
+Code DOI: 10.5281/zenodo.15162385
 
-No D02B candidate has yet been selected under this contract.
+Selection was made under the precommitted completeness ranking in D02B_CANDIDATE_SELECTION_FREEZE_v0.1.md.
+
+## Frozen scientific contract
+
+Read:
+
+chi_architecture/d02b/D02B_SOURCE_CONTRACT_v0.1.md
+
+before touching machine-readable source outcomes.
+
+## Evidence ceiling
+
+Qualitative outcome descriptions were encountered during eligibility verification. D02B is therefore physical P0-Q qualification, not untouched P1 confirmation.
+
+The numerical extraction and decision rules are frozen before workbook inspection.
 
 ## Resume rule
 
-1. Read this checkpoint.
-2. Read the D02B candidate selection freeze.
-3. Search candidates using metadata/method/data-availability criteria.
-4. Do not choose a system because its observed outcome is favorable.
-5. Verify all six eligibility axes.
-6. Commit the selected system and exact source/data contract before extracting decisive outcome values.
-7. Only then inspect/execute the physical analysis.
-8. Package eventual reproduction behind python chi_architecture/reproduce.py d02b.
-
-## Current external literature workspace
-
-Undermind workspace: Stability Inheritance Publication Build
-
-Active search: D02B physical candidate completeness search
-
-The search goal explicitly ranks candidates by direct measurement completeness and reproducibility, not by favorable Stability Inheritance outcome.
+1. Read this checkpoint and D02B_SOURCE_CONTRACT_v0.1.md.
+2. Acquire the source workbook and archived author code.
+3. Record source hashes before analysis.
+4. Inspect workbook schema/layout only and checkpoint the sheet/column mapping.
+5. Do not change the primary-response hierarchy after seeing numeric outcome values.
+6. Implement a one-entrypoint parser/analysis.
+7. Execute in GitHub Actions.
+8. Archive run ID, artifact digest, source hashes, and results before scientific interpretation.
+9. Reproduce via python chi_architecture/reproduce.py d02b.
