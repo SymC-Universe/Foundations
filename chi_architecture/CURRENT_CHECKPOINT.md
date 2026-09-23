@@ -1,28 +1,35 @@
 # Chi Architecture Active Checkpoint
 
-**Checkpoint ID:** D02B-CP6-PROCESSED-SNAPSHOT-IMPLEMENTED  
+**Checkpoint ID:** D02B-CP7-RAW-MANIFEST-IMPLEMENTED  
 **Date:** 2026-09-22  
 **Branch:** chi-architecture-p0  
 **Protocol:** SymC GOM v0.8.3
 
-## State
+## Processed snapshot
 
-The processed-value extraction is implemented only after CP5 froze the exact mapping and scalar algorithm.
+Run: 35819505039  
+Artifact: d02b-processed-snapshot-v01  
+Artifact ID: 10732403880  
+Digest: sha256:888106929cbac43437e53643b7dcf38c96951da68dfbd589a020f05dcf4ad0ce
 
-This workflow reads:
-- torque_states.csv;
-- retained rows from resonance_group_selection_audit.csv;
-- adaptive_tracking_windows.csv;
-- tracked_frequencies.csv;
-- per_case_metrics.csv;
-- dose_response.csv.
+Retained source families:
+3325, 4703, 7034, 7861, 8163, 8428, 8695 Hz.
 
-It explicitly does not download or open the raw FRF archive.
+These identifiers are source-defined, not D02B-selected.
+
+## Raw acquisition state
+
+A path-only raw archive acquisition workflow is implemented.
+
+It downloads and verifies 00_raw_exports.zip, then reads only ZIP directory metadata.
+
+No FRF member contents are opened at this checkpoint.
 
 ## Resume rule
 
-1. Archive the successful processed snapshot with run/artifact/digest.
-2. Record retained family IDs and exact torque case names.
-3. Do not change CP5 mappings.
-4. Implement raw archive acquisition and half-power extraction.
-5. Commit that implementation before raw FRF execution.
+After the raw path manifest succeeds:
+1. freeze exact case/file-name parsing from the manifest;
+2. verify there are 919 amplitude + 919 phase files;
+3. map the five primary torque states by case_name;
+4. commit the parser and one-command D02B implementation;
+5. only then read raw FRF values.
