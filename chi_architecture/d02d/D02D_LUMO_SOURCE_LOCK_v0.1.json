@@ -1,0 +1,49 @@
+{
+  "schema": "d02d-lumo-source-lock-v0.1",
+  "date": "2026-09-23",
+  "dataset_doi": "10.25835/0027803",
+  "package_id": "93b52576-6a5a-4ce9-8c27-a0372590f7b0",
+  "package_metadata_modified": "2025-05-07T06:47:28.913315",
+  "package_metadata_sha256": "f47a713ea40fc5f5f834d721f2e01c2f27b27961a37c9e426957a06caf2f52aa",
+  "resource_lock_workflow_run": 35901853086,
+  "resource_lock_artifact_id": 10769004313,
+  "resource_lock_artifact_digest": "sha256:05ad421db9c7884234d627eaf89a880f15748806b426b4a1f9dd9ad8fd4a6b23",
+  "resources": {
+    "README.pdf": {
+      "id": "bd0a6d0a-3ff3-4780-91cc-1d816ab39fb9",
+      "size": 1853104,
+      "url": "https://data.uni-hannover.de/dataset/93b52576-6a5a-4ce9-8c27-a0372590f7b0/resource/bd0a6d0a-3ff3-4780-91cc-1d816ab39fb9/download/readme.pdf"
+    },
+    "DAM3_010": {
+      "id": "37be937f-8e16-414e-9fd4-92d59196417c",
+      "size": 559776282,
+      "url": "https://data.uni-hannover.de/dataset/93b52576-6a5a-4ce9-8c27-a0372590f7b0/resource/37be937f-8e16-414e-9fd4-92d59196417c/download/exemplary_datasets_dam3_010.zip"
+    },
+    "DAM3_111": {
+      "id": "78da8221-a6bb-4ad9-9f53-e3d9164b3c52",
+      "size": 638712761,
+      "url": "https://data.uni-hannover.de/dataset/93b52576-6a5a-4ce9-8c27-a0372590f7b0/resource/78da8221-a6bb-4ad9-9f53-e3d9164b3c52/download/exemplary_datasets_dam3_111.zip"
+    },
+    "DAM4_010": {
+      "id": "1f56230e-3f8e-4347-90a1-08bdb3cd4872",
+      "size": 629562821,
+      "url": "https://data.uni-hannover.de/dataset/93b52576-6a5a-4ce9-8c27-a0372590f7b0/resource/1f56230e-3f8e-4347-90a1-08bdb3cd4872/download/exemplary_datasets_dam4_010.zip"
+    },
+    "DAM4_111": {
+      "id": "83ee4ee4-d86b-49ce-92dd-743bd779d845",
+      "size": 665801542,
+      "url": "https://data.uni-hannover.de/dataset/93b52576-6a5a-4ce9-8c27-a0372590f7b0/resource/83ee4ee4-d86b-49ce-92dd-743bd779d845/download/exemplary_datasets_dam4_111.zip"
+    },
+    "DAM6_010": {
+      "id": "6b497c7b-48c3-4c5d-9d08-c3f37ff92122",
+      "size": 643610180,
+      "url": "https://data.uni-hannover.de/dataset/93b52576-6a5a-4ce9-8c27-a0372590f7b0/resource/6b497c7b-48c3-4c5d-9d08-c3f37ff92122/download/exemplary_datasets_dam6_010.zip"
+    },
+    "DAM6_111": {
+      "id": "d9661b47-1f25-4194-99e8-6805fcd5810e",
+      "size": 680154659,
+      "url": "https://data.uni-hannover.de/dataset/93b52576-6a5a-4ce9-8c27-a0372590f7b0/resource/d9661b47-1f25-4194-99e8-6805fcd5810e/download/exemplary_datasets_dam6_111.zip"
+    }
+  },
+  "schema_probe_rule": "Use DAM3_010 because it is the smallest decisive ZIP. The choice is based only on CKAN file size."
+}
