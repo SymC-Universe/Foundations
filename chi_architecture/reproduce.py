@@ -21,7 +21,8 @@ D01C_FREEZE = ROOT / "D01C_PREEXECUTION_FREEZE_v0.1.json"
 sys.path.insert(0, str(SRC))
 
 from domain_map_nonnormal import load_freeze, run_d01c  # noqa: E402
-from d02a_physical import fetch_locked_source, load_json as load_d02a_json  # noqa: E402\nfrom d02a_physical_v02 import run_d02a_v02  # noqa: E402
+from d02a_physical import fetch_locked_source, load_json as load_d02a_json  # noqa: E402
+from d02a_physical_v02 import run_d02a_v02  # noqa: E402
 
 
 def sha256(path: Path) -> str:
