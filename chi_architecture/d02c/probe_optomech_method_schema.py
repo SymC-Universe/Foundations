@@ -25,7 +25,7 @@ FILES = {
     },
     "processing_5p24mW": {
         "url": "https://ndownloader.figshare.com/files/53674535",
-        "md5": null,
+        "md5": None,
     },
     "detuning_5p24mW": {
         "url": "https://ndownloader.figshare.com/files/53674640",
