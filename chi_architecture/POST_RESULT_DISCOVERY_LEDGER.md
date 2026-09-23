@@ -367,7 +367,24 @@ It also does not satisfy the predeclared clean adverse ordering `SCALAR_PRECEDES
 
 The null materially lowers confidence that the D02B ordering is readily portable across physical systems and demonstrates that the dry-run/environmental sensitivity firewall can erase apparent ordering evidence.
 
-**Current promotion status:** UNPAID_PROMOTION_DEBT / FIRST_PROSPECTIVE_TEST_NULL
+**Second prospective test update — D02D (2026-09-23):**
+
+D02D used the untouched LUMO lattice-tower benchmark with damage locations DAM3, DAM4, and DAM6 and frozen healthy -> 010 -> 111 severity ladders.
+
+The result was:
+
+- DAM3: `ORDERING_NON_IDENTIFIABLE`;
+- DAM4: `ORDERING_NON_IDENTIFIABLE`;
+- DAM6: `ORDERING_NON_IDENTIFIABLE`;
+- program outcome: `INDETERMINATE`.
+
+The dominant source of indeterminacy was the frozen environmental/operational matching floor. Enough damaged blocks failed the paired healthy temperature/log-RMS matching rectangle that the required >=10 matched-block floor was not retained across the full graded ladder.
+
+D02D therefore provides no prospective support for CA-D007 and does not satisfy the frozen falsification rule.
+
+A valid organization/scalar response was visible at DAM6 111, but the 010 state was non-identifiable, so the frozen onset-ordering rule correctly forbids using the 111 response as confirmation.
+
+**Current promotion status:** UNPAID_PROMOTION_DEBT / PROSPECTIVE_RECORD_NULL_PLUS_INDETERMINATE
 
 ---
 

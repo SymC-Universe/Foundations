@@ -1,57 +1,62 @@
 # Chi Architecture Active Checkpoint
 
-**Checkpoint ID:** D02D-CP8-EXECUTED-BEFORE-FULL-INTERPRETATION  
+**Checkpoint ID:** D02D-CP9-INTERPRETED-CLOSED  
 **Date:** 2026-09-23  
 **Branch:** chi-architecture-p0  
 **Current authority:** SymC GOM v0.8.6
 
 ## STATUS
 
-D02D completed successfully in the dedicated prospective workflow.
+D02D is complete.
 
-Run:
-35904120749
+Program outcome:
 
-Execution commit:
-856ed0ae63df13b557fba8a4cfd44aa8c720c32e
+`INDETERMINATE`.
 
-Artifact:
-chi-architecture-d02d-lumo-v01
+Location outcomes:
+- DAM3: `ORDERING_NON_IDENTIFIABLE`;
+- DAM4: `ORDERING_NON_IDENTIFIABLE`;
+- DAM6: `ORDERING_NON_IDENTIFIABLE`.
 
-Artifact ID:
-10770159354
-
-Artifact digest:
-sha256:bf84f37f6250b6cd2b96a8006cb39ef32c4eecef1cc82049f3b1a10c13412832
-
-Full result SHA-256:
-f372bb0e7e1069fe731e49b8831c3d39559eea5c61679df42e6a428e4f92c111
-
-Manifest SHA-256:
-9af1dfbdf6f9d5dac7a0a61d46029a3390ab9cf0431876bface750f4695dfe37
+CA-D007 receives no prospective support and no frozen falsification from D02D.
 
 ## CURRENT GATE
 
-Archive the successful prospective execution and preserve any sequencing defects before full scientific interpretation.
+Open D02E as a prospective data-adequacy-qualified test of CA-D007.
 
-## INTEGRITY NOTE
+## WHY D02D WAS INDETERMINATE
 
-The artifact was immutable and hashed before result interpretation.
+The modal families and block-level tracks were identifiable.
 
-However, the compact result card was opened locally after hashing and before this archive commit. No code, science, artifact, or result changed afterward.
+The dominant failure was the frozen environmental/operational overlap floor. Too few damaged blocks remained inside the paired healthy temperature/log-RMS rectangle in enough 010/111 campaigns to preserve the complete graded onset ladder.
 
-This is a documented archive-sequencing deviation. D02D remains reproducible, but the archive sequence is not described as perfectly blind.
+The next experiment must target this source of indeterminacy. D02D thresholds are not relaxed.
+
+## REPRODUCIBILITY
+
+Canonical verification:
+V6 in `chi_architecture/REPRODUCIBILITY_GUIDE.md`.
+
+Reviewer command:
+
+`python chi_architecture/reproduce.py d02d`
+
+Reference run:
+35904120749.
 
 ## NEXT ACTION
 
-Apply the frozen MFR-14 consequence table and final preexecution rules to the archived D02D result without changing outcome categories or thresholds.
+Freeze D02E candidate eligibility before candidate outcome inspection.
 
-Then:
-1. write the scientific readout;
-2. update the CA-D007 ledger state;
-3. add canonical reproducibility verification V6;
-4. update the master smoke test to include D02D;
-5. update the main project-control state under GOM v0.8.6.
+Required candidate properties:
+1. at least three ordered physical intervention levels;
+2. licensed local scalar;
+3. independent organization observable;
+4. automated public source access;
+5. native evidence that the intervention range changes at least one frozen observable;
+6. pre-verifiable environmental/operational overlap sufficient for the planned completeness floor;
+7. relative scalar-versus-organization onset remains uninspected;
+8. strongest native comparator and explicit null/reversal outcomes.
 
 ## USER ACTION
 

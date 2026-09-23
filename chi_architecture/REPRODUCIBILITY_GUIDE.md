@@ -1,13 +1,13 @@
 # Chi Architecture Reproducibility Guide
 
-**Governance:** SymC General Operations Manual v0.8.4  
+**Governance:** SymC General Operations Manual v0.8.6  
 **Reproducibility status:** R1 and R2 are demonstrated for the listed executable experiments through frozen GitHub Actions reference runs. R3 evidence reconstruction is experiment-specific and is identified in the corresponding source contract/readout.
 
 This guide is reviewer-first. The supported interface is the production entry point:
 
 `python chi_architecture/reproduce.py <experiment>`
 
-The numbered verification sections below are canonical under GOM v0.8.4. Detailed provenance notes follow them.
+The numbered verification sections below are canonical under GOM v0.8.6. Detailed provenance notes follow them.
 
 ## V1. D01C fixed-spectrum non-normal map
 
@@ -73,9 +73,43 @@ python chi_architecture/reproduce.py d02c
 
 Reference run: `35866859136`.
 
-## V5. Master smoke test
+## V5. D02C prospective null record
 
-**[CLAIM]** The production entry points for the mature D01C and D02A-D02C experiments execute through the documented interface and reproduce their frozen status outputs.
+**[CLAIM]** D02C is a prospectively frozen external test that returns `NEITHER_CHANGES` in both selected directions under the frozen thermal and completeness firewalls, so CA-D007 is not supported by D02C.
+
+**Inputs:** Zenodo DOI `10.5281/zenodo.18427836`; D02C source contract, exact mapping, onset-completeness rule, and archived execution record.
+
+**Command:**
+
+```bash
+python chi_architecture/reproduce.py d02c
+```
+
+**Expected output:** exit status 0; X ordering `NEITHER_CHANGES`; Z ordering `NEITHER_CHANGES`; `ca_d007_domain_specific_support=false`; full result SHA-256 `9b1f52945acc5cc43ec8590e9950effba65ef37c8e89523f20354b17fd079ab9`.
+
+Reference run: `35866859136`.
+
+## V6. D02D LUMO prospective ordering test
+
+**[CLAIM]** The second prospectively frozen CA-D007 test is indeterminate because the frozen environmental/operational matching floor prevents a complete healthy -> 010 -> 111 onset ordering at all three damage locations.
+
+**Inputs:** LUMO DOI `10.25835/0027803`; six source resources and SHA-256 hashes in `D02D_REPRO_MANIFEST_v0.1.json`; frozen MFR-14 and final preexecution analysis freeze in `chi_architecture/d02d/`.
+
+**Command:**
+
+```bash
+python chi_architecture/reproduce.py d02d
+```
+
+**Expected output:** exit status 0; `D02D_LUMO_PROSPECTIVE_RESULT_v0.1.json`; DAM3, DAM4, and DAM6 each `ORDERING_NON_IDENTIFIABLE`; program outcome `INDETERMINATE`; native-toolkit verdict `NATIVE_TOOLKIT_SUFFICIENT_NO_INCREMENTAL_VALUE`; full result SHA-256 `f372bb0e7e1069fe731e49b8831c3d39559eea5c61679df42e6a428e4f92c111`.
+
+Reference run: `35904120749`.
+
+## V7. Master smoke test
+
+**[CLAIM]** The production entry points for the mature D01C and D02A-D02D experiments execute through the documented interface and reproduce their frozen status outputs.
+
+**Inputs:** branch `chi-architecture-p0`; Python 3.12 environment; pinned dependencies from `chi_architecture/requirements-p0.txt`; network access to the DOI-locked physical source archives.
 
 **Command:**
 
@@ -85,6 +119,7 @@ python chi_architecture/reproduce.py d01c
 python chi_architecture/reproduce.py d02a
 python chi_architecture/reproduce.py d02b
 python chi_architecture/reproduce.py d02c
+python chi_architecture/reproduce.py d02d
 printf 'SYMC_CHI_ARCHITECTURE_SMOKE_TEST=PASS\n'
 ```
 
@@ -92,7 +127,7 @@ printf 'SYMC_CHI_ARCHITECTURE_SMOKE_TEST=PASS\n'
 
 `SYMC_CHI_ARCHITECTURE_SMOKE_TEST=PASS`
 
-This smoke test demonstrates executable package continuity. It does not convert self-consistency, physical qualification, or a prospective null into independent replication.
+This smoke test demonstrates executable package continuity. It does not convert physical qualification, a prospective null, or an indeterminate prospective test into independent replication.
 
 ## Detailed provenance and experiment notes
 
@@ -353,3 +388,25 @@ python chi_architecture/reproduce.py d02d
 The command automatically acquires the six DOI-locked LUMO exemplar resources, applies the frozen campaign-paired environmental controls, reconstructs the X/Y FDD mode families, estimates modal chi through frozen half-power bandwidth, computes complex-MAC organization, and emits one compact artifact bundle.
 
 No reviewer will manually choose damage locations, severity files, modes, channels, or thresholds.
+
+
+## D02D archived prospective execution
+
+Reference execution:
+
+- execution commit: `856ed0ae63df13b557fba8a4cfd44aa8c720c32e`
+- GitHub Actions run: `35904120749`
+- artifact: `chi-architecture-d02d-lumo-v01`
+- artifact ID: `10770159354`
+- artifact digest: `sha256:bf84f37f6250b6cd2b96a8006cb39ef32c4eecef1cc82049f3b1a10c13412832`
+- full result SHA-256: `f372bb0e7e1069fe731e49b8831c3d39559eea5c61679df42e6a428e4f92c111`
+- reproduction manifest SHA-256: `9af1dfbdf6f9d5dac7a0a61d46029a3390ab9cf0431876bface750f4695dfe37`
+
+Outcome:
+
+- DAM3: `ORDERING_NON_IDENTIFIABLE`;
+- DAM4: `ORDERING_NON_IDENTIFIABLE`;
+- DAM6: `ORDERING_NON_IDENTIFIABLE`;
+- program outcome: `INDETERMINATE`.
+
+The archive record also preserves the post-hash/pre-archive-commit result-card exposure as an integrity-sequencing deviation. No scientific or computational content changed after that exposure.

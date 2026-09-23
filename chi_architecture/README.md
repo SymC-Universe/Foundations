@@ -2,16 +2,16 @@
 
 **Status:** P0-D / P0-Q DOMAIN-FIRST ARCHITECTURE MAPPING  
 **Branch:** `chi-architecture-p0`  
-**Authority:** SymC General Operations Manual v0.8.3  
+**Authority:** SymC General Operations Manual v0.8.6  
 **Claim ceiling:** exploratory and qualification evidence only  
 **Confirmatory MFR-14:** not yet activated  
 **Predictive tool status:** not a tool; no validated cross-domain Atlas; no prospective cross-domain confirmation
 
 ## Governance baseline
 
-The active program authority is **SymC General Operations Manual v0.8.4 (22 September 2026)**.
+The active program authority is **SymC General Operations Manual v0.8.6 (23 September 2026)**.
 
-v0.8.4 supersedes v0.8.3 and adds explicit SymC manuscript-house-style, reproducibility-guide, and release-package presentation requirements. This workstream therefore uses the v0.8.4 reader-first communication standard and the canonical numbered verification format for executable reproducibility claims.
+The frozen scientific contracts remain historically bound to the GOM version under which they were preregistered unless a documented prospective amendment changed them before decisive evidence. Current communication, reproducibility-guide presentation, project control, and subsequent experiment governance follow v0.8.6.
 
 ## Current scientific question
 
@@ -359,11 +359,33 @@ See:
 - `results/D02C_ARCHIVAL_RECORD_v0.1.json`
 - `REPRODUCIBILITY_GUIDE.md`
 
+## D02D prospective LUMO test: complete
+
+D02D is the second prospectively frozen external physical test of CA-D007.
+
+The three location-level orderings are all `ORDERING_NON_IDENTIFIABLE`, producing the frozen program result `INDETERMINATE`.
+
+The primary source of indeterminacy is environmental/operational completeness rather than modal-track failure. The strict paired healthy temperature/log-RMS rectangle left fewer than the required 10 matched damaged blocks in enough 010/111 campaigns to prevent a complete onset ordering.
+
+A DAM6 111 response is identifiable, but the preceding 010 level is not, so the frozen rules prevent using the later response to rescue the hypothesis.
+
+CA-D007 now has zero prospective supporting tests, one prospective null (D02C), and one prospective indeterminate test (D02D).
+
+Native-toolkit verdict:
+
+`NATIVE_TOOLKIT_SUFFICIENT_NO_INCREMENTAL_VALUE`.
+
+See:
+- `D02D_LUMO_PROSPECTIVE_READOUT_v0.1.md`
+- `d02d/D02D_LUMO_MFR14_v0.1.md`
+- `d02d/D02D_LUMO_FINAL_PREEXECUTION_FREEZE_v0.1.md`
+- `results/D02D_ARCHIVAL_RECORD_v0.1.json`
+- `REPRODUCIBILITY_GUIDE.md`
+
 ## Project control
 
-**Current status:** D01A-D01C, D02A, D02B, and the prospective external D02C test are complete. D02B now supplies the first directly licensed physical modal chi perturbation map with an independently controlled interface state. No cross-domain Atlas has been constructed.  
-**Current scientific conclusion:** D02B shows a graded scalar/architecture relationship. At moderate bolt loosening, 16/28 comparisons retain similar local chi at frozen resolution while the full-field response has already reorganized. At full single-bolt loosening, every comparable primary chi transforms and many scalar comparisons become non-identifiable/refused under the frozen representation, while native response reorganization increases. Standard structural dynamics remains quantitatively sufficient.  
-**Post-result hypothesis:** `ARCHITECTURE_REORGANIZATION_CAN_PRECEDE_SCALAR_TRANSFORMATION`. D02C provided the first untouched prospective test and returned a null in both directions, so the hypothesis remains unconfirmed and its promotion debt is unpaid.  
-**Next scientific step:** D02D is opened as the second prospective test of CA-D007. Candidate eligibility requires an untouched graded physical intervention with at least three levels, an independently licensed local scalar, an independent organization observable, prior native evidence that the intervention range measurably changes at least one of those observables, and an uninspected relative onset ordering. The complete confirmatory record must satisfy MFR-14 before decisive evidence is opened.  
-**Reproducibility:** D01C, D02A, D02B, and D02C use the common reviewer interface: `python chi_architecture/reproduce.py <experiment>`. D02B automatically acquires and validates the 635 MB raw Zenodo archive and does not require manual raw-file handling.  
-**User action required:** none. D02D candidate selection and preregistration can proceed from public sources.
+**STATUS:** D01A-D01C and D02A-D02D are complete. D02C is a prospective null and D02D is prospectively indeterminate. CA-D007 remains unconfirmed with unpaid promotion debt.  
+**CURRENT GATE:** identify D02E using prospective data-adequacy criteria that solve D02D's environmental-overlap failure without inspecting the relative scalar-versus-organization onset.  
+**NEXT ACTION:** freeze D02E candidate eligibility around graded intervention, licensed local scalar, independent organization observable, automated public data, and pre-verifiable control/intervention environmental overlap sufficient for the planned completeness floor.  
+**WHY:** D02C lacked detectable change and D02D lacked enough matched graded data. The next experiment must improve prospective power without selecting on the desired ordering.  
+**USER ACTION:** none. Public-source candidate search and preregistration can proceed autonomously.
