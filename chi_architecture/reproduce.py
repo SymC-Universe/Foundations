@@ -22,7 +22,8 @@ sys.path.insert(0, str(SRC))
 
 from domain_map_nonnormal import load_freeze, run_d01c  # noqa: E402
 from d02a_physical import fetch_locked_source, load_json as load_d02a_json  # noqa: E402
-from d02a_physical_v02 import run_d02a_v02  # noqa: E402\nfrom d02b_four_bolt import run_d02b  # noqa: E402
+from d02a_physical_v02 import run_d02a_v02  # noqa: E402
+from d02b_four_bolt import run_d02b  # noqa: E402
 
 
 def sha256(path: Path) -> str:
