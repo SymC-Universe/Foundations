@@ -171,6 +171,45 @@ Established state-transition, numerical-abscissa, conditioning, and resolvent an
 
 See `D01C_NONNORMAL_DOMAIN_MAP_READOUT_v0.1.md` and `REPRODUCIBILITY_GUIDE.md`.
 
+## D02 physical calibration
+
+### D02A CsPbBr3 phonon carrier test: complete
+
+D02A moved the architecture program from constructed linear systems to publisher-supplied physical source data.
+
+The first prospective parser failed scientifically and remains preserved as:
+
+`PARTIAL_VALID_LINEWIDTH__CARRIER_PARSER_INADEQUATE__CHI_REFUSED`.
+
+A separate post-result v0.2 parser repair reconstructed the Figure 3 source matrices correctly:
+
+- 300 K orthorhombic M-R: 46 x 21;
+- 385 K tetragonal M-R: 38 x 21;
+- 419 K cubic M-R: 21 x 21.
+
+All three retained the same 21 source-defined M-R q positions.
+
+The source M-point linewidth changes from 0.77 +/- 0.07 meV at 300 K to 9.11 +/- 0.49 meV at 385 K, while the normalized carrier maps retain a zero-energy maximum across all frozen q positions. The distributed carrier shape partly persists and partly reorganizes across phase.
+
+Lowercase chi is **refused**, not estimated, because the locked source table does not provide same-condition natural frequency `omega0`.
+
+The native-comparator verdict is:
+
+`NATIVE_PHONON_TOOLKIT_SUFFICIENT`
+
+The physical pattern is therefore retained as:
+
+`CARRIER_CORRESPONDENCE_PERSISTS / LOCAL_DAMPING_TRANSFORMS / DISTRIBUTED_SHAPE_REORGANIZES / SCALAR_CHI_REFUSED`.
+
+This is a useful physical calibration of the representation rules, not a new phonon law or untouched confirmation.
+
+See:
+
+- `d02_cspbbr3/D02A_PHYSICAL_CALIBRATION_READOUT_v0.2.md`
+- `d02_cspbbr3/D02A_V0.1_POSTEXECUTION_INTEGRITY_AUDIT.md`
+- `results/D02A_EXECUTION_ARCHIVE_v0.2.json`
+- `REPRODUCIBILITY_GUIDE.md`
+
 ## Anti-circularity position
 
 The workstream must not follow these invalid chains:
@@ -230,8 +269,8 @@ See:
 
 ## Project control
 
-**Current status:** D01A, D01B, and D01C are complete as P0 within-domain linear-dynamics maps. D01A establishes the exact scalar anchor; D01B maps coupling-driven preservation/transformation/refusal; D01C establishes that fixed spectrum does not determine finite-time response in non-normal systems while conceding that standard nonmodal analysis already supplies the required quantitative machinery. No cross-domain Atlas has been constructed.  
-**Current scientific conclusion:** the linear program supports a representation hierarchy, not a new universal scalar. A scalar may be exact and sufficient in one regime, inherited or transformed after coupling in another, and insufficient for finite-time questions under non-normal organization.  
-**Next scientific step:** stop adding synthetic linear examples unless they answer a new question. The next high-information test should be a prospectively frozen physical or domain-native system in which local/spectral coordinates, carrier/system organization, and perturbation response can be independently measured or computed.  
-**Reproducibility:** D01C is reproduced with one command: `python chi_architecture/reproduce.py d01c`.  
-**User action required:** none for the completed D01C package.
+**Current status:** D01A-D01C and the first physical calibration D02A are complete. D01 establishes the representation hierarchy in exact/coupled/non-normal dynamics. D02A shows on real CsPbBr3 source data that a carrier sector can remain traceable while a local damping observable transforms sharply and the distributed spectral shape reorganizes. Lowercase chi was correctly refused because omega0 was not independently identifiable. No cross-domain Atlas has been constructed.  
+**Current scientific conclusion:** broader architecture can remain meaningful when scalar compression is unavailable, but the architecture must not be confused with new native physics. In D01C the standard nonmodal toolkit was sufficient; in D02A the standard q-resolved phonon toolkit was sufficient.  
+**Next scientific step:** select and freeze a second physical system that directly reports same-condition natural frequency and damping/linewidth, plus an independently defined carrier/coupling organization, so real-data scalar admission and joint chi/Chi behavior can both be tested rather than inferred.  
+**Reproducibility:** D01C and D02A use the same reviewer-facing interface: `python chi_architecture/reproduce.py d01c` or `python chi_architecture/reproduce.py d02a`.  
+**User action required:** none for the completed D02A package.
