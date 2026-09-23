@@ -1,0 +1,14 @@
+{
+  "schema": "d02c-interpreted-summary-v0.1",
+  "status": "D02C_PROSPECTIVE_NULL_CLOSED",
+  "target_hypothesis": "CA-D007_ARCHITECTURE_REORGANIZATION_CAN_PRECEDE_SCALAR_TRANSFORMATION",
+  "orderings": {
+    "X": "NEITHER_CHANGES",
+    "Z": "NEITHER_CHANGES"
+  },
+  "ca_d007_support": false,
+  "clean_reverse_ordering": false,
+  "interpretation": "PROSPECTIVE_NULL_NO_SUPPORT_NO_CLEAN_REVERSAL",
+  "native_toolkit_verdict": "NATIVE_TOOLKIT_SUFFICIENT_NO_INCREMENTAL_VALUE",
+  "promotion_status": "UNPAID_PROMOTION_DEBT_FIRST_PROSPECTIVE_TEST_NULL"
+}

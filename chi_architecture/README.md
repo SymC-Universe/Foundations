@@ -314,11 +314,50 @@ See:
 - `P0_EXPERIMENT_PLAN_v0.1.json` for preserved historical v0.1 provenance
 - `P0_EXPERIMENT_PLAN_v0.2.json` for current P0 fixture execution
 
+## D02C prospective wind-blade test: complete
+
+D02C is the first prospectively frozen external physical test of CA-D007.
+
+System:
+- full-scale wind-turbine blade climate-chamber icing experiment;
+- dataset DOI `10.5281/zenodo.18427836`;
+- local scalar: LSCF modal damping ratio;
+- independent organization observable: three-sensor complex CSD principal-vector dissimilarity;
+- thermal/no-icing dry-run firewall;
+- twelve baseline and twelve intervention windows.
+
+Frozen outcome:
+
+- X direction: `NEITHER_CHANGES`;
+- Z direction: `NEITHER_CHANGES`;
+- CA-D007 domain-specific support: `false`.
+
+No intervention scalar confidence interval left the pre-spray control envelope.
+
+No intervention organization window exceeded the effective midnight/dry-run threshold.
+
+Therefore D02C is a prospective null:
+
+`NO_SUPPORT / NO_CLEAN_REVERSAL`.
+
+CA-D007 is not prospectively replicated and its promotion debt remains unpaid.
+
+Native-toolkit verdict:
+
+`NATIVE_TOOLKIT_SUFFICIENT_NO_INCREMENTAL_VALUE`.
+
+See:
+- `D02C_WIND_BLADE_PROSPECTIVE_READOUT_v0.1.md`
+- `d02c/D02C_WIND_BLADE_CONTRACT_v0.1.md`
+- `d02c/D02C_ONSET_COMPLETENESS_RULE_v0.1.md`
+- `results/D02C_ARCHIVAL_RECORD_v0.1.json`
+- `REPRODUCIBILITY_GUIDE.md`
+
 ## Project control
 
-**Current status:** D01A-D01C, D02A, and D02B are complete. D02B now supplies the first directly licensed physical modal chi perturbation map with an independently controlled interface state. No cross-domain Atlas has been constructed.  
+**Current status:** D01A-D01C, D02A, D02B, and the prospective external D02C test are complete. D02B now supplies the first directly licensed physical modal chi perturbation map with an independently controlled interface state. No cross-domain Atlas has been constructed.  
 **Current scientific conclusion:** D02B shows a graded scalar/architecture relationship. At moderate bolt loosening, 16/28 comparisons retain similar local chi at frozen resolution while the full-field response has already reorganized. At full single-bolt loosening, every comparable primary chi transforms and many scalar comparisons become non-identifiable/refused under the frozen representation, while native response reorganization increases. Standard structural dynamics remains quantitatively sufficient.  
-**Post-result hypothesis:** `ARCHITECTURE_REORGANIZATION_CAN_PRECEDE_SCALAR_TRANSFORMATION`. This is discovery-only and requires untouched confirmation.  
-**Next scientific step:** freeze a new untouched graded physical system before decisive outcomes are inspected, specifically testing whether organization changes at a lower perturbation level than the local scalar coordinate.  
-**Reproducibility:** D01C, D02A, and D02B use the common reviewer interface: `python chi_architecture/reproduce.py <experiment>`. D02B automatically acquires and validates the 635 MB raw Zenodo archive and does not require manual raw-file handling.  
+**Post-result hypothesis:** `ARCHITECTURE_REORGANIZATION_CAN_PRECEDE_SCALAR_TRANSFORMATION`. D02C provided the first untouched prospective test and returned a null in both directions, so the hypothesis remains unconfirmed and its promotion debt is unpaid.  
+**Next scientific step:** if CA-D007 is pursued again, select an untouched graded system where the intervention is independently known to move at least one frozen observable, but where the relative onset ordering remains hidden. This increases power against another `NEITHER_CHANGES` result without biasing the ordering test.  
+**Reproducibility:** D01C, D02A, D02B, and D02C use the common reviewer interface: `python chi_architecture/reproduce.py <experiment>`. D02B automatically acquires and validates the 635 MB raw Zenodo archive and does not require manual raw-file handling.  
 **User action required:** none for the completed D02B package.

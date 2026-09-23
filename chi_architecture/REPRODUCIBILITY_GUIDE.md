@@ -210,3 +210,30 @@ The prospectively frozen D02C test compares:
 - conservative pre-spray and dry-run thermal sensitivity controls.
 
 Reviewers do not manually select windows, modes, or sensor files.
+
+
+## D02C archived prospective execution
+
+Reviewer command:
+
+```bash
+python chi_architecture/reproduce.py d02c
+```
+
+Reference execution:
+
+- execution commit: `0401811345c037bfee77d8471cbc295acbb12dd8`
+- GitHub Actions run: `35866859136`
+- artifact: `chi-architecture-d02c-wind-blade-v01`
+- artifact ID: `10752811690`
+- artifact digest: `sha256:071dae782bafc8b0174eafb3d3832e94d88b76a3fa647cb0ccf5b56aeb9b4211`
+- full result SHA-256: `9b1f52945acc5cc43ec8590e9950effba65ef37c8e89523f20354b17fd079ab9`
+- reproduction manifest SHA-256: `9c5483a003aa1f3a4dbcc1691e6936cd1fbbbf0b79486b4ef9e70fd47ba9f48f`
+
+Outcome:
+
+- X: `NEITHER_CHANGES`
+- Z: `NEITHER_CHANGES`
+- CA-D007 support: false
+
+The archived artifact is convenient but unnecessary for long-term reproduction because the one-command entrypoint reacquires the DOI-locked Zenodo sources and regenerates the complete result.

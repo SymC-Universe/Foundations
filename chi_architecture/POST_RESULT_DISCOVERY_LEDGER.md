@@ -347,7 +347,27 @@ A promotion test must be frozen on an untouched system with:
 5. a native comparator;
 6. an explicit outcome that would reverse or erase the proposed ordering.
 
-**Current promotion status:** UNPAID_PROMOTION_DEBT / PHYSICAL_POST_RESULT_DISCOVERY
+**Prospective test update — D02C (2026-09-23):**
+
+The first prospectively frozen external physical test returned:
+
+- X: `NEITHER_CHANGES`;
+- Z: `NEITHER_CHANGES`;
+- `ca_d007_domain_specific_support = false`.
+
+Neither organization nor local modal chi crossed its frozen control threshold in any of the twelve intervention windows.
+
+Under the preregistered D02C decision logic, this is:
+
+`PROSPECTIVE_NULL / NO_SUPPORT / NO_CLEAN_REVERSAL`.
+
+It does not support CA-D007.
+
+It also does not satisfy the predeclared clean adverse ordering `SCALAR_PRECEDES_ORGANIZATION`, so it is not treated as a definitive contradiction of the existential candidate claim.
+
+The null materially lowers confidence that the D02B ordering is readily portable across physical systems and demonstrates that the dry-run/environmental sensitivity firewall can erase apparent ordering evidence.
+
+**Current promotion status:** UNPAID_PROMOTION_DEBT / FIRST_PROSPECTIVE_TEST_NULL
 
 ---
 
