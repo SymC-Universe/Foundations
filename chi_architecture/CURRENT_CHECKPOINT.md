@@ -1,55 +1,68 @@
 # Chi Architecture Active Checkpoint
 
-**Checkpoint ID:** D01C-CP2-EXECUTED  
+**Checkpoint ID:** D01C-CP3-INTERPRETED-CLOSED  
 **Date:** 2026-09-22  
 **Branch:** `chi-architecture-p0`  
 **Scientific freeze:** `b8bf36c2776e2d788cdbf7a5f33e4254d1cb5f9b`  
-**Execution implementation:** `9818612abae93e460af7ab45281fd9a5e4ae68e7`  
+**Execution commit:** `9818612abae93e460af7ab45281fd9a5e4ae68e7`  
+**Execution archive commit:** `df29383f7c060a8a8e52034deeed6d67a17dd8cc`  
 **Protocol:** SymC GOM v0.8.3
 
-## Execution state
+## D01C closure
 
-D01C has executed successfully under the frozen CP0 scientific design.
+D01C is complete.
 
-- GitHub Actions run: `35809467796`
-- workflow: `Chi Architecture D01C Reproduction`
-- conclusion: `success`
-- artifact: `chi-architecture-d01c-v01`
-- artifact ID: `10728829675`
-- artifact digest: `sha256:7178cd28a579b17d35da57e37ebfccb4a540ac6f0f23a688233d9f2c665c305e`
-- full result SHA-256: `ab24c3dcb9490d1b07c9043b922e326f149cf71fd3522c67e2b54c1d53206d38`
-- manifest SHA-256: `7d06190f0111e092433eeb9a042151119d9e0e31d515197dbf59be426ed2cbb8`
+Frozen result:
 
-The permanent compact archival metadata is:
+- 26/26 cases executed;
+- spectrum preserved to maximum residual `2.22e-16`;
+- fixed-spectrum N1 gain range: 1.0 to 28.6524936;
+- fixed-spectrum N2 gain range: 1.0 to 74.5003624;
+- eigenvalue-only sufficiency: `REFUTED_WITHIN_FROZEN_CONSTRUCTION`.
+
+Comparator verdict:
+
+`STANDARD_NONMODAL_TOOLKIT_SUFFICIENT_FOR_D01C`
+
+No new non-normal chi, transient-growth law, resolvent quantity, or pseudospectral quantity is admitted.
+
+## Joint chi / Chi interpretation
+
+D01C supports a representation rule:
+
+A scalar/spectrum may remain valid for asymptotic placement while being insufficient for a finite-time or robustness question. When that happens, broader Chi must retain the native carrier/operator structure required by the question rather than inventing a replacement scalar.
+
+This is architecture discipline, not evidence for a new physical agent.
+
+## Reproduction
+
+Supported reviewer command:
+
+`python chi_architecture/reproduce.py d01c`
+
+Guide:
+
+`chi_architecture/REPRODUCIBILITY_GUIDE.md`
+
+Permanent archival metadata:
 
 `chi_architecture/results/D01C_ARCHIVAL_RECORD_v0.1.json`
 
-## Frozen numerical facts
+Scientific readout:
 
-- 26/26 frozen cases executed.
-- maximum spectrum-preservation residual: `2.220446049250313e-16`.
-- eigenvalue-only sufficiency status: `REFUTED_WITHIN_FROZEN_CONSTRUCTION`.
-- N1 fixed spectrum `[-1,-2]`: max operator state gain changed from `1.0` at 90 degrees to `28.6524936441728` at 0.5 degrees.
-- N2 fixed spectrum `[-0.25,-2]`: max operator state gain changed from `1.0` at 90 degrees to `74.5003623740674` at 0.5 degrees.
-- minimum scanned complex stability radius reached `0.01745041361890063` in N1 and `0.002493264858180868` in N2.
-
-These are archived observations, not yet a promoted interpretation.
+`chi_architecture/D01C_NONNORMAL_DOMAIN_MAP_READOUT_v0.1.md`
 
 ## Resume rule
 
-A future session should:
+Do not reopen D01C merely to add more synthetic non-normal families.
 
-1. read this checkpoint;
-2. read `D01C_PREEXECUTION_FREEZE_v0.1.json`;
-3. read `results/D01C_ARCHIVAL_RECORD_v0.1.json`;
-4. read `D01C_LITERATURE_POSITION.md`;
-5. reproduce if needed with `python chi_architecture/reproduce.py d01c`;
-6. interpret D01C against the standard nonmodal toolkit;
-7. preserve the rule that established transient-growth/resolvent mathematics is not SymC novelty;
-8. create a new version before any new scalar, metric, parameter range, or post-result targeted experiment.
+A new D01 version is justified only by a genuinely new scientific question.
 
-## Next scientific action
+The next high-information move is a prospectively frozen physical/domain-native test with independently grounded:
 
-Create the D01C scientific readout and decide whether the broader Chi framing contributes anything beyond established nonmodal/state-space analysis.
+1. local or spectral coordinate;
+2. carrier/coupling/system organization;
+3. perturbation/recovery outcome;
+4. native comparator.
 
-If the standard toolkit is already sufficient, record that explicitly rather than manufacturing added value.
+Any such experiment requires its own pre-result checkpoint and freeze before decisive outcome inspection.

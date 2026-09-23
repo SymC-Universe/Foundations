@@ -147,11 +147,29 @@ Interpretation: within the exact oscillator, chi earns its existence as a dimens
 
 See `D01A_SDOF_DOMAIN_MAP_READOUT_v0.1.md`.
 
-### D01B coupled 2DOF extension: next
+### D01B coupled 2DOF extension: complete
 
-D01B deliberately predeclares no master scalar. It will map scalar/spectral information, modal carriers/subspaces, physical coupling, energy redistribution, transient response, and whole-system recovery over a broad coupled parameter surface.
+The frozen 1,152-case / 2,304-response D01B map completed successfully. All cases remained asymptotically stable, but only 227/1,152 admitted exact real modal scalarization. Fixed isolated-component chi values could accompany large coupling-driven changes in settling and redistribution behavior.
 
-Its central question is whether one-dimensional placement remains adequate after coupling, or whether the scientifically adequate Chi coordinate becomes multidimensional.
+The exact equal-component subfamily also exposed an invariant symmetric branch that preserves its local chi while the antisymmetric branch is transformed by coupling. This is retained as an exact model-level inheritance mechanism with post-result promotion debt, not physical confirmation.
+
+See `D01B_COUPLED_2DOF_DOMAIN_MAP_READOUT_v0.1.md`.
+
+### D01C non-normal extension: complete
+
+D01C was frozen before output at commit `b8bf36c2776e2d788cdbf7a5f33e4254d1cb5f9b` and executed through the single-entry reproduction interface at commit `9818612abae93e460af7ab45281fd9a5e4ae68e7`.
+
+GitHub Actions run `35809467796` completed successfully with one reviewer artifact, `chi-architecture-d01c-v01` (artifact ID `10728829675`).
+
+Across two fixed-spectrum non-normal families, eigenvalues were preserved to maximum residual `2.22e-16` while worst-case state gain changed from 1.0 to 28.65x in N1 and from 1.0 to 74.50x in N2 as carrier non-orthogonality increased.
+
+The correct novelty verdict is deliberately narrow:
+
+`STANDARD_NONMODAL_TOOLKIT_SUFFICIENT_FOR_D01C`
+
+Established state-transition, numerical-abscissa, conditioning, and resolvent analysis explain the synthetic result. D01C therefore does not create a new SymC non-normal stability quantity. It strengthens the representation rule that scalar/spectral coordinates may remain valid for asymptotic placement while being insufficient for finite-time response and robustness questions.
+
+See `D01C_NONNORMAL_DOMAIN_MAP_READOUT_v0.1.md` and `REPRODUCIBILITY_GUIDE.md`.
 
 ## Anti-circularity position
 
@@ -212,8 +230,8 @@ See:
 
 ## Project control
 
-**Current status:** D01A is mapped and validated as the exact within-domain scalar anchor. The domain-first program is active; no cross-domain Atlas has been constructed.  
-**Next scientific/computational step:** execute D01B, the coupled two-degree-of-freedom Function/Limit Map, without predeclaring a master scalar.  
-**Why:** this is the first direct test of whether a coordinate that is sufficient for an isolated exact system remains sufficient once multiple functioning components exchange energy and influence one another.  
-**What can advance immediately:** implement the D01B raw architecture map, preserve the full parameter surface, and only afterward ask whether any lower-dimensional Chi coordinate earns adequate compression.  
-**User action required:** none.
+**Current status:** D01A, D01B, and D01C are complete as P0 within-domain linear-dynamics maps. D01A establishes the exact scalar anchor; D01B maps coupling-driven preservation/transformation/refusal; D01C establishes that fixed spectrum does not determine finite-time response in non-normal systems while conceding that standard nonmodal analysis already supplies the required quantitative machinery. No cross-domain Atlas has been constructed.  
+**Current scientific conclusion:** the linear program supports a representation hierarchy, not a new universal scalar. A scalar may be exact and sufficient in one regime, inherited or transformed after coupling in another, and insufficient for finite-time questions under non-normal organization.  
+**Next scientific step:** stop adding synthetic linear examples unless they answer a new question. The next high-information test should be a prospectively frozen physical or domain-native system in which local/spectral coordinates, carrier/system organization, and perturbation response can be independently measured or computed.  
+**Reproducibility:** D01C is reproduced with one command: `python chi_architecture/reproduce.py d01c`.  
+**User action required:** none for the completed D01C package.
