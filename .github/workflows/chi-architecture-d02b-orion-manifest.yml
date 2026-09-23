@@ -38,10 +38,12 @@ jobs:
           r=json.loads(Path("chi_architecture/results/D02B_ORION_PUBLIC_MANIFEST_v0.1.json").read_text())
           assert r["status"]=="PUBLIC_METADATA_ONLY_NO_SCIENTIFIC_RESPONSE_VALUES_PARSED"
           assert r["dataset"]["id"]=="p4fg6snh3r"
-          assert r["dataset"]["page"]["status_code"]==200
-          print("Orion public metadata guard passed")
+          assert r["dataset"]["page"].get("status_code") in (200, 403)
+          assert len(r["api_attempts"]) >= 1
+          print("Orion public metadata artifact exists; page status recorded for acquisition routing")
           PY
       - name: Upload manifest checkpoint artifact
+        if: always()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         with:
           name: d02b-orion-public-manifest-v01

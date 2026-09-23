@@ -26,3 +26,8 @@ chi_architecture/d02b/orion_public_manifest.py
 2. Use only file names, directory structure, sizes, hashes, and download endpoints to freeze the exact source-file subset.
 3. Do not inspect scientific response values before that file-selection freeze.
 4. If public API access is unavailable, use links embedded in the public page or the repository's documented download-all path; any mechanical acquisition workaround must be committed before data inspection.
+
+
+## Mechanical acquisition note
+
+The first Orion manifest run reached the public site but received HTTP 403 from the dataset HTML endpoint. The acquisition script still completed and recorded API-probe metadata; the workflow guard, not the acquisition itself, caused the failure. The guard is being repaired to preserve/upload the manifest even when the HTML route is blocked. No scientific response values were opened.
