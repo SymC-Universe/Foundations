@@ -1,0 +1,80 @@
+{
+  "schema": "d02a-execution-contract-v0.1",
+  "status": "FROZEN_BEFORE_SCIENTIFIC_VALUE_EXECUTION",
+  "source_schema_lock": "D02A_SOURCE_SCHEMA_LOCK_v0.1.json",
+  "parser_contract": "D02A_PARSER_CONTRACT_v0.1.json",
+  "phase_classifier": {
+    "source_basis": "independent CsPbBr3 transition literature",
+    "orthorhombic_if": "T < 360 K",
+    "tetragonal_if": "360 K <= T < 410 K",
+    "cubic_if": "T >= 410 K",
+    "boundary_note": "These broad phase labels are contextual bins, not fitted transition temperatures."
+  },
+  "figure3_carrier_correspondence": [
+    {
+      "source_sheet": "Panel a",
+      "temperature_K": 300,
+      "phase": "orthorhombic",
+      "path": "[H,1.5,0.5] M-R",
+      "correspondence_status": "DEFINED_FROM_PUBLISHED_FIGURE_CAPTION_BEFORE_VALUE_ANALYSIS"
+    },
+    {
+      "source_sheet": "Panel b",
+      "temperature_K": 385,
+      "phase": "tetragonal",
+      "path": "[H,1.5,0.5] M-R",
+      "correspondence_status": "DEFINED_FROM_PUBLISHED_FIGURE_CAPTION_BEFORE_VALUE_ANALYSIS"
+    },
+    {
+      "source_sheet": "Panel c G-M-R-G",
+      "temperature_K": 419,
+      "phase": "cubic",
+      "path": "schema block beginning row 65: [H,1.5,0.5] M-R",
+      "correspondence_status": "DEFINED_FROM_PUBLISHED_FIGURE_CAPTION_BEFORE_VALUE_ANALYSIS"
+    }
+  ],
+  "predeclared_descriptive_metrics": {
+    "linewidth_table": [
+      "all source rows",
+      "phase label",
+      "adjacent-temperature difference",
+      "adjacent difference divided by combined reported uncertainty"
+    ],
+    "phase_linewidth_summary": [
+      "inverse-variance weighted mean when positive uncertainties are available",
+      "standard error sqrt(1/sum(weights))",
+      "row count"
+    ],
+    "published_dho_fit_curve_diagnostic": [
+      "interpolate the authors' published fit curve onto source data energies within the fit energy range",
+      "RMS standardized residual using source S(Q,E) errors where error > 0",
+      "no parameter refitting"
+    ],
+    "carrier_map_summary": [
+      "complete source row count",
+      "unique q count",
+      "q range",
+      "energy range",
+      "intensity range"
+    ]
+  },
+  "dho_license_before_execution": {
+    "status": "OMEGA0_NOT_IDENTIFIABLE_FROM_LOCKED_SOURCE_TABLES",
+    "reason": "FIG4 sheet 4b tabulates temperature, DHO-derived linewidth and linewidth uncertainty only. FIG4 sheet 4a supplies measured spectra and published fit curves but does not tabulate same-condition omega0. The parser contract forbids back-fitting omega0 from those curves without a separately frozen fit contract.",
+    "linewidth_symbol_context": "The published figure caption identifies the quantity as Gamma_LW extracted from DHO fits. It is retained as a native linewidth observable and is not automatically equated to the damping coefficient required by chi_DHO.",
+    "chi_DHO_computed": false
+  },
+  "official_stage2_outcomes": [
+    "PHYSICAL_SOURCE_EXTRACTED_CHI_REFUSED",
+    "PHYSICAL_SOURCE_EXTRACTION_FAILED",
+    "SOURCE_HASH_MISMATCH"
+  ],
+  "anti_circularity": {
+    "all_schema_defined_rows_retained": true,
+    "no_value_dependent_phase_boundaries": true,
+    "no_value_dependent_q_selection": true,
+    "no_DHO_refit": true,
+    "no_omega0_backsolve": true,
+    "no_chi_from_linewidth_alone": true
+  }
+}

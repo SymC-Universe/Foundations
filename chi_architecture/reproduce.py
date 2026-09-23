@@ -20,7 +20,7 @@ FREEZE = ROOT / "D01C_PREEXECUTION_FREEZE_v0.1.json"
 
 sys.path.insert(0, str(SRC))
 
-from domain_map_nonnormal import load_freeze, run_d01c  # noqa: E402
+from domain_map_nonnormal import load_freeze, run_d01c  # noqa: E402\nfrom d02a_physical import fetch_locked_source, load_json as load_d02a_json, run_d02a  # noqa: E402
 
 
 def sha256(path: Path) -> str:
@@ -154,7 +154,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(
         description="Single-entry reproducibility interface for Chi Architecture experiments."
     )
-    parser.add_argument("experiment", choices=["d01c"])
+    parser.add_argument("experiment", choices=["d01c", "d02a"])
     parser.add_argument(
         "--skip-tests",
         action="store_true",
@@ -170,6 +170,16 @@ def main() -> None:
             "eigenvalue_only_sufficiency_status": result["eigenvalue_only_sufficiency_status"],
             "result_card": "chi_architecture/results/D01C_RESULT_CARD_v0.1.md",
             "manifest": "chi_architecture/results/D01C_REPRO_MANIFEST_v0.1.json",
+        }, indent=2))
+    elif args.experiment == "d02a":
+        result = reproduce_d02a(skip_tests=args.skip_tests)
+        print(json.dumps({
+            "status": result["status"],
+            "evidence_class": result["evidence_class"],
+            "lowercase_chi": result["lowercase_chi"]["status"],
+            "dho_license": result["dho_license"]["status"],
+            "result_card": "chi_architecture/results/D02A_RESULT_CARD_v0.1.md",
+            "manifest": "chi_architecture/results/D02A_REPRO_MANIFEST_v0.1.json",
         }, indent=2))
 
 
