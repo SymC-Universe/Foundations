@@ -1,6 +1,6 @@
 # Chi Architecture Active Checkpoint
 
-**Checkpoint ID:** D01C-CP3-INTERPRETED-CLOSED  
+**Checkpoint ID:** D01C-CP4-CLOSED-CI-HARDENED  
 **Date:** 2026-09-22  
 **Branch:** `chi-architecture-p0`  
 **Scientific freeze:** `b8bf36c2776e2d788cdbf7a5f33e4254d1cb5f9b`  
@@ -66,3 +66,11 @@ The next high-information move is a prospectively frozen physical/domain-native 
 4. native comparator.
 
 Any such experiment requires its own pre-result checkpoint and freeze before decisive outcome inspection.
+
+## CI hardening after closure
+
+The umbrella P0 workflow previously reran the full 1,152-case D01B map on every `chi_architecture/**` change under a 10-minute timeout. That created non-scientific timeout/cancellation noise on otherwise valid commits.
+
+CP4 removes the expensive D01B full-map execution from the fast umbrella lane. The umbrella lane still runs the complete unit/scientific-guard test suite, including D01B tests and freeze validation, plus the D01A exact map. Full D01B reproduction remains in its dedicated archival workflow.
+
+This is a mechanical CI separation only. No D01A, D01B, or D01C scientific parameter, metric, result, threshold, or interpretation changed.
