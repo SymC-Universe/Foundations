@@ -216,6 +216,72 @@ Future decisive evidence must be a new system/domain, or a genuinely untouched f
 
 ---
 
+## CA-D006: Coupling-compatibility and invariant-mode stability inheritance
+
+**Selection status:** POST_RESULT_DISCOVERY / EXACT_MODEL_DERIVATION  
+**Hypothesis provenance:** D01B_DATA_DERIVED + NATIVE_LINEAR_DYNAMICS  
+**Observed trigger:** The completed frozen D01B coupled 2DOF map showed that fixed isolated-component chi values can accompany strongly different embedded perturbation responses, while an equal-component symmetric subfamily preserves one modal chi exactly under arbitrary relative coupling in the declared model.  
+**Source readout:** `D01B_COUPLED_2DOF_DOMAIN_MAP_READOUT_v0.1.md`.
+
+### Exact D01B facts
+
+For the frozen M=I construction, exact real modal scalarization occurs if and only if the real symmetric damping and stiffness matrices commute. The D01B matrices reduce this condition to
+
+`kc(c2-c1) + cc(k1-k2) = 0`.
+
+This symbolic condition reproduces all 227 admitted scalarization cases in the 1,152-case frozen grid with zero mismatch.
+
+For equal intrinsic components, `k1=k2=k` and `c1=c2=c`, symmetric/antisymmetric coordinates give
+
+`chi_s = c/(2 sqrt(k))`
+
+and
+
+`chi_a = (c+2cc)/(2 sqrt(k+2kc))`.
+
+The symmetric branch therefore inherits the isolated local chi exactly, while the antisymmetric branch is transformed by coupling.
+
+For the equal critical subfamily `k=1, c=2`, the symmetric branch remains at `chi_s=1` and retains the critically damped EP2 state-space block for every coupling pair in the frozen grid.
+
+### Candidate generalized hypothesis
+
+When a local/modal stability coordinate survives embedding, the preservation mechanism may be tied to a natively defined invariant subspace, symmetry, or carrier-compatibility relation rather than to numerical similarity of scalar values alone.
+
+Conversely, loss of that compatibility may require a richer coupled-system representation even when all local scalar coordinates remain individually well defined.
+
+### Semantic firewall
+
+`STANDARD_MODAL_THEORY != NEW_SYMC_LAW`
+
+The C-K commutation criterion, simultaneous diagonalization, symmetric/antisymmetric normal modes, and critical damping as an EP are established mathematics. Their recovery in D01B is not claimed as novel.
+
+The open research question is whether an inheritance-oriented representation adds predictive or explanatory value in independent physical systems after standard native modal/state-space theory is used as the comparator.
+
+### What would count against the generalized hypothesis
+
+- physical systems selected independently of this result show no reproducible carrier/subspace preservation under embedding;
+- standard native modal/state-space quantities fully predict all declared inheritance outcomes with no added role for the proposed architecture;
+- apparent preservation requires post-hoc grouping or basis selection;
+- the carrier correspondence cannot be defined before target behavior is viewed;
+- preservation disappears when estimated with adequate uncertainty or a more appropriate native model.
+
+### Promotion debt
+
+This D01B result cannot confirm the generalized hypothesis that it generated.
+
+Promotion requires an independently selected physical or untouched computational system with:
+
+1. a parent/local coordinate defined before embedding analysis;
+2. an independently defined carrier or invariant-subspace correspondence;
+3. a frozen prediction of what is preserved, transformed, or refused;
+4. an intervention, coupling change, or natural contrast;
+5. comparison against standard native modal/state-space analysis;
+6. an explicit failure outcome retained prospectively.
+
+**Current promotion status:** UNPAID_PROMOTION_DEBT / EXACT_SYNTHETIC_MECHANISM_ONLY
+
+---
+
 ## Ledger-wide promotion rule
 
 No entry can be promoted by reinterpretation of the result that generated it.
