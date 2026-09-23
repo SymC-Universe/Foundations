@@ -1,38 +1,51 @@
 # Chi Architecture Active Checkpoint
 
-**Checkpoint ID:** D02D-CP0-CANDIDATE-SELECTION-FROZEN  
+**Checkpoint ID:** D02D-CP1-LUMO-SELECTED-MFR14-FROZEN  
 **Date:** 2026-09-23  
 **Branch:** chi-architecture-p0  
 **Protocol:** SymC GOM v0.8.4
 
 ## Status
 
-D02C is closed as a prospective null:
+D02D selects the LUMO lattice-tower benchmark.
 
-- X: NEITHER_CHANGES
-- Z: NEITHER_CHANGES
-- CA-D007 support: false
-- no clean scalar-first reversal
+Dataset DOI:
+10.25835/0027803
 
-The D02C null is recorded in README.md and the v0.8.4 canonical reproducibility guide.
+Methods DOI:
+10.1002/stc.3077
 
-## Active task
+Retained replication strata:
+- DAM3
+- DAM4
+- DAM6
 
-Select D02D under:
+Frozen severity ladder:
+- healthy
+- 010, one damage mechanism removed
+- 111, all damage mechanisms removed
 
-chi_architecture/d02d/D02D_CANDIDATE_SELECTION_FREEZE_v0.1.md
+## Confirmatory record
 
-## Why D02D differs from D02C
+Complete MFR-14:
 
-D02D requires independent prior/native evidence that the chosen intervention range measurably affects at least one frozen observable. The relative onset ordering must remain uninspected.
+chi_architecture/d02d/D02D_LUMO_MFR14_v0.1.md
 
-This is a power requirement against another NEITHER_CHANGES result, not a favorable-outcome filter.
+Candidate selection:
 
-## Resume rule
+chi_architecture/d02d/D02D_CANDIDATE_SELECTION_RECORD_v0.1.md
 
-1. Read this checkpoint and the D02D candidate-selection freeze.
-2. Search public physical systems using eligibility metadata, methods, repository structure, and non-decisive activity evidence only.
-3. Do not inspect the relative scalar-versus-organization onset ordering.
-4. Select the highest-ranked eligible system.
-5. Commit the selected system and complete MFR-14 before decisive evidence is opened.
-6. Only then implement and execute the prospective test.
+## Decisive-evidence boundary
+
+No damage-state damping-versus-organization onset result has been inspected.
+
+Next permissible actions:
+
+1. query CKAN resource metadata and source hashes/URLs;
+2. acquire README and ZIP directory/schema metadata only;
+3. freeze exact channel mapping, sampling, mode-selection implementation, uncertainty calculation, and environmental matching;
+4. commit production engine and tests;
+5. execute once;
+6. archive before interpretation.
+
+Any eligibility failure discovered during schema inspection invalidates D02D before decisive execution.
