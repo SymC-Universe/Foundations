@@ -1,33 +1,48 @@
 # Chi Architecture Active Checkpoint
 
-**Checkpoint ID:** D02C-CP2-HEADER-LOCK-IMPLEMENTED  
+**Checkpoint ID:** D02C-CP3-EXACT-MAPPING-AND-THERMAL-FIREWALL-FROZEN  
 **Date:** 2026-09-23  
 **Branch:** chi-architecture-p0  
-**Protocol:** SymC GOM v0.8.3  
-**Parent contract:** D02C_WIND_BLADE_CONTRACT_v0.1.md
+**Protocol:** SymC GOM v0.8.3
 
-## Unit convention
+## D02C system
 
-The OWI-lab LSCF/OMA convention is damping in percent.
+Full-scale wind-turbine blade climate-chamber icing test.
 
-D02C therefore uses:
+## Exact raw mapping
 
-chi = zeta = mean_damping / 100
+X organization:
+ACC2_X, ACC3_X, ACC4_X
 
-and:
+Z organization:
+ACC2_Z, ACC3_Z, ACC4_Z
 
-SE_chi = (std_damping / sqrt(size)) / 100.
+Sampling:
+250 Hz.
 
-This convention is locked before decisive damping values are inspected.
+## Scalar
 
-## Current action
+chi = mean_damping/100 under OWI-lab's damping-percent LSCF convention.
 
-A header-only workflow is reading exactly one raw acceleration CSV header from the intervention archive.
+## Conservative native controls
 
-It emits no acceleration values.
+Scalar transformation must exceed the full pre-spray OMA 95% envelope through 11:20 UTC.
 
-After success:
-1. freeze exact X/Z sensor columns;
-2. correct the dry-run checksum wording in the source contract;
-3. implement D02C and tests;
-4. commit before numeric execution.
+Organization reorganization must exceed BOTH:
+- all midnight baseline block variability;
+- all dry-run thermal block variability.
+
+Exact rules:
+
+chi_architecture/d02c/D02C_WIND_EXACT_MAPPING_v0.1.md
+
+## Permission boundary
+
+Decisive numeric OMA damping and acceleration values may now be read.
+
+Next:
+1. implement D02C analyzer and regression tests;
+2. expose as python chi_architecture/reproduce.py d02c;
+3. commit implementation before full execution;
+4. execute once in GitHub Actions;
+5. archive result before interpretation.
