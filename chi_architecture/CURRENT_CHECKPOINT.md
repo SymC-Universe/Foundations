@@ -1,51 +1,63 @@
 # Chi Architecture Active Checkpoint
 
-**Checkpoint ID:** D02A-CP2.2-V0.2-PARSER-FROZEN  
+**Checkpoint ID:** D02A-CP2.3-V0.2-IMPLEMENTED-PREOUTPUT  
 **Date:** 2026-09-22  
-**Parent:** D02A-CP2.1-V0.2-LAYOUT-DIAGNOSTIC  
-**Status:** post-result parser development / frozen before corrected carrier extraction
+**Parent:** D02A-CP2.2-V0.2-PARSER-FROZEN  
+**Status:** post-result parser development / implementation complete before corrected carrier output
 
-## Corrected FIG3 geometry
-
-The v0.2 layout diagnostic established that the experimental Figure 3 source sheets are matrices.
-
-- 300 K orthorhombic: q `A3:A23`, E `B3:B48`, S(Q,E) `C3:W48` = 46 x 21.
-- 385 K tetragonal: q `A3:A23`, E `B3:B40`, S(Q,E) `C3:W40` = 38 x 21.
-- 419 K cubic M-R block: q `A66:A86`, E `B66:B86`, S(Q,E) `C66:W86` = 21 x 21.
-
-All three q axes span the same 21 source points from 0.5 to 1.0 rlu.
-
-The corrected parser contract is:
+## Frozen v0.2 parser
 
 `chi_architecture/d02_cspbbr3/D02A_V0.2_CARRIER_PARSER_CONTRACT.json`
 
-## Comparison rule
+The scientific ranges and transformations are fixed:
 
-Absolute intensity is not compared across SPINS and CNCS.
+- 300 K: q A3:A23, E B3:B48, S C3:W48.
+- 385 K: q A3:A23, E B3:B40, S C3:W40.
+- 419 K M-R: q A66:A86, E B66:B86, S C66:W86.
+- common q grid: the 21 source values 0.5-1.0 rlu.
+- common comparison energy grid: 0.0-2.2 meV in 0.2 meV steps.
+- absolute cross-instrument intensity comparison: forbidden.
+- per-q normalization: positive-clipped interpolated intensity divided by its common-window sum.
+- carrier metrics: energy centroid, RMS width, common-grid peak energy.
+- pairwise outputs: descriptive RMS differences and Pearson correlations.
+- categorical inheritance threshold: none.
 
-The frozen cross-phase comparison uses only per-q normalized energy-distribution shape on the common source-supported window 0.0-2.2 meV and a fixed 0.2 meV grid.
+## Implementation
 
-Per-q outputs are energy centroid, RMS width, and peak-energy location. Pairwise outputs are descriptive RMS differences and correlations only. No categorical similarity threshold is introduced.
+New v0.2 code is isolated from the preserved v0.1 implementation:
+
+- `chi_architecture/src/d02a_physical_v02.py`
+- `chi_architecture/tests/test_d02a_physical_v02.py`
+
+Reviewer entrypoint remains:
+
+`python chi_architecture/reproduce.py d02a`
+
+It now targets the corrected v0.2 carrier result while still retaining the valid v0.1 linewidth extraction and chi refusal.
+
+Dedicated workflow:
+
+`.github/workflows/chi-architecture-d02a.yml`
+
+Expected single artifact:
+
+`chi-architecture-d02a-physical-v02`
 
 ## Evidence firewall
 
-v0.2 is post-result parser development and cannot become untouched confirmation.
+The original prospective v0.1 result remains:
 
-The v0.1 partial result remains official and preserved.
+`PARTIAL_VALID_LINEWIDTH__CARRIER_PARSER_INADEQUATE__CHI_REFUSED`
 
-Lowercase chi remains refused. No DHO parameter fitting is authorized.
+v0.2 is a post-result parser repair. It cannot erase that failure or gain untouched confirmatory credit.
+
+Lowercase chi remains refused before corrected carrier execution.
 
 ## Resume rule
 
-1. Read the v0.1 integrity audit and preserve it unchanged.
-2. Read the v0.2 parser contract before executing corrected carrier values.
-3. Implement the three exact matrix ranges without value-dependent exclusions.
-4. Verify the locked FIG3 SHA-256 before parsing.
-5. Reconstruct every frozen matrix cell.
-6. Compare carrier shape only after per-q normalization on the frozen common grid.
-7. Archive the corrected output before interpretation.
-8. Do not call the result inheritance by threshold; assess preservation/transformation/reorganization against native phonon analysis after archival.
-
-## Next action
-
-Implement and execute the v0.2 corrected matrix parser through the one-command D02A path.
+1. Observe the first v0.2 D02A workflow.
+2. If it fails mechanically, modify implementation only.
+3. Do not change source hashes, matrix ranges, common energy window, normalization, or metrics after seeing corrected carrier output.
+4. Archive exact workflow/artifact/result hashes as D02A-CP3 before interpretation.
+5. Interpret only after CP3.
+6. Compare the joint linewidth/carrier result against native q-resolved phonon analysis; if native phonon analysis already contains the whole result, record `NATIVE_PHONON_TOOLKIT_SUFFICIENT`.
