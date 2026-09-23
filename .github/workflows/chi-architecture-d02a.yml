@@ -42,8 +42,8 @@ jobs:
           python - <<'PY'
           import json
           from pathlib import Path
-          r = json.loads(Path("chi_architecture/results/D02A_CSPBBR3_PHYSICAL_RESULT_v0.1.json").read_text())
-          assert r["status"] == "PHYSICAL_SOURCE_EXTRACTED_CHI_REFUSED"
+          r = json.loads(Path("chi_architecture/results/D02A_CSPBBR3_PHYSICAL_RESULT_v0.2.json").read_text())
+          assert r["status"] == "PHYSICAL_CARRIER_MATRIX_RECONSTRUCTED_CHI_REFUSED_V0.2"
           assert r["confirmatory_credit"] is False
           assert r["lowercase_chi"]["status"] == "REFUSED"
           assert r["lowercase_chi"]["value_records"] == []
@@ -57,12 +57,12 @@ jobs:
       - name: Upload one reviewer artifact
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
-          name: chi-architecture-d02a-physical-v01
+          name: chi-architecture-d02a-physical-v02
           path: |
-            chi_architecture/results/D02A_CSPBBR3_PHYSICAL_RESULT_v0.1.json
-            chi_architecture/results/D02A_CSPBBR3_SUMMARY_v0.1.json
-            chi_architecture/results/D02A_RESULT_CARD_v0.1.md
-            chi_architecture/results/D02A_ENVIRONMENT_v0.1.txt
-            chi_architecture/results/D02A_REPRO_MANIFEST_v0.1.json
+            chi_architecture/results/D02A_CSPBBR3_PHYSICAL_RESULT_v0.2.json
+            chi_architecture/results/D02A_CSPBBR3_SUMMARY_v0.2.json
+            chi_architecture/results/D02A_RESULT_CARD_v0.2.md
+            chi_architecture/results/D02A_ENVIRONMENT_v0.2.txt
+            chi_architecture/results/D02A_REPRO_MANIFEST_v0.2.json
           retention-days: 90
           if-no-files-found: error
