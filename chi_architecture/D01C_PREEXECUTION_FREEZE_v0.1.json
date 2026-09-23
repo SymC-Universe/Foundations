@@ -1,0 +1,135 @@
+{
+  "schema": "d01c-nonnormal-preexecution-freeze-v0.1",
+  "date": "2026-09-22",
+  "status": "P0_D_PREEXECUTION_FROZEN_BEFORE_D01C_OUTPUT",
+  "authority": "SymC General Operations Manual v0.8.3",
+  "parent_program": "D01_LINEAR_DYNAMICS_DOMAIN_MAP_PLAN_v0.1.json",
+  "phase_id": "D01C_NONNORMAL_EXTENSION",
+  "known_context_before_execution": [
+    "D01A_SDOF_SCALE_COLLAPSE",
+    "D01B_COUPLED_2DOF",
+    "NSD_P0D14",
+    "NSD_P0D15",
+    "NSD_P0D16",
+    "NSD_P0D17",
+    "NSD_P0D19"
+  ],
+  "scientific_question": "When asymptotic spectral stability is held fixed, how much can finite-time response and robustness vary as non-normal carrier geometry changes, and does any proposed Chi interpretation add information beyond the standard nonmodal toolkit?",
+  "claim_ceiling": "Within-domain P0 Function/Limit mapping and standard-toolkit comparison only. No physical or cross-domain confirmation.",
+  "generator_family": {
+    "construction": "A(theta)=V(theta) diag(lambda1,lambda2) V(theta)^-1",
+    "V_columns": [
+      "[1,0]^T",
+      "[cos(theta),sin(theta)]^T"
+    ],
+    "state_norm": "Euclidean 2-norm",
+    "spectral_families": [
+      {
+        "id": "N1",
+        "eigenvalues": [-1.0, -2.0],
+        "role": "unit-slow-timescale fixed-spectrum family"
+      },
+      {
+        "id": "N2",
+        "eigenvalues": [-0.25, -2.0],
+        "role": "separated-timescale fixed-spectrum family"
+      }
+    ],
+    "theta_degrees": [90.0, 60.0, 45.0, 30.0, 20.0, 15.0, 10.0, 7.5, 5.0, 3.0, 2.0, 1.0, 0.5],
+    "selection_basis": "Angles were frozen to span orthogonal through strongly non-orthogonal carrier geometry on a logarithmically tightening scale. They were not selected from D01B outcomes or Atlas alignment.",
+    "exact_defective_theta_zero_included": false,
+    "theta_zero_role": "analytic limit only; no finite-precision EP classification is inferred from the sweep"
+  },
+  "observation_grids": {
+    "time": {
+      "start": 0.0,
+      "stop": 40.0,
+      "points": 8001,
+      "post_result_extension_allowed_for_current_result": false
+    },
+    "resolvent_frequency": {
+      "start": 0.0,
+      "stop": 20.0,
+      "points": 4001,
+      "real_generator_symmetry_note": "Only nonnegative omega is required because singular values of (i omega I-A)^-1 are even in omega for the real generators used here.",
+      "post_result_extension_allowed_for_current_result": false
+    }
+  },
+  "fixed_perturbations": [
+    {
+      "id": "E1",
+      "x0": [1.0, 0.0],
+      "role": "first coordinate unit perturbation"
+    },
+    {
+      "id": "E2",
+      "x0": [0.0, 1.0],
+      "role": "second coordinate unit perturbation"
+    }
+  ],
+  "standard_native_metrics": [
+    "eigenvalue_set",
+    "spectral_abscissa",
+    "numerical_abscissa",
+    "right_eigenvector_condition_number",
+    "right_eigenvector_angle",
+    "Henrici_departure_from_normality",
+    "max_operator_state_gain",
+    "time_of_max_operator_state_gain",
+    "max_operator_energy_gain",
+    "fixed_E1_max_state_gain",
+    "fixed_E2_max_state_gain",
+    "resolvent_peak_2norm",
+    "resolvent_peak_frequency",
+    "complex_unstructured_stability_radius_from_resolvent_scan"
+  ],
+  "derived_worst_case_rule": "The optimal initial vector at the frozen time grid is a standard singular-vector diagnostic and is not treated as a prospectively applied physical perturbation.",
+  "scalar_policy": {
+    "local_or_spectral_scalar_chi_assumed": false,
+    "master_scalar_search": false,
+    "spectral_abscissa_retained_as_native_scalar_comparator": true,
+    "eigenvalue_set_retained_as_native_spectral_comparator": true,
+    "post_result_scalar_compression": "DISCOVERY_ONLY"
+  },
+  "comparators": [
+    "spectral_abscissa_only",
+    "full_eigenvalue_set",
+    "numerical_abscissa",
+    "eigenvector_conditioning_and_angle",
+    "full_state_transition_operator",
+    "resolvent_2norm_and_stability_radius"
+  ],
+  "function_map_questions": [
+    "At fixed eigenvalues, how do fixed-perturbation and worst-case finite-time gains change with carrier non-orthogonality?",
+    "At fixed eigenvalues, how does distance to instability under unstructured perturbation change with carrier geometry?",
+    "Which established nonmodal quantities track the realized response that eigenvalues alone cannot determine?"
+  ],
+  "limit_map_questions": [
+    "How does conditioning behave as theta approaches the defective limit?",
+    "When does numerical abscissa become positive despite negative spectral abscissa?",
+    "How rapidly do transient and resolvent gains increase near the non-normal limit?",
+    "Where would finite precision make individual eigenvectors unreliable even before exact defectiveness?"
+  ],
+  "decision_rules": {
+    "same_spectrum_response_difference": "Any response difference materially above numerical error under identical eigenvalues establishes that the eigenvalue set alone is not sufficient for that response within the construction.",
+    "numerical_error_floor": 1e-10,
+    "added_value_firewall": "If established nonmodal/state-space quantities already explain the declared response, D01C must report STANDARD_NONMODAL_TOOLKIT_SUFFICIENT rather than claiming a new SymC dynamical quantity.",
+    "no_new_scalar_without_new_freeze": true
+  },
+  "anti_circularity": {
+    "no_D01B_outcome_tuning": true,
+    "no_Atlas_target_used": true,
+    "all_frozen_cases_retained": true,
+    "both_fixed_perturbations_retained": true,
+    "no_post_result_grid_extension_for_current_map": true,
+    "no_post_result_metric_substitution_for_current_map": true,
+    "no_outcome_fitted_Chi_weights": true
+  },
+  "literature_position": {
+    "Trefethen_et_al_1993": "doi:10.1126/science.261.5121.578",
+    "Trefethen_1997": "doi:10.1137/S0036144595295284",
+    "Schmid_2007": "doi:10.1146/annurev.fluid.38.050304.092139",
+    "Jovanovic_2021": "doi:10.1146/annurev-fluid-010719-060244",
+    "novelty_rule": "Transient growth, pseudospectra/resolvent behavior, and eigenvector non-orthogonality are established science and cannot be claimed as SymC discoveries."
+  }
+}
