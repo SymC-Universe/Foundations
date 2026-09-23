@@ -1,33 +1,39 @@
 # Chi Architecture Active Checkpoint
 
-**Checkpoint ID:** D02B-CP2B-ORION-MANIFEST-IMPLEMENTED  
+**Checkpoint ID:** D02B-CP3-ZENODO-SYSTEM-CONTRACT-FROZEN  
 **Date:** 2026-09-22  
 **Branch:** chi-architecture-p0  
-**Protocol:** SymC GOM v0.8.3  
-**Active source contract:** D02B_ORION_SOURCE_CONTRACT_v0.2.md
+**Protocol:** SymC GOM v0.8.3
 
-## State
+## Active D02B selection
 
-The Orion selection correction is active.
+Four-bolt aluminum plate under controlled bolt-torque variation.
 
-A metadata-only GitHub Actions lane now probes the public Mendeley dataset page and candidate public API endpoints to recover file/download metadata without opening MAT/ASCII response values.
+Dataset DOI: 10.5281/zenodo.20038951  
+Preprint: arXiv:2609.05378
 
-Workflow:
+## Why this supersedes Orion
 
-.github/workflows/chi-architecture-d02b-orion-manifest.yml
+Orion remained scientifically eligible but automated Mendeley acquisition returned HTTP 403 from GitHub runners.
 
-Script:
+The original frozen ranking prioritizes machine-readable accessibility and simple automated reproduction.
 
-chi_architecture/d02b/orion_public_manifest.py
+The Zenodo candidate supplies raw data, processed tables, scripts, checksums, schemas, environment files, and open HTTPS downloads.
 
-## Resume rule
+No Orion scientific response values were parsed before this correction.
 
-1. Inspect the first successful manifest artifact.
-2. Use only file names, directory structure, sizes, hashes, and download endpoints to freeze the exact source-file subset.
-3. Do not inspect scientific response values before that file-selection freeze.
-4. If public API access is unavailable, use links embedded in the public page or the repository's documented download-all path; any mechanical acquisition workaround must be committed before data inspection.
+## Frozen source contract
 
+Read:
 
-## Mechanical acquisition note
+chi_architecture/d02b/D02B_FOUR_BOLT_SOURCE_CONTRACT_v0.3.md
 
-The first Orion manifest run reached the public site but received HTTP 403 from the dataset HTML endpoint. The acquisition script still completed and recorded API-probe metadata; the workflow guard, not the acquisition itself, caused the failure. The guard is being repaired to preserve/upload the manifest even when the HTML route is blocked. No scientific response values were opened.
+before numerical data extraction.
+
+## Next action
+
+1. Download only small Stage-A Zenodo assets: documentation, processed tables, scripts, and metadata.
+2. Hash and inspect schema/column names.
+3. Freeze exact source-file mapping and native retained-group IDs before numeric analysis.
+4. Then implement raw FRF half-power extraction and the one-command D02B wrapper.
+5. Execute in GitHub Actions and archive before interpretation.
