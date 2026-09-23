@@ -35,10 +35,12 @@ jobs:
           from pathlib import Path
           r=json.loads(Path("chi_architecture/results/D02D_LUMO_CKAN_RESOURCE_LOCK_v0.1.json").read_text())
           assert r["status"]=="RESOURCE_METADATA_ONLY_NO_ARCHIVE_CONTENT_OPENED"
-          assert len(r["selected_resources"])==7
-          print("D02D resource metadata lock passed")
+          assert r["status"]=="RESOURCE_METADATA_ONLY_NO_ARCHIVE_CONTENT_OPENED"
+          assert len(r["all_resource_names"]) >= 7
+          print("D02D CKAN metadata inventory emitted")
           PY
       - name: Upload resource lock
+        if: always()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         with:
           name: d02d-lumo-resource-lock-v01

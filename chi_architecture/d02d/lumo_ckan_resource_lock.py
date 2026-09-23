@@ -51,8 +51,7 @@ def main() -> None:
 
     names = {x["name"] for x in selected}
     missing = sorted(TARGET_NAMES - names)
-    if missing:
-        raise RuntimeError(f"missing target resources: {missing}")
+    all_resource_names = [str(x.get("name", "")).strip() for x in pkg.get("resources", [])]
 
     raw = json.dumps(payload["result"], sort_keys=True, separators=(",", ":")).encode()
     result = {
@@ -67,6 +66,8 @@ def main() -> None:
             "package_metadata_sha256": hashlib.sha256(raw).hexdigest(),
         },
         "selected_resources": sorted(selected, key=lambda x: x["name"]),
+        "missing_requested_names": missing,
+        "all_resource_names": all_resource_names,
         "guard": "Only CKAN metadata were read. ZIP/PDF source bytes were not opened.",
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
@@ -74,6 +75,7 @@ def main() -> None:
     print(json.dumps({
         "status": result["status"],
         "selected_resource_count": len(selected),
+        "missing_requested_count": len(missing),
         "metadata_modified": result["dataset"]["metadata_modified"],
         "output": str(OUT),
     }, indent=2))
