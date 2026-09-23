@@ -101,7 +101,10 @@ def fetch_resource(location: str, severity: str, cache_dir: Path) -> dict[str, A
 
 def list_campaign_members(zf: zipfile.ZipFile) -> tuple[list[str], list[str]]:
     mats = [x for x in zf.namelist() if x.lower().endswith(".mat")]
-    healthy = sorted(x for x in mats if "/healthy/" in x.lower() or x.lower().startswith("11_healthy/"))
+    healthy = sorted(
+        x for x in mats
+        if any("healthy" in part.lower() for part in x.replace("\\", "/").split("/")[:-1])
+    )
     damaged = sorted(x for x in mats if x not in healthy)
     if len(healthy) != 5 or len(damaged) != 5:
         raise D02DRefusal(f"expected 5 healthy + 5 damaged MAT files, got {len(healthy)} + {len(damaged)}")
