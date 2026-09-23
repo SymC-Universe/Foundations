@@ -1,6 +1,6 @@
 # Chi Architecture Active Checkpoint
 
-**Checkpoint ID:** D02B-CP7-RAW-MANIFEST-IMPLEMENTED  
+**Checkpoint ID:** D02B-CP7B-RAW-MANIFEST-GUARD-CORRECTED  
 **Date:** 2026-09-22  
 **Branch:** chi-architecture-p0  
 **Protocol:** SymC GOM v0.8.3
@@ -33,3 +33,9 @@ After the raw path manifest succeeds:
 3. map the five primary torque states by case_name;
 4. commit the parser and one-command D02B implementation;
 5. only then read raw FRF values.
+
+## Raw-manifest mechanical correction
+
+The first raw-manifest execution successfully downloaded and MD5-verified the Zenodo archive and emitted path metadata only. It found 919 amplitude files, 919 phase files, and one additional non-response archive member, for 1,839 total files. The workflow failed only because the guard incorrectly asserted 1,838 total files.
+
+The guard is corrected to preserve all 1,838 response files plus the one metadata member. No FRF member content has been opened and no scientific rule changed.

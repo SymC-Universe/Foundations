@@ -39,10 +39,13 @@ jobs:
           assert r["status"]=="RAW_ARCHIVE_PATHS_ONLY_NO_FRF_VALUES_READ"
           assert r["counts"]["amplitude_files"]==919
           assert r["counts"]["phase_files"]==919
-          assert r["counts"]["all_files"]==1838
-          print("D02B raw archive manifest guard passed")
+          assert r["counts"]["all_files"]==1839
+          assert r["counts"]["amplitude_files"] + r["counts"]["phase_files"] == 1838
+          assert r["counts"]["all_files"] - r["counts"]["amplitude_files"] - r["counts"]["phase_files"] == 1
+          print("D02B raw archive manifest guard passed; one non-response archive member retained")
           PY
       - name: Upload path-only raw manifest
+        if: always()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         with:
           name: d02b-raw-archive-manifest-v01
