@@ -1,0 +1,13 @@
+{
+  "schema": "d02a-v0.2-layout-diagnostic-contract",
+  "status": "POST_RESULT_DEVELOPMENT_NOT_CONFIRMATORY",
+  "parent_failure": "D02A v0.1 FIG3 carrier parser inadequate",
+  "source": {
+    "id": "FIG3",
+    "sha256": "6db8784c4e8e95c560ccce0bebe70b86dfc7613cccfe62853dc7eec7a25a1a0a"
+  },
+  "sheets": ["Panel a", "Panel b", "Panel c G-M-R-G"],
+  "diagnostic_output": "Every non-empty cell coordinate and value from the three sheets, plus hidden row/column state and merged ranges.",
+  "scientific_use": false,
+  "rule": "This diagnostic may define a new v0.2 parser but cannot itself count as physical evidence."
+}
