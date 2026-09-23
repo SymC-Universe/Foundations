@@ -332,8 +332,12 @@ def track_block(block: dict[str, Any], f_ref: float) -> dict[str, Any]:
 def projective_reference(vectors: list[np.ndarray]) -> np.ndarray:
     if len(vectors) < 1:
         raise D02DRefusal("no vectors for reference")
-    p = np.zeros((9, 9), dtype=np.complex128)
+    dim = int(np.asarray(vectors[0]).size)
+    if dim < 1 or any(int(np.asarray(v).size) != dim for v in vectors):
+        raise D02DRefusal("projective reference requires equal nonzero vector dimensions")
+    p = np.zeros((dim, dim), dtype=np.complex128)
     for v in vectors:
+        v = np.asarray(v, dtype=np.complex128).reshape(-1)
         p += np.outer(v, np.conjugate(v))
     p /= float(len(vectors))
     vals, vecs = np.linalg.eigh(p)
