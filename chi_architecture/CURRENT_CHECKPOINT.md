@@ -1,57 +1,59 @@
 # Chi Architecture Active Checkpoint
 
-**Checkpoint ID:** D02A-CP0-PHYSICAL-FREEZE  
+**Checkpoint ID:** D02A-CP1-SOURCE-SCHEMA-LOCKED  
 **Date:** 2026-09-22  
 **Branch:** `chi-architecture-p0`  
-**Parent checkpoint:** D01C-CP4-CLOSED-CI-HARDENED  
+**CP0 scientific freeze:** `27164b36a0c3ecd1931cfe8cdf840f6fc7b9fbb6`  
 **Protocol:** SymC GOM v0.8.3
 
-## Active experiment
+## Source integrity checkpoint
 
-`D02A_CSPBBR3_PHONON_INHERITANCE`
+The schema-only workflow completed successfully before scientific numeric values were inspected.
 
-This is the first post-D01 domain-native physical calibration test.
+- workflow run: `35815354508`
+- artifact: `chi-architecture-d02a-source-schema-v01`
+- artifact ID: `10732010233`
+- artifact digest: `sha256:77f862cda4d2e277f39e9048876edd9b190db0e0a0f5d7e06bf8ae8f3f8e0ead`
+- FIG3 SHA-256: `6db8784c4e8e95c560ccce0bebe70b86dfc7613cccfe62853dc7eec7a25a1a0a`
+- FIG4 SHA-256: `938d401c4b6ce766244d2c1dba9edd5d0804067ec8d21b5d43379241bab78bf5`
 
-Scientific freeze:
+No scientific numeric values were emitted by the schema stage.
 
-`chi_architecture/d02_cspbbr3/D02A_PREEXECUTION_FREEZE_v0.1.json`
+## Frozen parser surface
 
-Literature / novelty firewall:
+Source/header roles are locked in:
 
-`chi_architecture/d02_cspbbr3/D02A_LITERATURE_POSITION.md`
+`chi_architecture/d02_cspbbr3/D02A_SOURCE_SCHEMA_LOCK_v0.1.json`
 
-## Important evidence status
+Value extraction rules are locked in:
 
-The broad qualitative result of the 2021 CsPbBr3 paper was already known before this freeze.
+`chi_architecture/d02_cspbbr3/D02A_PARSER_CONTRACT_v0.1.json`
 
-Therefore:
+The parser may now inspect values only through those schema-defined sheets, columns, and rows.
 
-`PHYSICAL != UNTOUCHED_CONFIRMATION`
+## Critical scientific guard
 
-D02A is P0-D physical calibration. It may validate or reject the proposed inheritance/refusal representation on real material data but cannot pay prospective confirmation debt.
+The M-point linewidth table alone does **not** license lowercase chi.
+
+`linewidth != Gamma` until the 2021 DHO convention is documented, and `Gamma` alone is insufficient without a same-condition `omega0`.
+
+Therefore stage 1 may legitimately return:
+
+`DHO_CONVENTION_AMBIGUOUS`
+
+or
+
+`OMEGA0_NOT_IDENTIFIABLE`
+
+while still completing a physical linewidth/carrier map.
 
 ## Resume rule
 
-1. Read this checkpoint and the D02A freeze.
-2. Do not inspect numerical source values manually before the schema checkpoint is archived.
-3. Run the source-schema workflow.
-4. Archive exact source-file SHA-256 hashes plus workbook sheet/dimension/text-header inventory as D02A-CP1.
-5. Build the parser from schema only. No value-dependent sheet/range selection.
-6. Execute every frozen applicable source range.
-7. Fail closed on DHO convention ambiguity or missing omega0/Gamma.
-8. Archive execution as D02A-CP2 before interpretation.
-9. Interpret only against the frozen native comparator and novelty firewall.
-10. Reviewer-facing reproduction must converge to `python chi_architecture/reproduce.py d02a`.
-
-## Immediate next action
-
-Run source integrity/schema inventory against the two frozen publisher workbooks.
-
-
-## CP0.1 mechanical source-fetch hardening
-
-The first source-schema run was slow on the primary Springer Nature media host before any scientific values were emitted.
-
-The schema workflow now tries the exact frozen publisher URL first and the standard Springer static-content mirror second, with bounded connect/read timeouts and a browser-like User-Agent.
-
-This is a transport-only change. The frozen source filenames, DOI, scientific question, ranges, metrics, chi-admission rules, comparators, falsifiers, and evidence class are unchanged.
+1. Read CP0, this checkpoint, the source schema lock, and parser contract.
+2. Implement the parser without changing scientific ranges.
+3. Fetch the exact source workbooks and verify the locked SHA-256 values.
+4. Extract all schema-defined values.
+5. Audit the 2021 DHO method convention separately from the numerical result.
+6. Do not fit or backsolve `omega0` from the plotted DHO curve unless a new fit contract is frozen before doing so.
+7. Archive extracted values + DHO license decision as CP2 before joint chi/Chi interpretation.
+8. Reproduction target remains `python chi_architecture/reproduce.py d02a`.

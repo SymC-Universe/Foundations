@@ -1,0 +1,64 @@
+{
+  "schema": "d02a-parser-contract-v0.1",
+  "status": "FROZEN_FROM_SCHEMA_BEFORE_SCIENTIFIC_VALUE_ANALYSIS",
+  "source_lock": "D02A_SOURCE_SCHEMA_LOCK_v0.1.json",
+  "download_hashes": {
+    "FIG3": "6db8784c4e8e95c560ccce0bebe70b86dfc7613cccfe62853dc7eec7a25a1a0a",
+    "FIG4": "938d401c4b6ce766244d2c1dba9edd5d0804067ec8d21b5d43379241bab78bf5"
+  },
+  "extract": {
+    "FIG4_4b": {
+      "sheet": "4b",
+      "start_row": 3,
+      "end_rule": "sheet_max_row",
+      "columns": ["A","B","C"],
+      "retain_rule": "complete_numeric_tuple_only",
+      "names": ["temperature_K","linewidth_meV","linewidth_error_meV"]
+    },
+    "FIG4_4a": {
+      "sheet": "4a",
+      "start_row": 4,
+      "end_rule": "sheet_max_row",
+      "blocks": [
+        {"temperature_K":50,"data":["A","B","C"],"fit":["D","E"]},
+        {"temperature_K":300,"data":["F","G","H"],"fit":["I","J"]},
+        {"temperature_K":385,"data":["K","L","M"],"fit":["N","O"]},
+        {"temperature_K":500,"data":["P","Q","R"],"fit":["S","T"]}
+      ],
+      "retain_rule": "complete numeric tuples within each independently schema-defined data/fit block"
+    },
+    "FIG3_panel_a": {
+      "sheet": "Panel a",
+      "start_row": 3,
+      "end_rule": "sheet_max_row",
+      "columns": ["A","B","C"],
+      "retain_rule": "complete_numeric_tuple_only"
+    },
+    "FIG3_panel_b": {
+      "sheet": "Panel b",
+      "start_row": 3,
+      "end_rule": "sheet_max_row",
+      "columns": ["A","B","C"],
+      "retain_rule": "complete_numeric_tuple_only"
+    },
+    "FIG3_panel_c": {
+      "sheet": "Panel c G-M-R-G",
+      "schema_blocks": [
+        {"header_row":2,"start_row":3,"stop_before_row":65},
+        {"header_row":65,"start_row":66,"stop_before_row":88},
+        {"header_row":88,"start_row":89,"stop_rule":"sheet_max_row_plus_one"}
+      ],
+      "columns": ["A","B","C"],
+      "retain_rule": "complete_numeric_tuple_only"
+    }
+  },
+  "stage_1_outputs": [
+    "source_hash_verification",
+    "exact extracted numeric tables",
+    "data completeness counts",
+    "temperature/linewidth uncertainty table",
+    "DHO_LICENSE status"
+  ],
+  "chi_rule": "Do not compute chi_DHO in stage 1 unless DHO_LICENSE is ADMISSIBLE with documented 2021 convention and same-condition omega0 plus Gamma.",
+  "default_dho_license": "UNRESOLVED_PENDING_METHOD_CONVENTION_AUDIT"
+}
