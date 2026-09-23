@@ -1,45 +1,50 @@
 # Chi Architecture Active Checkpoint
 
-**Checkpoint ID:** D02D-CP3-SOURCE-LOCKED-SCHEMA-PROBE-IMPLEMENTED  
+**Checkpoint ID:** D02D-CP4-HEALTHY-STRUCT-SCHEMA-IMPLEMENTED  
 **Date:** 2026-09-23  
 **Branch:** chi-architecture-p0  
 **Protocol:** SymC GOM v0.8.4
 
-## Source lock
-
-CKAN resource lock passed.
+## Schema probe closed
 
 Run:
-35901853086
+35902035417
 
 Artifact:
-d02d-lumo-resource-lock-v01
+d02d-lumo-schema-v01
 
 Artifact ID:
-10769004313
+10768844453
 
 Artifact digest:
-sha256:05ad421db9c7884234d627eaf89a880f15748806b426b4a1f9dd9ad8fd4a6b23
+sha256:d4be171eec075b214df13544922a19fa3d2fb3abf731c9e3abe0aa22348bbe20
 
-Permanent source mapping:
+Representative DAM3 010 archive:
+- 5 healthy MAT files;
+- 5 damaged MAT files;
+- top-level Dat struct in each MAT;
+- scientific array values remain unopened.
 
-chi_architecture/d02d/D02D_LUMO_SOURCE_LOCK_v0.1.json
+## Active safe action
 
-## Schema probe
+Inspect the first healthy MAT Dat structure only.
 
-DAM3 010 is selected for schema inspection only because it is the smallest decisive archive by CKAN file size.
+The healthy-only probe may emit:
+- field names;
+- nested structure;
+- array shapes;
+- dtypes;
+- small string metadata.
 
-The probe:
-- downloads the archive and README;
-- records SHA-256 hashes;
-- lists ZIP paths/sizes/CRC;
-- inspects up to eight MAT members with scipy.io.whosmat;
-- does not load or emit scientific arrays.
+It may not emit numeric scientific values.
 
-## Resume rule
+No damaged MAT member is opened.
 
-1. Observe the schema workflow.
-2. Freeze exact MAT variable/channel mapping from schema only.
-3. Freeze the estimator implementation, uncertainty/bootstrap counts, environmental matching, and mode-family selection.
-4. Commit the production Engine and tests.
-5. Only then open damage-state scientific array values.
+## Next gate
+
+After the healthy struct schema is archived:
+1. freeze exact acceleration channel selection and sampling metadata route;
+2. freeze FDD/OMA estimator and uncertainty calculations;
+3. freeze campaign-paired environmental controls;
+4. commit production Engine and tests;
+5. only then open damaged arrays.
