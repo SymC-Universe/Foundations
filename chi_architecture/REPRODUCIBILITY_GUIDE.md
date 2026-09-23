@@ -338,3 +338,18 @@ D02D is the second prospective CA-D007 experiment. It is not yet an executable v
 Candidate selection is restricted to systems with at least three graded perturbation levels, a directly licensed local scalar, an independent organization observable, automated public-data access, and prior native evidence that the intervention range measurably changes at least one frozen observable while leaving the relative onset ordering uninspected.
 
 Once D02D is frozen and executed, it will receive the next canonical verification number rather than being inserted retroactively into V1-V5.
+
+
+## D02D pending canonical verification
+
+D02D has now reached the final preexecution stage. Once the first frozen execution is archived, it will receive canonical verification section V6.
+
+Planned production command:
+
+```bash
+python chi_architecture/reproduce.py d02d
+```
+
+The command automatically acquires the six DOI-locked LUMO exemplar resources, applies the frozen campaign-paired environmental controls, reconstructs the X/Y FDD mode families, estimates modal chi through frozen half-power bandwidth, computes complex-MAC organization, and emits one compact artifact bundle.
+
+No reviewer will manually choose damage locations, severity files, modes, channels, or thresholds.

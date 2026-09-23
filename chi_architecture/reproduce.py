@@ -25,6 +25,7 @@ from d02a_physical import fetch_locked_source, load_json as load_d02a_json  # no
 from d02a_physical_v02 import run_d02a_v02  # noqa: E402
 from d02b_four_bolt import run_d02b  # noqa: E402
 from d02c_wind_blade import run_d02c  # noqa: E402
+from d02d_lumo import run_d02d  # noqa: E402
 
 
 def sha256(path: Path) -> str:
@@ -511,11 +512,103 @@ def reproduce_d02c(skip_tests: bool = False) -> dict:
     })
     return result
 
+
+def d02d_result_card(result: dict) -> str:
+    lines = [
+        "# D02D LUMO Prospective Result Card v0.1",
+        "",
+        f"**Status:** {result['status']}",
+        f"**Claim ID:** {result['claim_id']}",
+        f"**Outcome:** {result['outcome']}",
+        f"**Native-toolkit verdict:** {result['native_toolkit_verdict']}",
+        "",
+        "## Frozen location orderings",
+        "",
+    ]
+    for location in ("DAM3", "DAM4", "DAM6"):
+        lines.append(f"- {location}: {result['location_orderings'][location]}")
+        for direction in ("X", "Y"):
+            d = result["locations"][location]["directions"].get(direction, {})
+            lines.append(f"  - {direction}: {d.get('ordering', 'ORDERING_NON_IDENTIFIABLE')}")
+    lines.extend([
+        "",
+        "## Scope",
+        "",
+        "This is the prospectively frozen D02D external physical test of CA-D007. "
+        "The result must be interpreted under the frozen MFR-14 consequence table.",
+        "",
+    ])
+    return "\n".join(lines)
+
+
+def reproduce_d02d(skip_tests: bool = False) -> dict:
+    if not skip_tests:
+        run_pytest("chi_architecture/tests/test_d02d_lumo.py")
+
+    cache = ROOT / "cache" / "d02d"
+    result = run_d02d(cache)
+
+    RESULTS.mkdir(parents=True, exist_ok=True)
+    full = RESULTS / "D02D_LUMO_PROSPECTIVE_RESULT_v0.1.json"
+    summary = RESULTS / "D02D_SUMMARY_v0.1.json"
+    card = RESULTS / "D02D_RESULT_CARD_v0.1.md"
+    environment = RESULTS / "D02D_ENVIRONMENT_v0.1.txt"
+    manifest = RESULTS / "D02D_REPRO_MANIFEST_v0.1.json"
+
+    write_json(full, result)
+    write_json(summary, {
+        "schema": result["schema"],
+        "status": result["status"],
+        "claim_id": result["claim_id"],
+        "location_orderings": result["location_orderings"],
+        "outcome": result["outcome"],
+        "native_toolkit_verdict": result["native_toolkit_verdict"],
+        "analysis": result["analysis"],
+        "source_files": result["source_files"],
+        "scope": result["scope"],
+    })
+    card.write_text(d02d_result_card(result), encoding="utf-8")
+    environment.write_text(
+        "\n".join([
+            f"python={platform.python_version()}",
+            f"implementation={platform.python_implementation()}",
+            f"platform={platform.platform()}",
+            f"numpy={np.__version__}",
+            f"scipy={scipy.__version__}",
+        ]) + "\n",
+        encoding="utf-8",
+    )
+
+    tracked = [
+        ROOT / "d02d" / "D02D_CANDIDATE_SELECTION_FREEZE_v0.1.md",
+        ROOT / "d02d" / "D02D_CANDIDATE_SELECTION_RECORD_v0.1.md",
+        ROOT / "d02d" / "D02D_LUMO_MFR14_v0.1.md",
+        ROOT / "d02d" / "D02D_LUMO_SOURCE_LOCK_v0.1.json",
+        ROOT / "d02d" / "D02D_LUMO_FINAL_PREEXECUTION_FREEZE_v0.1.md",
+        ROOT / "src" / "d02d_lumo.py",
+        ROOT / "tests" / "test_d02d_lumo.py",
+        Path(__file__).resolve(),
+        full,
+        summary,
+        card,
+        environment,
+    ]
+    write_json(manifest, {
+        "schema": "d02d-repro-manifest-v0.1",
+        "entrypoint": "python chi_architecture/reproduce.py d02d",
+        "files": {
+            str(p.relative_to(ROOT.parent)): sha256(p)
+            for p in tracked
+        },
+        "source_files": result["source_files"],
+    })
+    return result
+
 def main() -> None:
     parser = argparse.ArgumentParser(
         description="Single-entry reproducibility interface for Chi Architecture experiments."
     )
-    parser.add_argument("experiment", choices=["d01c", "d02a", "d02b", "d02c"])
+    parser.add_argument("experiment", choices=["d01c", "d02a", "d02b", "d02c", "d02d"])
     parser.add_argument(
         "--skip-tests",
         action="store_true",
@@ -551,7 +644,7 @@ def main() -> None:
             "result_card": "chi_architecture/results/D02B_RESULT_CARD_v0.1.md",
             "manifest": "chi_architecture/results/D02B_REPRO_MANIFEST_v0.1.json",
         }, indent=2))
-    else:
+    elif args.experiment == "d02c":
         result = reproduce_d02c(skip_tests=args.skip_tests)
         print(json.dumps({
             "status": result["status"],
@@ -560,6 +653,16 @@ def main() -> None:
             "ca_d007_domain_specific_support": result["ca_d007_domain_specific_support"],
             "result_card": "chi_architecture/results/D02C_RESULT_CARD_v0.1.md",
             "manifest": "chi_architecture/results/D02C_REPRO_MANIFEST_v0.1.json",
+        }, indent=2))
+    else:
+        result = reproduce_d02d(skip_tests=args.skip_tests)
+        print(json.dumps({
+            "status": result["status"],
+            "claim_id": result["claim_id"],
+            "location_orderings": result["location_orderings"],
+            "outcome": result["outcome"],
+            "result_card": "chi_architecture/results/D02D_RESULT_CARD_v0.1.md",
+            "manifest": "chi_architecture/results/D02D_REPRO_MANIFEST_v0.1.json",
         }, indent=2))
 
 
