@@ -1,63 +1,49 @@
 # Chi Architecture Active Checkpoint
 
-**Checkpoint ID:** D02A-CP2.3-V0.2-IMPLEMENTED-PREOUTPUT  
+**Checkpoint ID:** D02A-CP3-V0.2-EXECUTED  
 **Date:** 2026-09-22  
-**Parent:** D02A-CP2.2-V0.2-PARSER-FROZEN  
-**Status:** post-result parser development / implementation complete before corrected carrier output
+**Branch:** `chi-architecture-p0`  
+**Execution commit:** `2eb3f529eb215cb21e03394e35dfb45f6f078781`  
+**Workflow run:** `35816379440`  
+**Protocol:** SymC GOM v0.8.3
 
-## Frozen v0.2 parser
+## Corrected physical execution
 
-`chi_architecture/d02_cspbbr3/D02A_V0.2_CARRIER_PARSER_CONTRACT.json`
+D02A v0.2 executed successfully under the frozen corrected-matrix contract.
 
-The scientific ranges and transformations are fixed:
+- artifact: `chi-architecture-d02a-physical-v02`
+- artifact ID: `10731212172`
+- artifact digest: `sha256:049c4648f71b13e30a5470ebfeaf06cea3a482f642826aec06e92efb461528a9`
+- full result SHA-256: `234315fb8e181c1538844efa6a94776e8dcdfaf9e67fda85006982584e511f2e`
+- summary SHA-256: `4912e2fa20f05d14751567469696cfc7d0f0805ec2ba07d290572a0b1dc03fcb`
+- result card SHA-256: `9895adb148000768e2dbaea317572fb78c176d48a5d914212c55a0978571061c`
+- manifest SHA-256: `c3ac58b6b9779412dc8541644a6cb26cb5976b2093f2f97b3b976b9277821442`
 
-- 300 K: q A3:A23, E B3:B48, S C3:W48.
-- 385 K: q A3:A23, E B3:B40, S C3:W40.
-- 419 K M-R: q A66:A86, E B66:B86, S C66:W86.
-- common q grid: the 21 source values 0.5-1.0 rlu.
-- common comparison energy grid: 0.0-2.2 meV in 0.2 meV steps.
-- absolute cross-instrument intensity comparison: forbidden.
-- per-q normalization: positive-clipped interpolated intensity divided by its common-window sum.
-- carrier metrics: energy centroid, RMS width, common-grid peak energy.
-- pairwise outputs: descriptive RMS differences and Pearson correlations.
-- categorical inheritance threshold: none.
+Permanent compact archival metadata:
 
-## Implementation
+`chi_architecture/results/D02A_EXECUTION_ARCHIVE_v0.2.json`
 
-New v0.2 code is isolated from the preserved v0.1 implementation:
+## Archived facts before interpretation
 
-- `chi_architecture/src/d02a_physical_v02.py`
-- `chi_architecture/tests/test_d02a_physical_v02.py`
+- v0.1 partial failure remains preserved.
+- all three corrected M-R matrices reconstructed with 21/21 identifiable q profiles.
+- 300 K matrix: 46 x 21.
+- 385 K matrix: 38 x 21.
+- 419 K matrix: 21 x 21.
+- six-row M-point linewidth table unchanged.
+- lowercase chi remains refused.
+- no cross-instrument absolute intensity comparison.
+- no categorical carrier-similarity threshold.
+- no DHO refit.
 
-Reviewer entrypoint remains:
-
-`python chi_architecture/reproduce.py d02a`
-
-It now targets the corrected v0.2 carrier result while still retaining the valid v0.1 linewidth extraction and chi refusal.
-
-Dedicated workflow:
-
-`.github/workflows/chi-architecture-d02a.yml`
-
-Expected single artifact:
-
-`chi-architecture-d02a-physical-v02`
-
-## Evidence firewall
-
-The original prospective v0.1 result remains:
-
-`PARTIAL_VALID_LINEWIDTH__CARRIER_PARSER_INADEQUATE__CHI_REFUSED`
-
-v0.2 is a post-result parser repair. It cannot erase that failure or gain untouched confirmatory credit.
-
-Lowercase chi remains refused before corrected carrier execution.
+Pairwise normalized-shape diagnostics are archived in the execution record and must not be altered.
 
 ## Resume rule
 
-1. Observe the first v0.2 D02A workflow.
-2. If it fails mechanically, modify implementation only.
-3. Do not change source hashes, matrix ranges, common energy window, normalization, or metrics after seeing corrected carrier output.
-4. Archive exact workflow/artifact/result hashes as D02A-CP3 before interpretation.
-5. Interpret only after CP3.
-6. Compare the joint linewidth/carrier result against native q-resolved phonon analysis; if native phonon analysis already contains the whole result, record `NATIVE_PHONON_TOOLKIT_SUFFICIENT`.
+1. Read the v0.1 integrity audit, v0.2 parser contract, and this archive.
+2. Do not change any extraction or comparison rule in response to the archived numbers.
+3. Interpret the linewidth transformation and carrier-shape evolution against standard q-resolved phonon analysis.
+4. Decide whether the inheritance/transformation language adds anything beyond native phonon analysis.
+5. If native methods already state the full result, record `NATIVE_PHONON_TOOLKIT_SUFFICIENT`.
+6. Preserve P0-D / post-result provenance; D02A cannot pay untouched confirmation debt.
+7. Keep lowercase chi refused unless a separate future omega0-identification protocol is frozen before fitting.

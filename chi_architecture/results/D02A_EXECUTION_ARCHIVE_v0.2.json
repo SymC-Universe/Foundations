@@ -1,0 +1,81 @@
+{
+  "schema": "d02a-execution-archive-v0.2",
+  "checkpoint_id": "D02A-CP3-V0.2-EXECUTED",
+  "date": "2026-09-22",
+  "execution_commit": "2eb3f529eb215cb21e03394e35dfb45f6f078781",
+  "workflow_run_id": 35816379440,
+  "workflow_conclusion": "success",
+  "artifact": {
+    "name": "chi-architecture-d02a-physical-v02",
+    "id": 10731212172,
+    "digest": "sha256:049c4648f71b13e30a5470ebfeaf06cea3a482f642826aec06e92efb461528a9"
+  },
+  "source_hashes": {
+    "FIG3": "6db8784c4e8e95c560ccce0bebe70b86dfc7613cccfe62853dc7eec7a25a1a0a",
+    "FIG4": "938d401c4b6ce766244d2c1dba9edd5d0804067ec8d21b5d43379241bab78bf5"
+  },
+  "result_hashes": {
+    "full_result_sha256": "234315fb8e181c1538844efa6a94776e8dcdfaf9e67fda85006982584e511f2e",
+    "summary_sha256": "4912e2fa20f05d14751567469696cfc7d0f0805ec2ba07d290572a0b1dc03fcb",
+    "result_card_sha256": "9895adb148000768e2dbaea317572fb78c176d48a5d914212c55a0978571061c",
+    "environment_sha256": "6f3ec3f47c62a80a63c911cfc8c225fb548522262ba3d89f41973f05248dfb6a",
+    "manifest_sha256": "c3ac58b6b9779412dc8541644a6cb26cb5976b2093f2f97b3b976b9277821442"
+  },
+  "official_status": "PHYSICAL_CARRIER_MATRIX_RECONSTRUCTED_CHI_REFUSED_V0.2",
+  "evidence_class": "P0_D_POST_RESULT_PARSER_DEVELOPMENT_ONLY",
+  "confirmatory_credit": false,
+  "parent_v0_1_status": "PARTIAL_VALID_LINEWIDTH__CARRIER_PARSER_INADEQUATE__CHI_REFUSED",
+  "lowercase_chi": {
+    "status": "REFUSED",
+    "reason": "OMEGA0_NOT_IDENTIFIABLE_FROM_LOCKED_SOURCE_TABLES"
+  },
+  "linewidth_records": [
+    {"temperature_K":50.0,"phase":"ORTHORHOMBIC","linewidth_meV":0.2,"linewidth_error_meV":0.03},
+    {"temperature_K":100.0,"phase":"ORTHORHOMBIC","linewidth_meV":0.32,"linewidth_error_meV":0.05},
+    {"temperature_K":200.0,"phase":"ORTHORHOMBIC","linewidth_meV":0.493,"linewidth_error_meV":0.037},
+    {"temperature_K":300.0,"phase":"ORTHORHOMBIC","linewidth_meV":0.77,"linewidth_error_meV":0.07},
+    {"temperature_K":385.0,"phase":"TETRAGONAL","linewidth_meV":9.11,"linewidth_error_meV":0.49},
+    {"temperature_K":500.0,"phase":"CUBIC","linewidth_meV":9.49,"linewidth_error_meV":0.23}
+  ],
+  "carrier_matrix_geometry": [
+    {"temperature_K":300.0,"phase":"ORTHORHOMBIC","shape_energy_by_q":[46,21],"identifiable_q_profiles":21},
+    {"temperature_K":385.0,"phase":"TETRAGONAL","shape_energy_by_q":[38,21],"identifiable_q_profiles":21},
+    {"temperature_K":419.0,"phase":"CUBIC","shape_energy_by_q":[21,21],"identifiable_q_profiles":21}
+  ],
+  "pairwise_normalized_shape_metrics": [
+    {
+      "left_temperature_K":300.0,
+      "right_temperature_K":385.0,
+      "centroid_rms_difference_meV":0.09924161264244677,
+      "width_rms_difference_meV":0.14747197379139113,
+      "peak_energy_rms_difference_meV":0.0,
+      "centroid_pearson_r":0.8511043582038871,
+      "width_pearson_r":0.7730436976165735
+    },
+    {
+      "left_temperature_K":385.0,
+      "right_temperature_K":419.0,
+      "centroid_rms_difference_meV":0.24326601642849452,
+      "width_rms_difference_meV":0.1391785349684166,
+      "peak_energy_rms_difference_meV":0.0,
+      "centroid_pearson_r":0.3033358510123696,
+      "width_pearson_r":0.40803859795657565
+    },
+    {
+      "left_temperature_K":300.0,
+      "right_temperature_K":419.0,
+      "centroid_rms_difference_meV":0.27298566436834665,
+      "width_rms_difference_meV":0.21395262545695545,
+      "peak_energy_rms_difference_meV":0.0,
+      "centroid_pearson_r":0.4905071043785259,
+      "width_pearson_r":0.723932903816244
+    }
+  ],
+  "comparison_firewall": {
+    "absolute_intensity_compared_across_instruments": false,
+    "categorical_similarity_threshold_used": false,
+    "DHO_parameters_fitted_from_carrier_maps": false
+  },
+  "reproduction_entrypoint": "python chi_architecture/reproduce.py d02a",
+  "scope": "Execution archive only. Scientific interpretation is downstream of this checkpoint."
+}
