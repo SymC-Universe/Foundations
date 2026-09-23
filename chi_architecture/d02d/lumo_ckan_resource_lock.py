@@ -32,15 +32,15 @@ def main() -> None:
         raise RuntimeError("CKAN package_show returned success=false")
     pkg = payload["result"]
 
-    selected = []
     normalized_targets = {" ".join(x.split()): x for x in TARGET_NAMES}
+    selected = []
     for item in pkg.get("resources", []):
-        name = str(item.get("name", "")).strip()
-        normalized = " ".join(name.split())
+        api_name = str(item.get("name", "")).strip()
+        normalized = " ".join(api_name.split())
         if normalized in normalized_targets:
             selected.append({
                 "name": normalized_targets[normalized],
-                "api_name": name,
+                "api_name": api_name,
                 "id": item.get("id"),
                 "format": item.get("format"),
                 "mimetype": item.get("mimetype"),
@@ -74,8 +74,7 @@ def main() -> None:
         "guard": "Only CKAN metadata were read. ZIP/PDF source bytes were not opened.",
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
-    OUT.write_text(json.dumps(result, indent=2, sort_keys=True) + "
-", encoding="utf-8")
+    OUT.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     print(json.dumps({
         "status": result["status"],
         "selected_resource_count": len(selected),
