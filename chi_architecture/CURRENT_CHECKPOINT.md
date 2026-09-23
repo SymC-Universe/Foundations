@@ -1,44 +1,40 @@
 # Chi Architecture Active Checkpoint
 
-**Checkpoint ID:** D02A-CP1.5-IMPLEMENTED-PREOUTPUT  
+**Checkpoint ID:** D02A-CP2-V0.1-PARTIAL  
 **Date:** 2026-09-22  
 **Branch:** `chi-architecture-p0`  
-**CP0 scientific freeze:** `27164b36a0c3ecd1931cfe8cdf840f6fc7b9fbb6`  
-**CP1 source-schema lock:** `c1e7d8c5814e872a7d1f88f210af473cbdf1e631`  
+**Execution commit:** `9709b8f5a3a19197fad957d9b757b24d190d5519`  
+**Workflow run:** `35815810797`  
+**Artifact ID:** `10731497089`  
 **Protocol:** SymC GOM v0.8.3
 
-## Scientific surface remains frozen
+## Official v0.1 result
 
-The parser and execution metrics are now implemented under:
+`PARTIAL_VALID_LINEWIDTH__CARRIER_PARSER_INADEQUATE__CHI_REFUSED`
 
-- `d02_cspbbr3/D02A_EXECUTION_CONTRACT_v0.1.json`
-- `src/d02a_physical.py`
-- `tests/test_d02a_physical.py`
+Trusted source extraction:
 
-Reviewer entrypoint:
+- FIG3 source hash matched;
+- FIG4 source hash matched;
+- six-row M-point linewidth table is valid;
+- lowercase chi is refused because same-condition omega0 is not available in the locked tabulation.
 
-`python chi_architecture/reproduce.py d02a`
+Not admissible:
 
-## Pre-output DHO decision
+- v0.1 FIG3 A:C carrier extraction;
+- v0.1 direct DHO plotting-curve standardized residual.
 
-Lowercase chi remains refused before value execution:
+See:
 
-`OMEGA0_NOT_IDENTIFIABLE_FROM_LOCKED_SOURCE_TABLES`
-
-The source table identifies DHO-derived linewidths, but the locked publisher tables do not tabulate same-condition natural frequency omega0. Published fit curves are retained as source curves and are not inverted for parameters.
-
-## Physical carrier correspondence
-
-The M-R path correspondence is frozen independently of source values:
-
-- 300 K orthorhombic, SPINS M-R;
-- 385 K tetragonal, SPINS M-R;
-- 419 K cubic, CNCS M-R segment.
+- `d02_cspbbr3/D02A_V0.1_POSTEXECUTION_INTEGRITY_AUDIT.md`
+- `results/D02A_EXECUTION_ARCHIVE_v0.1.json`
 
 ## Resume rule
 
-1. Execute the dedicated D02A workflow.
-2. If failure is mechanical, repair code/transport only.
-3. Do not alter source hashes, parser ranges, phase bins, or DHO license in response to values.
-4. Archive run ID, artifact ID/digest, result hash, manifest hash, and exact numeric output as D02A-CP2 before interpretation.
-5. Only after CP2 assess joint local-linewidth / broader-carrier inheritance, transformation, reorganization, or native-toolkit sufficiency.
+1. Preserve v0.1 unchanged as the official prospective parser result.
+2. Build v0.2 only from a new full-workbook layout diagnostic.
+3. Mark v0.2 as post-result parser development.
+4. Do not alter the valid 4b linewidth values.
+5. Do not promote chi.
+6. Re-freeze the exact FIG3 grid reconstruction before using any corrected carrier values for interpretation.
+7. Only then test physical preservation/transformation/reorganization against the native phonon comparator.
