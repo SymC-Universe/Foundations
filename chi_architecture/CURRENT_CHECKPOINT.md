@@ -1,42 +1,28 @@
 # Chi Architecture Active Checkpoint
 
-**Checkpoint ID:** D02B-CP1B-SELECTION-CORRECTED-ORION-FROZEN  
+**Checkpoint ID:** D02B-CP2B-ORION-MANIFEST-IMPLEMENTED  
 **Date:** 2026-09-22  
 **Branch:** chi-architecture-p0  
-**Protocol:** SymC GOM v0.8.3
+**Protocol:** SymC GOM v0.8.3  
+**Active source contract:** D02B_ORION_SOURCE_CONTRACT_v0.2.md
 
-## Governance correction
+## State
 
-The provisional Zhang et al. MEMS selection is retired before numerical extraction.
+The Orion selection correction is active.
 
-Reason: the completed external completeness audit identified a more complete eligible system under the already-frozen candidate ranking.
+A metadata-only GitHub Actions lane now probes the public Mendeley dataset page and candidate public API endpoints to recover file/download metadata without opening MAT/ASCII response values.
 
-This is recorded in:
+Workflow:
 
-chi_architecture/d02b/D02B_CANDIDATE_SELECTION_CORRECTION_v0.2.md
+.github/workflows/chi-architecture-d02b-orion-manifest.yml
 
-## Active D02B system
+Script:
 
-Orion Beam Dataset
+chi_architecture/d02b/orion_public_manifest.py
 
-Dataset DOI: 10.17632/p4fg6snh3r.1  
-Data article DOI: 10.1016/j.dib.2021.107627  
-Native-method DOI: 10.1016/j.ymssp.2021.108172
+## Resume rule
 
-Active scientific contract:
-
-chi_architecture/d02b/D02B_ORION_SOURCE_CONTRACT_v0.2.md
-
-## Evidence state
-
-No Orion numerical D02B outcome has been inspected yet.
-
-The earlier MEMS schema-acquisition path is ABORTED_PRENUMERIC_SELECTION_CORRECTION and cannot be used as D02B evidence.
-
-## Next action
-
-1. acquire Mendeley dataset metadata/file manifest only;
-2. hash the downloadable source files;
-3. freeze exact file selection and MAT/ASCII schema before reading response values;
-4. implement the single-entry D02B reproduction path;
-5. execute and archive before interpretation.
+1. Inspect the first successful manifest artifact.
+2. Use only file names, directory structure, sizes, hashes, and download endpoints to freeze the exact source-file subset.
+3. Do not inspect scientific response values before that file-selection freeze.
+4. If public API access is unavailable, use links embedded in the public page or the repository's documented download-all path; any mechanical acquisition workaround must be committed before data inspection.
