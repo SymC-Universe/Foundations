@@ -24,6 +24,7 @@ from domain_map_nonnormal import load_freeze, run_d01c  # noqa: E402
 from d02a_physical import fetch_locked_source, load_json as load_d02a_json  # noqa: E402
 from d02a_physical_v02 import run_d02a_v02  # noqa: E402
 from d02b_four_bolt import run_d02b  # noqa: E402
+from d02c_wind_blade import run_d02c  # noqa: E402
 
 
 def sha256(path: Path) -> str:
@@ -409,11 +410,112 @@ def reproduce_d02b(skip_tests: bool = False) -> dict:
     })
     return result
 
+
+def d02c_result_card(result: dict) -> str:
+    lines = [
+        "# D02C Wind-Blade Prospective Result Card v0.1",
+        "",
+        f"**Status:** {result['status']}",
+        f"**Evidence class:** {result['evidence_class']}",
+        f"**CA-D007 domain-specific support flag:** {result['ca_d007_domain_specific_support']}",
+        "",
+        "## Selected modes",
+        "",
+    ]
+    for direction in ("X", "Z"):
+        mode = result["selected_modes"][direction]
+        ordering = result["orderings"][direction]
+        lines.extend([
+            f"### {direction}",
+            "",
+            f"- baseline presence: {mode['baseline_presence']}/12",
+            f"- baseline median frequency: {mode['baseline_median_frequency_hz']:.9g} Hz",
+            f"- prospective ordering: {ordering['outcome']}",
+            f"- scalar onset: {ordering.get('scalar_onset_window_start')}",
+            f"- organization onset: {ordering.get('organization_onset_window_start')}",
+            "",
+        ])
+    lines.extend([
+        "## Interpretation ceiling",
+        "",
+        "This card reports the prospectively frozen result only. The native-toolkit added-value verdict is intentionally assigned after archival checkpointing.",
+        "",
+    ])
+    return "\n".join(lines)
+
+
+def reproduce_d02c(skip_tests: bool = False) -> dict:
+    if not skip_tests:
+        run_pytest("chi_architecture/tests/test_d02c_wind_blade.py")
+
+    cache = ROOT / "cache" / "d02c"
+    result = run_d02c(cache)
+
+    RESULTS.mkdir(parents=True, exist_ok=True)
+    full = RESULTS / "D02C_WIND_BLADE_RESULT_v0.1.json"
+    summary = RESULTS / "D02C_SUMMARY_v0.1.json"
+    card = RESULTS / "D02C_RESULT_CARD_v0.1.md"
+    environment = RESULTS / "D02C_ENVIRONMENT_v0.1.txt"
+    manifest = RESULTS / "D02C_REPRO_MANIFEST_v0.1.json"
+
+    write_json(full, result)
+    write_json(summary, {
+        "schema": result["schema"],
+        "status": result["status"],
+        "evidence_class": result["evidence_class"],
+        "selected_modes": result["selected_modes"],
+        "scalar_control_envelopes": result["scalar_control_envelopes"],
+        "organization_midnight_thresholds": result["organization_midnight_thresholds"],
+        "organization_dry_thresholds": result["organization_dry_thresholds"],
+        "organization_effective_thresholds": result["organization_effective_thresholds"],
+        "orderings": result["orderings"],
+        "ca_d007_domain_specific_support": result["ca_d007_domain_specific_support"],
+        "source_files": result["source_files"],
+        "scope": result["scope"],
+    })
+    card.write_text(d02c_result_card(result), encoding="utf-8")
+    environment.write_text(
+        "\n".join([
+            f"python={platform.python_version()}",
+            f"implementation={platform.python_implementation()}",
+            f"platform={platform.platform()}",
+            f"numpy={np.__version__}",
+            f"scipy={scipy.__version__}",
+        ]) + "\n",
+        encoding="utf-8",
+    )
+
+    tracked = [
+        ROOT / "d02c" / "D02C_CANDIDATE_SELECTION_FREEZE_v0.1.md",
+        ROOT / "d02c" / "D02C_CANDIDATE_SELECTION_RECORD_v0.2.md",
+        ROOT / "d02c" / "D02C_WIND_BLADE_CONTRACT_v0.1.md",
+        ROOT / "d02c" / "D02C_WIND_EXACT_MAPPING_v0.1.md",
+        ROOT / "d02c" / "D02C_DRY_PEAK_ADEQUACY_ADDENDUM_v0.1.md",
+        ROOT / "d02c" / "D02C_ONSET_COMPLETENESS_RULE_v0.1.md",
+        ROOT / "src" / "d02c_wind_blade.py",
+        ROOT / "tests" / "test_d02c_wind_blade.py",
+        Path(__file__).resolve(),
+        full,
+        summary,
+        card,
+        environment,
+    ]
+    write_json(manifest, {
+        "schema": "d02c-repro-manifest-v0.1",
+        "entrypoint": "python chi_architecture/reproduce.py d02c",
+        "files": {
+            str(p.relative_to(ROOT.parent)): sha256(p)
+            for p in tracked
+        },
+        "source_files": result["source_files"],
+    })
+    return result
+
 def main() -> None:
     parser = argparse.ArgumentParser(
         description="Single-entry reproducibility interface for Chi Architecture experiments."
     )
-    parser.add_argument("experiment", choices=["d01c", "d02a", "d02b"])
+    parser.add_argument("experiment", choices=["d01c", "d02a", "d02b", "d02c"])
     parser.add_argument(
         "--skip-tests",
         action="store_true",
@@ -440,7 +542,7 @@ def main() -> None:
             "result_card": "chi_architecture/results/D02A_RESULT_CARD_v0.2.md",
             "manifest": "chi_architecture/results/D02A_REPRO_MANIFEST_v0.2.json",
         }, indent=2))
-    else:
+    elif args.experiment == "d02b":
         result = reproduce_d02b(skip_tests=args.skip_tests)
         print(json.dumps({
             "status": result["status"],
@@ -448,6 +550,16 @@ def main() -> None:
             "primary_summary": result["primary_summary"],
             "result_card": "chi_architecture/results/D02B_RESULT_CARD_v0.1.md",
             "manifest": "chi_architecture/results/D02B_REPRO_MANIFEST_v0.1.json",
+        }, indent=2))
+    else:
+        result = reproduce_d02c(skip_tests=args.skip_tests)
+        print(json.dumps({
+            "status": result["status"],
+            "evidence_class": result["evidence_class"],
+            "orderings": result["orderings"],
+            "ca_d007_domain_specific_support": result["ca_d007_domain_specific_support"],
+            "result_card": "chi_architecture/results/D02C_RESULT_CARD_v0.1.md",
+            "manifest": "chi_architecture/results/D02C_REPRO_MANIFEST_v0.1.json",
         }, indent=2))
 
 

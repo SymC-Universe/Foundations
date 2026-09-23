@@ -187,3 +187,26 @@ Reference execution:
 - reproduction manifest SHA-256: `beb792895ba4d98afd29848623422dd86be574727144877a291087fc809b465f`
 
 The artifact is convenient but not required for long-term reproduction. The one-command entrypoint regenerates the full result from the DOI-locked Zenodo sources.
+
+
+## D02C: prospective wind-blade ordering test
+
+D02C is reproduced through the same one-command interface:
+
+```bash
+git clone https://github.com/SymC-Universe/Foundations.git
+cd Foundations
+git checkout chi-architecture-p0
+python -m pip install -r chi_architecture/requirements-p0.txt
+python chi_architecture/reproduce.py d02c
+```
+
+The wrapper automatically downloads and checksum-verifies the locked Zenodo OMA, climate, baseline-acceleration, intervention-acceleration, and dry-run control assets for DOI `10.5281/zenodo.18427836`.
+
+The prospectively frozen D02C test compares:
+- local/modal chi from source LSCF damping ratio;
+- independent three-sensor cross-spectral modal-vector organization;
+- the published climate-chamber icing intervention on a common 10-minute grid;
+- conservative pre-spray and dry-run thermal sensitivity controls.
+
+Reviewers do not manually select windows, modes, or sensor files.
