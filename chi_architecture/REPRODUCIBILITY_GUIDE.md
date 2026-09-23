@@ -1,0 +1,82 @@
+# Chi Architecture Reproducibility Guide
+
+This guide is intentionally reviewer-first.
+
+You should not need to identify the internal runner, call a collection of scripts, or manually assemble outputs.
+
+## D01C: minimum reproduction path
+
+Requirements:
+
+- Git
+- Python 3.12
+- a standard shell / terminal
+
+Run:
+
+```bash
+git clone https://github.com/SymC-Universe/Foundations.git
+cd Foundations
+git checkout chi-architecture-p0
+python -m pip install -r chi_architecture/requirements-p0.txt
+python chi_architecture/reproduce.py d01c
+```
+
+The final command does the scientific work. It:
+
+1. validates the frozen D01C contract;
+2. runs the D01C regression/scientific-guard tests;
+3. executes every frozen D01C case;
+4. writes the full machine-readable result;
+5. writes a compact summary;
+6. writes a human-readable result card;
+7. records the realized Python/NumPy/SciPy environment;
+8. hashes the complete reproduction surface into one manifest.
+
+## Outputs
+
+All local outputs land under `chi_architecture/results/`:
+
+- `D01C_NONNORMAL_DOMAIN_MAP_v0.1.json` — full result;
+- `D01C_SUMMARY_v0.1.json` — compact result;
+- `D01C_RESULT_CARD_v0.1.md` — human-readable result;
+- `D01C_ENVIRONMENT_v0.1.txt` — realized runtime;
+- `D01C_REPRO_MANIFEST_v0.1.json` — SHA-256 manifest.
+
+A reviewer normally needs only the result card plus the manifest after running the single command.
+
+## GitHub-only reproduction
+
+The repository also contains `.github/workflows/chi-architecture-d01c.yml`.
+
+Running that workflow executes the same single entrypoint and uploads **one artifact bundle** named:
+
+`chi-architecture-d01c-v01`
+
+The bundle contains the five outputs above. There is no multi-artifact scavenger hunt.
+
+## Scientific provenance
+
+The pre-result scientific surface is frozen in:
+
+`chi_architecture/D01C_PREEXECUTION_FREEZE_v0.1.json`
+
+The active resume state is always:
+
+`chi_architecture/CURRENT_CHECKPOINT.md`
+
+The literature/novelty firewall is:
+
+`chi_architecture/D01C_LITERATURE_POSITION.md`
+
+## Reproduction standard
+
+The archival claim is reproduced only when:
+
+- tests pass;
+- all frozen cases are present;
+- the spectral-residual guard passes;
+- the run emits no master chi;
+- the manifest hashes the exact local files used and produced.
+
+The `--skip-tests` option exists only for development debugging and does not qualify an archival reproduction.
