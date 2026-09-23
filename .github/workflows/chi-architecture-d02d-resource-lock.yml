@@ -1,0 +1,47 @@
+name: D02D LUMO CKAN Resource Lock
+
+on:
+  push:
+    branches:
+      - chi-architecture-p0
+    paths:
+      - "chi_architecture/d02d/lumo_ckan_resource_lock.py"
+      - "chi_architecture/d02d/D02D_LUMO_MFR14_v0.1.md"
+      - ".github/workflows/chi-architecture-d02d-resource-lock.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  resource-lock:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: "3.12.14"
+      - name: Install pinned dependencies
+        run: |
+          python -m pip install --disable-pip-version-check -r chi_architecture/requirements-p0.txt
+          python -m pip check
+      - name: Lock CKAN resource metadata
+        run: python chi_architecture/d02d/lumo_ckan_resource_lock.py
+      - name: Guard metadata-only state
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path("chi_architecture/results/D02D_LUMO_CKAN_RESOURCE_LOCK_v0.1.json").read_text())
+          assert r["status"]=="RESOURCE_METADATA_ONLY_NO_ARCHIVE_CONTENT_OPENED"
+          assert len(r["selected_resources"])==7
+          print("D02D resource metadata lock passed")
+          PY
+      - name: Upload resource lock
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: d02d-lumo-resource-lock-v01
+          path: chi_architecture/results/D02D_LUMO_CKAN_RESOURCE_LOCK_v0.1.json
+          retention-days: 90
+          if-no-files-found: error

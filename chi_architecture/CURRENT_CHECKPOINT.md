@@ -1,51 +1,26 @@
 # Chi Architecture Active Checkpoint
 
-**Checkpoint ID:** D02D-CP1-LUMO-SELECTED-MFR14-FROZEN  
+**Checkpoint ID:** D02D-CP2-RESOURCE-LOCK-IMPLEMENTED  
 **Date:** 2026-09-23  
 **Branch:** chi-architecture-p0  
 **Protocol:** SymC GOM v0.8.4
 
-## Status
+## State
 
-D02D selects the LUMO lattice-tower benchmark.
+The D02D MFR-14 remains frozen.
 
-Dataset DOI:
-10.25835/0027803
+A CKAN metadata-only source lock is implemented. It resolves:
 
-Methods DOI:
-10.1002/stc.3077
+- README.pdf;
+- DAM3 010 and 111;
+- DAM4 010 and 111;
+- DAM6 010 and 111.
 
-Retained replication strata:
-- DAM3
-- DAM4
-- DAM6
+No ZIP or PDF source bytes are opened by this checkpoint.
 
-Frozen severity ladder:
-- healthy
-- 010, one damage mechanism removed
-- 111, all damage mechanisms removed
+## Resume rule
 
-## Confirmatory record
-
-Complete MFR-14:
-
-chi_architecture/d02d/D02D_LUMO_MFR14_v0.1.md
-
-Candidate selection:
-
-chi_architecture/d02d/D02D_CANDIDATE_SELECTION_RECORD_v0.1.md
-
-## Decisive-evidence boundary
-
-No damage-state damping-versus-organization onset result has been inspected.
-
-Next permissible actions:
-
-1. query CKAN resource metadata and source hashes/URLs;
-2. acquire README and ZIP directory/schema metadata only;
-3. freeze exact channel mapping, sampling, mode-selection implementation, uncertainty calculation, and environmental matching;
-4. commit production engine and tests;
-5. execute once;
-6. archive before interpretation.
-
-Any eligibility failure discovered during schema inspection invalidates D02D before decisive execution.
+1. Observe the first successful resource-lock workflow.
+2. Archive the exact resource IDs, URLs, sizes, repository hashes, and package metadata hash.
+3. Download README plus one representative ZIP for schema/path inspection only.
+4. Freeze channel mapping, sampling, file pairing, mode-selection implementation, uncertainty calculation, and environmental matching before reading damaged-state modal results.
