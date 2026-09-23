@@ -1,48 +1,38 @@
 # Chi Architecture Active Checkpoint
 
-**Checkpoint ID:** D02C-CP6-INTERPRETED-CLOSED  
+**Checkpoint ID:** D02D-CP0-CANDIDATE-SELECTION-FROZEN  
 **Date:** 2026-09-23  
 **Branch:** chi-architecture-p0  
-**Protocol:** SymC GOM v0.8.3
+**Protocol:** SymC GOM v0.8.4
 
-## D02C closure
+## Status
 
-D02C is complete.
+D02C is closed as a prospective null:
 
-Prospective result:
 - X: NEITHER_CHANGES
 - Z: NEITHER_CHANGES
 - CA-D007 support: false
-- clean scalar-first reversal: false
+- no clean scalar-first reversal
 
-Interpretation:
+The D02C null is recorded in README.md and the v0.8.4 canonical reproducibility guide.
 
-PROSPECTIVE_NULL / NO_SUPPORT / NO_CLEAN_REVERSAL
+## Active task
 
-## Effect on CA-D007
+Select D02D under:
 
-CA-D007 is not prospectively replicated.
+chi_architecture/d02d/D02D_CANDIDATE_SELECTION_FREEZE_v0.1.md
 
-Its promotion debt remains unpaid.
+## Why D02D differs from D02C
 
-The first untouched external test materially lowers confidence in portability of the D02B ordering but does not satisfy the predeclared clean contradiction class.
+D02D requires independent prior/native evidence that the chosen intervention range measurably affects at least one frozen observable. The relative onset ordering must remain uninspected.
 
-## Native-toolkit verdict
+This is a power requirement against another NEITHER_CHANGES result, not a favorable-outcome filter.
 
-NATIVE_TOOLKIT_SUFFICIENT_NO_INCREMENTAL_VALUE
+## Resume rule
 
-## Reproduction
-
-python chi_architecture/reproduce.py d02c
-
-## Readout
-
-chi_architecture/D02C_WIND_BLADE_PROSPECTIVE_READOUT_v0.1.md
-
-## Next controlled move
-
-Do not rerun or relax D02C.
-
-If CA-D007 is tested again, choose an untouched graded physical intervention for which independent prior/native knowledge establishes that at least one of the two frozen observables changes measurably over the intervention range, while the relative onset ordering remains genuinely unseen before the freeze.
-
-This is an experiment-power requirement, not a favorable-outcome filter.
+1. Read this checkpoint and the D02D candidate-selection freeze.
+2. Search public physical systems using eligibility metadata, methods, repository structure, and non-decisive activity evidence only.
+3. Do not inspect the relative scalar-versus-organization onset ordering.
+4. Select the highest-ranked eligible system.
+5. Commit the selected system and complete MFR-14 before decisive evidence is opened.
+6. Only then implement and execute the prospective test.

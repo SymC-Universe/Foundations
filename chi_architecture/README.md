@@ -7,6 +7,12 @@
 **Confirmatory MFR-14:** not yet activated  
 **Predictive tool status:** not a tool; no validated cross-domain Atlas; no prospective cross-domain confirmation
 
+## Governance baseline
+
+The active program authority is **SymC General Operations Manual v0.8.4 (22 September 2026)**.
+
+v0.8.4 supersedes v0.8.3 and adds explicit SymC manuscript-house-style, reproducibility-guide, and release-package presentation requirements. This workstream therefore uses the v0.8.4 reader-first communication standard and the canonical numbered verification format for executable reproducibility claims.
+
 ## Current scientific question
 
 Can materially different domains each generate a scientifically useful stability-coordinate map from their own native scalar content, modal/vector carriers, coupling/system organization, feedback/relationships, uncertainty, and other structure that earns admission, and do those independently derived domain maps later admit meaningful cross-domain alignment?
@@ -358,6 +364,6 @@ See:
 **Current status:** D01A-D01C, D02A, D02B, and the prospective external D02C test are complete. D02B now supplies the first directly licensed physical modal chi perturbation map with an independently controlled interface state. No cross-domain Atlas has been constructed.  
 **Current scientific conclusion:** D02B shows a graded scalar/architecture relationship. At moderate bolt loosening, 16/28 comparisons retain similar local chi at frozen resolution while the full-field response has already reorganized. At full single-bolt loosening, every comparable primary chi transforms and many scalar comparisons become non-identifiable/refused under the frozen representation, while native response reorganization increases. Standard structural dynamics remains quantitatively sufficient.  
 **Post-result hypothesis:** `ARCHITECTURE_REORGANIZATION_CAN_PRECEDE_SCALAR_TRANSFORMATION`. D02C provided the first untouched prospective test and returned a null in both directions, so the hypothesis remains unconfirmed and its promotion debt is unpaid.  
-**Next scientific step:** if CA-D007 is pursued again, select an untouched graded system where the intervention is independently known to move at least one frozen observable, but where the relative onset ordering remains hidden. This increases power against another `NEITHER_CHANGES` result without biasing the ordering test.  
+**Next scientific step:** D02D is opened as the second prospective test of CA-D007. Candidate eligibility requires an untouched graded physical intervention with at least three levels, an independently licensed local scalar, an independent organization observable, prior native evidence that the intervention range measurably changes at least one of those observables, and an uninspected relative onset ordering. The complete confirmatory record must satisfy MFR-14 before decisive evidence is opened.  
 **Reproducibility:** D01C, D02A, D02B, and D02C use the common reviewer interface: `python chi_architecture/reproduce.py <experiment>`. D02B automatically acquires and validates the 635 MB raw Zenodo archive and does not require manual raw-file handling.  
-**User action required:** none for the completed D02B package.
+**User action required:** none. D02D candidate selection and preregistration can proceed from public sources.

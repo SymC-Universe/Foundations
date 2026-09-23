@@ -1,8 +1,100 @@
 # Chi Architecture Reproducibility Guide
 
-This guide is intentionally reviewer-first.
+**Governance:** SymC General Operations Manual v0.8.4  
+**Reproducibility status:** R1 and R2 are demonstrated for the listed executable experiments through frozen GitHub Actions reference runs. R3 evidence reconstruction is experiment-specific and is identified in the corresponding source contract/readout.
 
-You should not need to identify the internal runner, call a collection of scripts, or manually assemble outputs.
+This guide is reviewer-first. The supported interface is the production entry point:
+
+`python chi_architecture/reproduce.py <experiment>`
+
+The numbered verification sections below are canonical under GOM v0.8.4. Detailed provenance notes follow them.
+
+## V1. D01C fixed-spectrum non-normal map
+
+**[CLAIM]** In the frozen D01C constructions, identical asymptotically stable eigenvalues do not determine finite-time amplification or perturbation robustness; the standard nonmodal toolkit is sufficient to describe the effect.
+
+**Inputs:** branch `chi-architecture-p0`; `D01C_PREEXECUTION_FREEZE_v0.1.json`; DOI-independent synthetic construction encoded in production code.
+
+**Command:**
+
+```bash
+python chi_architecture/reproduce.py d01c
+```
+
+**Expected output:** exit status 0; `D01C_NONNORMAL_DOMAIN_MAP_v0.1.json`; 26 cases; maximum spectral residual below `1e-10`; status `REFUTED_WITHIN_FROZEN_CONSTRUCTION` for eigenvalue-only sufficiency.
+
+Reference run: `35809467796`.
+
+## V2. D02A CsPbBr3 physical calibration
+
+**[CLAIM]** The frozen CsPbBr3 source data support carrier-resolved reorganization and damping transformation while lowercase chi is refused where same-condition natural frequency is not independently licensed.
+
+**Inputs:** source identities and hashes frozen in the D02A source contract and execution archive.
+
+**Command:**
+
+```bash
+python chi_architecture/reproduce.py d02a
+```
+
+**Expected output:** exit status 0; `D02A_CSPBBR3_PHYSICAL_RESULT_v0.2.json`; parser/source guards pass; lowercase-chi refusal is preserved; no master scalar is emitted.
+
+Reference run: `35816379440`.
+
+## V3. D02B four-bolt physical perturbation map
+
+**[CLAIM]** In the frozen four-bolt plate experiment, moderate interface perturbation can reorganize the full-field response while local modal chi remains similar at frozen resolution, whereas stronger perturbation transforms or defeats the frozen scalar representation.
+
+**Inputs:** Zenodo DOI `10.5281/zenodo.20038951`; exact source hashes and mapping in `d02b/`; 51-point matched spatial support.
+
+**Command:**
+
+```bash
+python chi_architecture/reproduce.py d02b
+```
+
+**Expected output:** exit status 0; seven retained families; 18 torque states; 126 scalar attempts; 28 primary comparisons; frozen result files and manifest emitted. The archived interpretation records 16/28 10-to-5 Nm comparisons with similar chi plus embedded reorganization, and 11/11 comparable 10-to-0 Nm pairs with transformed chi.
+
+Reference run: `35823640290`.
+
+## V4. D02C prospective wind-blade test
+
+**[CLAIM]** The first prospectively frozen external test of CA-D007 returns a null in both selected directions under the frozen thermal and completeness controls.
+
+**Inputs:** Zenodo DOI `10.5281/zenodo.18427836`; source hashes in `d02c/D02C_WIND_BLADE_CONTRACT_v0.1.md`; exact mapping and onset-completeness rules in `d02c/`.
+
+**Command:**
+
+```bash
+python chi_architecture/reproduce.py d02c
+```
+
+**Expected output:** exit status 0; `D02C_WIND_BLADE_RESULT_v0.1.json`; X ordering `NEITHER_CHANGES`; Z ordering `NEITHER_CHANGES`; `ca_d007_domain_specific_support=false`.
+
+Reference run: `35866859136`.
+
+## V5. Master smoke test
+
+**[CLAIM]** The production entry points for the mature D01C and D02A-D02C experiments execute through the documented interface and reproduce their frozen status outputs.
+
+**Command:**
+
+```bash
+set -e
+python chi_architecture/reproduce.py d01c
+python chi_architecture/reproduce.py d02a
+python chi_architecture/reproduce.py d02b
+python chi_architecture/reproduce.py d02c
+printf 'SYMC_CHI_ARCHITECTURE_SMOKE_TEST=PASS\n'
+```
+
+**Expected output:** every command exits 0 and the final line is exactly:
+
+`SYMC_CHI_ARCHITECTURE_SMOKE_TEST=PASS`
+
+This smoke test demonstrates executable package continuity. It does not convert self-consistency, physical qualification, or a prospective null into independent replication.
+
+## Detailed provenance and experiment notes
 
 ## D01C: minimum reproduction path
 
@@ -237,3 +329,12 @@ Outcome:
 - CA-D007 support: false
 
 The archived artifact is convenient but unnecessary for long-term reproduction because the one-command entrypoint reacquires the DOI-locked Zenodo sources and regenerates the complete result.
+
+
+## D02D opening note
+
+D02D is the second prospective CA-D007 experiment. It is not yet an executable verification section because the target system and complete MFR-14 have not been frozen.
+
+Candidate selection is restricted to systems with at least three graded perturbation levels, a directly licensed local scalar, an independent organization observable, automated public-data access, and prior native evidence that the intervention range measurably changes at least one frozen observable while leaving the relative onset ordering uninspected.
+
+Once D02D is frozen and executed, it will receive the next canonical verification number rather than being inserted retroactively into V1-V5.
