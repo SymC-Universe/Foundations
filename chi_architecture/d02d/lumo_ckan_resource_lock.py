@@ -33,8 +33,15 @@ def main() -> None:
     pkg = payload["result"]
 
     selected = []
-    normalized_targets = {" ".join(x.split()): x for x in TARGET_NAMES}\n    for item in pkg.get("resources", []):\n        name = str(item.get("name", "")).strip()\n        normalized = " ".join(name.split())\n        if normalized in normalized_targets:\n            selected.append({
-                "name": normalized_targets[normalized],\n                "api_name": name,\n                "id": item.get("id"),
+    normalized_targets = {" ".join(x.split()): x for x in TARGET_NAMES}
+    for item in pkg.get("resources", []):
+        name = str(item.get("name", "")).strip()
+        normalized = " ".join(name.split())
+        if normalized in normalized_targets:
+            selected.append({
+                "name": normalized_targets[normalized],
+                "api_name": name,
+                "id": item.get("id"),
                 "format": item.get("format"),
                 "mimetype": item.get("mimetype"),
                 "size": item.get("size"),
@@ -45,7 +52,8 @@ def main() -> None:
                 "last_modified": item.get("last_modified"),
             })
 
-    names = {x["name"] for x in selected}\n    missing = sorted(TARGET_NAMES - names)
+    names = {x["name"] for x in selected}
+    missing = sorted(TARGET_NAMES - names)
     all_resource_names = [str(x.get("name", "")).strip() for x in pkg.get("resources", [])]
 
     raw = json.dumps(payload["result"], sort_keys=True, separators=(",", ":")).encode()
@@ -66,7 +74,8 @@ def main() -> None:
         "guard": "Only CKAN metadata were read. ZIP/PDF source bytes were not opened.",
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
-    OUT.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    OUT.write_text(json.dumps(result, indent=2, sort_keys=True) + "
+", encoding="utf-8")
     print(json.dumps({
         "status": result["status"],
         "selected_resource_count": len(selected),
