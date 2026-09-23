@@ -110,6 +110,7 @@ Each damage location receives one class:
 - ORGANIZATION_PRECEDES_SCALAR
 - SCALAR_PRECEDES_ORGANIZATION
 - SIMULTANEOUS_AT_010
+- SIMULTANEOUS_AT_111
 - ORGANIZATION_ONLY_THROUGH_111
 - SCALAR_ONLY_THROUGH_111
 - NEITHER_CHANGES
@@ -126,7 +127,7 @@ EMPIRICAL_CLAIM_SURVIVES_FROZEN_TEST only if:
 
 EMPIRICAL_CLAIM_FALSIFIED if:
 - at least two locations are SCALAR_PRECEDES_ORGANIZATION under adequate completeness, or
-- all three adequate locations show simultaneous/scalar-first behavior with zero organization-first strata.
+- all three adequate locations show simultaneous or scalar-first behavior with zero organization-first strata.
 
 INDETERMINATE otherwise.
 
@@ -220,3 +221,17 @@ If indeterminate:
 - CA-D007 remains unconfirmed;
 - no promotion occurs;
 - the next experiment must target the specific source of indeterminacy rather than reinterpret D02D as support.
+
+
+## Pre-execution amendment A1: complete simultaneous-outcome vocabulary
+
+**Date:** 2026-09-23  
+**Timing:** before any damaged LUMO scientific array value was opened.
+
+MFR-08 originally named SIMULTANEOUS_AT_010 but omitted the logically possible case in which both observables remain unchanged at 010 and first change together at 111.
+
+The outcome vocabulary is therefore completed with:
+
+SIMULTANEOUS_AT_111
+
+This amendment closes a categorical gap. It does not alter the survival or falsification direction: simultaneous behavior does not support organization-first ordering and counts with simultaneous/scalar-first adequate maps under the existing all-three-locations falsification clause.

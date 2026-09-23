@@ -1,44 +1,49 @@
 # Chi Architecture Active Checkpoint
 
-**Checkpoint ID:** D02D-CP5-HEALTHY-METADATA-IMPLEMENTED  
+**Checkpoint ID:** D02D-CP6-FINAL-PREEXECUTION-FREEZE  
 **Date:** 2026-09-23  
 **Branch:** chi-architecture-p0  
 **Protocol:** SymC GOM v0.8.4
 
-## Healthy struct schema
+## Healthy metadata verified
 
 Run:
-35902420791
+35902793042
 
 Artifact:
-d02d-lumo-healthy-struct-schema-v01
+d02d-lumo-healthy-metadata-v01
 
 Artifact ID:
-10770235039
+10770066484
 
 Artifact digest:
-sha256:4a7a8f8fe43e14ac18bfb1a7ab2c60eca8e0fc146ace142625a6b80acb9178c4
+sha256:500c09bb71a527335ff3ac2cd771f648f994bbee8f73bb214ac188f7955a4f53
 
-The source Dat struct contains:
-- Data: 990600 x 22 float32;
-- ChannelNames: 22 entries;
-- ChannelUnits: 22 entries;
-- Fs scalar;
-- Time metadata;
-- Timestamps metadata.
+Sampling rate:
+1651.6129032258063 Hz.
 
-Acceleration channels:
-accel01x/y through accel09x/y.
+Record:
+990600 samples x 22 channels.
 
-Additional channels:
-strain01, strain02, strain03, temp01.
+## Final preexecution science
 
-## Active action
+Read:
 
-Verify the numeric sampling-rate metadata from the same first healthy record only.
+chi_architecture/d02d/D02D_LUMO_FINAL_PREEXECUTION_FREEZE_v0.1.md
 
-No scientific array values and no damaged MAT values are emitted.
+before implementation or execution.
 
-## Next gate
+The complete estimator, uncertainty, environmental matching, mode selection, direction combination, and adjudication rules are frozen.
 
-Freeze the final D02D production analysis after sampling rate is verified.
+MFR amendment A1 adds SIMULTANEOUS_AT_111 to close a pre-result categorical gap.
+
+## Decisive-evidence boundary
+
+No damaged scientific array value has been inspected.
+
+Next:
+1. implement the production Engine and known-truth tests;
+2. wire python chi_architecture/reproduce.py d02d;
+3. commit implementation;
+4. execute the six frozen resources exactly once;
+5. archive before interpretation.
