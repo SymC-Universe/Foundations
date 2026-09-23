@@ -87,3 +87,9 @@ the primary measured response is a single driven-point FRF. No sufficiently inde
 The dedicated literature deep search remained in progress when this selection was frozen. Selection therefore rests on the explicit frozen criteria plus independently verified public methods/repository evidence. If the later search reveals that LUMO fails a frozen eligibility axis, the test must be invalidated before decisive execution rather than silently switching outcomes.
 
 No LUMO damage-state damping-versus-organization onset ordering was inspected before this record.
+
+## Independent literature-audit adjudication
+
+The dedicated D02D literature search completed after the initial LUMO selection freeze. Its top semantic prospect, a flexible-wing ground-vibration benchmark, still had unresolved baseline, scalar-uncertainty, organization-independence, and automated-access requirements in the search record. Other high-ranked candidates lacked a complete scalar route, public automation, or sufficient independence. LUMO was not the highest semantic-similarity result, but it remained the strongest candidate for which the actual frozen eligibility axes were verified.
+
+Disposition: LUMO selection retained. No decisive LUMO onset data were opened during this adjudication.

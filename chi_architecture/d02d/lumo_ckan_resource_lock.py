@@ -33,12 +33,8 @@ def main() -> None:
     pkg = payload["result"]
 
     selected = []
-    for item in pkg.get("resources", []):
-        name = str(item.get("name", "")).strip()
-        if name in TARGET_NAMES:
-            selected.append({
-                "name": name,
-                "id": item.get("id"),
+    normalized_targets = {" ".join(x.split()): x for x in TARGET_NAMES}\n    for item in pkg.get("resources", []):\n        name = str(item.get("name", "")).strip()\n        normalized = " ".join(name.split())\n        if normalized in normalized_targets:\n            selected.append({
+                "name": normalized_targets[normalized],\n                "api_name": name,\n                "id": item.get("id"),
                 "format": item.get("format"),
                 "mimetype": item.get("mimetype"),
                 "size": item.get("size"),
@@ -49,8 +45,7 @@ def main() -> None:
                 "last_modified": item.get("last_modified"),
             })
 
-    names = {x["name"] for x in selected}
-    missing = sorted(TARGET_NAMES - names)
+    names = {x["name"] for x in selected}\n    missing = sorted(TARGET_NAMES - names)
     all_resource_names = [str(x.get("name", "")).strip() for x in pkg.get("resources", [])]
 
     raw = json.dumps(payload["result"], sort_keys=True, separators=(",", ":")).encode()

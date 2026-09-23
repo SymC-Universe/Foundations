@@ -1,6 +1,6 @@
 # Chi Architecture Active Checkpoint
 
-**Checkpoint ID:** D02D-CP2B-RESOURCE-NAME-AUDIT  
+**Checkpoint ID:** D02D-CP2C-RESOURCE-NAMES-NORMALIZED  
 **Date:** 2026-09-23  
 **Branch:** chi-architecture-p0  
 **Protocol:** SymC GOM v0.8.4
@@ -28,3 +28,11 @@ No ZIP or PDF source bytes are opened by this checkpoint.
 ## Mechanical CKAN-name correction
 
 The first resource-lock run reached the CKAN API successfully but five reader-facing resource labels did not exactly match the API's internal names. The metadata script now emits the complete API resource-name inventory and missing-name list without opening source bytes. Scientific selection and MFR-14 remain unchanged.
+
+## External-search adjudication
+
+The completed D02D literature audit challenged but did not displace LUMO. Competing candidates retained unresolved eligibility axes; LUMO remains selected under the frozen criteria.
+
+## CKAN name normalization
+
+Five CKAN resource names contain doubled whitespace not shown in the reader-facing page. Matching now normalizes whitespace while preserving the API name and canonical reader-facing name separately.
