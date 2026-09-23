@@ -1,51 +1,75 @@
 # Chi Architecture Active Checkpoint
 
-**Checkpoint ID:** D02B-CP10-EXECUTED-BEFORE-INTERPRETATION  
+**Checkpoint ID:** D02B-CP11-INTERPRETED-CLOSED  
 **Date:** 2026-09-23  
 **Branch:** chi-architecture-p0  
 **Protocol:** SymC GOM v0.8.3
 
-## D02B execution completed
+## D02B closure
 
-Dedicated workflow run: 35823640290  
-Conclusion: success
+D02B completed successfully and is scientifically interpreted.
 
-Execution commit:
-cd4127b963cf2057841dff320c547ec7f3fad73d
+Execution:
+- workflow run 35823640290
+- execution commit cd4127b963cf2057841dff320c547ec7f3fad73d
+- artifact ID 10734281523
+- artifact digest sha256:3730a4a6db3803501fe35c74f740836cdf86a3d21d95f2de2707748fa1b0af1f
+- full result SHA-256 d7e0001413ef438aea2d8ea8757f7b4eeb8d6dab5ecfdf62be02b9f2575d4f10
 
-Artifact:
-chi-architecture-d02b-four-bolt-v01
+## Primary 10 -> 0 Nm result
 
-Artifact ID:
-10734281523
+- 28/28 embedded responses reorganized.
+- 11/28 primary comparisons admitted chi in both states.
+- 0/11 comparable pairs retained similar chi at frozen resolution.
+- 11/11 comparable pairs transformed.
+- 17/28 primary comparisons were refused/non-identifiable under the frozen scalar route.
 
-Artifact digest:
-sha256:3730a4a6db3803501fe35c74f740836cdf86a3d21d95f2de2707748fa1b0af1f
+## Secondary 10 -> 5 -> 0 Nm result
 
-Full result SHA-256:
-d7e0001413ef438aea2d8ea8757f7b4eeb8d6dab5ecfdf62be02b9f2575d4f10
+- 28/28 5 Nm scalar estimates admitted.
+- 16/28 10->5 pairs retained similar chi while embedded response reorganized.
+- the 16 cases span 6/7 mode families.
+- amplitude MAC dissimilarity increased further at 0 Nm in 28/28 sequences.
+- complex CMAC dissimilarity increased in 28/28.
+- phase-only dissimilarity increased in 24/28.
+- absolute frequency shift increased in 28/28.
 
-Reproduction manifest SHA-256:
-beb792895ba4d98afd29848623422dd86be574727144877a291087fc809b465f
+## Joint chi / Chi interpretation
 
-Permanent archival metadata:
+Moderate interface perturbation can reorganize embedded/full-field behavior while a local modal chi remains similar at frozen resolution.
 
-chi_architecture/results/D02B_ARCHIVAL_RECORD_v0.1.json
+Stronger interface perturbation transforms the local coordinate when it remains identifiable and frequently defeats the frozen scalar comparison route.
+
+This is a graded physical scalar/architecture relationship.
+
+## Native-toolkit verdict
+
+NATIVE_TOOLKIT_SUFFICIENT_NO_INCREMENTAL_VALUE
+
+No new native dynamics or fitted SymC variable is required.
+
+## Post-result discovery
+
+CA-D007:
+
+ARCHITECTURE_REORGANIZATION_CAN_PRECEDE_SCALAR_TRANSFORMATION
+
+This is post-result and has unpaid promotion debt.
 
 ## Reproduction
 
 python chi_architecture/reproduce.py d02b
 
-The one command downloaded and checksum-verified the Zenodo sources, used the 51-point matched spatial support, reconstructed all seven retained source mode families across all 18 torque states, executed the frozen scalar/refusal rules, cross-checked the 35 declared primary tracked frequencies, and passed every workflow guard.
+## Next controlled step
 
-## Interpretation boundary
+Do not use D02B to confirm CA-D007.
 
-This checkpoint was created before scientific interpretation of the result payload.
+Select a genuinely untouched graded physical system and freeze:
+- local scalar;
+- organization observable;
+- perturbation levels;
+- uncertainty/detection thresholds;
+- native comparator;
+- explicit reversal/null result
 
-Next:
-1. read the archived result;
-2. evaluate the seven family labels and 28 primary comparisons;
-3. inspect the 10/5/0 Nm secondary sequences;
-4. assign the native-toolkit/additional-value verdict;
-5. write the D02B scientific readout;
-6. update the reproducibility guide/PR if needed.
+before inspecting decisive outcomes.

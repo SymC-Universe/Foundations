@@ -210,6 +210,53 @@ See:
 - `results/D02A_EXECUTION_ARCHIVE_v0.2.json`
 - `REPRODUCIBILITY_GUIDE.md`
 
+## D02B four-bolt physical perturbation: complete
+
+D02B is the first physical map in this workstream with a directly licensed same-condition modal chi and an independently controlled physical interface state.
+
+The selected Zenodo four-bolt LDV dataset provides 18 bolt-torque configurations, seven source-retained resonance families, 51 matched scan points, raw FRFs, and native MAC/CMAC response metrics.
+
+The one-command run completed successfully:
+
+`python chi_architecture/reproduce.py d02b`
+
+Primary 10->0 Nm result:
+
+- 28/28 comparisons reorganize in native full-field response;
+- 11/28 admit chi in both states;
+- 11/11 comparable pairs transform beyond the frozen one-bin chi resolution;
+- 17/28 primary comparisons are refused/non-identifiable under the frozen half-power/window rules;
+- zero primary pairs preserve similar chi.
+
+Secondary 10->5->0 Nm result:
+
+- all 28/28 5 Nm scalar estimates are admitted;
+- 16/28 remain similar to the 10 Nm chi while embedded response has already reorganized;
+- those cases span 6/7 mode families;
+- with further loosening, amplitude MAC and complex CMAC dissimilarity increase in 28/28 sequences, phase-only dissimilarity in 24/28, and absolute frequency shift in 28/28.
+
+The resulting bounded interpretation is a graded hierarchy:
+
+`moderate substrate change -> embedded reorganization can precede scalar transformation`
+
+followed, under stronger perturbation, by
+
+`stronger substrate change -> local chi transforms or is refused/non-identifiable + embedded response further reorganizes`.
+
+The native-toolkit verdict is:
+
+`NATIVE_TOOLKIT_SUFFICIENT_NO_INCREMENTAL_VALUE`.
+
+See:
+
+- `d02b/D02B_FOUR_BOLT_SOURCE_CONTRACT_v0.3.md`
+- `d02b/D02B_EXACT_SOURCE_MAPPING_v0.1.md`
+- `d02b/D02B_RAW_PARSER_AND_CLASSIFICATION_FREEZE_v0.1.md`
+- `D02B_FOUR_BOLT_PHYSICAL_READOUT_v0.1.md`
+- `results/D02B_ARCHIVAL_RECORD_v0.1.json`
+- `results/D02B_INTERPRETED_SUMMARY_v0.1.json`
+- `REPRODUCIBILITY_GUIDE.md`
+
 ## Anti-circularity position
 
 The workstream must not follow these invalid chains:
@@ -269,8 +316,9 @@ See:
 
 ## Project control
 
-**Current status:** D01A-D01C and the first physical calibration D02A are complete. D01 establishes the representation hierarchy in exact/coupled/non-normal dynamics. D02A shows on real CsPbBr3 source data that a carrier sector can remain traceable while a local damping observable transforms sharply and the distributed spectral shape reorganizes. Lowercase chi was correctly refused because omega0 was not independently identifiable. No cross-domain Atlas has been constructed.  
-**Current scientific conclusion:** broader architecture can remain meaningful when scalar compression is unavailable, but the architecture must not be confused with new native physics. In D01C the standard nonmodal toolkit was sufficient; in D02A the standard q-resolved phonon toolkit was sufficient.  
-**Next scientific step:** select and freeze a second physical system that directly reports same-condition natural frequency and damping/linewidth, plus an independently defined carrier/coupling organization, so real-data scalar admission and joint chi/Chi behavior can both be tested rather than inferred.  
-**Reproducibility:** D01C and D02A use the same reviewer-facing interface: `python chi_architecture/reproduce.py d01c` or `python chi_architecture/reproduce.py d02a`.  
-**User action required:** none for the completed D02A package.
+**Current status:** D01A-D01C, D02A, and D02B are complete. D02B now supplies the first directly licensed physical modal chi perturbation map with an independently controlled interface state. No cross-domain Atlas has been constructed.  
+**Current scientific conclusion:** D02B shows a graded scalar/architecture relationship. At moderate bolt loosening, 16/28 comparisons retain similar local chi at frozen resolution while the full-field response has already reorganized. At full single-bolt loosening, every comparable primary chi transforms and many scalar comparisons become non-identifiable/refused under the frozen representation, while native response reorganization increases. Standard structural dynamics remains quantitatively sufficient.  
+**Post-result hypothesis:** `ARCHITECTURE_REORGANIZATION_CAN_PRECEDE_SCALAR_TRANSFORMATION`. This is discovery-only and requires untouched confirmation.  
+**Next scientific step:** freeze a new untouched graded physical system before decisive outcomes are inspected, specifically testing whether organization changes at a lower perturbation level than the local scalar coordinate.  
+**Reproducibility:** D01C, D02A, and D02B use the common reviewer interface: `python chi_architecture/reproduce.py <experiment>`. D02B automatically acquires and validates the 635 MB raw Zenodo archive and does not require manual raw-file handling.  
+**User action required:** none for the completed D02B package.

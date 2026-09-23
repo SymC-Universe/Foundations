@@ -168,3 +168,22 @@ The D02B wrapper automatically downloads the public Zenodo support bundles and 6
 Reviewers do not select or unpack the 1,838 raw response files manually.
 
 The frozen scientific contract is in `chi_architecture/d02b/`. The raw source is DOI `10.5281/zenodo.20038951`.
+
+
+## D02B archived reference execution
+
+The first successful frozen D02B physical reproduction is indexed by:
+
+`chi_architecture/results/D02B_ARCHIVAL_RECORD_v0.1.json`
+
+Reference execution:
+
+- execution commit: `cd4127b963cf2057841dff320c547ec7f3fad73d`
+- GitHub Actions run: `35823640290`
+- artifact: `chi-architecture-d02b-four-bolt-v01`
+- artifact ID: `10734281523`
+- artifact digest: `sha256:3730a4a6db3803501fe35c74f740836cdf86a3d21d95f2de2707748fa1b0af1f`
+- full result SHA-256: `d7e0001413ef438aea2d8ea8757f7b4eeb8d6dab5ecfdf62be02b9f2575d4f10`
+- reproduction manifest SHA-256: `beb792895ba4d98afd29848623422dd86be574727144877a291087fc809b465f`
+
+The artifact is convenient but not required for long-term reproduction. The one-command entrypoint regenerates the full result from the DOI-locked Zenodo sources.

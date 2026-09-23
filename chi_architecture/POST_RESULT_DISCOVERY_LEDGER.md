@@ -282,6 +282,75 @@ Promotion requires an independently selected physical or untouched computational
 
 ---
 
+## CA-D007: Architecture reorganization may precede scalar transformation
+
+**Selection status:** POST_RESULT_DISCOVERY / PHYSICAL_P0_Q  
+**Hypothesis provenance:** D02B_FOUR_BOLT_PHYSICAL_RESULT  
+**Observed trigger:** In the frozen D02B 10/5/0 Nm perturbation series, 16/28 10->5 Nm family/bolt comparisons retained similar modal chi at the predeclared 1 Hz resolution while every comparison already showed source-native full-field reorganization. With further loosening to 0 Nm, every one of the 11 still-comparable scalar pairs transformed, while 17 primary comparisons became refused/non-identifiable under the frozen scalar route.  
+**Source readout:** `D02B_FOUR_BOLT_PHYSICAL_READOUT_v0.1.md`.
+
+### Candidate hypothesis
+
+Under a graded substrate/interface perturbation, embedded carrier or response organization can reorganize before a licensed local scalar stability coordinate crosses its own detectability/transformation boundary.
+
+At stronger perturbation, the local scalar may then transform or cease to be identifiable under the previously licensed representation.
+
+This suggests a possible ordering:
+
+`ORGANIZATION_CHANGE -> SCALAR_TRANSFORMATION_OR_REFUSAL`
+
+for some systems and perturbation ranges.
+
+The ordering is a testable hypothesis, not a universal law.
+
+### D02B facts that generated it
+
+- 28/28 5 Nm family/bolt states retained an admissible half-power chi.
+- 16/28 10->5 Nm pairs were similar in chi at the frozen resolution.
+- all 28/28 10->5 Nm pairs showed native response reorganization.
+- amplitude MAC and complex CMAC dissimilarity increased further from 5 to 0 Nm in 28/28 sequences.
+- absolute frequency shift increased further in 28/28 sequences.
+- at 0 Nm, 11/28 primary scalar pairs remained comparable and all 11 transformed; the other 17 were refused/non-identifiable by the frozen scalar route.
+
+### Native-science firewall
+
+`GRADED_BOLT_RESPONSE != NEW_SYMC_DYNAMICS`
+
+The quantitative facts are already described by standard FRF, half-power damping, MAC, CMAC, phase, torque-state, and mode-tracking analysis.
+
+D02B therefore receives:
+
+`NATIVE_TOOLKIT_SUFFICIENT_NO_INCREMENTAL_VALUE`.
+
+The candidate novelty is only the prospectively testable cross-level ordering, not the native measurements or metrics.
+
+### What would count against the hypothesis
+
+A new untouched graded system counts against the candidate ordering if:
+
+- the local scalar transforms at the smallest perturbation while independently measured organization remains unchanged;
+- organization and scalar changes are simultaneous within frozen resolution across the full graded series;
+- apparent early organization change vanishes under a stronger native uncertainty/noise model;
+- the ordering depends on post-hoc thresholds, mode selection, or basis changes;
+- a native comparator shows that the supposed level ordering is an artifact of unequal measurement sensitivity rather than a system property.
+
+### Promotion debt
+
+D02B cannot confirm the hypothesis it generated.
+
+A promotion test must be frozen on an untouched system with:
+
+1. at least three controlled perturbation levels;
+2. an independently licensed local scalar;
+3. an independently measured carrier/organization observable;
+4. prospective uncertainty/detection thresholds for both;
+5. a native comparator;
+6. an explicit outcome that would reverse or erase the proposed ordering.
+
+**Current promotion status:** UNPAID_PROMOTION_DEBT / PHYSICAL_POST_RESULT_DISCOVERY
+
+---
+
 ## Ledger-wide promotion rule
 
 No entry can be promoted by reinterpretation of the result that generated it.
