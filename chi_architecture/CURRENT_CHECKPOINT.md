@@ -1,39 +1,32 @@
 # Chi Architecture Active Checkpoint
 
-**Checkpoint ID:** D02B-CP3-ZENODO-SYSTEM-CONTRACT-FROZEN  
+**Checkpoint ID:** D02B-CP4-STAGE-A-IMPLEMENTED  
 **Date:** 2026-09-22  
 **Branch:** chi-architecture-p0  
-**Protocol:** SymC GOM v0.8.3
+**Protocol:** SymC GOM v0.8.3  
+**Active source contract:** D02B_FOUR_BOLT_SOURCE_CONTRACT_v0.3.md
 
-## Active D02B selection
+## State
 
-Four-bolt aluminum plate under controlled bolt-torque variation.
+Stage A acquisition is implemented.
 
-Dataset DOI: 10.5281/zenodo.20038951  
-Preprint: arXiv:2609.05378
+It downloads only:
 
-## Why this supersedes Orion
+- 01_documentation.zip
+- 02_processed_tables.zip
+- 04_scripts.zip
 
-Orion remained scientifically eligible but automated Mendeley acquisition returned HTTP 403 from GitHub runners.
+from Zenodo, verifies the published MD5 checksums, records SHA-256 hashes, and emits:
 
-The original frozen ranking prioritizes machine-readable accessibility and simple automated reproduction.
+- archive file names;
+- contained file names/sizes/CRC;
+- CSV headers and row counts only.
 
-The Zenodo candidate supplies raw data, processed tables, scripts, checksums, schemas, environment files, and open HTTPS downloads.
+Scientific CSV cell values are deliberately withheld at this checkpoint.
 
-No Orion scientific response values were parsed before this correction.
+## Resume rule
 
-## Frozen source contract
-
-Read:
-
-chi_architecture/d02b/D02B_FOUR_BOLT_SOURCE_CONTRACT_v0.3.md
-
-before numerical data extraction.
-
-## Next action
-
-1. Download only small Stage-A Zenodo assets: documentation, processed tables, scripts, and metadata.
-2. Hash and inspect schema/column names.
-3. Freeze exact source-file mapping and native retained-group IDs before numeric analysis.
-4. Then implement raw FRF half-power extraction and the one-command D02B wrapper.
-5. Execute in GitHub Actions and archive before interpretation.
+1. Inspect the successful Stage A schema artifact.
+2. Freeze the exact table/column/file mapping for D02B.
+3. Only then permit numerical processed-table inspection.
+4. Raw 00_raw_exports.zip remains unopened until the numeric mapping is frozen.

@@ -1,0 +1,56 @@
+name: D02B Stage A Schema Lock
+
+on:
+  push:
+    branches:
+      - chi-architecture-p0
+    paths:
+      - "chi_architecture/d02b/stage_a_schema.py"
+      - "chi_architecture/d02b/D02B_FOUR_BOLT_SOURCE_CONTRACT_v0.3.md"
+      - ".github/workflows/chi-architecture-d02b-stage-a.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  stage-a:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: "3.12.14"
+
+      - name: Install pinned dependencies
+        run: |
+          python -m pip install --disable-pip-version-check -r chi_architecture/requirements-p0.txt
+          python -m pip check
+
+      - name: Acquire Stage A and emit schema only
+        run: python chi_architecture/d02b/stage_a_schema.py
+
+      - name: Guard Stage A pre-numeric status
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path("chi_architecture/results/D02B_STAGE_A_SCHEMA_v0.1.json").read_text())
+          assert r["status"]=="STAGE_A_SCHEMA_ONLY_NO_SCIENTIFIC_DATA_VALUES_EMITTED"
+          assert set(r["assets"])=={"documentation","processed_tables","scripts"}
+          for asset in r["assets"].values():
+              assert asset["zip_schema"]["file_count"] > 0
+          print("D02B Stage A schema guard passed")
+          PY
+
+      - name: Upload Stage A checkpoint artifact
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: d02b-stage-a-schema-v01
+          path: chi_architecture/results/D02B_STAGE_A_SCHEMA_v0.1.json
+          retention-days: 90
+          if-no-files-found: error
