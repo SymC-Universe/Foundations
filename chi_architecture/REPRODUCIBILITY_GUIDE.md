@@ -477,3 +477,37 @@ The implementation reproduces the healthy 8.7890625 Hz family, applies the fixed
 
 Reviewers do not choose damage locations, mode families, excitation levels, thresholds, channel subsets, or replacement estimators.
 
+
+
+## D02E archived prospective execution
+
+Reference execution:
+
+- execution commit: `4711271eb0bee1b22760fa6885c56c11e139abc7`;
+- GitHub Actions run: `36019987959`;
+- artifact: `chi-architecture-d02e-jacket-v01`;
+- artifact ID: `10816468481`;
+- artifact digest: `sha256:952b78b21005bc67eb9af5e98f5f5e0994593f2add5109d25ce8b644b3e282f3`;
+- full result SHA-256: `81dd533d98c31137eb65db4a6a572bce844e0be8094d724cb686207f234497b0`;
+- reproduction manifest SHA-256: `9abf3f526c6b8553e0505261e623230ac885d29cb7dd1e27c20b6ffdfd0a2ae6`.
+
+Outcome:
+
+- level_1: `ORDERING_NON_IDENTIFIABLE`;
+- level_2: `ORDERING_NON_IDENTIFIABLE`;
+- level_3: `ORDERING_NON_IDENTIFIABLE`;
+- level_4: `ORDERING_NON_IDENTIFIABLE`;
+- domain result: `INDETERMINATE`.
+
+The first damaged 9 Nm level admitted only 8/20, 3/20, 2/20, and 15/20 half-power chi estimates across the four locations, below the frozen 16/20 scalar floor in every stratum.
+
+This is the measured reason D02E is indeterminate. A later experiment cannot claim to solve D02E merely by adding replicates or loosening thresholds. It must prospectively demonstrate a perturbation-robust scalar measurement route before relative onset is inspected.
+
+Reviewer reproduction:
+
+```bash
+python chi_architecture/reproduce.py d02e
+```
+
+The command reacquires and MD5-verifies all 260 original A_1 CSV files from DOI `10.34810/data1011`. No manual damage-state, location, mode, or threshold selection is required.
+

@@ -1,0 +1,30 @@
+{
+  "schema": "d02e-interpreted-summary-v0.1",
+  "status": "D02E_PROSPECTIVE_INDETERMINATE_CLOSED",
+  "target_hypothesis": "CA-D007_ARCHITECTURE_REORGANIZATION_CAN_PRECEDE_SCALAR_TRANSFORMATION",
+  "primary_family_hz": 8.7890625,
+  "location_orderings": {
+    "level_1": "ORDERING_NON_IDENTIFIABLE",
+    "level_2": "ORDERING_NON_IDENTIFIABLE",
+    "level_3": "ORDERING_NON_IDENTIFIABLE",
+    "level_4": "ORDERING_NON_IDENTIFIABLE"
+  },
+  "outcome": "INDETERMINATE",
+  "first_damaged_level_scalar_admitted_counts": {
+    "level_1": 8,
+    "level_2": 3,
+    "level_3": 2,
+    "level_4": 15
+  },
+  "scalar_completeness_floor": 16,
+  "primary_limitation": "HALF_POWER_SCALAR_ADMISSION_COLLAPSES_UNDER_DAMAGE",
+  "ca_d007_support": false,
+  "ca_d007_adverse": false,
+  "prospective_record_after_d02e": {
+    "support": 0,
+    "null": 1,
+    "indeterminate": 2
+  },
+  "native_toolkit_verdict": "NATIVE_TOOLKIT_SUFFICIENT_NO_INCREMENTAL_VALUE",
+  "promotion_status": "UNPAID_PROMOTION_DEBT_ZERO_PROSPECTIVE_SUPPORT"
+}

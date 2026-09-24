@@ -384,7 +384,26 @@ D02D therefore provides no prospective support for CA-D007 and does not satisfy 
 
 A valid organization/scalar response was visible at DAM6 111, but the 010 state was non-identifiable, so the frozen onset-ordering rule correctly forbids using the 111 response as confirmation.
 
-**Current promotion status:** UNPAID_PROMOTION_DEBT / PROSPECTIVE_RECORD_NULL_PLUS_INDETERMINATE
+**Third prospective test update — D02E (2026-09-24):**
+
+D02E used the untouched offshore-jacket bolt-loosening benchmark with a healthy-only selected 8.7890625 Hz primary family, fixed A_1 excitation, four physical bolt locations, and 20 original CSV replicates at every state.
+
+All four locations returned `ORDERING_NON_IDENTIFIABLE`, producing domain outcome `INDETERMINATE`.
+
+D02E removed D02D's environmental/operational matching limitation, but exposed a different measured limitation. At the first damaged 9 Nm level, admitted half-power chi counts were 8/20, 3/20, 2/20, and 15/20, all below the frozen >=16/20 scalar floor.
+
+The dominant failure is `NO_ADMISSIBLE_SCALAR_CHI`. A local scalar licensed in the healthy state did not remain sufficiently estimable under damage to identify onset ordering.
+
+D02E therefore provides no prospective support for CA-D007 and does not satisfy the frozen adverse 3-of-4 scalar-first rule.
+
+Prospective record after D02E:
+- support: 0;
+- null: 1;
+- indeterminate: 2.
+
+Another prospective test is justified only if candidate selection demonstrates perturbation-robust scalar and organization measurability across every required graded level before relative onset is inspected.
+
+**Current promotion status:** UNPAID_PROMOTION_DEBT / ZERO_PROSPECTIVE_SUPPORT / SCALAR_IDENTIFIABILITY_LIMIT
 
 ---
 

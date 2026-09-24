@@ -404,44 +404,58 @@ The D02E candidate screen therefore requires, before decisive ordering inspectio
 
 This is a power and identifiability correction. It is not a favorable-outcome filter.
 
-## D02E prospective offshore-jacket test: active
+## D02E prospective offshore-jacket test: complete
 
-D02E is the next prospective CA-D007 test after the D02C null and D02D indeterminate result.
+D02E completed successfully as the third prospective CA-D007 test.
 
-Selected system:
-- scaled offshore-jacket bolt-loosening benchmark;
-- dataset DOI `10.34810/data1011`, Dataverse version 3.0;
-- fixed operational slice: A_1 white-noise excitation;
-- graded states: Healthy 12 Nm -> 9 Nm -> 6 Nm -> NoBolt;
-- four physical bolt locations;
-- 20 original CSV replicates per state;
-- 24 acceleration-response channels.
+Frozen result:
+- level_1: `ORDERING_NON_IDENTIFIABLE`;
+- level_2: `ORDERING_NON_IDENTIFIABLE`;
+- level_3: `ORDERING_NON_IDENTIFIABLE`;
+- level_4: `ORDERING_NON_IDENTIFIABLE`;
+- domain outcome: `INDETERMINATE`.
 
-The healthy-only baseline gate is complete and archived before damaged values were opened.
+The healthy-only 8.7890625 Hz family admitted chi in 17/20 healthy replicates, but the first damaged 9 Nm state admitted only 8/20, 3/20, 2/20, and 15/20 across the four locations. The frozen floor was 16/20, so later states cannot rescue onset ordering.
 
-Frozen primary family:
-- 8.7890625 Hz;
-- 17/20 healthy half-power chi estimates admitted;
-- median healthy chi = 0.028856666306254334.
+The dominant failure is `NO_ADMISSIBLE_SCALAR_CHI`. The half-power scalar is baseline-licensed but not perturbation-robust enough for this graded prospective test.
 
-The final damaged-state implementation rules are frozen in `d02e/D02E_FINAL_PREEXECUTION_FREEZE_v0.1.md`.
+CA-D007 prospective record is now:
+- supporting tests: 0;
+- null tests: 1;
+- indeterminate tests: 2.
 
-Reviewer command:
+Native-toolkit verdict:
 
-`python chi_architecture/reproduce.py d02e`
+`NATIVE_TOOLKIT_SUFFICIENT_NO_INCREMENTAL_VALUE`.
 
-The command downloads only the DOI-locked original CSV files required by the frozen A_1 slice, verifies source MD5 values, applies the fixed FDD tracking window, half-power chi, complex mode-shape organization metric, bootstrap/leave-one-out thresholds, completeness logic, and 3-of-4 adjudication.
+See:
+- `D02E_JACKET_PROSPECTIVE_READOUT_v0.1.md`;
+- `d02e/D02E_JACKET_MFR14_v0.1.md`;
+- `d02e/D02E_FINAL_PREEXECUTION_FREEZE_v0.1.md`;
+- `results/D02E_ARCHIVAL_RECORD_v0.1.json`;
+- `results/D02E_INTERPRETED_SUMMARY_v0.1.json`;
+- `REPRODUCIBILITY_GUIDE.md`.
 
-D02E is specifically designed to correct both prior prospective failure modes without selecting on the desired ordering:
-- D02C lacked detectable movement in either frozen observable;
-- D02D lacked enough matched graded data to identify the ordering.
+## D02F opening requirement
 
-D02E therefore requires both measurable native intervention power and complete matched operation before execution, while leaving relative scalar-versus-organization onset unseen.
+A further CA-D007 test is permitted only to resolve D02E's measured scalar-identifiability failure.
+
+Before relative onset is inspected, candidate selection must require:
+- at least three graded perturbation levels;
+- a local scalar directly reported or prospectively demonstrated to remain measurable at every required level;
+- preference for source-provided damping, Q, linewidth, or decay over another fragile half-power-only route;
+- an independent organization/carrier observable measurable at every level;
+- pre-verifiable matched-operation completeness;
+- native evidence that the intervention range moves at least one frozen observable;
+- automated public-data access;
+- unseen relative scalar-versus-organization onset.
+
+This is an identifiability correction, not a favorable-outcome filter.
 
 ## Project control
 
-**STATUS:** D01A-D01C and D02A-D02D are complete. D02C is a prospective null and D02D is prospectively indeterminate. CA-D007 remains unconfirmed with unpaid promotion debt.  
-**CURRENT GATE:** execute the already-selected and frozen D02E offshore-jacket A_1 analysis without altering the 8.7890625 Hz primary family or MFR-14 decision rules.  
-**NEXT ACTION:** run the dedicated D02E archival workflow, archive the result before interpretation, then apply the frozen 3-of-4 support/adverse rule.  
-**WHY:** D02E now has a healthy-only selected primary family, 20 matched replicates at every graded state/location, fixed excitation, and automated public access, directly addressing the D02C power and D02D completeness failures without inspecting the desired ordering.  
+**STATUS:** D01A-D01C and D02A-D02E are complete. D02C is a prospective null; D02D and D02E are prospectively indeterminate. CA-D007 has zero prospective supporting tests and remains unconfirmed with unpaid promotion debt.  
+**CURRENT GATE:** any D02F candidate must resolve D02E's measured scalar-identifiability failure before selection; relative onset remains hidden.
+**NEXT ACTION:** screen D02F candidates for perturbation-robust direct damping/Q/linewidth/decay measurement plus independent organization and complete graded public data.
+**WHY:** D02E removed the prior power and matching problems but the half-power scalar lost admission under damage, preventing prospective onset adjudication.
 **USER ACTION:** none. Public-source candidate search and preregistration can proceed autonomously.
