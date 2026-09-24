@@ -382,6 +382,28 @@ See:
 - `results/D02D_ARCHIVAL_RECORD_v0.1.json`
 - `REPRODUCIBILITY_GUIDE.md`
 
+## D02E opening requirement
+
+D02E is the next prospective CA-D007 experiment.
+
+The selection problem has changed after two prospective outcomes:
+
+- D02C returned `NEITHER_CHANGES` in both directions, so the next system should have independent native evidence that the planned intervention range measurably moves at least one frozen observable.
+- D02D returned `INDETERMINATE` because the frozen environmental/operational matching floor left insufficient graded damaged blocks, so D02E must demonstrate control/intervention overlap adequacy before the candidate is selected.
+
+The D02E candidate screen therefore requires, before decisive ordering inspection:
+
+1. at least three ordered perturbation levels;
+2. a directly licensed local scalar;
+3. an independent organization/carrier observable;
+4. automated public-data access;
+5. native evidence that the intervention range is strong enough to move at least one of the two observables, without revealing their relative onset;
+6. pre-verifiable control/intervention environmental and operational overlap sufficient to meet the frozen completeness floor at every required perturbation level;
+7. a strong native comparator;
+8. explicit permission for scalar-first, organization-first, simultaneous, single-observable, neither, and non-identifiable outcomes.
+
+This is a power and identifiability correction. It is not a favorable-outcome filter.
+
 ## Project control
 
 **STATUS:** D01A-D01C and D02A-D02D are complete. D02C is a prospective null and D02D is prospectively indeterminate. CA-D007 remains unconfirmed with unpaid promotion debt.  

@@ -410,3 +410,31 @@ Outcome:
 - program outcome: `INDETERMINATE`.
 
 The archive record also preserves the post-hash/pre-archive-commit result-card exposure as an integrity-sequencing deviation. No scientific or computational content changed after that exposure.
+
+
+## D02E prospective opening note
+
+D02E is not yet an executable verification section. Under GOM v0.8.6, it will receive the next V-number only after the source contract, MFR-14 record, production entry point, expected output, and first archived execution exist.
+
+The candidate-selection gate is itself fixed by the prospective failures already observed.
+
+**[CLAIM]** The D02E selection process must improve power against the two prior prospective failure modes without selecting on the desired scalar-versus-organization ordering.
+
+**Inputs:** D02C prospective null record, D02D prospective indeterminate record, CA-D007 ledger entry, and the active GOM v0.8.6.
+
+**Verification before candidate promotion:**
+
+```text
+REQUIRE >=3 graded perturbation levels
+REQUIRE licensed local scalar
+REQUIRE independent organization observable
+REQUIRE automated public source access
+REQUIRE native evidence that >=1 frozen observable changes over the intervention range
+REQUIRE pre-verifiable environmental/operational overlap sufficient for every graded level
+REQUIRE relative scalar-versus-organization onset remains uninspected
+REQUIRE native comparator
+```
+
+**Expected output:** either a frozen D02E candidate/source contract satisfying every requirement above, or the explicit status `NO_ELIGIBLE_D02E_SYSTEM`. No criterion is relaxed because a candidate appears scientifically attractive.
+
+This opening note is selection provenance, not a substitute for the eventual executable D02E V-section.
