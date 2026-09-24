@@ -1,0 +1,42 @@
+name: D02E Jacket Dataverse Metadata Preflight
+
+on:
+  push:
+    branches: [chi-architecture-p0]
+    paths:
+      - "chi_architecture/d02e/jacket_dataverse_metadata.py"
+      - ".github/workflows/chi-architecture-d02e-jacket-metadata.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  preflight:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: "3.12.14"
+      - run: |
+          python -m pip install --disable-pip-version-check requests
+          python chi_architecture/d02e/jacket_dataverse_metadata.py
+      - name: Guard metadata-only status
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path("chi_architecture/results/D02E_JACKET_DATAVERSE_METADATA_v0.1.json").read_text())
+          assert r["status"]=="METADATA_ONLY_NO_VIBRATION_VALUES_INSPECTED"
+          assert r["file_count"] >= 780
+          assert all(not x["restricted"] for x in r["files"])
+          print("D02E Dataverse metadata preflight passed")
+          PY
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: d02e-jacket-dataverse-metadata-v01
+          path: chi_architecture/results/D02E_JACKET_DATAVERSE_METADATA_v0.1.json
+          retention-days: 90
+          if-no-files-found: error
