@@ -72,16 +72,29 @@ def fetch_bytes(file_id: int) -> bytes:
 
 
 def parse_response_csv(raw: bytes) -> tuple[list[str], np.ndarray]:
-    first, _, rest = raw.partition(b"\n")
-    header = first.decode("utf-8-sig", errors="replace").rstrip("\r").split(",")
+    text = raw.decode("utf-8-sig", errors="replace")
+    reader = csv.reader(io.StringIO(text))
+    rows = iter(reader)
     try:
-        data = np.loadtxt(io.BytesIO(rest), delimiter=",", dtype=float)
-    except Exception as exc:
-        raise D02ERefusal(f"CSV numeric parse failed: {type(exc).__name__}") from exc
-    if data.ndim == 1:
-        data = data[None, :]
-    if data.shape[1] != len(header):
-        raise D02ERefusal(f"CSV width mismatch: header={len(header)} data={data.shape[1]}")
+        header = next(rows)
+    except StopIteration as exc:
+        raise D02ERefusal("empty CSV") from exc
+    width = len(header)
+    clean = []
+    for row in rows:
+        if not row or all(not str(x).strip() for x in row):
+            continue
+        if len(row) != width:
+            continue
+        try:
+            clean.append([float(x) for x in row])
+        except ValueError:
+            continue
+    if not clean:
+        raise D02ERefusal("no complete numeric rows matching CSV header width")
+    data = np.asarray(clean, dtype=float)
+    if data.ndim != 2 or data.shape[1] != width:
+        raise D02ERefusal("unexpected parsed CSV dimensionality")
     keep = []
     names = []
     for i, name in enumerate(header):
