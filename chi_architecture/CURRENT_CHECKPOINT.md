@@ -1,27 +1,29 @@
 # Chi Architecture Active Checkpoint
 
-**Checkpoint ID:** D02F-CP1-FLOOD-SHAB-COMPLETENESS-PROBE-IMPLEMENTED  
+**Checkpoint ID:** D02F-CP2-CANDIDATE-AND-MFR14-FROZEN  
 **Date:** 2026-09-24  
 **Branch:** chi-architecture-p0  
 **Protocol:** SymC GOM v0.8.6
 
 STATUS
 
-D02F candidate selection remains open. FLOOD-SHAB is a conditional candidate only.
+FLOOD-SHAB is selected and D02F MFR-14 is frozen before decisive modal values.
 
 CURRENT GATE
 
-Verify that source-reported damping plus independent complex mode-shape organization remain jointly available across at least three ordered water-level strata before candidate promotion.
+Implement the frozen matched-EOV prospective analysis without changing scientific rules.
 
 NEXT ACTION
 
-Run the metadata/missingness-only completeness workflow:
-
-.github/workflows/chi-architecture-d02f-flood-shab-probe.yml
+Build:
+- chi_architecture/src/d02f_flood_shab.py
+- regression tests;
+- python chi_architecture/reproduce.py d02f;
+- dedicated archival workflow.
 
 WHY
 
-D02F exists to solve D02E's scalar-admission failure. Candidate promotion is not allowed until perturbation-robust scalar completeness is demonstrated without reading relative onset trajectories.
+The candidate clears scalar robustness, organization completeness, intervention power, automated access, and unseen relative onset.
 
 USER ACTION
 
@@ -29,8 +31,8 @@ NONE.
 
 SUCCESS CONDITION
 
-FLOOD-SHAB clears all completeness axes and proceeds to a frozen candidate/source contract, or is rejected with an explicit D02F eligibility failure.
+First successful archived decisive D02F run under the frozen MFR-14.
 
 FAILURE BRANCH
 
-Do not relax completeness floors, water-level strata, scalar directness, organization independence, or automated-access requirements.
+Mechanical/parser failures may be repaired. Scientific rules may not be changed after decisive execution begins.
