@@ -71,7 +71,7 @@ def percentile(values, q):
 
 def mode_groups(headers):
     groups = defaultdict(set)
-    pattern = re.compile(r"(?:^|_)mode_?(\\d{1,2})(?:_|$)", re.I)
+    pattern = re.compile(r"(?:^|_)mode_?(\d{1,2})(?:_|$)", re.I)
     for h in headers:
         low = h.lower()
         if not any(k in low for k in ("freq", "damp", "mcf", "complexity", "phi_", "shape", "real", "imag")):
@@ -143,6 +143,11 @@ def main():
         return "Q4_HIGH"
 
     groups = mode_groups(headers)
+    if "mode_01" not in groups:
+        raise RuntimeError("mode grouping failed: mode_01 absent")
+    required_probe = {"freq_mode_01_Hz", "damping_mode_01", "phi_mode_01_AM1Z_real"}
+    if not required_probe.issubset(set(groups["mode_01"])):
+        raise RuntimeError("mode_01 grouping failed source-header regression guard")
 
     per_bin_rows = defaultdict(int)
     per_bin_complete = defaultdict(lambda: defaultdict(int))
