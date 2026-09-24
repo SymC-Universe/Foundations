@@ -474,6 +474,16 @@ def run_d02e() -> dict:
     }
     outcome = domain_outcome(location_outcomes)
 
+    source_files = {}
+    for metas in groups.values():
+        for meta in metas:
+            key = f"{meta['directory']}/{meta['filename']}"
+            source_files[key] = {
+                "id": meta["id"],
+                "md5": meta["md5"],
+                "size": meta["size"],
+            }
+
     return {
         "schema": "d02e-jacket-prospective-result-v0.1",
         "status": "P1_PROSPECTIVE_D02E_EXECUTED",
@@ -492,6 +502,7 @@ def run_d02e() -> dict:
             "damaged": 240,
             "total": 260,
         },
+        "source_files": source_files,
         "scope": (
             "Prospectively frozen domain-specific D02E test of CA-D007. "
             "No secondary mode, excitation amplitude, or alternate threshold may alter the primary verdict."
