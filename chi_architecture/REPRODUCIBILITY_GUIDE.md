@@ -511,3 +511,26 @@ python chi_architecture/reproduce.py d02e
 
 The command reacquires and MD5-verifies all 260 original A_1 CSV files from DOI `10.34810/data1011`. No manual damage-state, location, mode, or threshold selection is required.
 
+
+
+## D02F opening note
+
+D02F exists specifically to resolve the measured D02E scalar-admission failure.
+
+The next candidate must demonstrate, before relative onset inspection:
+
+- at least three graded perturbation levels;
+- a source-native local scalar that remains directly measurable across every required level;
+- preference for source-reported damping, Q, linewidth, or decay over a fragile half-power-only route;
+- an independent organization/carrier observable at every level;
+- pre-verifiable completeness;
+- native evidence that the intervention range moves at least one relevant observable or response;
+- automated public-data access;
+- unseen relative scalar-versus-organization onset;
+- a strong native comparator.
+
+This is an identifiability correction, not a favorable-outcome filter.
+
+Reviewer-facing target remains:
+
+`python chi_architecture/reproduce.py d02f`

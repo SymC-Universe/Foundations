@@ -452,6 +452,12 @@ Before relative onset is inspected, candidate selection must require:
 
 This is an identifiability correction, not a favorable-outcome filter.
 
+## D02F reproducibility gate
+
+The D02F opening rule is now mirrored in the reproducibility guide: the experiment is not promoted until the source-native scalar, organization observable, graded completeness, automated acquisition path, and unseen relative onset are all verified before decisive values are inspected.
+
+The eventual reviewer interface remains `python chi_architecture/reproduce.py d02f`.
+
 ## Project control
 
 **STATUS:** D01A-D01C and D02A-D02E are complete. D02C is a prospective null; D02D and D02E are prospectively indeterminate. CA-D007 has zero prospective supporting tests and remains unconfirmed with unpaid promotion debt.  
