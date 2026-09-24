@@ -1,47 +1,36 @@
 # Chi Architecture Active Checkpoint
 
-**Checkpoint ID:** D02E-CP8-INTERPRETED-CLOSED  
+**Checkpoint ID:** D02F-CP0-CANDIDATE-SELECTION-FROZEN  
 **Date:** 2026-09-24  
 **Branch:** chi-architecture-p0  
 **Protocol:** SymC GOM v0.8.6
 
 STATUS
 
-D02E is complete and prospectively indeterminate.
+D02E is closed. D02F candidate selection is now frozen before candidate outcome inspection.
 
-WHAT HAPPENED
+CURRENT GATE
 
-All four physical locations returned ORDERING_NON_IDENTIFIABLE.
+Identify a system that solves D02E's measured scalar-admission failure without revealing the relative scalar-versus-organization onset.
 
-At the first damaged 9 Nm level, admitted chi counts were:
-- level_1: 8/20;
-- level_2: 3/20;
-- level_3: 2/20;
-- level_4: 15/20.
+NEXT ACTION
 
-The frozen scalar floor was 16/20. The dominant refusal is NO_ADMISSIBLE_SCALAR_CHI.
+Run completeness-ranked literature/data search under:
 
-WHY IT MATTERS
+chi_architecture/d02f/D02F_CANDIDATE_SELECTION_FREEZE_v0.1.md
 
-D02E fixed D02D's environmental/operational matching problem but demonstrated that the healthy-selected half-power scalar is not perturbation-robust enough to adjudicate onset under damage.
+WHY
 
-CA-D007 prospective record:
-- support: 0;
-- null: 1;
-- indeterminate: 2.
+CA-D007 currently has zero prospective supporting tests. Another test is justified only if it improves measured identifiability rather than merely seeking a favorable result.
 
-CA-D007 remains unconfirmed.
-
-WHAT HAPPENS NEXT
-
-A D02F test is permitted only if candidate selection prospectively verifies perturbation-robust scalar measurability at every graded level, an independent organization observable, matched-operation completeness, at least three graded levels, native intervention power, automated public access, and unseen relative onset.
-
-Prefer source-provided damping, Q, linewidth, or decay over another fragile half-power-only route.
-
-WHAT YOU NEED TO DO
+USER ACTION
 
 NONE.
 
-REPRODUCTION
+SUCCESS CONDITION
 
-python chi_architecture/reproduce.py d02e
+D02F_CANDIDATE_SELECTED with every eligibility axis verified, or explicit NO_ELIGIBLE_D02F_SYSTEM.
+
+FAILURE BRANCH
+
+Do not relax scalar robustness, organization completeness, automated access, or unseen-relative-onset requirements.
