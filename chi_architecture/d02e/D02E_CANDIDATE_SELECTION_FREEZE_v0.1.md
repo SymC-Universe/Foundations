@@ -3,116 +3,115 @@
 **Date:** 2026-09-23  
 **Status:** FROZEN_BEFORE_CANDIDATE_OUTCOME_INSPECTION  
 **Authority:** SymC General Operations Manual v0.8.6  
-**Target hypothesis:** CA-D007, ARCHITECTURE_REORGANIZATION_CAN_PRECEDE_SCALAR_TRANSFORMATION  
-**Purpose:** CONFIRMATORY_CANDIDATE_SELECTION
+**Target hypothesis:** CA-D007, ARCHITECTURE_REORGANIZATION_CAN_PRECEDE_SCALAR_TRANSFORMATION
 
-## STATUS
+## Purpose
 
-D02C returned a prospective null.
+Select a third prospective external physical test that improves power against the two prior prospective failure modes without selecting on the desired ordering.
 
-D02D returned an indeterminate result because the frozen environmental/operational matching firewall left insufficient matched damaged blocks across the graded ladder.
+Known prospective outcomes:
 
-D02E is designed to test CA-D007 again without relaxing either prior experiment's thresholds.
+- D02C: prospective null, no frozen scalar or organization onset;
+- D02D: prospective indeterminate, insufficient environmental/operational overlap for complete graded ordering.
 
-## Candidate eligibility
+Neither outcome authorizes relaxing the CA-D007 falsification structure.
 
-A D02E candidate is eligible only if all of the following can be established before inspecting the relative scalar-versus-organization onset.
+## Required eligibility axes
 
-1. **Untouched decisive system**
-   - decisive measurements were not used in D02B, D02C, or D02D;
-   - the relative onset ordering has not been inspected by this program.
+A D02E candidate is eligible only if every axis is verified before decisive relative-onset values are inspected.
 
-2. **At least three ordered physical states**
-   - one reference/control state;
-   - at least two graded intervention states;
-   - ordering is defined by the native experiment, not by post-hoc ranking.
+### E1. Graded intervention
 
-3. **Licensed local scalar**
-   - modal damping ratio, linewidth-derived damping, decay rate normalized by the native restoring frequency, or another already licensed second-order scalar;
-   - same-condition inputs are directly measured or recoverable without outcome-fitted scaling;
-   - scalar refusal remains allowed.
+At least three ordered states including reference/baseline and at least two non-baseline perturbation levels.
 
-4. **Independent organization observable**
-   - mode shape/subspace, multichannel coherence, network/coupling structure, spatial response organization, or another native carrier descriptor;
-   - it cannot be algebraically identical to the local scalar.
+The levels must be externally defined by the experiment, not created by binning a continuous response after inspection.
 
-5. **Known intervention activity without known relative ordering**
-   - prior native documentation may establish that the full intervention range measurably changes at least one frozen observable or accepted native response quantity;
-   - selection may not inspect which frozen observable changes first.
+### E2. Licensed local scalar
 
-6. **Prospective data-adequacy qualification**
-   - metadata, control covariates, schedule, or non-decisive summary information must show that every graded state can meet the planned completeness floor;
-   - where environmental/operational matching is required, at least 80% of required blocks/windows must have prospective overlap with the control support under the predeclared matching variables;
-   - this adequacy check may not use scalar or organization outcome values.
+A directly measured or natively recoverable local/modal scalar must exist under the same condition as each intervention level.
 
-7. **Automated public reproducibility**
-   - source data are publicly accessible by stable HTTPS/API/DOI route;
-   - acquisition can be automated from GitHub Actions without a human download step;
-   - source identity and hashes can be frozen.
+Allowed examples include a native damping ratio, linewidth/frequency coordinate, Q-derived damping coordinate, or another domain-native scalar with a frozen interpretation.
 
-8. **Strong native comparator**
-   - the domain has an established native method capable of explaining the response without SymC-specific quantities.
+No proxy may be invented because it produces a useful ordering.
 
-## Ranking rule
+### E3. Independent organization observable
 
-Among eligible candidates, rank in this order:
+A carrier, mode shape, network, spatial response, coupling, eigenvector/subspace, or another native organization observable must be measurable independently of the local scalar.
 
-1. data-adequacy margin above the frozen completeness floor;
-2. directness of the licensed scalar;
-3. independence of the organization observable;
-4. number and clarity of graded intervention levels;
-5. automated source accessibility;
-6. availability of repeated controls/replicates;
-7. strength of the native comparator;
-8. computational simplicity.
+The organization observable may share raw sensors but may not be an algebraic transform of the scalar.
 
-Do not rank by:
-- apparent organization-first behavior;
-- closeness to chi=1;
-- effect magnitude after opening decisive values;
-- exceptional-point appearance;
-- agreement with D02B;
-- narrative attractiveness.
+### E4. Automated public access
 
-## Candidate rejection rule
+The decisive data and metadata must be downloadable from GitHub Actions or another ordinary noninteractive reproducibility environment through stable public URLs, DOI APIs, or a public repository.
 
-Return an explicit rejection when:
-- environmental/operational overlap is prospectively inadequate;
-- a local scalar requires post-hoc fitting or unlicensed normalization;
-- organization is derived from the same scalar quantity;
-- the relative ordering is already known to the program;
-- public data cannot be acquired automatically;
-- graded states are not physically ordered.
+A system requiring browser-only manual assembly is ineligible.
 
-## Prospective outcome vocabulary
+### E5. Intervention-power evidence without ordering leakage
 
-D02E will retain at minimum:
+Before candidate selection, native documentation or a source-level methods statement must establish that the planned intervention range measurably affects at least one relevant system observable.
+
+The relative onset ordering of the frozen scalar and organization observables must remain uninspected.
+
+A candidate is not eligible merely because a paper abstract says damage/perturbation was detectable if that statement reveals the exact relative ordering targeted by CA-D007.
+
+### E6. Prospective completeness/overlap adequacy
+
+Before decisive outcome inspection, the source metadata/schema must demonstrate enough observations at every required perturbation level to satisfy the planned scalar and organization uncertainty rules.
+
+If environmental/operational matching is required, the overlap floor must be verifiable from covariate metadata before selection.
+
+Prefer laboratory systems in which intervention levels are measured under matched acquisition conditions so the D02D overlap failure cannot recur.
+
+### E7. Native comparator
+
+The domain must supply a standard native analysis capable of defeating the SymC added-value interpretation.
+
+### E8. Outcome symmetry
+
+The frozen design must permit at least:
 
 - ORGANIZATION_PRECEDES_SCALAR
 - SCALAR_PRECEDES_ORGANIZATION
-- SIMULTANEOUS_AT_FIRST_CHANGE
-- ORGANIZATION_ONLY
-- SCALAR_ONLY
+- SIMULTANEOUS_WITHIN_FROZEN_RESOLUTION
+- ORGANIZATION_CHANGES_SCALAR_DOES_NOT
+- SCALAR_CHANGES_ORGANIZATION_DOES_NOT
 - NEITHER_CHANGES
 - ORDERING_NON_IDENTIFIABLE
-- NATIVE_MEASUREMENT_SENSITIVITY_PRECLUDES_ORDERING
 - NO_ADMISSIBLE_SCALAR_CHI
+- NATIVE_MEASUREMENT_SENSITIVITY_PRECLUDES_ORDERING
 
-Exact state-indexed variants may be added before decisive outcome inspection if required by the selected native design.
+## Ranking among eligible candidates
 
-## Promotion rule
+Rank only by:
 
-D02E cannot erase D02C or D02D.
+1. completeness at every graded level;
+2. automation/reproducibility;
+3. independence of scalar and organization observables;
+4. directness of scalar licensing;
+5. strength of controlled intervention;
+6. strength of native comparator;
+7. simplicity of a one-command reproduction.
 
-Any program-level CA-D007 update must include the full prospective record:
-- D02C null;
-- D02D indeterminate;
-- D02E result.
+Do not rank by:
+- organization-first appearance;
+- closeness to any chi boundary;
+- effect size after outcome inspection;
+- novelty narrative;
+- exceptional-point proximity;
+- apparent agreement with D02B.
 
-No single favorable D02E result automatically establishes a broad law.
+## Selection outcome
 
-## Next action
+Select the highest-ranked fully eligible candidate.
 
-Search candidate systems using only eligibility, metadata, source accessibility, intervention design, and prospective data-adequacy information.
+If no candidate satisfies every axis, record:
 
-Freeze the selected source and complete MFR-14 before decisive scalar/organization values are inspected.
+NO_ELIGIBLE_D02E_SYSTEM
+
+and do not lower the gate.
+
+## Evidence ceiling
+
+D02E is a prospective domain-specific physical test of CA-D007.
+
+A single supportive D02E result would not establish universality or a program-level added-value claim.

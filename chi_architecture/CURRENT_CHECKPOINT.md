@@ -3,24 +3,38 @@
 **Checkpoint ID:** D02E-CP0-CANDIDATE-SELECTION-FROZEN  
 **Date:** 2026-09-23  
 **Branch:** chi-architecture-p0  
-**Authority:** SymC GOM v0.8.6
+**Protocol:** SymC GOM v0.8.6
 
-## STATUS
+STATUS
 
-D02E is open as the third prospective test of CA-D007.
+D02E candidate selection criteria are frozen before decisive candidate outcome inspection.
 
-Candidate selection is frozen in:
+CURRENT GATE
+
+Find a third prospective CA-D007 system that fixes D02C's no-change power problem and D02D's completeness/overlap problem without selecting on relative onset direction.
+
+NEXT ACTION
+
+Screen public physical datasets against:
 
 chi_architecture/d02e/D02E_CANDIDATE_SELECTION_FREEZE_v0.1.md
 
-## CURRENT GATE
+WHY
 
-Identify an untouched graded physical system that solves D02D's prospective completeness failure without inspecting the desired relative onset ordering.
+CA-D007 currently has zero prospective supporting tests, one prospective null, and one prospective indeterminate test. The next experiment must improve prospective identifiability rather than merely repeat the same failure modes.
 
-## NEXT ACTION
+ACTIVE EXECUTION
 
-Search public literature/data repositories for candidates satisfying all eight frozen eligibility axes.
+Public literature/data search may proceed using methods, metadata, schema, and data-availability information. Relative scalar-versus-organization onset values remain off-limits until a candidate is frozen.
 
-## USER ACTION
+USER ACTION
 
-None.
+NONE.
+
+SUCCESS CONDITION
+
+One candidate satisfies all eight eligibility axes and is frozen with exact source identity before decisive outcome inspection.
+
+FAILURE BRANCH
+
+If no candidate satisfies the frozen gate, record NO_ELIGIBLE_D02E_SYSTEM. Do not relax the criteria.
