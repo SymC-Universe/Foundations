@@ -71,8 +71,6 @@ def percentile(values, q):
 
 def mode_groups(headers):
     groups = defaultdict(set)
-    # Accept source naming such as freq_mode_01_Hz, damping_mode_01,
-    # modal_complexity_factor_mode_01, and phi_mode_01_*.
     pattern = re.compile(r"(?:^|_)mode_?(\\d{1,2})(?:_|$)", re.I)
     for h in headers:
         low = h.lower()
