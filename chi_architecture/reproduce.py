@@ -26,6 +26,7 @@ from d02a_physical_v02 import run_d02a_v02  # noqa: E402
 from d02b_four_bolt import run_d02b  # noqa: E402
 from d02c_wind_blade import run_d02c  # noqa: E402
 from d02d_lumo import run_d02d  # noqa: E402
+from d02e_jacket import run_d02e  # noqa: E402
 
 
 def sha256(path: Path) -> str:
@@ -604,11 +605,109 @@ def reproduce_d02d(skip_tests: bool = False) -> dict:
     })
     return result
 
+
+def d02e_result_card(result: dict) -> str:
+    lines = [
+        "# D02E Offshore-Jacket Prospective Result Card v0.1",
+        "",
+        f"**Status:** {result['status']}",
+        f"**Claim ID:** {result['claim_id']}",
+        f"**Primary family:** {result['primary_family_hz']:.9g} Hz",
+        f"**Outcome:** {result['outcome']}",
+        f"**Native-toolkit verdict:** {result['native_toolkit_verdict']}",
+        "",
+        "## Frozen location orderings",
+        "",
+    ]
+    for location in ("level_1", "level_2", "level_3", "level_4"):
+        item = result["locations"][location]
+        lines.append(f"- {location}: {item['ordering']['outcome']}")
+        for state in ("9Nm", "6Nm", "NoBolt"):
+            s = item["states"][state]
+            lines.append(
+                f"  - {state}: scalar={s['scalar_status']} "
+                f"(n={s['scalar_admitted_n']}), organization={s['organization_status']} "
+                f"(n={s['organization']['valid_n']})"
+            )
+    lines.extend([
+        "",
+        "## Scope",
+        "",
+        "This is the prospectively frozen D02E primary A_1 test of CA-D007. "
+        "Secondary mode and alternate excitation amplitudes cannot alter the primary verdict.",
+        "",
+    ])
+    return "\n".join(lines)
+
+
+def reproduce_d02e(skip_tests: bool = False) -> dict:
+    if not skip_tests:
+        run_pytest("chi_architecture/tests/test_d02e_jacket.py")
+
+    result = run_d02e()
+
+    RESULTS.mkdir(parents=True, exist_ok=True)
+    full = RESULTS / "D02E_JACKET_PROSPECTIVE_RESULT_v0.1.json"
+    summary = RESULTS / "D02E_SUMMARY_v0.1.json"
+    card = RESULTS / "D02E_RESULT_CARD_v0.1.md"
+    environment = RESULTS / "D02E_ENVIRONMENT_v0.1.txt"
+    manifest = RESULTS / "D02E_REPRO_MANIFEST_v0.1.json"
+
+    write_json(full, result)
+    write_json(summary, {
+        "schema": result["schema"],
+        "status": result["status"],
+        "claim_id": result["claim_id"],
+        "primary_family_hz": result["primary_family_hz"],
+        "healthy": result["healthy"],
+        "location_orderings": result["location_orderings"],
+        "outcome": result["outcome"],
+        "native_toolkit_verdict": result["native_toolkit_verdict"],
+        "source_counts": result["source_counts"],
+        "scope": result["scope"],
+    })
+    card.write_text(d02e_result_card(result), encoding="utf-8")
+    environment.write_text(
+        "\n".join([
+            f"python={platform.python_version()}",
+            f"implementation={platform.python_implementation()}",
+            f"platform={platform.platform()}",
+            f"numpy={np.__version__}",
+            f"scipy={scipy.__version__}",
+        ]) + "\n",
+        encoding="utf-8",
+    )
+
+    tracked = [
+        ROOT / "d02e" / "D02E_CANDIDATE_SELECTION_FREEZE_v0.1.md",
+        ROOT / "d02e" / "D02E_CANDIDATE_SELECTION_RECORD_v0.1.md",
+        ROOT / "d02e" / "D02E_JACKET_MFR14_v0.1.md",
+        ROOT / "d02e" / "D02E_FINAL_PREEXECUTION_FREEZE_v0.1.md",
+        ROOT / "results" / "D02E_HEALTHY_SELECTION_ARCHIVE_v0.1.json",
+        ROOT / "src" / "d02e_jacket.py",
+        ROOT / "tests" / "test_d02e_jacket.py",
+        Path(__file__).resolve(),
+        full,
+        summary,
+        card,
+        environment,
+    ]
+    write_json(manifest, {
+        "schema": "d02e-repro-manifest-v0.1",
+        "entrypoint": "python chi_architecture/reproduce.py d02e",
+        "files": {
+            str(p.relative_to(ROOT.parent)): sha256(p)
+            for p in tracked
+        },
+        "source_files": result["source_files"],
+    })
+    return result
+
 def main() -> None:
     parser = argparse.ArgumentParser(
         description="Single-entry reproducibility interface for Chi Architecture experiments."
     )
-    parser.add_argument("experiment", choices=["d01c", "d02a", "d02b", "d02c", "d02d"])
+    parser.add_argument("experiment", choices=["d01c", "d02a", "d02b", "d02c", "d02d", "d02e"])
     parser.add_argument(
         "--skip-tests",
         action="store_true",
@@ -654,7 +753,7 @@ def main() -> None:
             "result_card": "chi_architecture/results/D02C_RESULT_CARD_v0.1.md",
             "manifest": "chi_architecture/results/D02C_REPRO_MANIFEST_v0.1.json",
         }, indent=2))
-    else:
+    elif args.experiment == "d02d":
         result = reproduce_d02d(skip_tests=args.skip_tests)
         print(json.dumps({
             "status": result["status"],
@@ -663,6 +762,17 @@ def main() -> None:
             "outcome": result["outcome"],
             "result_card": "chi_architecture/results/D02D_RESULT_CARD_v0.1.md",
             "manifest": "chi_architecture/results/D02D_REPRO_MANIFEST_v0.1.json",
+        }, indent=2))
+    else:
+        result = reproduce_d02e(skip_tests=args.skip_tests)
+        print(json.dumps({
+            "status": result["status"],
+            "claim_id": result["claim_id"],
+            "primary_family_hz": result["primary_family_hz"],
+            "location_orderings": result["location_orderings"],
+            "outcome": result["outcome"],
+            "result_card": "chi_architecture/results/D02E_RESULT_CARD_v0.1.md",
+            "manifest": "chi_architecture/results/D02E_REPRO_MANIFEST_v0.1.json",
         }, indent=2))
 
 
