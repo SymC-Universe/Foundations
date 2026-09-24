@@ -87,7 +87,7 @@ def response_matrix(header,data):
     names=[]
     for i,name in enumerate(header):
         low=name.strip().lower()
-        if low in {"time","timestamp","t","index","sample"}:
+        if low in {"","time","timestamp","t","index","sample","unnamed: 0"}:
             continue
         keep.append(i); names.append(name)
     x=data[:,keep]
