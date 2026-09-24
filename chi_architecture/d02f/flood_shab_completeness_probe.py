@@ -71,22 +71,16 @@ def percentile(values, q):
 
 def mode_groups(headers):
     groups = defaultdict(set)
-    patterns = [
-        re.compile(r"^(mode\d+)[_\-]", re.I),
-        re.compile(r"^(m\d+)[_\-]", re.I),
-        re.compile(r".*?(mode[_\-]?\d+).*", re.I),
-    ]
+    # Accept source naming such as freq_mode_01_Hz, damping_mode_01,
+    # modal_complexity_factor_mode_01, and phi_mode_01_*.
+    pattern = re.compile(r"(?:^|_)mode_?(\\d{1,2})(?:_|$)", re.I)
     for h in headers:
         low = h.lower()
-        if not any(k in low for k in ("frequency", "damping", "mcf", "shape", "real", "imag")):
+        if not any(k in low for k in ("freq", "damp", "mcf", "complexity", "phi_", "shape", "real", "imag")):
             continue
-        key = None
-        for p in patterns:
-            m = p.match(h)
-            if m:
-                key = m.group(1).lower().replace("-", "_")
-                break
-        if key:
+        m = pattern.search(h)
+        if m:
+            key = f"mode_{int(m.group(1)):02d}"
             groups[key].add(h)
     return {k: sorted(v) for k, v in sorted(groups.items())}
 
