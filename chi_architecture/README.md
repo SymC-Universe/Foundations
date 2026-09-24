@@ -404,10 +404,44 @@ The D02E candidate screen therefore requires, before decisive ordering inspectio
 
 This is a power and identifiability correction. It is not a favorable-outcome filter.
 
+## D02E prospective offshore-jacket test: active
+
+D02E is the next prospective CA-D007 test after the D02C null and D02D indeterminate result.
+
+Selected system:
+- scaled offshore-jacket bolt-loosening benchmark;
+- dataset DOI `10.34810/data1011`, Dataverse version 3.0;
+- fixed operational slice: A_1 white-noise excitation;
+- graded states: Healthy 12 Nm -> 9 Nm -> 6 Nm -> NoBolt;
+- four physical bolt locations;
+- 20 original CSV replicates per state;
+- 24 acceleration-response channels.
+
+The healthy-only baseline gate is complete and archived before damaged values were opened.
+
+Frozen primary family:
+- 8.7890625 Hz;
+- 17/20 healthy half-power chi estimates admitted;
+- median healthy chi = 0.028856666306254334.
+
+The final damaged-state implementation rules are frozen in `d02e/D02E_FINAL_PREEXECUTION_FREEZE_v0.1.md`.
+
+Reviewer command:
+
+`python chi_architecture/reproduce.py d02e`
+
+The command downloads only the DOI-locked original CSV files required by the frozen A_1 slice, verifies source MD5 values, applies the fixed FDD tracking window, half-power chi, complex mode-shape organization metric, bootstrap/leave-one-out thresholds, completeness logic, and 3-of-4 adjudication.
+
+D02E is specifically designed to correct both prior prospective failure modes without selecting on the desired ordering:
+- D02C lacked detectable movement in either frozen observable;
+- D02D lacked enough matched graded data to identify the ordering.
+
+D02E therefore requires both measurable native intervention power and complete matched operation before execution, while leaving relative scalar-versus-organization onset unseen.
+
 ## Project control
 
 **STATUS:** D01A-D01C and D02A-D02D are complete. D02C is a prospective null and D02D is prospectively indeterminate. CA-D007 remains unconfirmed with unpaid promotion debt.  
-**CURRENT GATE:** identify D02E using prospective data-adequacy criteria that solve D02D's environmental-overlap failure without inspecting the relative scalar-versus-organization onset.  
-**NEXT ACTION:** freeze D02E candidate eligibility around graded intervention, licensed local scalar, independent organization observable, automated public data, and pre-verifiable control/intervention environmental overlap sufficient for the planned completeness floor.  
-**WHY:** D02C lacked detectable change and D02D lacked enough matched graded data. The next experiment must improve prospective power without selecting on the desired ordering.  
+**CURRENT GATE:** execute the already-selected and frozen D02E offshore-jacket A_1 analysis without altering the 8.7890625 Hz primary family or MFR-14 decision rules.  
+**NEXT ACTION:** run the dedicated D02E archival workflow, archive the result before interpretation, then apply the frozen 3-of-4 support/adverse rule.  
+**WHY:** D02E now has a healthy-only selected primary family, 20 matched replicates at every graded state/location, fixed excitation, and automated public access, directly addressing the D02C power and D02D completeness failures without inspecting the desired ordering.  
 **USER ACTION:** none. Public-source candidate search and preregistration can proceed autonomously.

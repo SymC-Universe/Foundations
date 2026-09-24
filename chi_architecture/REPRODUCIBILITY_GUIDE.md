@@ -438,3 +438,42 @@ REQUIRE native comparator
 **Expected output:** either a frozen D02E candidate/source contract satisfying every requirement above, or the explicit status `NO_ELIGIBLE_D02E_SYSTEM`. No criterion is relaxed because a candidate appears scientifically attractive.
 
 This opening note is selection provenance, not a substitute for the eventual executable D02E V-section.
+
+
+## D02E prospective offshore-jacket reproduction
+
+D02E is the third prospective CA-D007 test and directly incorporates the power/identifiability lessons from D02C and D02D.
+
+The healthy-only baseline selection is archived before any damaged A_1 response file is used:
+
+- workflow run: `35944132810`
+- artifact: `d02e-healthy-baseline-selection-v01`
+- artifact ID: `10786042762`
+- artifact digest: `sha256:ed50d5fd65b032721c5f20be928514bbba859bdf13b9c07007a8d92305038d5c`
+- result SHA-256: `8f4f554439bc520940f24b2b70f704c9a48e7c78c4c9828643631f442058f3bc`
+- selected primary family: `8.7890625 Hz`
+- admitted healthy chi replicates: `17/20`
+
+Reviewer command:
+
+```bash
+git clone https://github.com/SymC-Universe/Foundations.git
+cd Foundations
+git checkout chi-architecture-p0
+python -m pip install -r chi_architecture/requirements-p0.txt
+python chi_architecture/reproduce.py d02e
+```
+
+The one command automatically retrieves the frozen A_1 original CSV slice from DOI `10.34810/data1011` and analyzes:
+
+- Healthy 12 Nm, 20 replicates;
+- 9 Nm, four locations x 20 replicates;
+- 6 Nm, four locations x 20 replicates;
+- NoBolt, four locations x 20 replicates.
+
+Dataverse-generated `.tab` derivatives are excluded.
+
+The implementation reproduces the healthy 8.7890625 Hz family, applies the fixed +/-5% tracking window, half-power modal chi, complex FDD mode-shape dissimilarity, 10,000-resample bootstrap scalar intervals, healthy leave-one-out organization threshold, >=16/20 completeness floors, onset blocking after an earlier non-identifiable state, and the frozen symmetric 3-of-4 domain adjudication.
+
+Reviewers do not choose damage locations, mode families, excitation levels, thresholds, channel subsets, or replacement estimators.
+
