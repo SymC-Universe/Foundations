@@ -27,6 +27,7 @@ from d02b_four_bolt import run_d02b  # noqa: E402
 from d02c_wind_blade import run_d02c  # noqa: E402
 from d02d_lumo import run_d02d  # noqa: E402
 from d02e_jacket import run_d02e  # noqa: E402
+from d02f_flood_shab import run_d02f  # noqa: E402
 
 
 def sha256(path: Path) -> str:
@@ -703,11 +704,115 @@ def reproduce_d02e(skip_tests: bool = False) -> dict:
     })
     return result
 
+
+def d02f_result_card(result: dict) -> str:
+    p = result["primary"]
+    lines = [
+        "# D02F FLOOD-SHAB Prospective Result Card v0.1",
+        "",
+        f"**Status:** {result['status']}",
+        f"**Claim ID:** {result['claim_id']}",
+        f"**Primary mode:** {p['mode']}",
+        f"**Primary outcome:** {result['outcome']}",
+        f"**CA-D007 support:** {result['ca_d007_support']}",
+        f"**Adverse ordering:** {result['ca_d007_adverse_ordering']}",
+        f"**Native-toolkit verdict:** {result['native_toolkit_verdict']}",
+        "",
+        "## Frozen event-bin adjudication",
+        "",
+    ]
+    for level in ("E1_LOW", "E2", "E3", "E4_HIGH"):
+        b = p["bins"][level]
+        lines.append(
+            f"- {level}: scalar={b['scalar_status']} (n={b['valid_rows']}), "
+            f"organization={b['organization_status']} (n={b['valid_rows']})"
+        )
+    lines.extend([
+        "",
+        "## Onset",
+        "",
+        f"- t_chi: {p['ordering']['t_chi']}",
+        f"- t_org: {p['ordering']['t_org']}",
+        "",
+        "## Scope",
+        "",
+        "This is the prospectively frozen D02F primary mode-01 test of CA-D007. "
+        "Modes 2 and 3 are secondary robustness only and cannot change the primary verdict.",
+        "",
+    ])
+    return "\n".join(lines)
+
+
+def reproduce_d02f(skip_tests: bool = False) -> dict:
+    if not skip_tests:
+        run_pytest("chi_architecture/tests/test_d02f_flood_shab.py")
+
+    cache = ROOT / "cache" / "d02f"
+    result = run_d02f(cache)
+
+    RESULTS.mkdir(parents=True, exist_ok=True)
+    full = RESULTS / "D02F_FLOOD_SHAB_PROSPECTIVE_RESULT_v0.1.json"
+    summary = RESULTS / "D02F_SUMMARY_v0.1.json"
+    card = RESULTS / "D02F_RESULT_CARD_v0.1.md"
+    environment = RESULTS / "D02F_ENVIRONMENT_v0.1.txt"
+    manifest = RESULTS / "D02F_REPRO_MANIFEST_v0.1.json"
+
+    write_json(full, result)
+    write_json(summary, {
+        "schema": result["schema"],
+        "status": result["status"],
+        "claim_id": result["claim_id"],
+        "water_bin_edges_m": result["water_bin_edges_m"],
+        "native_intervention_power_gate": result["native_intervention_power_gate"],
+        "primary": result["primary"],
+        "secondary_robustness": result["secondary_robustness"],
+        "outcome": result["outcome"],
+        "ca_d007_support": result["ca_d007_support"],
+        "ca_d007_adverse_ordering": result["ca_d007_adverse_ordering"],
+        "native_toolkit_verdict": result["native_toolkit_verdict"],
+        "source_files": result["source_files"],
+        "scope": result["scope"],
+    })
+    card.write_text(d02f_result_card(result), encoding="utf-8")
+    environment.write_text(
+        "\n".join([
+            f"python={platform.python_version()}",
+            f"implementation={platform.python_implementation()}",
+            f"platform={platform.platform()}",
+            f"numpy={np.__version__}",
+            f"scipy={scipy.__version__}",
+        ]) + "\n",
+        encoding="utf-8",
+    )
+
+    tracked = [
+        ROOT / "d02f" / "D02F_CANDIDATE_SELECTION_FREEZE_v0.1.md",
+        ROOT / "d02f" / "D02F_CANDIDATE_SELECTION_RECORD_v0.1.md",
+        ROOT / "d02f" / "D02F_FLOOD_SHAB_MFR14_v0.1.md",
+        ROOT / "src" / "d02f_flood_shab.py",
+        ROOT / "tests" / "test_d02f_flood_shab.py",
+        Path(__file__).resolve(),
+        full,
+        summary,
+        card,
+        environment,
+    ]
+    write_json(manifest, {
+        "schema": "d02f-repro-manifest-v0.1",
+        "entrypoint": "python chi_architecture/reproduce.py d02f",
+        "files": {
+            str(p.relative_to(ROOT.parent)): sha256(p)
+            for p in tracked
+        },
+        "source_files": result["source_files"],
+    })
+    return result
+
 def main() -> None:
     parser = argparse.ArgumentParser(
         description="Single-entry reproducibility interface for Chi Architecture experiments."
     )
-    parser.add_argument("experiment", choices=["d01c", "d02a", "d02b", "d02c", "d02d", "d02e"])
+    parser.add_argument("experiment", choices=["d01c", "d02a", "d02b", "d02c", "d02d", "d02e", "d02f"])
     parser.add_argument(
         "--skip-tests",
         action="store_true",
@@ -763,7 +868,7 @@ def main() -> None:
             "result_card": "chi_architecture/results/D02D_RESULT_CARD_v0.1.md",
             "manifest": "chi_architecture/results/D02D_REPRO_MANIFEST_v0.1.json",
         }, indent=2))
-    else:
+    elif args.experiment == "d02e":
         result = reproduce_d02e(skip_tests=args.skip_tests)
         print(json.dumps({
             "status": result["status"],
@@ -773,6 +878,18 @@ def main() -> None:
             "outcome": result["outcome"],
             "result_card": "chi_architecture/results/D02E_RESULT_CARD_v0.1.md",
             "manifest": "chi_architecture/results/D02E_REPRO_MANIFEST_v0.1.json",
+        }, indent=2))
+    else:
+        result = reproduce_d02f(skip_tests=args.skip_tests)
+        print(json.dumps({
+            "status": result["status"],
+            "claim_id": result["claim_id"],
+            "primary_mode": result["primary"]["mode"],
+            "outcome": result["outcome"],
+            "ca_d007_support": result["ca_d007_support"],
+            "ca_d007_adverse_ordering": result["ca_d007_adverse_ordering"],
+            "result_card": "chi_architecture/results/D02F_RESULT_CARD_v0.1.md",
+            "manifest": "chi_architecture/results/D02F_REPRO_MANIFEST_v0.1.json",
         }, indent=2))
 
 

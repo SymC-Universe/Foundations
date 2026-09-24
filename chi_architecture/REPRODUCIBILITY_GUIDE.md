@@ -534,3 +534,44 @@ This is an identifiability correction, not a favorable-outcome filter.
 Reviewer-facing target remains:
 
 `python chi_architecture/reproduce.py d02f`
+
+
+## D02F prospective FLOOD-SHAB reproduction
+
+STATUS
+
+D02F is frozen under `D02F_FLOOD_SHAB_MFR14_v0.1.md` and executes through the common reviewer interface.
+
+CURRENT GATE
+
+First decisive execution must be archived before interpretation.
+
+REPRODUCTION
+
+```bash
+git clone https://github.com/SymC-Universe/Foundations.git
+cd Foundations
+git checkout chi-architecture-p0
+python -m pip install -r chi_architecture/requirements-p0.txt
+python chi_architecture/reproduce.py d02f
+```
+
+WHAT THE COMMAND DOES
+
+The wrapper automatically:
+- downloads and MD5-verifies the DOI-locked FLOOD-SHAB CSV, data dictionary, mapping, and README;
+- reconstructs the frozen E1-E4 water-level strata;
+- uses source-reported modal damping ratio as local chi;
+- constructs phase-invariant complex mode-shape organization;
+- conditions each event record on 30 matched pre-event controls using the frozen temperature, wind, and operational-intensity covariates;
+- executes the 10,000-resample frozen bin-level onset test;
+- reports mode 1 as primary and modes 2-3 as secondary robustness only;
+- writes one compact result bundle and SHA-256 manifest.
+
+WHY
+
+D02F directly addresses D02E's scalar-admission failure by using a source-reported damping ratio with pre-verified same-record complex mode-shape completeness across every event-water stratum.
+
+USER ACTION
+
+NONE.

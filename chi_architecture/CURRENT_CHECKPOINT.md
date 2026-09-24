@@ -1,29 +1,25 @@
 # Chi Architecture Active Checkpoint
 
-**Checkpoint ID:** D02F-CP2-CANDIDATE-AND-MFR14-FROZEN  
+**Checkpoint ID:** D02F-CP3-ONE-COMMAND-IMPLEMENTED-PREEXECUTION  
 **Date:** 2026-09-24  
 **Branch:** chi-architecture-p0  
 **Protocol:** SymC GOM v0.8.6
 
 STATUS
 
-FLOOD-SHAB is selected and D02F MFR-14 is frozen before decisive modal values.
+D02F MFR-14, analyzer, regression tests, one-command reviewer entrypoint, and dedicated archival workflow are implemented.
 
 CURRENT GATE
 
-Implement the frozen matched-EOV prospective analysis without changing scientific rules.
+Execute the frozen D02F test once and archive the result before scientific interpretation.
 
 NEXT ACTION
 
-Build:
-- chi_architecture/src/d02f_flood_shab.py
-- regression tests;
-- python chi_architecture/reproduce.py d02f;
-- dedicated archival workflow.
+Observe the dedicated GitHub Actions workflow triggered by this implementation commit.
 
 WHY
 
-The candidate clears scalar robustness, organization completeness, intervention power, automated access, and unseen relative onset.
+The science is frozen. Only mechanical/parser failures may be repaired from this point.
 
 USER ACTION
 
@@ -31,8 +27,18 @@ NONE.
 
 SUCCESS CONDITION
 
-First successful archived decisive D02F run under the frozen MFR-14.
+A successful D02F archival workflow with source hashes, result hashes, artifact digest, and frozen primary mode-01 outcome.
 
 FAILURE BRANCH
 
-Mechanical/parser failures may be repaired. Scientific rules may not be changed after decisive execution begins.
+Repair only implementation defects. Do not alter:
+- water-bin edges;
+- primary mode;
+- EOV covariates;
+- k=30 matching;
+- maximum match distance 3.0;
+- >=10 row completeness floor;
+- bootstrap rule;
+- scalar/organization margins;
+- onset logic;
+- MFR-14 consequence table.
