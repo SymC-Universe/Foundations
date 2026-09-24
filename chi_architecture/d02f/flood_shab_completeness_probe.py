@@ -11,6 +11,7 @@ from datetime import datetime
 from pathlib import Path
 
 import requests
+from scipy.stats import spearmanr
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -229,6 +230,39 @@ def main():
             if to_float(r.get(cov, "")) is not None:
                 pre_cov_nonmissing[cov] += 1
 
+    native_response_cols = [
+        h for h in headers
+        if h.startswith("rms_")
+        or h.startswith("loadcell_")
+        or "displacement" in h.lower()
+        or h.lower().startswith("disp_")
+    ]
+    native_power = []
+    for col in native_response_cols:
+        xs, ys = [], []
+        for r in event_rows:
+            x = to_float(r.get(water_col, ""))
+            y = to_float(r.get(col, ""))
+            if x is not None and y is not None:
+                xs.append(x)
+                ys.append(y)
+        if len(xs) >= 20 and len(set(xs)) >= 3:
+            rho, p = spearmanr(xs, ys)
+            if math.isfinite(float(rho)) and math.isfinite(float(p)):
+                native_power.append({
+                    "field": col,
+                    "n": len(xs),
+                    "abs_spearman_rho": abs(float(rho)),
+                    "p_value": float(p),
+                })
+    native_power.sort(key=lambda x: (-x["abs_spearman_rho"], x["p_value"], x["field"]))
+    strongest_native_power = native_power[0] if native_power else None
+    native_power_pass = bool(
+        strongest_native_power
+        and strongest_native_power["abs_spearman_rho"] >= 0.20
+        and strongest_native_power["p_value"] < 0.01
+    )
+
     result = {
         "schema": "d02f-flood-shab-completeness-probe-v0.1",
         "status": "METADATA_AND_MISSINGNESS_ONLY_NO_DAMPING_OR_MODE_SHAPE_VALUES_EMITTED",
@@ -251,6 +285,14 @@ def main():
             "q75": q75,
             "max": wmax,
             "probe_bins": ["Q1_LOW","Q2","Q3","Q4_HIGH"],
+        },
+        "native_intervention_power_gate": {
+            "allowed_response_fields": native_response_cols,
+            "criterion": "at least one non-modal native response has abs Spearman rho >=0.20 with p<0.01 versus event water level",
+            "pass": native_power_pass,
+            "strongest_response": strongest_native_power,
+            "all_tested_summaries": native_power,
+            "guard": "No modal frequency, damping, MCF, or mode-shape values are used in this power gate.",
         },
         "event_only_completeness": {
             "event_row_count": len(event_rows),
