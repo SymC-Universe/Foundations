@@ -174,6 +174,61 @@ def main():
             if scalar_ok and org_ok:
                 per_bin_complete[b][mode] += 1
 
+    def truthy(v):
+        return str(v or "").strip().lower() in {"1","true","yes","y"}
+
+    event_rows = [r for r in rows if truthy(r.get("april_2026_hydrometric_event_window"))]
+    pre_rows = [r for r in rows if truthy(r.get("pre_event_window"))]
+
+    event_water = [to_float(r.get(water_col, "")) for r in event_rows]
+    event_water = [v for v in event_water if v is not None]
+    event_q = {
+        "q25": percentile(event_water, 0.25),
+        "median": percentile(event_water, 0.50),
+        "q75": percentile(event_water, 0.75),
+        "min": min(event_water) if event_water else None,
+        "max": max(event_water) if event_water else None,
+    }
+
+    def event_bin(v):
+        if v is None or event_q["q25"] is None:
+            return None
+        if v <= event_q["q25"]:
+            return "E1_LOW"
+        if v <= event_q["median"]:
+            return "E2"
+        if v <= event_q["q75"]:
+            return "E3"
+        return "E4_HIGH"
+
+    event_counts = defaultdict(int)
+    event_joint = defaultdict(lambda: defaultdict(int))
+    covariates = ["temp_air_C", "wind_speed_kmh", "rms_AM1Z_microg", "rms_AM2Z_microg"]
+    event_cov_nonmissing = defaultdict(int)
+    pre_cov_nonmissing = defaultdict(int)
+
+    for r in event_rows:
+        b = event_bin(to_float(r.get(water_col, "")))
+        if b is None:
+            continue
+        event_counts[b] += 1
+        for cov in covariates:
+            if to_float(r.get(cov, "")) is not None:
+                event_cov_nonmissing[cov] += 1
+        for mode, cols in groups.items():
+            damping = [x for x in cols if "damp" in x.lower()]
+            freq = [x for x in cols if "freq" in x.lower()]
+            org = [x for x in cols if any(k in x.lower() for k in ("mcf", "real", "imag", "shape"))]
+            scalar_ok = bool(damping and freq) and all(to_float(r.get(x, "")) is not None for x in damping + freq)
+            org_ok = bool(org) and all(to_float(r.get(x, "")) is not None for x in org)
+            if scalar_ok and org_ok:
+                event_joint[b][mode] += 1
+
+    for r in pre_rows:
+        for cov in covariates:
+            if to_float(r.get(cov, "")) is not None:
+                pre_cov_nonmissing[cov] += 1
+
     result = {
         "schema": "d02f-flood-shab-completeness-probe-v0.1",
         "status": "METADATA_AND_MISSINGNESS_ONLY_NO_DAMPING_OR_MODE_SHAPE_VALUES_EMITTED",
@@ -196,6 +251,21 @@ def main():
             "q75": q75,
             "max": wmax,
             "probe_bins": ["Q1_LOW","Q2","Q3","Q4_HIGH"],
+        },
+        "event_only_completeness": {
+            "event_row_count": len(event_rows),
+            "event_water_nonmissing_count": len(event_water),
+            "event_water_summary": event_q,
+            "event_bins": {
+                b: {
+                    "row_count": event_counts[b],
+                    "joint_nonmissing_by_mode": dict(event_joint[b]),
+                }
+                for b in ("E1_LOW","E2","E3","E4_HIGH")
+            },
+            "event_covariate_nonmissing": dict(event_cov_nonmissing),
+            "pre_event_row_count": len(pre_rows),
+            "pre_event_covariate_nonmissing": dict(pre_cov_nonmissing),
         },
         "probe_completeness": {
             b: {
