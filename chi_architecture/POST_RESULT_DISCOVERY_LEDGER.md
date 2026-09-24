@@ -403,7 +403,29 @@ Prospective record after D02E:
 
 Another prospective test is justified only if candidate selection demonstrates perturbation-robust scalar and organization measurability across every required graded level before relative onset is inspected.
 
-**Current promotion status:** UNPAID_PROMOTION_DEBT / ZERO_PROSPECTIVE_SUPPORT / SCALAR_IDENTIFIABILITY_LIMIT
+**Fourth prospective test update — D02F (2026-09-24):**
+
+D02F used the untouched FLOOD-SHAB cable-stayed-bridge hydrometric event with source-reported damping ratio, same-record complex mode shapes, preverified event-level completeness, and frozen EOV matching.
+
+The primary mode retained 12, 12, 13, and 14 valid matched-EOV rows across E1-E4, all above the frozen >=10 floor.
+
+Frozen primary result:
+`NEITHER_CHANGES`.
+
+Thus D02F is:
+`PROSPECTIVE_NULL / NO_SUPPORT / NO_ADVERSE_ORDERING`.
+
+D02F solved the scalar-admission limitation measured in D02E. The second prospective null therefore cannot be attributed to the same scalar-identifiability failure.
+
+Prospective record after D02F:
+- support: 0;
+- null: 2;
+- indeterminate: 2;
+- adverse ordering: 0.
+
+A further test is justified only if candidate selection demonstrates power in at least one exact target observable before relative onset is inspected.
+
+**Current promotion status:** UNPAID_PROMOTION_DEBT / SECOND_PROSPECTIVE_NULL / ZERO_PROSPECTIVE_SUPPORT
 
 ---
 

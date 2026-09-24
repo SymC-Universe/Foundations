@@ -1,25 +1,26 @@
 # Chi Architecture Active Checkpoint
 
-**Checkpoint ID:** D02F-CP4-EXECUTED-BEFORE-INTERPRETATION  
+**Checkpoint ID:** D02G-CP0-TARGET-POWER-SELECTION-FROZEN  
 **Date:** 2026-09-24  
 **Branch:** chi-architecture-p0  
 **Protocol:** SymC GOM v0.8.6
 
 STATUS
 
-The first frozen D02F decisive execution completed successfully and is archived before interpretation.
+D02F is closed as a prospective null. D02G candidate selection is opened under a stricter target-observable power gate.
 
 CURRENT GATE
 
-Apply the frozen MFR-14 consequence table to the archived result.
+Identify a new system where at least one exact decisive observable is independently known to change over a graded intervention, while relative scalar-versus-organization onset remains unseen.
 
 NEXT ACTION
 
-Read the primary mode-01 ordering, secondary robustness outcomes, bin-level completeness, and frozen margins. Then write the scientific readout without changing any analysis rule.
+Run completeness-ranked candidate search under:
+chi_architecture/d02g/D02G_CANDIDATE_SELECTION_FREEZE_v0.1.md
 
 WHY
 
-Archival sequencing is complete. Interpretation may now proceed without contaminating the execution record.
+D02F solved scalar robustness, completeness, EOV matching, and generic intervention power but neither decisive observable changed. Another test is justified only if it prospectively improves power in the actual scalar/organization endpoints.
 
 USER ACTION
 
@@ -27,16 +28,8 @@ NONE.
 
 SUCCESS CONDITION
 
-D02F closes as SUPPORT, ADVERSE, NULL, or INDETERMINATE exactly under the frozen MFR-14.
+D02G_CANDIDATE_SELECTED with every gate verified, or NO_ELIGIBLE_D02G_SYSTEM.
 
 FAILURE BRANCH
 
-Do not rerun, rebin, rematch, substitute modes, alter EOV covariates, or change thresholds to rescue any outcome.
-
-## Archive
-
-Workflow run: 36036875749  
-Artifact ID: 10824482673  
-Artifact digest: sha256:457977822e445009dda266765c56fc26758f7e6e84e1a28e705038ac52a46118  
-Full result SHA-256: 0cf6d223b4c788f9d9239009029558a46601dbfa30a47a12af8f71a8f9bb6919  
-Manifest SHA-256: 4bd6270a5e3b927622aa68063bea56782aca22df94cfbd222eeb03d3bc744196
+Do not accept generic response power as a substitute for target-observable power. Do not inspect relative onset during screening.

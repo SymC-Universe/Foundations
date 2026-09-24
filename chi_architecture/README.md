@@ -458,10 +458,46 @@ The D02F opening rule is now mirrored in the reproducibility guide: the experime
 
 The eventual reviewer interface remains `python chi_architecture/reproduce.py d02f`.
 
+## D02F prospective FLOOD-SHAB test: complete
+
+STATUS
+
+D02F completed as a clean prospective null.
+
+PRIMARY OUTCOME
+
+`NEITHER_CHANGES`.
+
+Mode 1 retained 12, 12, 13, and 14 valid matched-EOV rows across E1-E4, so this is not an identifiability failure.
+
+Both source-reported damping ratio and complex mode-shape organization remained inside their frozen matched-control envelopes at every level.
+
+CA-D007:
+- support: false;
+- adverse ordering: false.
+
+Prospective record:
+- support 0;
+- null 2;
+- indeterminate 2;
+- adverse 0.
+
+Native-toolkit verdict:
+`NATIVE_TOOLKIT_SUFFICIENT_NO_INCREMENTAL_VALUE`.
+
+The next test may proceed only as a target-observable power correction.
+
+See:
+- `D02F_FLOOD_SHAB_PROSPECTIVE_READOUT_v0.1.md`;
+- `d02f/D02F_FLOOD_SHAB_MFR14_v0.1.md`;
+- `results/D02F_ARCHIVAL_RECORD_v0.1.json`;
+- `results/D02F_INTERPRETED_SUMMARY_v0.1.json`;
+- `REPRODUCIBILITY_GUIDE.md`.
+
 ## Project control
 
-**STATUS:** D01A-D01C and D02A-D02E are complete. D02C is a prospective null; D02D and D02E are prospectively indeterminate. CA-D007 has zero prospective supporting tests and remains unconfirmed with unpaid promotion debt.  
-**CURRENT GATE:** any D02F candidate must resolve D02E's measured scalar-identifiability failure before selection; relative onset remains hidden.
-**NEXT ACTION:** screen D02F candidates for perturbation-robust direct damping/Q/linewidth/decay measurement plus independent organization and complete graded public data.
-**WHY:** D02E removed the prior power and matching problems but the half-power scalar lost admission under damage, preventing prospective onset adjudication.
+**STATUS:** D01A-D01C and D02A-D02F are complete. D02C is a prospective null; D02D and D02E are prospectively indeterminate. CA-D007 has zero prospective supporting tests and remains unconfirmed with unpaid promotion debt.  
+**CURRENT GATE:** any D02G candidate must demonstrate pre-result power in at least one exact target observable while relative onset remains hidden.
+**NEXT ACTION:** screen D02G candidates for perturbation-robust scalar and organization measurement plus independent evidence that the intervention changes at least one exact target observable.
+**WHY:** D02F solved scalar admission and completeness yet returned NEITHER_CHANGES; the remaining scientific limitation is target-observable power.
 **USER ACTION:** none. Public-source candidate search and preregistration can proceed autonomously.

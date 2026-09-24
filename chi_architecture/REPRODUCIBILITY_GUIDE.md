@@ -575,3 +575,37 @@ D02F directly addresses D02E's scalar-admission failure by using a source-report
 USER ACTION
 
 NONE.
+
+
+## D02F archived prospective execution
+
+STATUS
+
+D02F completed successfully and returned a clean prospective null.
+
+REFERENCE EXECUTION
+
+- execution commit: `558b46a77e0dd2a0709e75b541d20aed231a738e`;
+- GitHub Actions run: `36036875749`;
+- artifact: `chi-architecture-d02f-flood-shab-v01`;
+- artifact ID: `10824482673`;
+- artifact digest: `sha256:457977822e445009dda266765c56fc26758f7e6e84e1a28e705038ac52a46118`;
+- full result SHA-256: `0cf6d223b4c788f9d9239009029558a46601dbfa30a47a12af8f71a8f9bb6919`;
+- reproduction manifest SHA-256: `4bd6270a5e3b927622aa68063bea56782aca22df94cfbd222eeb03d3bc744196`.
+
+OUTCOME
+
+Primary mode 1:
+`NEITHER_CHANGES`.
+
+All four bins retained >=10 valid matched-EOV rows, so this is not an identifiability failure.
+
+REPRODUCTION
+
+```bash
+python chi_architecture/reproduce.py d02f
+```
+
+NEXT EXPERIMENT REQUIREMENT
+
+D02G may proceed only as a target-observable power correction. Before relative onset is inspected, independent native evidence must establish that the intervention range changes the exact licensed scalar or exact organization observable. Generic response power is no longer sufficient.

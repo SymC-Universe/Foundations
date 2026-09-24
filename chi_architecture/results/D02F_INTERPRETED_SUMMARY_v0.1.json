@@ -1,0 +1,18 @@
+{
+  "schema": "d02f-interpreted-summary-v0.1",
+  "status": "D02F_PROSPECTIVE_NULL_CLOSED",
+  "claim_id": "CA-D007-D02F-v0.1",
+  "primary_mode": "mode_01",
+  "primary_outcome": "NEITHER_CHANGES",
+  "ca_d007_support": false,
+  "adverse_ordering": false,
+  "valid_rows_by_bin": {"E1_LOW":12,"E2":12,"E3":13,"E4_HIGH":14},
+  "prospective_record_after_d02f": {
+    "supporting_tests": 0,
+    "null_tests": 2,
+    "indeterminate_tests": 2,
+    "adverse_ordering_tests": 0
+  },
+  "native_toolkit_verdict": "NATIVE_TOOLKIT_SUFFICIENT_NO_INCREMENTAL_VALUE",
+  "promotion_status": "UNPAID_PROMOTION_DEBT_SECOND_PROSPECTIVE_NULL"
+}
