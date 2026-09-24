@@ -1,27 +1,27 @@
 # Chi Architecture Active Checkpoint
 
-**Checkpoint ID:** D02F-CP0-CANDIDATE-SELECTION-FROZEN  
+**Checkpoint ID:** D02F-CP1-FLOOD-SHAB-COMPLETENESS-PROBE-IMPLEMENTED  
 **Date:** 2026-09-24  
 **Branch:** chi-architecture-p0  
 **Protocol:** SymC GOM v0.8.6
 
 STATUS
 
-D02E is closed. D02F candidate selection is now frozen before candidate outcome inspection.
+D02F candidate selection remains open. FLOOD-SHAB is a conditional candidate only.
 
 CURRENT GATE
 
-Identify a system that solves D02E's measured scalar-admission failure without revealing the relative scalar-versus-organization onset.
+Verify that source-reported damping plus independent complex mode-shape organization remain jointly available across at least three ordered water-level strata before candidate promotion.
 
 NEXT ACTION
 
-Run completeness-ranked literature/data search under:
+Run the metadata/missingness-only completeness workflow:
 
-chi_architecture/d02f/D02F_CANDIDATE_SELECTION_FREEZE_v0.1.md
+.github/workflows/chi-architecture-d02f-flood-shab-probe.yml
 
 WHY
 
-CA-D007 currently has zero prospective supporting tests. Another test is justified only if it improves measured identifiability rather than merely seeking a favorable result.
+D02F exists to solve D02E's scalar-admission failure. Candidate promotion is not allowed until perturbation-robust scalar completeness is demonstrated without reading relative onset trajectories.
 
 USER ACTION
 
@@ -29,8 +29,8 @@ NONE.
 
 SUCCESS CONDITION
 
-D02F_CANDIDATE_SELECTED with every eligibility axis verified, or explicit NO_ELIGIBLE_D02F_SYSTEM.
+FLOOD-SHAB clears all completeness axes and proceeds to a frozen candidate/source contract, or is rejected with an explicit D02F eligibility failure.
 
 FAILURE BRANCH
 
-Do not relax scalar robustness, organization completeness, automated access, or unseen-relative-onset requirements.
+Do not relax completeness floors, water-level strata, scalar directness, organization independence, or automated-access requirements.

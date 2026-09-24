@@ -1,0 +1,48 @@
+name: D02F FLOOD-SHAB Completeness Probe
+
+on:
+  push:
+    branches:
+      - chi-architecture-p0
+    paths:
+      - "chi_architecture/d02f/flood_shab_completeness_probe.py"
+      - "chi_architecture/d02f/D02F_CANDIDATE_SELECTION_FREEZE_v0.1.md"
+      - ".github/workflows/chi-architecture-d02f-flood-shab-probe.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: "3.12.14"
+      - name: Install dependencies
+        run: |
+          python -m pip install --disable-pip-version-check -r chi_architecture/requirements-p0.txt
+          python -m pip check
+      - name: Run metadata-only completeness probe
+        run: python chi_architecture/d02f/flood_shab_completeness_probe.py
+      - name: Guard no decisive values
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("chi_architecture/results/D02F_FLOOD_SHAB_COMPLETENESS_PROBE_v0.1.json")
+          r=json.loads(p.read_text())
+          assert r["status"]=="METADATA_AND_MISSINGNESS_ONLY_NO_DAMPING_OR_MODE_SHAPE_VALUES_EMITTED"
+          assert r["water_control"]["nonmissing_count"] >= 30
+          assert len(r["probe_completeness"]) == 4
+          print("D02F FLOOD-SHAB completeness guard passed")
+          PY
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: d02f-flood-shab-completeness-v01
+          path: chi_architecture/results/D02F_FLOOD_SHAB_COMPLETENESS_PROBE_v0.1.json
+          retention-days: 90
+          if-no-files-found: error
