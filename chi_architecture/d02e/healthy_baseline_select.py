@@ -58,8 +58,25 @@ def parse_csv(raw):
     if not rows:
         raise RuntimeError("empty csv")
     header=rows[0]
-    data=np.asarray(rows[1:],dtype=float)
-    if data.ndim!=2:
+    width=len(header)
+    if width < 8:
+        raise RuntimeError(f"unexpected csv header width: {width}")
+    clean=[]
+    irregular=0
+    for row in rows[1:]:
+        if not row or all(not str(x).strip() for x in row):
+            continue
+        if len(row)!=width:
+            irregular+=1
+            continue
+        try:
+            clean.append([float(x) for x in row])
+        except ValueError:
+            irregular+=1
+    if not clean:
+        raise RuntimeError("no numeric rows matching header width")
+    data=np.asarray(clean,dtype=float)
+    if data.ndim!=2 or data.shape[1]!=width:
         raise RuntimeError("unexpected csv dimensionality")
     return header,data
 
