@@ -74,3 +74,14 @@ def test_domain_rules_are_symmetric_three_of_four():
       "level_3":"SCALAR_PRECEDES_ORGANIZATION",
       "level_4":"SIMULTANEOUS_WITHIN_FROZEN_RESOLUTION",
     })=="ADVERSE"
+
+
+def test_parser_skips_irregular_width_rows():
+    from d02e_jacket import parse_response_csv
+    header="," + ",".join(f"sensor_{i}" for i in range(1,25)) + "\n"
+    good="0," + ",".join("1.0" for _ in range(24)) + "\n"
+    bad="0,1,2,3,4,5\n"
+    raw=(header + good + bad + good).encode("utf-8")
+    names,x=parse_response_csv(raw)
+    assert len(names)==24
+    assert x.shape==(2,24)
