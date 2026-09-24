@@ -1,0 +1,50 @@
+{
+  "schema": "d02a-source-schema-lock-v0.1",
+  "checkpoint_id": "D02A-CP1-SOURCE-SCHEMA-LOCKED",
+  "source_schema_run_id": 35815354508,
+  "source_schema_artifact_id": 10732010233,
+  "source_schema_artifact_digest": "sha256:77f862cda4d2e277f39e9048876edd9b190db0e0a0f5d7e06bf8ae8f3f8e0ead",
+  "scientific_values_inspected_before_lock": false,
+  "sources": {
+    "FIG3": {
+      "sha256": "6db8784c4e8e95c560ccce0bebe70b86dfc7613cccfe62853dc7eec7a25a1a0a",
+      "size_bytes": 2226752,
+      "scientific_roles": {
+        "Panel a": "experimental INS S(Q,E) along M-R; columns A-C; rows after header retained without value-based filtering",
+        "Panel b": "second experimental INS S(Q,E) M-R panel; columns A-C; rows after header retained without value-based filtering",
+        "Panel c G-M-R-G": "experimental carrier-path context; three schema-defined blocks beginning at rows 2, 65, and 88",
+        "panel f M-R": "simulated M-R spectral-function native comparator; columns A-C"
+      }
+    },
+    "FIG4": {
+      "sha256": "938d401c4b6ce766244d2c1dba9edd5d0804067ec8d21b5d43379241bab78bf5",
+      "size_bytes": 179497,
+      "scientific_roles": {
+        "4a": {
+          "role": "M-point INS data and authors' DHO-fit curves",
+          "temperature_blocks_K": [50, 300, 385, 500],
+          "blocks": [
+            {"temperature_K": 50, "data_columns": ["A","B","C"], "fit_columns": ["D","E"]},
+            {"temperature_K": 300, "data_columns": ["F","G","H"], "fit_columns": ["I","J"]},
+            {"temperature_K": 385, "data_columns": ["K","L","M"], "fit_columns": ["N","O"]},
+            {"temperature_K": 500, "data_columns": ["P","Q","R"], "fit_columns": ["S","T"]}
+          ],
+          "row_policy": "rows 4 through sheet maximum; retain all complete numeric tuples in each schema-defined block"
+        },
+        "4b": {
+          "role": "M-point linewidth table with uncertainty",
+          "columns": {"A":"temperature_K","B":"linewidth_meV","C":"linewidth_error_meV"},
+          "row_policy": "all rows 3 through sheet maximum containing a complete numeric A:C tuple"
+        }
+      }
+    }
+  },
+  "parser_prohibitions": [
+    "no peak selection based on desired chi",
+    "no temperature exclusion after viewing values",
+    "no q-point exclusion after viewing values",
+    "no interpolation to manufacture omega0 or Gamma",
+    "no fitting of DHO parameters unless a separate fit contract is frozen first",
+    "no interpretation of linewidth as Gamma until DHO convention license is resolved"
+  ]
+}

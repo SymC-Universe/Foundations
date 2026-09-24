@@ -1,0 +1,27 @@
+{
+  "schema": "d01c-interpreted-summary-v0.1",
+  "status": "P0_DOMAIN_MAP_NONNORMAL_LINEAR",
+  "case_count": 26,
+  "max_spectral_residual": 2.220446049250313e-16,
+  "eigenvalue_only_sufficiency_status": "REFUTED_WITHIN_FROZEN_CONSTRUCTION",
+  "native_toolkit_verdict": "STANDARD_NONMODAL_TOOLKIT_SUFFICIENT_FOR_D01C",
+  "N1": {
+    "eigenvalues": [-1.0, -2.0],
+    "normal_max_operator_state_gain": 1.0,
+    "smallest_theta_deg": 0.5,
+    "smallest_theta_max_operator_state_gain": 28.6524936441728,
+    "minimum_scanned_stability_radius": 0.01745041361890063,
+    "analytic_positive_numerical_abscissa_boundary_deg": 19.47122063449069,
+    "first_frozen_positive_numerical_abscissa_theta_deg": 15.0
+  },
+  "N2": {
+    "eigenvalues": [-0.25, -2.0],
+    "normal_max_operator_state_gain": 1.0,
+    "smallest_theta_deg": 0.5,
+    "smallest_theta_max_operator_state_gain": 74.5003623740674,
+    "minimum_scanned_stability_radius": 0.002493264858180868,
+    "analytic_positive_numerical_abscissa_boundary_deg": 51.05755873101862,
+    "first_frozen_positive_numerical_abscissa_theta_deg": 45.0
+  },
+  "claim_ceiling": "Synthetic within-domain representation result. No physical confirmation and no new nonmodal dynamical quantity."
+}

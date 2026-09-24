@@ -1,0 +1,89 @@
+{
+  "schema": "d02a-v0.2-carrier-parser-contract",
+  "status": "POST_RESULT_DEVELOPMENT_FROZEN_BEFORE_CORRECTED_CARRIER_EXTRACTION",
+  "parent_failure": "D02A v0.1 FIG3 A:C long-form assumption was inadequate",
+  "evidence_credit": "P0_D_POST_RESULT_PARSER_DEVELOPMENT_ONLY",
+  "source": {
+    "id": "FIG3",
+    "sha256": "6db8784c4e8e95c560ccce0bebe70b86dfc7613cccfe62853dc7eec7a25a1a0a"
+  },
+  "matrix_geometry": {
+    "300K_ORTHORHOMBIC": {
+      "sheet": "Panel a",
+      "q_axis_range": "A3:A23",
+      "energy_axis_range": "B3:B48",
+      "intensity_matrix_range": "C3:W48",
+      "q_count": 21,
+      "energy_count": 46,
+      "matrix_shape_energy_by_q": [46, 21],
+      "q_range_rlu": [0.5, 1.0],
+      "energy_range_meV": [-0.5, 3.0]
+    },
+    "385K_TETRAGONAL": {
+      "sheet": "Panel b",
+      "q_axis_range": "A3:A23",
+      "energy_axis_range": "B3:B40",
+      "intensity_matrix_range": "C3:W40",
+      "q_count": 21,
+      "energy_count": 38,
+      "matrix_shape_energy_by_q": [38, 21],
+      "q_range_rlu": [0.5, 1.0],
+      "energy_range_meV": [-0.5, 2.2]
+    },
+    "419K_CUBIC": {
+      "sheet": "Panel c G-M-R-G",
+      "q_axis_range": "A66:A86",
+      "energy_axis_range": "B66:B86",
+      "intensity_matrix_range": "C66:W86",
+      "q_count": 21,
+      "energy_count": 21,
+      "matrix_shape_energy_by_q": [21, 21],
+      "q_range_rlu": [0.5, 1.0],
+      "energy_range_meV": [0.0, 4.0]
+    }
+  },
+  "cross_instrument_comparison": {
+    "absolute_intensity_comparison_allowed": false,
+    "common_q_grid": {
+      "source": "all three source blocks use the same 21 q values from 0.5 through 1.0 rlu",
+      "interpolation_required": false
+    },
+    "common_energy_window_meV": [0.0, 2.2],
+    "comparison_grid_meV": {
+      "start": 0.0,
+      "stop": 2.2,
+      "step": 0.2,
+      "selection_basis": "intersection of nonnegative source energy support sampled on the coarsest 419 K source spacing"
+    },
+    "per_q_normalization": "Linearly interpolate each q column onto the common energy grid, clip negative interpolated intensity to zero, then normalize by its positive sum. If the sum is zero, return NON_IDENTIFIABLE.",
+    "predeclared_shape_metrics_per_q": [
+      "normalized_energy_centroid_meV",
+      "normalized_energy_rms_width_meV",
+      "peak_energy_meV_on_common_grid"
+    ],
+    "predeclared_pairwise_map_metrics": [
+      "RMS difference of q-resolved energy centroid",
+      "RMS difference of q-resolved energy width",
+      "RMS difference of q-resolved peak energy",
+      "Pearson correlation of q-resolved centroid",
+      "Pearson correlation of q-resolved width"
+    ],
+    "categorical_similarity_threshold": null
+  },
+  "retained_v0_1_physics": {
+    "linewidth_table_source": "FIG4 sheet 4b",
+    "status": "VALID_AND_UNCHANGED",
+    "lowercase_chi_status": "REFUSED_OMEGA0_NOT_IDENTIFIABLE",
+    "dho_fit_goodness_of_fit_status": "NOT_ADMISSIBLE_FROM_PLOTTING_CURVES"
+  },
+  "prohibitions": [
+    "do not overwrite v0.1 carrier extraction",
+    "do not compare raw absolute intensity between instruments",
+    "do not optimize the common energy window after corrected values are viewed",
+    "do not fit DHO parameters from FIG3 maps",
+    "do not infer omega0 from FIG4 plotting curves",
+    "do not emit lowercase chi",
+    "do not create a master Chi scalar",
+    "do not use a post-hoc similarity cutoff to call inheritance"
+  ]
+}

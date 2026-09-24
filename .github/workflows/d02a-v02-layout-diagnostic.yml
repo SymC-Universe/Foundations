@@ -1,0 +1,77 @@
+name: D02A v0.2 FIG3 Layout Diagnostic
+
+on:
+  push:
+    branches:
+      - chi-architecture-p0
+    paths:
+      - "chi_architecture/d02_cspbbr3/D02A_V0.2_LAYOUT_DIAGNOSTIC_CONTRACT.json"
+      - ".github/workflows/d02a-v02-layout-diagnostic.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  diagnose-layout:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12.14"
+      - run: python -m pip install --disable-pip-version-check openpyxl==3.1.5 requests==2.32.5
+      - name: Fetch locked FIG3 and emit complete sheet layout
+        run: |
+          python - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          import requests
+          from openpyxl import load_workbook
+
+          url = "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41563-021-00947-y/MediaObjects/41563_2021_947_MOESM6_ESM.xlsx"
+          expected = "6db8784c4e8e95c560ccce0bebe70b86dfc7613cccfe62853dc7eec7a25a1a0a"
+          urls = [url, url.replace("https://media.springernature.com/original/springer-static/", "https://static-content.springer.com/")]
+          data = None
+          realized = None
+          session = requests.Session()
+          session.headers.update({"User-Agent":"Mozilla/5.0 SymC-layout-diagnostic/1.0"})
+          for u in urls:
+              try:
+                  r=session.get(u, timeout=(15,45)); r.raise_for_status()
+                  if hashlib.sha256(r.content).hexdigest()!=expected:
+                      raise RuntimeError("hash mismatch")
+                  data=r.content; realized=u; break
+              except Exception:
+                  pass
+          if data is None:
+              raise RuntimeError("locked source unavailable")
+          p=Path("FIG3.xlsx"); p.write_bytes(data)
+          wb=load_workbook(p, data_only=False, read_only=False)
+          out={"schema":"d02a-v0.2-fig3-layout-diagnostic","source_sha256":expected,"realized_url":realized,"sheets":[]}
+          for name in ["Panel a","Panel b","Panel c G-M-R-G"]:
+              ws=wb[name]
+              cells=[]
+              for row in ws.iter_rows():
+                  for cell in row:
+                      if cell.value is not None:
+                          cells.append({"coordinate":cell.coordinate,"row":cell.row,"column":cell.column,"value":cell.value})
+              out["sheets"].append({
+                  "title":name,
+                  "max_row":ws.max_row,
+                  "max_column":ws.max_column,
+                  "merged_ranges":[str(x) for x in ws.merged_cells.ranges],
+                  "hidden_rows":[i for i,d in ws.row_dimensions.items() if d.hidden],
+                  "hidden_columns":[k for k,d in ws.column_dimensions.items() if d.hidden],
+                  "cells":cells,
+              })
+          Path("D02A_FIG3_LAYOUT_DIAGNOSTIC_v0.2.json").write_text(json.dumps(out,indent=2,default=str)+"\n")
+          print(json.dumps({"status":"LAYOUT_DIAGNOSTIC_COMPLETE","sheet_cells":{x["title"]:len(x["cells"]) for x in out["sheets"]}},indent=2))
+          PY
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: d02a-v02-fig3-layout
+          path: D02A_FIG3_LAYOUT_DIAGNOSTIC_v0.2.json
+          retention-days: 90
+          if-no-files-found: error

@@ -1,0 +1,71 @@
+name: Chi Architecture D02D Prospective Reproduction
+
+on:
+  push:
+    branches:
+      - chi-architecture-p0
+    paths:
+      - "chi_architecture/src/d02d_lumo.py"
+      - "chi_architecture/tests/test_d02d_lumo.py"
+      - "chi_architecture/reproduce.py"
+      - "chi_architecture/d02d/D02D_LUMO_MFR14_v0.1.md"
+      - "chi_architecture/d02d/D02D_LUMO_FINAL_PREEXECUTION_FREEZE_v0.1.md"
+      - ".github/workflows/chi-architecture-d02d.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  reproduce-d02d:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: "3.12.14"
+
+      - name: Install pinned dependencies
+        run: |
+          python -m pip install --disable-pip-version-check -r chi_architecture/requirements-p0.txt
+          python -m pip check
+
+      - name: Reproduce D02D from one entrypoint
+        run: python chi_architecture/reproduce.py d02d
+
+      - name: Guard frozen D02D scope
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path("chi_architecture/results/D02D_LUMO_PROSPECTIVE_RESULT_v0.1.json").read_text())
+          assert r["schema"]=="d02d-lumo-prospective-result-v0.1"
+          assert r["status"]=="D02D_PROSPECTIVE_EXECUTED"
+          assert r["claim_id"]=="CA-D007-D02D-LUMO-v0.1"
+          assert set(r["location_orderings"])=={"DAM3","DAM4","DAM6"}
+          assert r["outcome"] in {
+              "EMPIRICAL_CLAIM_SURVIVES_FROZEN_TEST",
+              "EMPIRICAL_CLAIM_FALSIFIED",
+              "INDETERMINATE",
+          }
+          assert r["native_toolkit_verdict"]=="NATIVE_TOOLKIT_SUFFICIENT_NO_INCREMENTAL_VALUE"
+          assert len(r["source_files"])==6
+          print("D02D frozen-scope guards passed")
+          PY
+
+      - name: Upload one reviewer artifact
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: chi-architecture-d02d-lumo-v01
+          path: |
+            chi_architecture/results/D02D_LUMO_PROSPECTIVE_RESULT_v0.1.json
+            chi_architecture/results/D02D_SUMMARY_v0.1.json
+            chi_architecture/results/D02D_RESULT_CARD_v0.1.md
+            chi_architecture/results/D02D_ENVIRONMENT_v0.1.txt
+            chi_architecture/results/D02D_REPRO_MANIFEST_v0.1.json
+          retention-days: 90
+          if-no-files-found: error

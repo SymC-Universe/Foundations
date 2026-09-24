@@ -1,0 +1,98 @@
+name: Chi Architecture D02C Prospective Reproduction
+
+on:
+  push:
+    branches:
+      - chi-architecture-p0
+    paths:
+      - "chi_architecture/src/d02c_wind_blade.py"
+      - "chi_architecture/tests/test_d02c_wind_blade.py"
+      - "chi_architecture/reproduce.py"
+      - "chi_architecture/d02c/D02C_CANDIDATE_SELECTION_FREEZE_v0.1.md"
+      - "chi_architecture/d02c/D02C_CANDIDATE_SELECTION_RECORD_v0.2.md"
+      - "chi_architecture/d02c/D02C_WIND_BLADE_CONTRACT_v0.1.md"
+      - "chi_architecture/d02c/D02C_WIND_EXACT_MAPPING_v0.1.md"
+      - "chi_architecture/d02c/D02C_DRY_PEAK_ADEQUACY_ADDENDUM_v0.1.md"
+      - "chi_architecture/d02c/D02C_ONSET_COMPLETENESS_RULE_v0.1.md"
+      - ".github/workflows/chi-architecture-d02c.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  reproduce-d02c:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: "3.12.14"
+
+      - name: Install pinned dependencies
+        run: |
+          python -m pip install --disable-pip-version-check -r chi_architecture/requirements-p0.txt
+          python -m pip check
+
+      - name: Reproduce D02C from one entrypoint
+        run: python chi_architecture/reproduce.py d02c
+
+      - name: Guard frozen prospective scope
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          r=json.loads(Path("chi_architecture/results/D02C_WIND_BLADE_RESULT_v0.1.json").read_text())
+          assert r["schema"]=="d02c-wind-blade-prospective-result-v0.1"
+          assert r["status"]=="D02C_PROSPECTIVE_EXECUTED"
+          assert r["evidence_class"]=="PROSPECTIVE_EXTERNAL_PHYSICAL_DOMAIN_SPECIFIC"
+          assert set(r["selected_modes"])=={"X","Z"}
+          assert set(r["trajectories"])=={"X","Z"}
+          assert len(r["trajectories"]["X"])==12
+          assert len(r["trajectories"]["Z"])==12
+          assert set(r["orderings"])=={"X","Z"}
+          allowed={
+            "ORGANIZATION_PRECEDES_SCALAR",
+            "SCALAR_PRECEDES_ORGANIZATION",
+            "SIMULTANEOUS_WITHIN_FROZEN_RESOLUTION",
+            "ORGANIZATION_CHANGES_SCALAR_DOES_NOT",
+            "SCALAR_CHANGES_ORGANIZATION_DOES_NOT",
+            "NEITHER_CHANGES",
+            "ORDERING_NON_IDENTIFIABLE",
+            "NATIVE_MEASUREMENT_SENSITIVITY_PRECLUDES_ORDERING",
+          }
+          assert r["orderings"]["X"]["outcome"] in allowed
+          assert r["orderings"]["Z"]["outcome"] in allowed
+          assert r["native_toolkit_verdict_preinterpretation"]=="NOT_ASSIGNED_BY_RUNNER"
+
+          expected_md5={
+            "climate_main":"7afea2377fb14ca576516c39201a6aac",
+            "modal_x":"0a08eb30f4361d3ebfd1a6ecfb4ff332",
+            "modal_z":"3e1ceb71d0fae2901c9256eb472d021a",
+            "raw_baseline":"dc1bd7d724264e1a37ffdc58865f6304",
+            "raw_intervention":"50e32f0e7e711b89128a895d5c0c9481",
+            "climate_dry":"aa3dccbefeb1644e5c8cbc030801b146",
+            "raw_dry":"83d9f4030346d6a3538627320a03437e",
+          }
+          for role, md5 in expected_md5.items():
+              assert r["source_files"][role]["md5"]==md5
+          print("D02C frozen prospective guards passed")
+          PY
+
+      - name: Upload one reviewer artifact
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: chi-architecture-d02c-wind-blade-v01
+          path: |
+            chi_architecture/results/D02C_WIND_BLADE_RESULT_v0.1.json
+            chi_architecture/results/D02C_SUMMARY_v0.1.json
+            chi_architecture/results/D02C_RESULT_CARD_v0.1.md
+            chi_architecture/results/D02C_ENVIRONMENT_v0.1.txt
+            chi_architecture/results/D02C_REPRO_MANIFEST_v0.1.json
+          retention-days: 90
+          if-no-files-found: error

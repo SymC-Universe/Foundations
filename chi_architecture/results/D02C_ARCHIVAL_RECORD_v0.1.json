@@ -1,0 +1,26 @@
+{
+  "schema": "d02c-archival-record-v0.1",
+  "checkpoint_id": "D02C-CP5-EXECUTED-BEFORE-INTERPRETATION",
+  "date": "2026-09-23",
+  "branch": "chi-architecture-p0",
+  "execution_commit": "0401811345c037bfee77d8471cbc295acbb12dd8",
+  "workflow_run_id": 35866859136,
+  "workflow_name": "Chi Architecture D02C Prospective Reproduction",
+  "workflow_conclusion": "success",
+  "artifact": {
+    "name": "chi-architecture-d02c-wind-blade-v01",
+    "id": 10752811690,
+    "digest": "sha256:071dae782bafc8b0174eafb3d3832e94d88b76a3fa647cb0ccf5b56aeb9b4211",
+    "expires_at": "2026-12-22T13:24:36Z"
+  },
+  "result_hashes": {
+    "D02C_ENVIRONMENT_v0.1.txt": "6f3ec3f47c62a80a63c911cfc8c225fb548522262ba3d89f41973f05248dfb6a",
+    "D02C_RESULT_CARD_v0.1.md": "2de88784b1bc4a930440a466a96d2dd58883b2b85d81ffbc6962a3ccf350d660",
+    "D02C_SUMMARY_v0.1.json": "f8b9a213a0113fbedf8c9f9393b7056fdee3b1e357c3e20957e2546ea30dd14f",
+    "D02C_WIND_BLADE_RESULT_v0.1.json": "9b1f52945acc5cc43ec8590e9950effba65ef37c8e89523f20354b17fd079ab9",
+    "D02C_REPRO_MANIFEST_v0.1.json": "9c5483a003aa1f3a4dbcc1691e6936cd1fbbbf0b79486b4ef9e70fd47ba9f48f"
+  },
+  "source_record": "10.5281/zenodo.18427836",
+  "reproduction_entrypoint": "python chi_architecture/reproduce.py d02c",
+  "scope": "Execution archive only. Scientific interpretation intentionally occurs after this checkpoint."
+}

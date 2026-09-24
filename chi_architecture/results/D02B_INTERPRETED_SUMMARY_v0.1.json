@@ -1,0 +1,41 @@
+{
+  "schema": "d02b-interpreted-summary-v0.1",
+  "status": "D02B_P0_Q_CLOSED",
+  "primary_10_to_0": {
+    "pair_count": 28,
+    "response_reorganized_pairs": 28,
+    "comparable_chi_pairs": 11,
+    "similar_chi_pairs": 0,
+    "transformed_chi_pairs": 11,
+    "refused_or_noncomparable_pairs": 17,
+    "refusal_breakdown": {
+      "WINDOW_TRUNCATED": 11,
+      "HALF_POWER_CROSSING_NOT_OBSERVED": 4,
+      "NON_IDENTIFIABLE_MODAL_OVERLAP": 2
+    },
+    "admitted_loose_to_tight_chi_ratio": {
+      "min": 1.1241676499012865,
+      "median": 1.7473359728666973,
+      "max": 4.551957201216177
+    }
+  },
+  "secondary_10_to_5_to_0": {
+    "ten_Nm_admitted": "28/28",
+    "five_Nm_admitted": "28/28",
+    "ten_to_five_similar_chi": "16/28",
+    "ten_to_five_transformed_chi": "12/28",
+    "ten_to_five_similar_chi_and_reorganized": "16/28",
+    "families_with_at_least_one_similar_chi_reorganized_pair": "6/7",
+    "zero_Nm_admitted_primary": "11/28",
+    "five_to_zero_chi_increased_when_both_admitted": "11/11",
+    "native_monotonic_further_loosening": {
+      "one_minus_MACa": "28/28",
+      "one_minus_CMAC": "28/28",
+      "one_minus_CMAC_phaseonly": "24/28",
+      "absolute_frequency_shift": "28/28"
+    }
+  },
+  "joint_chi_Chi_interpretation": "Moderate interface change can reorganize embedded response while local modal chi remains similar at frozen resolution; stronger interface change transforms or defeats the local scalar representation while embedded reorganization increases.",
+  "native_toolkit_verdict": "NATIVE_TOOLKIT_SUFFICIENT_NO_INCREMENTAL_VALUE",
+  "promotion_status": "P0_Q_PHYSICAL_QUALIFICATION_POST_RESULT_HYPOTHESIS_REQUIRES_UNTOUCHED_TEST"
+}

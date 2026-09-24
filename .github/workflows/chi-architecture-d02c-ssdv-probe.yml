@@ -1,0 +1,26 @@
+name: D02C Candidate SSDV Schema Probe
+on:
+  push:
+    branches: [chi-architecture-p0]
+    paths:
+      - "chi_architecture/d02c/probe_ssdv_candidate.py"
+      - ".github/workflows/chi-architecture-d02c-ssdv-probe.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with: {python-version: "3.12.14"}
+      - run: python -m pip install requests==2.32.5
+      - run: python chi_architecture/d02c/probe_ssdv_candidate.py
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: d02c-ssdv-candidate-schema-v01
+          path: chi_architecture/results/D02C_CANDIDATE_SSDV_SCHEMA_v0.1.json
+          retention-days: 90
+          if-no-files-found: error

@@ -1,0 +1,48 @@
+name: D02D LUMO Healthy Struct Schema
+
+on:
+  push:
+    branches:
+      - chi-architecture-p0
+    paths:
+      - "chi_architecture/d02d/lumo_healthy_struct_schema.py"
+      - "chi_architecture/d02d/D02D_LUMO_SOURCE_LOCK_v0.1.json"
+      - ".github/workflows/chi-architecture-d02d-healthy-schema.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  schema:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: "3.12.14"
+      - name: Install pinned dependencies
+        run: |
+          python -m pip install --disable-pip-version-check -r chi_architecture/requirements-p0.txt
+          python -m pip check
+      - name: Inspect healthy Dat struct schema
+        run: python chi_architecture/d02d/lumo_healthy_struct_schema.py
+      - name: Guard healthy-only schema
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path("chi_architecture/results/D02D_LUMO_HEALTHY_STRUCT_SCHEMA_v0.1.json").read_text())
+          assert r["status"]=="HEALTHY_SCHEMA_ONLY_NUMERIC_VALUES_WITHHELD"
+          assert r["source_member"].startswith("11_Healthy/")
+          assert "dat_schema" in r
+          print("D02D healthy struct schema guard passed")
+          PY
+      - name: Upload healthy schema
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: d02d-lumo-healthy-struct-schema-v01
+          path: chi_architecture/results/D02D_LUMO_HEALTHY_STRUCT_SCHEMA_v0.1.json
+          retention-days: 90
+          if-no-files-found: error

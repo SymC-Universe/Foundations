@@ -1,0 +1,35 @@
+{
+  "schema": "d02d-archival-record-v0.1",
+  "checkpoint_id": "D02D-CP8-EXECUTED-BEFORE-FULL-INTERPRETATION",
+  "date": "2026-09-23",
+  "branch": "chi-architecture-p0",
+  "governance_authority_at_archive": "SymC General Operations Manual v0.8.6",
+  "execution_commit": "856ed0ae63df13b557fba8a4cfd44aa8c720c32e",
+  "workflow_run_id": 35904120749,
+  "workflow_name": "Chi Architecture D02D Prospective Reproduction",
+  "workflow_conclusion": "success",
+  "artifact": {
+    "name": "chi-architecture-d02d-lumo-v01",
+    "id": 10770159354,
+    "digest": "sha256:bf84f37f6250b6cd2b96a8006cb39ef32c4eecef1cc82049f3b1a10c13412832",
+    "expires_at": "2026-12-22T18:40:39Z"
+  },
+  "result_hashes": {
+    "D02D_ENVIRONMENT_v0.1.txt": "6f3ec3f47c62a80a63c911cfc8c225fb548522262ba3d89f41973f05248dfb6a",
+    "D02D_LUMO_PROSPECTIVE_RESULT_v0.1.json": "f372bb0e7e1069fe731e49b8831c3d39559eea5c61679df42e6a428e4f92c111",
+    "D02D_REPRO_MANIFEST_v0.1.json": "9af1dfbdf6f9d5dac7a0a61d46029a3390ab9cf0431876bface750f4695dfe37",
+    "D02D_RESULT_CARD_v0.1.md": "3df729ecad45f0104ef2ea77773a8e9321ef31b23d190d1fcfcf2e28aa0ebc7f",
+    "D02D_SUMMARY_v0.1.json": "dcee51ee6f022e52d5e49cc5c2aadfcf64717264ca485125a0408ab13e0a4fa0"
+  },
+  "source_hashes": {
+    "DAM3_010": "2bde981380e32b48d22d0fccfc5359f4919137a711c95e1515b851d1aa2716e9",
+    "DAM3_111": "589cb37b53333edf6248bb7894bc4a2b8b64271a1a31ae39781d721d8a875d04",
+    "DAM4_010": "e90a861099d1c01a02a1f9258966791373a0da02e4539aa8ea18820e7765202a",
+    "DAM4_111": "951c124f2ceedabc5889e33147cbcfb9ad39b69ca2514d8b9e9f7056fd6b12c2",
+    "DAM6_010": "a6c997d063651455be12726a4e8b35fdbdea056c6a5deb8a8ebbba2cb8e22bec",
+    "DAM6_111": "780f4ed3995ab772c81b9b05662d525af038f3f3560385e5faf033c69aa81518"
+  },
+  "reproduction_entrypoint": "python chi_architecture/reproduce.py d02d",
+  "integrity_note": "The immutable artifact was downloaded and all result hashes were computed before interpretation. A sequencing deviation then occurred: the compact D02D_RESULT_CARD_v0.1.md was opened locally before this archive record was committed. No scientific rule, source, implementation, result file, or artifact changed after exposure. The deviation is preserved explicitly and prevents describing the archive sequence as perfectly blind.",
+  "scope": "Execution archive and integrity record. Full result interpretation occurs downstream of this checkpoint."
+}

@@ -1,0 +1,28 @@
+{
+  "schema": "d02e-healthy-baseline-selection-archive-v0.1",
+  "checkpoint_id": "D02E-CP4-HEALTHY-SELECTION-ARCHIVED",
+  "date": "2026-09-24",
+  "branch": "chi-architecture-p0",
+  "source_dataset": "10.34810/data1011",
+  "selection_scope": "Healthy A_1 original CSV files only",
+  "workflow_run_id": 35944132810,
+  "workflow_name": "D02E Healthy Baseline Mode Selection",
+  "workflow_conclusion": "success",
+  "execution_commit": "f08285bdefaf056d3cb0a2708ee35ff2bba3bd1b",
+  "artifact": {
+    "name": "d02e-healthy-baseline-selection-v01",
+    "id": 10786042762,
+    "digest": "sha256:ed50d5fd65b032721c5f20be928514bbba859bdf13b9c07007a8d92305038d5c",
+    "expires_at": "2026-12-23T01:42:54Z"
+  },
+  "result_sha256": "8f4f554439bc520940f24b2b70f704c9a48e7c78c4c9828643631f442058f3bc",
+  "healthy_file_count": 20,
+  "eligible_family_count": 4,
+  "primary_family": {
+    "median_frequency_hz": 8.7890625,
+    "admitted_chi_count": 17,
+    "identifiable_count": 20,
+    "median_chi": 0.028856666306254334
+  },
+  "guard": "No 9 Nm, 6 Nm, or NoBolt vibration file was opened before the primary family was selected and archived."
+}

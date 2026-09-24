@@ -1,0 +1,79 @@
+name: Chi Architecture D02E Prospective Reproduction
+
+on:
+  push:
+    branches:
+      - chi-architecture-p0
+    paths:
+      - "chi_architecture/src/d02e_jacket.py"
+      - "chi_architecture/tests/test_d02e_jacket.py"
+      - "chi_architecture/reproduce.py"
+      - "chi_architecture/d02e/D02E_JACKET_MFR14_v0.1.md"
+      - "chi_architecture/d02e/D02E_FINAL_PREEXECUTION_FREEZE_v0.1.md"
+      - "chi_architecture/results/D02E_HEALTHY_SELECTION_ARCHIVE_v0.1.json"
+      - ".github/workflows/chi-architecture-d02e.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  reproduce-d02e:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: "3.12.14"
+
+      - name: Install pinned dependencies
+        run: |
+          python -m pip install --disable-pip-version-check -r chi_architecture/requirements-p0.txt
+          python -m pip check
+
+      - name: Reproduce D02E from one entrypoint
+        run: python chi_architecture/reproduce.py d02e
+
+      - name: Guard frozen D02E scope
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path("chi_architecture/results/D02E_JACKET_PROSPECTIVE_RESULT_v0.1.json").read_text())
+          assert r["schema"]=="d02e-jacket-prospective-result-v0.1"
+          assert r["status"]=="P1_PROSPECTIVE_D02E_EXECUTED"
+          assert r["claim_id"]=="CA-D007-D02E-v0.1"
+          assert abs(r["primary_family_hz"]-8.7890625) < 1e-12
+          assert r["source_counts"]=={"healthy":20,"damaged":240,"total":260}
+          assert set(r["location_orderings"])=={"level_1","level_2","level_3","level_4"}
+          allowed={
+              "ORGANIZATION_PRECEDES_SCALAR",
+              "SCALAR_PRECEDES_ORGANIZATION",
+              "SIMULTANEOUS_WITHIN_FROZEN_RESOLUTION",
+              "ORGANIZATION_CHANGES_SCALAR_DOES_NOT",
+              "SCALAR_CHANGES_ORGANIZATION_DOES_NOT",
+              "NEITHER_CHANGES",
+              "ORDERING_NON_IDENTIFIABLE",
+          }
+          assert set(r["location_orderings"].values()) <= allowed
+          assert r["outcome"] in {"SUPPORT","ADVERSE","NO_SUPPORT","INDETERMINATE"}
+          assert len(r["source_files"])==260
+          print("D02E frozen-scope guards passed")
+          PY
+
+      - name: Upload one reviewer artifact
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: chi-architecture-d02e-jacket-v01
+          path: |
+            chi_architecture/results/D02E_JACKET_PROSPECTIVE_RESULT_v0.1.json
+            chi_architecture/results/D02E_SUMMARY_v0.1.json
+            chi_architecture/results/D02E_RESULT_CARD_v0.1.md
+            chi_architecture/results/D02E_ENVIRONMENT_v0.1.txt
+            chi_architecture/results/D02E_REPRO_MANIFEST_v0.1.json
+          retention-days: 90
+          if-no-files-found: error

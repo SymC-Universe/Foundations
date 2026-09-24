@@ -1,0 +1,17 @@
+{
+  "schema": "d02d-interpreted-summary-v0.1",
+  "status": "D02D_PROSPECTIVE_INDETERMINATE_CLOSED",
+  "target_hypothesis": "CA-D007_ARCHITECTURE_REORGANIZATION_CAN_PRECEDE_SCALAR_TRANSFORMATION",
+  "location_orderings": {
+    "DAM3": "ORDERING_NON_IDENTIFIABLE",
+    "DAM4": "ORDERING_NON_IDENTIFIABLE",
+    "DAM6": "ORDERING_NON_IDENTIFIABLE"
+  },
+  "program_outcome": "INDETERMINATE",
+  "primary_indeterminacy": "ENVIRONMENTAL_OPERATIONAL_MATCHING_COMPLETENESS",
+  "prospective_support": false,
+  "prospective_falsification": false,
+  "native_toolkit_verdict": "NATIVE_TOOLKIT_SUFFICIENT_NO_INCREMENTAL_VALUE",
+  "ca_d007_promotion_status": "UNPAID_PROMOTION_DEBT_PROSPECTIVE_RECORD_NULL_PLUS_INDETERMINATE",
+  "next_design_requirement": "Pre-verify graded-state environmental/operational overlap sufficient for the frozen completeness floor without inspecting relative scalar-versus-organization onset."
+}

@@ -1,0 +1,52 @@
+name: D02B Orion Public Manifest Lock
+
+on:
+  push:
+    branches:
+      - chi-architecture-p0
+    paths:
+      - "chi_architecture/d02b/orion_public_manifest.py"
+      - "chi_architecture/d02b/D02B_ORION_SOURCE_CONTRACT_v0.2.md"
+      - ".github/workflows/chi-architecture-d02b-orion-manifest.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  public-manifest:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: "3.12.14"
+      - name: Install pinned dependencies
+        run: |
+          python -m pip install --disable-pip-version-check -r chi_architecture/requirements-p0.txt
+          python -m pip check
+      - name: Acquire public metadata only
+        run: python chi_architecture/d02b/orion_public_manifest.py
+      - name: Guard pre-numeric status
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path("chi_architecture/results/D02B_ORION_PUBLIC_MANIFEST_v0.1.json").read_text())
+          assert r["status"]=="PUBLIC_METADATA_ONLY_NO_SCIENTIFIC_RESPONSE_VALUES_PARSED"
+          assert r["dataset"]["id"]=="p4fg6snh3r"
+          assert r["dataset"]["page"].get("status_code") in (200, 403)
+          assert len(r["api_attempts"]) >= 1
+          print("Orion public metadata artifact exists; page status recorded for acquisition routing")
+          PY
+      - name: Upload manifest checkpoint artifact
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: d02b-orion-public-manifest-v01
+          path: chi_architecture/results/D02B_ORION_PUBLIC_MANIFEST_v0.1.json
+          retention-days: 90
+          if-no-files-found: error

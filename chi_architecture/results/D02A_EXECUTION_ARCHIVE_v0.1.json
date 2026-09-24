@@ -1,0 +1,52 @@
+{
+  "schema": "d02a-execution-archive-v0.1",
+  "checkpoint_id": "D02A-CP2-V0.1-PARTIAL",
+  "execution_commit": "9709b8f5a3a19197fad957d9b757b24d190d5519",
+  "workflow_run_id": 35815810797,
+  "workflow_conclusion": "success",
+  "artifact": {
+    "name": "chi-architecture-d02a-physical-v01",
+    "id": 10731497089,
+    "digest": "sha256:6e3a25cdb88d32c78381ef24f15e8b39bec70912e426e0e9c67bd7e2ba705237"
+  },
+  "source_hashes": {
+    "FIG3": "6db8784c4e8e95c560ccce0bebe70b86dfc7613cccfe62853dc7eec7a25a1a0a",
+    "FIG4": "938d401c4b6ce766244d2c1dba9edd5d0804067ec8d21b5d43379241bab78bf5"
+  },
+  "result_hashes": {
+    "full_result_sha256": "5fc87674382ce355f98536668a787b7ad2a34e4a2df881239a7a16bf8c793a46",
+    "summary_sha256": "b7770b37b24789d2d717f78468ed2d90ac0389a30904cf13b9e9e51ac9c0fa8b",
+    "result_card_sha256": "36a7c457c9747ddbf501704d9486ff5db9dff0c1b56cca3198b52c2784eb84a8",
+    "manifest_sha256": "a69dc45c7684a13fa3f88516a1b53df8be59ef1b230f122e688feae3a6f1ef96"
+  },
+  "trusted_v0_1_output": {
+    "linewidth_records": [
+      {"temperature_K":50.0,"phase":"ORTHORHOMBIC","linewidth_meV":0.2,"linewidth_error_meV":0.03},
+      {"temperature_K":100.0,"phase":"ORTHORHOMBIC","linewidth_meV":0.32,"linewidth_error_meV":0.05},
+      {"temperature_K":200.0,"phase":"ORTHORHOMBIC","linewidth_meV":0.493,"linewidth_error_meV":0.037},
+      {"temperature_K":300.0,"phase":"ORTHORHOMBIC","linewidth_meV":0.77,"linewidth_error_meV":0.07},
+      {"temperature_K":385.0,"phase":"TETRAGONAL","linewidth_meV":9.11,"linewidth_error_meV":0.49},
+      {"temperature_K":500.0,"phase":"CUBIC","linewidth_meV":9.49,"linewidth_error_meV":0.23}
+    ],
+    "phase_linewidth_summary": [
+      {"phase":"ORTHORHOMBIC","row_count":4,"inverse_variance_weighted_mean_linewidth_meV":0.35470362169860364,"inverse_variance_weighted_standard_error_meV":0.02022099804319159},
+      {"phase":"TETRAGONAL","row_count":1,"inverse_variance_weighted_mean_linewidth_meV":9.11,"inverse_variance_weighted_standard_error_meV":0.49},
+      {"phase":"CUBIC","row_count":1,"inverse_variance_weighted_mean_linewidth_meV":9.49,"inverse_variance_weighted_standard_error_meV":0.23}
+    ],
+    "lowercase_chi_status": "REFUSED_OMEGA0_NOT_IDENTIFIABLE"
+  },
+  "post_execution_integrity_flags": [
+    {
+      "component": "FIG3 carrier-map parser",
+      "status": "PARSER_INADEQUATE",
+      "reason": "The v0.1 A:C extraction returned 21 points with q and energy co-varying one-to-one, while the source sheet contains 857-1033 numeric cells across 40 columns. This is not an adequate extraction of the published two-dimensional S(Q,E) map."
+    },
+    {
+      "component": "FIG4 4a source-fit residual diagnostic",
+      "status": "NOT_ADMISSIBLE_FOR_MODEL_ADEQUACY",
+      "reason": "The published curves are figure-source data and the article states curves are vertically offset for clarity. Direct standardized residuals between plotting series are not guaranteed to be on a common unshifted fit scale."
+    }
+  ],
+  "official_v0_1_status": "PARTIAL_VALID_LINEWIDTH__CARRIER_PARSER_INADEQUATE__CHI_REFUSED",
+  "promotion_rule": "v0.1 carrier and fit-diagnostic outputs may not be used as scientific evidence. The valid linewidth table remains retained. Any corrected carrier parser is v0.2 and carries post-result development provenance."
+}

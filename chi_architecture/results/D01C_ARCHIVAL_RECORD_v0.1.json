@@ -1,0 +1,61 @@
+{
+  "schema": "d01c-archival-record-v0.1",
+  "checkpoint_id": "D01C-CP2-EXECUTED",
+  "date": "2026-09-22",
+  "branch": "chi-architecture-p0",
+  "execution_commit": "9818612abae93e460af7ab45281fd9a5e4ae68e7",
+  "workflow_run_id": 35809467796,
+  "workflow_name": "Chi Architecture D01C Reproduction",
+  "workflow_conclusion": "success",
+  "artifact": {
+    "name": "chi-architecture-d01c-v01",
+    "id": 10728829675,
+    "digest": "sha256:7178cd28a579b17d35da57e37ebfccb4a540ac6f0f23a688233d9f2c665c305e",
+    "expires_at": "2026-12-22T02:13:05Z"
+  },
+  "runtime": {
+    "python": "3.12.14",
+    "implementation": "CPython",
+    "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "hashes": {
+    "freeze_sha256": "fe09def1998e3ee3ed0e8a0ec929a5cbbe34f5db7a87c092b48e7bae481d1c9a",
+    "source_sha256": "778911aed84af08b6fb5523d9d5f9ff7f17ca5f0d13c0fdfe11bd02a382ff61b",
+    "tests_sha256": "e07eba954195553f15c30b4e1bcc2d78480216f45ce711900d8f62f4860895df",
+    "entrypoint_sha256": "766f461302cc4974eb7fa99263b8d6d802b13dd551a82921da56aad1da075198",
+    "full_result_sha256": "ab24c3dcb9490d1b07c9043b922e326f149cf71fd3522c67e2b54c1d53206d38",
+    "summary_sha256": "1933bc4f258afdcb0a897dcbc4b2090ee5fe6cc55075109a055baefe2d3b772b",
+    "result_card_sha256": "46b887c9789ce4afa7aae7e0e80f464b49a1aae17446f8dfd6a384ad2c81d58f",
+    "environment_sha256": "6f3ec3f47c62a80a63c911cfc8c225fb548522262ba3d89f41973f05248dfb6a",
+    "manifest_sha256": "7d06190f0111e092433eeb9a042151119d9e0e31d515197dbf59be426ed2cbb8"
+  },
+  "frozen_result_summary": {
+    "case_count": 26,
+    "max_spectral_residual": 2.220446049250313e-16,
+    "eigenvalue_only_sufficiency_status": "REFUTED_WITHIN_FROZEN_CONSTRUCTION",
+    "N1": {
+      "eigenvalues": [-1.0, -2.0],
+      "spectral_abscissa": -1.0,
+      "normal_max_operator_state_gain": 1.0,
+      "smallest_theta_deg": 0.5,
+      "smallest_theta_max_operator_state_gain": 28.6524936441728,
+      "state_gain_ratio_smallest_theta_to_normal": 28.6524936441728,
+      "minimum_scanned_stability_radius": 0.01745041361890063,
+      "first_theta_with_positive_numerical_abscissa": 15.0
+    },
+    "N2": {
+      "eigenvalues": [-0.25, -2.0],
+      "spectral_abscissa": -0.25,
+      "normal_max_operator_state_gain": 1.0,
+      "smallest_theta_deg": 0.5,
+      "smallest_theta_max_operator_state_gain": 74.5003623740674,
+      "state_gain_ratio_smallest_theta_to_normal": 74.5003623740674,
+      "minimum_scanned_stability_radius": 0.002493264858180868,
+      "first_theta_with_positive_numerical_abscissa": 45.0
+    }
+  },
+  "scope": "Execution archive only. Scientific interpretation is intentionally downstream of this checkpoint.",
+  "reproduction_entrypoint": "python chi_architecture/reproduce.py d01c"
+}

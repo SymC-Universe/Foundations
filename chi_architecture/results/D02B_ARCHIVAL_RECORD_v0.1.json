@@ -1,0 +1,45 @@
+{
+  "schema": "d02b-archival-record-v0.1",
+  "checkpoint_id": "D02B-CP10-EXECUTED-BEFORE-INTERPRETATION",
+  "date": "2026-09-23",
+  "branch": "chi-architecture-p0",
+  "scientific_freezes": {
+    "source_contract": "D02B_FOUR_BOLT_SOURCE_CONTRACT_v0.3.md",
+    "exact_mapping": "D02B_EXACT_SOURCE_MAPPING_v0.1.md",
+    "raw_parser_and_classification": "D02B_RAW_PARSER_AND_CLASSIFICATION_FREEZE_v0.1.md"
+  },
+  "implementation_commit": "1e4c5d3d10707bf9df8c528fb04f3aa2454d2434",
+  "successful_execution_commit": "cd4127b963cf2057841dff320c547ec7f3fad73d",
+  "workflow_run_id": 35823640290,
+  "workflow_name": "Chi Architecture D02B Physical Reproduction",
+  "workflow_conclusion": "success",
+  "artifact": {
+    "name": "chi-architecture-d02b-four-bolt-v01",
+    "id": 10734281523,
+    "digest": "sha256:3730a4a6db3803501fe35c74f740836cdf86a3d21d95f2de2707748fa1b0af1f",
+    "expires_at": "2026-12-22T05:44:09Z"
+  },
+  "result_hashes": {
+    "D02B_ENVIRONMENT_v0.1.txt": "6f3ec3f47c62a80a63c911cfc8c225fb548522262ba3d89f41973f05248dfb6a",
+    "D02B_FOUR_BOLT_PHYSICAL_RESULT_v0.1.json": "d7e0001413ef438aea2d8ea8757f7b4eeb8d6dab5ecfdf62be02b9f2575d4f10",
+    "D02B_REPRO_MANIFEST_v0.1.json": "beb792895ba4d98afd29848623422dd86be574727144877a291087fc809b465f",
+    "D02B_RESULT_CARD_v0.1.md": "872f1cf42866c65e817200b23cb1ceaaacab744f233e3c1c89c4fdaa8030540d",
+    "D02B_SUMMARY_v0.1.json": "ebdcd20659c69f838b8310b867aca64bd1aa052f2d1586a6d44c150027caf45e"
+  },
+  "source_hashes": {
+    "01_documentation.zip": {
+      "md5": "3eb96c388b4811380ab86af9bb4be1ad",
+      "sha256": "e3909af929a5c215c8ed1d51ce09aaf47e413ab40ec8e6c5c077a5ca21f1ba72"
+    },
+    "02_processed_tables.zip": {
+      "md5": "a8261869e61e2c41b799360f344b4394",
+      "sha256": "af0d165311def77376f479365198b823d9307d103c930f7492f8e8ebb87e1021"
+    },
+    "00_raw_exports.zip": {
+      "md5": "68450ff0f1c25492ee243b8adba29991",
+      "sha256": "2e6ece8670ab2201d2a8cdf38e31cc2b979062d0c7eaf93da152e1e27b6ffb89"
+    }
+  },
+  "reproduction_entrypoint": "python chi_architecture/reproduce.py d02b",
+  "scope": "Execution archive only. Result content was not scientifically interpreted before this record was committed."
+}

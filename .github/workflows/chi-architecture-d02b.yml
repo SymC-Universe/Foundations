@@ -1,0 +1,73 @@
+name: Chi Architecture D02B Physical Reproduction
+
+on:
+  push:
+    branches:
+      - chi-architecture-p0
+    paths:
+      - "chi_architecture/src/d02b_four_bolt.py"
+      - "chi_architecture/tests/test_d02b_four_bolt.py"
+      - "chi_architecture/reproduce.py"
+      - "chi_architecture/d02b/D02B_FOUR_BOLT_SOURCE_CONTRACT_v0.3.md"
+      - "chi_architecture/d02b/D02B_EXACT_SOURCE_MAPPING_v0.1.md"
+      - "chi_architecture/d02b/D02B_RAW_PARSER_AND_CLASSIFICATION_FREEZE_v0.1.md"
+      - ".github/workflows/chi-architecture-d02b.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  reproduce-d02b:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: "3.12.14"
+
+      - name: Install pinned dependencies
+        run: |
+          python -m pip install --disable-pip-version-check -r chi_architecture/requirements-p0.txt
+          python -m pip check
+
+      - name: Reproduce D02B from one entrypoint
+        run: python chi_architecture/reproduce.py d02b
+
+      - name: Guard frozen D02B scope
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path("chi_architecture/results/D02B_FOUR_BOLT_PHYSICAL_RESULT_v0.1.json").read_text())
+          assert r["schema"]=="d02b-four-bolt-physical-result-v0.1"
+          assert r["status"]=="P0_Q_PHYSICAL_D02B_EXECUTED"
+          assert r["retained_families_hz"]==[3325,4703,7034,7861,8163,8428,8695]
+          assert r["torque_state_count"]==18
+          assert len(r["common_point_ids"])==51
+          assert r["raw_member_counts"]["amplitude_members"]==919
+          assert r["raw_member_counts"]["phase_members"]==919
+          assert len(r["scalar_records"])==126
+          assert len(r["family_results"])==7
+          assert len(r["tracked_frequency_crosschecks"])==35
+          assert all(x["within_frozen_tolerance"] for x in r["tracked_frequency_crosschecks"])
+          assert r["added_value_verdict_preinterpretation"]=="NOT_ASSIGNED_BY_RUNNER"
+          print("D02B frozen-scope guards passed")
+          PY
+
+      - name: Upload one reviewer artifact
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: chi-architecture-d02b-four-bolt-v01
+          path: |
+            chi_architecture/results/D02B_FOUR_BOLT_PHYSICAL_RESULT_v0.1.json
+            chi_architecture/results/D02B_SUMMARY_v0.1.json
+            chi_architecture/results/D02B_RESULT_CARD_v0.1.md
+            chi_architecture/results/D02B_ENVIRONMENT_v0.1.txt
+            chi_architecture/results/D02B_REPRO_MANIFEST_v0.1.json
+          retention-days: 90
+          if-no-files-found: error

@@ -1,0 +1,68 @@
+name: Chi Architecture D02A Physical Reproduction
+
+on:
+  push:
+    branches:
+      - chi-architecture-p0
+    paths:
+      - "chi_architecture/d02_cspbbr3/**"
+      - "chi_architecture/src/d02a_physical.py"
+      - "chi_architecture/tests/test_d02a_physical.py"
+      - "chi_architecture/reproduce.py"
+      - "chi_architecture/requirements-p0.txt"
+      - ".github/workflows/chi-architecture-d02a.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  reproduce-d02a:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12.14"
+
+      - name: Install pinned dependencies
+        run: |
+          python -m pip install --disable-pip-version-check -r chi_architecture/requirements-p0.txt
+          python -m pip check
+
+      - name: Reproduce D02A from one entrypoint
+        run: python chi_architecture/reproduce.py d02a
+
+      - name: Guard physical evidence class and chi refusal
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r = json.loads(Path("chi_architecture/results/D02A_CSPBBR3_PHYSICAL_RESULT_v0.2.json").read_text())
+          assert r["status"] == "PHYSICAL_CARRIER_MATRIX_RECONSTRUCTED_CHI_REFUSED_V0.2"
+          assert r["confirmatory_credit"] is False
+          assert r["lowercase_chi"]["status"] == "REFUSED"
+          assert r["lowercase_chi"]["value_records"] == []
+          assert r["dho_license"]["chi_DHO_computed"] is False
+          assert r["broader_Chi"]["master_scalar_emitted"] is False
+          assert len(r["linewidth_records"]) > 0
+          assert len(r["carrier_maps"]) == 3
+          print("D02A physical-scope guards passed")
+          PY
+
+      - name: Upload one reviewer artifact
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: chi-architecture-d02a-physical-v02
+          path: |
+            chi_architecture/results/D02A_CSPBBR3_PHYSICAL_RESULT_v0.2.json
+            chi_architecture/results/D02A_CSPBBR3_SUMMARY_v0.2.json
+            chi_architecture/results/D02A_RESULT_CARD_v0.2.md
+            chi_architecture/results/D02A_ENVIRONMENT_v0.2.txt
+            chi_architecture/results/D02A_REPRO_MANIFEST_v0.2.json
+          retention-days: 90
+          if-no-files-found: error
