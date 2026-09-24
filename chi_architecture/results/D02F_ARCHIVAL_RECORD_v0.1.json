@@ -1,0 +1,27 @@
+{
+  "schema": "d02f-archival-record-v0.1",
+  "checkpoint_id": "D02F-CP4-EXECUTED-BEFORE-INTERPRETATION",
+  "date": "2026-09-24",
+  "branch": "chi-architecture-p0",
+  "scientific_freeze_commit": "9458bef490acc14f1ce76f52bbaf9dc4fd16403e",
+  "implementation_commit": "558b46a77e0dd2a0709e75b541d20aed231a738e",
+  "workflow_run_id": 36036875749,
+  "workflow_name": "Chi Architecture D02F FLOOD-SHAB Reproduction",
+  "workflow_conclusion": "success",
+  "artifact": {
+    "name": "chi-architecture-d02f-flood-shab-v01",
+    "id": 10824482673,
+    "digest": "sha256:457977822e445009dda266765c56fc26758f7e6e84e1a28e705038ac52a46118",
+    "expires_at": "2026-12-23T17:48:34Z"
+  },
+  "result_hashes": {
+    "D02F_ENVIRONMENT_v0.1.txt": "6f3ec3f47c62a80a63c911cfc8c225fb548522262ba3d89f41973f05248dfb6a",
+    "D02F_FLOOD_SHAB_PROSPECTIVE_RESULT_v0.1.json": "0cf6d223b4c788f9d9239009029558a46601dbfa30a47a12af8f71a8f9bb6919",
+    "D02F_REPRO_MANIFEST_v0.1.json": "4bd6270a5e3b927622aa68063bea56782aca22df94cfbd222eeb03d3bc744196",
+    "D02F_RESULT_CARD_v0.1.md": "c4abe1421f2b93bda8eb968e4615827c58c39fd0dc3a91d30f91a5ecc928b810",
+    "D02F_SUMMARY_v0.1.json": "4000d222771bbc7e1575acb1bd2f999e077bd64fc2c93946298459cbf69f07d4"
+  },
+  "source_record": "10.5281/zenodo.20443860",
+  "reproduction_entrypoint": "python chi_architecture/reproduce.py d02f",
+  "scope": "Execution provenance only. No primary D02F ordering was inspected or scientifically interpreted before this archival checkpoint."
+}
