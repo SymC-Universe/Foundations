@@ -42,19 +42,25 @@ The current evidence supports separating at least four candidate inheritance que
 
 These are candidate classes, not a final ontology.
 
+## Closure/memory prior-art firewall
+
+Mori-Zwanzig and generalized-Langevin coarse-graining already provide a formal route by which unresolved lower-level degrees of freedom influence resolved higher-level variables through memory and fluctuating terms. Therefore "lower-level history leaves a memory in higher-level dynamics" is not by itself Stability Inheritance novelty.
+
+For SI, closure/memory is treated as a native comparator or mechanism candidate, not automatic inheritance. A stronger inheritance relation must identify a stability-relevant lower-level object, establish its carrier or transformation correspondence, and show prespecified nonredundant value for higher-level Χ_con or realized response beyond an adequate native closure model. If Mori-Zwanzig, GLE, state augmentation, or another standard closure already captures the frozen task equally well, the SI result is EQUIVALENT or NO_ADDED_INHERITANCE_VALUE.
+
 ## Legacy physical candidates from prior SymC work
 
 ### Noughts / electromagnetic lineage
 
-Use only as a fresh native-physics reconstruction candidate. The old language about an electromagnetic substrate, vacuum constants, cosmological cascade, and universal χ cannot be imported as evidence. The residual SI question is whether an identifiable lower-level gauge/electroweak structure passes through a licensed physical transformation and adds nonredundant information about later electromagnetic organization beyond standard QFT/EFT treatment.
+Use only as a fresh native-physics reconstruction candidate. The old language about an electromagnetic substrate, vacuum constants, cosmological cascade, and universal χ cannot be imported as evidence. Revised-SI metrology also removes ε0 and μ0 numerical values as credible fundamental substrate evidence. The residual SI question is whether an identifiable lower-level gauge/electroweak structure passes through a licensed physical transformation and adds nonredundant information about later electromagnetic organization beyond standard QFT/EFT/RG treatment.
 
 ### Neutrino systems
 
-Treat first as a modal/environmental reorganization problem. The key discrimination is whether changing environment and basis merely changes the instantaneous native state, or whether identifiable prior modal organization constrains the descendant state beyond instantaneous native variables. A null result would be a useful inheritance refusal.
+Treat first as a modal/environmental reorganization problem. Matter-induced open-system decoherence is already prior art, so the key discrimination is whether changing environment and basis merely changes the instantaneous native state, or whether identifiable prior modal organization/history constrains the descendant state beyond the standard Hamiltonian, matter profile, initial state, and admitted decoherence variables. A null result would be a useful ENVIRONMENTAL_REORGANIZATION_WITHOUT_INHERITANCE case.
 
 ### Black-hole ringdown
 
-Treat first as a native modal laboratory. Quasinormal mode frequencies, damping, overtones, angular structure, excitation amplitudes, and mode families allow direct testing of how much information a scalar descriptor retains or destroys. Spectral similarity alone is not lineage or inheritance.
+Treat first as a native modal laboratory and known-truth qualification system. Progenitor dependence of ringdown excitation amplitudes/phases is already established prior art, so SI cannot claim that discovery. Quasinormal mode frequencies, damping, overtones, angular structure, excitation amplitudes, and mode families instead allow direct testing of whether χ / Χ / Χ_con separation recovers the known distinction between remnant-native spectra and source-conditioned excitation, and whether it adds anything beyond standard ringdown models. Spectral similarity alone is not lineage or inheritance.
 
 ## Immediate implication for Stability Inheritance
 
