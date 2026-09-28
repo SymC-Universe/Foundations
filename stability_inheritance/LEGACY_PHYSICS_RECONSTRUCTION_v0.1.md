@@ -3,7 +3,7 @@
 **Investigation:** Stability Inheritance  
 **Status:** P0-N / P0-D reconstruction only  
 **Date:** 2026-09-27  
-**Notation:** χ = licensed scalar; Χ = base modal/vector representation; Χ_sys = separate conglomerate/system representation.
+**Notation:** χ = licensed scalar; Χ = base modal/vector representation; Χ_arc = separate conglomerate/system representation.
 
 ## Source-identity warning
 
@@ -21,7 +21,7 @@ The old manuscript treats the electromagnetic vacuum as a physical photon substr
 
 - **χ:** Maxwell vacuum wave propagation admits no damping term in the ideal source-free wave equation, but this by itself does not establish an inherited stability coordinate across symmetry breaking.
 - **Χ:** native modal/gauge-field structure must be reconstructed from Standard Model electroweak and QED dynamics rather than from the old oscillator analogy.
-- **Χ_sys:** any later electromagnetic system-level organization must be defined separately from the base gauge/modal structure.
+- **Χ_arc:** any later electromagnetic system-level organization must be defined separately from the base gauge/modal structure.
 - **Candidate carrier:** not assumed. A physical carrier/transformation would need to be identified through electroweak symmetry breaking, field mixing, matching conditions, running couplings, or another native mechanism.
 - **Primary native comparator:** Standard Model electroweak symmetry breaking plus QED/EFT/RG description.
 
@@ -61,7 +61,7 @@ The revised public manuscript models three-flavor oscillations with a density-de
 
 - **χ:** χ_k is only admissible if the effective reduced generator and damping/frequency assignment are independently licensed for the declared mode and regime. It is not the neutrino stability architecture.
 - **Χ:** the native modal object is richer: mass/flavor basis structure, PMNS mixing, matter-dependent Hamiltonian, environmental/dephasing operator, eigenvectors/eigenspaces, basis rotation, and any non-normal or near-degenerate structure.
-- **Χ_sys:** system-level behavior includes coupled flavor-transition probabilities, coherence/decoherence across the full three-mode system, path-dependent matter profiles, and any collective/environmental organization beyond one modal quotient.
+- **Χ_arc:** system-level behavior includes coupled flavor-transition probabilities, coherence/decoherence across the full three-mode system, path-dependent matter profiles, and any collective/environmental organization beyond one modal quotient.
 - **Candidate carrier:** matter profile/environmental channel only if it carries a frozen parent-to-descendant relation rather than merely acting as an instantaneous parameter.
 
 ### First native prior-art collision
@@ -74,7 +74,7 @@ The inheritance question is not "can matter cause neutrino dephasing?" That is p
 
 ### Residual inheritance question
 
-After a medium or dynamical regime changes, does independently characterized prior modal organization Χ constrain the descendant Χ or Χ_sys beyond what the instantaneous standard oscillation-plus-matter variables already predict?
+After a medium or dynamical regime changes, does independently characterized prior modal organization Χ constrain the descendant Χ or Χ_arc beyond what the instantaneous standard oscillation-plus-matter variables already predict?
 
 ### Strong null / refusal
 
@@ -100,8 +100,8 @@ The revised manuscript already moved toward a spectrum-first treatment. It defin
 
 - **χ:** a ringdown quotient such as |Im ω| / |Re ω| can be retained as a declared spectral ratio, but it is not automatically the same mechanical damping ratio used for a stable second-order oscillator.
 - **Χ:** the natural primary object is the QNM architecture: complex spectra, angular and overtone families, eigenfunctions, excitation amplitudes, mode mixing, spin dependence, near-extremal branches, and conditioning where relevant.
-- **Χ_sys:** the observed ringdown waveform is a separate system-level superposition/response object that depends on excitation, source geometry, detector projection, nonlinear-merger history, and mode interference.
-- **Candidate inheritance relation:** whether progenitor/merger structure leaves a prospectively identifiable imprint on QNM excitation or Χ_sys beyond what final remnant parameters alone predict.
+- **Χ_arc:** the observed ringdown waveform is a separate system-level superposition/response object that depends on excitation, source geometry, detector projection, nonlinear-merger history, and mode interference.
+- **Candidate inheritance relation:** whether progenitor/merger structure leaves a prospectively identifiable imprint on QNM excitation or Χ_arc beyond what final remnant parameters alone predict.
 
 ### First native prior-art collision
 
@@ -111,7 +111,7 @@ Therefore progenitor dependence itself is not residual SI novelty. Ringdown is b
 
 ### Residual inheritance question
 
-Does the explicit χ / Χ / Χ_sys separation provide a nonredundant representation or boundary test beyond standard QNM and excitation modeling, and can it predict a prospectively withheld excitation or waveform property better than the strongest native ringdown model?
+Does the explicit χ / Χ / Χ_arc separation provide a nonredundant representation or boundary test beyond standard QNM and excitation modeling, and can it predict a prospectively withheld excitation or waveform property better than the strongest native ringdown model?
 
 ### Refusal conditions
 
@@ -121,7 +121,7 @@ Scalar spectral similarity without mode-family/excitation correspondence is not 
 
 ### Current disposition
 
-**Known-truth modal/inheritance qualification laboratory, not a novel progenitor-memory claim.** Ringdown can test whether the χ / Χ / Χ_sys representation recovers established source-versus-remnant distinctions and whether it adds anything beyond them.
+**Known-truth modal/inheritance qualification laboratory, not a novel progenitor-memory claim.** Ringdown can test whether the χ / Χ / Χ_arc representation recovers established source-versus-remnant distinctions and whether it adds anything beyond them.
 
 ---
 
@@ -141,5 +141,5 @@ A single admission rule must not be tuned separately so that all three pass. The
 2. Complete native prior-art collision for each before any new SymC derivation.
 3. For Noughts, start from electroweak/QED matching rather than ε0 and μ0.
 4. For neutrinos, reconstruct the full native generator and identify whether any history variable exists beyond instantaneous state.
-5. For ringdown, quantify information loss from Χ to χ and separate modal Χ from waveform/system Χ_sys before asking about progenitor inheritance.
+5. For ringdown, quantify information loss from Χ to χ and separate modal Χ from waveform/system Χ_arc before asking about progenitor inheritance.
 6. Feed only qualified results back into the main Stability Inheritance evidence map.
