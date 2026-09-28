@@ -3,7 +3,7 @@
 **Status:** RESIDUAL_DEFINED / A0 COMPLETE  
 **Date:** 2026-09-27  
 **Governance:** SymC General Operations Manual v1.0  
-**Project notation:** χ = licensed scalar coordinate; Χ = base modal/vector representation; Χ_sys = separate conglomerate/system representation.
+**Project notation:** χ = licensed scalar coordinate; Χ = base modal/vector representation; Χ_arc = separate conglomerate/system representation.
 
 ## Scientific question after A0
 
@@ -69,7 +69,7 @@ The targeted deep search "SI exact cross-level comparator collision" did not ide
 
 - independently characterized lower-level stability representation before target exposure;
 - separate higher-level/conglomerate representation;
-- explicit χ / Χ / Χ_sys representation distinction where scientifically applicable;
+- explicit χ / Χ / Χ_arc representation distinction where scientifically applicable;
 - strongest native higher-level comparator;
 - closure/memory comparator where applicable;
 - explicit carrier/transformation correspondence;
@@ -84,14 +84,14 @@ This absence is a search result, not proof of uniqueness. Later literature can n
 
 ### Primary residual: NEW_INTEGRATION
 
-The strongest supported residual is a stability-specific qualification architecture that keeps scalar χ, base modal/vector Χ, and separate conglomerate/system Χ_sys distinct, requires native-model-first admission, compares against appropriate compositional/closure/abstraction baselines, and treats refusal/nonidentifiability as first-class results.
+The strongest supported residual is a stability-specific qualification architecture that keeps scalar χ, base modal/vector Χ, and separate conglomerate/system Χ_arc distinct, requires native-model-first admission, compares against appropriate compositional/closure/abstraction baselines, and treats refusal/nonidentifiability as first-class results.
 
 ### Secondary residual: NEW_DISCRIMINATING_TEST
 
 A candidate new test structure remains:
 
 1. independently characterize lower-level χ and/or Χ;
-2. independently characterize the higher-level native state/Χ_sys;
+2. independently characterize the higher-level native state/Χ_arc;
 3. freeze the cross-level mapping and target before decisive evidence;
 4. compare the strongest native higher-level model against the same task augmented with lower-level information;
 5. if incremental value survives, test carrier intervention/counterfactual;
@@ -147,4 +147,4 @@ Later literature or APQ may reopen A0 if a closer equivalent framework is found.
 
 ## Next lifecycle action
 
-Move to Stage 2 plan construction and APQ for the first untouched qualification experiment. The plan should be drafted before any new decisive evidence is opened. Candidate systems remain unfrozen. The controlled modular physical hierarchy is currently the leading first test because it can independently manipulate χ, Χ, coupling, and Χ_sys while supporting direct carrier intervention and strong native comparators, but this choice remains subject to APQ and design-adequacy review.
+Move to Stage 2 plan construction and APQ for the first untouched qualification experiment. The plan should be drafted before any new decisive evidence is opened. Candidate systems remain unfrozen. The controlled modular physical hierarchy is currently the leading first test because it can independently manipulate χ, Χ, coupling, and Χ_arc while supporting direct carrier intervention and strong native comparators, but this choice remains subject to APQ and design-adequacy review.
