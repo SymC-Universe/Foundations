@@ -16,11 +16,10 @@ update_rule: "Update after every material scientific development and before ever
 - **Working branch:** stability-inheritance
 - **Current GOM version:** v1.0
 - **Project-specific protocol/version:** none frozen yet
-- **Current lifecycle Stage:** Stage 2 / APQ plan construction after P0-N closure
+- **Current lifecycle Stage:** Stage 2 / P0-Q computational qualification and APQ plan construction after P0-N closure
 - **Status:** ACTIVE
 - **Last updated:** 2026-09-28
-- **Last verified commit / archive / checkpoint:** 9c2e9da8271c79749802229c99119a0518070d55 - computational Stability Architecture relation matrix added after fresh history-boundary qualification\n
-### Scientific question
+- **Last verified commit / archive / checkpoint:** 149293cb2e5d345a1654e02c3c3302031e01decf - WH2009 external measured P0-Q result recorded after frozen protocol scoring\n### Scientific question
 
 Does the perturbation-response and recoverability of a higher-level system depend measurably on stability-relevant constraints or response capacities inherited from lower-level organization, and can that contribution be distinguished from stability generated, transformed, or reorganized by the higher-level system itself?
 
@@ -71,14 +70,16 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Next plan gate:** continue nonphysical P0-Q computational/literature qualification, including external measured-data benchmark intake where provenance permits; physical parent-only APQ remains available but is not required for current progress. No child/Q1/Q2 physical target exposure is permitted before the existing physical freeze gate.\n
 ## 6. Active Hold or Blocker
 
-- **Hold class:** USER_PHYSICAL_DEPENDENCY / P0-Q APPARATUS QUALIFICATION
-- **Trigger:** all currently authorized backend-only method qualification is complete; the next irreducible evidence is parent-only Phase 0-1 hardware identity and single-station shaft/bearing buildability under the active pilot protocol
-- **Last safe scientific state:** parent-only physical pilot authorized at P0-Q; A5/B5 known-truth method qualification passed at code/method level only; no child coupling or decisive Q1/Q2 target exposure has occurred
-- **Affected claims / work that must not advance:** no child coupling, Q1 A/B assembled comparison, Q2 assembled intervention, P1 inheritance confirmation, physical threshold freeze, or carrier-resolved inheritance claim may advance before parent-only measurement/reassembly qualification, candidate-margin derivation, APQ-2 adjudication, and plan freeze
-- **Unblocking criterion:** user supplies Phase 0-1 parent-only hardware identity/buildability evidence sufficient to continue the pilot, or a material apparatus failure is recorded and routed to redesign
-- **First exact resume action:** ingest the parent-only Phase 0-1 hardware identity/buildability record and classify STATION_BUILDABLE versus STATION_REDESIGN_REQUIRED without opening any child/Q1/Q2 outcome
-- **Required user action, if any:** perform and record parent-only Phase 0 hardware identity plus Phase 1 single-station buildability under stability_inheritance/PHYSICAL_HIERARCHY_PARENT_ONLY_PILOT_v0.1.md
-- **Continuity pointers:** stability_inheritance/PHYSICAL_HIERARCHY_PARENT_ONLY_PILOT_v0.1.md; stability_inheritance/PHYSICAL_HIERARCHY_METHODS_KNOWN_TRUTH_RESULT_v0.1.md; stability_inheritance/physical_hierarchy_methods_known_truth_v0_1.py; this record; GOM v1.0
+- **Overall project hold:** NONE
+- **Computational lane:** ACTIVE
+- **Physical lane hold class:** USER_PHYSICAL_DEPENDENCY / P0-Q APPARATUS QUALIFICATION
+- **Physical trigger:** parent-only hardware identity and single-station buildability remain unavailable because physical experimentation is deferred by the user
+- **Last safe physical state:** parent-only physical pilot authorized at P0-Q; A5/B5 known-truth method qualification passed at code/method level only; no child coupling or decisive Q1/Q2 target exposure has occurred
+- **Affected physical work:** no child coupling, Q1 A/B assembled comparison, Q2 assembled intervention, physical threshold freeze, or carrier-resolved physical claim may advance before parent-only qualification, candidate-margin derivation, APQ-2 adjudication, and plan freeze
+- **Computational work permitted:** synthetic qualification, randomized qualification, estimator/refusal studies, public measured P0-Q benchmarks, provenance/literature work, reproducibility, Function/Limit Map synthesis, and native-comparator adjudication
+- **Physical unblocking criterion:** user later supplies parent-only Phase 0-1 hardware identity/buildability evidence or explicitly resumes physical work
+- **Required user action now:** none for the computational program
+- **Continuity pointers:** stability_inheritance/COMPUTATIONAL_RANDOMIZED_QUALIFICATION_RESULT_v0.1.md; stability_inheritance/COMPUTATIONAL_HISTORY_ESTIMATOR_RESULT_v0.1.md; stability_inheritance/SILVERBOX_P0Q_EXTERNAL_RESULT_v0.1.md; stability_inheritance/FSM_PUBLISHED_BASELINE_ADJUDICATION_v0.1.md; stability_inheritance/WH2009_P0Q_RESULT_v0.1.md; stability_inheritance/PHYSICAL_HIERARCHY_PARENT_ONLY_PILOT_v0.1.md
 
 ## 7. Unresolved Scientific Items
 
@@ -108,9 +109,7 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 
 ## 8. Next Exact Action
 
-- **Next action:** consolidate the computational Function Map / Limit Map classifications into the canonical workbook, audit the new HISTORY_PRESENT_BUT_NOT_OPERATIONALLY_IDENTIFIABLE boundary against native estimation literature, and identify a provenance-clean public measured structural-dynamics dataset for external P0-Q qualification if available.\n- **Why this is next:** synthetic and randomized method behavior is now well qualified, while real measured-data robustness can still be tested computationally without contaminating the future physical Q1/Q2 experiment.\n- **Expected output / decision:** a computationally mature representation/refusal atlas, explicit estimator/SNR limits for history-dependent reconstruction, and a decision on whether at least one external measured benchmark can qualify the workflow before hardware.\n- **What must remain frozen while it runs:** no P1 claim, no universal substrate assumption, no universal recovery definition, no scalar-preservation assumption
-- **Stop / refusal condition:** refuse any computational extension that requires retuning already-seen outcomes, inventing a universal threshold, relabeling native theory as SI novelty, or using an external dataset without adequate provenance/identity.\n- **User intervention required:** yes, parent-only Phase 0-1 physical evidence is now the irreducible dependency
-
+- **Next action:** consolidate the three external measured P0-Q benchmarks into the Stability Architecture relation matrix, continue provenance-clean search/access work for a structural benchmark such as F-16 GVT, and extend only prospectively frozen estimator/native-comparator tests where they answer an unresolved Function/Limit question.\n- **Stop / refusal condition:** refuse any computational extension that requires retuning already-seen outcomes, inventing a universal threshold, relabeling native theory as SI novelty, or using an external dataset without adequate provenance/identity.\n- **User intervention required:** no for the computational lane; physical lane remains deferred by user choice\n
 ## 9. Resume Contract
 
 - **Start from:** A0 preliminary synthesis and this working record
@@ -559,3 +558,34 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Next action:** continue external measured benchmark qualification and regression-test the matrix against new failures rather than treating it as fixed.
 - **Why next:** the matrix is useful only if future evidence is allowed to break or simplify it.
 - **Provenance pointer:** commit 9c2e9da8271c79749802229c99119a0518070d55
+
+
+### 2026-09-28 - FAILURE - WH2009 scoring launch failed mechanically three times before exposure
+
+- **Lifecycle Stage:** Stage 2 / P0-Q external measured qualification
+- **Entry type:** FAILURE
+- **Source artifact / evidence identity:** GitHub Actions runs 36498162920, 36498237609, 36498325274
+- **Observed / decided:** first launch used a Git blob SHA as a raw-content ref and returned HTTP 404; second and third launches contained literal newline escape artifacts introduced during mechanical script patching and failed Python syntax parsing.
+- **Scientific interpretation:** all three failures occurred before valid data parsing/scoring and therefore contain no scientific outcome information. They are implementation/provenance failures only.
+- **Alternative explanation / uncertainty:** none material; logs localize each failure before scoring.
+- **Impact on claim / novelty / prediction:** none.
+- **Freeze impact:** frozen WH2009 split, models, lag horizon, regularization grid, metrics, and decision rule were unchanged.
+- **Status impact:** failures preserved as execution provenance; successful run required only source-transport and syntax repair.
+- **Next action:** preserve successful source-hash verification and do not rerun the failed paths unchanged.
+- **Why next:** prevents mechanical failures from being erased or misclassified as model failures.
+- **Provenance pointer:** runs 36498162920 / 36498237609 / 36498325274
+
+### 2026-09-28 - PLAN_EXECUTED - WH2009 external measured representation test passes frozen task
+
+- **Lifecycle Stage:** Stage 2 / P0-Q external measured qualification
+- **Entry type:** PLAN_EXECUTED
+- **Source artifact / evidence identity:** stability_inheritance/WH2009_P0Q_RESULT_v0.1.md; successful run 36498397948
+- **Observed / decided:** source blob matched the frozen expected identity. M2 polynomial NARX-8 outperformed M1 linear ARX-8 on both official-test one-step and recursive free-run metrics without divergence. One-step RMSE improved from 0.0008874133 to 0.0007311239; free-run RMSE improved from 0.04419645 to 0.02433026.
+- **Scientific interpretation:** NONLINEAR_EXTENSION_ADDS_FOR_TASK. A linear representation can remain highly accurate locally while being materially less adequate for recursive system behavior. The benchmark's native Wiener-Hammerstein nonlinearity is the sufficient native explanation; this is not SI novelty.
+- **Alternative explanation / uncertainty:** stronger block-oriented/nonlinear state-space methods exist and were not challenged by this simple M2 comparator.
+- **Impact on claim / novelty / prediction:** representation-adequacy/refusal Function/Limit evidence strengthened; empirical Stability Inheritance remains NOT TESTED.
+- **Freeze impact:** frozen protocol satisfied; no P1 or physical freeze created.
+- **Status impact:** third external measured P0-Q benchmark lane now recorded alongside Silverbox and FSM published baselines.
+- **Next action:** cross-benchmark relation-matrix consolidation and additional provenance-clean structural benchmark work.
+- **Why next:** compare what transports across measured systems without conflating native nonlinear modeling with inheritance.
+- **Provenance pointer:** commit 149293cb2e5d345a1654e02c3c3302031e01decf
