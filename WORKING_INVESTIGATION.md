@@ -80,14 +80,14 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 
 ## 6. Active Hold or Blocker
 
-- **Hold class:** None
-- **Trigger:** n/a
-- **Last safe scientific state:** GOM v1.0 restart with no new inheritance claim promoted
-- **Affected claims / work that must not advance:** no P1 inheritance confirmation may be claimed or frozen until A0 and APQ are complete
-- **Unblocking criterion:** n/a
-- **First exact resume action:** continue A0 component and compatibility mapping
-- **Required user action, if any:** none
-- **Continuity pointers:** Undermind A0 workspace; this record; GOM v1.0; closed Chemistry/GRI source records; active Bio Chi/Market/NSD branches
+- **Hold class:** USER_PHYSICAL_DEPENDENCY / P0-Q APPARATUS QUALIFICATION
+- **Trigger:** all currently authorized backend-only method qualification is complete; the next irreducible evidence is parent-only Phase 0-1 hardware identity and single-station shaft/bearing buildability under the active pilot protocol
+- **Last safe scientific state:** parent-only physical pilot authorized at P0-Q; A5/B5 known-truth method qualification passed at code/method level only; no child coupling or decisive Q1/Q2 target exposure has occurred
+- **Affected claims / work that must not advance:** no child coupling, Q1 A/B assembled comparison, Q2 assembled intervention, P1 inheritance confirmation, physical threshold freeze, or carrier-resolved inheritance claim may advance before parent-only measurement/reassembly qualification, candidate-margin derivation, APQ-2 adjudication, and plan freeze
+- **Unblocking criterion:** user supplies Phase 0-1 parent-only hardware identity/buildability evidence sufficient to continue the pilot, or a material apparatus failure is recorded and routed to redesign
+- **First exact resume action:** ingest the parent-only Phase 0-1 hardware identity/buildability record and classify STATION_BUILDABLE versus STATION_REDESIGN_REQUIRED without opening any child/Q1/Q2 outcome
+- **Required user action, if any:** perform and record parent-only Phase 0 hardware identity plus Phase 1 single-station buildability under stability_inheritance/PHYSICAL_HIERARCHY_PARENT_ONLY_PILOT_v0.1.md
+- **Continuity pointers:** stability_inheritance/PHYSICAL_HIERARCHY_PARENT_ONLY_PILOT_v0.1.md; stability_inheritance/PHYSICAL_HIERARCHY_METHODS_KNOWN_TRUTH_RESULT_v0.1.md; stability_inheritance/physical_hierarchy_methods_known_truth_v0_1.py; this record; GOM v1.0
 
 ## 7. Unresolved Scientific Items
 
@@ -122,7 +122,7 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Expected output / decision:** apparatus-specific repeatability distributions, qualified measurement/model path, admissible modal/subspace representation, candidate pre-target equivalence margins, and an APQ-2 decision on whether the physical benchmark is ready for freeze or remains DESIGN_LIMITED_EXPLORATORY
 - **What must remain frozen while it runs:** no P1 claim, no universal substrate assumption, no universal recovery definition, no scalar-preservation assumption
 - **Stop / refusal condition:** if the parent-only apparatus cannot maintain repeatable component identity, the measurement/model path cannot satisfy physical-consistency gates, or modal/subspace identity is not reproducible, keep the benchmark DESIGN_LIMITED_EXPLORATORY or redesign before any Q1/Q2 target exposure
-- **User intervention required:** no
+- **User intervention required:** yes, parent-only Phase 0-1 physical evidence is now the irreducible dependency
 
 ## 9. Resume Contract
 
