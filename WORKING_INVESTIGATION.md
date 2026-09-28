@@ -19,8 +19,7 @@ update_rule: "Update after every material scientific development and before ever
 - **Current lifecycle Stage:** Stage 2 / P0-Q computational qualification and APQ plan construction after P0-N closure
 - **Status:** ACTIVE
 - **Last updated:** 2026-09-28
-- **Last verified commit / archive / checkpoint:** 149293cb2e5d345a1654e02c3c3302031e01decf - WH2009 external measured P0-Q result recorded after frozen protocol scoring\n### Scientific question
-
+- **Last verified commit / archive / checkpoint:** 81ea0ee1d76e825099c9b75cf34f13adb796a52a - frozen pyFBS measured component-to-assembly P0-Q test launched after acquisition-only hash/metadata intake\n
 Does the perturbation-response and recoverability of a higher-level system depend measurably on stability-relevant constraints or response capacities inherited from lower-level organization, and can that contribution be distinguished from stability generated, transformed, or reorganized by the higher-level system itself?
 
 ### Smallest live claim or hypothesis
@@ -589,3 +588,34 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Next action:** cross-benchmark relation-matrix consolidation and additional provenance-clean structural benchmark work.
 - **Why next:** compare what transports across measured systems without conflating native nonlinear modeling with inheritance.
 - **Provenance pointer:** commit 149293cb2e5d345a1654e02c3c3302031e01decf
+
+
+### 2026-09-28 - INTAKE - pyFBS measured component/assembly benchmark admitted with constraints
+
+- **Lifecycle Stage:** Stage 2 / P0-Q external measured qualification
+- **Entry type:** INTAKE
+- **Source artifact / evidence identity:** stability_inheritance/PYFBS_LAB_DATA_INTAKE_v0.1.md; acquisition run 36499434590; metadata run 36499498798
+- **Observed / decided:** official pyFBS academic lab files Y_A.p, Y_B.p, Y_AB.p, and coupling_example.xlsx were acquired without inspecting/scoring FRF values, hash-identified, and removed before artifact upload. Metadata confirms independent A/B/AB channel layouts and a six-generalized-DoF virtual interface.
+- **Scientific interpretation:** this benchmark is materially closer to the missing SI relation than prior nonlinear system-ID benchmarks because independently measured component/source responses and an independently measured assembly target exist with a native source-to-target transformation.
+- **Alternative explanation / uncertainty:** dynamic substructuring already owns the component-to-assembly physics; the likely successful outcome is native-framework equivalence, not SI novelty.
+- **Impact on claim / novelty / prediction:** no P1 claim. Public data remain P0-Q only. Raw data redistribution is prohibited in SymC artifacts pending a dataset-specific license determination.
+- **Freeze impact:** no scoring had occurred at intake; source hashes and interface metadata became eligible freeze inputs.
+- **Status impact:** external source-to-target computational lane activated.
+- **Next action:** score only under the separately frozen component-to-assembly protocol.
+- **Why next:** this is the first measured benchmark that instantiates independent source, correspondence, transform, and target gates together.
+- **Provenance pointer:** intake commit 8ede23bf9e1a15655816863f333ab019244abf82
+
+### 2026-09-28 - FREEZE - pyFBS measured component-to-assembly P0-Q protocol frozen before FRF scoring
+
+- **Lifecycle Stage:** Stage 2 / P0-Q external measured qualification
+- **Entry type:** FREEZE
+- **Source artifact / evidence identity:** stability_inheritance/PYFBS_LAB_COMPONENT_ASSEMBLY_PROTOCOL_v0.1.md
+- **Observed / decided:** source hashes, all-positive-frequency scoring, documented VPT, six-DoF LM-FBS correspondence, independently measured AB target, normalized complex Frobenius error, uncoupled baseline, deterministic wrong-correspondence control, and outcome rules were frozen before FRF numerical scoring.
+- **Scientific interpretation:** native FRF matrices remain native objects; chi is not admitted and neither Chi nor Chi_arc is forced by notation. The test qualifies workflow operability/circularity only.
+- **Alternative explanation / uncertainty:** experimental interface conditioning or measurement error may make the documented native coupling implementation imperfect on the measured dataset.
+- **Impact on claim / novelty / prediction:** none beyond method qualification; NATIVE_FRAMEWORK_EQUIVALENT is the expected legitimate positive branch and carries no SI added-value claim.
+- **Freeze impact:** material scoring choices may not be changed after target exposure to rescue the result.
+- **Status impact:** scoring authorized under P0-Q only.
+- **Next action:** execute workflow run launched at commit 81ea0ee1d76e825099c9b75cf34f13adb796a52a.
+- **Why next:** test the first four source-to-target gates on measured component/assembly data.
+- **Provenance pointer:** protocol commit 5485a57fda952547353fd72256de917e12c5869d
