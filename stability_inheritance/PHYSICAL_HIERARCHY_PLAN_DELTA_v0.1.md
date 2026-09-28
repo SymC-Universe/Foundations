@@ -10,7 +10,7 @@ The APQ review found that v0.1 could not support a novel empirical inheritance c
 Material changes:
 
 1. **Claim ceiling lowered.** First cycle cannot promote CARRIER_RESOLVED_INHERITANCE or P1.
-2. **Χ_sys made independent.** Ground-truth Χ_sys is constructed only from directly measured assembled-system outcomes after component predictions are frozen.
+2. **Χ_arc made independent.** Ground-truth Χ_arc is constructed only from directly measured assembled-system outcomes after component predictions are frozen.
 3. **Comparator purpose clarified.** Scalar-only, modal-only, and SI representations are benchmarked against CMS/state-space substructuring; this is not the future macro-only versus macro-plus-lower P1.
 4. **Q3 damping intervention removed from first cycle.** Damping-specific work becomes a later extension after independent cross-talk calibration.
 5. **Interface integrity gates added.** Attachment mass, preload, coupling stiffness, repeatability, and post-disassembly parent drift must be quantified.
