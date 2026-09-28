@@ -11,7 +11,11 @@ OUT=Path("stability_inheritance/results/wh2009")
 OUT.mkdir(parents=True,exist_ok=True)
 raw=OUT/"wienerhammer.csv"
 urllib.request.urlretrieve(URL,raw)
-raw_bytes=raw.read_bytes()\nraw_sha=hashlib.sha256(raw_bytes).hexdigest()\ngit_blob_sha=hashlib.sha1((f"blob {len(raw_bytes)}\\0").encode("ascii")+raw_bytes).hexdigest()\nif git_blob_sha != EXPECTED_BLOB:\n    raise RuntimeError(f"source blob mismatch: expected {EXPECTED_BLOB}, got {git_blob_sha}")
+raw_bytes=raw.read_bytes()
+raw_sha=hashlib.sha256(raw_bytes).hexdigest()
+git_blob_sha=hashlib.sha1(f"blob {len(raw_bytes)}".encode("ascii") + b"\x00" + raw_bytes).hexdigest()
+if git_blob_sha != EXPECTED_BLOB:
+    raise RuntimeError(f"source blob mismatch: expected {EXPECTED_BLOB}, got {git_blob_sha}")
 
 data=np.loadtxt(raw,delimiter=",",dtype=float)
 if data.shape[0] < 184000 or data.shape[1] < 3:
