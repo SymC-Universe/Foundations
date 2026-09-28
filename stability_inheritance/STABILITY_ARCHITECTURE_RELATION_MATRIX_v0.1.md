@@ -30,7 +30,9 @@ Inheritance is not another layer. It is a qualified relation among admitted repr
 | Stable eigenvalue spectrum with strong non-normal transient growth | second-order chi NOT LICENSED in first-order example | state/eigenvector geometry ADMITTED | response organization may be ADMITTED | task-dependent | SPECTRAL_SCALAR_SUMMARY_INSUFFICIENT |
 | Hidden state projected to noisy observed coordinate, high SNR | scalar task-dependent | latent/state representation ADMITTED in known truth | history-aware observed representation may be ADMITTED | ADMITTED and operationally useful | HISTORY_RECOVERABLE_WITH_DECLARED_ESTIMATOR |
 | Hidden state projected to noisy observed coordinate, low SNR | scalar task-dependent | latent state exists but may be unobserved | history augmentation not operationally supported from declared observations | mathematically present but operationally REFUSED/UNIDENTIFIABLE | HISTORY_MEASUREMENT_LIMIT / HISTORY_PRESENT_BUT_NOT_OPERATIONALLY_IDENTIFIABLE |
-| Duffing-like measured dynamics where linear model fits locally but nonlinear model improves recursive prediction | model-local scalar may be diagnostic only | linear state representation locally ADMITTED but task-limited | nonlinear architecture may be required for declared behavior | native nonlinearity/context required | NONLINEAR_EXTENSION_ADDS_FOR_TASK / linear representation out of task regime |
+| Duffing-like measured dynamics where linear model fits locally but nonlinear model improves recursive prediction | model-local scalar may be diagnostic only | linear state representation locally ADMITTED but task-limited | richer nonlinear representation may be required for declared behavior; this is NOT by itself Chi_arc | native nonlinearity/context required | NONLINEAR_EXTENSION_ADDS_FOR_TASK / linear representation out of task regime |
+| Fine Steering Mirror measured amplitudes where locally specialized linear models do not dominate across all regimes | chi NOT ADMITTED from published baseline | linear state representation is amplitude/task dependent | no independently constructed Chi_arc object | native piezo hysteresis / nonlinear LFR sufficient | SHARED_NONLINEAR_REPRESENTATION_TRANSPORTS_BETTER / local specialization not architecture |
+| Wiener-Hammerstein measured benchmark where linear ARX is highly accurate one-step but worse in recursive simulation | chi NOT ADMITTED from input/output record | linear autoregressive representation locally useful but task-limited | no independently constructed Chi_arc object | native block-oriented nonlinearity sufficient | NONLINEAR_EXTENSION_ADDS_FOR_TASK / local accuracy does not license recursive adequacy |
 | Direct assembly/reference response fixed while predictor is corrupted | predictor scalar/modal layers may vary | predictor quality varies | direct target remains independently measured | not required | REFERENCE_INDEPENDENCE_OPERATIONAL |
 | Native CMS/dynamic substructuring fully explains component-to-assembly behavior | scalar/modal layers as native model permits | ADMITTED | direct assembly target ADMITTED | not required | NATIVE_FRAMEWORK_EQUIVALENT / NO_ADDED_INHERITANCE_VALUE |
 | No coherent mapping can be constructed without target/outcome leakage | REFUSED if affected | REFUSED/NONIDENTIFIABLE if affected | REFUSED/NOT_OPERATIONAL | REFUSED if affected | FRAMEWORK_NOT_OPERATIONAL for declared task |
@@ -87,9 +89,9 @@ A candidate inheritance relation is evaluated only after the source and target r
 
 A schematic relation may be written:
 
-[
-mathcal I: mathfrak S_P ightarrow mathfrak S_D
-]
+\[
+\mathcal I: \mathfrak S_P \rightarrow \mathfrak S_D
+\]
 
 only as bookkeeping for a qualified source-to-descendant relation, not as a new force, layer, or universal map.
 
@@ -118,6 +120,19 @@ What it supports is a **representation-qualification architecture**:
 8. permit native equivalence, refusal, and no-added-value outcomes.
 
 This is a synthesis of current P0-Q evidence and remains open to revision.
+
+## External measured benchmark constraint
+
+Silverbox, Fine Steering Mirror, and Wiener-Hammerstein now provide three independent measured-data qualification lanes. Taken together they support a limited transport statement: reduced/local linear representations can remain useful while richer native nonlinear representations are required for broader recursive or cross-regime tasks. They do **not** establish an inheritance relation.
+
+Across all three measured lanes:
+- better nonlinear prediction is not automatically Chi_arc;
+- local model adequacy is task- and regime-specific;
+- physical chi is either refused or remains only a model-local diagnostic;
+- native nonlinear system-identification explanations remain sufficient;
+- no independently characterized source-to-target embedding or lineage transition has yet been tested.
+
+Therefore the measured-data program strengthens the representation-qualification architecture while sharpening the residual Stability Inheritance question to cases with independently defined source and target objects plus an explicit carrier/correspondence map.
 
 ## Claim ceiling
 
