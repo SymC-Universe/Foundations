@@ -19,8 +19,7 @@ update_rule: "Update after every material scientific development and before ever
 - **Current lifecycle Stage:** Stage 2 / APQ plan construction after P0-N closure
 - **Status:** ACTIVE
 - **Last updated:** 2026-09-28
-- **Last verified commit / archive / checkpoint:** fa3e63f075e4bdf2309290ceefe6f6db1bf9c1fd - A5/B5 known-truth method qualification recorded; physical APQ objections remain open\n- **Evidence intake record / source snapshot:** current investigation begins from GOM v1.0, closed Chemistry and GRI research lineages, current Bio Chi/Market/NSD program state, and explicit legacy-source reconstruction; exact cross-project source map pending
-- **Ethics/safety/rights/compliance status:** NOT_APPLICABLE for current literature/synthesis phase
+- **Last verified commit / archive / checkpoint:** 81bf92af27491422c8d59d6ea2c8b0ff1610e332 - parent-only physical pilot protocol defined; Q1/Q2 remain unopened\n- **Ethics/safety/rights/compliance status:** NOT_APPLICABLE for current literature/synthesis phase
 - **Compliance record / approval / permission pointer:** n/a
 
 ## 2. Current Scientific State
@@ -77,7 +76,7 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Freeze timestamp / identifier / hash:** n/a
 - **Design adequacy status:** DESIGN_LIMITED_EXPLORATORY
 - **Masking / outcome-exposure status:** legacy and current program outcomes already known; they cannot serve as untouched confirmation for the newly formulated inheritance claim
-- **Next plan gate:** parent-only apparatus qualification and measurement-chain pilot, then apparatus-specific APQ-2 second-pass adjudication before freeze
+- **Next plan gate:** execute the parent-only pilot protocol, derive candidate uncertainty/repeatability regions from its data, then run apparatus-specific APQ-2 second-pass adjudication before any Q1/Q2 freeze
 
 ## 6. Active Hold or Blocker
 
@@ -403,3 +402,19 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Next action:** parent-only physical buildability, repeatability, and measurement-chain qualification.
 - **Why next:** the remaining uncertainty is physical implementation, not whether the code can distinguish the intended known-truth regimes.
 - **Provenance pointer:** commit fa3e63f075e4bdf2309290ceefe6f6db1bf9c1fd
+
+
+### 2026-09-28 - PLAN_REVISION - Parent-only physical pilot protocol established
+
+- **Lifecycle Stage:** Stage 2 / P0-Q apparatus qualification
+- **Entry type:** PLAN_REVISION
+- **Source artifact / evidence identity:** stability_inheritance/PHYSICAL_HIERARCHY_PARENT_ONLY_PILOT_v0.1.md
+- **Observed / decided:** the first physical execution path is now explicitly parent-only. It begins with a single-station shaft/bearing buildability test, advances to the two-station isolated parent, separates same-configuration measurement repeatability from reassembly/boundary repeatability, preserves raw versus identified versus conditioned model states, and derives only candidate margins for later APQ freeze.
+- **Scientific interpretation:** the remaining pre-freeze uncertainty is physical apparatus identity and measurement adequacy. These can be investigated without exposing child-coupled Q1/Q2 outcomes.
+- **Alternative explanation / uncertainty:** available threaded rod or bearing hardware may prove unsuitable for a precision torsional axis; this is a mechanical qualification outcome rather than evidence for or against Stability Inheritance.
+- **Impact on claim / novelty / prediction:** none. No empirical SI claim, interface, threshold, endpoint, or P1 object is promoted.
+- **Freeze impact:** none. Initial repeat counts are pilot information targets only; final equivalence regions remain unfrozen until derived from parent-only evidence and adjudicated by APQ.
+- **Status impact:** parent-only physical work is authorized under P0-Q; child coupling and decisive Q1/Q2 target acquisition remain prohibited.
+- **Next action:** perform Phase 0-1 hardware identity and single-station buildability, then proceed through the parent-only protocol if the station is mechanically viable.
+- **Why next:** all remaining safe analysis that can be performed without physical hardware has now been externalized; the next irreducible uncertainty is the apparatus itself.
+- **Provenance pointer:** commit 81bf92af27491422c8d59d6ea2c8b0ff1610e332
