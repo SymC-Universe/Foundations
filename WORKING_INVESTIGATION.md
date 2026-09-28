@@ -43,7 +43,7 @@ The legacy Stability Inheritance branch predates major developments in Chemistry
 
 ### Latest scientific development
 
-Mori-Zwanzig and generalized-Langevin coarse-graining materially narrow the candidate SI novelty again. Standard reduction theory already provides an exact/formal route by which unresolved lower-level degrees of freedom reappear in resolved higher-level dynamics as memory, fluctuating/noise, and effective closure terms, and modern data-driven coarse graining can reproduce metastable transition dynamics using those memory-bearing reduced models. SI therefore cannot claim novelty for the generic idea that hidden lower-level history influences higher-level dynamics. The residual must be stability-specific and carrier-resolved: whether independently characterized lower-level χ and/or Χ provides nonredundant information about separately characterized higher-level Χ_con or realized recovery beyond the strongest native higher-level model, including adequate closure/memory models.
+The candidate-P1 independence audit now separates qualification systems from future decisive tests. The legacy Noughts, neutrino, and ringdown branches are presently better adversarial/known-truth testbeds than first confirmation targets because their core phenomena substantially collide with established native theory. Existing Chemistry, GRI, Bio Chi, Market, Foundations, and legacy outcomes also cannot retroactively confirm the newly narrowed SI relation. The cleanest future routes are therefore new untouched tests, provisionally including a controlled physical hierarchy, a new biological perturbation/recovery system, and a new Market or Grid transfer/event system. No portfolio composition is frozen.
 
 ### Current interpretation and claim ceiling
 
@@ -120,9 +120,9 @@ No new scientific hypothesis, comparator, prediction, holdout, estimator, thresh
 
 ## 8. Next Exact Action
 
-- **Next action:** test the residual SI relation explicitly against Mori-Zwanzig/native closure as a comparator class, then map NSD and Grid into the χ / Χ / Χ_con evidence schema and identify the cleanest untouched P1 candidate
+- **Next action:** complete the external A0 full-text collision around compositional stability, closure/memory, and resilience; then convert the surviving residual into an APQ plan for the first untouched test without opening any candidate decisive evidence
 - **Why this is next:** generic hierarchy, multiscale recovery, micro-macro influence, and hidden-scale memory are now prior art; the remaining question is whether SI contributes a stability-specific carrier/representation relation with measurable value beyond those native frameworks
-- **Expected output / decision:** residual novelty class plus the smallest discriminating scientific question
+- **Expected output / decision:** final P0-N residual novelty class, exact discriminating claim family, and whether the first SI test should proceed as NEW_CONGLOMERATED_INFERENCE / NEW_DISCRIMINATING_TEST / NEW_BOUNDARY_TEST or be reduced to SYNTHESIS_ONLY
 - **What must remain frozen while it runs:** no P1 claim, no universal substrate assumption, no universal recovery definition, no scalar-preservation assumption
 - **Stop / refusal condition:** if prior art already establishes the proposed relation under compatible conditions, reclassify as synthesis/validation/boundary extension
 - **User intervention required:** no
@@ -266,3 +266,19 @@ No new scientific hypothesis, comparator, prediction, holdout, estimator, thresh
 - **Next action:** comparator-class mapping against closure/Mori-Zwanzig, then select untouched domain test only if a nonredundant residual survives
 - **Why next:** prevents relabeling standard coarse-grained memory as inheritance
 - **Provenance pointer:** INTERNAL_EVIDENCE_MAP_v0.1.md commit 57797f54f48d546b062207b42ca4462705a3e7a1
+
+
+### 2026-09-27 - DEVELOPMENT - Prospective-test independence matrix created
+
+- **Lifecycle Stage:** Stage 1 / P0-N
+- **Entry type:** DEVELOPMENT
+- **Source artifact / evidence identity:** stability_inheritance/P1_CANDIDATE_MATRIX_v0.1.md
+- **Observed / decided:** existing domain results are separated from future decisive evidence; Noughts, neutrinos, and ringdown are currently qualification/refusal candidates rather than preferred first P1 targets
+- **Scientific interpretation:** the newly narrowed SI relation needs genuinely untouched evidence frozen after the residual claim exists; domain diversity should test materially different mechanisms rather than repeat one composition problem
+- **Alternative explanation / uncertainty:** full-text A0 collision may further narrow the relation or make a proposed domain test redundant with native theory
+- **Impact on claim / novelty / prediction:** no P1 claim or portfolio frozen; strongest provisional future routes are controlled physical hierarchy, independent biological perturbation/recovery, and new Market/Grid transfer/event evidence
+- **Freeze impact:** none
+- **Status impact:** P0-N active; prospective independence firewall strengthened
+- **Next action:** finish closest-prior-art collision, then draft but do not execute the first APQ Plan Packet
+- **Why next:** a P1 design is premature until the remaining residual has survived compositional and closure literature
+- **Provenance pointer:** commit 0609270712c505d6a700267a01571a5fad3df306
