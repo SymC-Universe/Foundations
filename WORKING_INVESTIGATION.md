@@ -43,7 +43,7 @@ The legacy Stability Inheritance branch predates major developments in Chemistry
 
 ### Latest scientific development
 
-Native prior-art collision materially narrowed all three legacy physics candidates. Noughts cannot use ε0 and μ0 numerical values as evidence of a physical vacuum substrate under the revised SI and must move to native electroweak/QED dimensionless and transformation objects. Matter-induced neutrino decoherence is already an established open-system literature and the legacy parameter scale requires fresh comparison with existing bounds; the SI residual is history/carrier information beyond instantaneous standard variables, not decoherence itself. Black-hole ringdown progenitor dependence is already established through QNM amplitudes/phases, so ringdown becomes a known-truth representation benchmark rather than a novel inheritance claim.
+Mori-Zwanzig and generalized-Langevin coarse-graining materially narrow the candidate SI novelty again. Standard reduction theory already provides an exact/formal route by which unresolved lower-level degrees of freedom reappear in resolved higher-level dynamics as memory, fluctuating/noise, and effective closure terms, and modern data-driven coarse graining can reproduce metastable transition dynamics using those memory-bearing reduced models. SI therefore cannot claim novelty for the generic idea that hidden lower-level history influences higher-level dynamics. The residual must be stability-specific and carrier-resolved: whether independently characterized lower-level χ and/or Χ provides nonredundant information about separately characterized higher-level Χ_con or realized recovery beyond the strongest native higher-level model, including adequate closure/memory models.
 
 ### Current interpretation and claim ceiling
 
@@ -72,7 +72,7 @@ No new scientific hypothesis, comparator, prediction, holdout, estimator, thresh
 - **Plan Packet identity / path / commit:** preliminary A0 synthesis in Undermind workspace
 - **Adversarial first-pass status:** pending after component map matures
 - **Unresolved BLOCKER objections:** none yet formally adjudicated
-- **Unresolved MATERIAL objections:** possible redundancy with hierarchical-stability, resilience, causal-emergence, and prior inheritance-principle literature; unresolved program-governance notation mismatch between GOM v1.0 Section 2.1.1 and the project-level distinction Chi = modal/vector while conglomerate remains separate
+- **Unresolved MATERIAL objections:** possible redundancy with hierarchical-stability, resilience, causal-emergence, prior inheritance-principle, and Mori-Zwanzig/closure literature; unresolved program-governance notation mismatch between GOM v1.0 Section 2.1.1 and the project-level distinction Chi = modal/vector while conglomerate remains separate
 - **Objection-ledger identity:** pending
 - **Plan Delta identity:** pending
 - **Qualified plan version:** n/a
@@ -120,8 +120,8 @@ No new scientific hypothesis, comparator, prediction, holdout, estimator, thresh
 
 ## 8. Next Exact Action
 
-- **Next action:** reconcile the exact source/version lineage for Noughts, neutrinos, and ringdown; continue full-text A0 collision on the closest compositional-stability/resilience precedents; then map NSD and Grid into the χ / Χ / Χ_con evidence schema
-- **Why this is next:** the first prior-art pass has already removed generic hierarchical stability transfer from the novelty claim; exact source lineage and the closest full-text precedents now determine whether the remaining cross-level incremental-information relation is genuinely residual or synthesis-only
+- **Next action:** test the residual SI relation explicitly against Mori-Zwanzig/native closure as a comparator class, then map NSD and Grid into the χ / Χ / Χ_con evidence schema and identify the cleanest untouched P1 candidate
+- **Why this is next:** generic hierarchy, multiscale recovery, micro-macro influence, and hidden-scale memory are now prior art; the remaining question is whether SI contributes a stability-specific carrier/representation relation with measurable value beyond those native frameworks
 - **Expected output / decision:** residual novelty class plus the smallest discriminating scientific question
 - **What must remain frozen while it runs:** no P1 claim, no universal substrate assumption, no universal recovery definition, no scalar-preservation assumption
 - **Stop / refusal condition:** if prior art already establishes the proposed relation under compatible conditions, reclassify as synthesis/validation/boundary extension
@@ -250,3 +250,19 @@ No new scientific hypothesis, comparator, prediction, holdout, estimator, thresh
 - **Next action:** complete exact source-version intake; then prioritize the candidate that still has a genuine residual after native-baseline comparison
 - **Why next:** source identity and residual novelty must close before any new derivation or preregistration
 - **Provenance pointer:** commit 0b05eaf4e58d7524e5d41234234150ebd6c8b4cd
+
+
+### 2026-09-27 - DEVELOPMENT - Mori-Zwanzig collision removes generic hidden-scale memory from SI novelty
+
+- **Lifecycle Stage:** Stage 1 / P0-N
+- **Entry type:** DEVELOPMENT
+- **Source artifact / evidence identity:** A0_COMPONENT_COMPATIBILITY_MAP_v0.1.md; Mori-Zwanzig/GLE coarse-graining literature; INTERNAL_EVIDENCE_MAP_v0.1.md
+- **Observed / decided:** established projection/coarse-graining theory already maps unresolved lower-level degrees of freedom into reduced higher-level dynamics through memory kernels, fluctuating terms, and effective closure forces
+- **Scientific interpretation:** persistence of lower-level history in higher-level dynamics is not sufficient to establish Stability Inheritance and is not residual novelty by itself
+- **Alternative explanation / uncertainty:** the remaining stability-specific, carrier-resolved cross-level relation may still reduce to an established closure or compositional framework once full-text comparison is complete
+- **Impact on claim / novelty / prediction:** a future SI test must compare against adequate native closure/memory models where applicable and must show what χ / Χ / Χ_con separation adds beyond them
+- **Freeze impact:** none; no P1 objects are frozen
+- **Status impact:** candidate novelty narrowed; SYNTHESIS_ONLY remains live
+- **Next action:** comparator-class mapping against closure/Mori-Zwanzig, then select untouched domain test only if a nonredundant residual survives
+- **Why next:** prevents relabeling standard coarse-grained memory as inheritance
+- **Provenance pointer:** INTERNAL_EVIDENCE_MAP_v0.1.md commit 57797f54f48d546b062207b42ca4462705a3e7a1
