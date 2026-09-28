@@ -1,0 +1,36 @@
+name: Stability Inheritance pyFBS Lab Intake
+
+on:
+  push:
+    branches:
+      - stability-inheritance
+    paths:
+      - "stability_inheritance/acquire_pyfbs_lab_manifest_v0_1.py"
+      - "stability_inheritance/PYFBS_LAB_DATA_INTAKE_v0.1.md"
+      - ".github/workflows/stability-inheritance-pyfbs-intake.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  intake:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: "3.12.14"
+      - name: Acquisition only
+        run: python stability_inheritance/acquire_pyfbs_lab_manifest_v0_1.py
+      - name: Remove raw payload before artifact upload
+        run: rm -rf stability_inheritance/results/pyfbs_lab_intake/raw
+      - name: Upload manifest only
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: stability-inheritance-pyfbs-lab-intake
+          path: stability_inheritance/results/pyfbs_lab_intake/manifest.json
+          if-no-files-found: error
