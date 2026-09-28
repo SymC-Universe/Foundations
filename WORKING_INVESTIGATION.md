@@ -19,8 +19,7 @@ update_rule: "Update after every material scientific development and before ever
 - **Current lifecycle Stage:** Stage 2 / APQ plan construction after P0-N closure
 - **Status:** ACTIVE
 - **Last updated:** 2026-09-28
-- **Last verified commit / archive / checkpoint:** 81bf92af27491422c8d59d6ea2c8b0ff1610e332 - parent-only physical pilot protocol defined; Q1/Q2 remain unopened\n- **Ethics/safety/rights/compliance status:** NOT_APPLICABLE for current literature/synthesis phase
-- **Compliance record / approval / permission pointer:** n/a
+- **Last verified commit / archive / checkpoint:** f8b2e3124fcfdf3a5cacf07159fef836bf0fd98b - randomized computational qualification result recorded after pre-run protocol freeze\n- **Compliance record / approval / permission pointer:** n/a
 
 ## 2. Current Scientific State
 
@@ -38,11 +37,7 @@ Program evidence increasingly separates three starting levels that must remain d
 
 The legacy Stability Inheritance branch predates major developments in Chemistry, GRI, Bio Chi, Market, NSD, and GOM v1.0 and is therefore preserved as lineage rather than inherited as current scientific authority.
 
-### Latest scientific development
-
-A5 and B5 now have deterministic known-truth method qualification. The representation-specific mobility passivity/reciprocity detector accepts an exact passive reciprocal model and rejects a deliberately non-passive negative-damping control. Synthetic asymmetric FRF noise can create apparent passivity violations in an otherwise passive model, confirming that the physical gate must be uncertainty-aware rather than a zero-tolerance sign test. In a 400-perturbation near-degenerate modal control, individual mode identity swapped in 34% of cases while the two-mode subspace remained essentially invariant; a well-separated control showed 0% swaps and near-unity individual MAC. This qualifies the refusal/subspace code path but does not close physical APQ objections or support an empirical inheritance claim.
-
-### Current interpretation and claim ceiling
+### Latest scientific development\n\nThe computational qualification program has expanded beyond the physical-apparatus code preflight. A nine-case deterministic known-truth suite passed all predeclared method-scope cases, a six-family parameter stress atlas mapped both Function and Limit behavior, and a separately frozen randomized ensemble (protocol commit 09e407e32ceed906e1c507add4b2afbcfa0a7c11, master seed 2026092802) passed all five randomized qualification tests. The randomized results preserve both positive and null/refusal structure: same scalar spectra produced both near-null and large response differences depending on modal geometry; non-proportional damping progressively degraded independent scalar-mode reconstruction; fixed eigenvalues supported widely varying non-normal transient gain; hidden-state history was operationally useful at high SNR but often not at low SNR; and direct Chi_arc references remained independent under predictor corruption. A post-result root-cause follow-up localized the noisy memory failures to lagged-predictor errors-in-variables rather than disappearance of the underlying hidden-state memory. A 10-master-seed statistical reproducibility probe reproduced the same qualitative ensemble behavior on every run.\n\n### Current interpretation and claim ceiling
 
 The strongest current interpretation is that Stability Inheritance should be investigated across explicitly separated scalar chi, modal/vector Chi, and conglomerate/system Chi_arc levels, with the full Stability Architecture arising from their relations plus any additional supported structure. Capital Chi is not used as shorthand for the conglomerate in this project. Substrates are candidate carriers where native science supports them, not universal objects. Recovery is a high-information probe where scientifically meaningful but does not define all stability. Claim ceiling remains P0-N/P0-D until residual novelty and a prospective discriminating test are frozen.
 
@@ -76,8 +71,7 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Freeze timestamp / identifier / hash:** n/a
 - **Design adequacy status:** DESIGN_LIMITED_EXPLORATORY
 - **Masking / outcome-exposure status:** legacy and current program outcomes already known; they cannot serve as untouched confirmation for the newly formulated inheritance claim
-- **Next plan gate:** execute the parent-only pilot protocol, derive candidate uncertainty/repeatability regions from its data, then run apparatus-specific APQ-2 second-pass adjudication before any Q1/Q2 freeze
-
+- **Next plan gate:** continue nonphysical P0-Q computational/literature qualification, including external measured-data benchmark intake where provenance permits; physical parent-only APQ remains available but is not required for current progress. No child/Q1/Q2 physical target exposure is permitted before the existing physical freeze gate.\n
 ## 6. Active Hold or Blocker
 
 - **Hold class:** USER_PHYSICAL_DEPENDENCY / P0-Q APPARATUS QUALIFICATION
@@ -117,12 +111,8 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 
 ## 8. Next Exact Action
 
-- **Next action:** execute the parent-only apparatus qualification packet: buildability/repeatability, repeated modal identification, sensor/DAQ qualification, representation-specific reciprocity/passivity/model-consistency checks, and repeatability-derived margin construction, without coupling the child or opening Q1/Q2 assembled target outcomes
-- **Why this is next:** P0-N/A0 is already complete for plan construction and the remaining APQ blockers are apparatus-operability questions. Native experimental-dynamics literature now specifies the required gate logic, so the next uncertainty can only be reduced by parent-only physical qualification.
-- **Expected output / decision:** apparatus-specific repeatability distributions, qualified measurement/model path, admissible modal/subspace representation, candidate pre-target equivalence margins, and an APQ-2 decision on whether the physical benchmark is ready for freeze or remains DESIGN_LIMITED_EXPLORATORY
-- **What must remain frozen while it runs:** no P1 claim, no universal substrate assumption, no universal recovery definition, no scalar-preservation assumption
-- **Stop / refusal condition:** if the parent-only apparatus cannot maintain repeatable component identity, the measurement/model path cannot satisfy physical-consistency gates, or modal/subspace identity is not reproducible, keep the benchmark DESIGN_LIMITED_EXPLORATORY or redesign before any Q1/Q2 target exposure
-- **User intervention required:** yes, parent-only Phase 0-1 physical evidence is now the irreducible dependency
+- **Next action:** consolidate the computational Function Map / Limit Map classifications into the canonical workbook, audit the new HISTORY_PRESENT_BUT_NOT_OPERATIONALLY_IDENTIFIABLE boundary against native estimation literature, and identify a provenance-clean public measured structural-dynamics dataset for external P0-Q qualification if available.\n- **Why this is next:** synthetic and randomized method behavior is now well qualified, while real measured-data robustness can still be tested computationally without contaminating the future physical Q1/Q2 experiment.\n- **Expected output / decision:** a computationally mature representation/refusal atlas, explicit estimator/SNR limits for history-dependent reconstruction, and a decision on whether at least one external measured benchmark can qualify the workflow before hardware.\n- **What must remain frozen while it runs:** no P1 claim, no universal substrate assumption, no universal recovery definition, no scalar-preservation assumption
+- **Stop / refusal condition:** refuse any computational extension that requires retuning already-seen outcomes, inventing a universal threshold, relabeling native theory as SI novelty, or using an external dataset without adequate provenance/identity.\n- **User intervention required:** yes, parent-only Phase 0-1 physical evidence is now the irreducible dependency
 
 ## 9. Resume Contract
 
@@ -418,3 +408,64 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Next action:** perform Phase 0-1 hardware identity and single-station buildability, then proceed through the parent-only protocol if the station is mechanically viable.
 - **Why next:** all remaining safe analysis that can be performed without physical hardware has now been externalized; the next irreducible uncertainty is the apparatus itself.
 - **Provenance pointer:** commit 81bf92af27491422c8d59d6ea2c8b0ff1610e332
+
+
+### 2026-09-28 - DEVELOPMENT - Nine-case computational qualification suite closes cleanly
+
+- **Lifecycle Stage:** Stage 2 / P0-Q computational qualification
+- **Entry type:** DEVELOPMENT
+- **Source artifact / evidence identity:** stability_inheritance/COMPUTATIONAL_QUALIFICATION_RESULT_v0.1.md
+- **Observed / decided:** nine deterministic known-truth cases all produced their predeclared method-scope dispositions across scalar insufficiency, modal/subspace refusal, non-proportional damping, non-normal transient growth, hidden-state memory, nonlinear regime exit, native equivalence, and direct Chi_arc target independence.
+- **Scientific interpretation:** chi, Chi, and Chi_arc must be task- and regime-qualified rather than assumed to form a universal monotonic hierarchy. Scalar coordinates can be licensed yet nonidentifying; individual modal labels can fail while subspaces remain stable; richer representation does not create novelty when native CMS/closure already explains the result.
+- **Alternative explanation / uncertainty:** deterministic examples can be cherry-picked and therefore require parameter and randomized stress tests before being treated as robust method qualification.
+- **Impact on claim / novelty / prediction:** none beyond method-scope qualification; no empirical SI confirmation.
+- **Freeze impact:** none.
+- **Status impact:** computational Function/Limit mapping expanded.
+- **Next action:** parameter stress atlas and randomized ensemble.
+- **Why next:** test whether classification survives variation without retuning.
+- **Provenance pointer:** commit 219b7436fd563aa28c8a10ba8c7e3397f3681e2d
+
+### 2026-09-28 - OUTLIER - Memory/history advantage fails under noisy lagged predictors
+
+- **Lifecycle Stage:** Stage 2 / P0-Q computational qualification
+- **Entry type:** OUTLIER
+- **Source artifact / evidence identity:** stability_inheritance/COMPUTATIONAL_STRESS_ATLAS_RESULT_v0.1.md; stability_inheritance/COMPUTATIONAL_MEMORY_IDENTIFIABILITY_FOLLOWUP_v0.1.md
+- **Observed / decided:** AR(2) history closure outperformed AR(1) in 9/9 noiseless, 8/9 at 1e-4 noise, 5/9 at 1e-3, and 2/9 at 1e-2 in the deterministic stress grid. Targeted controls showed that noise in lagged predictors, not target noise alone, drove the reversal.
+- **Scientific interpretation:** mathematical history dependence and operational identifiability are distinct. Candidate local disposition HISTORY_PRESENT_BUT_NOT_OPERATIONALLY_IDENTIFIABLE is warranted for the tested estimator/measurement regime, not NO_MEMORY.
+- **Alternative explanation / uncertainty:** ordinary least-squares AR(2) is only one estimator; state-space/Kalman/Mori-Zwanzig methods may behave differently.
+- **Impact on claim / novelty / prediction:** adds a Limit Map boundary; does not create SI novelty.
+- **Freeze impact:** promotion debt for any future claim generalizing the new label beyond the tested estimator.
+- **Status impact:** failure preserved and root-caused.
+- **Next action:** treat SNR/estimator adequacy as part of any future history-layer admissibility test.
+- **Why next:** prevents mathematically correct but operationally unidentifiable memory from being forced into Chi_arc.
+- **Provenance pointer:** commits 99b95256b8f41cfee2f74acbb5dd63bab2d4e319 and 04e66a715641a8dea4d67a8401f2d7052b5b7461
+
+### 2026-09-28 - FREEZE - Randomized computational qualification protocol frozen before run
+
+- **Lifecycle Stage:** Stage 2 / P0-Q computational qualification
+- **Entry type:** FREEZE
+- **Source artifact / evidence identity:** stability_inheritance/COMPUTATIONAL_RANDOMIZED_QUALIFICATION_PROTOCOL_v0.1.md
+- **Observed / decided:** five randomized known-truth families, master seed 2026092802, outcome metrics, qualification criteria, invalid-draw handling, and claim ceiling were committed before generation.
+- **Scientific interpretation:** this is a method-scope preregistration only, not a P1 scientific preregistration.
+- **Alternative explanation / uncertainty:** synthetic ensemble coverage is not empirical transport.
+- **Impact on claim / novelty / prediction:** none.
+- **Freeze impact:** freeze created for the randomized P0-Q run only.
+- **Status impact:** randomized run authorized.
+- **Next action:** execute without retuning.
+- **Why next:** challenge selected-case bias.
+- **Provenance pointer:** commit 09e407e32ceed906e1c507add4b2afbcfa0a7c11
+
+### 2026-09-28 - PLAN_EXECUTED - Randomized computational qualification passes precommitted criteria
+
+- **Lifecycle Stage:** Stage 2 / P0-Q computational qualification
+- **Entry type:** PLAN_EXECUTED
+- **Source artifact / evidence identity:** stability_inheritance/COMPUTATIONAL_RANDOMIZED_QUALIFICATION_RESULT_v0.1.md
+- **Observed / decided:** all five randomized tests passed their precommitted method-scope criteria. RQ-1 retained scalar-spectrum identity to 4.44e-16 while producing near-null and large response differences; RQ-2 off-diagonal damping/reconstruction-error correlation 0.68684; RQ-3 fixed-spectrum systems spanned gain 1 to 7.50; RQ-4 high-SNR history closure won 100% of 142 cases while low-SNR won only 22.5% of 80; RQ-5 predictor corruption/error correlation 0.82905 against unchanged direct references.
+- **Scientific interpretation:** the qualification/refusal architecture survives randomized variation while preserving meaningful failure branches. In particular, history dependence must pass an observability/estimation gate.
+- **Alternative explanation / uncertainty:** this remains a synthetic ensemble designed from known theory and cannot establish empirical cross-domain inheritance.
+- **Impact on claim / novelty / prediction:** method-scope qualification strengthened; empirical claim ceiling unchanged.
+- **Freeze impact:** randomized protocol freeze satisfied; no physical or P1 freeze created.
+- **Status impact:** computational branch active and reproducible.
+- **Next action:** external measured-data benchmark qualification and architecture/limit consolidation.
+- **Why next:** real measured data is the strongest remaining nonphysical challenge to the workflow.
+- **Provenance pointer:** commit f8b2e3124fcfdf3a5cacf07159fef836bf0fd98b
