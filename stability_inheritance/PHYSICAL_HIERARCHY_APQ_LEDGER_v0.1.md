@@ -14,9 +14,9 @@
 
 **Resolution:** first cycle must be labeled P0-Q KNOWN-TRUTH PHYSICAL QUALIFICATION. It cannot promote a novel inheritance claim. Its job is to test whether SI representation and refusal labels reproduce known native distinctions and fail safely.
 
-### A2 — MATERIAL — Χ_con risks circularity if it is constructed from the same parent modes used as predictors.
+### A2 — MATERIAL — Χ_sys risks circularity if it is constructed from the same parent modes used as predictors.
 
-**Resolution:** Χ_con ground truth must be defined from direct assembled-system measurements after predictions are frozen: assembled FRF/state-space response, directly identified assembly modes/subspaces, transfer/energy-response measures, and frozen transient-response metrics. Parent Χ may predict these objects but may not define them.
+**Resolution:** Χ_sys ground truth must be defined from direct assembled-system measurements after predictions are frozen: assembled FRF/state-space response, directly identified assembly modes/subspaces, transfer/energy-response measures, and frozen transient-response metrics. Parent Χ may predict these objects but may not define them.
 
 ### A3 — MATERIAL — The "higher-level native model versus native-plus-lower-level" residual cannot be cleanly tested if the native comparator is CMS, because CMS already uses lower-level component information.
 
@@ -52,7 +52,7 @@ The first physical cycle does only (1).
 - layer labels cannot be assigned reproducibly under representation changes that native theory regards as equivalent;
 - SI-specific distinctions do not change any prediction, refusal, identifiability decision, or boundary relative to the native comparator across the planned failure cases;
 - outcome classes depend materially on arbitrary normalization/basis choices;
-- the χ / Χ / Χ_con separation cannot be operationalized without using outcome information.
+- the χ / Χ / Χ_sys separation cannot be operationalized without using outcome information.
 
 If these occur, classify FRAMEWORK_NO_ADDED_VALUE or FRAMEWORK_NOT_OPERATIONAL for this domain.
 
@@ -83,7 +83,7 @@ If these occur, classify FRAMEWORK_NO_ADDED_VALUE or FRAMEWORK_NOT_OPERATIONAL f
 
 1. rename first cycle as physical known-truth qualification;
 2. remove any P1/carrier-resolved-inheritance promotion from first cycle;
-3. define Χ_con only from direct assembled measurements;
+3. define Χ_sys only from direct assembled measurements;
 4. separate benchmark comparator hierarchy from later incremental-value P1 logic;
 5. add interface-repeatability, passivity, reciprocity, rank, and sensor-health gates;
 6. defer damping intervention Q3;
