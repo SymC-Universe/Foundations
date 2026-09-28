@@ -136,3 +136,10 @@ If no:
 - SI independently supports subspace preservation when individual carrier identity is unstable.
 - These are not treated as the same mechanism.
 - Shared cross-project question: what information survives scale, representation, or embedding, and what is lost/reordered?
+
+### 2026-09-28 — ERIES-RESPOND CANDIDATE AUDIT
+- ERIES-RESPOND was screened as a full-scale hierarchical-embedding candidate.
+- A 2025 open-access paper describes the same campaign, its three excitation stages, its superstructure-response objective, and selected preliminary results.
+- The campaign is therefore literature-exposed and cannot be treated as globally untouched P1 evidence.
+- ACCEPT for P0-D/P0-Q development/native-comparator work. Endpoint-specific P1 eligibility remains NEED_MORE_INFO and would require independent proof before decisive values are opened.
+- Durable audit: SI_ERIES_RESPOND_CANDIDATE_AUDIT_20260928.md.
