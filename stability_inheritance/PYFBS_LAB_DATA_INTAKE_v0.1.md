@@ -76,3 +76,27 @@ The next action is acquisition-only hashing. No FRF values are scored until:
 - source hashes are known;
 - interface metadata structure is inspected;
 - the exact coupling/scoring protocol and outcome rule are committed prospectively.
+
+
+## Acquisition-only manifest
+
+Acquisition workflow run: 36499434590  
+Outcome exposure: NO FRF numerical values inspected or scored.
+
+| File | Size (bytes) | SHA-256 |
+|---|---:|---|
+| Y_A.p | 468036 | 3b8ece8b2b80b63e209427518cd6521c8028042ff1d79ff04e5de5f657a13db4 |
+| Y_B.p | 5658516 | 2e4a83f4ce1b87e773c5872764c4e4bd11f71b256a11964ac7574a81feeeed12 |
+| Y_AB.p | 9349524 | 197deff3bc1f546bc1653ecb877d34dece01dfc1d360217dc903f4d1a694d4d7 |
+| coupling_example.xlsx | 28885 | 44df97fd4f97e2bcce122afd6578113c23e2820a32f957baaeb5b4c8a4162ad4 |
+
+The raw files were deleted from the runner before artifact upload; only the manifest was retained.
+
+## Metadata-only inspection
+
+Metadata workflow run: 36499498798  
+Outcome exposure: NO FRF numerical values inspected.
+
+The coupling workbook contains dedicated A, B, AB, virtual-point channel, and virtual-point reference sheets. The virtual interface contains six generalized response coordinates (three translational and three rotational), matching the documented pyFBS VPT/LM-FBS coupling formulation.
+
+This metadata is sufficient to freeze the interface transformation and scoring design before opening the FRF payloads.
