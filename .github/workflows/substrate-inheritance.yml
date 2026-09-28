@@ -156,6 +156,9 @@ jobs:
       - name: Run FM1 coupling response landscape
         run: python -m substrate_inheritance.coupling_response_landscape
 
+      - name: Run physical benchmark metadata access probe
+        run: python substrate_inheritance/physical_dataset_access_probe.py
+
       - name: Verify outputs are explicitly non-physical
         run: |
           python - <<'PY'
@@ -295,6 +298,7 @@ jobs:
             substrate_inheritance/results/si_next_contract_validation.json
             substrate_inheritance/results/si_v04_validation.json
             substrate_inheritance/results/validation_environment.txt
+            substrate_inheritance/results/SI_PHYSICAL_DATASET_ACCESS_PROBE_v0.1.json
 
       - name: Upload FM4 hierarchical closure landscape
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
