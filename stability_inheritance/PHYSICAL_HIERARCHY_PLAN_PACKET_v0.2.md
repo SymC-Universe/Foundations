@@ -15,14 +15,14 @@ The experiment does **not** test whether component modes influence an assembly a
 - licensed scalar χ;
 - base modal/vector Χ;
 - coupling/interface mapping;
-- conglomerate/system Χ_sys;
+- conglomerate/system Χ_arc;
 - realized perturbation/recovery behavior;
 
 and whether the proposed qualification/refusal labels agree with native component-mode/substructuring predictions while refusing unsupported stronger claims. An outcome that adds no information beyond CMS is an expected, scientifically successful benchmark result.
 
 ## 2. Primary scientific question
 
-When a mechanically characterized parent module is embedded in a larger assembly, which parent properties remain identifiable in the assembled response, which are transformed by interface coupling, and which become insufficient or nonidentifying once the separate Χ_sys organization is considered?
+When a mechanically characterized parent module is embedded in a larger assembly, which parent properties remain identifiable in the assembled response, which are transformed by interface coupling, and which become insufficient or nonidentifying once the separate Χ_arc organization is considered?
 
 ## 3. Representation contract
 
@@ -46,9 +46,9 @@ For each independently characterized component:
 - conditioning / near-degeneracy diagnostics;
 - measured FRF/state-space representation where available.
 
-### Conglomerate/system Χ_sys
+### Conglomerate/system Χ_arc
 
-Χ_sys is not the parent modal basis and may not be generated from the parent predictors. For this benchmark, the reference Χ_sys is defined only from **direct measurements of the assembled system obtained after the parent-to-assembly predictions are frozen**, including where measurable:
+Χ_arc is not the parent modal basis and may not be generated from the parent predictors. For this benchmark, the reference Χ_arc is defined only from **direct measurements of the assembled system obtained after the parent-to-assembly predictions are frozen**, including where measurable:
 
 - assembly modes/subspaces;
 - modal participation and mixing across components;
@@ -57,7 +57,7 @@ For each independently characterized component:
 - transient amplification;
 - recovery/reorganization profile after a frozen perturbation.
 
-No single scalar Χ_sys is presumed.
+No single scalar Χ_arc is presumed.
 
 ## 4. Apparatus class
 
@@ -79,7 +79,7 @@ Independently characterize the parent module once. Couple the same parent to the
 
 The parent χ and parent Χ remain fixed. The coupling map changes.
 
-**Prediction:** standard substructuring/CMS and the SI modal-plus-coupling representation should predict different Χ_sys/response when the interface samples different modal participation. Scalar-only parent χ should not be sufficient.
+**Prediction:** standard substructuring/CMS and the SI modal-plus-coupling representation should predict different Χ_arc/response when the interface samples different modal participation. Scalar-only parent χ should not be sufficient.
 
 **Refusal:** if interfaces are not mechanically repeatable or the parent modal state drifts beyond frozen equivalence bounds between assemblies, Q1 is INVALID_TEST rather than inheritance evidence.
 
@@ -87,7 +87,7 @@ The parent χ and parent Χ remain fixed. The coupling map changes.
 
 With interface geometry fixed, make one prospective parent intervention that changes a resolved parent modal property, such as stiffness or mass distribution, while leaving the child and interface definition unchanged.
 
-**Prediction:** the frozen component/substructuring model predicts a corresponding change in assembly Χ_sys and response. The intervention direction and target assembly observables must be frozen before the modified assembly is measured.
+**Prediction:** the frozen component/substructuring model predicts a corresponding change in assembly Χ_arc and response. The intervention direction and target assembly observables must be frozen before the modified assembly is measured.
 
 **Refusal:** if the intervention simultaneously changes uncontrolled interface properties or invalidates the original component boundary, classify CONFOUNDED_INTERVENTION.
 
@@ -121,7 +121,7 @@ The experiment must be analyzed against, at minimum:
 2. state-space or FRF-based native model appropriate to the apparatus;
 3. scalar-only representation using admissible local χ and frequency information;
 4. modal-only representation using Χ without explicit interface/conglomerate organization;
-5. modal + coupling / Χ_sys representation;
+5. modal + coupling / Χ_arc representation;
 6. persistence/simple empirical baseline for any predictive time-series endpoint.
 
 Where approximate bisimulation, passivity/small-gain, causal-abstraction consistency, or another native control-theoretic comparator is scientifically appropriate, add it before outcome exposure. CMS/state-space substructuring is the primary native reference. The future SI incremental-value P1 must be a separate test in which the strongest higher-level baseline does not already contain the proposed lower-level object.
@@ -255,7 +255,7 @@ The first APQ pass resolved the claim-ceiling and circularity blockers. Before t
 
 - Can the chosen apparatus produce repeatable interfaces and measurement precision sufficient to make the benchmark meaningful?
 - Do the planned component models remain reciprocal/passive and well-conditioned across assembly cycles?
-- Are the directly measured Χ_sys outcomes operationally independent of the parent predictors?
+- Are the directly measured Χ_arc outcomes operationally independent of the parent predictors?
 - Does the benchmark include at least one deliberate failure/nonidentifiability case rather than only an easy positive CMS case?
 - Can Q1 alter coupling without changing the parent boundary conditions?
 - Can Q2 alter parent Χ without contaminating the interface?
