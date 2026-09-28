@@ -43,7 +43,7 @@ The legacy Stability Inheritance branch predates major developments in Chemistry
 
 ### Latest scientific development
 
-The first A0 conglomeration now shows that generic subsystem-to-system stability transfer, compositional certification, hierarchical model reduction, multiscale resilience, allostatic adaptation, and micro-macro causation are established prior art. The residual SI candidate has therefore narrowed to a carrier-specific cross-level discrimination problem: whether independently characterized lower-level χ and/or modal Χ adds nonredundant information about separately characterized higher-level Χ_con or realized perturbation/recovery beyond the strongest native higher-level representation. The legacy Noughts, neutrino, and ringdown works have been reconstructed as three adversarial candidates testing false-substrate assignment, environmental reorganization without inheritance, and scalar-vs-modal information loss respectively.
+Native prior-art collision materially narrowed all three legacy physics candidates. Noughts cannot use ε0 and μ0 numerical values as evidence of a physical vacuum substrate under the revised SI and must move to native electroweak/QED dimensionless and transformation objects. Matter-induced neutrino decoherence is already an established open-system literature and the legacy parameter scale requires fresh comparison with existing bounds; the SI residual is history/carrier information beyond instantaneous standard variables, not decoherence itself. Black-hole ringdown progenitor dependence is already established through QNM amplitudes/phases, so ringdown becomes a known-truth representation benchmark rather than a novel inheritance claim.
 
 ### Current interpretation and claim ceiling
 
@@ -234,3 +234,19 @@ No new scientific hypothesis, comparator, prediction, holdout, estimator, thresh
 - **Next action:** source-version intake and native prior-art reconstruction for each candidate
 - **Why next:** old SymC claims are lineage only and cannot be reused without requalification
 - **Provenance pointer:** commit 30be5832e4e475585af344f1c886c8b00afb4db8
+
+
+### 2026-09-27 - DEVELOPMENT - Native collision narrows Noughts, neutrino, and ringdown roles
+
+- **Lifecycle Stage:** Stage 1 / P0-N
+- **Entry type:** DEVELOPMENT
+- **Source artifact / evidence identity:** stability_inheritance/LEGACY_PHYSICS_RECONSTRUCTION_v0.1.md; revised-SI metrology; established neutrino-decoherence literature; established ringdown-excitation literature
+- **Observed / decided:** Noughts' ε0/μ0 substrate framing is not a viable modern fundamental target; matter-induced neutrino decoherence is prior art; black-hole progenitor information in ringdown amplitudes/phases is prior art
+- **Scientific interpretation:** the three branches remain useful only after their novelty targets are narrowed: Noughts to a nonredundant gauge-sector transformation relation, neutrinos to history/carrier information beyond instantaneous native dynamics, and ringdown to representation/information-loss added value beyond standard QNM excitation models
+- **Alternative explanation / uncertainty:** all three may ultimately classify as known-truth qualification, synthesis, or refusal rather than new inheritance evidence
+- **Impact on claim / novelty / prediction:** prevents old SymC formulations from inflating the SI novelty claim
+- **Freeze impact:** none
+- **Status impact:** legacy candidate roles narrowed
+- **Next action:** complete exact source-version intake; then prioritize the candidate that still has a genuine residual after native-baseline comparison
+- **Why next:** source identity and residual novelty must close before any new derivation or preregistration
+- **Provenance pointer:** commit 0b05eaf4e58d7524e5d41234234150ebd6c8b4cd
