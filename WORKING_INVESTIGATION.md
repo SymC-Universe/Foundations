@@ -37,7 +37,7 @@ No inheritance law is established. The current candidate hypothesis is that some
 
 ### Current evidence picture
 
-Program evidence increasingly separates three starting levels that must remain distinct: licensed scalar chi, capital Chi as the base modal/vector representation, and Chi_sys as the conglomerate/system representation. Chemistry and GRI provide closed research lineages with scalar insufficiency/refusal and modal/system-level structure; Bio Chi and Market provide active examples where richer organization may remain meaningful when scalar reduction is inadequate or refused. These are hypothesis-generating and architecture-defining inputs for Stability Inheritance, not retroactive confirmation of a new inheritance claim.
+Program evidence increasingly separates three starting levels that must remain distinct: licensed scalar chi, capital Chi as the base modal/vector representation, and Chi_arc as the conglomerate/system representation. Chemistry and GRI provide closed research lineages with scalar insufficiency/refusal and modal/system-level structure; Bio Chi and Market provide active examples where richer organization may remain meaningful when scalar reduction is inadequate or refused. These are hypothesis-generating and architecture-defining inputs for Stability Inheritance, not retroactive confirmation of a new inheritance claim.
 
 The legacy Stability Inheritance branch predates major developments in Chemistry, GRI, Bio Chi, Market, NSD, and GOM v1.0 and is therefore preserved as lineage rather than inherited as current scientific authority.
 
@@ -47,7 +47,7 @@ The candidate-P1 independence audit now separates qualification systems from fut
 
 ### Current interpretation and claim ceiling
 
-The strongest current interpretation is that Stability Inheritance should be investigated across explicitly separated scalar chi, modal/vector Chi, and conglomerate/system Chi_sys levels, with the full Stability Architecture arising from their relations plus any additional supported structure. Capital Chi is not used as shorthand for the conglomerate in this project. Substrates are candidate carriers where native science supports them, not universal objects. Recovery is a high-information probe where scientifically meaningful but does not define all stability. Claim ceiling remains P0-N/P0-D until residual novelty and a prospective discriminating test are frozen.
+The strongest current interpretation is that Stability Inheritance should be investigated across explicitly separated scalar chi, modal/vector Chi, and conglomerate/system Chi_arc levels, with the full Stability Architecture arising from their relations plus any additional supported structure. Capital Chi is not used as shorthand for the conglomerate in this project. Substrates are candidate carriers where native science supports them, not universal objects. Recovery is a high-information probe where scientifically meaningful but does not define all stability. Claim ceiling remains P0-N/P0-D until residual novelty and a prospective discriminating test are frozen.
 
 ## 3. Prior Art, Novelty, and A0 Status
 
@@ -66,11 +66,11 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 
 ## 5. Active Plan and Adversarial Plan Qualification
 
-- **Active plan / scientific route:** APQ-2 qualification of a controlled physical hierarchy benchmark that tests whether χ / Χ / Χ_sys representation and refusal logic behave correctly against established CMS/dynamic-substructuring theory before any novel P1 inheritance test is attempted
+- **Active plan / scientific route:** APQ-2 qualification of a controlled physical hierarchy benchmark that tests whether χ / Χ / Χ_arc representation and refusal logic behave correctly against established CMS/dynamic-substructuring theory before any novel P1 inheritance test is attempted
 - **APQ level:** APQ-2 SUBSTANTIAL
 - **Plan status:** REVISION_REQUIRED_AFTER_FIRST_PASS / v0.2 drafted, not frozen
 - **Plan Packet identity / path / commit:** stability_inheritance/PHYSICAL_HIERARCHY_PLAN_PACKET_v0.2.md, commit 26c3ab3cc04abe17c5b5d1a86e38df479172a204
-- **Adversarial first-pass status:** COMPLETE with two BLOCKER and eight MATERIAL objections; blockers resolved by lowering first-cycle ceiling to P0-Q known-truth qualification and separating direct Χ_sys measurement from parent predictors
+- **Adversarial first-pass status:** COMPLETE with two BLOCKER and eight MATERIAL objections; blockers resolved by lowering first-cycle ceiling to P0-Q known-truth qualification and separating direct Χ_arc measurement from parent predictors
 - **Unresolved BLOCKER objections:** none after Plan Delta v0.1; no plan freeze yet
 - **Unresolved MATERIAL objections:** apparatus-specific repeatability, interface integrity, passivity/reciprocity/rank, measurement precision, and framework-operability criteria remain to be closed in a second APQ pass; notation mismatch with GOM v1.0 Section 2.1.1 remains a governance issue
 - **Objection-ledger identity:** stability_inheritance/PHYSICAL_HIERARCHY_APQ_LEDGER_v0.1.md, commit 902db9060c35efe433222e685611591641bee13f
@@ -99,7 +99,7 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - What, precisely, is inherited: scalar coordinate, modal/subspace structure, transfer property, admissible region, timescale, constraint, response capacity, or another object?
 - What qualifies as a substrate or carrier versus ordinary boundary condition, environment, or coupling?
 - When does lower-level information add value beyond the higher-level native model?
-- How should repeated perturbation/history alter the modal Chi layer and the separate Chi_sys conglomerate/system layer, and when do changes in one propagate into the other?
+- How should repeated perturbation/history alter the modal Chi layer and the separate Chi_arc conglomerate/system layer, and when do changes in one propagate into the other?
 - What is the correct distinction among preservation, transformation, compensation, reorganization, emergence, and loss?
 
 ### Anomalies / outliers / failures requiring disposition
@@ -189,18 +189,18 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Provenance pointer:** WORKING_INVESTIGATION.md commit generated from this correction
 
 
-### 2026-09-27 - DECISION - Adopt Chi_sys for conglomerate/system representation
+### 2026-09-27 - DECISION - Adopt Chi_arc for conglomerate/system representation
 
 - **Lifecycle Stage:** Stage 1 / P0-N
 - **Entry type:** DECISION
 - **Source artifact / evidence identity:** user notation decision during Stability Inheritance restart
-- **Observed / decided:** project notation now uses lowercase chi for a licensed scalar coordinate, capital Chi for the base modal/vector representation, and Chi_sys for conglomerate/system organization
+- **Observed / decided:** project notation now uses lowercase chi for a licensed scalar coordinate, capital Chi for the base modal/vector representation, and Chi_arc for conglomerate/system organization
 - **Scientific interpretation:** the full Stability Architecture is not identified with any one of these symbols; it is reconstructed from their supported relationships plus additional native structure where required
 - **Alternative explanation / uncertainty:** a future GOM revision may choose a typographically different conglomerate subscript, but modal/conglomerate separation is the scientific requirement
-- **Impact on claim / novelty / prediction:** every inheritance test must identify whether it concerns scalar chi, modal/vector Chi, conglomerate Chi_sys, or a cross-level relation among them
+- **Impact on claim / novelty / prediction:** every inheritance test must identify whether it concerns scalar chi, modal/vector Chi, conglomerate Chi_arc, or a cross-level relation among them
 - **Freeze impact:** none; this is a project notation decision upstream of P1
 - **Status impact:** ACTIVE notation normalized
-- **Next action:** build the internal evidence map using separate chi, Chi, and Chi_sys columns
+- **Next action:** build the internal evidence map using separate chi, Chi, and Chi_arc columns
 - **Why next:** the current cross-project evidence can only be compared coherently if the three starting representation levels remain explicit
 - **Provenance pointer:** this WORKING_INVESTIGATION.md update
 
@@ -213,7 +213,7 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Observed / decided:** small-gain, dissipativity/compositional certification, hierarchical reduction, resilience/viability, biological robustness/allostasis, and micro-macro causation already establish major components that an overbroad Stability Inheritance claim would otherwise rediscover
 - **Scientific interpretation:** SI cannot claim novelty for component stability constraining system stability, modes from parts contributing to assemblies, multiscale robustness, non-exact return to baseline, repeated-stress adaptation, or generic cross-level causation
 - **Alternative explanation / uncertainty:** the remaining cross-level relation may still be synthesis-only if closer prior art already performs the same carrier-specific incremental comparison
-- **Impact on claim / novelty / prediction:** residual candidate narrowed to lower-level χ/Χ adding nonredundant information about separate higher-level Χ_sys or realized response beyond the strongest native higher-level representation
+- **Impact on claim / novelty / prediction:** residual candidate narrowed to lower-level χ/Χ adding nonredundant information about separate higher-level Χ_arc or realized response beyond the strongest native higher-level representation
 - **Freeze impact:** none; no preregistration yet
 - **Status impact:** P0-N remains active with narrower candidate residual
 - **Next action:** full-text collision with closest precedents and exact legacy-source reconciliation
@@ -260,7 +260,7 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Observed / decided:** established projection/coarse-graining theory already maps unresolved lower-level degrees of freedom into reduced higher-level dynamics through memory kernels, fluctuating terms, and effective closure forces
 - **Scientific interpretation:** persistence of lower-level history in higher-level dynamics is not sufficient to establish Stability Inheritance and is not residual novelty by itself
 - **Alternative explanation / uncertainty:** the remaining stability-specific, carrier-resolved cross-level relation may still reduce to an established closure or compositional framework once full-text comparison is complete
-- **Impact on claim / novelty / prediction:** a future SI test must compare against adequate native closure/memory models where applicable and must show what χ / Χ / Χ_sys separation adds beyond them
+- **Impact on claim / novelty / prediction:** a future SI test must compare against adequate native closure/memory models where applicable and must show what χ / Χ / Χ_arc separation adds beyond them
 - **Freeze impact:** none; no P1 objects are frozen
 - **Status impact:** candidate novelty narrowed; SYNTHESIS_ONLY remains live
 - **Next action:** comparator-class mapping against closure/Mori-Zwanzig, then select untouched domain test only if a nonredundant residual survives
@@ -304,10 +304,10 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Lifecycle Stage:** Stage 2
 - **Entry type:** PLAN_OBJECTION
 - **Source artifact / evidence identity:** PHYSICAL_HIERARCHY_APQ_LEDGER_v0.1.md
-- **Observed / decided:** first draft risked becoming a relabeled CMS demonstration and contained potential Χ_sys circularity plus interface/measurement confounds
+- **Observed / decided:** first draft risked becoming a relabeled CMS demonstration and contained potential Χ_arc circularity plus interface/measurement confounds
 - **Scientific interpretation:** first physical cycle is scientifically useful only as a known-truth physical qualification benchmark, not a novel inheritance experiment
 - **Alternative explanation / uncertainty:** an apparatus benchmark may ultimately show FRAMEWORK_NO_ADDED_VALUE, which is an acceptable closeout
-- **Impact on claim / novelty / prediction:** P1/carrier-resolved inheritance removed from first-cycle ceiling; direct assembled measurement now defines reference Χ_sys
+- **Impact on claim / novelty / prediction:** P1/carrier-resolved inheritance removed from first-cycle ceiling; direct assembled measurement now defines reference Χ_arc
 - **Freeze impact:** v0.1 not qualified
 - **Status impact:** APQ revision required
 - **Next action:** apply Plan Delta and perform apparatus-specific second pass
@@ -319,7 +319,7 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Lifecycle Stage:** Stage 2
 - **Entry type:** PLAN_REVISION
 - **Source artifact / evidence identity:** stability_inheritance/PHYSICAL_HIERARCHY_PLAN_PACKET_v0.2.md
-- **Observed / decided:** plan reclassified to P0-Q known-truth benchmark; Χ_sys made outcome-independent/directly measured; Q3 damping deferred; interface/passivity/reciprocity/rank/sensor gates added; framework no-added-value outcomes added
+- **Observed / decided:** plan reclassified to P0-Q known-truth benchmark; Χ_arc made outcome-independent/directly measured; Q3 damping deferred; interface/passivity/reciprocity/rank/sensor gates added; framework no-added-value outcomes added
 - **Scientific interpretation:** the benchmark now tests whether SI qualification behaves correctly against native substructuring rather than attempting to claim known component-to-assembly physics as new
 - **Alternative explanation / uncertainty:** apparatus-specific APQ may still show that the benchmark is unnecessary or not operational
 - **Impact on claim / novelty / prediction:** no empirical claim promoted
@@ -330,17 +330,33 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Provenance pointer:** commit 26c3ab3cc04abe17c5b5d1a86e38df479172a204
 
 
-### 2026-09-27 - NOTATION_DECISION - Adopt Chi_sys for conglomerate/system representation
+### 2026-09-27 - NOTATION_DECISION - Adopt Chi_arc for conglomerate/system representation
 
 - **Lifecycle Stage:** Stage 2
 - **Entry type:** DECISION
 - **Source artifact / evidence identity:** user notation decision during Stability Inheritance APQ development
-- **Observed / decided:** lowercase chi remains the licensed scalar coordinate; capital Chi remains the base modal/vector representation; Chi_sys replaces Chi_con as the notation for the separate conglomerate/system representation
-- **Scientific interpretation:** Chi_sys is distinct from modal Chi and does not imply dependence on scalar chi, arithmetic addition, or equivalence with the full Stability Architecture
+- **Observed / decided:** lowercase chi remains the licensed scalar coordinate; capital Chi remains the base modal/vector representation; Chi_arc replaces Chi_con as the notation for the separate conglomerate/system representation
+- **Scientific interpretation:** Chi_arc is distinct from modal Chi and does not imply dependence on scalar chi, arithmetic addition, or equivalence with the full Stability Architecture
 - **Alternative explanation / uncertainty:** none at the project notation level; GOM v1.0 notation remains a separate governance mismatch to resolve later
 - **Impact on claim / novelty / prediction:** notation only; no scientific result, threshold, mapping, or claim ceiling changes
 - **Freeze impact:** none
 - **Status impact:** active Stability Inheritance documents normalized prospectively; historical frozen records retain original terminology as provenance
-- **Next action:** continue apparatus-specific APQ under chi / Chi / Chi_sys
+- **Next action:** continue apparatus-specific APQ under chi / Chi / Chi_arc
 - **Why next:** notation friction removed without altering science
+- **Provenance pointer:** WORKING_INVESTIGATION.md and active Stability Inheritance files normalized in this update
+
+
+### 2026-09-27 - NOTATION_DECISION - Replace Chi_sys with Chi_arc
+
+- **Lifecycle Stage:** Stage 2
+- **Entry type:** DECISION
+- **Source artifact / evidence identity:** user notation clarification during Stability Inheritance APQ development
+- **Observed / decided:** lowercase chi remains the licensed scalar coordinate; capital Chi remains the base modal/vector representation; Chi_arc replaces Chi_sys as the architecture-level/conglomerate representation reconstructed or measured through the Stability Arc machinery where scientifically possible
+- **Scientific interpretation:** the subscript arc is operational, not decorative. It denotes the higher-order architecture-level representation obtained through the Stability Arc reconstruction logic, while remaining distinct from bare modal Chi and from the total research program
+- **Alternative explanation / uncertainty:** some domains may not license a Chi_arc reconstruction; in those cases Chi_arc is REFUSED / NOT_APPLICABLE rather than forced
+- **Impact on claim / novelty / prediction:** notation and semantic clarification only; no scientific threshold, result, evidence ceiling, or novelty classification changes
+- **Freeze impact:** none
+- **Status impact:** active Stability Inheritance documents normalized prospectively to Chi_arc
+- **Next action:** continue apparatus-specific APQ under chi / Chi / Chi_arc
+- **Why next:** notation now encodes the actual role of the architecture-reconstruction layer and reduces ambiguity
 - **Provenance pointer:** WORKING_INVESTIGATION.md and active Stability Inheritance files normalized in this update
