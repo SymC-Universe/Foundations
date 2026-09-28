@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - substrate-inheritance
+      - substrate-inheritance-next
     paths:
       - "substrate_inheritance/**"
       - ".github/workflows/substrate-inheritance.yml"
