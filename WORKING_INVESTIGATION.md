@@ -19,8 +19,7 @@ update_rule: "Update after every material scientific development and before ever
 - **Current lifecycle Stage:** Stage 2 / APQ plan construction after P0-N closure
 - **Status:** ACTIVE
 - **Last updated:** 2026-09-28
-- **Last verified commit / archive / checkpoint:** 19a11138a83a0a15cadee3a9a72f1c56ba731f45 - literature-backed APQ-2 pre-freeze methods note; active plan remains unfrozen\n- **Evidence/data intake status:** INTAKE_PASS_WITH_LIMITS
-- **Evidence intake record / source snapshot:** current investigation begins from GOM v1.0, closed Chemistry and GRI research lineages, current Bio Chi/Market/NSD program state, and explicit legacy-source reconstruction; exact cross-project source map pending
+- **Last verified commit / archive / checkpoint:** fa3e63f075e4bdf2309290ceefe6f6db1bf9c1fd - A5/B5 known-truth method qualification recorded; physical APQ objections remain open\n- **Evidence intake record / source snapshot:** current investigation begins from GOM v1.0, closed Chemistry and GRI research lineages, current Bio Chi/Market/NSD program state, and explicit legacy-source reconstruction; exact cross-project source map pending
 - **Ethics/safety/rights/compliance status:** NOT_APPLICABLE for current literature/synthesis phase
 - **Compliance record / approval / permission pointer:** n/a
 
@@ -42,7 +41,7 @@ The legacy Stability Inheritance branch predates major developments in Chemistry
 
 ### Latest scientific development
 
-The candidate-P1 independence audit now separates qualification systems from future decisive tests. The legacy Noughts, neutrino, and ringdown branches are presently better adversarial/known-truth testbeds than first confirmation targets because their core phenomena substantially collide with established native theory. Existing Chemistry, GRI, Bio Chi, Market, Foundations, and legacy outcomes also cannot retroactively confirm the newly narrowed SI relation. The cleanest future routes are therefore new untouched tests, provisionally including a controlled physical hierarchy, a new biological perturbation/recovery system, and a new Market or Grid transfer/event system. No portfolio composition is frozen.
+A5 and B5 now have deterministic known-truth method qualification. The representation-specific mobility passivity/reciprocity detector accepts an exact passive reciprocal model and rejects a deliberately non-passive negative-damping control. Synthetic asymmetric FRF noise can create apparent passivity violations in an otherwise passive model, confirming that the physical gate must be uncertainty-aware rather than a zero-tolerance sign test. In a 400-perturbation near-degenerate modal control, individual mode identity swapped in 34% of cases while the two-mode subspace remained essentially invariant; a well-separated control showed 0% swaps and near-unity individual MAC. This qualifies the refusal/subspace code path but does not close physical APQ objections or support an empirical inheritance claim.
 
 ### Current interpretation and claim ceiling
 
@@ -388,3 +387,19 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Next action:** execute parent-only apparatus and measurement-chain qualification without coupling the child or opening decisive assembly outcomes.
 - **Why next:** native experimental-dynamics literature resolves how to test the outstanding methodological objections; physical repeatability is now the irreducible next uncertainty.
 - **Provenance pointer:** commit 19a11138a83a0a15cadee3a9a72f1c56ba731f45
+
+
+### 2026-09-28 - DEVELOPMENT - A5/B5 known-truth method qualification passes
+
+- **Lifecycle Stage:** Stage 2 / P0-Q method qualification
+- **Entry type:** DEVELOPMENT
+- **Source artifact / evidence identity:** stability_inheritance/physical_hierarchy_methods_known_truth_v0_1.py; stability_inheritance/PHYSICAL_HIERARCHY_METHODS_KNOWN_TRUTH_RESULT_v0.1.md
+- **Observed / decided:** representation-specific mobility passivity/reciprocity detection passed an exact passive reciprocal model and rejected a deliberately non-passive negative-damping control. Synthetic measurement-like FRF noise progressively produced reciprocity error and apparent negative dissipation, so physical passivity cannot be adjudicated with zero tolerance. In the near-degenerate B5 control, individual mode identity swapped in 34% of 400 perturbations while the two-mode subspace remained essentially fixed; the well-separated control had 0% swaps.
+- **Scientific interpretation:** A5 and B5 method logic is operational at the known-truth level. Raw measurement validity must remain separate from identified-model validity, and close-mode refusal should be based on empirical pairing instability with subspace fallback rather than a fixed frequency-spacing cutoff.
+- **Alternative explanation / uncertainty:** synthetic tests do not establish that the physical apparatus or measurement chain will be sufficiently repeatable, passive, well-conditioned, or identifiable. Physical noise may be structured differently from the synthetic perturbations.
+- **Impact on claim / novelty / prediction:** none. This is P0-Q method qualification only and cannot count as empirical SI evidence.
+- **Freeze impact:** none. No physical threshold, equivalence margin, apparatus, endpoint, or prediction is frozen.
+- **Status impact:** A5 and B5 gain KNOWN_TRUTH_METHOD_PASS substatus but remain OPEN for physical pilot evidence and second APQ adjudication.
+- **Next action:** parent-only physical buildability, repeatability, and measurement-chain qualification.
+- **Why next:** the remaining uncertainty is physical implementation, not whether the code can distinguish the intended known-truth regimes.
+- **Provenance pointer:** commit fa3e63f075e4bdf2309290ceefe6f6db1bf9c1fd
