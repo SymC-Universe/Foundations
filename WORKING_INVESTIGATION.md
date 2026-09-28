@@ -19,8 +19,7 @@ update_rule: "Update after every material scientific development and before ever
 - **Current lifecycle Stage:** Stage 2 / APQ plan construction after P0-N closure
 - **Status:** ACTIVE
 - **Last updated:** 2026-09-28
-- **Last verified commit / archive / checkpoint:** f8b2e3124fcfdf3a5cacf07159fef836bf0fd98b - randomized computational qualification result recorded after pre-run protocol freeze\n- **Compliance record / approval / permission pointer:** n/a
-
+- **Last verified commit / archive / checkpoint:** b9fe638ed63018ac289075d4fe423c9b317b92bd - randomized multi-seed reproducibility recorded after Silverbox external measured qualification\n
 ## 2. Current Scientific State
 
 ### Scientific question
@@ -469,3 +468,64 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Next action:** external measured-data benchmark qualification and architecture/limit consolidation.
 - **Why next:** real measured data is the strongest remaining nonphysical challenge to the workflow.
 - **Provenance pointer:** commit f8b2e3124fcfdf3a5cacf07159fef836bf0fd98b
+
+
+### 2026-09-28 - DATA_INTAKE - Silverbox public measured benchmark admitted for P0-Q only
+
+- **Lifecycle Stage:** Stage 2 / P0-Q external qualification
+- **Entry type:** DATA_INTAKE
+- **Source artifact / evidence identity:** stability_inheritance/SILVERBOX_DATA_INTAKE_v0.1.md
+- **Observed / decided:** Silverbox was admitted as a public measured nonlinear-system benchmark with official split and public mirror identity. It is historical/seen evidence and ineligible for untouched P1 use.
+- **Scientific interpretation:** suitable for testing representation adequacy/refusal on measured Duffing-like dynamics without claiming inheritance.
+- **Alternative explanation / uncertainty:** public mirror identity is supported by Git blob/size and an independent raw-file SHA-256 audit; raw redistribution rights are not assumed.
+- **Impact on claim / novelty / prediction:** no SI novelty or empirical inheritance claim.
+- **Freeze impact:** none.
+- **Status impact:** external measured P0-Q lane opened.
+- **Next action:** freeze analysis before reserved scoring.
+- **Why next:** preserves model/test separation even though the benchmark is public.
+- **Provenance pointer:** commit e400cf2883eb5b676d0f3f94fe24d30b8b5f34ff
+
+### 2026-09-28 - FREEZE - Silverbox external benchmark protocol frozen
+
+- **Lifecycle Stage:** Stage 2 / P0-Q external qualification
+- **Entry type:** FREEZE
+- **Source artifact / evidence identity:** stability_inheritance/SILVERBOX_P0Q_EXTERNAL_PROTOCOL_v0.1.md
+- **Observed / decided:** official splits, M0 persistence, M1 linear ARX-2, M2 cubic NARX-2, ridge grid, validation route, one-step/free-run metrics, refusal labels, and failure consequence were fixed before reserved-test scoring.
+- **Scientific interpretation:** method-scope freeze only.
+- **Alternative explanation / uncertainty:** benchmark is public and not P1-untouched regardless.
+- **Impact on claim / novelty / prediction:** none.
+- **Freeze impact:** freeze created for Silverbox P0-Q scoring.
+- **Status impact:** reserved scoring authorized.
+- **Next action:** execute once without test-set retuning.
+- **Why next:** measured-data challenge to synthetic representation results.
+- **Provenance pointer:** commit 3b99455ed659a43e0eaaf9a297147deea9f9174c
+
+### 2026-09-28 - PLAN_EXECUTED - Silverbox measured benchmark supports nonlinear-regime refusal logic
+
+- **Lifecycle Stage:** Stage 2 / P0-Q external qualification
+- **Entry type:** PLAN_EXECUTED
+- **Source artifact / evidence identity:** stability_inheritance/SILVERBOX_P0Q_EXTERNAL_RESULT_v0.1.md
+- **Observed / decided:** cubic NARX-2 had lower error than linear ARX-2 on both frozen reserved segments and on both one-step and recursive metrics. Arrow no-extrapolation free-run NRMSE: 0.154294 linear vs 0.048525 cubic. Multisine-test free-run NRMSE: 0.128454 linear vs 0.038289 cubic. No model diverged.
+- **Scientific interpretation:** a linear second-order representation can remain locally fit-able while being materially less adequate for recursive behavior in a natively nonlinear regime. The result qualifies representation adequacy/refusal logic only because the benchmark's cubic nonlinearity is established native science.
+- **Alternative explanation / uncertainty:** the comparator stack is intentionally simple and not state of the art; more sophisticated Silverbox models exist.
+- **Impact on claim / novelty / prediction:** no inheritance claim. Function/Limit Map gains a measured example separating local licensing from task adequacy.
+- **Freeze impact:** Silverbox P0-Q freeze satisfied; no P1 or physical threshold created.
+- **Status impact:** external measured computational qualification PASS.
+- **Next action:** seek structurally harder external measured data, prioritizing F-16 GVT if provenance-clean raw data become available.
+- **Why next:** challenge modal/subspace and interface-nonlinearity logic on real structural dynamics.
+- **Provenance pointer:** commit 054ca6fb530a885e983861aadaaef280e8929ca9
+
+### 2026-09-28 - DEVELOPMENT - Randomized suite is statistically reproducible across master seeds
+
+- **Lifecycle Stage:** Stage 2 / P0-Q computational qualification
+- **Entry type:** DEVELOPMENT
+- **Source artifact / evidence identity:** stability_inheritance/COMPUTATIONAL_RANDOMIZED_MULTISEED_REPRO_v0.1.md
+- **Observed / decided:** 10 independent master-seed reruns all satisfied the randomized suite's seed-level criteria. High-SNR AR(2) history closure won in 100% of seed-level probes; low-SNR advantage remained variable and frequently absent. Other family-level summary directions also remained stable.
+- **Scientific interpretation:** stochastic qualification conclusions are distributionally reproducible rather than one-seed artifacts.
+- **Alternative explanation / uncertainty:** synthetic generator choices still define the explored family and do not establish empirical transport.
+- **Impact on claim / novelty / prediction:** method-scope reproducibility strengthened only.
+- **Freeze impact:** none.
+- **Status impact:** computational qualification reproducibility PASS.
+- **Next action:** measured-data and literature challenges.
+- **Why next:** synthetic uncertainty has been reduced enough that external empirical robustness is now more informative.
+- **Provenance pointer:** commit b9fe638ed63018ac289075d4fe423c9b317b92bd
