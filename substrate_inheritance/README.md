@@ -2,18 +2,18 @@
 
 Status: ACTIVE P0-D / P0-Q INVESTIGATION. Computational evidence is being developed prospectively. Nothing in this directory establishes a universal substrate-inheritance law or a real-system inheritance result.
 
-Program authority: **SymC General Operations Manual v0.8.0**, Definitive Active Baseline, dated 2026-09-14. Authoritative Markdown SHA-256: `ee3d9955e19f280ad385488180800d1cdb2d5054823cfa2fa6a697ab3f51d396`. The SI migration record is `SI_GOM_V0.8.0_MIGRATION_AUDIT_20260914.md`.
+Program authority: **SymC General Operations Manual v0.8.8**, active baseline as explicitly promoted on 2026-09-27. The reopening/migration record is `GOM_V0.8.8_MIGRATION_20260927.md`, and the live scientific state is maintained in `WORKING_INVESTIGATION.md`.
 
-Historical references to General Cross-Project Research Protocol v0.7.4 remain valid as governance provenance for records created under that version, but GOM v0.8.0 is the active program authority.
+Historical references to General Cross-Project Research Protocol v0.7.4 and earlier GOM versions remain valid only as governance provenance for records created under those versions. They do not supersede v0.8.8.
 
 Current public-status authority: this README, the frozen v0.2 physical-promotion contracts (`CORRESPONDENCE_PROTOCOL_v0.2.json` and `REAL_SYSTEM_INPUT_SCHEMA_v0.2.json`), the non-authoritative SI-next v0.4 candidate contract, and the validation/audit records preserved through the 14 September public snapshot. Active unpublished manuscript work and later exploratory development are maintained outside the public repository until release-ready. Older papers, repository metadata, release text, prior README language, v0.1 contracts, superseded SI-next candidates, and earlier working-manuscript copies are OUTDATED wherever they conflict with the current qualified public record. Historical artifacts remain preserved for provenance rather than silently rewritten.
 
 ## Project control
 
-STATUS | This public development branch is retained as a historical P0-D/P0-Q snapshot through 14 September 2026. Frozen v0.2 physical science is unchanged; FM1-FM4 are the completed public Function/Limit maps in this snapshot; no real-system inheritance result is established.
-PURPOSE | Preserve a reader-checkable public record of the SI architecture and completed public qualification work without publishing the active unfinished manuscript or later exploratory work.
-PUBLIC NEXT ACTION | No new unpublished development is staged here. A later public update should be release-ready or otherwise explicitly approved for public release.
-USER ACTION | NONE for this public snapshot. Any future P1 physical freeze remains a separate scientific decision.
+STATUS | Reopened active P0-D/P0-Q investigation under GOM v0.8.8. Frozen v0.2 physical science is unchanged; FM1-FM4 remain completed Function/Limit maps; no real-system inheritance result is established.
+PURPOSE | Maintain the qualified SI method record while advancing toward the first prospectively defensible physical parent/child task. Active unpublished manuscript text remains private.
+PUBLIC NEXT ACTION | Refresh physical-input readiness, qualify an independent physical benchmark route, and keep any future P1 freeze separate from exploratory preparation.
+USER ACTION | NONE at current checkpoint. Any future P1 physical freeze remains a separate scientific decision.
 
 ## Working manuscript status
 
