@@ -25,6 +25,14 @@ The old manuscript treats the electromagnetic vacuum as a physical photon substr
 - **Candidate carrier:** not assumed. A physical carrier/transformation would need to be identified through electroweak symmetry breaking, field mixing, matching conditions, running couplings, or another native mechanism.
 - **Primary native comparator:** Standard Model electroweak symmetry breaking plus QED/EFT/RG description.
 
+### First native prior-art collision
+
+The 2019 SI redefinition materially weakens the old choice of ε0 and μ0 as fundamental physical-substrate targets. In the revised SI, h, e, and c are defining constants, while μ0 is no longer assigned an exact conventional value and instead inherits uncertainty from the measured fine-structure constant α; ε0 is correspondingly related through c and μ0. The numerical SI values of ε0 and μ0 therefore cannot by themselves establish a material electromagnetic substrate.
+
+This moves the native target away from vacuum constants and toward dimensionless/gauge-theoretic objects: α, electroweak mixing, gauge couplings, symmetry-breaking maps, field content, and EFT/RG matching. A physical inheritance claim must add something beyond those standard relations.
+
+Primary collision sources include BIPM CGPM Resolution 1 (2018), DOI 10.59161/CGPM2018RES1E, and NIST SP 330 / revised-SI guidance.
+
 ### Residual inheritance question
 
 Does an independently identified electroweak parent structure transmit a measurable, nonredundant constraint into later electromagnetic organization that is not already exhausted by standard gauge symmetry breaking, parameter matching, and RG evolution?
@@ -55,6 +63,14 @@ The revised public manuscript models three-flavor oscillations with a density-de
 - **Χ:** the native modal object is richer: mass/flavor basis structure, PMNS mixing, matter-dependent Hamiltonian, environmental/dephasing operator, eigenvectors/eigenspaces, basis rotation, and any non-normal or near-degenerate structure.
 - **Χ_con:** system-level behavior includes coupled flavor-transition probabilities, coherence/decoherence across the full three-mode system, path-dependent matter profiles, and any collective/environmental organization beyond one modal quotient.
 - **Candidate carrier:** matter profile/environmental channel only if it carries a frozen parent-to-descendant relation rather than merely acting as an instantaneous parameter.
+
+### First native prior-art collision
+
+Open-system neutrino decoherence in matter is already established as a phenomenological research program. Coloma et al. developed three-flavor decoherence propagation through constant and nonuniform matter and derived IceCube/DeepCore constraints (EPJC 78, 614, 2018; DOI 10.1140/epjc/s10052-018-6092-6). DUNE decoherence sensitivity studies likewise predate the legacy SymC manuscript (for example Phys. Rev. D 100, 055023, 2019; DOI 10.1103/PhysRevD.100.055023).
+
+Some published bounds on energy-independent Lindblad decoherence parameters reach the 10^-24 GeV scale. The legacy SymC effective range around 10^-23 GeV therefore requires a fresh parameter-by-parameter comparison before any phenomenological claim is reused. These bounds are not automatically transferable because the SymC proposal uses a density-dependent and basis-specific construction, but numerical proximity is a mandatory collision, not a detail.
+
+The inheritance question is not "can matter cause neutrino dephasing?" That is prior art. It is whether a separately identifiable prior/environmental organization carries information forward that is not already represented by the instantaneous state, matter profile, standard Hamiltonian, and admitted decoherence model. A purely Markovian local-density law is especially vulnerable to returning an inheritance refusal.
 
 ### Residual inheritance question
 
@@ -87,9 +103,15 @@ The revised manuscript already moved toward a spectrum-first treatment. It defin
 - **Χ_con:** the observed ringdown waveform is a separate system-level superposition/response object that depends on excitation, source geometry, detector projection, nonlinear-merger history, and mode interference.
 - **Candidate inheritance relation:** whether progenitor/merger structure leaves a prospectively identifiable imprint on QNM excitation or Χ_con beyond what final remnant parameters alone predict.
 
+### First native prior-art collision
+
+The broad "ringdown remembers its progenitor" proposition is already established prior art. Kamaretsos, Hannam, and Sathyaprakash showed that QNM amplitudes encode progenitor mass ratio and spin (Phys. Rev. Lett. 109, 141102, 2012; DOI 10.1103/PhysRevLett.109.141102). More recent numerical-relativity work fits mode amplitudes and phases across hundreds of binary-black-hole simulations as functions of progenitor properties (Phys. Rev. D 109, 044069, 2024; DOI 10.1103/PhysRevD.109.044069). Current 2026 work further treats ringdown excitation as a source-dependent spectral filtering problem.
+
+Therefore progenitor dependence itself is not residual SI novelty. Ringdown is better treated as a known-truth testbed for representation: frequencies are primarily remnant-native modal information, while excitation amplitudes/phases and observed waveform mixtures are source/coupling/history-conditioned objects.
+
 ### Residual inheritance question
 
-How much of the higher-dimensional ringdown Χ and waveform-level Χ_con is retained or destroyed by a scalar spectral descriptor, and is any information about the progenitor or merger history inherited into the observable ringdown beyond the no-hair/remnant-parameter baseline?
+Does the explicit χ / Χ / Χ_con separation provide a nonredundant representation or boundary test beyond standard QNM and excitation modeling, and can it predict a prospectively withheld excitation or waveform property better than the strongest native ringdown model?
 
 ### Refusal conditions
 
@@ -99,7 +121,7 @@ Scalar spectral similarity without mode-family/excitation correspondence is not 
 
 ### Current disposition
 
-**Best immediate modal information-loss laboratory, not yet a direct inheritance result.** Ringdown can qualify χ-versus-Χ-versus-Χ_con relationships before any lineage claim is attempted.
+**Known-truth modal/inheritance qualification laboratory, not a novel progenitor-memory claim.** Ringdown can test whether the χ / Χ / Χ_con representation recovers established source-versus-remnant distinctions and whether it adds anything beyond them.
 
 ---
 
