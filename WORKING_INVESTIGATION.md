@@ -37,17 +37,17 @@ No inheritance law is established. The current candidate hypothesis is that some
 
 ### Current evidence picture
 
-Program evidence increasingly separates three starting levels that must remain distinct: licensed scalar chi, capital Chi as the base modal/vector representation, and conglomerate/system organization as a separate higher-order layer. Chemistry and GRI provide closed research lineages with scalar insufficiency/refusal and modal/system-level structure; Bio Chi and Market provide active examples where richer organization may remain meaningful when scalar reduction is inadequate or refused. These are hypothesis-generating and architecture-defining inputs for Stability Inheritance, not retroactive confirmation of a new inheritance claim.
+Program evidence increasingly separates three starting levels that must remain distinct: licensed scalar chi, capital Chi as the base modal/vector representation, and Chi_con as the conglomerate/system representation. Chemistry and GRI provide closed research lineages with scalar insufficiency/refusal and modal/system-level structure; Bio Chi and Market provide active examples where richer organization may remain meaningful when scalar reduction is inadequate or refused. These are hypothesis-generating and architecture-defining inputs for Stability Inheritance, not retroactive confirmation of a new inheritance claim.
 
 The legacy Stability Inheritance branch predates major developments in Chemistry, GRI, Bio Chi, Market, NSD, and GOM v1.0 and is therefore preserved as lineage rather than inherited as current scientific authority.
 
 ### Latest scientific development
 
-User clarification establishes the project-level representation rule for this investigation: lowercase chi is the licensed scalar layer; capital Chi is not the conglomerate and is retained as the base modal/vector layer; conglomerate/system organization is a separate layer that must not be silently folded into the base modal object. This creates a notation conflict with the current GOM v1.0 Section 2.1.1 wording, which treats capital Chi as the broader reconstructed architecture. The GOM itself is not silently edited; the conflict is carried explicitly for future governance revision.
+User clarification establishes the project-level representation rule for this investigation: lowercase chi is the licensed scalar layer; capital Chi is the base modal/vector layer; Chi_con is the conglomerate/system layer. Chi_con is not silently folded into base modal Chi, and neither symbol is treated as the whole Stability Architecture. This creates a notation conflict with the current GOM v1.0 Section 2.1.1 wording, which treats capital Chi as the broader reconstructed architecture. The GOM itself is not silently edited; the conflict is carried explicitly for future governance revision.
 
 ### Current interpretation and claim ceiling
 
-The strongest current interpretation is that Stability Inheritance should be investigated across explicitly separated scalar, modal/vector, and conglomerate/system levels, with the full Stability Architecture arising from their relations plus any additional supported structure. Capital Chi is not used as shorthand for the conglomerate in this project. Substrates are candidate carriers where native science supports them, not universal objects. Recovery is a high-information probe where scientifically meaningful but does not define all stability. Claim ceiling remains P0-N/P0-D until residual novelty and a prospective discriminating test are frozen.
+The strongest current interpretation is that Stability Inheritance should be investigated across explicitly separated scalar chi, modal/vector Chi, and conglomerate/system Chi_con levels, with the full Stability Architecture arising from their relations plus any additional supported structure. Capital Chi is not used as shorthand for the conglomerate in this project. Substrates are candidate carriers where native science supports them, not universal objects. Recovery is a high-information probe where scientifically meaningful but does not define all stability. Claim ceiling remains P0-N/P0-D until residual novelty and a prospective discriminating test are frozen.
 
 ## 3. Prior Art, Novelty, and A0 Status
 
@@ -99,7 +99,7 @@ No new scientific hypothesis, comparator, prediction, holdout, estimator, thresh
 - What, precisely, is inherited: scalar coordinate, modal/subspace structure, transfer property, admissible region, timescale, constraint, response capacity, or another object?
 - What qualifies as a substrate or carrier versus ordinary boundary condition, environment, or coupling?
 - When does lower-level information add value beyond the higher-level native model?
-- How should repeated perturbation/history alter the modal Chi layer and the separate conglomerate/system layer, and when do changes in one propagate into the other?
+- How should repeated perturbation/history alter the modal Chi layer and the separate Chi_con conglomerate/system layer, and when do changes in one propagate into the other?
 - What is the correct distinction among preservation, transformation, compensation, reorganization, emergence, and loss?
 
 ### Anomalies / outliers / failures requiring disposition
@@ -187,3 +187,19 @@ No new scientific hypothesis, comparator, prediction, holdout, estimator, thresh
 - **Next action:** revise the A0/internal evidence map to track scalar, modal/vector Chi, and conglomerate/system organization separately
 - **Why next:** collapsing modal and conglomerate structure would erase exactly the cross-level relation the investigation is intended to test
 - **Provenance pointer:** WORKING_INVESTIGATION.md commit generated from this correction
+
+
+### 2026-09-27 - DECISION - Adopt Chi_con for conglomerate/system representation
+
+- **Lifecycle Stage:** Stage 1 / P0-N
+- **Entry type:** DECISION
+- **Source artifact / evidence identity:** user notation decision during Stability Inheritance restart
+- **Observed / decided:** project notation now uses lowercase chi for a licensed scalar coordinate, capital Chi for the base modal/vector representation, and Chi_con for conglomerate/system organization
+- **Scientific interpretation:** the full Stability Architecture is not identified with any one of these symbols; it is reconstructed from their supported relationships plus additional native structure where required
+- **Alternative explanation / uncertainty:** a future GOM revision may choose a typographically different conglomerate subscript, but modal/conglomerate separation is the scientific requirement
+- **Impact on claim / novelty / prediction:** every inheritance test must identify whether it concerns scalar chi, modal/vector Chi, conglomerate Chi_con, or a cross-level relation among them
+- **Freeze impact:** none; this is a project notation decision upstream of P1
+- **Status impact:** ACTIVE notation normalized
+- **Next action:** build the internal evidence map using separate chi, Chi, and Chi_con columns
+- **Why next:** the current cross-project evidence can only be compared coherently if the three starting representation levels remain explicit
+- **Provenance pointer:** this WORKING_INVESTIGATION.md update
