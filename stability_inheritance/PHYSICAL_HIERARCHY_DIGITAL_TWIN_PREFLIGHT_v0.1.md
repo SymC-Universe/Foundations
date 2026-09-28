@@ -63,7 +63,7 @@ Mode 1 is not selected as a primary design contrast because its A/B relative shi
 
 ## Interpretation
 
-The candidate geometry has a robust, easily measurable interface-specific effect without changing the isolated parent. It is therefore suitable for testing whether scalar chi, modal/vector Chi, coupling, and directly measured Chi_con remain distinguishable in a physical benchmark.
+The candidate geometry has a robust, easily measurable interface-specific effect without changing the isolated parent. It is therefore suitable for testing whether scalar chi, modal/vector Chi, coupling, and directly measured Chi_sys remain distinguishable in a physical benchmark.
 
 This does **not** establish a novel inheritance effect. The expected A/B difference is standard coupled-mode physics and should be predicted by component-mode/dynamic-substructuring methods. A successful experiment would first qualify the SI representation/refusal workflow against known native physics.
 
