@@ -19,8 +19,7 @@ update_rule: "Update after every material scientific development and before ever
 - **Current lifecycle Stage:** Stage 2 / APQ plan construction after P0-N closure
 - **Status:** ACTIVE
 - **Last updated:** 2026-09-28
-- **Last verified commit / archive / checkpoint:** b9fe638ed63018ac289075d4fe423c9b317b92bd - randomized multi-seed reproducibility recorded after Silverbox external measured qualification\n
-## 2. Current Scientific State
+- **Last verified commit / archive / checkpoint:** 6cd324c2d6b419d5a3b498976224e72860536a5b - fresh history estimator/measurement-limit qualification recorded\n## 2. Current Scientific State
 
 ### Scientific question
 
@@ -529,3 +528,19 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Next action:** measured-data and literature challenges.
 - **Why next:** synthetic uncertainty has been reduced enough that external empirical robustness is now more informative.
 - **Provenance pointer:** commit b9fe638ed63018ac289075d4fe423c9b317b92bd
+
+
+### 2026-09-28 - PLAN_EXECUTED - Fresh history estimator ensemble identifies measurement-level boundary
+
+- **Lifecycle Stage:** Stage 2 / P0-Q computational qualification
+- **Entry type:** PLAN_EXECUTED
+- **Source artifact / evidence identity:** stability_inheritance/COMPUTATIONAL_HISTORY_ESTIMATOR_PROTOCOL_v0.1.md; stability_inheritance/COMPUTATIONAL_HISTORY_ESTIMATOR_RESULT_v0.1.md
+- **Observed / decided:** a fresh 600-system ensemble was executed after protocol freeze commit 19a8d3982761754cd9bbe03ac1cb7f38be075e63. At high SNR all three history-capable models beat AR(1). At low SNR the oracle exact AR(2) recurrence beat AR(1) in only 11/129 cases, while 118/129 showed no oracle advantage. Total least squares did not rescue the lost advantage, and there were zero cases where the oracle beat AR(1) but OLS AR(2) failed.
+- **Scientific interpretation:** the prior errors-in-variables explanation is retained as a valid local mechanism but narrowed. In the fresh randomized ensemble, the dominant low-SNR boundary is measurement/operability: noisy lag coordinates can cease to carry enough usable information for history-based prediction even when the latent finite-history dynamics and exact parameters are known. Mathematical memory and operational history utility must therefore be qualified separately.
+- **Alternative explanation / uncertainty:** an estimator using additional independent measurements, explicit measurement-state filtering/smoothing, multiple channels, or a different target may move the boundary. The SNR strata are analysis bins, not universal transition thresholds.
+- **Impact on claim / novelty / prediction:** strengthens the Limit Map and qualifies the local labels HISTORY_MEASUREMENT_LIMIT and HISTORY_PRESENT_BUT_NOT_OPERATIONALLY_IDENTIFIABLE. No universal history layer or SI novelty is promoted.
+- **Freeze impact:** fresh protocol freeze satisfied. No physical/P1 threshold created.
+- **Status impact:** prior post-result root-cause interpretation is superseded only in scope, not deleted: predictor-noise bias is real but insufficient as the general explanation.
+- **Next action:** integrate the refined history boundary into the architecture relation matrix and workbook, then continue external measured benchmark qualification.
+- **Why next:** the computational architecture now needs a concise cross-case map of which representation is admitted, insufficient, nonidentifiable, or refused and why.
+- **Provenance pointer:** commit 6cd324c2d6b419d5a3b498976224e72860536a5b
