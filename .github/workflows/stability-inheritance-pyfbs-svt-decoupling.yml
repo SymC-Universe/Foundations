@@ -1,0 +1,48 @@
+name: Stability Inheritance pyFBS SVT Decoupling P0Q
+
+on:
+  push:
+    branches:
+      - stability-inheritance
+    paths:
+      - "stability_inheritance/run_pyfbs_lab_svt_decoupling_v0_1.py"
+      - "stability_inheritance/PYFBS_LAB_SVT_DECOUPLING_PROTOCOL_v0.1.md"
+      - ".github/workflows/stability-inheritance-pyfbs-svt-decoupling.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  score:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: "3.12.14"
+      - name: Install pinned pyFBS
+        run: |
+          python -m pip install --disable-pip-version-check pyFBS==1.0.6 openpyxl==3.1.5
+          python -m pip check
+      - name: Record environment
+        run: |
+          mkdir -p stability_inheritance/results/pyfbs_lab_svt_decoupling
+          {
+            python --version
+            python -m pip --version
+            python -m pip freeze --all | sort
+          } > stability_inheritance/results/pyfbs_lab_svt_decoupling/environment.txt
+      - name: Execute frozen measured SVT decoupling
+        run: python stability_inheritance/run_pyfbs_lab_svt_decoupling_v0_1.py
+      - name: Upload derived results only
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: stability-inheritance-pyfbs-svt-decoupling-p0q
+          path: |
+            stability_inheritance/results/pyfbs_lab_svt_decoupling/result.json
+            stability_inheritance/results/pyfbs_lab_svt_decoupling/summary.md
+            stability_inheritance/results/pyfbs_lab_svt_decoupling/environment.txt
+          if-no-files-found: error
