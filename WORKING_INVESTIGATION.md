@@ -19,8 +19,7 @@ update_rule: "Update after every material scientific development and before ever
 - **Current lifecycle Stage:** Stage 2 / APQ plan construction after P0-N closure
 - **Status:** ACTIVE
 - **Last updated:** 2026-09-28
-- **Last verified commit / archive / checkpoint:** 6cd324c2d6b419d5a3b498976224e72860536a5b - fresh history estimator/measurement-limit qualification recorded\n## 2. Current Scientific State
-
+- **Last verified commit / archive / checkpoint:** 9c2e9da8271c79749802229c99119a0518070d55 - computational Stability Architecture relation matrix added after fresh history-boundary qualification\n
 ### Scientific question
 
 Does the perturbation-response and recoverability of a higher-level system depend measurably on stability-relevant constraints or response capacities inherited from lower-level organization, and can that contribution be distinguished from stability generated, transformed, or reorganized by the higher-level system itself?
@@ -544,3 +543,19 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Next action:** integrate the refined history boundary into the architecture relation matrix and workbook, then continue external measured benchmark qualification.
 - **Why next:** the computational architecture now needs a concise cross-case map of which representation is admitted, insufficient, nonidentifiable, or refused and why.
 - **Provenance pointer:** commit 6cd324c2d6b419d5a3b498976224e72860536a5b
+
+
+### 2026-09-28 - DEVELOPMENT - Computational Stability Architecture relation matrix consolidated
+
+- **Lifecycle Stage:** Stage 2 / P0-Q computational synthesis
+- **Entry type:** DEVELOPMENT
+- **Source artifact / evidence identity:** stability_inheritance/STABILITY_ARCHITECTURE_RELATION_MATRIX_v0.1.md
+- **Observed / decided:** deterministic, randomized, multi-seed, Silverbox, and fresh history-estimator results were consolidated into explicit admission, insufficiency, nonidentifiability, and refusal states for chi, Chi, Chi_arc, and history/context. The matrix does not require every system to instantiate every layer.
+- **Scientific interpretation:** the strongest supported architecture is presently representation-qualification-first rather than a fixed universal hierarchy. A licensed scalar may still be task-insufficient; modal labels can fail while invariant subspaces survive; Chi_arc must be independently reconstructed rather than predictor-defined; history/context enters only when native dynamics require it and available observations make it operationally identifiable.
+- **Alternative explanation / uncertainty:** the current matrix is built largely from P0-Q qualification and one public measured benchmark. Additional external domains can change, merge, or remove categories.
+- **Impact on claim / novelty / prediction:** architecture synthesis strengthened, but no universal ontology, new force, empirical inheritance law, or P1 claim is created.
+- **Freeze impact:** none; the matrix is explicitly DEVELOPMENT / NOT AN ONTOLOGY FREEZE.
+- **Status impact:** Function Map and Limit Map now have a common cross-representation synthesis target.
+- **Next action:** continue external measured benchmark qualification and regression-test the matrix against new failures rather than treating it as fixed.
+- **Why next:** the matrix is useful only if future evidence is allowed to break or simplify it.
+- **Provenance pointer:** commit 9c2e9da8271c79749802229c99119a0518070d55
