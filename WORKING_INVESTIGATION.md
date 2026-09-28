@@ -18,9 +18,8 @@ update_rule: "Update after every material scientific development and before ever
 - **Project-specific protocol/version:** none frozen yet
 - **Current lifecycle Stage:** Stage 2 / APQ plan construction after P0-N closure
 - **Status:** ACTIVE
-- **Last updated:** 2026-09-27
-- **Last verified commit / archive / checkpoint:** branch head d346f9caca5ca7901cda44ed715985e7cf57c576, scientifically stale relative to current program state and retained as lineage
-- **Evidence/data intake status:** INTAKE_PASS_WITH_LIMITS
+- **Last updated:** 2026-09-28
+- **Last verified commit / archive / checkpoint:** 19a11138a83a0a15cadee3a9a72f1c56ba731f45 - literature-backed APQ-2 pre-freeze methods note; active plan remains unfrozen\n- **Evidence/data intake status:** INTAKE_PASS_WITH_LIMITS
 - **Evidence intake record / source snapshot:** current investigation begins from GOM v1.0, closed Chemistry and GRI research lineages, current Bio Chi/Market/NSD program state, and explicit legacy-source reconstruction; exact cross-project source map pending
 - **Ethics/safety/rights/compliance status:** NOT_APPLICABLE for current literature/synthesis phase
 - **Compliance record / approval / permission pointer:** n/a
@@ -79,7 +78,7 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Freeze timestamp / identifier / hash:** n/a
 - **Design adequacy status:** DESIGN_LIMITED_EXPLORATORY
 - **Masking / outcome-exposure status:** legacy and current program outcomes already known; they cannot serve as untouched confirmation for the newly formulated inheritance claim
-- **Next plan gate:** apparatus-specific APQ-2 closure and mechanical design-adequacy preflight before freeze
+- **Next plan gate:** parent-only apparatus qualification and measurement-chain pilot, then apparatus-specific APQ-2 second-pass adjudication before freeze
 
 ## 6. Active Hold or Blocker
 
@@ -120,11 +119,11 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 
 ## 8. Next Exact Action
 
-- **Next action:** complete the external A0 full-text collision around compositional stability, closure/memory, and resilience; then convert the surviving residual into an APQ plan for the first untouched test without opening any candidate decisive evidence
-- **Why this is next:** generic hierarchy, multiscale recovery, micro-macro influence, and hidden-scale memory are now prior art; the remaining question is whether SI contributes a stability-specific carrier/representation relation with measurable value beyond those native frameworks
-- **Expected output / decision:** final P0-N residual novelty class, exact discriminating claim family, and whether the first SI test should proceed as NEW_CONGLOMERATED_INFERENCE / NEW_DISCRIMINATING_TEST / NEW_BOUNDARY_TEST or be reduced to SYNTHESIS_ONLY
+- **Next action:** execute the parent-only apparatus qualification packet: buildability/repeatability, repeated modal identification, sensor/DAQ qualification, representation-specific reciprocity/passivity/model-consistency checks, and repeatability-derived margin construction, without coupling the child or opening Q1/Q2 assembled target outcomes
+- **Why this is next:** P0-N/A0 is already complete for plan construction and the remaining APQ blockers are apparatus-operability questions. Native experimental-dynamics literature now specifies the required gate logic, so the next uncertainty can only be reduced by parent-only physical qualification.
+- **Expected output / decision:** apparatus-specific repeatability distributions, qualified measurement/model path, admissible modal/subspace representation, candidate pre-target equivalence margins, and an APQ-2 decision on whether the physical benchmark is ready for freeze or remains DESIGN_LIMITED_EXPLORATORY
 - **What must remain frozen while it runs:** no P1 claim, no universal substrate assumption, no universal recovery definition, no scalar-preservation assumption
-- **Stop / refusal condition:** if prior art already establishes the proposed relation under compatible conditions, reclassify as synthesis/validation/boundary extension
+- **Stop / refusal condition:** if the parent-only apparatus cannot maintain repeatable component identity, the measurement/model path cannot satisfy physical-consistency gates, or modal/subspace identity is not reproducible, keep the benchmark DESIGN_LIMITED_EXPLORATORY or redesign before any Q1/Q2 target exposure
 - **User intervention required:** no
 
 ## 9. Resume Contract
@@ -373,3 +372,19 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Current provenance artifact:** stability_inheritance/PHYSICAL_BENCHMARK_CANDIDATE_AUDIT_20260928.md
 - **Impact on science:** none; this is branch/governance alignment plus benchmark-independence correction
 - **Next action:** continue apparatus-specific APQ and known-truth benchmark qualification on the active branch
+
+
+### 2026-09-28 - PLAN_REVISION - Literature-backed APQ-2 pre-freeze methods specified
+
+- **Lifecycle Stage:** Stage 2 / APQ-2
+- **Entry type:** PLAN_REVISION
+- **Source artifact / evidence identity:** stability_inheritance/PHYSICAL_HIERARCHY_APQ2_METHODS_PREFREEZE_v0.1.md; literature sources cited therein
+- **Observed / decided:** remaining A4/A5/B2/B4/B5 objections were converted into operational pre-freeze gate logic without closing them. Passivity is now representation-specific rather than a generic FRF phase threshold; raw measurements, identified models, and any conditioned models are separated; close-mode identity falls back to repeatable subspace comparison rather than an arbitrary frequency-crowding cutoff; Q1 physical specificity uses the same active coupling cartridge across A/B wherever feasible.
+- **Scientific interpretation:** the physical benchmark remains a native known-truth qualification problem. The strongest current uncertainty is apparatus and measurement operability, not conceptual novelty. A state-space identification failure is not automatically a physical-framework failure if the directly measured dynamics remain physically consistent.
+- **Alternative explanation / uncertainty:** the torsional apparatus may still prove mechanically unsuitable because shaft/bearing friction, joint variability, sensor limitations, or mode crowding can dominate the intended contrasts.
+- **Impact on claim / novelty / prediction:** none. No empirical inheritance claim, endpoint, numerical threshold, equivalence margin, or P1 object is promoted.
+- **Freeze impact:** none; plan remains unfrozen. Numeric margins must come from parent-only repeatability/instrument evidence before Q1/Q2 targets.
+- **Status impact:** A4/A5/B4/B5 now have methods specified but require physical pilot evidence; B2 triggers are specified but require second APQ adjudication.
+- **Next action:** execute parent-only apparatus and measurement-chain qualification without coupling the child or opening decisive assembly outcomes.
+- **Why next:** native experimental-dynamics literature resolves how to test the outstanding methodological objections; physical repeatability is now the irreducible next uncertainty.
+- **Provenance pointer:** commit 19a11138a83a0a15cadee3a9a72f1c56ba731f45
