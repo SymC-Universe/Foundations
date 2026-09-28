@@ -8,14 +8,14 @@ import re
 import urllib.error
 import urllib.request
 
-OUT = pathlib.Path("substrate_inheritance/results/SI_PHYSICAL_DATASET_ACCESS_PROBE_v0.1.json")
+OUT = pathlib.Path("substrate_inheritance/results/SI_PHYSICAL_DATASET_ACCESS_PROBE_v0.2.json")
 OUT.parent.mkdir(parents=True, exist_ok=True)
 
 DATASET = "2wdk4m5n97"
 VERSION = 1
 WEB = f"https://data.mendeley.com/datasets/{DATASET}/{VERSION}"
 API = f"https://api.data.mendeley.com/datasets/{DATASET}"
-FILES_API = f"https://api.data.mendeley.com/datasets/{DATASET}/files?version={VERSION}"
+FILES_API = f"https://api.data.mendeley.com/datasets/publics/{DATASET}/files?version={VERSION}&$limit=100"
 
 def fetch(url: str):
     req = urllib.request.Request(url, headers={"User-Agent":"SymC-SI-physical-access-probe/0.1"})
@@ -41,8 +41,9 @@ api = fetch(API)
 files = fetch(FILES_API)
 
 record = {
-    "schema":"si-physical-dataset-access-probe-v0.1",
+    "schema":"si-physical-dataset-access-probe-v0.2",
     "stage":"P0_MECHANICAL_ACCESS_ONLY",
+    "endpoint_correction":"Use documented public-files route /datasets/publics/{id}/files; prior /datasets/{id}/files probe returned 401 and is preserved in Git history.",
     "dataset":"Korbar 2026 dynamic joint identification",
     "doi":"10.17632/2wdk4m5n97.1",
     "dataset_id":DATASET,
