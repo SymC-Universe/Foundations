@@ -360,3 +360,16 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Next action:** continue apparatus-specific APQ under chi / Chi / Chi_arc
 - **Why next:** notation now encodes the actual role of the architecture-reconstruction layer and reduces ambiguity
 - **Provenance pointer:** WORKING_INVESTIGATION.md and active Stability Inheritance files normalized in this update
+
+
+### 2026-09-28 - MONITOR_LINEAGE - Hourly watch corrected to active Stability Inheritance branch
+
+- **Lifecycle Stage:** Stage 2
+- **Entry type:** DEVELOPMENT / PROVENANCE
+- **Observed / decided:** the enabled hourly Market + SI dead-time watch was still pointing its SI lane to the older substrate-inheritance-next lineage and GOM v0.8.8, although the active investigation had moved to stability-inheritance under GOM v1.0
+- **Action:** monitor prompt corrected to stability-inheritance, GOM v1.0, and current chi / Chi / Chi_arc notation and APQ state
+- **Preserved evidence:** overnight work from the old lane was audited rather than discarded
+- **Useful carryover:** Korbar A/B/AJB is refused for untouched P1 because the assembly-response pathway is already literature-exposed; ERIES-RESPOND remains accepted for P0-D/P0-Q development/native-comparator qualification but is not presumed globally untouched P1
+- **Current provenance artifact:** stability_inheritance/PHYSICAL_BENCHMARK_CANDIDATE_AUDIT_20260928.md
+- **Impact on science:** none; this is branch/governance alignment plus benchmark-independence correction
+- **Next action:** continue apparatus-specific APQ and known-truth benchmark qualification on the active branch
