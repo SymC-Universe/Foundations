@@ -16,7 +16,7 @@ update_rule: "Update after every material scientific development and before ever
 - **Working branch:** stability-inheritance
 - **Current GOM version:** v1.0
 - **Project-specific protocol/version:** none frozen yet
-- **Current lifecycle Stage:** Stage 1 / P0-N prior-art conglomeration
+- **Current lifecycle Stage:** Stage 2 / APQ plan construction after P0-N closure
 - **Status:** ACTIVE
 - **Last updated:** 2026-09-27
 - **Last verified commit / archive / checkpoint:** branch head d346f9caca5ca7901cda44ed715985e7cf57c576, scientifically stale relative to current program state and retained as lineage
@@ -52,34 +52,34 @@ The strongest current interpretation is that Stability Inheritance should be inv
 ## 3. Prior Art, Novelty, and A0 Status
 
 - **Seed hypothesis / question:** lower-level stability architecture may constrain the accessible response/recovery landscape of higher-level systems through identifiable carriers, substrates, coupling, or hierarchical reductions
-- **A0 Prior-Art Conglomeration Atlas status:** ACTIVE / PRELIMINARY SYNTHESIS STARTED
+- **A0 Prior-Art Conglomeration Atlas status:** COMPLETE FOR PLAN CONSTRUCTION / later-literature rule remains active
 - **What prior work already establishes together:** hierarchical/interconnected-system stability and model reduction; multiscale robustness/resilience; homeostasis/allostasis and adaptation without exact return; critical-transition/loss-of-resilience theory; coarse-graining and micro-macro causation; prior uses of "inheritance" in dynamical-systems literature
 - **Compatibility limits / contradictions:** these literatures do not automatically establish a nonredundant lower-level-to-higher-level stability-inheritance relation under the present architecture; exact compatibility and prior-art boundaries require full-text mapping
-- **Residual novelty:** not yet frozen; first A0 pass rejects novelty for generic hierarchical stability transfer and instead leaves a candidate operational relation: independently characterized lower-level χ and/or modal Χ must add nonredundant information about separately characterized higher-level Χ_con or realized response beyond the strongest native higher-level model, with carrier specificity for mechanistic inheritance
+- **Residual novelty:** P0-N RESIDUAL_DEFINED. Primary class NEW_INTEGRATION; secondary NEW_DISCRIMINATING_TEST and NEW_BOUNDARY_TEST. Generic cross-scale causation, compositional stability, coarse-grained memory, causal abstraction, stability-preserving abstraction, and universal inheritance-law novelty are not supported.
 - **Conglomeration-generated inference, if any:** candidate only; exact return-to-baseline is too narrow, while history-dependent changes in accessible recovery architecture may be the more useful cross-domain target
-- **Preregistered target produced from A0:** none
+- **Preregistered target produced from A0:** none; Stage 2 APQ draft opened for a P0-Q controlled physical known-truth qualification benchmark, not P1
 - **Primary A0 / literature artifacts:** Undermind workspace b69358dd-0bd5-4a37-bd64-65f3921d9e82; A0_PRELIMINARY_SYNTHESIS.md; A0_COMPONENT_COMPATIBILITY_MAP_v0.1.md; stability_inheritance/INTERNAL_EVIDENCE_MAP_v0.1.md; stability_inheritance/LEGACY_PHYSICS_RECONSTRUCTION_v0.1.md
 
 ## 4. Frozen and Preregistered Objects
 
-No new scientific hypothesis, comparator, prediction, holdout, estimator, threshold, or refusal rule is frozen yet. The investigation is deliberately upstream of preregistration.
+P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator, prediction, holdout, threshold, or empirical inheritance claim is frozen. The current physical hierarchy Plan Packet v0.2 is an APQ-revised draft only and explicitly has P0-Q known-truth qualification ceiling.
 
 ## 5. Active Plan and Adversarial Plan Qualification
 
-- **Active plan / scientific route:** complete A0 prior-art conglomeration; reconstruct internal program evidence independently; derive residual novelty; then build APQ-qualified discriminating tests
-- **APQ level:** APQ-1 EXPLORATORY for current synthesis
-- **Plan status:** EXECUTING
-- **Plan Packet identity / path / commit:** preliminary A0 synthesis in Undermind workspace
-- **Adversarial first-pass status:** pending after component map matures
-- **Unresolved BLOCKER objections:** none yet formally adjudicated
-- **Unresolved MATERIAL objections:** possible redundancy with hierarchical-stability, resilience, causal-emergence, prior inheritance-principle, and Mori-Zwanzig/closure literature; unresolved program-governance notation mismatch between GOM v1.0 Section 2.1.1 and the project-level distinction Chi = modal/vector while conglomerate remains separate
-- **Objection-ledger identity:** pending
-- **Plan Delta identity:** pending
-- **Qualified plan version:** n/a
+- **Active plan / scientific route:** APQ-2 qualification of a controlled physical hierarchy benchmark that tests whether χ / Χ / Χ_con representation and refusal logic behave correctly against established CMS/dynamic-substructuring theory before any novel P1 inheritance test is attempted
+- **APQ level:** APQ-2 SUBSTANTIAL
+- **Plan status:** REVISION_REQUIRED_AFTER_FIRST_PASS / v0.2 drafted, not frozen
+- **Plan Packet identity / path / commit:** stability_inheritance/PHYSICAL_HIERARCHY_PLAN_PACKET_v0.2.md, commit 26c3ab3cc04abe17c5b5d1a86e38df479172a204
+- **Adversarial first-pass status:** COMPLETE with two BLOCKER and eight MATERIAL objections; blockers resolved by lowering first-cycle ceiling to P0-Q known-truth qualification and separating direct Χ_con measurement from parent predictors
+- **Unresolved BLOCKER objections:** none after Plan Delta v0.1; no plan freeze yet
+- **Unresolved MATERIAL objections:** apparatus-specific repeatability, interface integrity, passivity/reciprocity/rank, measurement precision, and framework-operability criteria remain to be closed in a second APQ pass; notation mismatch with GOM v1.0 Section 2.1.1 remains a governance issue
+- **Objection-ledger identity:** stability_inheritance/PHYSICAL_HIERARCHY_APQ_LEDGER_v0.1.md, commit 902db9060c35efe433222e685611591641bee13f
+- **Plan Delta identity:** stability_inheritance/PHYSICAL_HIERARCHY_PLAN_DELTA_v0.1.md, commit 3ae65a9d45bb85336ca9090c699c37e307c8ffa8
+- **Qualified plan version:** none; v0.2 is revised draft
 - **Freeze timestamp / identifier / hash:** n/a
 - **Design adequacy status:** DESIGN_LIMITED_EXPLORATORY
 - **Masking / outcome-exposure status:** legacy and current program outcomes already known; they cannot serve as untouched confirmation for the newly formulated inheritance claim
-- **Next plan gate:** P0-N residual novelty closure
+- **Next plan gate:** apparatus-specific APQ-2 closure and mechanical design-adequacy preflight before freeze
 
 ## 6. Active Hold or Blocker
 
@@ -282,3 +282,49 @@ No new scientific hypothesis, comparator, prediction, holdout, estimator, thresh
 - **Next action:** finish closest-prior-art collision, then draft but do not execute the first APQ Plan Packet
 - **Why next:** a P1 design is premature until the remaining residual has survived compositional and closure literature
 - **Provenance pointer:** commit 0609270712c505d6a700267a01571a5fad3df306
+
+
+### 2026-09-27 - P0N_CLOSURE - Stability Inheritance residual narrowed to qualification architecture
+
+- **Lifecycle Stage:** Stage 1
+- **Entry type:** P0N_CLOSURE
+- **Source artifact / evidence identity:** stability_inheritance/P0N_A0_CLOSURE_v1.0.md; completed Undermind deep search SI exact cross-level comparator collision; causal-abstraction and approximate-bisimulation collision
+- **Observed / decided:** generic subsystem-to-system stability transfer, multiscale prediction, micro-macro recovery effects, causal abstraction, intervention consistency, information-loss metrics, and stability-preserving abstraction are established prior art
+- **Scientific interpretation:** residual novelty is NEW_INTEGRATION primary plus NEW_DISCRIMINATING_TEST and NEW_BOUNDARY_TEST secondary; no new fundamental mechanism or universal inheritance law is supported
+- **Alternative explanation / uncertainty:** later literature may still reveal an equivalent full qualification framework and would force reclassification toward synthesis/extension
+- **Impact on claim / novelty / prediction:** SI is reframed as a stability-specific qualification/falsification architecture plus any later independently earned empirical carrier-resolved results
+- **Freeze impact:** no P1 freeze
+- **Status impact:** P0-N RESIDUAL_DEFINED; A0 COMPLETE FOR PLAN CONSTRUCTION
+- **Next action:** Stage 2 APQ plan construction
+- **Why next:** lifecycle gate satisfied
+- **Provenance pointer:** commit 15785d053f6afa06eb2cbe7e54b78088a16f057b
+
+### 2026-09-27 - PLAN_OBJECTION - First physical hierarchy APQ lowers claim ceiling
+
+- **Lifecycle Stage:** Stage 2
+- **Entry type:** PLAN_OBJECTION
+- **Source artifact / evidence identity:** PHYSICAL_HIERARCHY_APQ_LEDGER_v0.1.md
+- **Observed / decided:** first draft risked becoming a relabeled CMS demonstration and contained potential Χ_con circularity plus interface/measurement confounds
+- **Scientific interpretation:** first physical cycle is scientifically useful only as a known-truth physical qualification benchmark, not a novel inheritance experiment
+- **Alternative explanation / uncertainty:** an apparatus benchmark may ultimately show FRAMEWORK_NO_ADDED_VALUE, which is an acceptable closeout
+- **Impact on claim / novelty / prediction:** P1/carrier-resolved inheritance removed from first-cycle ceiling; direct assembled measurement now defines reference Χ_con
+- **Freeze impact:** v0.1 not qualified
+- **Status impact:** APQ revision required
+- **Next action:** apply Plan Delta and perform apparatus-specific second pass
+- **Why next:** resolve BLOCKER/MATERIAL objections before freeze
+- **Provenance pointer:** commits 902db9060c35efe433222e685611591641bee13f and 3ae65a9d45bb85336ca9090c699c37e307c8ffa8
+
+### 2026-09-27 - PLAN_REVISION - Physical hierarchy v0.2 drafted
+
+- **Lifecycle Stage:** Stage 2
+- **Entry type:** PLAN_REVISION
+- **Source artifact / evidence identity:** stability_inheritance/PHYSICAL_HIERARCHY_PLAN_PACKET_v0.2.md
+- **Observed / decided:** plan reclassified to P0-Q known-truth benchmark; Χ_con made outcome-independent/directly measured; Q3 damping deferred; interface/passivity/reciprocity/rank/sensor gates added; framework no-added-value outcomes added
+- **Scientific interpretation:** the benchmark now tests whether SI qualification behaves correctly against native substructuring rather than attempting to claim known component-to-assembly physics as new
+- **Alternative explanation / uncertainty:** apparatus-specific APQ may still show that the benchmark is unnecessary or not operational
+- **Impact on claim / novelty / prediction:** no empirical claim promoted
+- **Freeze impact:** not frozen
+- **Status impact:** revised draft active
+- **Next action:** concrete apparatus/measurement feasibility plus APQ pass 2
+- **Why next:** remaining objections are physical/design-adequacy objections
+- **Provenance pointer:** commit 26c3ab3cc04abe17c5b5d1a86e38df479172a204
