@@ -43,7 +43,7 @@ The legacy Stability Inheritance branch predates major developments in Chemistry
 
 ### Latest scientific development
 
-User clarification establishes the project-level representation rule for this investigation: lowercase chi is the licensed scalar layer; capital Chi is the base modal/vector layer; Chi_con is the conglomerate/system layer. Chi_con is not silently folded into base modal Chi, and neither symbol is treated as the whole Stability Architecture. This creates a notation conflict with the current GOM v1.0 Section 2.1.1 wording, which treats capital Chi as the broader reconstructed architecture. The GOM itself is not silently edited; the conflict is carried explicitly for future governance revision.
+The first A0 conglomeration now shows that generic subsystem-to-system stability transfer, compositional certification, hierarchical model reduction, multiscale resilience, allostatic adaptation, and micro-macro causation are established prior art. The residual SI candidate has therefore narrowed to a carrier-specific cross-level discrimination problem: whether independently characterized lower-level χ and/or modal Χ adds nonredundant information about separately characterized higher-level Χ_con or realized perturbation/recovery beyond the strongest native higher-level representation. The legacy Noughts, neutrino, and ringdown works have been reconstructed as three adversarial candidates testing false-substrate assignment, environmental reorganization without inheritance, and scalar-vs-modal information loss respectively.
 
 ### Current interpretation and claim ceiling
 
@@ -55,10 +55,10 @@ The strongest current interpretation is that Stability Inheritance should be inv
 - **A0 Prior-Art Conglomeration Atlas status:** ACTIVE / PRELIMINARY SYNTHESIS STARTED
 - **What prior work already establishes together:** hierarchical/interconnected-system stability and model reduction; multiscale robustness/resilience; homeostasis/allostasis and adaptation without exact return; critical-transition/loss-of-resilience theory; coarse-graining and micro-macro causation; prior uses of "inheritance" in dynamical-systems literature
 - **Compatibility limits / contradictions:** these literatures do not automatically establish a nonredundant lower-level-to-higher-level stability-inheritance relation under the present architecture; exact compatibility and prior-art boundaries require full-text mapping
-- **Residual novelty:** not yet frozen; candidate residual is an operational, falsifiable cross-level qualification of whether independently characterized lower-level architecture adds transportable predictive information about higher-level perturbation/recovery beyond the strongest native higher-level model
+- **Residual novelty:** not yet frozen; first A0 pass rejects novelty for generic hierarchical stability transfer and instead leaves a candidate operational relation: independently characterized lower-level χ and/or modal Χ must add nonredundant information about separately characterized higher-level Χ_con or realized response beyond the strongest native higher-level model, with carrier specificity for mechanistic inheritance
 - **Conglomeration-generated inference, if any:** candidate only; exact return-to-baseline is too narrow, while history-dependent changes in accessible recovery architecture may be the more useful cross-domain target
 - **Preregistered target produced from A0:** none
-- **Primary A0 / literature artifacts:** Undermind workspace b69358dd-0bd5-4a37-bd64-65f3921d9e82, A0_PRELIMINARY_SYNTHESIS.md
+- **Primary A0 / literature artifacts:** Undermind workspace b69358dd-0bd5-4a37-bd64-65f3921d9e82; A0_PRELIMINARY_SYNTHESIS.md; A0_COMPONENT_COMPATIBILITY_MAP_v0.1.md; stability_inheritance/INTERNAL_EVIDENCE_MAP_v0.1.md; stability_inheritance/LEGACY_PHYSICS_RECONSTRUCTION_v0.1.md
 
 ## 4. Frozen and Preregistered Objects
 
@@ -120,8 +120,8 @@ No new scientific hypothesis, comparator, prediction, holdout, estimator, thresh
 
 ## 8. Next Exact Action
 
-- **Next action:** complete the external A0 compatibility map, then build the internal cross-project evidence map under the same object categories
-- **Why this is next:** residual novelty cannot be stated responsibly until established hierarchical stability, resilience, allostasis, model-reduction, causal-emergence, and prior inheritance literatures are separated from the candidate contribution
+- **Next action:** reconcile the exact source/version lineage for Noughts, neutrinos, and ringdown; continue full-text A0 collision on the closest compositional-stability/resilience precedents; then map NSD and Grid into the χ / Χ / Χ_con evidence schema
+- **Why this is next:** the first prior-art pass has already removed generic hierarchical stability transfer from the novelty claim; exact source lineage and the closest full-text precedents now determine whether the remaining cross-level incremental-information relation is genuinely residual or synthesis-only
 - **Expected output / decision:** residual novelty class plus the smallest discriminating scientific question
 - **What must remain frozen while it runs:** no P1 claim, no universal substrate assumption, no universal recovery definition, no scalar-preservation assumption
 - **Stop / refusal condition:** if prior art already establishes the proposed relation under compatible conditions, reclassify as synthesis/validation/boundary extension
@@ -203,3 +203,34 @@ No new scientific hypothesis, comparator, prediction, holdout, estimator, thresh
 - **Next action:** build the internal evidence map using separate chi, Chi, and Chi_con columns
 - **Why next:** the current cross-project evidence can only be compared coherently if the three starting representation levels remain explicit
 - **Provenance pointer:** this WORKING_INVESTIGATION.md update
+
+
+### 2026-09-27 - DEVELOPMENT - A0 narrows SI away from generic compositional stability
+
+- **Lifecycle Stage:** Stage 1 / P0-N
+- **Entry type:** DEVELOPMENT
+- **Source artifact / evidence identity:** Undermind A0_COMPONENT_COMPATIBILITY_MAP_v0.1.md; control/resilience/micro-macro prior-art search
+- **Observed / decided:** small-gain, dissipativity/compositional certification, hierarchical reduction, resilience/viability, biological robustness/allostasis, and micro-macro causation already establish major components that an overbroad Stability Inheritance claim would otherwise rediscover
+- **Scientific interpretation:** SI cannot claim novelty for component stability constraining system stability, modes from parts contributing to assemblies, multiscale robustness, non-exact return to baseline, repeated-stress adaptation, or generic cross-level causation
+- **Alternative explanation / uncertainty:** the remaining cross-level relation may still be synthesis-only if closer prior art already performs the same carrier-specific incremental comparison
+- **Impact on claim / novelty / prediction:** residual candidate narrowed to lower-level χ/Χ adding nonredundant information about separate higher-level Χ_con or realized response beyond the strongest native higher-level representation
+- **Freeze impact:** none; no preregistration yet
+- **Status impact:** P0-N remains active with narrower candidate residual
+- **Next action:** full-text collision with closest precedents and exact legacy-source reconciliation
+- **Why next:** needed to classify residual as NEW_CONGLOMERATED_INFERENCE, NEW_DISCRIMINATING_TEST, NEW_BOUNDARY_TEST, or SYNTHESIS_ONLY
+- **Provenance pointer:** Undermind workspace b69358dd-0bd5-4a37-bd64-65f3921d9e82
+
+### 2026-09-27 - DEVELOPMENT - Noughts, neutrino, and ringdown split into adversarial SI gates
+
+- **Lifecycle Stage:** Stage 1 / P0-N
+- **Entry type:** DEVELOPMENT
+- **Source artifact / evidence identity:** stability_inheritance/LEGACY_PHYSICS_RECONSTRUCTION_v0.1.md
+- **Observed / decided:** Noughts, neutrinos, and ringdown should not be pooled as corroborating examples. Noughts tests whether a physical carrier exists beyond relabeling standard field theory; neutrinos test whether environmental reorganization contains any genuine inherited history; ringdown tests scalar information loss and whether lineage exists beyond remnant-native variables
+- **Scientific interpretation:** the three legacy works are most valuable as mutually different failure probes
+- **Alternative explanation / uncertainty:** any or all three may refuse inheritance while remaining scientifically useful native-domain reconstructions
+- **Impact on claim / novelty / prediction:** prevents domain-specific retuning of one inheritance definition to force cross-domain agreement
+- **Freeze impact:** none
+- **Status impact:** candidate map expanded without promotion
+- **Next action:** source-version intake and native prior-art reconstruction for each candidate
+- **Why next:** old SymC claims are lineage only and cannot be reused without requalification
+- **Provenance pointer:** commit 30be5832e4e475585af344f1c886c8b00afb4db8
