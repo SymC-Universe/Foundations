@@ -368,6 +368,21 @@
       "last_run_id": 36521872308,
       "last_disposition": "BARC_PUBLIC_INDEX_PARTIAL",
       "note": "SEM wiki, challenge, random vibration, and hardware/models shares live; Test Data Box share 404. No numeric files downloaded."
+    },
+    {
+      "id": "BRB_PUBLIC_DATA_INTAKE_V01",
+      "status": "READY",
+      "script": "stability_inheritance/intake_brb_public_data_v0_1.py",
+      "result_json": "stability_inheritance/results/brb_public_intake/result.json",
+      "disposition_key": "disposition",
+      "continue_on_dispositions": [
+        "BRB_LAYOUT_QUALIFIED",
+        "BRB_LAYOUT_NEEDS_MAPPING",
+        "BRB_SOURCE_IDENTITY_MISMATCH",
+        "BRB_LAYOUT_INVALID"
+      ],
+      "stop_after": true,
+      "evidence_class": "P0-Q PUBLIC EXTERNAL METADATA INTAKE"
     }
   ]
 }
