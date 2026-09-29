@@ -1,0 +1,39 @@
+name: DESI Stability Arc Gate
+
+on:
+  push:
+    branches: [desi-stability-arc]
+    paths:
+      - "cosmology_desi/**"
+      - ".github/workflows/desi-stability-arc.yml"
+  workflow_dispatch:
+
+jobs:
+  scalar-gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: cosmology_desi/requirements.txt
+      - name: Install dependencies
+        run: pip install -r cosmology_desi/requirements.txt
+      - name: Run analytic tests
+        run: pytest -q cosmology_desi/test_desi_scalar_gate.py
+      - name: Run DESI DR2 scalar gate
+        run: python cosmology_desi/desi_scalar_gate.py
+      - name: Upload DESI scalar outputs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: desi-stability-arc-scalar-gate
+          path: |
+            cosmology_desi/results/**
+            cosmology_desi/data/**/chain*.yaml
+            cosmology_desi/data/**/chain*.yml
+            cosmology_desi/data/**/chain*.paramnames
+          if-no-files-found: warn
+          retention-days: 30
