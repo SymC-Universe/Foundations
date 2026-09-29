@@ -619,3 +619,18 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Next action:** execute workflow run launched at commit 81ea0ee1d76e825099c9b75cf34f13adb796a52a.
 - **Why next:** test the first four source-to-target gates on measured component/assembly data.
 - **Provenance pointer:** protocol commit 5485a57fda952547353fd72256de917e12c5869d
+
+
+### 2026-09-28 - INTERPRETATION_CORRECTION - Native evidence counts toward Stability Architecture reconstruction
+
+- **Lifecycle Stage:** Stage 2 / computational qualification
+- **Entry type:** INTERPRETATION_CORRECTION
+- **Source artifact / evidence identity:** user clarification during Stability Inheritance computational qualification
+- **Observed / decided:** native-domain results are evidence toward the Stability Architecture when they establish a constituent mechanism, representation boundary, modal/system organization, memory/closure requirement, recovery property, refusal, coupling behavior, or another piece of the architecture. Prior-art/native explanation limits novelty attribution but does not make the evidence irrelevant to the integrative case.
+- **Scientific interpretation:** evidence role and novelty role are distinct. A result may be ARCHITECTURE_SUPPORTING_NATIVE while remaining EQUIVALENT for incremental-value claims. The Stability Inheritance program is reconstructive/integrative: it tests how already-established and newly-tested pieces fit together, where they interact, and where the combined architecture gains or loses explanatory value.
+- **Alternative explanation / uncertainty:** recurrence of compatible native pieces across domains may still reduce to a useful synthesis/meta-language rather than a new predictive framework; that question remains open and requires discriminating prospective tests.
+- **Impact on claim / novelty / prediction:** no claim promotion. Native-equivalent findings now remain explicitly positive evidence for architecture reconstruction while preserving EQUIVALENT / NO_ADDED_VALUE outcomes for novelty and added-value adjudication.
+- **Freeze impact:** none.
+- **Status impact:** Silverbox and other native comparator results should be classified by both evidence role and novelty role rather than being described simply as 'not SI evidence.'
+- **Next action:** update Function/Limit relation mapping and future external benchmark records to carry separate architecture-evidence and novelty/confirmation fields.
+- **Why next:** prevents the novelty firewall from accidentally discarding established scientific pieces that the architecture is intended to integrate.
