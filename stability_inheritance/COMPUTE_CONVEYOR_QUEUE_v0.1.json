@@ -513,6 +513,21 @@
       "corrected_disposition": "FILE_DESCRIPTOR_WITHOUT_ROUTE",
       "correction_commit": "a5c8db04d7473b74b9ca1090f93db0d7be2ae9c4",
       "note": "Landing-page audit auto-classification was false-positive: data.h5 was named in public description but no file-specific URL/UUID/public-files route was recovered. Raw rivet lane is SOURCE_ACCESS_HOLD; no HDF5 body opened."
+    },
+    {
+      "id": "BRB_LONGTERM_OSF_IDENTITY_V01",
+      "status": "READY",
+      "script": "stability_inheritance/intake_brb_longterm_osf_v0_1.py",
+      "result_json": "stability_inheritance/results/brb_longterm_osf_intake/result.json",
+      "disposition_key": "disposition",
+      "continue_on_dispositions": [
+        "LONG_TERM_LAYOUT_QUALIFIED",
+        "LONG_TERM_LAYOUT_PARTIAL",
+        "OSF_IDENTITY_AMBIGUOUS",
+        "OSF_SOURCE_BLOCKED"
+      ],
+      "stop_after": true,
+      "evidence_class": "P0-Q PUBLIC EXTERNAL METADATA / NO NUMERIC RESPONSE ACCESS"
     }
   ]
 }
