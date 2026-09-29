@@ -538,7 +538,7 @@
     },
     {
       "id": "BRB_LONGTERM_SHAKER_ZIP_INDEX_V01",
-      "status": "READY",
+      "status": "COMPLETE_INDEX_QUALIFIED",
       "script": "stability_inheritance/intake_brb_longterm_shaker_zip_index_v0_1.py",
       "result_json": "stability_inheritance/results/brb_longterm_shaker_zip_index/result.json",
       "disposition_key": "disposition",
@@ -549,11 +549,43 @@
         "SHAKER_ZIP_IDENTITY_CHANGED"
       ],
       "stop_after": true,
-      "evidence_class": "P0-Q METADATA-ONLY SHAKER ARCHIVE PREFLIGHT"
+      "evidence_class": "P0-Q METADATA-ONLY SHAKER ARCHIVE PREFLIGHT",
+      "last_run_id": 36577977750,
+      "last_disposition": "SHAKER_ZIP_INDEX_QUALIFIED"
+    },
+    {
+      "id": "BRB_LONGTERM_HISTORY_RESPONSE_V01",
+      "status": "READY",
+      "script": "stability_inheritance/run_brb_longterm_history_response_v0_1.py",
+      "result_json": "stability_inheritance/results/brb_longterm_history_response/result.json",
+      "disposition_key": "disposition",
+      "continue_on_dispositions": [
+        "HISTORY_CONDITIONED_RESPONSE_ARCHITECTURE",
+        "MIXED_HISTORY_RESPONSE_ARCHITECTURE",
+        "STATE_HISTORY_NOT_REQUIRED_FOR_DECLARED_TASK",
+        "INDETERMINATE",
+        "INVALID_TEST"
+      ],
+      "stop_after": false,
+      "evidence_class": "P0-Q PUBLIC EXTERNAL MEASURED LONGITUDINAL HISTORY/RESPONSE"
+    },
+    {
+      "id": "BRB_LONGTERM_SCAN_CODE_AUDIT_V01",
+      "status": "READY",
+      "script": "stability_inheritance/audit_brb_longterm_scan_code_v0_1.py",
+      "result_json": "stability_inheritance/results/brb_longterm_scan_code_audit/result.json",
+      "disposition_key": "disposition",
+      "continue_on_dispositions": [
+        "SCAN_NATIVE_PROCESSING_ROUTE_IDENTIFIED",
+        "SCAN_NATIVE_PROCESSING_ROUTE_INCOMPLETE",
+        "SCAN_SOURCE_AUDIT_BLOCKED"
+      ],
+      "stop_after": true,
+      "evidence_class": "P0-Q NATIVE SCAN PROCESSING SOURCE AUDIT"
     }
   ],
   "execution_trigger": {
-    "reason": "Advance qualified BRB long-term OSF identity to shaker ZIP metadata index",
-    "sequence": 1
+    "reason": "Execute frozen BRB long-term history response, then independent scan-code audit",
+    "sequence": 2
   }
 }
