@@ -19,8 +19,7 @@ update_rule: "Update after every material scientific development and before ever
 - **Current lifecycle Stage:** Stage 2 / P0-Q computational qualification and APQ plan construction after P0-N closure
 - **Status:** ACTIVE
 - **Last updated:** 2026-09-28
-- **Last verified commit / archive / checkpoint:** 241b9d2a8f86d18710226fb29835238e031d26c1 - measured structural evidence integrated through F-16 and pyFBS; pyFBS v0.4 native hierarchical transformation scored successfully
-No inheritance law is established. The current candidate hypothesis is that some systems preserve, transform, or lose lower-level stability-relevant structure under embedding or hierarchical organization, and that the scientifically important object is the nonredundant relationship between lower-level architecture and higher-level realized behavior.
+- **Last verified commit / archive / checkpoint:** 4073f743c1ea1c996b35498b82fc78484dab80a9 - BRB measured modal/vector evidence integrated into Stability Architecture relation matrix v0.5 and external measured synthesis v0.5\nNo inheritance law is established. The current candidate hypothesis is that some systems preserve, transform, or lose lower-level stability-relevant structure under embedding or hierarchical organization, and that the scientifically important object is the nonredundant relationship between lower-level architecture and higher-level realized behavior.
 
 ### Current evidence picture
 
@@ -113,8 +112,7 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 
 ## 8. Next Exact Action
 
-- **Next action:** run a post-result pyFBS conditioning/error audit to determine where native hierarchical recovery succeeds or fails as interface conditioning varies; fold that Limit Map result into the architecture relation matrix; then prioritize a distinct provenance-clean measured hierarchy rather than retuning F-16 or pyFBS targets.
-- **Start from:** WORKING_INVESTIGATION.md; STABILITY_ARCHITECTURE_RELATION_MATRIX_v0.3.md; F16_GVT_STABILITY_ARCHITECTURE_SYNTHESIS_v0.1.md; PYFBS_CURRENT_METADATA_SVT_LMFBS_RESULT_v0.4.md
+- **Next action:** freeze and execute a P0-D scalar-modal relation analysis on the already-seen Brake-Reuss ringdown, testing whether a separately licensed local damping scalar chi tracks the measured amplitude-conditioned Chi geometry without altering the completed modal protocol; in parallel preserve BARC as published boundary-condition evidence and the rubber-isolator dataset as SOURCE_ACCESS_HOLD.\n- **Start from:** WORKING_INVESTIGATION.md; STABILITY_ARCHITECTURE_RELATION_MATRIX_v0.3.md; F16_GVT_STABILITY_ARCHITECTURE_SYNTHESIS_v0.1.md; PYFBS_CURRENT_METADATA_SVT_LMFBS_RESULT_v0.4.md
 - **Exact computational control:** use the guarded Stability Inheritance conveyor; hourly automation remains recovery-only.
 - **Required environment / dependency:** GitHub Actions plus source-specific runtime acquisition; raw third-party datasets are not committed where redistribution is uncertain.
 - **Last successful checkpoint:** measured pyFBS native hierarchical transformation scored NATIVE_FRAMEWORK_EQUIVALENT after current-official metadata correction.
@@ -815,3 +813,46 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Next action:** quantify conditioning/error structure post-result, then seek a distinct measured hierarchy rather than tuning this target.
 - **Why next:** determines where the established native relation is operational and where it breaks, which is directly relevant to the architecture Function/Limit map.
 - **Provenance pointer:** result commit 5ca4f4f1a8ef9cd46a5faf23bcc97ee0ee9f57e3; architecture matrix v0.3 commit 5f63c8abc27e7f2f2cabd81097b271bd1218c0a4; external synthesis v0.3 commit 241b9d2a8f86d18710226fb29835238e031d26c1
+
+
+### 2026-09-28 - SOURCE_HOLD - Rubber-isolator cross-assembly raw source inaccessible
+
+- **Lifecycle Stage:** Stage 2 / external measured architecture reconstruction
+- **Entry type:** SOURCE_HOLD
+- **Source artifact / evidence identity:** stability_inheritance/RUBBER_ISOLATOR_CROSS_ASSEMBLY_DATA_INTAKE_v0.1.md; conveyor intake attempts V01, V01A, V01B
+- **Observed / decided:** three provenance-clean Mendeley/Digital Commons transport routes failed before any experimental.h5 or numerical.h5 body was opened: HTTP 401, then HTTP 404 on revised API route, then HTTP 404 on the official public-filename route including README.
+- **Scientific interpretation:** the dataset remains scientifically attractive because it separates joint identification on C1-J-C2 from cross-validation on A-J-B, but current runtime access is inadequate for a controlled raw-data test.
+- **Alternative explanation / uncertainty:** Mendeley public download routing may have changed or require file IDs/client-side metadata unavailable through the current runner.
+- **Impact on claim / novelty / prediction:** none.
+- **Freeze impact:** no target data exposed and no scoring protocol opened.
+- **Status impact:** SOURCE_ACCESS_HOLD; do not use unverified mirrors.
+- **Next action:** leave the source dormant unless an official accessible route appears; continue other hierarchy evidence.
+- **Why next:** prevents transport plumbing from becoming a scientific rabbit hole.
+
+### 2026-09-28 - DEVELOPMENT - BARC adds published boundary-condition architecture evidence
+
+- **Lifecycle Stage:** Stage 2 / architecture reconstruction
+- **Entry type:** DEVELOPMENT
+- **Source artifact / evidence identity:** stability_inheritance/BARC_BOUNDARY_CONDITION_ARCHITECTURE_EVIDENCE_v0.1.md; BARC public index; published BARC experimental literature
+- **Observed / decided:** the same removable component is studied under the next-level Box assembly, rigid/flexible fixtures, free-free/fixed-base configurations, and altered attachment geometry. Published results establish that the realized modal/dynamic response depends on these boundary/interface realizations and that impedance-matched fixture design can better reproduce the target environment.
+- **Scientific interpretation:** boundary impedance, fixture compliance, attachment geometry, and assembly realization are native constituents of realized dynamics when the domain shows that they materially affect the task. Component-only characterization is not equivalent to embedded behavior.
+- **Alternative explanation / uncertainty:** the historical public Test Data Box share currently returns 404, so no new raw-data BARC score was produced.
+- **Impact on claim / novelty / prediction:** architecture evidence strengthened; novelty remains native prior art.
+- **Freeze impact:** none.
+- **Status impact:** ARCHITECTURE_SUPPORTING_NATIVE_BOUNDARY_CONDITION added to Function/Limit synthesis.
+- **Next action:** prioritize raw datasets adding nonredundant architecture relations.
+
+### 2026-09-28 - PLAN_EXECUTED - Brake-Reuss Beam admits measured Chi with persistent skeleton and fine reorganization
+
+- **Lifecycle Stage:** Stage 2 / P0-Q external measured qualification
+- **Entry type:** PLAN_EXECUTED
+- **Source artifact / evidence identity:** stability_inheritance/BRB_RINGDOWN_MODAL_GEOMETRY_PROTOCOL_v0.1.md; stability_inheritance/BRB_RINGDOWN_MODAL_GEOMETRY_RESULT_v0.1.md; workflow run 36522955020
+- **Observed / decided:** the frozen full-field DIC ringdown protocol detected 510 peaks and compared HIGH and LOW amplitude spatial bases with alternating fit/test splits. Rank-1 energy exceeded 0.99994 in all strata. HIGH-vs-LOW principal angle was 0.9440 degrees. Split-half within-stratum MAC values were approximately 0.99999999, while cross-stratum MAC was 0.99972857. Own-amplitude held-out projection residuals were 0.00616 HIGH and 0.00660 LOW versus opposite-amplitude residuals 0.01677 and 0.01837.
+- **Scientific interpretation:** the native slow-mode modal skeleton is overwhelmingly preserved while its exact spatial vector changes reproducibly with response amplitude. Preservation and reorganization therefore coexist at different representational resolutions.
+- **Alternative explanation / uncertainty:** the result is confined to the DIC-filtered slow-mode ringdown and is already consistent with published native amplitude-dependent mode-shape science. It does not establish a new mechanism.
+- **Impact on claim / novelty / prediction:** architecture-supporting measured evidence strengthened; SI-specific novelty unchanged. For this declared task, capital Chi is ADMITTED as the repeatable native one-dimensional modal subspace.
+- **Freeze impact:** P0-Q protocol completed without retuning. Any scalar-modal follow-up is post-result and carries promotion debt.
+- **Status impact:** Function Map gains DOMINANT_MODAL_SUBSPACE_PERSISTS_ACROSS_RINGDOWN; Limit Map gains EXACT_MODAL_VECTOR_INVARIANCE_REFUSED_AT_MEASUREMENT_PRECISION; evidence role ARCHITECTURE_SUPPORTING_NATIVE_MODAL_REORGANIZATION.
+- **Next action:** prospectively freeze the post-result scalar-modal relation analysis before extracting any damping scalar from the same ringdown.
+- **Why next:** tests whether the scalar layer compresses the measured modal geometry or carries only partially overlapping information.
+- **Provenance pointer:** result commit 59d28abb472d81b0a87c1c9824ebc6431616c143; relation matrix v0.5 commit 0315e796c965d8a07dc7b4fb8c64acc48e7f8187; measured synthesis v0.5 commit 4073f743c1ea1c996b35498b82fc78484dab80a9
