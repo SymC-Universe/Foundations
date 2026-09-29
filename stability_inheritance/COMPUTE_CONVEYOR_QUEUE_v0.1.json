@@ -334,7 +334,7 @@
     },
     {
       "id": "RUBBER_ISOLATOR_CROSS_ASSEMBLY_INTAKE_V01B",
-      "status": "READY",
+      "status": "COMPLETE_SOURCE_ACCESS_HOLD",
       "script": "stability_inheritance/intake_rubber_isolator_cross_assembly_v0_1b.py",
       "result_json": "stability_inheritance/results/rubber_isolator_cross_assembly_intake/result.json",
       "disposition_key": "disposition",
@@ -346,7 +346,25 @@
       ],
       "stop_after": true,
       "evidence_class": "P0-Q PUBLIC EXTERNAL METADATA INTAKE",
-      "retry_class": "OFFICIAL_PUBLIC_FILENAME_ROUTE_NO_NUMERIC_H5_ACCESS"
+      "retry_class": "OFFICIAL_PUBLIC_FILENAME_ROUTE_NO_NUMERIC_H5_ACCESS",
+      "last_run_id": 36521709080,
+      "last_disposition": "INTAKE_PUBLIC_ROUTE_BLOCKED",
+      "note": "Third official transport route returned 404 for README and HDF5 filename paths; no HDF5 body was opened. Dataset remains scientifically attractive but computationally inaccessible from current runner."
+    },
+    {
+      "id": "BARC_PUBLIC_DATA_INTAKE_V01",
+      "status": "READY",
+      "script": "stability_inheritance/intake_barc_public_data_v0_1.py",
+      "result_json": "stability_inheritance/results/barc_public_intake/result.json",
+      "disposition_key": "disposition",
+      "continue_on_dispositions": [
+        "BARC_PUBLIC_INDEX_PASS",
+        "BARC_PUBLIC_INDEX_PARTIAL",
+        "BARC_PUBLIC_INDEX_BLOCKED",
+        "BARC_SOURCE_IDENTITY_CHANGED"
+      ],
+      "stop_after": true,
+      "evidence_class": "P0-Q PUBLIC SOURCE / METADATA INTAKE"
     }
   ]
 }
