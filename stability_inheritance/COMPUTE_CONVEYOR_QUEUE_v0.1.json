@@ -529,5 +529,9 @@
       "stop_after": true,
       "evidence_class": "P0-Q PUBLIC EXTERNAL METADATA / NO NUMERIC RESPONSE ACCESS"
     }
-  ]
+  ],
+  "execution_trigger": {
+    "reason": "Resume READY BRB_LONGTERM_OSF_IDENTITY_V01 after chat polling timeout",
+    "sequence": 1
+  }
 }
