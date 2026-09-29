@@ -464,7 +464,7 @@
     },
     {
       "id": "RIVET_MENDELEY_METADATA_AUDIT_V01",
-      "status": "READY",
+      "status": "COMPLETE_METADATA_STRUCTURE_INSUFFICIENT",
       "script": "stability_inheritance/audit_rivet_mendeley_metadata_v0_1.py",
       "result_json": "stability_inheritance/results/rivet_mendeley_metadata_structure/result.json",
       "disposition_key": "disposition",
@@ -474,7 +474,23 @@
         "METADATA_STRUCTURE_INSUFFICIENT"
       ],
       "stop_after": true,
-      "evidence_class": "P0-Q PUBLIC DATASET METADATA STRUCTURE / NO FRF ACCESS"
+      "evidence_class": "P0-Q PUBLIC DATASET METADATA STRUCTURE / NO FRF ACCESS",
+      "last_run_id": 36568226879,
+      "last_disposition": "METADATA_STRUCTURE_INSUFFICIENT"
+    },
+    {
+      "id": "RIVET_MENDELEY_LANDING_STATE_V02",
+      "status": "READY",
+      "script": "stability_inheritance/audit_rivet_mendeley_landing_state_v0_2.py",
+      "result_json": "stability_inheritance/results/rivet_mendeley_landing_state/result.json",
+      "disposition_key": "disposition",
+      "continue_on_dispositions": [
+        "OFFICIAL_FILE_ROUTE_DISCOVERED",
+        "FILE_DESCRIPTOR_WITHOUT_ROUTE",
+        "LANDING_STATE_INSUFFICIENT"
+      ],
+      "stop_after": true,
+      "evidence_class": "P0-Q PUBLIC DATASET LANDING-STATE METADATA / NO FRF ACCESS"
     }
   ]
 }
