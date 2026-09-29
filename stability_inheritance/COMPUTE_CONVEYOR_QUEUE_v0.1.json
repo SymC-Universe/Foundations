@@ -285,7 +285,7 @@
     },
     {
       "id": "PYFBS_CONDITIONING_ERROR_AUDIT_V01",
-      "status": "READY",
+      "status": "COMPLETE_LIMIT_MAP",
       "script": "stability_inheritance/run_pyfbs_conditioning_error_audit_v0_1.py",
       "result_json": "stability_inheritance/results/pyfbs_conditioning_audit_v0_1/result.json",
       "disposition_key": "disposition",
@@ -293,7 +293,23 @@
         "CONDITIONING_ERROR_MAP_COMPLETE"
       ],
       "stop_after": true,
-      "evidence_class": "P0-D POST-RESULT LIMIT-MAP AUDIT"
+      "evidence_class": "P0-D POST-RESULT LIMIT-MAP AUDIT",
+      "last_run_id": 36516878144,
+      "last_disposition": "CONDITIONING_ERROR_MAP_COMPLETE"
+    },
+    {
+      "id": "RUBBER_ISOLATOR_CROSS_ASSEMBLY_INTAKE_V01",
+      "status": "READY",
+      "script": "stability_inheritance/intake_rubber_isolator_cross_assembly_v0_1.py",
+      "result_json": "stability_inheritance/results/rubber_isolator_cross_assembly_intake/result.json",
+      "disposition_key": "disposition",
+      "continue_on_dispositions": [
+        "INTAKE_METADATA_PASS",
+        "INTAKE_API_BLOCKED",
+        "INTAKE_IDENTITY_MISMATCH"
+      ],
+      "stop_after": true,
+      "evidence_class": "P0-Q PUBLIC EXTERNAL METADATA INTAKE"
     }
   ]
 }
