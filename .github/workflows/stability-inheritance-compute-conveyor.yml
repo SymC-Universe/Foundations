@@ -1,0 +1,47 @@
+name: Stability Inheritance Computational Conveyor
+
+on:
+  push:
+    branches:
+      - stability-inheritance
+    paths:
+      - "stability_inheritance/COMPUTE_CONVEYOR_QUEUE_v0.1.json"
+      - "stability_inheritance/si_compute_conveyor_v0_1.py"
+      - "stability_inheritance/run_pyfbs_vpt_identity_preflight_v0_2.py"
+      - "stability_inheritance/PYFBS_MEASURED_VPT_IDENTITY_PREFLIGHT_v0.2.md"
+      - ".github/workflows/stability-inheritance-compute-conveyor.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: stability-inheritance-compute-conveyor
+  cancel-in-progress: false
+
+jobs:
+  conveyor:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - name: Check out frozen queue state
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: "3.12.14"
+      - name: Install current conveyor dependencies
+        run: |
+          python -m pip install --disable-pip-version-check pyFBS==1.0.6 openpyxl==3.1.5 numpy==2.1.3 pandas==2.2.3
+          python -m pip check
+      - name: Run guarded queue
+        run: python stability_inheritance/si_compute_conveyor_v0_1.py
+      - name: Upload conveyor report and task results
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: stability-inheritance-compute-conveyor
+          path: |
+            stability_inheritance/results/compute_conveyor/run_summary.json
+            stability_inheritance/results/pyfbs_vpt_identity_v0_2/result.json
+          if-no-files-found: warn
