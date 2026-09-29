@@ -389,7 +389,7 @@
     },
     {
       "id": "BRB_RINGDOWN_CODE_AUDIT_V01",
-      "status": "READY",
+      "status": "COMPLETE_CODE_QUALIFIED",
       "script": "stability_inheritance/audit_brb_ringdown_code_v0_1.py",
       "result_json": "stability_inheritance/results/brb_ringdown_code_audit/result.json",
       "disposition_key": "disposition",
@@ -405,7 +405,26 @@
       "previous_runs": [
         36522596668,
         36522673508
-      ]
+      ],
+      "last_run_id": 36522737694,
+      "last_disposition": "BRB_RINGDOWN_CODE_QUALIFIED"
+    },
+    {
+      "id": "BRB_RINGDOWN_MODAL_GEOMETRY_V01",
+      "status": "READY",
+      "script": "stability_inheritance/run_brb_ringdown_modal_geometry_v0_1.py",
+      "result_json": "stability_inheritance/results/brb_ringdown_modal_geometry/result.json",
+      "disposition_key": "disposition",
+      "continue_on_dispositions": [
+        "AMPLITUDE_CONDITIONED_MODAL_GEOMETRY",
+        "MODAL_GEOMETRY_STABLE_WITHIN_REPEATABILITY",
+        "MIXED_MODAL_GEOMETRY",
+        "MODAL_RANK1_NOT_QUALIFIED",
+        "INSUFFICIENT_RINGDOWN_PEAKS",
+        "INVALID_TEST"
+      ],
+      "stop_after": true,
+      "evidence_class": "P0-Q PUBLIC EXTERNAL MEASURED MODAL/VECTOR QUALIFICATION"
     }
   ]
 }
