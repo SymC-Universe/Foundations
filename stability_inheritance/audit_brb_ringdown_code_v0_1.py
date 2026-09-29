@@ -9,7 +9,7 @@ OUT=Path("stability_inheritance/results/brb_ringdown_code_audit")
 OUT.mkdir(parents=True,exist_ok=True)
 
 def blobsha(b):
-    return hashlib.sha1(b"blob "+str(len(b)).encode()+b"\\0"+b).hexdigest()
+    return hashlib.sha1(b"blob "+str(len(b)).encode()+bytes([0])+b).hexdigest()
 
 req=urllib.request.Request(URL,headers={"User-Agent":"SymC-Stability-Inheritance-P0Q/1.0"})
 with urllib.request.urlopen(req,timeout=60) as r:
