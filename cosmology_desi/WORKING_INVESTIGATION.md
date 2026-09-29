@@ -209,3 +209,30 @@ g_{\mathrm{SF}}(z_i)
 is an engineering diagnostic, not \(\Chi_{\mathrm m}\). The corresponding preflight script tests only covariance handling, consistency with the fiducial growth history, and simple constant/trend summaries. No transition or SI claim is licensed from those six points.
 
 The next confirmatory action is therefore reproduction of the DESI full-modeling posterior under its native likelihood structure. Only after that reproduction passes may the growth-side quantities be reconstructed into candidate \(\Chi_{\mathrm m}(k,a)\) components and compared with \(\Chi_{\mathrm{bg}}(a)\).
+
+## DR1 ShapeFit engineering preflight executed — 2026-09-29
+
+The frozen exploratory preflight has been executed from the exact six ShapeFit+BAO Appendix-A blocks. The normalized growth coordinates are
+\[
+g_{\mathrm{SF}}(z_i)
+=
+[0.8391,\,1.1571,\,1.0407,\,0.9969,\,0.9449,\,1.1649]
+\]
+for BGS, LRG1, LRG2, LRG3, ELG2 and QSO respectively, with propagated one-sigma uncertainties
+\[
+[0.1905,\,0.1255,\,0.1042,\,0.0938,\,0.0871,\,0.1223].
+\]
+Relative to the fiducial compressed growth history, the block-independent growth-only statistic is
+\[
+\chi^2=4.6517\quad\text{for 6 coordinates},
+\qquad p=0.5892.
+\]
+The weighted constant is \(g_{\mathrm{SF}}=1.0256\pm0.0449\), while a weighted linear fit gives a slope \(0.0084\pm0.1226\) per unit redshift. This engineering representation therefore contains no resolved overall offset or simple redshift trend from the fiducial growth history.
+
+Using the published DESI full-shape central value \(\Omega_{\mathrm m,0}=0.2962\) only as a background overlay gives
+\[
+z_{q=0}=z_{\chi_\delta=1}=0.68125
+\]
+for flat \(\Lambda\)CDM. The six compressed growth points straddle that redshift, but **no break or transition test was preregistered for these sparse points**, so no discontinuity claim is permitted. This is an explicit anti-post-hoc constraint. The machine-readable output is stored at `cosmology_desi/results/desi_dr1_growth_preflight.json`.
+
+The result is therefore a useful null-like engineering check: the compact growth representation behaves ordinarily enough to proceed, but it does not itself supply a \(\Chi_{\mathrm m}\) detection. The confirmatory full-modeling reproduction remains the active gate.
