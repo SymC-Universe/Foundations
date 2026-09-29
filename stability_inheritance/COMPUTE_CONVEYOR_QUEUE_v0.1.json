@@ -480,7 +480,7 @@
     },
     {
       "id": "RIVET_MENDELEY_LANDING_STATE_V02",
-      "status": "READY",
+      "status": "COMPLETE_MECHANICAL_FAILURE_NO_DATA_BODY",
       "script": "stability_inheritance/audit_rivet_mendeley_landing_state_v0_2.py",
       "result_json": "stability_inheritance/results/rivet_mendeley_landing_state/result.json",
       "disposition_key": "disposition",
@@ -490,7 +490,24 @@
         "LANDING_STATE_INSUFFICIENT"
       ],
       "stop_after": true,
-      "evidence_class": "P0-Q PUBLIC DATASET LANDING-STATE METADATA / NO FRF ACCESS"
+      "evidence_class": "P0-Q PUBLIC DATASET LANDING-STATE METADATA / NO FRF ACCESS",
+      "last_run_id": 36568471811,
+      "failure": "JSON serialization of HEAD-response bytes; metadata-only scope preserved"
+    },
+    {
+      "id": "RIVET_MENDELEY_LANDING_STATE_V02A",
+      "status": "READY",
+      "script": "stability_inheritance/audit_rivet_mendeley_landing_state_v0_2a.py",
+      "result_json": "stability_inheritance/results/rivet_mendeley_landing_state/result.json",
+      "disposition_key": "disposition",
+      "continue_on_dispositions": [
+        "OFFICIAL_FILE_ROUTE_DISCOVERED",
+        "FILE_DESCRIPTOR_WITHOUT_ROUTE",
+        "LANDING_STATE_INSUFFICIENT"
+      ],
+      "stop_after": true,
+      "evidence_class": "P0-Q PUBLIC DATASET LANDING-STATE METADATA / MECHANICAL RETRY",
+      "retry_class": "JSON_SERIALIZATION_REPAIR_NO_FILE_BODY_ACCESS"
     }
   ]
 }
