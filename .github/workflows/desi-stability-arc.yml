@@ -6,6 +6,11 @@ on:
     paths:
       - "cosmology_desi/**"
       - ".github/workflows/desi-stability-arc.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "cosmology_desi/**"
+      - ".github/workflows/desi-stability-arc.yml"
   workflow_dispatch:
 
 jobs:
