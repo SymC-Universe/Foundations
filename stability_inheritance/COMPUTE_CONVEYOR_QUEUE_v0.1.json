@@ -81,7 +81,7 @@
     },
     {
       "id": "F16_GVT_SPECIALODD_LAYOUT_V01",
-      "status": "READY",
+      "status": "COMPLETE_MAPPING_QUALIFIED",
       "script": "stability_inheritance/run_f16_specialodd_layout_preflight_v0_1.py",
       "result_json": "stability_inheritance/results/f16_gvt_specialodd_layout/result.json",
       "disposition_key": "disposition",
@@ -93,7 +93,24 @@
       "stop_after": true,
       "evidence_class": "P0-Q EXTERNAL MEASURED DATA-LAYOUT PREFLIGHT",
       "retry_class": "MECHANICAL_EPHEMERAL_WORKSPACE_REPAIR",
-      "repair_commit": "a4ebe287d06be3892217f8152b55b8db52964afb"
+      "repair_commit": "a4ebe287d06be3892217f8152b55b8db52964afb",
+      "disposition": "SPECIALODD_LAYOUT_QUALIFIED_AFTER_NONVALUE_MAPPING",
+      "mapping_commit": "33f3796df1178f6224bcac3a26ee0fbe9185a08a"
+    },
+    {
+      "id": "F16_GVT_SPECIALODD_REPLICATION_V01",
+      "status": "READY",
+      "script": "stability_inheritance/run_f16_specialodd_replication_v0_1.py",
+      "result_json": "stability_inheritance/results/f16_gvt_specialodd_replication/result.json",
+      "disposition_key": "disposition",
+      "continue_on_dispositions": [
+        "SPECIALODD_AMPLITUDE_SPECIFIC_REPLICATES",
+        "SPECIALODD_POOLED_SUFFICIENT",
+        "SPECIALODD_MIXED_TRANSPORT",
+        "INDETERMINATE"
+      ],
+      "stop_after": true,
+      "evidence_class": "P0-Q EXTERNAL MEASURED CROSS-EXCITATION REPLICATION"
     }
   ]
 }
