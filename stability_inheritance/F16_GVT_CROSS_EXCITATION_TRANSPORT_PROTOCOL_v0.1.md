@@ -2,12 +2,18 @@
 
 **Date:** 2026-09-28
 **Governance:** SymC GOM v1.0
-**Status:** FROZEN BEFORE SPECIALODD SIGNAL SCORING
+**Status:** POST-RESULT EXPLORATORY PLAN / PROMOTION DEBT
 **Evidence class:** PUBLIC EXTERNAL MEASURED P0-Q
 **P1 eligibility:** NO
-**Relation to prior tests:** independent cross-excitation transport test; does not alter FullMSine or SpecialOdd protocols
+**Relation to prior tests:** exploratory cross-excitation transport analysis proposed after the SpecialOdd target had technically completed scoring; does not alter FullMSine or SpecialOdd protocols
 
-## Frozen question
+## Provenance correction
+
+This file was committed at 2026-09-29T02:38:40Z. Workflow run 36513450698 completed the SpecialOdd target scoring at approximately 2026-09-29T02:38:24Z. The UI state available during drafting lagged the completed scoring state. Therefore this plan is **not prospective with respect to the SpecialOdd validation targets** and must not be described as preregistered or independent replication on those targets.
+
+Any execution is P0-D/post-result exploratory architecture mapping only. A future confirmatory cross-excitation test requires fresh untouched evidence or a distinct target not previously scored.
+
+## Exploratory question
 
 Does the amplitude-conditioned response architecture learned only from the FullMSine estimation levels transport across excitation design to the held-out SpecialOdd validation realizations in the preregistered 6.5-8.2 Hz wing-torsion band?
 
@@ -138,6 +144,10 @@ A positive result would support transport of an amplitude-conditioned architectu
 No physical chi is admitted.
 Native FRFs are not automatically renamed capital Chi.
 Chi_arc is not automatically identified solely by this test.
+
+## Promotion-debt rule
+
+A result from this plan may inform the Function/Limit Map and future prospective design, but cannot increase the confirmatory claim ceiling. No outcome from already-seen SpecialOdd validation targets may be relabeled prospective.
 
 ## No-retuning rule
 
