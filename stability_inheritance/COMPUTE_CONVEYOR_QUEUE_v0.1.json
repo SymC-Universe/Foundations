@@ -299,7 +299,7 @@
     },
     {
       "id": "RUBBER_ISOLATOR_CROSS_ASSEMBLY_INTAKE_V01",
-      "status": "READY",
+      "status": "COMPLETE_TRANSPORT_FAILURE",
       "script": "stability_inheritance/intake_rubber_isolator_cross_assembly_v0_1.py",
       "result_json": "stability_inheritance/results/rubber_isolator_cross_assembly_intake/result.json",
       "disposition_key": "disposition",
@@ -309,7 +309,25 @@
         "INTAKE_IDENTITY_MISMATCH"
       ],
       "stop_after": true,
-      "evidence_class": "P0-Q PUBLIC EXTERNAL METADATA INTAKE"
+      "evidence_class": "P0-Q PUBLIC EXTERNAL METADATA INTAKE",
+      "last_run_id": 36517138342,
+      "last_disposition": "INTAKE_API_BLOCKED",
+      "note": "Generic Mendeley API route returned HTTP 401 before any HDF5 download."
+    },
+    {
+      "id": "RUBBER_ISOLATOR_CROSS_ASSEMBLY_INTAKE_V01A",
+      "status": "READY",
+      "script": "stability_inheritance/intake_rubber_isolator_cross_assembly_v0_1a.py",
+      "result_json": "stability_inheritance/results/rubber_isolator_cross_assembly_intake/result.json",
+      "disposition_key": "disposition",
+      "continue_on_dispositions": [
+        "INTAKE_METADATA_PASS",
+        "INTAKE_API_BLOCKED",
+        "INTAKE_IDENTITY_MISMATCH"
+      ],
+      "stop_after": true,
+      "evidence_class": "P0-Q PUBLIC EXTERNAL METADATA INTAKE",
+      "retry_class": "OFFICIAL_PUBLIC_API_TRANSPORT_REPAIR"
     }
   ]
 }
