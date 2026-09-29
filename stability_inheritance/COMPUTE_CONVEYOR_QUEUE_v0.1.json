@@ -516,7 +516,7 @@
     },
     {
       "id": "BRB_LONGTERM_OSF_IDENTITY_V01",
-      "status": "READY",
+      "status": "COMPLETE_LAYOUT_QUALIFIED",
       "script": "stability_inheritance/intake_brb_longterm_osf_v0_1.py",
       "result_json": "stability_inheritance/results/brb_longterm_osf_intake/result.json",
       "disposition_key": "disposition",
@@ -527,11 +527,14 @@
         "OSF_SOURCE_BLOCKED"
       ],
       "stop_after": true,
-      "evidence_class": "P0-Q PUBLIC EXTERNAL METADATA / NO NUMERIC RESPONSE ACCESS"
+      "evidence_class": "P0-Q PUBLIC EXTERNAL METADATA / NO NUMERIC RESPONSE ACCESS",
+      "last_run_id": 36577044729,
+      "last_disposition": "LONG_TERM_LAYOUT_QUALIFIED",
+      "identity_disposition": "CANONICAL_OSF_IDENTITY_RESOLVED",
+      "canonical_guid": "fbwhz",
+      "artifact_id": 11037108281,
+      "artifact_sha256": "66a054da5f4727cec3163556b99bf5b31993e9331cfa51d3e5faa3fa1829db36",
+      "note": "Metadata-only OSF intake resolved canonical node fbwhz (BRB_LTERM_MULTISCALE21), 554 files, with random-FRF/step-sine before/after, single-frequency, impact, interface-scan, and First/Second/ThirdRound layout hints. No numeric response body was opened."
     }
-  ],
-  "execution_trigger": {
-    "reason": "Resume READY BRB_LONGTERM_OSF_IDENTITY_V01 after chat polling timeout",
-    "sequence": 1
-  }
+  ]
 }
