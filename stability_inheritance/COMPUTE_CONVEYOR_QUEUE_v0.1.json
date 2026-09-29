@@ -148,7 +148,7 @@
     },
     {
       "id": "F16_GVT_SINESWEEP_ARCHITECTURE_V01",
-      "status": "READY",
+      "status": "COMPLETE_INVALID_TEST",
       "script": "stability_inheritance/run_f16_sinesweep_architecture_v0_1.py",
       "result_json": "stability_inheritance/results/f16_gvt_sinesweep_architecture/result.json",
       "disposition_key": "disposition",
@@ -160,11 +160,14 @@
       ],
       "stop_after": true,
       "evidence_class": "P0-Q EXTERNAL MEASURED THIRD-EXCITATION ARCHITECTURE QUALIFICATION",
-      "protocol_commit": "e13b46407b8c2a1b02d7cb7e4efe31b594db69c6"
+      "protocol_commit": "e13b46407b8c2a1b02d7cb7e4efe31b594db69c6",
+      "last_run_id": 36514191804,
+      "last_disposition": "INPUT_COORDINATE_GATE_FAILED",
+      "note": "v0.1 frozen Voltage-Hilbert coordinate failed monotonicity gate before scientific scoring."
     },
     {
       "id": "F16_GVT_SPECIALODD_LAYOUT_V01A",
-      "status": "READY",
+      "status": "SUPERSEDED_DUPLICATE_REPAIR",
       "script": "stability_inheritance/run_f16_specialodd_layout_preflight_v0_1a.py",
       "result_json": "stability_inheritance/results/f16_gvt_specialodd_layout/result.json",
       "disposition_key": "disposition",
@@ -174,7 +177,21 @@
         "SPECIALODD_LAYOUT_INVALID"
       ],
       "stop_after": true,
-      "evidence_class": "P0-Q EXTERNAL MEASURED DATA-LAYOUT PREFLIGHT"
+      "evidence_class": "P0-Q EXTERNAL MEASURED DATA-LAYOUT PREFLIGHT",
+      "note": "Original SpecialOdd layout was already qualified and replication completed before this duplicate repair was added."
+    },
+    {
+      "id": "F16_GVT_SINESWEEP_INPUT_COORD_V01",
+      "status": "READY",
+      "script": "stability_inheritance/run_f16_sinesweep_input_coordinate_v0_1.py",
+      "result_json": "stability_inheritance/results/f16_sinesweep_input_coordinate/result.json",
+      "disposition_key": "disposition",
+      "continue_on_dispositions": [
+        "INPUT_COORDINATE_QUALIFIED",
+        "INPUT_COORDINATE_NOT_QUALIFIED"
+      ],
+      "stop_after": true,
+      "evidence_class": "P0-D INPUT-ONLY METHOD QUALIFICATION / PROMOTION DEBT"
     }
   ]
 }
