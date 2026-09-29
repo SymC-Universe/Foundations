@@ -1,0 +1,39 @@
+name: Stability Inheritance BRB OSF Fast Identity
+
+on:
+  push:
+    branches:
+      - stability-inheritance
+    paths:
+      - "stability_inheritance/run_brb_longterm_osf_fast_identity_v0_1.py"
+      - "stability_inheritance/BRB_LONGTERM_OSF_FAST_IDENTITY_PREFLIGHT_v0.1.md"
+      - ".github/workflows/stability-inheritance-brb-osf-fast-identity.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: stability-inheritance-brb-osf-fast-identity
+  cancel-in-progress: false
+
+jobs:
+  identity:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Check out frozen identity state
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: "3.12.14"
+      - name: Run bounded OSF identity preflight
+        run: python stability_inheritance/run_brb_longterm_osf_fast_identity_v0_1.py
+      - name: Upload identity result
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: stability-inheritance-brb-osf-fast-identity
+          path: stability_inheritance/results/brb_longterm_osf_fast_identity/result.json
+          if-no-files-found: error
