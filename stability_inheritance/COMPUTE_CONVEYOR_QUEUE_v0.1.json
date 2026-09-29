@@ -614,12 +614,29 @@
       "result_json": "stability_inheritance/results/brb_longterm_sampling_audit/result.json",
       "disposition_key": "disposition",
       "continue_on_dispositions": [
-        "SAMPLING_GRID_MAPPING_QUALIFIED",
-        "WITHIN_FILE_TIMING_INVALID",
-        "SAMPLING_GRID_AMBIGUOUS"
+        "SAMPLING_GRID_MAPPING_QUALIFIED"
+      ],
+      "stop_after": false,
+      "evidence_class": "P0-Q SOURCE/SCHEMA QUALIFICATION",
+      "note": "Prospective gate: v0.2 history scoring may execute only after qualified timing map."
+    },
+    {
+      "id": "BRB_LONGTERM_HISTORY_RESPONSE_V02",
+      "status": "READY",
+      "script": "stability_inheritance/run_brb_longterm_history_response_v0_2.py",
+      "result_json": "stability_inheritance/results/brb_longterm_history_response/result.json",
+      "disposition_key": "disposition",
+      "continue_on_dispositions": [
+        "HISTORY_CONDITIONED_RESPONSE_ARCHITECTURE",
+        "MIXED_HISTORY_RESPONSE_ARCHITECTURE",
+        "STATE_HISTORY_NOT_REQUIRED_FOR_DECLARED_TASK",
+        "INDETERMINATE",
+        "INVALID_TEST"
       ],
       "stop_after": true,
-      "evidence_class": "P0-Q SOURCE/SCHEMA QUALIFICATION"
+      "evidence_class": "P0-Q PUBLIC EXTERNAL MEASURED LONGITUDINAL HISTORY/RESPONSE",
+      "parent_protocol": "stability_inheritance/BRB_LONGTERM_HISTORY_RESPONSE_PROTOCOL_v0.2.md",
+      "prerequisite": "BRB_LONGTERM_SAMPLING_GRID_AUDIT_V01 must return SAMPLING_GRID_MAPPING_QUALIFIED"
     }
   ],
   "execution_trigger": {
