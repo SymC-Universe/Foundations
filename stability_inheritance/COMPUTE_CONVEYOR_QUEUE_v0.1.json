@@ -99,7 +99,7 @@
     },
     {
       "id": "F16_GVT_SPECIALODD_REPLICATION_V01",
-      "status": "READY",
+      "status": "COMPLETE_ARCHITECTURE_SUPPORT_REPLICATION",
       "script": "stability_inheritance/run_f16_specialodd_replication_v0_1.py",
       "result_json": "stability_inheritance/results/f16_gvt_specialodd_replication/result.json",
       "disposition_key": "disposition",
@@ -110,7 +110,25 @@
         "INDETERMINATE"
       ],
       "stop_after": true,
-      "evidence_class": "P0-Q EXTERNAL MEASURED CROSS-EXCITATION REPLICATION"
+      "evidence_class": "P0-Q EXTERNAL MEASURED CROSS-EXCITATION REPLICATION",
+      "result_commit": "d8c0b03e9e93a8c06eafd8ee9970907d31d9f1b8",
+      "reproducibility_run": 36513670338
+    },
+    {
+      "id": "F16_GVT_CROSS_EXCITATION_P0D_V01",
+      "status": "READY",
+      "script": "stability_inheritance/run_f16_cross_excitation_exploratory_v0_1.py",
+      "result_json": "stability_inheritance/results/f16_gvt_cross_excitation_exploratory/result.json",
+      "disposition_key": "disposition",
+      "continue_on_dispositions": [
+        "CROSS_EXCITATION_ARCHITECTURE_TRANSPORTS",
+        "CROSS_EXCITATION_MIXED",
+        "CROSS_EXCITATION_CONDITIONING_NOT_SUPPORTED",
+        "INDETERMINATE"
+      ],
+      "stop_after": true,
+      "evidence_class": "P0-D POST-RESULT EXPLORATORY / PROMOTION DEBT",
+      "exposure_correction_commit": "7e9b876a34bcc1cc32074c793185a7025882ce86"
     }
   ]
 }
