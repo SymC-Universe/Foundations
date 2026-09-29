@@ -353,7 +353,7 @@
     },
     {
       "id": "BARC_PUBLIC_DATA_INTAKE_V01",
-      "status": "READY",
+      "status": "COMPLETE_PARTIAL_PUBLIC_INDEX",
       "script": "stability_inheritance/intake_barc_public_data_v0_1.py",
       "result_json": "stability_inheritance/results/barc_public_intake/result.json",
       "disposition_key": "disposition",
@@ -364,7 +364,10 @@
         "BARC_SOURCE_IDENTITY_CHANGED"
       ],
       "stop_after": true,
-      "evidence_class": "P0-Q PUBLIC SOURCE / METADATA INTAKE"
+      "evidence_class": "P0-Q PUBLIC SOURCE / METADATA INTAKE",
+      "last_run_id": 36521872308,
+      "last_disposition": "BARC_PUBLIC_INDEX_PARTIAL",
+      "note": "SEM wiki, challenge, random vibration, and hardware/models shares live; Test Data Box share 404. No numeric files downloaded."
     }
   ]
 }
