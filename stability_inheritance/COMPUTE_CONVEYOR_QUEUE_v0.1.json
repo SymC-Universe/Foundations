@@ -198,7 +198,7 @@
     },
     {
       "id": "F16_GVT_SINESWEEP_ARCHITECTURE_V02_P0D",
-      "status": "READY",
+      "status": "COMPLETE_ARCHITECTURE_SUPPORT_POST_RESULT",
       "script": "stability_inheritance/run_f16_sinesweep_architecture_v0_2.py",
       "result_json": "stability_inheritance/results/f16_gvt_sinesweep_architecture_v0_2/result.json",
       "disposition_key": "disposition",
@@ -209,7 +209,23 @@
         "INDETERMINATE"
       ],
       "stop_after": true,
-      "evidence_class": "P0-D POST-RESULT EXTERNAL MEASURED / PROMOTION DEBT"
+      "evidence_class": "P0-D POST-RESULT EXTERNAL MEASURED / PROMOTION DEBT",
+      "last_run_id": 36515853668,
+      "last_disposition": "SINESWEEP_P0D_AMPLITUDE_CONDITIONED_SUPPORT"
+    },
+    {
+      "id": "PYFBS_CURRENT_SVT_NOTEBOOK_AUDIT_V01",
+      "status": "READY",
+      "script": "stability_inheritance/audit_pyfbs_current_svt_notebook_v0_1.py",
+      "result_json": "stability_inheritance/results/pyfbs_current_notebook_audit/result.json",
+      "disposition_key": "disposition",
+      "continue_on_dispositions": [
+        "CURRENT_NOTEBOOK_ROUTE_IDENTIFIED",
+        "CURRENT_NOTEBOOK_ROUTE_INCOMPLETE",
+        "SOURCE_AUDIT_BLOCKED"
+      ],
+      "stop_after": true,
+      "evidence_class": "P0-Q NATIVE-METHOD SOURCE-CODE AUDIT"
     }
   ]
 }
