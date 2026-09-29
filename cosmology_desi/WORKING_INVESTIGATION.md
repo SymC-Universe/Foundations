@@ -236,3 +236,11 @@ z_{q=0}=z_{\chi_\delta=1}=0.68125
 for flat \(\Lambda\)CDM. The six compressed growth points straddle that redshift, but **no break or transition test was preregistered for these sparse points**, so no discontinuity claim is permitted. This is an explicit anti-post-hoc constraint. The machine-readable output is stored at `cosmology_desi/results/desi_dr1_growth_preflight.json`.
 
 The result is therefore a useful null-like engineering check: the compact growth representation behaves ordinarily enough to proceed, but it does not itself supply a \(\Chi_{\mathrm m}\) detection. The confirmatory full-modeling reproduction remains the active gate.
+
+## Confirmatory DR1 lineage correction — 2026-09-29
+
+A lineage audit found that the initially inspected compact chain directory used the \`all-nolya\` suffix. That directory is **not** the exact chain family corresponding to the published DESI (FS+BAO)+BBN+\(n_{\mathrm{s10}}\) baseline because DESI includes Ly\(\alpha\) BAO as a background-geometry constraint while using no Ly\(\alpha\) full-shape growth information. The confirmatory target has therefore been corrected, before any \(\Chi_{\mathrm m}\) result was inspected, to
+
+\`cobaya/base/desi-reptvelocileptors-fs-bao-all_schoneberg2024-bbn_planck2018-ns10/\`.
+
+The official release SHA-256 manifest and file sizes are now pinned in \`cosmology_desi/data/desi_dr1_fullshape_upstream_provenance.json\`. The four exact posterior chain files total \(992{,}643{,}390\) bytes, so the default reproduction path will use the compact input, covariance, checkpoint and marginal-statistic files first and will download the full posterior only when sample-level \(\Chi_{\mathrm m}\) derivation requires it. The \`all-nolya\` products remain available only as a later sensitivity check on the effect of removing Ly\(\alpha\) background information.

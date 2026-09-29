@@ -1,17 +1,63 @@
 {
   "status": "pinned_upstream_reference_no_code_vendored",
   "reason": "No explicit LICENSE file was present at the root of the pinned upstream repository during the rights/compliance check, so source is referenced by immutable commit/blob identity rather than copied.",
-  "repository": "cosmodesi/desi-kp-cosmological-likelihoods",
-  "commit": "7d51f4f86dc3bee6bf10f1a684913c943a89a844",
-  "files": {
-    "dr1/README.md": "640f47080fdeca019a611fdd2a6a414d05b77186",
-    "dr1/cobaya/README.md": "fa1294abf4f6d3c7f77658698198e8e8c8242837",
-    "dr1/cobaya/desi_fs_bao_all.py": "b7df6f0a749853d7010024f56c412bf6a234a0e5",
-    "dr1/cobaya/desi_fs_bao_all.yaml": "45c5598b38f111a22993c8e47da4c54d157210e3",
-    "dr1/cobaya/reptvelocileptors.py": "6ce72067a744c7bb011bca7a3258d49a1fdfdc71",
-    "dr1/cobaya/download.py": "55cc0a6d7ef956e9b060f402d281fa56f8fbf573"
+  "implementation": {
+    "repository": "cosmodesi/desi-kp-cosmological-likelihoods",
+    "commit": "7d51f4f86dc3bee6bf10f1a684913c943a89a844",
+    "files": {
+      "dr1/README.md": "640f47080fdeca019a611fdd2a6a414d05b77186",
+      "dr1/cobaya/README.md": "fa1294abf4f6d3c7f77658698198e8e8c8242837",
+      "dr1/cobaya/desi_fs_bao_all.py": "b7df6f0a749853d7010024f56c412bf6a234a0e5",
+      "dr1/cobaya/desi_fs_bao_all.yaml": "45c5598b38f111a22993c8e47da4c54d157210e3",
+      "dr1/cobaya/reptvelocileptors.py": "6ce72067a744c7bb011bca7a3258d49a1fdfdc71",
+      "dr1/cobaya/download.py": "55cc0a6d7ef956e9b060f402d281fa56f8fbf573",
+      "dr1/cobaya/test_fs_bao_all.yaml": "5ea6bd68c07f448e5e7e0ec06ca4eaf984c9339c"
+    }
   },
-  "scientific_role": "Official DESI DR1 full-shape + BAO likelihood lineage and reproduction reference.",
+  "confirmatory_chain": {
+    "release": "DESI DR1 full-shape-cosmo-params v1.0",
+    "relative_directory": "cobaya/base/desi-reptvelocileptors-fs-bao-all_schoneberg2024-bbn_planck2018-ns10",
+    "reason_for_all_not_all_nolya": "The published DESI FS+BAO baseline includes Ly-alpha BAO as a background-geometry constraint while Ly-alpha contributes no full-shape growth measurement.",
+    "files": {
+      "chain.updated.yaml": {
+        "sha256": "335b9fd873363fcb40644fe6f09c401cf457710d3da451ae0b6b3c5400b55020",
+        "bytes": 11555
+      },
+      "chain.3.txt": {
+        "sha256": "3c2b355ee057bcfb178562504c8fdec6baf65be28cc8aa9a436b4020fefa9dd8",
+        "bytes": 247373118
+      },
+      "chain.2.txt": {
+        "sha256": "d202a881d198ae87a3013ba8de46f3f764680a9f2778108bfe4237e4997bf9e4",
+        "bytes": 247600086
+      },
+      "chain.checkpoint": {
+        "sha256": "a6856e57627d7423fe32b6afd992e89c414f2537e61776ed87cb20737bfdeef2",
+        "bytes": 107
+      },
+      "chain.margestats": {
+        "sha256": "68c863ea216eb21a5301b14a21f35056b14c319098d946bed952add48156d2b9",
+        "bytes": 6070
+      },
+      "chain.1.txt": {
+        "sha256": "a0ec1857d1c69fb0b8011862dcf6ed3a6a0b587de54e86d71d92e9c8e42b7142",
+        "bytes": 249295398
+      },
+      "chain.input.yaml": {
+        "sha256": "10db9d512398347eef5bdb62a99ce56b98f764e0ead83a6677e5ae453bd52eea",
+        "bytes": 3415
+      },
+      "chain.covmat": {
+        "sha256": "fe4ab1919625104ad291c7002e26faf0e0716be817bae56ebe1de5a256f3844a",
+        "bytes": 13754
+      },
+      "chain.4.txt": {
+        "sha256": "ec5cf19dd5fb37406a0449a9f868da646fcc77dca89e9b14fc81414b4ab935f7",
+        "bytes": 248374788
+      }
+    },
+    "full_chain_bytes": 992643390
+  },
   "expected_confirmatory_targets": {
     "Omega_m0": {
       "central": 0.2962,
