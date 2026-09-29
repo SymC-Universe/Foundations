@@ -19,8 +19,7 @@ update_rule: "Update after every material scientific development and before ever
 - **Current lifecycle Stage:** Stage 2 / P0-Q computational qualification and APQ plan construction after P0-N closure
 - **Status:** ACTIVE
 - **Last updated:** 2026-09-28
-- **Last verified commit / archive / checkpoint:** 65ef12ad7be0c96688e0f5ad2f1aeec740926ebd - guarded compute conveyor active; pyFBS VPT identity v0.2 closed VPT_ROUTE_NOT_EXECUTABLE without target scoring\nDoes the perturbation-response and recoverability of a higher-level system depend measurably on stability-relevant constraints or response capacities inherited from lower-level organization, and can that contribution be distinguished from stability generated, transformed, or reorganized by the higher-level system itself?
-
+- **Last verified commit / archive / checkpoint:** 5fb8d5be17b36b11d09f5f1dab71f1348727ba2a - pyFBS SVT compatibility branch closed; F-16 intake and architecture scoring queued in one conveyor run\n
 ### Smallest live claim or hypothesis
 
 No inheritance law is established. The current candidate hypothesis is that some systems preserve, transform, or lose lower-level stability-relevant structure under embedding or hierarchical organization, and that the scientifically important object is the nonredundant relationship between lower-level architecture and higher-level realized behavior.
@@ -107,8 +106,7 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 
 ## 8. Next Exact Action
 
-- **Next action:** consolidate the three external measured P0-Q benchmarks into the Stability Architecture relation matrix, continue provenance-clean search/access work for a structural benchmark such as F-16 GVT, and extend only prospectively frozen estimator/native-comparator tests where they answer an unresolved Function/Limit question.\n- **Stop / refusal condition:** refuse any computational extension that requires retuning already-seen outcomes, inventing a universal threshold, relabeling native theory as SI novelty, or using an external dataset without adequate provenance/identity.\n- **User intervention required:** no for the computational lane; physical lane remains deferred by user choice\n
-## 9. Resume Contract
+- **Next action:** complete the currently running F-16 official-source intake and, only on INTAKE_PASS, execute the already-frozen held-out interface-to-system architecture test in the same conveyor run; then adjudicate the result into the Function/Limit map without changing the native-first or novelty ceiling.\n## 9. Resume Contract
 
 - **Start from:** A0 preliminary synthesis and this working record
 - **Exact file(s):** WORKING_INVESTIGATION.md; Undermind A0_PRELIMINARY_SYNTHESIS.md
@@ -662,3 +660,34 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Next action:** construct the next native measured-data protocol without forcing VPT onto incompatible FRFs, or advance another ready computational benchmark.
 - **Why next:** repeated VPT dimension incompatibility is now established before target scoring and should not be debugged by target-driven metadata switching.
 - **Provenance pointer:** run 36511207115
+
+
+### 2026-09-28 - REFUSAL - pyFBS SVT release compatibility not found
+
+- **Lifecycle Stage:** Stage 2 / P0-Q external measured qualification
+- **Entry type:** REFUSAL
+- **Source artifact / evidence identity:** stability_inheritance/PYFBS_SVT_API_COMPATIBILITY_PREFLIGHT_v0.2.md; stability_inheritance/PYFBS_SVT_API_COMPATIBILITY_RESULT_v0.2.md; workflow run 36512302527
+- **Observed / decided:** pyFBS releases 1.0.0, 1.0.4, 1.0.5, and 1.0.6 all constructed the B-derived SVT and transformed B, but none could apply the same transform to AB under the frozen official-example route. Each failed before target scoring with the same AB-side index error; no release reproduced the documented B 6x6 / AB 12x12 path.
+- **Scientific interpretation:** the current measured SVT route is not operational in the tested released software/data configuration. This is a method-operability Limit Map result, not evidence against the underlying physical component/assembly relation or SVT theory.
+- **Alternative explanation / uncertainty:** the official documentation and current packaged data/software may be version-misaligned, or an upstream implementation defect may exist. That possibility does not justify post-result tuning against Y_A.
+- **Impact on claim / novelty / prediction:** none. No assembly target score was produced and no SI claim is affected.
+- **Freeze impact:** v0.1 and v0.2 failure lineages remain preserved; further version/grouping search is closed unless an independently documented correction appears.
+- **Status impact:** pyFBS measured SVT lane CLOSED_REFUSAL under current tested route.
+- **Next action:** continue external measured structural qualification through F-16 GVT.
+- **Why next:** avoids spending runway on an implementation rabbit hole while retaining the failure as evidence.
+- **Provenance pointer:** workflow run 36512302527; result commit 9168fb9e8dd1fbd303eb661f8b6ad76eea1e6082
+
+### 2026-09-28 - FREEZE - F-16 interface-to-system architecture P0-Q protocol frozen
+
+- **Lifecycle Stage:** Stage 2 / P0-Q external measured qualification
+- **Entry type:** FREEZE
+- **Source artifact / evidence identity:** stability_inheritance/F16_GVT_DATA_INTAKE_v0.1.md; stability_inheritance/F16_GVT_INTERFACE_ARCHITECTURE_PROTOCOL_v0.1.md
+- **Observed / decided:** before raw F-16 numeric scoring, the official 4TU source route, redistribution firewall, FullMSine family, period handling, published level roles, force RMS coordinates, 6.5-8.2 Hz wing-torsion band, empirical FRF estimator, bracketing amplitude interpolation, held-out levels 2/4/6, metrics, and dispositions were fixed.
+- **Scientific interpretation:** the test asks whether a representation conditioned on the localized interface regime transports better to reserved excitation levels than one fixed low-amplitude representation. Any positive result is architecture-supporting native evidence because the benchmark already attributes important nonlinearity to clearance/friction at the payload interface.
+- **Alternative explanation / uncertainty:** amplitude-conditioned changes may be mixed, weak, nonmonotonic, or inadequately represented by the frozen linear interpolation; all are valid outcomes.
+- **Impact on claim / novelty / prediction:** no SI novelty is claimed. Evidence-role and novelty-role remain separate.
+- **Freeze impact:** raw signal scoring may proceed only after official-source INTAKE_PASS and without changing the frozen band, level roles, interpolation, metric, or outcome rule.
+- **Status impact:** F-16 external measured lane ACTIVE / FROZEN_FOR_P0Q_EXECUTION.
+- **Next action:** run official-source intake followed immediately by held-out scoring if intake passes.
+- **Why next:** directly tests a measured local-interface/system-organization piece of the broader Stability Architecture while physical experiments are deferred.
+- **Provenance pointer:** protocol commit 5a7ee10c36d6d535f815116779be38c6ea9deb86; conveyor queue commit 5fb8d5be17b36b11d09f5f1dab71f1348727ba2a
