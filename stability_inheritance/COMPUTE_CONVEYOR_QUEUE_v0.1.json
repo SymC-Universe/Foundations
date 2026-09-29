@@ -182,7 +182,7 @@
     },
     {
       "id": "F16_GVT_SINESWEEP_INPUT_COORD_V01",
-      "status": "READY",
+      "status": "COMPLETE_COORDINATE_QUALIFIED",
       "script": "stability_inheritance/run_f16_sinesweep_input_coordinate_v0_1.py",
       "result_json": "stability_inheritance/results/f16_sinesweep_input_coordinate/result.json",
       "disposition_key": "disposition",
@@ -191,7 +191,25 @@
         "INPUT_COORDINATE_NOT_QUALIFIED"
       ],
       "stop_after": true,
-      "evidence_class": "P0-D INPUT-ONLY METHOD QUALIFICATION / PROMOTION DEBT"
+      "evidence_class": "P0-D INPUT-ONLY METHOD QUALIFICATION / PROMOTION DEBT",
+      "last_run_id": 36515710058,
+      "last_disposition": "INPUT_COORDINATE_QUALIFIED",
+      "selected_candidate": "C2_QUADRATIC_PHASE"
+    },
+    {
+      "id": "F16_GVT_SINESWEEP_ARCHITECTURE_V02_P0D",
+      "status": "READY",
+      "script": "stability_inheritance/run_f16_sinesweep_architecture_v0_2.py",
+      "result_json": "stability_inheritance/results/f16_gvt_sinesweep_architecture_v0_2/result.json",
+      "disposition_key": "disposition",
+      "continue_on_dispositions": [
+        "SINESWEEP_P0D_AMPLITUDE_CONDITIONED_SUPPORT",
+        "SINESWEEP_P0D_MIXED",
+        "SINESWEEP_P0D_FIXED_NOT_OUTPERFORMED",
+        "INDETERMINATE"
+      ],
+      "stop_after": true,
+      "evidence_class": "P0-D POST-RESULT EXTERNAL MEASURED / PROMOTION DEBT"
     }
   ]
 }
