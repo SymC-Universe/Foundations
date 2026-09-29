@@ -589,7 +589,7 @@
     },
     {
       "id": "BRB_LONGTERM_HISTORY_RESPONSE_V01A",
-      "status": "READY",
+      "status": "COMPLETE_MECHANICAL_FAILURE_PRE_SCORE",
       "script": "stability_inheritance/run_brb_longterm_history_response_v0_1a.py",
       "result_json": "stability_inheritance/results/brb_longterm_history_response/result.json",
       "disposition_key": "disposition",
@@ -603,7 +603,23 @@
       "stop_after": false,
       "evidence_class": "P0-Q PUBLIC EXTERNAL MEASURED LONGITUDINAL HISTORY/RESPONSE",
       "retry_class": "MECHANICAL_NATIVE_SCHEMA_REPAIR_NO_PRIOR_SCORE",
-      "parent_protocol": "stability_inheritance/BRB_LONGTERM_HISTORY_RESPONSE_PROTOCOL_v0.1.md"
+      "parent_protocol": "stability_inheritance/BRB_LONGTERM_HISTORY_RESPONSE_PROTOCOL_v0.1.md",
+      "last_run_id": 36580759670,
+      "failure": "Undocumented cross-file common-dt implementation assumption; source contains at least two dt values. No FRF/scientific score produced."
+    },
+    {
+      "id": "BRB_LONGTERM_SAMPLING_GRID_AUDIT_V01",
+      "status": "READY",
+      "script": "stability_inheritance/audit_brb_longterm_sampling_grid_v0_1.py",
+      "result_json": "stability_inheritance/results/brb_longterm_sampling_audit/result.json",
+      "disposition_key": "disposition",
+      "continue_on_dispositions": [
+        "SAMPLING_GRID_MAPPING_QUALIFIED",
+        "WITHIN_FILE_TIMING_INVALID",
+        "SAMPLING_GRID_AMBIGUOUS"
+      ],
+      "stop_after": true,
+      "evidence_class": "P0-Q SOURCE/SCHEMA QUALIFICATION"
     }
   ],
   "execution_trigger": {
