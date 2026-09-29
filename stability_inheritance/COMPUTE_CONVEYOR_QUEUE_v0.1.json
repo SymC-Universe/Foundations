@@ -428,6 +428,21 @@
       "last_run_id": 36522955020,
       "last_disposition": "AMPLITUDE_CONDITIONED_MODAL_GEOMETRY",
       "result_commit": "59d28abb472d81b0a87c1c9824ebc6431616c143"
+    },
+    {
+      "id": "BRB_SCALAR_MODAL_RELATION_V01",
+      "status": "READY",
+      "script": "stability_inheritance/run_brb_scalar_modal_relation_v0_1.py",
+      "result_json": "stability_inheritance/results/brb_scalar_modal_relation/result.json",
+      "disposition_key": "disposition",
+      "continue_on_dispositions": [
+        "CHI_ADDS_BEYOND_AMPLITUDE_FOR_DECLARED_TASK",
+        "CHI_TRACKS_BUT_IS_REDUNDANT_WITH_AMPLITUDE",
+        "CHI_NOT_OPERATIONALLY_PREDICTIVE_OF_MODAL_GEOMETRY",
+        "CHI_RELATION_INDETERMINATE"
+      ],
+      "stop_after": true,
+      "evidence_class": "P0-D POST-RESULT SCALAR-MODAL RELATION / PROMOTION DEBT"
     }
   ]
 }
