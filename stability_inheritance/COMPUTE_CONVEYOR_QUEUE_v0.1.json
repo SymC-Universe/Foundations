@@ -609,7 +609,7 @@
     },
     {
       "id": "BRB_LONGTERM_SAMPLING_GRID_AUDIT_V01",
-      "status": "READY",
+      "status": "COMPLETE_MECHANICAL_FAILURE_HTTP500",
       "script": "stability_inheritance/audit_brb_longterm_sampling_grid_v0_1.py",
       "result_json": "stability_inheritance/results/brb_longterm_sampling_audit/result.json",
       "disposition_key": "disposition",
@@ -619,6 +619,20 @@
       "stop_after": false,
       "evidence_class": "P0-Q SOURCE/SCHEMA QUALIFICATION",
       "note": "Prospective gate: v0.2 history scoring may execute only after qualified timing map."
+    },
+    {
+      "id": "BRB_LONGTERM_SAMPLING_GRID_AUDIT_V01A",
+      "status": "READY",
+      "script": "stability_inheritance/audit_brb_longterm_sampling_grid_v0_1a.py",
+      "result_json": "stability_inheritance/results/brb_longterm_sampling_audit/result.json",
+      "disposition_key": "disposition",
+      "continue_on_dispositions": [
+        "SAMPLING_GRID_MAPPING_QUALIFIED",
+        "WITHIN_FILE_TIMING_INVALID",
+        "SAMPLING_GRID_AMBIGUOUS"
+      ],
+      "stop_after": false,
+      "evidence_class": "P0-Q SCHEMA/TIMING AUDIT - MECHANICAL RECOVERY"
     },
     {
       "id": "BRB_LONGTERM_HISTORY_RESPONSE_V02",
