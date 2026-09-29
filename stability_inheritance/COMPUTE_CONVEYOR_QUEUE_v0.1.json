@@ -81,7 +81,7 @@
     },
     {
       "id": "F16_GVT_SPECIALODD_LAYOUT_V01",
-      "status": "COMPLETE_MAPPING_QUALIFIED",
+      "status": "COMPLETE_MECHANICAL_FAILURE",
       "script": "stability_inheritance/run_f16_specialodd_layout_preflight_v0_1.py",
       "result_json": "stability_inheritance/results/f16_gvt_specialodd_layout/result.json",
       "disposition_key": "disposition",
@@ -161,6 +161,20 @@
       "stop_after": true,
       "evidence_class": "P0-Q EXTERNAL MEASURED THIRD-EXCITATION ARCHITECTURE QUALIFICATION",
       "protocol_commit": "e13b46407b8c2a1b02d7cb7e4efe31b594db69c6"
+    },
+    {
+      "id": "F16_GVT_SPECIALODD_LAYOUT_V01A",
+      "status": "READY",
+      "script": "stability_inheritance/run_f16_specialodd_layout_preflight_v0_1a.py",
+      "result_json": "stability_inheritance/results/f16_gvt_specialodd_layout/result.json",
+      "disposition_key": "disposition",
+      "continue_on_dispositions": [
+        "SPECIALODD_LAYOUT_QUALIFIED",
+        "SPECIALODD_LAYOUT_NEEDS_MAPPING",
+        "SPECIALODD_LAYOUT_INVALID"
+      ],
+      "stop_after": true,
+      "evidence_class": "P0-Q EXTERNAL MEASURED DATA-LAYOUT PREFLIGHT"
     }
   ]
 }
