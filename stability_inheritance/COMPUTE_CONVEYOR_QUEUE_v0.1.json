@@ -6,13 +6,17 @@
   "tasks": [
     {
       "id": "PYFBS_VPT_IDENTITY_V02",
-      "status": "READY",
+      "status": "COMPLETE_REFUSAL",
       "script": "stability_inheritance/run_pyfbs_vpt_identity_preflight_v0_2.py",
       "result_json": "stability_inheritance/results/pyfbs_vpt_identity_v0_2/result.json",
       "disposition_key": "disposition",
-      "continue_on_dispositions": ["VPT_ROUTE_EXECUTABLE"],
+      "continue_on_dispositions": [
+        "VPT_ROUTE_EXECUTABLE"
+      ],
       "stop_after": true,
-      "evidence_class": "P0-Q DATA/TRANSFORM IDENTITY PREFLIGHT"
+      "evidence_class": "P0-Q DATA/TRANSFORM IDENTITY PREFLIGHT",
+      "last_disposition": "VPT_ROUTE_NOT_EXECUTABLE",
+      "last_run_id": 36511207115
     },
     {
       "id": "PYFBS_COMPONENT_ASSEMBLY_V01",
@@ -28,6 +32,12 @@
       "id": "F16_GVT_EXTERNAL",
       "status": "BLOCKED_SOURCE_ACCESS",
       "evidence_class": "P0-Q EXTERNAL MEASURED"
+    },
+    {
+      "id": "PYFBS_MEASURED_DIRECT_NATIVE_ROUTE_V03",
+      "status": "BLOCKED_PROTOCOL_CONSTRUCTION",
+      "evidence_class": "P0-Q PUBLIC MEASURED",
+      "note": "Next clean option is a separately frozen native measured-data route that does not force VPT on incompatible measured FRFs. Must be protocol-defined before scoring."
     }
   ]
 }
