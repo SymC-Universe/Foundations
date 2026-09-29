@@ -54,7 +54,7 @@
     },
     {
       "id": "F16_GVT_INTAKE_V01",
-      "status": "READY",
+      "status": "COMPLETE_PASS",
       "script": "stability_inheritance/acquire_f16_gvt_manifest_v0_1.py",
       "result_json": "stability_inheritance/results/f16_gvt_intake/manifest.json",
       "disposition_key": "disposition",
@@ -66,7 +66,7 @@
     },
     {
       "id": "F16_GVT_INTERFACE_ARCH_V01",
-      "status": "READY",
+      "status": "COMPLETE_ARCHITECTURE_SUPPORT",
       "script": "stability_inheritance/run_f16_gvt_interface_architecture_v0_1.py",
       "result_json": "stability_inheritance/results/f16_gvt_interface_architecture/result.json",
       "disposition_key": "disposition",
@@ -78,6 +78,20 @@
       ],
       "stop_after": true,
       "evidence_class": "P0-Q EXTERNAL MEASURED ARCHITECTURE QUALIFICATION"
+    },
+    {
+      "id": "F16_GVT_SPECIALODD_LAYOUT_V01",
+      "status": "READY",
+      "script": "stability_inheritance/run_f16_specialodd_layout_preflight_v0_1.py",
+      "result_json": "stability_inheritance/results/f16_gvt_specialodd_layout/result.json",
+      "disposition_key": "disposition",
+      "continue_on_dispositions": [
+        "SPECIALODD_LAYOUT_QUALIFIED",
+        "SPECIALODD_LAYOUT_NEEDS_MAPPING",
+        "SPECIALODD_LAYOUT_INVALID"
+      ],
+      "stop_after": true,
+      "evidence_class": "P0-Q EXTERNAL MEASURED DATA-LAYOUT PREFLIGHT"
     }
   ]
 }
