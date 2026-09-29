@@ -133,7 +133,7 @@
     },
     {
       "id": "F16_GVT_SINESWEEP_LAYOUT_V01",
-      "status": "READY",
+      "status": "COMPLETE_LAYOUT_QUALIFIED",
       "script": "stability_inheritance/run_f16_sinesweep_layout_preflight_v0_1.py",
       "result_json": "stability_inheritance/results/f16_gvt_sinesweep_layout/result.json",
       "disposition_key": "disposition",
@@ -143,7 +143,24 @@
         "SINESWEEP_LAYOUT_INVALID"
       ],
       "stop_after": true,
-      "evidence_class": "P0-Q EXTERNAL MEASURED DATA-LAYOUT PREFLIGHT"
+      "evidence_class": "P0-Q EXTERNAL MEASURED DATA-LAYOUT PREFLIGHT",
+      "workflow_run": 36514022420
+    },
+    {
+      "id": "F16_GVT_SINESWEEP_ARCHITECTURE_V01",
+      "status": "READY",
+      "script": "stability_inheritance/run_f16_sinesweep_architecture_v0_1.py",
+      "result_json": "stability_inheritance/results/f16_gvt_sinesweep_architecture/result.json",
+      "disposition_key": "disposition",
+      "continue_on_dispositions": [
+        "SINESWEEP_AMPLITUDE_CONDITIONED_ARCHITECTURE_SUPPORT",
+        "SINESWEEP_MIXED_ARCHITECTURE",
+        "SINESWEEP_FIXED_REFERENCE_NOT_OUTPERFORMED",
+        "INDETERMINATE"
+      ],
+      "stop_after": true,
+      "evidence_class": "P0-Q EXTERNAL MEASURED THIRD-EXCITATION ARCHITECTURE QUALIFICATION",
+      "protocol_commit": "e13b46407b8c2a1b02d7cb7e4efe31b594db69c6"
     }
   ]
 }
