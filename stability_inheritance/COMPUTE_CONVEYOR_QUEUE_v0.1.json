@@ -411,7 +411,7 @@
     },
     {
       "id": "BRB_RINGDOWN_MODAL_GEOMETRY_V01",
-      "status": "READY",
+      "status": "COMPLETE_MODAL_GEOMETRY_SUPPORT",
       "script": "stability_inheritance/run_brb_ringdown_modal_geometry_v0_1.py",
       "result_json": "stability_inheritance/results/brb_ringdown_modal_geometry/result.json",
       "disposition_key": "disposition",
@@ -424,7 +424,10 @@
         "INVALID_TEST"
       ],
       "stop_after": true,
-      "evidence_class": "P0-Q PUBLIC EXTERNAL MEASURED MODAL/VECTOR QUALIFICATION"
+      "evidence_class": "P0-Q PUBLIC EXTERNAL MEASURED MODAL/VECTOR QUALIFICATION",
+      "last_run_id": 36522955020,
+      "last_disposition": "AMPLITUDE_CONDITIONED_MODAL_GEOMETRY",
+      "result_commit": "59d28abb472d81b0a87c1c9824ebc6431616c143"
     }
   ]
 }
