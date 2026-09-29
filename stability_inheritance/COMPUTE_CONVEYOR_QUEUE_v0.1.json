@@ -232,7 +232,7 @@
     },
     {
       "id": "PYFBS_CURRENT_METADATA_SVT_PREFLIGHT_V03",
-      "status": "READY",
+      "status": "COMPLETE_ROUTE_EXECUTABLE",
       "script": "stability_inheritance/run_pyfbs_current_svt_preflight_v0_3.py",
       "result_json": "stability_inheritance/results/pyfbs_current_svt_preflight_v0_3/result.json",
       "disposition_key": "disposition",
@@ -242,7 +242,25 @@
         "INVALID_TEST"
       ],
       "stop_after": true,
-      "evidence_class": "P0-Q PRE-TARGET NATIVE-METHOD COMPATIBILITY"
+      "evidence_class": "P0-Q PRE-TARGET NATIVE-METHOD COMPATIBILITY",
+      "last_run_id": 36516184082,
+      "last_disposition": "CURRENT_SVT_ROUTE_EXECUTABLE",
+      "metadata_sha256": "a8fd8d0e42a85b0bd0837b9b54bf235ab2d489114e1b9c680f7a42184a59dd08"
+    },
+    {
+      "id": "PYFBS_CURRENT_METADATA_SVT_LMFBS_V04",
+      "status": "READY",
+      "script": "stability_inheritance/run_pyfbs_current_svt_lmfbs_v0_4.py",
+      "result_json": "stability_inheritance/results/pyfbs_current_svt_lmfbs_v0_4/result.json",
+      "disposition_key": "disposition",
+      "continue_on_dispositions": [
+        "NATIVE_FRAMEWORK_EQUIVALENT",
+        "NATIVE_MODEL_NOT_QUALIFIED_FOR_THIS_IMPLEMENTATION",
+        "INDETERMINATE",
+        "INVALID_TEST"
+      ],
+      "stop_after": true,
+      "evidence_class": "P0-Q PUBLIC EXTERNAL MEASURED HIERARCHICAL TRANSFORMATION"
     }
   ]
 }
