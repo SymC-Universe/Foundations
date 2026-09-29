@@ -1,0 +1,25 @@
+{
+  "status": "pinned_upstream_reference_no_code_vendored",
+  "reason": "No explicit LICENSE file was present at the root of the pinned upstream repository during the rights/compliance check, so source is referenced by immutable commit/blob identity rather than copied.",
+  "repository": "cosmodesi/desi-kp-cosmological-likelihoods",
+  "commit": "7d51f4f86dc3bee6bf10f1a684913c943a89a844",
+  "files": {
+    "dr1/README.md": "640f47080fdeca019a611fdd2a6a414d05b77186",
+    "dr1/cobaya/README.md": "fa1294abf4f6d3c7f77658698198e8e8c8242837",
+    "dr1/cobaya/desi_fs_bao_all.py": "b7df6f0a749853d7010024f56c412bf6a234a0e5",
+    "dr1/cobaya/desi_fs_bao_all.yaml": "45c5598b38f111a22993c8e47da4c54d157210e3",
+    "dr1/cobaya/reptvelocileptors.py": "6ce72067a744c7bb011bca7a3258d49a1fdfdc71",
+    "dr1/cobaya/download.py": "55cc0a6d7ef956e9b060f402d281fa56f8fbf573"
+  },
+  "scientific_role": "Official DESI DR1 full-shape + BAO likelihood lineage and reproduction reference.",
+  "expected_confirmatory_targets": {
+    "Omega_m0": {
+      "central": 0.2962,
+      "sigma": 0.0095
+    },
+    "sigma8": {
+      "central": 0.842,
+      "sigma": 0.034
+    }
+  }
+}

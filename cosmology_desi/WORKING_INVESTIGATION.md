@@ -189,3 +189,23 @@ with any proposed
 \mathcal T_{\mathrm{SI}}
 \]
 required to add predictive or organizational information beyond the native GR/Friedmann/growth dependence. The official DESI DR2 Cobaya-chain replay remains a required independent cross-check of the background lane, but it is no longer a blocker for opening the orthogonal full-shape growth lane.
+
+## DR1 full-shape growth gate frozen — 2026-09-29
+
+The matter-growth lane is now frozen in `cosmology_desi/DR1_FULL_SHAPE_GROWTH_GATE.md`. The confirmatory target is the official DESI DR1 full-shape plus BAO analysis, with the first reproduction criterion anchored to
+\[
+\Omega_{\mathrm m,0}=0.2962\pm0.0095,
+\qquad
+\sigma_8=0.842\pm0.034.
+\]
+The DESI Key Project likelihood lineage is pinned by immutable commit and blob identities in `cosmology_desi/data/desi_dr1_fullshape_upstream_provenance.json`. No upstream source code is vendored because no explicit root license file was detected at the pinned repository revision; the code is referenced rather than copied.
+
+The compressed ShapeFit+BAO Appendix-A blocks are separately recorded in `cosmology_desi/data/desi_dr1_shapefit_bao_appendixA.json` with the explicit status `exploratory_engineering_only`. Those values were inspected during design, so they cannot serve as an unseen confirmatory holdout. Their provisional coordinate
+\[
+g_{\mathrm{SF}}(z_i)
+=
+\frac{f\sigma_{s8}(z_i)}{[f\sigma_{s8}(z_i)]_{\mathrm{fid}}}
+\]
+is an engineering diagnostic, not \(\Chi_{\mathrm m}\). The corresponding preflight script tests only covariance handling, consistency with the fiducial growth history, and simple constant/trend summaries. No transition or SI claim is licensed from those six points.
+
+The next confirmatory action is therefore reproduction of the DESI full-modeling posterior under its native likelihood structure. Only after that reproduction passes may the growth-side quantities be reconstructed into candidate \(\Chi_{\mathrm m}(k,a)\) components and compared with \(\Chi_{\mathrm{bg}}(a)\).
