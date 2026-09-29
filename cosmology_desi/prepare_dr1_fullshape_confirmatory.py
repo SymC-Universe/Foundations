@@ -96,12 +96,14 @@ def dependency_receipt() -> dict:
     return {name: importlib.util.find_spec(name) is not None for name in DEPENDENCIES}
 
 
-def fetch_chain_files(workspace: Path, prov: dict, names: tuple[str, ...]) -> list[dict]:
-    chain = prov["confirmatory_chain"]
+def fetch_chain_files(workspace: Path, chain: dict, names: tuple[str, ...]) -> list[dict]:
     rel = chain["relative_directory"]
     meta = chain["files"]
     out = []
     for name in names:
+        if name not in meta:
+            print(f"skip {name}: no verified receipt pinned for this chain set", flush=True)
+            continue
         spec = meta[name]
         url = f"{BASE_RELEASE}/{rel}/{name}"
         target = workspace / "official_chain" / name
@@ -135,23 +137,32 @@ def main() -> None:
         default=str(PROJECT_ROOT / "cosmology_desi" / ".external" / "dr1_fullshape"),
         help="Untracked workspace for official DESI inputs.",
     )
+    ap.add_argument(
+        "--chain-key",
+        choices=("baseline", "modified_gravity", "w0wa_desi_only_stress"),
+        default="baseline",
+        help="Pinned released chain family to prepare. Only baseline is confirmatory.",
+    )
     ap.add_argument("--clone-implementation", action="store_true")
     ap.add_argument("--likelihood-data", action="store_true",
                     help="Download official packaged DR1 FS+BAO likelihood HDF5 files.")
     ap.add_argument("--full-chains", action="store_true",
-                    help="Also download and verify the four ~993 MB total posterior chains.")
+                    help="Also download and verify the four posterior chains for the selected chain set.")
     ap.add_argument("--dependency-check", action="store_true")
     args = ap.parse_args()
 
     prov = json.loads(PROVENANCE.read_text())
-    workspace = Path(args.workspace).resolve()
+    chain = prov["chain_sets"][args.chain_key]
+    workspace = Path(args.workspace).resolve() / args.chain_key
     workspace.mkdir(parents=True, exist_ok=True)
 
     receipt = {
         "prepared_at_unix": time.time(),
         "workspace": str(workspace),
         "scientific_status": "transport_and_reproduction_preparation_only",
-        "confirmatory_chain": prov["confirmatory_chain"]["relative_directory"],
+        "chain_key": args.chain_key,
+        "scientific_role": chain["scientific_role"],
+        "chain_directory": chain["relative_directory"],
         "compact_files": [],
         "full_chain_files": [],
         "implementation": None,
@@ -159,7 +170,7 @@ def main() -> None:
         "dependencies": dependency_receipt() if args.dependency_check else None,
     }
 
-    receipt["compact_files"] = fetch_chain_files(workspace, prov, COMPACT)
+    receipt["compact_files"] = fetch_chain_files(workspace, chain, COMPACT)
 
     upstream = None
     if args.clone_implementation or args.likelihood_data:
@@ -179,11 +190,11 @@ def main() -> None:
 
     if args.full_chains:
         print(
-            "Downloading the four official posterior chains (~993 MB total). "
+            f"Downloading the four official posterior chains for {args.chain_key}. "
             "Downloads are resumable and hash-verified.",
             flush=True,
         )
-        receipt["full_chain_files"] = fetch_chain_files(workspace, prov, FULL_CHAINS)
+        receipt["full_chain_files"] = fetch_chain_files(workspace, chain, FULL_CHAINS)
 
     receipt_path = workspace / "prepare_receipt.json"
     receipt_path.write_text(json.dumps(receipt, indent=2) + "\n")

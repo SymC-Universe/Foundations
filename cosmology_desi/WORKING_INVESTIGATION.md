@@ -244,3 +244,10 @@ A lineage audit found that the initially inspected compact chain directory used 
 \`cobaya/base/desi-reptvelocileptors-fs-bao-all_schoneberg2024-bbn_planck2018-ns10/\`.
 
 The official release SHA-256 manifest and file sizes are now pinned in \`cosmology_desi/data/desi_dr1_fullshape_upstream_provenance.json\`. The four exact posterior chain files total \(992{,}643{,}390\) bytes, so the default reproduction path will use the compact input, covariance, checkpoint and marginal-statistic files first and will download the full posterior only when sample-level \(\Chi_{\mathrm m}\) derivation requires it. The \`all-nolya\` products remain available only as a later sensitivity check on the effect of removing Ly\(\alpha\) background information.
+
+
+## DR1 adversarial-ladder correction — 2026-09-29
+
+The DR1 model ladder has been tightened before any confirmatory (Chi_{mathrm m}) result is inspected. The DESI-only (mu)-(Sigma) modified-gravity chain is the first clean growth-sector adversary after the baseline reproduction. A free-neutrino-mass DESI-only baseline chain has not yet been qualified and is therefore marked fresh-run-required rather than silently replaced by a CMB-combined chain. The DESI-only (w_0w_a) chain is retained solely as a parameter-projection stress test; it is not the physical DE comparator because the published DESI analysis reports strong projection effects in that DESI-only posterior. The physical DE lane will use a DESI+CMB+SN combination selected and frozen before its Stability-Architecture result is inspected.
+
+The transport runner now accepts explicit chain roles via `--chain-key baseline`, `modified_gravity`, or `w0wa_desi_only_stress`. Those names encode the scientific role so a stress-test chain cannot accidentally be promoted into confirmatory evidence by convenience.

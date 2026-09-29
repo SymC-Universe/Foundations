@@ -14,50 +14,6 @@
       "dr1/cobaya/test_fs_bao_all.yaml": "5ea6bd68c07f448e5e7e0ec06ca4eaf984c9339c"
     }
   },
-  "confirmatory_chain": {
-    "release": "DESI DR1 full-shape-cosmo-params v1.0",
-    "relative_directory": "cobaya/base/desi-reptvelocileptors-fs-bao-all_schoneberg2024-bbn_planck2018-ns10",
-    "reason_for_all_not_all_nolya": "The published DESI FS+BAO baseline includes Ly-alpha BAO as a background-geometry constraint while Ly-alpha contributes no full-shape growth measurement.",
-    "files": {
-      "chain.updated.yaml": {
-        "sha256": "335b9fd873363fcb40644fe6f09c401cf457710d3da451ae0b6b3c5400b55020",
-        "bytes": 11555
-      },
-      "chain.3.txt": {
-        "sha256": "3c2b355ee057bcfb178562504c8fdec6baf65be28cc8aa9a436b4020fefa9dd8",
-        "bytes": 247373118
-      },
-      "chain.2.txt": {
-        "sha256": "d202a881d198ae87a3013ba8de46f3f764680a9f2778108bfe4237e4997bf9e4",
-        "bytes": 247600086
-      },
-      "chain.checkpoint": {
-        "sha256": "a6856e57627d7423fe32b6afd992e89c414f2537e61776ed87cb20737bfdeef2",
-        "bytes": 107
-      },
-      "chain.margestats": {
-        "sha256": "68c863ea216eb21a5301b14a21f35056b14c319098d946bed952add48156d2b9",
-        "bytes": 6070
-      },
-      "chain.1.txt": {
-        "sha256": "a0ec1857d1c69fb0b8011862dcf6ed3a6a0b587de54e86d71d92e9c8e42b7142",
-        "bytes": 249295398
-      },
-      "chain.input.yaml": {
-        "sha256": "10db9d512398347eef5bdb62a99ce56b98f764e0ead83a6677e5ae453bd52eea",
-        "bytes": 3415
-      },
-      "chain.covmat": {
-        "sha256": "fe4ab1919625104ad291c7002e26faf0e0716be817bae56ebe1de5a256f3844a",
-        "bytes": 13754
-      },
-      "chain.4.txt": {
-        "sha256": "ec5cf19dd5fb37406a0449a9f868da646fcc77dca89e9b14fc81414b4ab935f7",
-        "bytes": 248374788
-      }
-    },
-    "full_chain_bytes": 992643390
-  },
   "expected_confirmatory_targets": {
     "Omega_m0": {
       "central": 0.2962,
@@ -66,6 +22,143 @@
     "sigma8": {
       "central": 0.842,
       "sigma": 0.034
+    }
+  },
+  "chain_sets": {
+    "baseline": {
+      "scientific_role": "confirmatory_baseline",
+      "model": "base",
+      "release": "DESI DR1 full-shape-cosmo-params v1.0",
+      "relative_directory": "cobaya/base/desi-reptvelocileptors-fs-bao-all_schoneberg2024-bbn_planck2018-ns10",
+      "notes": "The published DESI FS+BAO baseline includes Ly-alpha BAO as a background-geometry constraint while Ly-alpha contributes no full-shape growth measurement.",
+      "files": {
+        "chain.updated.yaml": {
+          "sha256": "335b9fd873363fcb40644fe6f09c401cf457710d3da451ae0b6b3c5400b55020",
+          "bytes": 11555
+        },
+        "chain.3.txt": {
+          "sha256": "3c2b355ee057bcfb178562504c8fdec6baf65be28cc8aa9a436b4020fefa9dd8",
+          "bytes": 247373118
+        },
+        "chain.2.txt": {
+          "sha256": "d202a881d198ae87a3013ba8de46f3f764680a9f2778108bfe4237e4997bf9e4",
+          "bytes": 247600086
+        },
+        "chain.checkpoint": {
+          "sha256": "a6856e57627d7423fe32b6afd992e89c414f2537e61776ed87cb20737bfdeef2",
+          "bytes": 107
+        },
+        "chain.margestats": {
+          "sha256": "68c863ea216eb21a5301b14a21f35056b14c319098d946bed952add48156d2b9",
+          "bytes": 6070
+        },
+        "chain.1.txt": {
+          "sha256": "a0ec1857d1c69fb0b8011862dcf6ed3a6a0b587de54e86d71d92e9c8e42b7142",
+          "bytes": 249295398
+        },
+        "chain.input.yaml": {
+          "sha256": "10db9d512398347eef5bdb62a99ce56b98f764e0ead83a6677e5ae453bd52eea",
+          "bytes": 3415
+        },
+        "chain.covmat": {
+          "sha256": "fe4ab1919625104ad291c7002e26faf0e0716be817bae56ebe1de5a256f3844a",
+          "bytes": 13754
+        },
+        "chain.4.txt": {
+          "sha256": "ec5cf19dd5fb37406a0449a9f868da646fcc77dca89e9b14fc81414b4ab935f7",
+          "bytes": 248374788
+        }
+      },
+      "full_chain_bytes": 992643390
+    },
+    "modified_gravity": {
+      "scientific_role": "first_clean_growth_sector_adversary_after_baseline_passes",
+      "model": "base_mu_sigma",
+      "relative_directory": "cobaya/base_mu_sigma/desi-reptvelocileptors-fs-bao-all_schoneberg2024-bbn_planck2018-ns10",
+      "files": {
+        "chain.3.txt": {
+          "sha256": "445d1147fa5b5dcd80d5ec98047492e3e3053222ab48ddb553884f7e5de98811",
+          "bytes": 365664084
+        },
+        "chain.2.txt": {
+          "sha256": "339dcbf5e98fc2fff3081366ff91ab8c8316cfbeaef75b9eee9a2ea6c42d0bb2",
+          "bytes": 366002790
+        },
+        "chain.checkpoint": {
+          "sha256": "9b77e06a0579a1e2e40d41c5f8008f04b10343b1803a123c74192e15038167c1",
+          "bytes": 107
+        },
+        "chain.margestats": {
+          "sha256": "bfc2a07c367570f918987c0582d06ec869d8b76e29c67d17e8f928443a22a909",
+          "bytes": 6312
+        },
+        "chain.1.txt": {
+          "sha256": "4c8dd823924e6f0dbee5ff1d897d79c5b5dc0913f290d3f8f9691adbdb97e678",
+          "bytes": 367843214
+        },
+        "chain.input.yaml": {
+          "sha256": "18e843fb867a1c7c571fc88d9da4d63540bcdfe7085287c4c3234abe63df473a",
+          "bytes": 4015
+        },
+        "chain.covmat": {
+          "sha256": "e6db42d420d8a83fdc7a9ada663469fe7e74cd46e08070b3ea1d462650b6fe10",
+          "bytes": 16219
+        },
+        "chain.4.txt": {
+          "sha256": "ec8392fed80d57ed5927faebf152e400f3fd0baec447d227ffde6eb5254573b6",
+          "bytes": 366697198
+        }
+      },
+      "full_chain_bytes": 1466207286,
+      "note": "chain.updated.yaml hash not yet pinned; compact fetch intentionally uses only files with verified receipts."
+    },
+    "w0wa_desi_only_stress": {
+      "scientific_role": "projection_stress_test_only_not_physical_DE_comparator",
+      "model": "base_w_wa",
+      "relative_directory": "cobaya/base_w_wa/desi-reptvelocileptors-fs-bao-all_schoneberg2024-bbn_planck2018-ns10",
+      "files": {
+        "chain.updated.yaml": {
+          "sha256": "a524c3c5e0a824a885c840001cb664bb5f9bb476724aa16ad5c113a818603f4b"
+        },
+        "chain.3.txt": {
+          "sha256": "88d1cf6ff46bfc76f1e872a30d361da6d96f105cc188e4183a8c33dbb861e5ef",
+          "bytes": 329378910
+        },
+        "chain.2.txt": {
+          "sha256": "f5aff5ce0137a90bf1d40c8e71518aa74c2f5092738dbce972050ce97e05bc28",
+          "bytes": 327605810
+        },
+        "chain.checkpoint": {
+          "sha256": "d825cabe7bc046a32c28e817593218b6f5e3d8112960e34cf6b90c601cdbe1e4"
+        },
+        "chain.margestats": {
+          "sha256": "1639819d1f96e2988deabb769a2c39dae77d26328732d73fdcfcaf01ae99dd18",
+          "bytes": 6312
+        },
+        "chain.1.txt": {
+          "sha256": "dba4409e5bf7199d140fa1f18726ba858a4db21b2d3a2ac9cfead5900e0104f1",
+          "bytes": 323777580
+        },
+        "chain.input.yaml": {
+          "sha256": "442f67093feec4e4739ecdd16d0dbe1513c87194f352eadffbc123065a5625e5"
+        },
+        "chain.covmat": {
+          "sha256": "2f3d75c23129ea1e312356a9752e4acc4607e3d6e50084b78f33d1ef8b7d5488"
+        },
+        "chain.4.txt": {
+          "sha256": "3c27aa3fa95dfe0517290bb7b2c0a99f02912b5a8b964a0d4d6707363fa185d6",
+          "bytes": 328441190
+        }
+      },
+      "full_chain_bytes": 1309203490,
+      "note": "DESI-only w0wa is not a physical DE confirmatory comparator because of the published parameter-projection warning."
+    },
+    "neutrino_scale_dependent": {
+      "scientific_role": "desired_scale_dependent_growth_adversary",
+      "model": "base_mnu",
+      "public_chain_status": "unresolved_for_exact_DESI_only_baseline",
+      "action": "fresh likelihood run required unless an exact released chain is subsequently qualified",
+      "forbidden_substitution": "Do not replace with a CMB-combined or differently prior-weighted chain solely because it is available."
     }
   }
 }
