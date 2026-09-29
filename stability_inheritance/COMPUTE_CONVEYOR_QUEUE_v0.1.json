@@ -448,7 +448,7 @@
     },
     {
       "id": "RIVET_MENDELEY_SOURCE_DISCOVERY_V01",
-      "status": "READY",
+      "status": "COMPLETE_METADATA_ROUTE_ONLY",
       "script": "stability_inheritance/discover_rivet_mendeley_source_v0_1.py",
       "result_json": "stability_inheritance/results/rivet_mendeley_source_discovery/result.json",
       "disposition_key": "disposition",
@@ -458,7 +458,23 @@
         "SOURCE_DISCOVERY_BLOCKED"
       ],
       "stop_after": true,
-      "evidence_class": "P0-Q PUBLIC DATASET METADATA INTAKE / NO FRF ACCESS"
+      "evidence_class": "P0-Q PUBLIC DATASET METADATA INTAKE / NO FRF ACCESS",
+      "last_run_id": 36567980906,
+      "last_disposition": "METADATA_ROUTE_ONLY"
+    },
+    {
+      "id": "RIVET_MENDELEY_METADATA_AUDIT_V01",
+      "status": "READY",
+      "script": "stability_inheritance/audit_rivet_mendeley_metadata_v0_1.py",
+      "result_json": "stability_inheritance/results/rivet_mendeley_metadata_structure/result.json",
+      "disposition_key": "disposition",
+      "continue_on_dispositions": [
+        "FILE_DESCRIPTOR_DISCOVERED",
+        "FILE_NAME_ONLY",
+        "METADATA_STRUCTURE_INSUFFICIENT"
+      ],
+      "stop_after": true,
+      "evidence_class": "P0-Q PUBLIC DATASET METADATA STRUCTURE / NO FRF ACCESS"
     }
   ]
 }
