@@ -266,7 +266,7 @@
     },
     {
       "id": "PYFBS_CURRENT_METADATA_SVT_LMFBS_V04A",
-      "status": "READY",
+      "status": "COMPLETE_NATIVE_FRAMEWORK_EQUIVALENT",
       "script": "stability_inheritance/run_pyfbs_current_svt_lmfbs_v0_4a.py",
       "result_json": "stability_inheritance/results/pyfbs_current_svt_lmfbs_v0_4/result.json",
       "disposition_key": "disposition",
@@ -279,7 +279,21 @@
       "stop_after": true,
       "evidence_class": "P0-Q PUBLIC EXTERNAL MEASURED HIERARCHICAL TRANSFORMATION",
       "protocol": "stability_inheritance/PYFBS_CURRENT_METADATA_SVT_LMFBS_PROTOCOL_v0.4.md",
-      "retry_class": "MECHANICAL_DEPENDENCY_REPAIR_NO_DATA_ACCESS"
+      "retry_class": "MECHANICAL_DEPENDENCY_REPAIR_NO_DATA_ACCESS",
+      "last_run_id": 36516521576,
+      "last_disposition": "NATIVE_FRAMEWORK_EQUIVALENT"
+    },
+    {
+      "id": "PYFBS_CONDITIONING_ERROR_AUDIT_V01",
+      "status": "READY",
+      "script": "stability_inheritance/run_pyfbs_conditioning_error_audit_v0_1.py",
+      "result_json": "stability_inheritance/results/pyfbs_conditioning_audit_v0_1/result.json",
+      "disposition_key": "disposition",
+      "continue_on_dispositions": [
+        "CONDITIONING_ERROR_MAP_COMPLETE"
+      ],
+      "stop_after": true,
+      "evidence_class": "P0-D POST-RESULT LIMIT-MAP AUDIT"
     }
   ]
 }
