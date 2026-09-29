@@ -535,6 +535,25 @@
       "artifact_id": 11037108281,
       "artifact_sha256": "66a054da5f4727cec3163556b99bf5b31993e9331cfa51d3e5faa3fa1829db36",
       "note": "Metadata-only OSF intake resolved canonical node fbwhz (BRB_LTERM_MULTISCALE21), 554 files, with random-FRF/step-sine before/after, single-frequency, impact, interface-scan, and First/Second/ThirdRound layout hints. No numeric response body was opened."
+    },
+    {
+      "id": "BRB_LONGTERM_SHAKER_ZIP_INDEX_V01",
+      "status": "READY",
+      "script": "stability_inheritance/intake_brb_longterm_shaker_zip_index_v0_1.py",
+      "result_json": "stability_inheritance/results/brb_longterm_shaker_zip_index/result.json",
+      "disposition_key": "disposition",
+      "continue_on_dispositions": [
+        "SHAKER_ZIP_INDEX_QUALIFIED",
+        "SHAKER_ZIP_INDEX_PARTIAL",
+        "RANGE_ACCESS_NOT_AVAILABLE",
+        "SHAKER_ZIP_IDENTITY_CHANGED"
+      ],
+      "stop_after": true,
+      "evidence_class": "P0-Q METADATA-ONLY SHAKER ARCHIVE PREFLIGHT"
     }
-  ]
+  ],
+  "execution_trigger": {
+    "reason": "Advance qualified BRB long-term OSF identity to shaker ZIP metadata index",
+    "sequence": 1
+  }
 }
