@@ -63,3 +63,28 @@ Chi_{mathrm m}(k,a)
 ]
 
 is refused if the apparent coupling disappears after conditioning on the native GR/Friedmann/growth model, if it is driven by one tracer/bin or nuisance choice, if (Chi_{mathrm m}) collapses to a monotonic rescaling of (fsigma_8) or (sigma_8), or if the construction requires post hoc component selection after seeing the confirmatory output. Any proposed (mathcal T_{mathrm{SI}}) remains one gate later and must add predictive or organizational information beyond the native cosmological dependence.
+
+## Native growth/background partition and mock-first development
+
+Inspection of the pinned DESI full-shape implementation establishes a native partition that will be retained before any capital-(\Chi\) construction. The matter-growth theory state contains
+\[
+\mathcal G_{\mathrm{native}}(k,z)
+=
+\left\{
+P_{\delta\delta}(k,z),
+P_{\theta\theta}(k,z),
+P_{\mathrm{nw}}(k,z),
+\sigma_8(z),
+f\sigma_8(z),
+f(k,z)
+\right\},
+\]
+where the implementation obtains the scale-dependent velocity-to-density response from the density and velocity power spectra. These are candidate native inputs, not a declaration that all components belong in \(\Chi_{\mathrm m}\). The background/geometry side is kept separate through quantities such as the Alcock-Paczynski responses \(q_{\parallel}(z)\), \(q_{\perp}(z)\), \(H(z)\), distances, and the already-qualified \(\chi_\delta(z)\). Nuisance/bias parameters remain a third layer and are not allowed to become apparent stability coordinates merely because they improve a fit.
+
+The development order is mock-first. The 1000 EZmocks may be used for mechanical stress tests, null-distribution engineering and representation-development diagnostics, with the dependence created by their role in covariance estimation recorded explicitly. The 25 AbacusSummit cut-sky mocks are reserved as a higher-fidelity **pre-DESI holdout**: candidate representation choices and thresholds must be frozen before those 25 mocks are opened for evaluation. The real DESI data remain last. Failure on the Abacus holdout returns the representation to development without inspecting the DESI stability result.
+
+## Adversarial cosmology ladder
+
+Once the baseline full-shape posterior is reproduced, the first model comparisons are frozen by physical perturbation class rather than by whichever model gives the most interesting answer. The baseline is flat \(\Lambda\)CDM. The first adversarial extension is the DESI \(\mu\)-\(\Sigma\) modified-gravity family because it perturbs the growth/gravity sector while allowing the background to remain \(\Lambda\)CDM; this is the cleanest test of whether a candidate \(\Chi_{\mathrm m}\) can move without a corresponding background redefinition. The second is free neutrino mass, which supplies a physically established scale-dependent growth perturbation through free streaming. The third is \(w_0w_a\)CDM, which changes the background expansion history and consequently the growth history. Joint extensions such as \(w_0w_a\)+modified gravity are admitted only after the single-extension tests establish identifiability.
+
+The qualitative refusal tests are fixed in advance. If a proposed \(\Chi_{\mathrm m}\) cannot distinguish a growth-sector perturbation from a pure amplitude rescaling, it is inadequate. If it cannot represent scale-dependent neutrino suppression without collapsing that information into a single background coordinate, it is inadequate. If its apparent relation to \(\Chi_{\mathrm{bg}}\) remains unchanged under modified gravity even when the native growth observables change, the claimed cross-sector meaning is suspect. Conversely, a difference between model families is not automatically evidence for SI; it must survive conditioning on the native model variables and demonstrate information not already carried by those variables directly.
