@@ -371,7 +371,7 @@
     },
     {
       "id": "BRB_PUBLIC_DATA_INTAKE_V01",
-      "status": "READY",
+      "status": "COMPLETE_LAYOUT_QUALIFIED",
       "script": "stability_inheritance/intake_brb_public_data_v0_1.py",
       "result_json": "stability_inheritance/results/brb_public_intake/result.json",
       "disposition_key": "disposition",
@@ -382,7 +382,23 @@
         "BRB_LAYOUT_INVALID"
       ],
       "stop_after": true,
-      "evidence_class": "P0-Q PUBLIC EXTERNAL METADATA INTAKE"
+      "evidence_class": "P0-Q PUBLIC EXTERNAL METADATA INTAKE",
+      "last_run_id": 36522372000,
+      "last_disposition": "BRB_LAYOUT_QUALIFIED",
+      "note": "Initial run 36522300369 failed only because h5py dependency was absent; dependency-only retry preserved source identity and produced metadata qualification."
+    },
+    {
+      "id": "BRB_RINGDOWN_CODE_AUDIT_V01",
+      "status": "READY",
+      "script": "stability_inheritance/audit_brb_ringdown_code_v0_1.py",
+      "result_json": "stability_inheritance/results/brb_ringdown_code_audit/result.json",
+      "disposition_key": "disposition",
+      "continue_on_dispositions": [
+        "BRB_RINGDOWN_CODE_QUALIFIED",
+        "BRB_RINGDOWN_CODE_INCOMPLETE"
+      ],
+      "stop_after": true,
+      "evidence_class": "P0-Q SOURCE CODE SEMANTICS / NO RESPONSE ACCESS"
     }
   ]
 }
