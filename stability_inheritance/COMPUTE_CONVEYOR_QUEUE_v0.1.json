@@ -215,7 +215,7 @@
     },
     {
       "id": "PYFBS_CURRENT_SVT_NOTEBOOK_AUDIT_V01",
-      "status": "READY",
+      "status": "COMPLETE_ROUTE_IDENTIFIED",
       "script": "stability_inheritance/audit_pyfbs_current_svt_notebook_v0_1.py",
       "result_json": "stability_inheritance/results/pyfbs_current_notebook_audit/result.json",
       "disposition_key": "disposition",
@@ -225,7 +225,24 @@
         "SOURCE_AUDIT_BLOCKED"
       ],
       "stop_after": true,
-      "evidence_class": "P0-Q NATIVE-METHOD SOURCE-CODE AUDIT"
+      "evidence_class": "P0-Q NATIVE-METHOD SOURCE-CODE AUDIT",
+      "last_run_id": 36516063337,
+      "last_disposition": "CURRENT_NOTEBOOK_ROUTE_IDENTIFIED",
+      "metadata_correction": "decoupling_example_SVT.xlsx"
+    },
+    {
+      "id": "PYFBS_CURRENT_METADATA_SVT_PREFLIGHT_V03",
+      "status": "READY",
+      "script": "stability_inheritance/run_pyfbs_current_svt_preflight_v0_3.py",
+      "result_json": "stability_inheritance/results/pyfbs_current_svt_preflight_v0_3/result.json",
+      "disposition_key": "disposition",
+      "continue_on_dispositions": [
+        "CURRENT_SVT_ROUTE_EXECUTABLE",
+        "CURRENT_SVT_ROUTE_NOT_EXECUTABLE",
+        "INVALID_TEST"
+      ],
+      "stop_after": true,
+      "evidence_class": "P0-Q PRE-TARGET NATIVE-METHOD COMPATIBILITY"
     }
   ]
 }
