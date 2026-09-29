@@ -445,6 +445,20 @@
       "evidence_class": "P0-D POST-RESULT SCALAR-MODAL RELATION / PROMOTION DEBT",
       "last_run_id": 36523393398,
       "last_disposition": "CHI_TRACKS_BUT_IS_REDUNDANT_WITH_AMPLITUDE"
+    },
+    {
+      "id": "RIVET_MENDELEY_SOURCE_DISCOVERY_V01",
+      "status": "READY",
+      "script": "stability_inheritance/discover_rivet_mendeley_source_v0_1.py",
+      "result_json": "stability_inheritance/results/rivet_mendeley_source_discovery/result.json",
+      "disposition_key": "disposition",
+      "continue_on_dispositions": [
+        "OFFICIAL_FILE_ROUTE_DISCOVERED",
+        "METADATA_ROUTE_ONLY",
+        "SOURCE_DISCOVERY_BLOCKED"
+      ],
+      "stop_after": true,
+      "evidence_class": "P0-Q PUBLIC DATASET METADATA INTAKE / NO FRF ACCESS"
     }
   ]
 }
