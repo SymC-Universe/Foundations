@@ -8,12 +8,7 @@ URL="https://data.4tu.nl/file/b6dc643b-ecc6-437c-8a8a-1681650ec3fe/5414dfdc-6e8d
 EXPECTED_SIZE=148455295
 OUT=Path("stability_inheritance/results/f16_gvt_specialodd_layout")
 OUT.mkdir(parents=True,exist_ok=True)
-INTAKE=Path("stability_inheritance/results/f16_gvt_intake/manifest.json")
-if not INTAKE.exists():
-    raise RuntimeError("F16 intake manifest missing")
-manifest=json.loads(INTAKE.read_text())
-if manifest.get("disposition")!="INTAKE_PASS":
-    raise RuntimeError(f"F16 intake not passed: {manifest.get('disposition')}")
+EXPECTED_SHA256="2278429b1f15f15448e6f101d395a5587d58ac23d32052fd42f8b33a894c0afa"
 
 with tempfile.TemporaryDirectory() as td:
     td=Path(td)
@@ -29,8 +24,8 @@ with tempfile.TemporaryDirectory() as td:
     if len(b)!=EXPECTED_SIZE:
         raise RuntimeError(f"source size changed {len(b)}")
     sha=hashlib.sha256(b).hexdigest()
-    if manifest.get("sha256") and sha!=manifest["sha256"]:
-        raise RuntimeError("source hash differs from intake")
+    if sha!=EXPECTED_SHA256:
+        raise RuntimeError(f"source hash changed {sha} != {EXPECTED_SHA256}")
     with zipfile.ZipFile(zpath,"r") as z:
         z.extractall(td/"unz")
     root=td/"unz"/"F16GVT_Files"/"BenchmarkData"
