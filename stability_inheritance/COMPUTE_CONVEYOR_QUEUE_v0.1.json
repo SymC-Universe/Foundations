@@ -398,7 +398,10 @@
         "BRB_RINGDOWN_CODE_INCOMPLETE"
       ],
       "stop_after": true,
-      "evidence_class": "P0-Q SOURCE CODE SEMANTICS / NO RESPONSE ACCESS"
+      "evidence_class": "P0-Q SOURCE CODE SEMANTICS / NO RESPONSE ACCESS",
+      "retry_class": "MECHANICAL_BLOB_CHECKSUM_ONLY",
+      "failed_run_id": 36522596668,
+      "failure": "Git blob checksum encoded literal backslash-zero; no response data accessed."
     }
   ]
 }
