@@ -573,7 +573,7 @@
     },
     {
       "id": "BRB_LONGTERM_SCAN_CODE_AUDIT_V01",
-      "status": "READY",
+      "status": "COMPLETE_ROUTE_IDENTIFIED",
       "script": "stability_inheritance/audit_brb_longterm_scan_code_v0_1.py",
       "result_json": "stability_inheritance/results/brb_longterm_scan_code_audit/result.json",
       "disposition_key": "disposition",
@@ -583,7 +583,9 @@
         "SCAN_SOURCE_AUDIT_BLOCKED"
       ],
       "stop_after": true,
-      "evidence_class": "P0-Q NATIVE SCAN PROCESSING SOURCE AUDIT"
+      "evidence_class": "P0-Q NATIVE SCAN PROCESSING SOURCE AUDIT",
+      "last_run_id": 36580596494,
+      "last_disposition": "SCAN_NATIVE_PROCESSING_ROUTE_IDENTIFIED"
     },
     {
       "id": "BRB_LONGTERM_HISTORY_RESPONSE_V01A",
@@ -605,7 +607,7 @@
     }
   ],
   "execution_trigger": {
-    "reason": "Retry frozen BRB history protocol after native schema-only repair; then run scan-code audit",
-    "sequence": 3
+    "reason": "Run frozen BRB long-term history-response v0.1a after scan-code checkpoint",
+    "sequence": 4
   }
 }
