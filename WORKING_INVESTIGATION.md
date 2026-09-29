@@ -19,8 +19,7 @@ update_rule: "Update after every material scientific development and before ever
 - **Current lifecycle Stage:** Stage 2 / P0-Q computational qualification and APQ plan construction after P0-N closure
 - **Status:** ACTIVE
 - **Last updated:** 2026-09-28
-- **Last verified commit / archive / checkpoint:** 81ea0ee1d76e825099c9b75cf34f13adb796a52a - frozen pyFBS measured component-to-assembly P0-Q test launched after acquisition-only hash/metadata intake\n
-Does the perturbation-response and recoverability of a higher-level system depend measurably on stability-relevant constraints or response capacities inherited from lower-level organization, and can that contribution be distinguished from stability generated, transformed, or reorganized by the higher-level system itself?
+- **Last verified commit / archive / checkpoint:** 65ef12ad7be0c96688e0f5ad2f1aeec740926ebd - guarded compute conveyor active; pyFBS VPT identity v0.2 closed VPT_ROUTE_NOT_EXECUTABLE without target scoring\nDoes the perturbation-response and recoverability of a higher-level system depend measurably on stability-relevant constraints or response capacities inherited from lower-level organization, and can that contribution be distinguished from stability generated, transformed, or reorganized by the higher-level system itself?
 
 ### Smallest live claim or hypothesis
 
@@ -634,3 +633,32 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Status impact:** Silverbox and other native comparator results should be classified by both evidence role and novelty role rather than being described simply as 'not SI evidence.'
 - **Next action:** update Function/Limit relation mapping and future external benchmark records to carry separate architecture-evidence and novelty/confirmation fields.
 - **Why next:** prevents the novelty firewall from accidentally discarding established scientific pieces that the architecture is intended to integrate.
+
+
+### 2026-09-28 - EXECUTION_CONTROL - Guarded computational conveyor activated
+
+- **Lifecycle Stage:** Stage 2 / P0-Q computational qualification
+- **Entry type:** EXECUTION_CONTROL
+- **Source artifact / evidence identity:** .github/workflows/stability-inheritance-compute-conveyor.yml; stability_inheritance/COMPUTE_CONVEYOR_QUEUE_v0.1.json; stability_inheritance/si_compute_conveyor_v0_1.py
+- **Observed / decided:** short authorized computations no longer rely on the hourly watchdog as their scheduler. READY tasks execute back-to-back in one branch-local workflow run, with automatic stop on mechanical failure, unlisted scientific disposition, or explicit checkpoint.
+- **Scientific interpretation:** this changes execution cadence only. It does not weaken APQ, freeze, evidence-independence, or scientific-decision gates.
+- **Impact on claim / novelty / prediction:** none.
+- **Freeze impact:** none.
+- **Status impact:** hourly monitor demoted to recovery/checkpoint duty.
+- **Next action:** populate the conveyor only with scientifically authorized tasks.
+- **Provenance pointer:** workflow run 36511207115 and queue commit 65ef12ad7be0c96688e0f5ad2f1aeec740926ebd
+
+### 2026-09-28 - REFUSAL - pyFBS measured VPT identity v0.2 not executable
+
+- **Lifecycle Stage:** Stage 2 / P0-Q external measured qualification
+- **Entry type:** REFUSAL
+- **Source artifact / evidence identity:** PYFBS_MEASURED_VPT_IDENTITY_PREFLIGHT_v0.2.md; workflow run 36511207115
+- **Observed / decided:** matching-count AM_Measurements metadata still failed the non-scoring VPT transform before assembly target scoring with a 12-versus-6 matrix-dimension mismatch.
+- **Scientific interpretation:** the available measured component FRF object and official metadata do not support the forced VPT route as presently defined. This is a method/data-interface refusal, not an FBS or SI failure.
+- **Alternative explanation / uncertainty:** a different official native measured-data operation may be appropriate; it must be separately protocol-defined rather than tuned to target behavior.
+- **Impact on claim / novelty / prediction:** none.
+- **Freeze impact:** v0.2 refusal preserved; no scoring protocol is authorized from this route.
+- **Status impact:** PYFBS_VPT_IDENTITY_V02 = COMPLETE_REFUSAL; direct/native measured route moved to BLOCKED_PROTOCOL_CONSTRUCTION.
+- **Next action:** construct the next native measured-data protocol without forcing VPT onto incompatible FRFs, or advance another ready computational benchmark.
+- **Why next:** repeated VPT dimension incompatibility is now established before target scoring and should not be debugged by target-driven metadata switching.
+- **Provenance pointer:** run 36511207115
