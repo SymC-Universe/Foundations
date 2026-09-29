@@ -1,0 +1,50 @@
+name: DESI Branch Runner
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/desi-branch-runner.yml"
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: "Branch or commit containing the DESI analysis"
+        required: true
+        default: "desi-stability-arc-main"
+
+jobs:
+  desi-scalar-gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - name: Select analysis ref
+        id: ref
+        shell: bash
+        run: |
+          if [ -n "${{ inputs.ref }}" ]; then
+            echo "value=${{ inputs.ref }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "value=desi-stability-arc-main" >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ steps.ref.outputs.value }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: cosmology_desi/requirements.txt
+      - name: Install dependencies
+        run: pip install -r cosmology_desi/requirements.txt
+      - name: Run analytic tests
+        run: pytest -q cosmology_desi/test_desi_scalar_gate.py
+      - name: Run DESI DR2 scalar gate
+        run: python cosmology_desi/desi_scalar_gate.py
+      - name: Upload outputs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: desi-stability-arc-scalar-gate
+          path: cosmology_desi/results/**
+          if-no-files-found: warn
+          retention-days: 30
