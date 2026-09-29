@@ -870,3 +870,20 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Next action:** move to long-term Brake-Reuss wear/history data, which addresses a nonredundant architectural relation.
 - **Why next:** avoids transport rabbit holes and targets physical history stored in an evolving interface rather than another demonstration of transfer.
 - **Provenance pointer:** correction commit a5c8db04d7473b74b9ca1090f93db0d7be2ae9c4; queue correction ccf3c096a7314c8583053ae70134c1743bf2b7d1
+
+
+### 2026-09-29 - PLAN_EXECUTED - BRB long-term measured history architecture qualifies
+
+- **Lifecycle Stage:** Stage 2 / P0-Q external measured qualification
+- **Entry type:** PLAN_EXECUTED
+- **Source artifact / evidence identity:** stability_inheritance/BRB_LONGTERM_HISTORY_RESPONSE_PROTOCOL_v0.2.md; stability_inheritance/BRB_LONGTERM_HISTORY_RESPONSE_RESULT_v0.2.md; stability_inheritance/BRB_LONGTERM_SAMPLING_GRID_AUDIT_RESULT_v0.1a.md; workflow run 36608701580; artifact 11053526588
+- **Observed / decided:** outcome-blind sampling-grid recovery qualified 150 records with two native dt values and no response statistics, then the already-frozen v0.2 scorer executed. State-specific held-out response beat both frozen state-blind comparators (R_LOSO=0.6948895; R_INPUT=0.6662607). All three preregistered wear-history transitions favored the current-state representation (T01=0.3135283; T12=0.4643517; T34=0.9195386). Frozen disposition = HISTORY_CONDITIONED_RESPONSE_ARCHITECTURE.
+- **Reassembly result:** T23=0.4205145 and D(S3,S0)=0.8882787 < D(S2,S0)=0.9637895, giving REASSEMBLY_PARTIAL_RESET_TOWARD_INITIAL. This is partial reorganization toward an earlier representation, not restoration.
+- **Failure/outlier preservation:** two of twelve voltage-specific transition diagnostics reverse the aggregate direction: T12 at 1.0 V = 1.2971142 and T34 at 0.1 V = 1.4524617. They remain explicit Limit Map cases and are not averaged away.
+- **Scientific interpretation:** supports ARCHITECTURE_SUPPORTING_NATIVE_HISTORY. Accumulated interface/history state contributes measurable information about later realized response beyond nominal drive and input-spectrum matching. Native wear/contact/tribomechadynamic explanations remain sufficient.
+- **Impact on claim / novelty / prediction:** no SI-specific inheritance mechanism, universal carrier, universal history law, or P1 claim is promoted. Lowercase chi is not admitted by this FRF test; capital Chi is not forced from generic multi-output FRFs; Chi_arc is not automatically identified.
+- **Freeze impact:** v0.2 satisfied without post-result retuning; v0.1/v0.1a failures remain preserved provenance.
+- **Status impact:** Function Map gains HISTORY_CONDITIONED_RESPONSE_ARCHITECTURE and REASSEMBLY_PARTIAL_RESET_TOWARD_INITIAL. Limit Map gains HISTORY_ADVANTAGE_NOT_UNIFORM_ACROSS_LOCAL_DRIVE_CONDITIONS and PARTIAL_RESET_IS_NOT_STATE_RESTORATION.
+- **Next action:** close the BRB lane at this information-rich checkpoint and construct/freeze the next nonredundant measured-hierarchy test. Do not mine BRB further unless a genuinely new question and fresh evidence justify reopening it.
+- **Why next:** the BRB now spans modal persistence/reorganization, scalar redundancy, physical carrier history, and partial reassembly reset. Additional same-source mining has lower information value than a distinct hierarchy.
+- **Durable state:** ADVANCED_CHECKPOINT.
