@@ -19,8 +19,7 @@ update_rule: "Update after every material scientific development and before ever
 - **Current lifecycle Stage:** Stage 2 / P0-Q computational qualification and APQ plan construction after P0-N closure
 - **Status:** ACTIVE
 - **Last updated:** 2026-09-28
-- **Last verified commit / archive / checkpoint:** 5fb8d5be17b36b11d09f5f1dab71f1348727ba2a - pyFBS SVT compatibility branch closed; F-16 intake and architecture scoring queued in one conveyor run\n
-### Smallest live claim or hypothesis
+- **Last verified commit / archive / checkpoint:** dab9cfc1c1a0060e245a22c69083f603cd993580 - F-16 FullMSine architecture-supporting result closed; SpecialOdd layout preflight queued\n### Smallest live claim or hypothesis
 
 No inheritance law is established. The current candidate hypothesis is that some systems preserve, transform, or lose lower-level stability-relevant structure under embedding or hierarchical organization, and that the scientifically important object is the nonredundant relationship between lower-level architecture and higher-level realized behavior.
 
@@ -106,8 +105,7 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 
 ## 8. Next Exact Action
 
-- **Next action:** complete the currently running F-16 official-source intake and, only on INTAKE_PASS, execute the already-frozen held-out interface-to-system architecture test in the same conveyor run; then adjudicate the result into the Function/Limit map without changing the native-first or novelty ceiling.\n## 9. Resume Contract
-
+- **Next action:** complete the already-frozen F-16 SpecialOdd layout preflight; if the published realization/period structure is qualified, freeze a separate cross-excitation replication protocol before any SpecialOdd signal scoring. In parallel, retain the F-16 FullMSine result in the architecture Function/Limit synthesis and continue provenance-clean structural benchmarks.\n
 - **Start from:** A0 preliminary synthesis and this working record
 - **Exact file(s):** WORKING_INVESTIGATION.md; Undermind A0_PRELIMINARY_SYNTHESIS.md
 - **Exact command(s) / script(s):** n/a for current literature phase
@@ -691,3 +689,19 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Next action:** run official-source intake followed immediately by held-out scoring if intake passes.
 - **Why next:** directly tests a measured local-interface/system-organization piece of the broader Stability Architecture while physical experiments are deferred.
 - **Provenance pointer:** protocol commit 5a7ee10c36d6d535f815116779be38c6ea9deb86; conveyor queue commit 5fb8d5be17b36b11d09f5f1dab71f1348727ba2a
+
+
+### 2026-09-28 - PLAN_EXECUTED - F-16 FullMSine supports amplitude-conditioned architecture
+
+- **Lifecycle Stage:** Stage 2 / P0-Q external measured qualification
+- **Entry type:** PLAN_EXECUTED
+- **Source artifact / evidence identity:** stability_inheritance/F16_GVT_INTERFACE_ARCHITECTURE_PROTOCOL_v0.1.md; stability_inheritance/F16_GVT_INTERFACE_ARCHITECTURE_RESULT_v0.1.md; workflow run 36512731466
+- **Observed / decided:** the official 4TU archive passed exact intake at 148,455,295 bytes with SHA-256 2278429b1f15f15448e6f101d395a5587d58ac23d32052fd42f8b33a894c0afa. In the frozen 6.5-8.2 Hz torsional band, amplitude-conditioned complex FRF interpolation from designated estimation levels beat a fixed Level-1 representation at every held-out level. Primary error ratios amplitude-conditioned / invariant were 0.53277 at Level 2, 0.11669 at Level 4, and 0.03346 at Level 6. The same direction held separately at the excitation-point, wing-side, and payload-side outputs and over the full 2-15 Hz secondary band.
+- **Scientific interpretation:** this is ARCHITECTURE_SUPPORTING_NATIVE evidence. A localized payload-interface regime known natively to contain clearance/friction nonlinearities is associated with organized excitation-dependent changes in realized multi-location system response, and a representation conditioned on that regime transports prospectively to reserved levels.
+- **Alternative explanation / uncertainty:** the result does not isolate one microscopic mechanism, does not prove a universal monotonic law, and may partly reflect smooth operating-point dependence rather than a unique inheritance relation. The native nonlinear structural explanation remains sufficient.
+- **Impact on claim / novelty / prediction:** strengthens the integrated Stability Architecture case but does not promote SI-specific novelty, P1, or a carrier-resolved inheritance claim.
+- **Freeze impact:** FullMSine v0.1 protocol satisfied without retuning. No scalar chi, capital Chi, or Chi_arc object is automatically assigned from the native FRFs.
+- **Status impact:** Function Map gains AMPLITUDE_CONDITIONED_SYSTEM_RESPONSE_TRANSPORTS and LOCAL_INTERFACE_REGIME_ASSOCIATED_WITH_GLOBAL_RESPONSE_ORGANIZATION; Limit Map gains FIXED_LOW_AMPLITUDE_REPRESENTATION_INSUFFICIENT_ACROSS_DECLARED_REGIME.
+- **Next action:** execute the prospectively defined SpecialOdd layout preflight and, if qualified, freeze cross-excitation replication before signal scoring.
+- **Why next:** tests whether the architectural relation survives an independent excitation family rather than merely fitting the FullMSine case.
+- **Provenance pointer:** result commit a41e7cca8f0946f3950f8bf76d5d79040219f58c; synthesis commits 3f7d67cf4d701cffaf8101b6abd875fd04b19adb and 1a8dfcf171fb52d3e914100c42f48b575d509570
