@@ -19,8 +19,7 @@ update_rule: "Update after every material scientific development and before ever
 - **Current lifecycle Stage:** Stage 2 / P0-Q computational qualification and APQ plan construction after P0-N closure
 - **Status:** ACTIVE
 - **Last updated:** 2026-09-28
-- **Last verified commit / archive / checkpoint:** dab9cfc1c1a0060e245a22c69083f603cd993580 - F-16 FullMSine architecture-supporting result closed; SpecialOdd layout preflight queued\n### Smallest live claim or hypothesis
-
+- **Last verified commit / archive / checkpoint:** e7a078ddf2f9bbc428e2d826a3a70a9806d608b7 - F-16 SpecialOdd replication closed; corrected post-result cross-excitation map queued under promotion debt\n
 No inheritance law is established. The current candidate hypothesis is that some systems preserve, transform, or lose lower-level stability-relevant structure under embedding or hierarchical organization, and that the scientifically important object is the nonredundant relationship between lower-level architecture and higher-level realized behavior.
 
 ### Current evidence picture
@@ -105,8 +104,7 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 
 ## 8. Next Exact Action
 
-- **Next action:** complete the already-frozen F-16 SpecialOdd layout preflight; if the published realization/period structure is qualified, freeze a separate cross-excitation replication protocol before any SpecialOdd signal scoring. In parallel, retain the F-16 FullMSine result in the architecture Function/Limit synthesis and continue provenance-clean structural benchmarks.\n
-- **Start from:** A0 preliminary synthesis and this working record
+- **Next action:** complete the currently queued P0-D F-16 cross-excitation exploratory map under explicit promotion debt, then consolidate FullMSine + SpecialOdd Function/Limit evidence and continue with a fresh provenance-clean structural target rather than reusing seen F-16 validation records for confirmation.\n- **Start from:** A0 preliminary synthesis and this working record
 - **Exact file(s):** WORKING_INVESTIGATION.md; Undermind A0_PRELIMINARY_SYNTHESIS.md
 - **Exact command(s) / script(s):** n/a for current literature phase
 - **Required environment / dependency:** connected literature and GitHub sources
@@ -705,3 +703,34 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Next action:** execute the prospectively defined SpecialOdd layout preflight and, if qualified, freeze cross-excitation replication before signal scoring.
 - **Why next:** tests whether the architectural relation survives an independent excitation family rather than merely fitting the FullMSine case.
 - **Provenance pointer:** result commit a41e7cca8f0946f3950f8bf76d5d79040219f58c; synthesis commits 3f7d67cf4d701cffaf8101b6abd875fd04b19adb and 1a8dfcf171fb52d3e914100c42f48b575d509570
+
+
+### 2026-09-28 - PLAN_EXECUTED - F-16 SpecialOdd amplitude-specific response organization replicates
+
+- **Lifecycle Stage:** Stage 2 / P0-Q external measured qualification
+- **Entry type:** PLAN_EXECUTED
+- **Source artifact / evidence identity:** stability_inheritance/F16_GVT_SPECIALODD_REPLICATION_PROTOCOL_v0.1.md; stability_inheritance/F16_GVT_SPECIALODD_REPLICATION_RESULT_v0.1.md; workflow runs 36513450698 and reproducibility rerun 36513670338
+- **Observed / decided:** the official SpecialOdd family was mapped non-value-wise as nine estimation realizations plus one held-out Validation realization at each of 12.2, 49.0, and 97.1 N. In the frozen 6.5-8.2 Hz band, the amplitude-specific representation had the lowest held-out error at all three amplitudes compared with the pooled representation and both cross-amplitude alternatives. Primary amplitude-specific versus pooled errors were 0.85432 vs 0.95619, 0.77370 vs 0.83661, and 0.92308 vs 0.92486.
+- **Scientific interpretation:** this is ARCHITECTURE_SUPPORTING_NATIVE_REPLICATION. The FullMSine finding that response organization depends on excitation/interface regime survives a distinct multisine design and independent held-out realization structure at the full three-output level.
+- **Alternative explanation / uncertainty:** the high-amplitude margin is small, and a simple interface-relative proxy H_payload - H_wing did not uniformly favor amplitude-specific representations at low and mid amplitude. This argues against reducing the architectural relation to that one difference coordinate.
+- **Impact on claim / novelty / prediction:** strengthens the integrated architecture case while leaving SI-specific novelty and empirical inheritance unpromoted.
+- **Freeze impact:** SpecialOdd protocol satisfied without retuning.
+- **Status impact:** Function Map gains EXCITATION_REGIME_SPECIFIC_RESPONSE_REPLICATES_ACROSS_EXCITATION_DESIGN; Limit Map gains SIMPLE_INTERFACE_DIFFERENCE_PROXY_NOT_UNIFORMLY_DISCRIMINATING and HIGH_AMPLITUDE_SPECIFIC_VS_POOLED_MARGIN_SMALL.
+- **Next action:** preserve the FullMSine/SpecialOdd pair as architecture-supporting native evidence and use any same-target cross-family analysis only exploratorily.
+- **Why next:** avoids converting successful measured replication into overclaim while extracting the next architecture question.
+- **Provenance pointer:** result commit d8c0b03e9e93a8c06eafd8ee9970907d31d9f1b8
+
+### 2026-09-28 - CORRECTION - F-16 cross-excitation plan is post-result, not prospective
+
+- **Lifecycle Stage:** Stage 2 / P0-D exploratory mapping
+- **Entry type:** CORRECTION
+- **Source artifact / evidence identity:** stability_inheritance/F16_GVT_CROSS_EXCITATION_TRANSPORT_PROTOCOL_v0.1.md; protocol original commit 4d2e0ac6925d1eb2d698095cce6a5ddd5bfa32d5; correction commit 7e9b876a34bcc1cc32074c793185a7025882ce86
+- **Observed / decided:** GitHub timestamped the original cross-excitation protocol commit at 2026-09-29T02:38:40Z, while the SpecialOdd workflow had completed target scoring at approximately 2026-09-29T02:38:24Z. The UI state available during drafting lagged the actual run completion.
+- **Scientific interpretation:** the cross-excitation question remains scientifically useful but cannot be treated as preregistered or prospective on those SpecialOdd validation records.
+- **Alternative explanation / uncertainty:** none relevant to exposure status; the ordering is fixed by repository/workflow timestamps.
+- **Impact on claim / novelty / prediction:** any cross-excitation result on the already-scored SpecialOdd validation records is P0-D post-result exploratory only and carries promotion debt.
+- **Freeze impact:** confirmatory interpretation explicitly prohibited; future promotion requires fresh untouched evidence or a distinct target.
+- **Status impact:** source-of-record corrected before cross-excitation execution.
+- **Next action:** run the cross-excitation map only as exploratory architecture analysis and use it to design a fresh future test.
+- **Why next:** preserves useful information without laundering seen evidence into confirmation.
+- **Provenance pointer:** correction commit 7e9b876a34bcc1cc32074c793185a7025882ce86
