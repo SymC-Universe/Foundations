@@ -32,7 +32,7 @@ jobs:
           python-version: "3.12.14"
       - name: Install current conveyor dependencies
         run: |
-          python -m pip install --disable-pip-version-check numpy==2.1.3 scipy==1.18.1 pandas==2.2.3 openpyxl==3.1.5
+          python -m pip install --disable-pip-version-check numpy==2.1.3 scipy==1.18.1 pandas==2.2.3 openpyxl==3.1.5 h5py==3.16.0
           python -m pip check
       - name: Run guarded queue
         run: python stability_inheritance/si_compute_conveyor_v0_1.py
