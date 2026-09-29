@@ -144,6 +144,33 @@ def weighted_quantile(x, logw, probs=(0.16, 0.5, 0.84)):
     return [float(np.interp(p, cdf, x)) for p in probs]
 
 
+def weighted_mean_hpd(x, logw, mass=0.68):
+    """DESI-style posterior mean plus shortest 68% credible interval."""
+    mask = np.isfinite(x) & np.isfinite(logw)
+    x = x[mask]
+    lw = logw[mask]
+    lw -= np.max(lw)
+    w = np.exp(lw)
+    w /= w.sum()
+    mean = float(np.sum(w * x))
+    order = np.argsort(x)
+    xs, ws = x[order], w[order]
+    cdf = np.cumsum(ws)
+    starts = np.concatenate(([0.0], cdf[:-1]))
+    valid = starts + mass <= 1.0
+    ii = np.flatnonzero(valid)
+    jj = np.searchsorted(cdf, starts[valid] + mass, side="left")
+    widths = xs[jj] - xs[ii]
+    k = int(np.argmin(widths))
+    lo, hi = float(xs[ii[k]]), float(xs[jj[k]])
+    return {
+        "mean": mean,
+        "hpd68": [lo, hi],
+        "minus": mean - lo,
+        "plus": hi - mean,
+    }
+
+
 def importance_ess(logw):
     lw = logw[np.isfinite(logw)]
     lw -= np.max(lw)
@@ -266,6 +293,16 @@ def run(model, like, resamples=80000):
         params["w0"] = weighted_quantile(w0, logw)
         params["wa"] = weighted_quantile(wa, logw)
 
+    desi_style = {
+        "Omega_m": weighted_mean_hpd(om, logw),
+        "hrd_profile_Mpc": weighted_mean_hpd(hrd, logw),
+    }
+    if model == "w":
+        desi_style["w"] = weighted_mean_hpd(w0, logw)
+    if model == "w0wa":
+        desi_style["w0"] = weighted_mean_hpd(w0, logw)
+        desi_style["wa_upper_68"] = weighted_quantile(wa, logw, (0.68,))[0]
+
     result = {
         "model": model,
         "scope": "independent_released_DR2_BAO_likelihood_reconstruction",
@@ -274,6 +311,7 @@ def run(model, like, resamples=80000):
         "importance_ess": importance_ess(logw),
         "chi2_min_sampled": float(np.nanmin(chi2min)),
         "parameters_q16_q50_q84": params,
+        "parameters_DESI_style_mean_HPD68": desi_style,
         "derived_q16_q50_q84": {
             "z_q0_primary": q16_50_84(zq),
             "z_chi_delta_eq_1": q16_50_84(zc),
