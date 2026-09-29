@@ -555,7 +555,7 @@
     },
     {
       "id": "BRB_LONGTERM_HISTORY_RESPONSE_V01",
-      "status": "READY",
+      "status": "COMPLETE_MECHANICAL_FAILURE_NO_SCORE",
       "script": "stability_inheritance/run_brb_longterm_history_response_v0_1.py",
       "result_json": "stability_inheritance/results/brb_longterm_history_response/result.json",
       "disposition_key": "disposition",
@@ -567,7 +567,9 @@
         "INVALID_TEST"
       ],
       "stop_after": false,
-      "evidence_class": "P0-Q PUBLIC EXTERNAL MEASURED LONGITUDINAL HISTORY/RESPONSE"
+      "evidence_class": "P0-Q PUBLIC EXTERNAL MEASURED LONGITUDINAL HISTORY/RESPONSE",
+      "last_run_id": 36579762569,
+      "note": "Native CSV header uses control-byte length prefixes and coded channel names; failure occurred before any FRF or scientific score."
     },
     {
       "id": "BRB_LONGTERM_SCAN_CODE_AUDIT_V01",
@@ -582,10 +584,28 @@
       ],
       "stop_after": true,
       "evidence_class": "P0-Q NATIVE SCAN PROCESSING SOURCE AUDIT"
+    },
+    {
+      "id": "BRB_LONGTERM_HISTORY_RESPONSE_V01A",
+      "status": "READY",
+      "script": "stability_inheritance/run_brb_longterm_history_response_v0_1a.py",
+      "result_json": "stability_inheritance/results/brb_longterm_history_response/result.json",
+      "disposition_key": "disposition",
+      "continue_on_dispositions": [
+        "HISTORY_CONDITIONED_RESPONSE_ARCHITECTURE",
+        "MIXED_HISTORY_RESPONSE_ARCHITECTURE",
+        "STATE_HISTORY_NOT_REQUIRED_FOR_DECLARED_TASK",
+        "INDETERMINATE",
+        "INVALID_TEST"
+      ],
+      "stop_after": false,
+      "evidence_class": "P0-Q PUBLIC EXTERNAL MEASURED LONGITUDINAL HISTORY/RESPONSE",
+      "retry_class": "MECHANICAL_NATIVE_SCHEMA_REPAIR_NO_PRIOR_SCORE",
+      "parent_protocol": "stability_inheritance/BRB_LONGTERM_HISTORY_RESPONSE_PROTOCOL_v0.1.md"
     }
   ],
   "execution_trigger": {
-    "reason": "Execute frozen BRB long-term history response, then independent scan-code audit",
-    "sequence": 2
+    "reason": "Retry frozen BRB history protocol after native schema-only repair; then run scan-code audit",
+    "sequence": 3
   }
 }
