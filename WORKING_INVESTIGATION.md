@@ -19,18 +19,28 @@ update_rule: "Update after every material scientific development and before ever
 - **Current lifecycle Stage:** Stage 2 / P0-Q computational qualification and APQ plan construction after P0-N closure
 - **Status:** ACTIVE
 - **Last updated:** 2026-09-28
-- **Last verified commit / archive / checkpoint:** e7a078ddf2f9bbc428e2d826a3a70a9806d608b7 - F-16 SpecialOdd replication closed; corrected post-result cross-excitation map queued under promotion debt\n
+- **Last verified commit / archive / checkpoint:** 241b9d2a8f86d18710226fb29835238e031d26c1 - measured structural evidence integrated through F-16 and pyFBS; pyFBS v0.4 native hierarchical transformation scored successfully
 No inheritance law is established. The current candidate hypothesis is that some systems preserve, transform, or lose lower-level stability-relevant structure under embedding or hierarchical organization, and that the scientifically important object is the nonredundant relationship between lower-level architecture and higher-level realized behavior.
 
 ### Current evidence picture
 
-Program evidence increasingly separates three starting levels that must remain distinct: licensed scalar chi, capital Chi as the base modal/vector representation, and Chi_arc as the conglomerate/system representation. Chemistry and GRI provide closed research lineages with scalar insufficiency/refusal and modal/system-level structure; Bio Chi and Market provide active examples where richer organization may remain meaningful when scalar reduction is inadequate or refused. These are hypothesis-generating and architecture-defining inputs for Stability Inheritance, not retroactive confirmation of a new inheritance claim.
+The evidence base now contains several distinct architecture-supporting pieces rather than a single favored mechanism. Synthetic and randomized known-truth work maps scalar insufficiency, modal/subspace nonidentifiability, non-normal transient structure, history/measurement limits, and direct-target independence. Silverbox, Fine Steering Mirror, and Wiener-Hammerstein provide measured representation-adequacy evidence. F-16 adds measured evidence that an embedded nonlinear interface/operating regime conditions realized multi-location response organization, with prospective FullMSine support and SpecialOdd replication plus important cross-excitation and proxy limits. The current-metadata pyFBS lab testbench adds an explicit measured hierarchical transformation: independently measured component B and assembly AB, connected through native SVT/LM-FBS, partially recover independently measured component A better than a no-decoupling baseline.
 
-The legacy Stability Inheritance branch predates major developments in Chemistry, GRI, Bio Chi, Market, NSD, and GOM v1.0 and is therefore preserved as lineage rather than inherited as current scientific authority.
+Native-domain results are retained as evidence toward Stability Architecture whenever they establish a constituent, relation, representation boundary, recovery property, coupling behavior, or refusal. Their native explanation limits novelty attribution but does not erase their architectural evidentiary role.
 
-### Latest scientific development\n\nThe computational qualification program has expanded beyond the physical-apparatus code preflight. A nine-case deterministic known-truth suite passed all predeclared method-scope cases, a six-family parameter stress atlas mapped both Function and Limit behavior, and a separately frozen randomized ensemble (protocol commit 09e407e32ceed906e1c507add4b2afbcfa0a7c11, master seed 2026092802) passed all five randomized qualification tests. The randomized results preserve both positive and null/refusal structure: same scalar spectra produced both near-null and large response differences depending on modal geometry; non-proportional damping progressively degraded independent scalar-mode reconstruction; fixed eigenvalues supported widely varying non-normal transient gain; hidden-state history was operationally useful at high SNR but often not at low SNR; and direct Chi_arc references remained independent under predictor corruption. A post-result root-cause follow-up localized the noisy memory failures to lagged-predictor errors-in-variables rather than disappearance of the underlying hidden-state memory. A 10-master-seed statistical reproducibility probe reproduced the same qualitative ensemble behavior on every run.\n\n### Current interpretation and claim ceiling
+### Latest scientific development
 
-The strongest current interpretation is that Stability Inheritance should be investigated across explicitly separated scalar chi, modal/vector Chi, and conglomerate/system Chi_arc levels, with the full Stability Architecture arising from their relations plus any additional supported structure. Capital Chi is not used as shorthand for the conglomerate in this project. Substrates are candidate carriers where native science supports them, not universal objects. Recovery is a high-information probe where scientifically meaningful but does not define all stability. Claim ceiling remains P0-N/P0-D until residual novelty and a prospective discriminating test are frozen.
+The strongest new structural result is the pyFBS current-metadata SVT/LM-FBS test. The current official notebook independently corrected the stale metadata route to `decoupling_example_SVT.xlsx`. A B/AB-only preflight reproduced the documented 6 x 6 and 12 x 12 transformed objects with Y_A still sealed. After a scoring protocol was frozen, native LM-FBS decoupling reduced normalized complex error to independently measured A from 1.25333 for the no-decoupling baseline to 1.20313, a 4.01% global improvement, and improved 80.25% of positive-frequency bins. The result is NATIVE_FRAMEWORK_EQUIVALENT for novelty and ARCHITECTURE_SUPPORTING_NATIVE_HIERARCHICAL_TRANSFORMATION for architecture evidence. Absolute recovery remains imperfect, interface conditioning is high, and the reduced-coordinate shuffle diagnostic is weak, so carrier-specific inheritance is not supported.
+
+F-16 now provides a complementary measured lane. FullMSine prospectively supported amplitude-conditioned system-response organization at all three reserved levels, SpecialOdd prospectively replicated amplitude-specific full-response organization, direct cross-excitation transport was mixed, and the simple interface-difference proxy was not universal. Sine-sweep v0.1 failed its input-coordinate gate; an input-only repair qualified the chirp coordinate, after which a post-result P0-D analysis again favored amplitude conditioning but carries promotion debt.
+
+### Current interpretation and claim ceiling
+
+The strongest supported architecture is relational and qualification-first. Lower-level/component structure, interface/coupling, operating context, measurement/representation, and history where required jointly condition realized response. The evidence does not support a universal scalar-to-modal-to-architecture ladder, one universal carrier coordinate, or a universal inheritance law.
+
+The active notation remains lowercase chi for a licensed scalar coordinate, capital Chi for a base modal/vector representation, and Chi_arc for an architecture-level/conglomerate representation reconstructed through Stability Arc analysis where scientifically licensed. None is forced onto native objects merely because they are mathematically rich.
+
+Current claim ceiling is architecture reconstruction, representation/boundary qualification, and native-equivalent hierarchical transformation at P0-Q/P0-D. No P1 empirical Stability Inheritance claim, universal mechanism, carrier-resolved inheritance result, or unique Chi_arc object is frozen or promoted.
 
 ## 3. Prior Art, Novelty, and A0 Status
 
@@ -49,7 +59,7 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 
 ## 5. Active Plan and Adversarial Plan Qualification
 
-- **Active plan / scientific route:** APQ-2 qualification of a controlled physical hierarchy benchmark that tests whether χ / Χ / Χ_arc representation and refusal logic behave correctly against established CMS/dynamic-substructuring theory before any novel P1 inheritance test is attempted
+- **Active plan / scientific route:** computational Stability Architecture reconstruction under GOM v1.0 using synthetic qualification, external measured native evidence, Function/Limit mapping, and explicit hierarchy/correspondence tests while the physical APQ-2 benchmark remains deferred but preserved
 - **APQ level:** APQ-2 SUBSTANTIAL
 - **Plan status:** REVISION_REQUIRED_AFTER_FIRST_PASS / v0.2 drafted, not frozen
 - **Plan Packet identity / path / commit:** stability_inheritance/PHYSICAL_HIERARCHY_PLAN_PACKET_v0.2.md, commit 26c3ab3cc04abe17c5b5d1a86e38df479172a204
@@ -62,8 +72,7 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Freeze timestamp / identifier / hash:** n/a
 - **Design adequacy status:** DESIGN_LIMITED_EXPLORATORY
 - **Masking / outcome-exposure status:** legacy and current program outcomes already known; they cannot serve as untouched confirmation for the newly formulated inheritance claim
-- **Next plan gate:** continue nonphysical P0-Q computational/literature qualification, including external measured-data benchmark intake where provenance permits; physical parent-only APQ remains available but is not required for current progress. No child/Q1/Q2 physical target exposure is permitted before the existing physical freeze gate.\n
-## 6. Active Hold or Blocker
+- **Next plan gate:** consolidate measured hierarchical evidence and run only post-result diagnostics that explain established Function/Limit behavior without claim promotion; then identify the next provenance-clean external hierarchical system that adds a genuinely missing architectural relation rather than another redundant model-comparison benchmark. Physical Q1/Q2 remain sealed.\n## 6. Active Hold or Blocker
 
 - **Overall project hold:** NONE
 - **Computational lane:** ACTIVE
@@ -98,20 +107,19 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 
 ### Known limitations or unavailable evidence
 
-- Full-text novelty collision remains incomplete.
-- Exact cross-project provenance map is not yet consolidated under v1.0.
-- No P1 inheritance experiment is currently frozen.
+- Later-literature novelty collision remains active; current A0 is complete for plan construction, but any closer precedent can still lower the novelty ceiling.
+- Exact cross-project provenance remains incomplete outside the currently reconstructed computational/measured Stability Inheritance lanes.
+- No P1 inheritance experiment is currently frozen; F-16 sine-sweep v0.2 and FullMSine-to-SpecialOdd cross-excitation analyses carry explicit post-result promotion debt.
 
 ## 8. Next Exact Action
 
-- **Next action:** complete the currently queued P0-D F-16 cross-excitation exploratory map under explicit promotion debt, then consolidate FullMSine + SpecialOdd Function/Limit evidence and continue with a fresh provenance-clean structural target rather than reusing seen F-16 validation records for confirmation.\n- **Start from:** A0 preliminary synthesis and this working record
-- **Exact file(s):** WORKING_INVESTIGATION.md; Undermind A0_PRELIMINARY_SYNTHESIS.md
-- **Exact command(s) / script(s):** n/a for current literature phase
-- **Required environment / dependency:** connected literature and GitHub sources
-- **Required dataset/source identity:** none yet for P0-N
-- **Last successful checkpoint:** GOM v1.0 restart and preliminary prior-art synthesis
-- **Expected next output:** component-level A0 compatibility/contradiction map
-- **Do not repeat / do not overwrite:** preserve August 2026 branch lineage; do not convert current cross-domain program results into untouched confirmation
+- **Next action:** run a post-result pyFBS conditioning/error audit to determine where native hierarchical recovery succeeds or fails as interface conditioning varies; fold that Limit Map result into the architecture relation matrix; then prioritize a distinct provenance-clean measured hierarchy rather than retuning F-16 or pyFBS targets.
+- **Start from:** WORKING_INVESTIGATION.md; STABILITY_ARCHITECTURE_RELATION_MATRIX_v0.3.md; F16_GVT_STABILITY_ARCHITECTURE_SYNTHESIS_v0.1.md; PYFBS_CURRENT_METADATA_SVT_LMFBS_RESULT_v0.4.md
+- **Exact computational control:** use the guarded Stability Inheritance conveyor; hourly automation remains recovery-only.
+- **Required environment / dependency:** GitHub Actions plus source-specific runtime acquisition; raw third-party datasets are not committed where redistribution is uncertain.
+- **Last successful checkpoint:** measured pyFBS native hierarchical transformation scored NATIVE_FRAMEWORK_EQUIVALENT after current-official metadata correction.
+- **Expected next output:** conditioning-aware Function/Limit map for measured hierarchy and an adjudicated choice of the next nonredundant external architecture test.
+- **Do not repeat / do not overwrite:** preserve stale-metadata pyFBS failures, F-16 v0.1 sine-sweep invalid test, post-result promotion-debt labels, and all previously seen evidence classes.
 
 ## 10. Key Artifact Map
 
@@ -120,12 +128,12 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 | Project protocol | program governance | GOM v1.0 | ACTIVE |
 | A0 prior-art map | novelty and compatibility reconstruction | Undermind workspace b69358dd-0bd5-4a37-bd64-65f3921d9e82 | ACTIVE |
 | Preregistration / freeze record | future P1 freeze | n/a | NOT CREATED |
-| Evidence/data intake record | cross-project source identity | pending | ACTIVE |
+| Evidence/data intake record | source identity / rights / evidence class | source-specific intake records for external measured lanes | ACTIVE |
 | Compliance / safety / rights record | current literature phase | n/a | NOT_APPLICABLE |
 | Confirmatory design-adequacy record | future P1 | n/a | NOT_APPLICABLE |
-| Main dataset / source record | future test dependent | n/a | NOT SELECTED |
+| Main dataset / source record | multiple public P0-Q/P0-D qualification sources | F-16 GVT; pyFBS lab testbench; Silverbox; FSM; WH2009 | ACTIVE / SOURCE-SPECIFIC |
 | Production code / engine | existing substrate-inheritance lineage | substrate_inheritance/ | LINEAGE / REQUALIFICATION NEEDED |
-| Current results | program evidence synthesis | cross-project | RECONSTRUCTION PENDING |
+| Current results | architecture Function/Limit synthesis | STABILITY_ARCHITECTURE_RELATION_MATRIX_v0.3.md; F16_GVT_STABILITY_ARCHITECTURE_SYNTHESIS_v0.1.md; EXTERNAL_MEASURED_BENCHMARK_SYNTHESIS_v0.3.md | ACTIVE / CURRENT |
 | Atlas / system record | A0 external plus future empirical map | pending | ACTIVE |
 | Manuscript / supplement | old draft/package | separate private working artifact | SUPERSEDED AS CURRENT SCIENCE |
 | Reproducibility guide | future rebuild | pending | SUPERSEDED / REBUILD NEEDED |
@@ -734,3 +742,76 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Next action:** run the cross-excitation map only as exploratory architecture analysis and use it to design a fresh future test.
 - **Why next:** preserves useful information without laundering seen evidence into confirmation.
 - **Provenance pointer:** correction commit 7e9b876a34bcc1cc32074c793185a7025882ce86
+
+
+### 2026-09-28 - PLAN_EXECUTED - F-16 cross-excitation transport is mixed and remains post-result
+
+- **Lifecycle Stage:** Stage 2 / P0-D exploratory architecture mapping
+- **Entry type:** PLAN_EXECUTED
+- **Source artifact / evidence identity:** stability_inheritance/F16_GVT_CROSS_EXCITATION_EXPLORATORY_RESULT_v0.1.md
+- **Observed / decided:** FullMSine-derived amplitude conditioning modestly improved prediction of the already-seen SpecialOdd validation response at 49.0 N but was worse than the fixed low-amplitude reference at 97.1 N. The result is CROSS_EXCITATION_MIXED.
+- **Scientific interpretation:** amplitude/regime conditioning is real within excitation families but scalar force amplitude alone does not define a universal cross-excitation architecture map. Excitation design and other contextual structure materially condition the realized response representation.
+- **Alternative explanation / uncertainty:** different frequency support, excitation spectra, nonlinear detection-line structure, and steady-state construction may contribute; none is individually promoted from this post-result analysis.
+- **Impact on claim / novelty / prediction:** adds a Limit Map boundary only; no confirmation or novelty promotion.
+- **Freeze impact:** promotion debt preserved because SpecialOdd target scoring preceded protocol commitment.
+- **Status impact:** AMPLITUDE_ALONE_NOT_UNIVERSAL_CROSS_EXCITATION_MAP added.
+- **Next action:** seek independent excitation families or systems without retroactively promoting this map.
+- **Why next:** prevents successful within-family replication from being overgeneralized.
+- **Provenance pointer:** F16_GVT_CROSS_EXCITATION_EXPLORATORY_RESULT_v0.1.md
+
+### 2026-09-28 - FAILURE_AND_RECOVERY - F-16 sine-sweep input coordinate
+
+- **Lifecycle Stage:** Stage 2 / P0-Q to P0-D transition
+- **Entry type:** FAILURE_AND_RECOVERY
+- **Source artifact / evidence identity:** F16_GVT_SINESWEEP_INVALID_TEST_v0.1.md; F16_GVT_SINESWEEP_INPUT_COORDINATE_RESULT_v0.1.md; workflow runs 36514191804 and 36515710058
+- **Observed / decided:** prospective sine-sweep v0.1 failed its frozen raw Hilbert-phase monotonicity gate at approximately 0.503 decreasing fraction before producing a response score. A separately frozen input-only diagnostic, with acceleration never loaded, showed that global quadratic-phase and zero-crossing coordinates recover the published downward chirp across all seven levels. The predeclared selection chose the quadratic-phase coordinate.
+- **Scientific interpretation:** the physical excitation coordinate was present, but one measurement/estimation representation was not operational. This is a method-level Limit Map result analogous to other cases where latent structure exists but is not recoverable through every estimator.
+- **Alternative explanation / uncertainty:** alternative time-frequency estimators can alter operationality; none restores prospective status after the failed response-path exposure.
+- **Impact on claim / novelty / prediction:** no claim promotion; sine-sweep redesign carries promotion debt.
+- **Freeze impact:** v0.1 remains INVALID_TEST; v0.2 is explicitly post-result P0-D.
+- **Status impact:** INPUT_COORDINATE_ESTIMATOR_AFFECTS_ANALYSIS_OPERABILITY added.
+- **Next action:** use v0.2 only as exploratory architecture evidence.
+- **Why next:** preserves the failure while extracting the valid input-coordinate lesson.
+
+### 2026-09-28 - PLAN_EXECUTED - F-16 sine-sweep P0-D supports amplitude-conditioned response
+
+- **Lifecycle Stage:** Stage 2 / P0-D external measured mapping
+- **Entry type:** PLAN_EXECUTED
+- **Source artifact / evidence identity:** F16_GVT_SINESWEEP_ARCHITECTURE_PROTOCOL_v0.2.md; F16_GVT_SINESWEEP_ARCHITECTURE_RESULT_v0.2.md; workflow run 36515853668
+- **Observed / decided:** using the input-only-qualified quadratic-phase coordinate, amplitude-conditioned response representations outperformed fixed low-amplitude response at all three held-out sine-sweep levels. Conditioned/fixed primary error ratios were 0.5071, 0.1222, and 0.03214.
+- **Scientific interpretation:** consistent with the F-16 architecture picture, but post-result only. The simple interface-relative proxy was informative in sine sweep even though it was not uniformly discriminating in SpecialOdd, reinforcing that proxy adequacy is excitation-context dependent.
+- **Alternative explanation / uncertainty:** this may reflect smooth excitation-level dependence under the native nonlinear structural dynamics and cannot be separated from exposure-driven redesign within this data family.
+- **Impact on claim / novelty / prediction:** architecture-supporting native exploratory evidence only.
+- **Freeze impact:** no P1 or prospective promotion.
+- **Status impact:** F-16 synthesis now includes FullMSine prospective support, SpecialOdd prospective replication, cross-family mixed transport, and sine-sweep exploratory support.
+- **Next action:** stop retuning F-16 and move to distinct hierarchical evidence.
+- **Why next:** the F-16 domain is now information-rich enough to synthesize without further same-data mining.
+
+### 2026-09-28 - CORRECTION - Current pyFBS SVT metadata route identified before target scoring
+
+- **Lifecycle Stage:** Stage 2 / P0-Q measured hierarchical qualification
+- **Entry type:** CORRECTION
+- **Source artifact / evidence identity:** PYFBS_CURRENT_SVT_NOTEBOOK_AUDIT_RESULT_v0.1.md; workflow run 36516063337
+- **Observed / decided:** the maintained official pyFBS SVT notebook uses decoupling_example_SVT.xlsx rather than the stale/general decoupling_example.xlsx used in prior failed attempts, while preserving k=6, grouping [1,10], B-derived SVT, B/AB transformation, and A extraction at reduced indices 6:12.
+- **Scientific interpretation:** the earlier failures are preserved as failures of the stale metadata route. An independently documented upstream correction legitimately reopened compatibility testing without using Y_A.
+- **Alternative explanation / uncertainty:** software/data version drift created the apparent incompatibility rather than a scientific failure.
+- **Impact on claim / novelty / prediction:** none.
+- **Freeze impact:** current metadata SHA-256 a8fd8d0e42a85b0bd0837b9b54bf235ab2d489114e1b9c680f7a42184a59dd08 became the frozen scoring identity.
+- **Status impact:** current SVT route became executable in B/AB-only preflight while Y_A remained sealed.
+- **Next action:** freeze and execute native decoupling against independent A.
+- **Why next:** enables the first clean measured source/assembly/independent-target transformation test in the current program.
+
+### 2026-09-28 - PLAN_EXECUTED - pyFBS measured native hierarchical transformation is operational
+
+- **Lifecycle Stage:** Stage 2 / P0-Q external measured hierarchical qualification
+- **Entry type:** PLAN_EXECUTED
+- **Source artifact / evidence identity:** PYFBS_CURRENT_METADATA_SVT_LMFBS_PROTOCOL_v0.4.md; PYFBS_CURRENT_METADATA_SVT_LMFBS_RESULT_v0.4.md; workflow run 36516521576
+- **Observed / decided:** after the scientific protocol was frozen with Y_A sealed, current-metadata SVT/LM-FBS decoupling produced E_DEC=1.20313 versus E_BASE=1.25333, a 4.005% global improvement, and DEC had lower error in 80.25% of positive-frequency bins. A dependency-only first retry failed before any source download and did not alter target exposure.
+- **Scientific interpretation:** this is ARCHITECTURE_SUPPORTING_NATIVE_HIERARCHICAL_TRANSFORMATION and simultaneously NATIVE_FRAMEWORK_EQUIVALENT. An explicit measured component/assembly transformation partially recovers an independently measured component target under established native theory.
+- **Alternative explanation / uncertainty:** absolute recovery error remains large; interface condition number is high and strongly frequency dependent; the deterministic reduced-coordinate shuffle is only marginally worse globally and native beats it in 49.625% of bins. Carrier specificity is therefore weak/not established.
+- **Impact on claim / novelty / prediction:** materially strengthens the measured Stability Architecture reconstruction while leaving SI-specific added value and carrier-resolved inheritance unpromoted.
+- **Freeze impact:** v0.4 frozen protocol satisfied without scientific retuning.
+- **Status impact:** Function Map gains MEASURED_COMPONENT_ASSEMBLY_RELATION_OPERATIONAL_UNDER_NATIVE_TRANSFORMATION; Limit Map gains ABSOLUTE_RECOVERY_ERROR_REMAINS_LARGE, INTERFACE_TRANSFORMATION_IS_STRONGLY_FREQUENCY_CONDITIONED, and REDUCED_COORDINATE_MAPPING_SPECIFICITY_WEAK.
+- **Next action:** quantify conditioning/error structure post-result, then seek a distinct measured hierarchy rather than tuning this target.
+- **Why next:** determines where the established native relation is operational and where it breaks, which is directly relevant to the architecture Function/Limit map.
+- **Provenance pointer:** result commit 5ca4f4f1a8ef9cd46a5faf23bcc97ee0ee9f57e3; architecture matrix v0.3 commit 5f63c8abc27e7f2f2cabd81097b271bd1218c0a4; external synthesis v0.3 commit 241b9d2a8f86d18710226fb29835238e031d26c1
