@@ -399,9 +399,13 @@
       ],
       "stop_after": true,
       "evidence_class": "P0-Q SOURCE CODE SEMANTICS / NO RESPONSE ACCESS",
-      "retry_class": "MECHANICAL_BLOB_CHECKSUM_ONLY",
+      "retry_class": "MECHANICAL_CDATA_EXTRACTION_ONLY",
       "failed_run_id": 36522596668,
-      "failure": "Git blob checksum encoded literal backslash-zero; no response data accessed."
+      "failure": "First retry fixed checksum; second run parsed source but CDATA matcher was over-escaped. No response data accessed.",
+      "previous_runs": [
+        36522596668,
+        36522673508
+      ]
     }
   ]
 }
