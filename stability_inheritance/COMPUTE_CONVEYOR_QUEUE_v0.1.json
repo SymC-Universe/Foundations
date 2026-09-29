@@ -496,7 +496,7 @@
     },
     {
       "id": "RIVET_MENDELEY_LANDING_STATE_V02A",
-      "status": "READY",
+      "status": "COMPLETE_SOURCE_ACCESS_HOLD_CORRECTED",
       "script": "stability_inheritance/audit_rivet_mendeley_landing_state_v0_2a.py",
       "result_json": "stability_inheritance/results/rivet_mendeley_landing_state/result.json",
       "disposition_key": "disposition",
@@ -507,7 +507,12 @@
       ],
       "stop_after": true,
       "evidence_class": "P0-Q PUBLIC DATASET LANDING-STATE METADATA / MECHANICAL RETRY",
-      "retry_class": "JSON_SERIALIZATION_REPAIR_NO_FILE_BODY_ACCESS"
+      "retry_class": "JSON_SERIALIZATION_REPAIR_NO_FILE_BODY_ACCESS",
+      "last_run_id": 36568654976,
+      "raw_disposition": "OFFICIAL_FILE_ROUTE_DISCOVERED",
+      "corrected_disposition": "FILE_DESCRIPTOR_WITHOUT_ROUTE",
+      "correction_commit": "a5c8db04d7473b74b9ca1090f93db0d7be2ae9c4",
+      "note": "Landing-page audit auto-classification was false-positive: data.h5 was named in public description but no file-specific URL/UUID/public-files route was recovered. Raw rivet lane is SOURCE_ACCESS_HOLD; no HDF5 body opened."
     }
   ]
 }
