@@ -30,7 +30,7 @@
     },
     {
       "id": "F16_GVT_EXTERNAL",
-      "status": "BLOCKED_SOURCE_ACCESS",
+      "status": "SUPERSEDED_BY_F16_V01",
       "evidence_class": "P0-Q EXTERNAL MEASURED"
     },
     {
@@ -41,7 +41,7 @@
     },
     {
       "id": "PYFBS_SVT_API_COMPAT_V02",
-      "status": "READY",
+      "status": "COMPLETE_REFUSAL",
       "script": "stability_inheritance/run_pyfbs_svt_compatibility_v0_2.py",
       "result_json": "stability_inheritance/results/pyfbs_svt_compatibility_v0_2/result.json",
       "disposition_key": "disposition",
@@ -51,6 +51,33 @@
       ],
       "stop_after": true,
       "evidence_class": "P0-Q SOFTWARE/DATA COMPATIBILITY PREFLIGHT"
+    },
+    {
+      "id": "F16_GVT_INTAKE_V01",
+      "status": "READY",
+      "script": "stability_inheritance/acquire_f16_gvt_manifest_v0_1.py",
+      "result_json": "stability_inheritance/results/f16_gvt_intake/manifest.json",
+      "disposition_key": "disposition",
+      "continue_on_dispositions": [
+        "INTAKE_PASS"
+      ],
+      "stop_after": false,
+      "evidence_class": "P0-Q EXTERNAL MEASURED INTAKE"
+    },
+    {
+      "id": "F16_GVT_INTERFACE_ARCH_V01",
+      "status": "READY",
+      "script": "stability_inheritance/run_f16_gvt_interface_architecture_v0_1.py",
+      "result_json": "stability_inheritance/results/f16_gvt_interface_architecture/result.json",
+      "disposition_key": "disposition",
+      "continue_on_dispositions": [
+        "AMPLITUDE_CONDITIONED_ARCHITECTURE_SUPPORT",
+        "MIXED_AMPLITUDE_ARCHITECTURE",
+        "LOW_AMPLITUDE_REPRESENTATION_NOT_OUTPERFORMED",
+        "INDETERMINATE"
+      ],
+      "stop_after": true,
+      "evidence_class": "P0-Q EXTERNAL MEASURED ARCHITECTURE QUALIFICATION"
     }
   ]
 }
