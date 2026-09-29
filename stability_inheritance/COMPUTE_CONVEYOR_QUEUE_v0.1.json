@@ -316,7 +316,7 @@
     },
     {
       "id": "RUBBER_ISOLATOR_CROSS_ASSEMBLY_INTAKE_V01A",
-      "status": "READY",
+      "status": "COMPLETE_TRANSPORT_FAILURE",
       "script": "stability_inheritance/intake_rubber_isolator_cross_assembly_v0_1a.py",
       "result_json": "stability_inheritance/results/rubber_isolator_cross_assembly_intake/result.json",
       "disposition_key": "disposition",
@@ -327,7 +327,26 @@
       ],
       "stop_after": true,
       "evidence_class": "P0-Q PUBLIC EXTERNAL METADATA INTAKE",
-      "retry_class": "OFFICIAL_PUBLIC_API_TRANSPORT_REPAIR"
+      "retry_class": "OFFICIAL_PUBLIC_API_TRANSPORT_REPAIR",
+      "last_run_id": 36517225144,
+      "last_disposition": "INTAKE_API_BLOCKED",
+      "note": "Public API transport repair returned HTTP 404 before any HDF5 download."
+    },
+    {
+      "id": "RUBBER_ISOLATOR_CROSS_ASSEMBLY_INTAKE_V01B",
+      "status": "READY",
+      "script": "stability_inheritance/intake_rubber_isolator_cross_assembly_v0_1b.py",
+      "result_json": "stability_inheritance/results/rubber_isolator_cross_assembly_intake/result.json",
+      "disposition_key": "disposition",
+      "continue_on_dispositions": [
+        "INTAKE_METADATA_PASS",
+        "INTAKE_PUBLIC_ROUTE_PARTIAL",
+        "INTAKE_PUBLIC_ROUTE_BLOCKED",
+        "INTAKE_IDENTITY_MISMATCH"
+      ],
+      "stop_after": true,
+      "evidence_class": "P0-Q PUBLIC EXTERNAL METADATA INTAKE",
+      "retry_class": "OFFICIAL_PUBLIC_FILENAME_ROUTE_NO_NUMERIC_H5_ACCESS"
     }
   ]
 }
