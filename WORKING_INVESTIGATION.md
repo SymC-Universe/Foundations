@@ -19,8 +19,7 @@ update_rule: "Update after every material scientific development and before ever
 - **Current lifecycle Stage:** Stage 2 / P0-Q computational qualification and APQ plan construction after P0-N closure
 - **Status:** ACTIVE
 - **Last updated:** 2026-09-28
-- **Last verified commit / archive / checkpoint:** 4073f743c1ea1c996b35498b82fc78484dab80a9 - BRB measured modal/vector evidence integrated into Stability Architecture relation matrix v0.5 and external measured synthesis v0.5\nNo inheritance law is established. The current candidate hypothesis is that some systems preserve, transform, or lose lower-level stability-relevant structure under embedding or hierarchical organization, and that the scientifically important object is the nonredundant relationship between lower-level architecture and higher-level realized behavior.
-
+- **Last verified commit / archive / checkpoint:** ccf3c096a7314c8583053ae70134c1743bf2b7d1 - rivet raw-data route corrected to SOURCE_ACCESS_HOLD; published cross-host transfer remains architecture evidence and prior-art collision\n
 ### Current evidence picture
 
 The evidence base now contains several distinct architecture-supporting pieces rather than a single favored mechanism. Synthetic and randomized known-truth work maps scalar insufficiency, modal/subspace nonidentifiability, non-normal transient structure, history/measurement limits, and direct-target independence. Silverbox, Fine Steering Mirror, and Wiener-Hammerstein provide measured representation-adequacy evidence. F-16 adds measured evidence that an embedded nonlinear interface/operating regime conditions realized multi-location response organization, with prospective FullMSine support and SpecialOdd replication plus important cross-excitation and proxy limits. The current-metadata pyFBS lab testbench adds an explicit measured hierarchical transformation: independently measured component B and assembly AB, connected through native SVT/LM-FBS, partially recover independently measured component A better than a no-decoupling baseline.
@@ -112,8 +111,7 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 
 ## 8. Next Exact Action
 
-- **Next action:** freeze and execute a P0-D scalar-modal relation analysis on the already-seen Brake-Reuss ringdown, testing whether a separately licensed local damping scalar chi tracks the measured amplitude-conditioned Chi geometry without altering the completed modal protocol; in parallel preserve BARC as published boundary-condition evidence and the rubber-isolator dataset as SOURCE_ACCESS_HOLD.\n- **Start from:** WORKING_INVESTIGATION.md; STABILITY_ARCHITECTURE_RELATION_MATRIX_v0.3.md; F16_GVT_STABILITY_ARCHITECTURE_SYNTHESIS_v0.1.md; PYFBS_CURRENT_METADATA_SVT_LMFBS_RESULT_v0.4.md
-- **Exact computational control:** use the guarded Stability Inheritance conveyor; hourly automation remains recovery-only.
+- **Next action:** intake the long-term Brake-Reuss Beam wear/history dataset through its official OSF route without opening response outcomes, then freeze a history-to-later-response qualification task only if the source/layout supports a clean pre/post/reassembly split.\n- **Exact computational control:** use the guarded Stability Inheritance conveyor; hourly automation remains recovery-only.
 - **Required environment / dependency:** GitHub Actions plus source-specific runtime acquisition; raw third-party datasets are not committed where redistribution is uncertain.
 - **Last successful checkpoint:** measured pyFBS native hierarchical transformation scored NATIVE_FRAMEWORK_EQUIVALENT after current-official metadata correction.
 - **Expected next output:** conditioning-aware Function/Limit map for measured hierarchy and an adjudicated choice of the next nonredundant external architecture test.
@@ -856,3 +854,19 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Next action:** prospectively freeze the post-result scalar-modal relation analysis before extracting any damping scalar from the same ringdown.
 - **Why next:** tests whether the scalar layer compresses the measured modal geometry or carries only partially overlapping information.
 - **Provenance pointer:** result commit 59d28abb472d81b0a87c1c9824ebc6431616c143; relation matrix v0.5 commit 0315e796c965d8a07dc7b4fb8c64acc48e7f8187; measured synthesis v0.5 commit 4073f743c1ea1c996b35498b82fc78484dab80a9
+
+
+### 2026-09-29 - CORRECTION - Rivet raw-data source route placed on hold
+
+- **Lifecycle Stage:** Stage 2 / P0-Q external evidence intake
+- **Entry type:** CORRECTION
+- **Source artifact / evidence identity:** RIVET_MENDELEY_SOURCE_DISCOVERY_v0.1.md; RIVET_MENDELEY_METADATA_STRUCTURE_AUDIT_v0.1.md; RIVET_MENDELEY_LANDING_STATE_AUDIT_v0.2.md; RIVET_MENDELEY_LANDING_STATE_RESULT_CORRECTION_v0.2.md; workflow runs 36567980906, 36568226879, 36568471811, 36568654976
+- **Observed / decided:** the public Mendeley landing pages and descriptions are accessible and identify data.h5, host assemblies ARB and A'RB', and CC BY 4.0 metadata. The final landing-state script automatically labeled OFFICIAL_FILE_ROUTE_DISCOVERED, but manual audit showed that its nearby URLs and UUIDs were generic dataset/schema/customer metadata rather than a file-specific download route. No candidate URL contained data.h5, public-files, or file_download and no file-specific UUID was recovered.
+- **Scientific interpretation:** published cross-host joint-transfer evidence remains fully usable as ARCHITECTURE_SUPPORTING_NATIVE_TRANSFERABLE_INTERFACE_OBJECT and as a novelty collision, but the raw-data boundary test cannot be executed provenance-cleanly from the current runtime.
+- **Alternative explanation / uncertainty:** Mendeley may expose the file through a client-side or authenticated file service not recovered here. This does not justify endpoint guessing or unofficial mirrors.
+- **Impact on claim / novelty / prediction:** none. Generic cross-host interface transfer remains prior art; no raw FRF outcome was exposed.
+- **Freeze impact:** raw rivet scoring is prohibited until a documented official file route becomes available.
+- **Status impact:** rivet raw-data lane = SOURCE_ACCESS_HOLD.
+- **Next action:** move to long-term Brake-Reuss wear/history data, which addresses a nonredundant architectural relation.
+- **Why next:** avoids transport rabbit holes and targets physical history stored in an evolving interface rather than another demonstration of transfer.
+- **Provenance pointer:** correction commit a5c8db04d7473b74b9ca1090f93db0d7be2ae9c4; queue correction ccf3c096a7314c8583053ae70134c1743bf2b7d1
