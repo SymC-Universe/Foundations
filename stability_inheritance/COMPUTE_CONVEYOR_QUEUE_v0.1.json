@@ -91,7 +91,9 @@
         "SPECIALODD_LAYOUT_INVALID"
       ],
       "stop_after": true,
-      "evidence_class": "P0-Q EXTERNAL MEASURED DATA-LAYOUT PREFLIGHT"
+      "evidence_class": "P0-Q EXTERNAL MEASURED DATA-LAYOUT PREFLIGHT",
+      "retry_class": "MECHANICAL_EPHEMERAL_WORKSPACE_REPAIR",
+      "repair_commit": "a4ebe287d06be3892217f8152b55b8db52964afb"
     }
   ]
 }
