@@ -249,7 +249,7 @@
     },
     {
       "id": "PYFBS_CURRENT_METADATA_SVT_LMFBS_V04",
-      "status": "READY",
+      "status": "COMPLETE_MECHANICAL_FAILURE_NO_DATA_ACCESS",
       "script": "stability_inheritance/run_pyfbs_current_svt_lmfbs_v0_4.py",
       "result_json": "stability_inheritance/results/pyfbs_current_svt_lmfbs_v0_4/result.json",
       "disposition_key": "disposition",
@@ -260,7 +260,26 @@
         "INVALID_TEST"
       ],
       "stop_after": true,
-      "evidence_class": "P0-Q PUBLIC EXTERNAL MEASURED HIERARCHICAL TRANSFORMATION"
+      "evidence_class": "P0-Q PUBLIC EXTERNAL MEASURED HIERARCHICAL TRANSFORMATION",
+      "last_run_id": 36516454542,
+      "note": "ModuleNotFoundError before any source download; frozen v0.4 science and target seal remain intact."
+    },
+    {
+      "id": "PYFBS_CURRENT_METADATA_SVT_LMFBS_V04A",
+      "status": "READY",
+      "script": "stability_inheritance/run_pyfbs_current_svt_lmfbs_v0_4a.py",
+      "result_json": "stability_inheritance/results/pyfbs_current_svt_lmfbs_v0_4/result.json",
+      "disposition_key": "disposition",
+      "continue_on_dispositions": [
+        "NATIVE_FRAMEWORK_EQUIVALENT",
+        "NATIVE_MODEL_NOT_QUALIFIED_FOR_THIS_IMPLEMENTATION",
+        "INDETERMINATE",
+        "INVALID_TEST"
+      ],
+      "stop_after": true,
+      "evidence_class": "P0-Q PUBLIC EXTERNAL MEASURED HIERARCHICAL TRANSFORMATION",
+      "protocol": "stability_inheritance/PYFBS_CURRENT_METADATA_SVT_LMFBS_PROTOCOL_v0.4.md",
+      "retry_class": "MECHANICAL_DEPENDENCY_REPAIR_NO_DATA_ACCESS"
     }
   ]
 }
