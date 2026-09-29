@@ -23,7 +23,7 @@ with tempfile.TemporaryDirectory() as td:
     with zipfile.ZipFile(p,"r") as z:
         xml=z.read("matlab/document.xml").decode("utf-8",errors="replace")
 
-blocks=re.findall(r"<!\\[CDATA\\[(.*?)\\]\\]>",xml,flags=re.S)
+blocks=[part.split("]]>",1)[0] for part in xml.split("<![CDATA[")[1:] if "]]>" in part]
 ring=[x.strip() for x in blocks if "ShakerRingdown.mat" in x]
 out={
   "status":"SOURCE_CODE_SEMANTICS_ONLY",
