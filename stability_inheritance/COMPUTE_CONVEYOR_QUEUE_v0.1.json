@@ -1,0 +1,33 @@
+{
+  "version": "0.1",
+  "governance": "SymC GOM v1.0",
+  "branch": "stability-inheritance",
+  "rule": "Execute only READY tasks in listed order. Stop immediately on mechanical failure or an unlisted scientific disposition. This queue is execution plumbing, not scientific authority.",
+  "tasks": [
+    {
+      "id": "PYFBS_VPT_IDENTITY_V02",
+      "status": "READY",
+      "script": "stability_inheritance/run_pyfbs_vpt_identity_preflight_v0_2.py",
+      "result_json": "stability_inheritance/results/pyfbs_vpt_identity_v0_2/result.json",
+      "disposition_key": "disposition",
+      "continue_on_dispositions": ["VPT_ROUTE_EXECUTABLE"],
+      "stop_after": true,
+      "evidence_class": "P0-Q DATA/TRANSFORM IDENTITY PREFLIGHT"
+    },
+    {
+      "id": "PYFBS_COMPONENT_ASSEMBLY_V01",
+      "status": "COMPLETE_INVALID_TEST",
+      "evidence_class": "P0-Q PUBLIC MEASURED"
+    },
+    {
+      "id": "PYFBS_SVT_DECOUPLING_V01",
+      "status": "BLOCKED_MECHANICAL_REPAIR",
+      "evidence_class": "P0-Q PUBLIC MEASURED"
+    },
+    {
+      "id": "F16_GVT_EXTERNAL",
+      "status": "BLOCKED_SOURCE_ACCESS",
+      "evidence_class": "P0-Q EXTERNAL MEASURED"
+    }
+  ]
+}
