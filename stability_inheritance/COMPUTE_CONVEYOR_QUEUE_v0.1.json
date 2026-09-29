@@ -38,6 +38,19 @@
       "status": "BLOCKED_PROTOCOL_CONSTRUCTION",
       "evidence_class": "P0-Q PUBLIC MEASURED",
       "note": "Next clean option is a separately frozen native measured-data route that does not force VPT on incompatible measured FRFs. Must be protocol-defined before scoring."
+    },
+    {
+      "id": "PYFBS_SVT_API_COMPAT_V02",
+      "status": "READY",
+      "script": "stability_inheritance/run_pyfbs_svt_compatibility_v0_2.py",
+      "result_json": "stability_inheritance/results/pyfbs_svt_compatibility_v0_2/result.json",
+      "disposition_key": "disposition",
+      "continue_on_dispositions": [
+        "COMPATIBLE_RELEASE_FOUND",
+        "RELEASE_COMPATIBILITY_NOT_FOUND"
+      ],
+      "stop_after": true,
+      "evidence_class": "P0-Q SOFTWARE/DATA COMPATIBILITY PREFLIGHT"
     }
   ]
 }
