@@ -622,7 +622,7 @@
     },
     {
       "id": "BRB_LONGTERM_SAMPLING_GRID_AUDIT_V01A",
-      "status": "READY",
+      "status": "COMPLETE_LAYOUT_QUALIFIED",
       "script": "stability_inheritance/audit_brb_longterm_sampling_grid_v0_1a.py",
       "result_json": "stability_inheritance/results/brb_longterm_sampling_audit/result.json",
       "disposition_key": "disposition",
@@ -632,11 +632,14 @@
         "SAMPLING_GRID_AMBIGUOUS"
       ],
       "stop_after": false,
-      "evidence_class": "P0-Q SCHEMA/TIMING AUDIT - MECHANICAL RECOVERY"
+      "evidence_class": "P0-Q SCHEMA/TIMING AUDIT - MECHANICAL RECOVERY",
+      "last_run_id": 36608701580,
+      "last_disposition": "SAMPLING_GRID_MAPPING_QUALIFIED",
+      "result_record": "stability_inheritance/BRB_LONGTERM_SAMPLING_GRID_AUDIT_RESULT_v0.1a.md"
     },
     {
       "id": "BRB_LONGTERM_HISTORY_RESPONSE_V02",
-      "status": "READY",
+      "status": "COMPLETE_ARCHITECTURE_SUPPORT",
       "script": "stability_inheritance/run_brb_longterm_history_response_v0_2.py",
       "result_json": "stability_inheritance/results/brb_longterm_history_response/result.json",
       "disposition_key": "disposition",
@@ -650,11 +653,16 @@
       "stop_after": true,
       "evidence_class": "P0-Q PUBLIC EXTERNAL MEASURED LONGITUDINAL HISTORY/RESPONSE",
       "parent_protocol": "stability_inheritance/BRB_LONGTERM_HISTORY_RESPONSE_PROTOCOL_v0.2.md",
-      "prerequisite": "BRB_LONGTERM_SAMPLING_GRID_AUDIT_V01 must return SAMPLING_GRID_MAPPING_QUALIFIED"
+      "prerequisite": "BRB_LONGTERM_SAMPLING_GRID_AUDIT_V01 must return SAMPLING_GRID_MAPPING_QUALIFIED",
+      "last_run_id": 36608701580,
+      "last_disposition": "HISTORY_CONDITIONED_RESPONSE_ARCHITECTURE",
+      "reassembly_disposition": "REASSEMBLY_PARTIAL_RESET_TOWARD_INITIAL",
+      "architecture_evidence_role": "ARCHITECTURE_SUPPORTING_NATIVE_HISTORY",
+      "result_record": "stability_inheritance/BRB_LONGTERM_HISTORY_RESPONSE_RESULT_v0.2.md"
     }
   ],
   "execution_trigger": {
-    "reason": "Run frozen BRB long-term history-response v0.1a after scan-code checkpoint",
-    "sequence": 4
+    "reason": "BRB long-term v0.2 completed; queue intentionally has no READY task pending next nonredundant measured-hierarchy protocol freeze",
+    "sequence": 5
   }
 }
