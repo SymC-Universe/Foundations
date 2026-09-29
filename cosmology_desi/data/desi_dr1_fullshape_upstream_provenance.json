@@ -118,7 +118,8 @@
       "relative_directory": "cobaya/base_w_wa/desi-reptvelocileptors-fs-bao-all_schoneberg2024-bbn_planck2018-ns10",
       "files": {
         "chain.updated.yaml": {
-          "sha256": "a524c3c5e0a824a885c840001cb664bb5f9bb476724aa16ad5c113a818603f4b"
+          "sha256": "a524c3c5e0a824a885c840001cb664bb5f9bb476724aa16ad5c113a818603f4b",
+          "bytes": 11794
         },
         "chain.3.txt": {
           "sha256": "88d1cf6ff46bfc76f1e872a30d361da6d96f105cc188e4183a8c33dbb861e5ef",
@@ -129,7 +130,8 @@
           "bytes": 327605810
         },
         "chain.checkpoint": {
-          "sha256": "d825cabe7bc046a32c28e817593218b6f5e3d8112960e34cf6b90c601cdbe1e4"
+          "sha256": "d825cabe7bc046a32c28e817593218b6f5e3d8112960e34cf6b90c601cdbe1e4",
+          "bytes": 106
         },
         "chain.margestats": {
           "sha256": "1639819d1f96e2988deabb769a2c39dae77d26328732d73fdcfcaf01ae99dd18",
@@ -140,10 +142,12 @@
           "bytes": 323777580
         },
         "chain.input.yaml": {
-          "sha256": "442f67093feec4e4739ecdd16d0dbe1513c87194f352eadffbc123065a5625e5"
+          "sha256": "442f67093feec4e4739ecdd16d0dbe1513c87194f352eadffbc123065a5625e5",
+          "bytes": 3630
         },
         "chain.covmat": {
-          "sha256": "2f3d75c23129ea1e312356a9752e4acc4607e3d6e50084b78f33d1ef8b7d5488"
+          "sha256": "2f3d75c23129ea1e312356a9752e4acc4607e3d6e50084b78f33d1ef8b7d5488",
+          "bytes": 16211
         },
         "chain.4.txt": {
           "sha256": "3c27aa3fa95dfe0517290bb7b2c0a99f02912b5a8b964a0d4d6707363fa185d6",
@@ -159,6 +163,62 @@
       "public_chain_status": "unresolved_for_exact_DESI_only_baseline",
       "action": "fresh likelihood run required unless an exact released chain is subsequently qualified",
       "forbidden_substitution": "Do not replace with a CMB-combined or differently prior-weighted chain solely because it is available."
+    }
+  },
+  "de_comparator_suite": {
+    "scientific_role": "physical_dark_energy_sensitivity_suite_no_single_winner",
+    "model": "base_w_wa",
+    "status": "directory_identity_and_sizes_pinned_hash_receipts_pending",
+    "cmb_definition": "Planck2018 low-l TT + low-l EE + high-l plik TTTEEE + Planck/ACT DR6 lensing",
+    "rule": "Report whether the Stability-Architecture result is shared across Pantheon+, Union3 and DESY5; do not select a supernova sample by outcome.",
+    "members": {
+      "pantheonplus": {
+        "relative_directory": "cobaya/base_w_wa/desi-reptvelocileptors-fs-bao-all_pantheonplus_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck2018-highl-plik-TTTEEE_planck-act-dr6-lensing",
+        "chain_bytes": [
+          130094825,
+          130348155,
+          131126240,
+          130081665
+        ],
+        "compact_bytes": {
+          "checkpoint": 108,
+          "covmat": 56894,
+          "input_yaml": 4305,
+          "updated_yaml": 20966
+        }
+      },
+      "union3": {
+        "relative_directory": "cobaya/base_w_wa/desi-reptvelocileptors-fs-bao-all_union3_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck2018-highl-plik-TTTEEE_planck-act-dr6-lensing",
+        "chain_bytes": [
+          128730338,
+          128355007,
+          129023719,
+          128422206
+        ],
+        "compact_bytes": {
+          "checkpoint": 107,
+          "covmat": 56894,
+          "input_yaml": 4293,
+          "margestats": 9334,
+          "updated_yaml": 20962
+        }
+      },
+      "desy5": {
+        "relative_directory": "cobaya/base_w_wa/desi-reptvelocileptors-fs-bao-all_desy5sn_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck2018-highl-plik-TTTEEE_planck-act-dr6-lensing",
+        "chain_bytes": [
+          145718118,
+          145582164,
+          145583802,
+          144774630
+        ],
+        "compact_bytes": {
+          "checkpoint": 107,
+          "covmat": 56916,
+          "input_yaml": 4293,
+          "margestats": 9334,
+          "updated_yaml": 20960
+        }
+      }
     }
   }
 }
