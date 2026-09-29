@@ -116,7 +116,7 @@
     },
     {
       "id": "F16_GVT_CROSS_EXCITATION_P0D_V01",
-      "status": "READY",
+      "status": "COMPLETE_MIXED_POST_RESULT",
       "script": "stability_inheritance/run_f16_cross_excitation_exploratory_v0_1.py",
       "result_json": "stability_inheritance/results/f16_gvt_cross_excitation_exploratory/result.json",
       "disposition_key": "disposition",
@@ -128,7 +128,22 @@
       ],
       "stop_after": true,
       "evidence_class": "P0-D POST-RESULT EXPLORATORY / PROMOTION DEBT",
-      "exposure_correction_commit": "7e9b876a34bcc1cc32074c793185a7025882ce86"
+      "exposure_correction_commit": "7e9b876a34bcc1cc32074c793185a7025882ce86",
+      "result_commit": "1a7ff4fd1caddc1506eef84f892a7108c74d8ba7"
+    },
+    {
+      "id": "F16_GVT_SINESWEEP_LAYOUT_V01",
+      "status": "READY",
+      "script": "stability_inheritance/run_f16_sinesweep_layout_preflight_v0_1.py",
+      "result_json": "stability_inheritance/results/f16_gvt_sinesweep_layout/result.json",
+      "disposition_key": "disposition",
+      "continue_on_dispositions": [
+        "SINESWEEP_LAYOUT_QUALIFIED",
+        "SINESWEEP_LAYOUT_NEEDS_MAPPING",
+        "SINESWEEP_LAYOUT_INVALID"
+      ],
+      "stop_after": true,
+      "evidence_class": "P0-Q EXTERNAL MEASURED DATA-LAYOUT PREFLIGHT"
     }
   ]
 }
