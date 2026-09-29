@@ -431,7 +431,7 @@
     },
     {
       "id": "BRB_SCALAR_MODAL_RELATION_V01",
-      "status": "READY",
+      "status": "COMPLETE_CHI_TRACKS_REDUNDANT_WITH_AMPLITUDE",
       "script": "stability_inheritance/run_brb_scalar_modal_relation_v0_1.py",
       "result_json": "stability_inheritance/results/brb_scalar_modal_relation/result.json",
       "disposition_key": "disposition",
@@ -442,7 +442,9 @@
         "CHI_RELATION_INDETERMINATE"
       ],
       "stop_after": true,
-      "evidence_class": "P0-D POST-RESULT SCALAR-MODAL RELATION / PROMOTION DEBT"
+      "evidence_class": "P0-D POST-RESULT SCALAR-MODAL RELATION / PROMOTION DEBT",
+      "last_run_id": 36523393398,
+      "last_disposition": "CHI_TRACKS_BUT_IS_REDUNDANT_WITH_AMPLITUDE"
     }
   ]
 }
