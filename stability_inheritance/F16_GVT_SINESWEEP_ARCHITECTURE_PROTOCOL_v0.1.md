@@ -81,7 +81,7 @@ For each level, use only samples satisfying all of:
 
 Because the sweep is negative-rate, sort valid H_j(t) samples by instantaneous frequency and linearly interpolate real and imaginary components onto the fixed grids.
 
-If the frequency coordinate is not predominantly decreasing or does not cover the complete primary grid, that level is INVALID for the primary test.
+If fewer than 90% of successive valid instantaneous-frequency differences are negative, or if the valid frequency coordinate does not cover the complete primary grid, that level is INVALID for the primary test. The 90% criterion is an input-coordinate quality gate frozen before signal scoring; it is not an outcome threshold.
 
 ## Frozen amplitude-conditioned predictor
 
