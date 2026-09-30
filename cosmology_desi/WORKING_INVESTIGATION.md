@@ -313,3 +313,14 @@ The directional result is common to all three samples: every posterior median ha
 Within the CPL form \(w(a)=w_0+w_a(1-a)\), nearly all posterior weight in each member admits a positive finite \(w=-1\) crossing. Conditional crossing medians are \(z\simeq0.263\) (Pantheon+), \(0.339\) (Union3), and \(0.332\) (DESY5). At \(z=0.5\), all three weighted median trajectories are already near \(w\simeq-1.08\); by \(z=2\), the medians are approximately \(-1.31\), \(-1.41\), and \(-1.40\). These histories are CPL-derived consequences of the fitted \((w_0,w_a)\) posterior and are not model-independent reconstructions.
 
 Posterior sign masses and Gaussian covariance distances from \((-1,0)\) are retained only as descriptive diagnostics. They are not frequentist significances or model-selection statistics. Exact nested-model comparison is reserved for the matched released \(\Lambda\)CDM and \(w_0w_a\) posterior-maximization products under the identical three data combinations.
+
+
+## Matched released \(\Lambda\)CDM versus \(w_0w_a\) best-fit gate — 2026-09-29
+
+The official DESI DR1 iminuit posterior-maximization products were independently retrieved for matched \(\Lambda\)CDM and \(w_0w_a\)CDM fits under each of the three DESI(FS+BAO)+CMB+SN combinations. All six bestfit.minimum.txt files passed their official release SHA-256 receipts.
+
+The released minimizer products give \(\Delta\chi^2=\chi^2_{w_0w_a}-\chi^2_{\Lambda{\rm CDM}}\) of \(-8.2629\) for Pantheon+, \(-14.3983\) for Union3, and \(-17.6711\) for DESY5. An asymptotic two-degree-of-freedom Wilks conversion gives descriptive two-sided normal equivalents of \(2.41\sigma\), \(3.37\sigma\), and \(3.80\sigma\), respectively. These independently reproduce the ordering and closely reproduce the magnitudes of the DESI paper's chain-MAP values \(-8.8,-14.5,-17.5\) and reported \(2.5\sigma,3.4\sigma,3.8\sigma\). The released minimizer outputs and paper MAP values are not treated as mathematically identical estimators.
+
+The fit improvement is not supplied by a single probe in the released minima. For Pantheon+, the DESI FS+BAO, CMB, and SN contributions change by approximately \(-3.43,-2.82,-1.73\); for Union3 by \(-5.45,-3.00,-5.96\); and for DESY5 by \(-6.38,-2.18,-9.07\). Component sums can differ slightly from the total because the full objective contains prior and nuisance contributions. The important result is that the preference is jointly supported by the combined likelihood rather than reducible to one isolated data component.
+
+This gate supports further investigation of dynamical-DE explanations but does not establish a physical dark-energy mechanism. CPL remains a phenomenological two-parameter expansion-history model, and model-form dependence, supernova systematics, neutrino freedom, modified gravity, and explicit dark-sector interaction alternatives remain active adversarial lanes.
