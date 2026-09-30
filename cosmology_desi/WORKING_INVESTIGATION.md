@@ -291,3 +291,12 @@ All four official DESI DR1 full-shape+BAO baseline posterior chains are present 
 Within the frozen flat-\(\Lambda\)CDM reference only, the corresponding non-baryonic fraction of total matter is 0.84211 [0.83642, 0.84757], the present \(\rho_{\rm DE}/\rho_m\) ratio is 2.3767 [2.2714, 2.4856], matter-DE density equality occurs at \(z=0.33452\,[0.31451,0.35460]\), and the acceleration transition occurs at \(z=0.68139\,[0.65618,0.70670]\). These are native-model posterior re-expressions, not evidence for interacting DM, dynamical DE, or modified gravity.
 
 The four chain means agree to 0.013 pooled standard deviations for \(\Omega_m\), 0.0069 for \(\sigma_8\), and 0.033 for \(H_0\), establishing a stable numerical reference surface for adversarial dark-sector comparisons.
+
+
+## DESI-only modified-gravity adversary completed — 2026-09-29
+
+The four official DESI DR1 \(\mu_0\)-\(\Sigma_0\) posterior chains were downloaded on Popstop and all pinned SHA-256 receipts passed. In this nested flat-\(\Lambda\)CDM perturbation-sector extension, weighted full-chain analysis gives \(\mu_0=0.0872\,[-0.3805,0.6065]\) for the 16th/50th/84th percentiles, consistent with the GR reference \(\mu_0=0\). DESI FS+BAO alone does not directly constrain \(\Sigma_0\); its one-sided marginal is therefore not interpreted as evidence and is strongly shaped by the hard numerical prior \(\mu_0<2\Sigma_0+1\).
+
+Allowing \(\mu_0,\Sigma_0\) produces only small descriptive shifts in the core dark-sector reference posterior: \(\Omega_m\) moves by \(-0.071\) baseline standard deviations, \(\sigma_8\) by \(-0.096\), \(H_0\) by \(-0.060\), and standard \(S_8\) by \(-0.119\). Their posterior widths change by only about 0.5–2%. The dominant new degeneracy is instead \(\mathrm{corr}(\mu_0,\log A_s)=-0.829\), and the \(\log A_s\) posterior standard deviation expands by a factor of 1.80. Correlations of \(\mu_0\) with \(\sigma_8\) and \(S_8\) are much smaller, approximately \(-0.190\) and \(-0.206\).
+
+This is a useful refusal result for any claim that DESI-only modified-gravity freedom materially reorganizes the fitted \(\Omega_m\), \(\sigma_8\), \(S_8\), or \(H_0\) reference posterior. It does not exclude modified gravity generally. The DESI functional form also ties the redshift dependence of \(\mu(a)\) and \(\Sigma(a)\) to the dark-energy density, so an approach toward GR at higher redshift is partly parameterization-imposed rather than an independent empirical discovery.
