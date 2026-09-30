@@ -58,3 +58,11 @@ This is a Limit/interpretation result for the DM/DE program: DESI-only clusterin
 3. Execute the DESI-only w0wa chain strictly as a projection-stress test.
 4. Pin hashes for the three physical DE sensitivity chains before opening their posterior results.
 5. Only after these gates, open the interacting DM-DE literature/model lane and freeze a reproducible interaction parameterization and acceptance/refusal tests.
+
+## Adversarial update — 2026-09-29
+
+Official DESI `iminuit` posterior-maximization products were checked for the matched baseline and DESI-only mu-Sigma models. The baseline optimizer reports chi2 = 331.86911. The mu-Sigma optimizer reports chi2 = 332.86328 despite two additional gravity parameters, so the extension does not improve the matched DESI-only fit at the published optimizer point. Its optimizer also places Sigma0 = 2.9999586, effectively the upper prior boundary, while mu0 = 0.03554. Together with the analytically induced marginal prior geometry and DESI's published interpretation, Sigma0 is classified as poorly identified by DESI-only clustering rather than anomalous.
+
+The public DESI DR1 `cobaya/base_mnu` directory was re-inspected. It contains CMB-combined DESI full-shape families but no exact DESI-only FS+BAO + Schoneberg-2024 BBN + wide-ns baseline counterpart. Therefore the matched DESI-only free-neutrino lane remains `FRESH_RUN_REQUIRED`; no CMB-combined chain may be substituted for the null-matched adversary. CMB-combined neutrino chains remain admissible later for the physical multi-probe neutrino constraint lane.
+
+The DESI-only w0wa chain is now being prepared strictly under its frozen role `projection_stress_test_only`; it cannot be promoted to the physical dark-energy comparator.
