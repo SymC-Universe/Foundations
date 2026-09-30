@@ -4,7 +4,7 @@
 Default behavior downloads and hash-verifies only compact official chain
 metadata. Large likelihood products and ~993 MB posterior chains are opt-in.
 
-This script does not modify the scientific gate or derive Chi_m.
+This script only transports and verifies frozen official chain families; interpretation is performed by separate DM/DE analysis scripts.
 """
 from __future__ import annotations
 
@@ -139,9 +139,9 @@ def main() -> None:
     )
     ap.add_argument(
         "--chain-key",
-        choices=("baseline", "modified_gravity", "w0wa_desi_only_stress"),
+        choices=("baseline", "modified_gravity", "w0wa_desi_only_stress", "de_pantheonplus", "de_union3", "de_desy5"),
         default="baseline",
-        help="Pinned released chain family to prepare. Only baseline is confirmatory.",
+        help="Pinned released chain family to prepare. DE suite members are co-equal sensitivity comparators.",
     )
     ap.add_argument("--clone-implementation", action="store_true")
     ap.add_argument("--likelihood-data", action="store_true",
