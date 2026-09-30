@@ -337,3 +337,24 @@ Allowing \(\sum m_\nu\) simultaneously with \(w_0,w_a\) does **not** absorb the 
 The strongest free-\(m_\nu\) correlations in the \(w_0w_a\) chains are with \(\sigma_8\) (approximately \(-0.58\) to \(-0.61\)) and \(w_a\) (approximately \(-0.52\) in Union3/DESY5), while standard \(S_8\) is less sensitive. Thus neutrino freedom remains an important growth-sector uncertainty and weakens some parameter precision, but it does not provide an adequate explanation for the common \(w_0>-1,\ w_a<0\) direction seen across the three supernova combinations.
 
 This is not a DESI-only neutrino result. The free-mass reference is DESI FS+BAO+CMB, and all \(w_0w_a+m_\nu\) robustness statements use DESI FS+BAO+CMB+SN.
+
+
+## Method-first tool emergence frozen — 2026-09-30
+
+The DM/DE investigation now explicitly adopts the recurring program structure in which the first tool is the methodology itself. A computational diagnostic is a possible second tool, not a required endpoint. The development order is
+
+[
+	ext{methodology}
+ightarrow
+	ext{falsifiable decision structure}
+ightarrow
+	ext{validated domain behavior}
+ightarrow
+	ext{optional executable diagnostic}.
+]
+
+The detailed non-compute design is frozen in `cosmology_desi/METHODOLOGY_TOOL_EMERGENCE_PROTOCOL.md`. Representation qualification now distinguishes scalar adequacy, modal/scale-resolved necessity, coupled/conglomerate necessity, REFUSE, and NEED MORE INFO. The methodology must first survive native-model sufficiency checks, matched competing explanations, and prospective falsification before any software implementation is promoted.
+
+Executable-tool emergence is therefore conditional. If the same decision logic transports across scientifically distinct cosmological cases, preserves refusal states, propagates uncertainty/non-identifiability, and adds something not equivalent to an existing native statistic, a domain-specific diagnostic may be built. If those conditions fail, the methodology remains the valid tool. No scientific result is penalized for terminating at methodology-only, methodology-plus-refusal-of-automation, or a null Stability-Architecture result.
+
+A parallel no-touch queue is frozen in `cosmology_desi/NONCOMPUTE_PARALLEL_WORK_2026-09-30.md`. While the current external Python computation is active, no script, input, result path, environment, checkpoint, or scientific threshold used by that run may be modified. Documentation, novelty collision work, adversarial planning, representation-gate design, and next-result decision logic may continue.
