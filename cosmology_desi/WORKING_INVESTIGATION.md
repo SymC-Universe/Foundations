@@ -445,3 +445,12 @@ Canonical outputs:
 - \`near_one_pattern_null_summary.csv\`
 
 Literature context remains [Lee26b] for participation-ratio information dimensionality, [Sui25] for representation sufficiency/complementarity, and [Hea20] for compression-loss risk.
+
+
+## Epistemic path note — curiosity-led near-match audit — 2026-09-30
+
+The laptop adversarial-geometry result produced \(d_{\rm response}=1.014480039\) and a best rank-1 residual of \(0.718835\%\). Because those values resembled earlier Stability Architecture numerical patterns near \(\chi\sim1\) and \(\sim0.72\), the resemblance was treated as a legitimate anomaly rather than dismissed or promoted. Curiosity therefore opened a bounded side investigation.
+
+That investigation changed the epistemic state in two steps. First, the apparent dual convergence was refused: \(d_{\rm eff}\) and the rank-1 residual are algebraically linked for a two-singular-value spectrum, the \(0.718835\) value exists only after expressing the dimensionless residual \(0.00718835\) as a percentage, the fixed-norm random-direction null did not make the residual unusual, and the near-\(1\) value was not invariant to rescaling or observable removal. Second, the failed coincidence exposed a stronger representation problem that was not the original question: amplitude-weighted structure was almost rank one while direction-normalized response retained substantial multidimensional structure. Thus a scalar can preserve most total response power while discarding information about which adversary produced the response.
+
+This side path is retained as a useful epistemic development: **curiosity motivated the test; the numerical pattern was rejected; the failure revealed a better question.** It now motivates explicit separation of response magnitude, response direction, and representation sufficiency in F2/F3 rather than any claim based on the near-match itself.
