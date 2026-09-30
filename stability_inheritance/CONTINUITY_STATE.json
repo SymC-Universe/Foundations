@@ -22,10 +22,10 @@
       "result_sha256": "62bc618575430088556d4c8debd3de25ef93c51bc0e15a70b34a774bca47d415"
     }
   },
-  "active_workflow_or_computation_id": null,
+  "active_workflow_or_computation_id": "Popstop:PID20248",
   "last_workflow_run_id": 36763391774,
   "last_execution_commit": "81d3fc814ea446f21f4b89ca642026aca6ae72fb",
-  "next_exact_authorized_action": "Await active Popstop PID 20248 completion of the frozen v0.1c test; persist the result; then execute the pre-result-frozen three-result conglomeration adjudication.",
+  "next_exact_authorized_action": "Allow Popstop PID 20248 to complete the frozen v0.1c cross-block test. Because ConvergenceWarning has appeared before result completion, apply the separately frozen convergence-validity audit before scientific adjudication. Persist the valid result, then execute the pre-result-frozen three-result conglomeration adjudication.",
   "execution_ceiling": "Complete the already-frozen DESI cross-block relational v0.1c test on Popstop, persist its exact result and identity, then perform the already-authorized three-result DESI SI conglomeration/adjudication. Do not open a new cosmological family or dataset before that synthesis.",
   "scientific_gate": null,
   "external_block": null,
@@ -39,29 +39,28 @@
     "support_or_monitoring_activity_does_not_reset": true
   },
   "duplicate_suppression": {
-    "rule": "Suppress a completed computation only when scientific input/configuration identity is proven unchanged.",
+    "rule": "Suppress completed identical computation only when scientific input/configuration identity is proven unchanged.",
     "current_checkpoint_identity": {
-      "task_id": "ERIES_EUROPROTEAS_ARCHIVE_LAYOUT_V01B",
-      "frozen_protocol": "stability_inheritance/ERIES_EUROPROTEAS_ARCHIVE_LAYOUT_QUALIFICATION_v0.1.md",
-      "script": "stability_inheritance/intake_eries_europroteas_archive_layout_v0_1b.py",
-      "source_identity": {
-        "RESPOND": {
-          "record_id": "15518567",
-          "zip_key": "ERIES-RESPOND.ZIP",
-          "md5": "23b1452c71729da97fd1ca59af5e8e9c",
-          "member_count": 2874
-        },
-        "POLIS": {
-          "record_id": "15575887",
-          "zip_key": "ERIES-POLIS.ZIP",
-          "md5": "861654738941937581dc9d2b97dab98b",
-          "member_count": 447
-        }
-      },
-      "result_sha256": "1ab6bb740f4f3144f250011b37866b83a9aa1e9af3ac071828997c40ffc9a6e9",
-      "workflow_run_id": 36653283771,
-      "artifact_digest": "sha256:56a0bb156225ec857316c0d468685a60bae301acd4ef81e396f91f01f17a0134",
-      "protected_boundary_preserved": true
+      "task_id": "DESI_TRACER_CONGLOMERATION_V01",
+      "disposition": "TRACER_VECTOR_ADDS_OVER_SCALAR_FIT",
+      "protocol": "stability_inheritance/DESI_TRACER_CONGLOMERATION_QUALIFICATION_v0.1.md",
+      "script": "stability_inheritance/analyze_desi_tracer_conglomeration_v0_1.py",
+      "result_record": "stability_inheritance/DESI_TRACER_CONGLOMERATION_RESULT_v0.1.md",
+      "result_sha256": "3460333fbf62183669559ef68ed5e3de42eb6e60e38e6bbe5354fe4b1f0ee77f",
+      "source_pair": "verified DESI DR1 baseline + base_mu_sigma full posterior families"
+    },
+    "active_execution_identity": {
+      "task_id": "DESI_CROSS_BLOCK_RELATIONAL_V01C",
+      "protocol": "stability_inheritance/DESI_CROSS_BLOCK_RELATIONAL_QUALIFICATION_v0.1.md",
+      "repair_lineage": [
+        "stability_inheritance/DESI_CROSS_BLOCK_RELATIONAL_MEMORY_REPAIR_v0.1a.md",
+        "stability_inheritance/DESI_CROSS_BLOCK_RELATIONAL_STANDARDIZATION_REPAIR_v0.1b.md",
+        "stability_inheritance/DESI_CROSS_BLOCK_RELATIONAL_MEMMAP_REPAIR_v0.1c.md"
+      ],
+      "script": "stability_inheritance/analyze_desi_cross_block_relational_v0_1c.py",
+      "script_sha256": "6be70be5ff4d4a9815aa3dc92d795c7afb1eab7692c3b97317611310e4ea12f7",
+      "execution_host": "Popstop",
+      "execution_pid": 20248
     }
   },
   "protected_inputs": [
@@ -73,9 +72,10 @@
   ],
   "five_question_test": {
     "what_scientific_lane_are_we_advancing": "DESI_SI_CONGLOMERATION",
-    "what_is_actually_running_or_just_completed": "Popstop PID 20248 is executing the frozen DESI cross-block relational v0.1c memmap repair against the exact verified DESI baseline and base_mu_sigma chain families.",
-    "what_is_the_next_already_authorized_action": "Await active Popstop PID 20248 completion of the frozen v0.1c test; persist the result; then execute the pre-result-frozen three-result conglomeration adjudication.",
-    "what_prevents_that_action_immediately": "The computation is actively running.",
-    "does_crossing_the_boundary_require_mechanical_execution_or_new_scientific_decision": "MECHANICAL_EXECUTION through completion of v0.1c; no new scientific decision is authorized before the three-result adjudication."
-  }
+    "what_is_actually_running_or_just_completed": "Popstop PID 20248 is actively executing the frozen DESI cross-block relational v0.1c test. GitHub work is limited to continuity/provenance/adjudication scaffolding and does not count as scientific advancement.",
+    "what_is_the_next_already_authorized_action": "Complete v0.1c, apply the pre-result-frozen convergence-validity audit if required, persist the valid result, then perform the frozen three-result DESI SI conglomeration adjudication.",
+    "what_prevents_that_action_immediately": "The v0.1c computation is still running; some logistic fits have emitted ConvergenceWarning and therefore require the frozen mechanical convergence audit before final scientific use.",
+    "does_crossing_the_boundary_require_mechanical_execution_or_new_scientific_decision": "MECHANICAL_EXECUTION through v0.1c and convergence validity; the three-result adjudication rules are frozen. No new scientific decision is authorized before that synthesis."
+  },
+  "active_execution_commit": "f96c8171e1da0e132b7b1639e32020591e2c614d"
 }
