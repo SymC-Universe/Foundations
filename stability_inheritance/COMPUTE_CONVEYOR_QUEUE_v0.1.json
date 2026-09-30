@@ -708,7 +708,7 @@
     },
     {
       "id": "ERIES_EUROPROTEAS_ARCHIVE_LAYOUT_V01A",
-      "status": "READY",
+      "status": "COMPLETE_MECHANICAL_ZIP64_PARSER_FAILURE_PARTIAL_LAYOUT",
       "script": "stability_inheritance/intake_eries_europroteas_archive_layout_v0_1a.py",
       "result_json": "stability_inheritance/results/eries_europroteas_archive_layout_v0_1a/result.json",
       "disposition_key": "disposition",
@@ -739,15 +739,57 @@
         "frozen_protocol": "ERIES_EUROPROTEAS_ARCHIVE_LAYOUT_QUALIFICATION_v0.1",
         "repair_scope": "transport only"
       },
-      "next_authorized_action": "If archive layout qualifies or is partial, reconcile the path-only result and stop at SCIENTIFIC_GATE before choosing any matched scientific correspondence/channel/test not already frozen. If the official range route remains unavailable, record EXTERNAL_BLOCK or transport limitation without opening full archives."
+      "next_authorized_action": "If archive layout qualifies or is partial, reconcile the path-only result and stop at SCIENTIFIC_GATE before choosing any matched scientific correspondence/channel/test not already frozen. If the official range route remains unavailable, record EXTERNAL_BLOCK or transport limitation without opening full archives.",
+      "last_run_id": 36653158566,
+      "last_disposition": "ERIES_ARCHIVE_LAYOUT_INSUFFICIENT",
+      "corrected_execution_classification": "MECHANICAL_ZIP64_PARSER_FAILURE_PARTIAL_LAYOUT",
+      "failure": "Official range transport qualified. POLIS central directory parsed 447 members; RESPOND failed locally in ZIP64 EOCD tuple indexing before its central directory could be parsed.",
+      "result_artifact_id": 11071755809,
+      "result_artifact_digest": "sha256:cafe06f1ab93daa51cbea8fdb861610b3260a793ddc24767c6354b75b5fbf76b",
+      "note": "Raw disposition is not final because one required archive failed mechanically before layout observation. POLIS path-only checkpoint is preserved."
+    },
+    {
+      "id": "ERIES_EUROPROTEAS_ARCHIVE_LAYOUT_V01B",
+      "status": "READY",
+      "script": "stability_inheritance/intake_eries_europroteas_archive_layout_v0_1b.py",
+      "result_json": "stability_inheritance/results/eries_europroteas_archive_layout_v0_1b/result.json",
+      "disposition_key": "disposition",
+      "continue_on_dispositions": [
+        "ERIES_ARCHIVE_LAYOUT_QUALIFIED",
+        "ERIES_ARCHIVE_LAYOUT_PARTIAL",
+        "ERIES_ARCHIVE_LAYOUT_INSUFFICIENT",
+        "ERIES_ARCHIVE_INDEX_ROUTE_UNAVAILABLE"
+      ],
+      "stop_after": true,
+      "evidence_class": "P0-Q ARCHIVE CENTRAL-DIRECTORY / LAYOUT QUALIFICATION - MECHANICAL ZIP64 PARSER RECOVERY",
+      "protocol": "stability_inheritance/ERIES_EUROPROTEAS_ARCHIVE_LAYOUT_QUALIFICATION_v0.1.md",
+      "repair_record": "stability_inheritance/ERIES_EUROPROTEAS_ARCHIVE_LAYOUT_ZIP64_REPAIR_v0.1b.md",
+      "retry_class": "MECHANICAL_ZIP64_PARSER_ONLY_NO_MEMBER_BODY_ACCESS",
+      "member_body_access": "PROHIBITED",
+      "protected_boundary": "ZIP central-directory metadata only; member bodies and numeric responses prohibited",
+      "scientific_identity": {
+        "RESPOND": {
+          "record_id": "15518567",
+          "zip_key": "ERIES-RESPOND.ZIP",
+          "md5": "23b1452c71729da97fd1ca59af5e8e9c"
+        },
+        "POLIS": {
+          "record_id": "15575887",
+          "zip_key": "ERIES-POLIS.ZIP",
+          "md5": "861654738941937581dc9d2b97dab98b"
+        },
+        "frozen_protocol": "ERIES_EUROPROTEAS_ARCHIVE_LAYOUT_QUALIFICATION_v0.1",
+        "repair_scope": "ZIP64 tuple-index correction only"
+      },
+      "next_authorized_action": "Persist the path-only layout disposition. If the result is QUALIFIED/PARTIAL/INSUFFICIENT with both archives successfully indexed, stop at SCIENTIFIC_GATE before choosing any new matched correspondence/channel/test. If range/index access remains mechanically unavailable, record the exact block without opening member bodies."
     }
   ],
   "execution_trigger": {
-    "reason": "Resume ERIES archive-layout qualification from preserved HTTP 406 transport failure using transport-only v0.1a repair",
-    "sequence": 7
+    "reason": "Resume frozen ERIES archive-layout qualification from deterministic ZIP64 parser failure",
+    "sequence": 8
   },
   "scientific_lane": "ERIES_EUROPROTEAS_CROSS_SUBSTRATE",
-  "authorized_stage": "ERIES_ARCHIVE_LAYOUT_TRANSPORT_RECOVERY",
+  "authorized_stage": "ERIES_ARCHIVE_LAYOUT_ZIP64_PARSER_RECOVERY",
   "execution_ceiling": "Complete the already-frozen metadata-only ERIES archive-layout qualification through transport-only recovery; then stop at SCIENTIFIC_GATE if matched hierarchy/channel/test construction requires a new scientific decision.",
   "protected_inputs": [
     "ERIES-RESPOND.ZIP member bodies",
@@ -756,6 +798,6 @@
     "all spectra/FRFs/fitted parameters/outcome plots",
     "GISIS embargoed file bodies"
   ],
-  "next_authorized_action": "Execute ERIES_EUROPROTEAS_ARCHIVE_LAYOUT_V01A using the same frozen archive-layout protocol and transport-only repair.",
-  "last_productive_advancement": "2026-09-30T00:36:47Z"
+  "next_authorized_action": "Execute ERIES_EUROPROTEAS_ARCHIVE_LAYOUT_V01B and persist the fully indexed path-only layout disposition.",
+  "last_productive_advancement": "2026-09-30T01:02:28Z"
 }
