@@ -1,0 +1,153 @@
+{
+  "status": "matched_released_iminuit_minimum_comparison",
+  "comparison": "flat_LambdaCDM_vs_flat_CPL_w0waCDM",
+  "extra_parameters": 2,
+  "members": {
+    "Pantheon+": {
+      "receipts": {
+        "base": {
+          "relative_path": "iminuit/base/desi-reptvelocileptors-fs-bao-all_pantheonplus_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck2018-highl-plik-TTTEEE_planck-act-dr6-lensing/bestfit.minimum.txt",
+          "sha256": "938c1d469b443072458b4a388c94cebaffad3b78ac09ae6e218424f25fe1454f",
+          "bytes": 3226
+        },
+        "base_w_wa": {
+          "relative_path": "iminuit/base_w_wa/desi-reptvelocileptors-fs-bao-all_pantheonplus_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck2018-highl-plik-TTTEEE_planck-act-dr6-lensing/bestfit.minimum.txt",
+          "sha256": "8d4f1d65b0a932d37f142ae6d18397c38f8d1451bad00aba5f4caf35323e86c9",
+          "bytes": 3290
+        }
+      },
+      "LambdaCDM": {
+        "minuslogpost": 2319.6584,
+        "H0": 68.033414,
+        "omegam": 0.30607143,
+        "sigma8": 0.81057509,
+        "chi2": 4525.7161,
+        "chi2__CMB": 2765.7094,
+        "chi2__SN": 1404.9356,
+        "chi2__DESI_FS_BAO": 335.18938
+      },
+      "w0waCDM": {
+        "minuslogpost": 2318.3923,
+        "H0": 67.90639,
+        "omegam": 0.31004799,
+        "sigma8": 0.81703756,
+        "chi2": 4517.4532,
+        "chi2__CMB": 2762.8935,
+        "chi2__SN": 1403.2061,
+        "w": -0.83857733,
+        "wa": -0.69448911,
+        "chi2__DESI_FS_BAO": 331.75452
+      },
+      "delta_chi2_w0wa_minus_LambdaCDM": -8.262899999999718,
+      "chi2_improvement": 8.262899999999718,
+      "asymptotic_Wilks_2dof": {
+        "p_value": 0.016059575547255497,
+        "two_sided_normal_equivalent_sigma": 2.4075588067655396
+      },
+      "component_delta_chi2": {
+        "chi2__DESI_FS_BAO": -3.4348600000000147,
+        "chi2__CMB": -2.815900000000056,
+        "chi2__SN": -1.7294999999999163
+      }
+    },
+    "Union3": {
+      "receipts": {
+        "base": {
+          "relative_path": "iminuit/base/desi-reptvelocileptors-fs-bao-all_union3_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck2018-highl-plik-TTTEEE_planck-act-dr6-lensing/bestfit.minimum.txt",
+          "sha256": "f46d1da226c1fe773d51e947184b852dd32d81daa764f3e79a1239a993704ed2",
+          "bytes": 3214
+        },
+        "base_w_wa": {
+          "relative_path": "iminuit/base_w_wa/desi-reptvelocileptors-fs-bao-all_union3_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck2018-highl-plik-TTTEEE_planck-act-dr6-lensing/bestfit.minimum.txt",
+          "sha256": "aa1a94424b7a85bb0fdab9c533f219602e0fe335429ac60a3a06ca9c7bc7bfbb",
+          "bytes": 3278
+        }
+      },
+      "LambdaCDM": {
+        "minuslogpost": 1630.7091,
+        "H0": 67.877768,
+        "omegam": 0.30815356,
+        "sigma8": 0.81482463,
+        "chi2": 3147.9754,
+        "chi2__CMB": 2765.6328,
+        "chi2__SN": 27.320967,
+        "chi2__DESI_FS_BAO": 335.39915
+      },
+      "w0waCDM": {
+        "minuslogpost": 1626.4552,
+        "H0": 66.424828,
+        "omegam": 0.32450719,
+        "sigma8": 0.80676924,
+        "chi2": 3133.5771,
+        "chi2__CMB": 2762.6324,
+        "chi2__SN": 21.364245,
+        "w": -0.66457271,
+        "wa": -1.1977554,
+        "chi2__DESI_FS_BAO": 329.9453
+      },
+      "delta_chi2_w0wa_minus_LambdaCDM": -14.398299999999836,
+      "chi2_improvement": 14.398299999999836,
+      "asymptotic_Wilks_2dof": {
+        "p_value": 0.0007472206760944168,
+        "two_sided_normal_equivalent_sigma": 3.3716399365002827
+      },
+      "component_delta_chi2": {
+        "chi2__DESI_FS_BAO": -5.453850000000045,
+        "chi2__CMB": -3.0003999999998996,
+        "chi2__SN": -5.956721999999999
+      }
+    },
+    "DESY5": {
+      "receipts": {
+        "base": {
+          "relative_path": "iminuit/base/desi-reptvelocileptors-fs-bao-all_desy5sn_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck2018-highl-plik-TTTEEE_planck-act-dr6-lensing/bestfit.minimum.txt",
+          "sha256": "8ff22d26bcd7a8ee4164753035902ad57f17d76a52656971a0106064cbd8a16d",
+          "bytes": 3212
+        },
+        "base_w_wa": {
+          "relative_path": "iminuit/base_w_wa/desi-reptvelocileptors-fs-bao-all_desy5sn_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck2018-highl-plik-TTTEEE_planck-act-dr6-lensing/bestfit.minimum.txt",
+          "sha256": "bac36d6c122d81cd94b5bc256f006e1873570cacb43d6baf7564d6a389e3f827",
+          "bytes": 3276
+        }
+      },
+      "LambdaCDM": {
+        "minuslogpost": 2440.6002,
+        "H0": 67.710532,
+        "omegam": 0.31042989,
+        "sigma8": 0.81385214,
+        "chi2": 4767.9521,
+        "chi2__CMB": 2764.9308,
+        "chi2__SN": 1646.4997,
+        "chi2__DESI_FS_BAO": 336.86535
+      },
+      "w0waCDM": {
+        "minuslogpost": 2434.8361,
+        "H0": 67.118116,
+        "omegam": 0.31786719,
+        "sigma8": 0.81200404,
+        "chi2": 4750.281,
+        "chi2__CMB": 2762.7466,
+        "chi2__SN": 1637.4264,
+        "w": -0.73788939,
+        "wa": -1.0048697,
+        "chi2__DESI_FS_BAO": 330.48602
+      },
+      "delta_chi2_w0wa_minus_LambdaCDM": -17.67110000000048,
+      "chi2_improvement": 17.67110000000048,
+      "asymptotic_Wilks_2dof": {
+        "p_value": 0.00014546864396097073,
+        "two_sided_normal_equivalent_sigma": 3.7986802041486074
+      },
+      "component_delta_chi2": {
+        "chi2__DESI_FS_BAO": -6.379329999999982,
+        "chi2__CMB": -2.1842000000001462,
+        "chi2__SN": -9.073300000000017
+      }
+    }
+  },
+  "guardrails": [
+    "Each comparison uses the same DESI FS+BAO+CMB+SN dataset combination.",
+    "Delta chi-square uses released iminuit posterior-maximization products, not minima sampled from MCMC chains.",
+    "The Wilks diagnostic is asymptotic and descriptive; DESI's published inference remains the authoritative significance statement."
+  ]
+}
