@@ -7,31 +7,57 @@
   },
   "scientific_lane": "ERIES_EUROPROTEAS_CROSS_SUBSTRATE",
   "branch": "stability-inheritance",
-  "authorized_stage": "ERIES_ARCHIVE_LAYOUT_TRANSPORT_RECOVERY",
-  "continuity_state": "ACTIVE_COMPUTE",
+  "authorized_stage": "ERIES_ARCHIVE_LAYOUT_PATH_ONLY_COMPLETE",
+  "continuity_state": "SCIENTIFIC_GATE",
   "last_completed_durable_checkpoint": {
-    "task_id": "ERIES_EUROPROTEAS_ARCHIVE_LAYOUT_V01",
-    "execution_classification": "MECHANICAL_RANGE_TRANSPORT_FAILURE_PRE_LAYOUT",
-    "workflow_run_id": 36651136544,
-    "execution_commit": "3f3640f5ad886164e77e3672c4cd6f8e808cb108",
-    "artifact_id": 11069744854,
-    "artifact_digest": "sha256:4075d6b2e5446a7c6aa580bb3129de956d74a02c76c8273be23cde2501b7b2d0",
+    "task_id": "ERIES_EUROPROTEAS_ARCHIVE_LAYOUT_V01B",
+    "disposition": "ERIES_ARCHIVE_LAYOUT_INSUFFICIENT",
+    "workflow_run_id": 36653283771,
+    "execution_commit": "1dfdbaa0a2f3582e4c82ab20489dae821297f038",
+    "artifact_id": 11071576477,
+    "artifact_digest": "sha256:56a0bb156225ec857316c0d468685a60bae301acd4ef81e396f91f01f17a0134",
+    "source_identity": {
+      "RESPOND": {
+        "record_id": "15518567",
+        "zip_key": "ERIES-RESPOND.ZIP",
+        "md5": "23b1452c71729da97fd1ca59af5e8e9c",
+        "member_count": 2874
+      },
+      "POLIS": {
+        "record_id": "15575887",
+        "zip_key": "ERIES-POLIS.ZIP",
+        "md5": "861654738941937581dc9d2b97dab98b",
+        "member_count": 447
+      }
+    },
     "protected_boundary_preserved": true,
     "numeric_response_opened": false
   },
-  "active_workflow_or_computation_id": 36653158566,
-  "active_execution_commit": "28c424cf70f3116860cef927ebd0dd8cabd3acea",
-  "next_exact_authorized_action": "Complete ERIES_EUROPROTEAS_ARCHIVE_LAYOUT_V01A using the transport-only v0.1a repair. Persist its result/checkpoint. Do not open archive member bodies or numeric responses.",
+  "active_workflow_or_computation_id": null,
+  "active_execution_commit": null,
+  "next_exact_authorized_action": "Scientific/evidence-access decision: either freeze a new documentation-only member preflight that whitelists non-response readme/instrumentation documents while keeping recordings sealed, or close/defer ERIES at the path-only insufficiency boundary.",
   "execution_ceiling": "Complete the already-frozen metadata-only ERIES archive-layout qualification through transport-only recovery; then stop at SCIENTIFIC_GATE if matched hierarchy/channel/test construction requires a new scientific decision.",
-  "scientific_gate": null,
+  "scientific_gate": {
+    "gate_id": "ERIES_DOCUMENTATION_ACCESS_BOUNDARY",
+    "reason": "The frozen path-only archive test is valid and insufficient. Proceeding requires changing the protected evidence-access boundary from central-directory metadata to selected documentation member bodies.",
+    "options_supported_by_current_evidence": [
+      "Prospectively freeze a documentation-only member preflight with an explicit whitelist and keep all recordings/numeric outcomes sealed.",
+      "Close or defer ERIES at the path-only insufficiency boundary."
+    ],
+    "prohibited_without_gate_resolution": [
+      "Open readme.pdf or instrumentation PDFs/DWG files",
+      "Open any recording member",
+      "Use filename patterns to invent a matched scientific correspondence not already frozen"
+    ]
+  },
   "external_block": null,
   "user_action_required": null,
-  "last_productive_advancement": "2026-09-30T01:02:00Z",
+  "last_productive_advancement": "2026-09-30T01:04:36Z",
   "liveness_clock": {
     "lane": "ERIES_EUROPROTEAS_CROSS_SUBSTRATE",
     "reset_only_by_authoritative_lane_advancement": true,
     "default_stagnation_threshold_minutes": 90,
-    "last_reset": "2026-09-30T01:02:00Z",
+    "last_reset": "2026-09-30T01:04:36Z",
     "support_or_monitoring_activity_does_not_reset": true
   },
   "checkpoint_resume": {
@@ -67,9 +93,9 @@
   ],
   "five_question_test": {
     "what_scientific_lane_are_we_advancing": "ERIES_EUROPROTEAS_CROSS_SUBSTRATE",
-    "what_is_actually_running_or_just_completed": "GitHub Actions run 36653158566 is actively executing the transport-only ERIES archive-layout recovery.",
-    "what_is_the_next_already_authorized_action": "Complete v0.1a, persist its checkpoint, and reconcile the frozen path-only layout disposition.",
-    "what_prevents_that_action_immediately": null,
-    "does_crossing_the_boundary_require_mechanical_execution_or_new_scientific_decision": "MECHANICAL_EXECUTION through v0.1a. Any later matched correspondence/channel/test choice not already frozen requires NEW_SCIENTIFIC_DECISION."
+    "what_is_actually_running_or_just_completed": "Durable checkpoint ERIES_EUROPROTEAS_ARCHIVE_LAYOUT_V01B completed in run 36653283771. Both archive central directories were indexed; no member body or numeric response was opened.",
+    "what_is_the_next_already_authorized_action": "No further evidence-opening action is already authorized. Resolve ERIES_DOCUMENTATION_ACCESS_BOUNDARY.",
+    "what_prevents_that_action_immediately": "The current frozen protocol expressly forbids member-body access. Path-only metadata is insufficient to freeze a matched hierarchy.",
+    "does_crossing_the_boundary_require_mechanical_execution_or_new_scientific_decision": "NEW_SCIENTIFIC_DECISION"
   }
 }
