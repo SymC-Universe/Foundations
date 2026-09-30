@@ -1,0 +1,7 @@
+metric,value
+cosine_similarity_mg_vs_mnu,-0.579740814408
+angle_degrees_mg_vs_mnu,125.432314971
+response_effective_dimension,1.01448003947
+rank1_residual_fraction,0.00718835273765
+singular_value_1,1.70784205102
+singular_value_2,0.145321195172
