@@ -404,3 +404,44 @@ The current evidence state is therefore:
 The only admissible overall disposition at this point is **NEED_MORE_INFO**. No modal, capital-\(\Chi\), SA-trajectory, SI, or full-architecture promotion is licensed yet.
 
 Prospective unit-test fixtures were expanded to ensure that a coordinate-only \(\chi\) does not falsely terminate the modal ladder, while a genuinely refused local coordinate does. These tests are committed but intentionally not executed while the active external Python computation is running.
+
+
+## Near-one / 0.7188% adversarial-geometry pattern investigated — 2026-09-30
+
+A targeted audit was run because the laptop adversarial-geometry analysis returned \(d_{\rm response}=1.014480039\) and a best rank-1 residual of \(0.718835\%\), numerically reminiscent of earlier Stability Architecture patterns near \(\chi\sim1\) and \(\sim0.72\).
+
+The narrow numerical resemblance is **not promoted**. For a two-singular-value spectrum, the participation-ratio effective dimension and rank-1 residual fraction are algebraically linked:
+\[
+d_{\rm eff}=\frac{1}{(1-f)^2+f^2},
+\]
+where \(f=s_2^2/(s_1^2+s_2^2)\). Substituting the observed \(f=0.0071883527\) reproduces \(d_{\rm eff}=1.014480039\) to \(2.22\times10^{-16}\). The two values are therefore one result expressed twice, not two independent convergences.
+
+The \(0.718835\) value appears only after expressing the dimensionless residual \(0.00718835\) as a percentage. That factor-of-100 representation change is not a scale-invariant connection to an unrelated \(\sim0.72\) stability coordinate.
+
+The near-rank-1 result is dominated by response-amplitude imbalance: the MG response norm is only \(0.10482\) of the free-neutrino response norm. After row-normalizing both adversarial response vectors to unit length, the geometry becomes
+\[
+d_{\rm eff,dir}=1.496895,\qquad f_{\rm dir}=0.210130,
+\]
+so the direction-only structure is materially less one-dimensional.
+
+A fixed-norm random-direction null with \(N=500{,}000\) in four dimensions gave
+\[
+P(f_{\rm null}\le f_{\rm obs})=0.306286
+\]
+and
+\[
+P(|\cos\theta_{\rm null}|\ge|\cos\theta_{\rm obs}|)=0.306286.
+\]
+The observed \(0.7188\%\) residual is therefore not unusual under a null preserving the actual amplitude imbalance.
+
+Leave-one-observable-out and MG-amplitude rescaling tests further show that the raw near-1 value is not invariant. Removing individual observables moves \(d_{\rm eff}\) from about \(1.0064\) to \(1.0417\), while rescaling the MG response from \(0.25\times\) to \(10\times\) moves \(d_{\rm eff}\) from about \(1.0009\) to \(1.4953\).
+
+The surviving scientific result is not the numerical coincidence. It is the separation between **amplitude-weighted near-rank-1 structure** and **direction-sensitive multivariate structure**. The two completed adversaries are materially non-collinear (\(\cos\theta=-0.57974\), \(\theta=125.43^\circ\)), so a single response amplitude can preserve most total variance while still discarding adversary identity. This remains a legitimate representation-qualification target for F2/F3.
+
+Canonical outputs:
+- \`cosmology_desi/laptop_parallel_results/NEAR_ONE_PATTERN_INVESTIGATION.md\`
+- \`near_one_pattern_leave_one_out.csv\`
+- \`near_one_pattern_scale_sensitivity.csv\`
+- \`near_one_pattern_null_summary.csv\`
+
+Literature context remains [Lee26b] for participation-ratio information dimensionality, [Sui25] for representation sufficiency/complementarity, and [Hea20] for compression-loss risk.
