@@ -255,3 +255,24 @@ The transport runner now accepts explicit chain roles via `--chain-key baseline`
 ## Dark-energy comparator suite frozen — 2026-09-29
 
 To avoid selecting a supernova sample by the resulting \(w_0,w_a\) behavior, the physical DE comparator is now a three-member sensitivity suite: DESI (FS+BAO)+CMB+Pantheon+, DESI (FS+BAO)+CMB+Union3, and DESI (FS+BAO)+CMB+DESY5, all using the DESI default Planck PR3 TT/TE/EE plus Planck+ACT DR6 lensing combination. No member is designated primary. A later Stability-Architecture result must state whether it is common to all three, limited to a subset, or materially sample-dependent. The exact public release directory identities and file sizes are pinned in the provenance manifest; SHA-256 receipts remain to be added before automated download.
+
+
+## DR1 confirmatory baseline gate passed on Popstop — 2026-09-29
+
+The exact DESI DR1 confirmatory baseline compact release files were downloaded on Popstop through the frozen transport runner and all five SHA-256 receipts matched the pinned manifest. The released DESI posterior summary \`chain.margestats\` gives
+\[
+\Omega_{\mathrm m,0}=0.2963\pm0.0094,
+\qquad
+\sigma_8=0.842\pm0.034.
+\]
+Against the preregistered reproduction targets
+\[
+\Omega_{\mathrm m,0}=0.2962\pm0.0095,
+\qquad
+\sigma_8=0.842\pm0.034,
+\]
+the \(\Omega_{\mathrm m,0}\) central-value offset is approximately \(0.011\) published standard deviations and its 68% interval width differs by approximately \(1.1\%\); \(\sigma_8\) matches at the reported precision. Both preregistered acceptance criteria therefore pass.
+
+The released \`chain.input.yaml\` and \`chain.updated.yaml\` also confirm the intended baseline structure: flat \(\Lambda\)CDM with \(w_0=-1\), \(w_a=0\), \(\Omega_k=0\), \(\sum m_\nu=0.06\,\mathrm{eV}\), DESI full-shape+BAO tracers BGS/LRG/ELG/QSO plus Ly\(\alpha\) BAO geometry, Schöneberg-2024 BBN, and the broad Planck-2018 \(n_s\) prior used by the DESI release. The updated configuration records the full-shape \(k\)-range \(0.02\le k\le0.2\) and analytic marginalization mode.
+
+This passes the confirmatory reproduction gate required before sample-level matter-architecture work. Full baseline posterior download is now scientifically admitted for reconstruction of native growth quantities and candidate \(\Chi_{\mathrm m}(k,a)\). The gate passage does not itself establish \(\Chi_{\mathrm m}\), a joint Stability Arc, SI, modified gravity, DM interaction, or DE dynamics.
