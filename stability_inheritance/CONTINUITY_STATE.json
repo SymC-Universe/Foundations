@@ -31,7 +31,14 @@
       }
     },
     "protected_boundary_preserved": true,
-    "numeric_response_opened": false
+    "numeric_response_opened": false,
+    "protocol": "stability_inheritance/ERIES_EUROPROTEAS_ARCHIVE_LAYOUT_QUALIFICATION_v0.1.md",
+    "repair_lineage": [
+      "stability_inheritance/ERIES_EUROPROTEAS_ARCHIVE_LAYOUT_TRANSPORT_REPAIR_v0.1a.md",
+      "stability_inheritance/ERIES_EUROPROTEAS_ARCHIVE_LAYOUT_ZIP64_REPAIR_v0.1b.md"
+    ],
+    "script": "stability_inheritance/intake_eries_europroteas_archive_layout_v0_1b.py",
+    "result_sha256": "1ab6bb740f4f3144f250011b37866b83a9aa1e9af3ac071828997c40ffc9a6e9"
   },
   "active_workflow_or_computation_id": null,
   "last_workflow_run_id": 36653543262,
@@ -63,7 +70,29 @@
   },
   "duplicate_suppression": {
     "rule": "Suppress a completed computation only when scientific input/configuration identity is proven unchanged.",
-    "current_checkpoint_identity": null
+    "current_checkpoint_identity": {
+      "task_id": "ERIES_EUROPROTEAS_ARCHIVE_LAYOUT_V01B",
+      "frozen_protocol": "stability_inheritance/ERIES_EUROPROTEAS_ARCHIVE_LAYOUT_QUALIFICATION_v0.1.md",
+      "script": "stability_inheritance/intake_eries_europroteas_archive_layout_v0_1b.py",
+      "source_identity": {
+        "RESPOND": {
+          "record_id": "15518567",
+          "zip_key": "ERIES-RESPOND.ZIP",
+          "md5": "23b1452c71729da97fd1ca59af5e8e9c",
+          "member_count": 2874
+        },
+        "POLIS": {
+          "record_id": "15575887",
+          "zip_key": "ERIES-POLIS.ZIP",
+          "md5": "861654738941937581dc9d2b97dab98b",
+          "member_count": 447
+        }
+      },
+      "result_sha256": "1ab6bb740f4f3144f250011b37866b83a9aa1e9af3ac071828997c40ffc9a6e9",
+      "workflow_run_id": 36653283771,
+      "artifact_digest": "sha256:56a0bb156225ec857316c0d468685a60bae301acd4ef81e396f91f01f17a0134",
+      "protected_boundary_preserved": true
+    }
   },
   "protected_inputs": [
     "ERIES-RESPOND.ZIP member bodies",
