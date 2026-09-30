@@ -276,3 +276,18 @@ the \(\Omega_{\mathrm m,0}\) central-value offset is approximately \(0.011\) pub
 The released \`chain.input.yaml\` and \`chain.updated.yaml\` also confirm the intended baseline structure: flat \(\Lambda\)CDM with \(w_0=-1\), \(w_a=0\), \(\Omega_k=0\), \(\sum m_\nu=0.06\,\mathrm{eV}\), DESI full-shape+BAO tracers BGS/LRG/ELG/QSO plus Ly\(\alpha\) BAO geometry, Schöneberg-2024 BBN, and the broad Planck-2018 \(n_s\) prior used by the DESI release. The updated configuration records the full-shape \(k\)-range \(0.02\le k\le0.2\) and analytic marginalization mode.
 
 This passes the confirmatory reproduction gate required before sample-level matter-architecture work. Full baseline posterior download is now scientifically admitted for reconstruction of native growth quantities and candidate \(\Chi_{\mathrm m}(k,a)\). The gate passage does not itself establish \(\Chi_{\mathrm m}\), a joint Stability Arc, SI, modified gravity, DM interaction, or DE dynamics.
+
+
+## Scope boundary — DM/DE lane only — 2026-09-29
+
+By explicit program decision, this investigation now remains restricted to dark matter, dark energy, and directly competing cosmological explanations. Earlier Stability-Architecture and Stability-Inheritance material in this working history is retained for provenance only and is not an active interpretive lane here. Cross-project conglomeration, \(\Chi\) construction, Stability Arc, and SI interpretation continue in the separate SI project.
+
+The active sequence is native cosmology first: flat \(\Lambda\)CDM reference, dynamical-DE alternatives, modified-gravity adversaries, neutrino-mass effects, and DM-DE interaction models where a released or freshly reproducible likelihood is available. No dark-sector result will be promoted merely because it supports a broader cross-domain framework.
+
+## Full DR1 baseline posterior audited — 2026-09-29
+
+All four official DESI DR1 full-shape+BAO baseline posterior chains are present on Popstop and pass the pinned SHA-256 receipts, totaling 992,643,390 bytes. Weighted analysis of 857,201 released chain rows gives \(\Omega_m=0.29612\,[0.28687,0.30566]\), \(\Omega_\Lambda=0.70380\,[0.69427,0.71305]\), \(\sigma_8=0.84091\,[0.80787,0.87529]\), \(H_0=68.566\,[67.829,69.310]\,\mathrm{km\,s^{-1}\,Mpc^{-1}}\), and standard \(S_8=0.83562\,[0.80133,0.87104]\) for the 16th/50th/84th percentiles.
+
+Within the frozen flat-\(\Lambda\)CDM reference only, the corresponding non-baryonic fraction of total matter is 0.84211 [0.83642, 0.84757], the present \(\rho_{\rm DE}/\rho_m\) ratio is 2.3767 [2.2714, 2.4856], matter-DE density equality occurs at \(z=0.33452\,[0.31451,0.35460]\), and the acceleration transition occurs at \(z=0.68139\,[0.65618,0.70670]\). These are native-model posterior re-expressions, not evidence for interacting DM, dynamical DE, or modified gravity.
+
+The four chain means agree to 0.013 pooled standard deviations for \(\Omega_m\), 0.0069 for \(\sigma_8\), and 0.033 for \(H_0\), establishing a stable numerical reference surface for adversarial dark-sector comparisons.
