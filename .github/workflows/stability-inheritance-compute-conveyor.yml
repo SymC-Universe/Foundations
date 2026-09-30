@@ -13,7 +13,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
   group: stability-inheritance-compute-conveyor
@@ -26,16 +26,50 @@ jobs:
     steps:
       - name: Check out frozen queue state
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: stability-inheritance
+          fetch-depth: 0
+
       - name: Set up Python
         uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
         with:
           python-version: "3.12.14"
+
       - name: Install current conveyor dependencies
         run: |
           python -m pip install --disable-pip-version-check numpy==2.1.3 scipy==1.18.1 pandas==2.2.3 openpyxl==3.1.5 h5py==3.16.0
           python -m pip check
+
       - name: Run guarded queue
         run: python stability_inheritance/si_compute_conveyor_v0_1.py
+
+      - name: Persist mechanical queue and continuity checkpoint
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git fetch origin stability-inheritance
+          remote_head="$(git rev-parse origin/stability-inheritance)"
+          if [ "$remote_head" != "$GITHUB_SHA" ]; then
+            echo "CONTINUITY_PERSISTENCE_CONFLICT: branch advanced from $GITHUB_SHA to $remote_head during run."
+            echo "Refusing automatic rebase/force-push. Sentinel must reconcile the newer branch checkpoint."
+            exit 2
+          fi
+
+          git add stability_inheritance/COMPUTE_CONVEYOR_QUEUE_v0.1.json
+          git add stability_inheritance/CONTINUITY_STATE.json
+
+          if git diff --cached --quiet; then
+            echo "No mechanical continuity state changes to persist."
+            exit 0
+          fi
+
+          git commit -m "Stability Inheritance: persist conveyor checkpoint [skip ci]"
+          git push origin HEAD:stability-inheritance
+
       - name: Upload conveyor report and task results
         if: always()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
@@ -45,4 +79,6 @@ jobs:
             stability_inheritance/results/compute_conveyor/run_summary.json
             stability_inheritance/results/**/result.json
             stability_inheritance/results/**/manifest.json
+            stability_inheritance/CONTINUITY_STATE.json
+            stability_inheritance/COMPUTE_CONVEYOR_QUEUE_v0.1.json
           if-no-files-found: warn
