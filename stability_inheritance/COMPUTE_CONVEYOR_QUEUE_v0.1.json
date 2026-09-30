@@ -659,10 +659,27 @@
       "reassembly_disposition": "REASSEMBLY_PARTIAL_RESET_TOWARD_INITIAL",
       "architecture_evidence_role": "ARCHITECTURE_SUPPORTING_NATIVE_HISTORY",
       "result_record": "stability_inheritance/BRB_LONGTERM_HISTORY_RESPONSE_RESULT_v0.2.md"
+    },
+    {
+      "id": "ERIES_EUROPROTEAS_SOURCE_MATRIX_V01",
+      "status": "READY",
+      "script": "stability_inheritance/intake_eries_europroteas_source_matrix_v0_1.py",
+      "result_json": "stability_inheritance/results/eries_europroteas_source_matrix/result.json",
+      "disposition_key": "disposition",
+      "continue_on_dispositions": [
+        "ERIES_EUROPROTEAS_SOURCE_MATRIX_QUALIFIED",
+        "ERIES_EUROPROTEAS_SOURCE_MATRIX_PARTIAL",
+        "ERIES_EUROPROTEAS_SOURCE_IDENTITY_AMBIGUOUS",
+        "ERIES_EUROPROTEAS_SOURCE_BLOCKED"
+      ],
+      "stop_after": true,
+      "evidence_class": "P0-Q METADATA-ONLY CROSS-SUBSTRATE SOURCE QUALIFICATION",
+      "protocol": "stability_inheritance/ERIES_EUROPROTEAS_CROSS_SUBSTRATE_SOURCE_QUALIFICATION_v0.1.md",
+      "numeric_response_access": "PROHIBITED"
     }
   ],
   "execution_trigger": {
-    "reason": "BRB long-term v0.2 completed; queue intentionally has no READY task pending next nonredundant measured-hierarchy protocol freeze",
-    "sequence": 5
+    "reason": "Recover four-hour continuity failure by launching frozen ERIES EuroProteas cross-substrate metadata/source qualification",
+    "sequence": 6
   }
 }
