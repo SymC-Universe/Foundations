@@ -951,3 +951,23 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Why this is a scientific gate:** the parent protocol explicitly prohibited all archive member-body access. Reading documentation would change the protected evidence-access boundary even though it would not open numeric outcomes.
 - **Current durable state:** `SCIENTIFIC_GATE`.
 - **Continuity note:** this is a legitimate stop and therefore suspends the 90-minute stagnation fault for this lane until the gate is resolved. Monitoring/controller activity must not be reported as active computation.
+
+
+### 2026-09-29 - SCIENTIFIC_REDIRECTION_AND_ADVANCEMENT - DESI activated as SI conglomeration lane
+
+- **Lifecycle Stage:** Stage 2 / public external posterior P0-Q + P0-D representation qualification
+- **Entry type:** USER_DIRECTION_RESOLVES_ROUTE + PLAN_EXECUTED
+- **User direction:** continue Stability Inheritance using the already-downloaded DESI full posterior material rather than expanding the ERIES evidence-access boundary. The prior ERIES `ERIES_DOCUMENTATION_ACCESS_BOUNDARY` remains preserved but is now `DEFERRED_BY_USER_DIRECTION`, not scientifically resolved.
+- **Local source identity:** Popstop holds the official DESI DR1 baseline full-shape+BAO family (four verified chain files totaling 992,643,390 bytes) and the official `base_mu_sigma` growth-sector adversary (four verified full chain files). Parent DESI transport receipts record SHA-256 verification for every chain file.
+- **DESI SI protocol freeze:** `DESI_SHARED_COORDINATE_SI_QUALIFICATION_v0.1.md` plus pre-result LOSC hardening amendment v0.1a.
+- **Result 1:** `DESI_SHARED_COORDINATE_SI_RESULT_v0.1.md`, disposition `JOINT_DIFFERENCE_REDUNDANT`. The joint B+G+T representation improved out-of-chain discrimination in all four source-chain folds, but the B-G canonical-spectrum difference (0.001965) was smaller than ordinary within-family chain variation (~0.010-0.011), and the full correlation reorganization likewise failed its frozen robustness envelope. This refuses a stronger joint-reorganization claim.
+- **Result 1 provenance:** full local JSON SHA-256 `62bc618575430088556d4c8debd3de25ef93c51bc0e15a70b34a774bca47d415`.
+- **Result 2 protocol:** `DESI_TRACER_CONGLOMERATION_QUALIFICATION_v0.1.md`.
+- **Result 2:** `DESI_TRACER_CONGLOMERATION_RESULT_v0.1.md`, disposition `TRACER_VECTOR_ADDS_OVER_SCALAR_FIT`. Full seven-tracer T beat summed tracer-fit scalar S in 4/4 LOSC folds; residual composition R remained informative after the scalar total-fit direction was removed in 4/4 folds; no single tracer matched T; no leave-one-tracer-out case erased the gain in >=3 folds.
+- **Result 2 provenance:** full local JSON SHA-256 `3460333fbf62183669559ef68ed5e3de42eb6e60e38e6bbe5354fe4b1f0ee77f`.
+- **Scientific interpretation:** DESI now supplies a qualified SI example where scalar compression of an observational response loses distributed vector information. This is representation evidence, not a physical cosmological modal object and not an SI mechanism.
+- **Current frozen test:** `DESI_CROSS_BLOCK_RELATIONAL_QUALIFICATION_v0.1.md`.
+- **Current execution:** Popstop local process executes additive A=B+G+S+R versus X=A+[(B+G) x R] and a within-model/source-chain pairing-destroyed interaction control. Model-only `mu0` and `Sigma0` remain excluded.
+- **Execution ceiling:** complete the frozen cross-block relational test and then conglomerate the three DESI SI results before admitting any additional cosmological model family or dataset.
+- **Protected interpretation boundary:** no lowercase chi, capital Chi, Chi_arc, modified-gravity preference, DM/DE ontology, or causal coupling is licensed by these representation tests.
+- **Durable state:** `ACTIVE_COMPUTE`.
