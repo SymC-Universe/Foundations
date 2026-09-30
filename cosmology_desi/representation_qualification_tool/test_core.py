@@ -75,3 +75,53 @@ def test_full_architecture_requires_all_gates():
 def test_adversarial_failure_refuses_model_imposed_architecture():
     decision = qualify(full_record({"F7_adversaries": "fail"}))
     assert decision.disposition == Disposition.REFUSED_MODEL_IMPOSED
+
+
+def test_coordinate_only_chi_does_not_kill_modal_ladder():
+    rec = full_record({})
+    gates = []
+    for g in rec.gates:
+        if g.gate == "F1_local_chi":
+            gates.append(GateEvidence(
+                gate=g.gate,
+                status="fail",
+                classification="coordinate_only",
+                reason="native-model-linked but useful coordinate",
+                sources=["Chr26"],
+            ))
+        else:
+            gates.append(g)
+    rec2 = QualificationRecord(
+        target=rec.target,
+        preregistration_id="RQE-TEST-COORD-001",
+        native_model=rec.native_model,
+        adversaries=rec.adversaries,
+        gates=gates,
+    )
+    decision = qualify(rec2)
+    assert decision.disposition == Disposition.FULL_ARCHITECTURE_REQUIRED
+    assert any("coordinate" in x.lower() for x in decision.rationale)
+
+
+def test_noncoordinate_local_failure_refuses():
+    rec = full_record({})
+    gates = []
+    for g in rec.gates:
+        if g.gate == "F1_local_chi":
+            gates.append(GateEvidence(
+                gate=g.gate,
+                status="fail",
+                classification="refused",
+                reason="not even a useful coordinate",
+                sources=["Chr26"],
+            ))
+        else:
+            gates.append(g)
+    rec2 = QualificationRecord(
+        target=rec.target,
+        preregistration_id="RQE-TEST-REFUSE-001",
+        native_model=rec.native_model,
+        adversaries=rec.adversaries,
+        gates=gates,
+    )
+    assert qualify(rec2).disposition == Disposition.REFUSED_REDUNDANT
