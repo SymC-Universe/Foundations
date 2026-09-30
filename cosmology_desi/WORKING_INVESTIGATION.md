@@ -382,3 +382,25 @@ The five-component methodology is now frozen in `cosmology_desi/FIVE_COMPONENT_I
 An isolated executable scaffold now exists at `cosmology_desi/representation_qualification_tool/core.py`. It does not select thresholds or scientific hypotheses; it only applies a frozen evidence record and returns one of SCALAR_ADEQUATE, MODAL_REQUIRED, CHI_AGGREGATE_REQUIRED, ARC_REQUIRED, INHERITANCE_REQUIRED, FULL_ARCHITECTURE_REQUIRED, REFUSED_REDUNDANT, REFUSED_MODEL_IMPOSED, or NEED_MORE_INFO. Source provenance is carried through each decision. Prospective decision-logic tests exist in `test_core.py` but have not been executed during the active external Python computation.
 
 The next admitted methodological step is to populate the evidence packet with concrete cosmology metrics and data identities after the active computation completes, then validate the engine first on cases with known expected dispositions before applying it to the full SA+SI+DM+DE conglomerate.
+
+
+## RQE metric policy and current evidence frozen — 2026-09-30
+
+The representation-qualification methodology has now been converted from a conceptual ladder into a frozen metric policy and a partially populated evidence record without inspecting the active local Python computation.
+
+The metric policy is recorded in \`cosmology_desi/COSMOLOGY_RQE_METRIC_POLICY_v0.1.md\`. It freezes the required comparison logic for F1-F7 before new held-out results are inspected. The current evidence state is recorded in \`cosmology_desi/COSMOLOGY_RQE_CURRENT_EVIDENCE_2026-09-30.md\`.
+
+A methodological correction was made to the executable scaffold: F1 now distinguishes a \`coordinate_only\` local \(\chi\) from a genuinely failed local representation. This was required by the already-canonical DESI DR2 background result. In the tested late-time flat-GR matter+smooth-DE construction, \(\chi_\delta\) is a useful coordinate and transition marker, but it is not independent information once the native background model is specified. The RQE therefore preserves \(\chi_\delta\) as a coordinate while prohibiting an independent scalar-degree-of-freedom claim.
+
+The current evidence state is therefore:
+- F1 local \(\chi\): **qualified as coordinate_only**;
+- F2 modal necessity: **NEED_MORE_INFO / active-compute-dependent**;
+- F3 aggregate \(\Chi\): **not yet evaluable**;
+- F4 Stability Arc: **descriptively qualified at the background level, incremental value untested**;
+- F5 Stability Inheritance: **NEED_MORE_INFO**;
+- F6 joint DM/DE: **comparator space partially qualified, architecture value untested**;
+- F7 adversarial transport: **partially populated** with LambdaCDM/GR, dynamical DE, neutrino mass, modified gravity, and SN-sample sensitivity; interacting-dark-sector and architecture-level misspecification tests remain outstanding.
+
+The only admissible overall disposition at this point is **NEED_MORE_INFO**. No modal, capital-\(\Chi\), SA-trajectory, SI, or full-architecture promotion is licensed yet.
+
+Prospective unit-test fixtures were expanded to ensure that a coordinate-only \(\chi\) does not falsely terminate the modal ladder, while a genuinely refused local coordinate does. These tests are committed but intentionally not executed while the active external Python computation is running.
