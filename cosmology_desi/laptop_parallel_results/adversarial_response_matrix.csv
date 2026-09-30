@@ -1,0 +1,9 @@
+adversary,parameter,median_shift_reference_sd,sd_ratio,source
+modified_gravity,omegam,-0.07111235374406281,1.0192582298538415,dmde_dr1_mg_comparison.json
+modified_gravity,sigma8,-0.09565743192452918,1.0087969146111115,dmde_dr1_mg_comparison.json
+modified_gravity,H0,-0.06026322340440903,1.004734033602888,dmde_dr1_mg_comparison.json
+modified_gravity,S8_standard,-0.11869588325585138,1.011082437918087,dmde_dr1_mg_comparison.json
+free_neutrino_mass,omegam,-0.5829285167060635,1.0392666555664618,dmde_neutrino_adversary_analysis.json
+free_neutrino_mass,sigma8,1.3833419277249763,1.213729059187171,dmde_neutrino_adversary_analysis.json
+free_neutrino_mass,H0,0.7263798618839472,1.0683094744675188,dmde_neutrino_adversary_analysis.json
+free_neutrino_mass,S8_standard,0.35333665633056516,1.0185132300362731,dmde_neutrino_adversary_analysis.json
