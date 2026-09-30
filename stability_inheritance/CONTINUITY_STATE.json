@@ -7,8 +7,8 @@
   },
   "branch": "stability-inheritance",
   "scientific_lane": "DESI_SI_CONGLOMERATION",
-  "authorized_stage": "DESI_CROSS_BLOCK_RELATIONAL_V01C_TRANSPORT_RECOVERY",
-  "continuity_state": "EXTERNAL_BLOCK",
+  "authorized_stage": "DESI_CROSS_BLOCK_RELATIONAL_V01C_READY_WAITING_VERIFIED_SOURCE",
+  "continuity_state": "USER_ACTION_REQUIRED",
   "last_completed_durable_checkpoint": {
     "task_id": "DESI_TRACER_CONGLOMERATION_V01",
     "disposition": "TRACER_VECTOR_ADDS_OVER_SCALAR_FIT",
@@ -25,11 +25,17 @@
   "active_workflow_or_computation_id": null,
   "last_workflow_run_id": 36653543262,
   "last_execution_commit": "19bf76ad5e5015951ab8731d0d045a8e2c87e3b1",
-  "next_exact_authorized_action": "Re-establish Popstop execution transport; verify the frozen v0.1c local implementation identity against DESI_CROSS_BLOCK_RELATIONAL_MEMMAP_REPAIR_v0.1c.md and the same verified DESI source pair; bind that implementation identity durably; execute unchanged; persist the result; then stop for three-result DESI SI conglomeration/adjudication.",
-  "execution_ceiling": "Complete the already-frozen DESI cross-block relational test; then stop for three-result SI conglomeration/adjudication. No additional cosmological model family or dataset is authorized before that synthesis.",
+  "next_exact_authorized_action": "After Popstop is online in Desktop Commander, verify the canonical v0.1c analyzer identity and the four baseline plus four base_mu_sigma chain SHA-256 identities, execute DESI cross-block relational v0.1c unchanged, persist the result, then stop for the required three-result DESI SI conglomeration/adjudication.",
+  "execution_ceiling": "Complete only the already-frozen DESI cross-block relational v0.1c test against the exact verified baseline and base_mu_sigma source pair; then stop for three-result SI conglomeration/adjudication. No new cosmological family or dataset is authorized.",
   "scientific_gate": null,
-  "external_block": "REMOTE_EXECUTION_TRANSPORT_UNAVAILABLE_OR_UNVERIFIED; current controller could not reach Popstop process/session tools, and the prior PID 9984 ACTIVE_COMPUTE claim is already durably classified as stale false liveness.",
-  "user_action_required": null,
+  "external_block": null,
+  "user_action_required": {
+    "blocked_stage": "DESI_CROSS_BLOCK_RELATIONAL_V01C",
+    "reason": "The online Home machine contains the baseline family and SI code/results but not the verified base_mu_sigma posterior family. Popstop, which holds the verified MG family used by the parent DESI SI tests, is offline. An attempted official re-fetch on Home was canceled after transport proved impractically slow; its incomplete 15,044,608-byte fragment was renamed chain.1.txt.partial and is not admissible evidence.",
+    "exact_user_action": "Bring Popstop online in Desktop Commander.",
+    "resume_checkpoint": "Canonical v0.1c implementation is now bound at stability_inheritance/analyze_desi_cross_block_relational_v0_1c.py, commit f96c8171e1da0e132b7b1639e32020591e2c614d, local implementation SHA-256 6be70be5ff4d4a9815aa3dc92d795c7afb1eab7692c3b97317611310e4ea12f7.",
+    "immediate_post_action": "Verify source hashes and script identity on Popstop, execute unchanged v0.1c, persist the exact result, update Function/Limit maps, and perform the mandated three-result DESI SI conglomeration before opening any new cosmological family."
+  },
   "last_productive_advancement": "2026-09-30T02:57:24.402Z",
   "liveness_clock": {
     "lane": "DESI_SI_CONGLOMERATION",
@@ -68,16 +74,17 @@
     "No model-only mu0/Sigma0 as classifier features",
     "No additional DESI/DE/neutrino model families before three-result conglomeration",
     "No P1 evidence activation",
-    "No automatic chi/Chi/Chi_arc assignment from posterior representation tests"
+    "No automatic chi/Chi/Chi_arc assignment from posterior representation tests",
+    "Home partial download chain.1.txt.partial is transport residue only and must never be analyzed"
   ],
   "five_question_test": {
     "what_scientific_lane_are_we_advancing": "DESI_SI_CONGLOMERATION",
-    "what_is_actually_running_or_just_completed": "No active DESI computation is durably verified. The prior Popstop PID 9984 claim is stale per SI_CONTINUITY_FAILURE_DESI_CROSS_BLOCK_2026-09-29.md; current remote process/session verification is transport-blocked.",
-    "what_is_the_next_already_authorized_action": "Mechanically recover execution transport, verify and bind the already-frozen v0.1c implementation identity, then execute the unchanged cross-block test.",
-    "what_prevents_that_action_immediately": "Remote execution connector calls are timing out/blocked in the current controller, so the local v0.1c implementation and active-process state cannot be re-verified.",
-    "does_crossing_the_boundary_require_mechanical_execution_or_new_scientific_decision": "MECHANICAL_EXECUTION only through the frozen v0.1c repair; scientific interpretation remains blocked until a complete result exists, and another cosmological family remains prohibited before three-result conglomeration."
+    "what_is_actually_running_or_just_completed": "No scientific computation is running. The completed tracer-vector checkpoint remains the newest scientific result. The exact v0.1c memmap implementation has now been bound into the SI branch, closing the implementation-provenance gap.",
+    "what_is_the_next_already_authorized_action": "Execute the frozen DESI cross-block relational v0.1c test against the exact verified baseline and base_mu_sigma source pair.",
+    "what_prevents_that_action_immediately": "Popstop, the machine holding the verified base_mu_sigma chain family, is offline. Home does not contain that verified family.",
+    "does_crossing_the_boundary_require_mechanical_execution_or_new_scientific_decision": "USER_ACTION_REQUIRED to restore the already-verified source machine; after that, MECHANICAL_EXECUTION only. No new scientific decision is required."
   },
-  "active_execution_commit": "927f325700d0b1a8f436171e4fdd170f1d7545ee",
+  "active_execution_commit": null,
   "deferred_lanes": {
     "ERIES_EUROPROTEAS_CROSS_SUBSTRATE": {
       "state": "DEFERRED_BY_USER_DIRECTION",
@@ -86,10 +93,11 @@
   },
   "last_controller_reconciliation": {
     "date": "2026-09-30",
-    "classification": "MECHANICAL_CONTINUITY_RECONCILIATION",
-    "durable_failure_record": "stability_inheritance/SI_CONTINUITY_FAILURE_DESI_CROSS_BLOCK_2026-09-29.md",
-    "frozen_repair": "stability_inheritance/DESI_CROSS_BLOCK_RELATIONAL_MEMMAP_REPAIR_v0.1c.md",
-    "outcome_exposure_change": "NONE",
-    "scientific_design_change": "NONE"
+    "classification": "USER_ACTION_REQUIRED_AFTER_TRANSPORT_RECOVERY_AUDIT",
+    "canonical_v01c_commit": "f96c8171e1da0e132b7b1639e32020591e2c614d",
+    "local_v01c_sha256": "6be70be5ff4d4a9815aa3dc92d795c7afb1eab7692c3b97317611310e4ea12f7",
+    "prior_failure_record": "stability_inheritance/SI_CONTINUITY_FAILURE_DESI_CROSS_BLOCK_2026-09-29.md",
+    "scientific_design_change": "NONE",
+    "source_exposure_change": "NONE"
   }
 }
