@@ -139,7 +139,7 @@ def main() -> None:
     )
     ap.add_argument(
         "--chain-key",
-        choices=("baseline", "modified_gravity", "w0wa_desi_only_stress", "de_pantheonplus", "de_union3", "de_desy5"),
+        choices=("baseline", "modified_gravity", "w0wa_desi_only_stress", "de_pantheonplus", "de_union3", "de_desy5", "cmb_fixed_mnu", "cmb_free_mnu", "de_mnu_pantheonplus", "de_mnu_union3", "de_mnu_desy5"),
         default="baseline",
         help="Pinned released chain family to prepare. DE suite members are co-equal sensitivity comparators.",
     )
