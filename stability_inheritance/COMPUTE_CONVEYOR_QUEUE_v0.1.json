@@ -662,7 +662,7 @@
     },
     {
       "id": "ERIES_EUROPROTEAS_SOURCE_MATRIX_V01",
-      "status": "READY",
+      "status": "COMPLETE_LAYOUT_QUALIFIED",
       "script": "stability_inheritance/intake_eries_europroteas_source_matrix_v0_1.py",
       "result_json": "stability_inheritance/results/eries_europroteas_source_matrix/result.json",
       "disposition_key": "disposition",
@@ -675,11 +675,31 @@
       "stop_after": true,
       "evidence_class": "P0-Q METADATA-ONLY CROSS-SUBSTRATE SOURCE QUALIFICATION",
       "protocol": "stability_inheritance/ERIES_EUROPROTEAS_CROSS_SUBSTRATE_SOURCE_QUALIFICATION_v0.1.md",
-      "numeric_response_access": "PROHIBITED"
+      "numeric_response_access": "PROHIBITED",
+      "last_run_id": 36650984968,
+      "last_disposition": "ERIES_EUROPROTEAS_SOURCE_MATRIX_QUALIFIED",
+      "result_record": "stability_inheritance/ERIES_EUROPROTEAS_SOURCE_QUALIFICATION_RESULT_v0.1.md"
+    },
+    {
+      "id": "ERIES_EUROPROTEAS_ARCHIVE_LAYOUT_V01",
+      "status": "READY",
+      "script": "stability_inheritance/intake_eries_europroteas_archive_layout_v0_1.py",
+      "result_json": "stability_inheritance/results/eries_europroteas_archive_layout/result.json",
+      "disposition_key": "disposition",
+      "continue_on_dispositions": [
+        "ERIES_ARCHIVE_LAYOUT_QUALIFIED",
+        "ERIES_ARCHIVE_LAYOUT_PARTIAL",
+        "ERIES_ARCHIVE_LAYOUT_INSUFFICIENT",
+        "ERIES_ARCHIVE_INDEX_ROUTE_UNAVAILABLE"
+      ],
+      "stop_after": true,
+      "evidence_class": "P0-Q ARCHIVE CENTRAL-DIRECTORY / LAYOUT QUALIFICATION",
+      "protocol": "stability_inheritance/ERIES_EUROPROTEAS_ARCHIVE_LAYOUT_QUALIFICATION_v0.1.md",
+      "member_body_access": "PROHIBITED"
     }
   ],
   "execution_trigger": {
-    "reason": "Recover four-hour continuity failure by launching frozen ERIES EuroProteas cross-substrate metadata/source qualification",
-    "sequence": 6
+    "reason": "Chain qualified ERIES source matrix into outcome-blind remote archive-layout preflight",
+    "sequence": 7
   }
 }
