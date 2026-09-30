@@ -147,10 +147,24 @@ ready = [t for t in queue.get("tasks", []) if t.get("status") == "READY"]
 last_task = executed.get("id") if executed else None
 last_checkpoint = executed.get("checkpoint_identity") if executed else None
 
-if report["final_state"] == "STOP_SCIENTIFIC_GATE":
+prior_state = {}
+if STATE.exists():
+    try:
+        prior_state = json.loads(STATE.read_text())
+    except Exception:
+        prior_state = {}
+
+permitted_states = {"ACTIVE_COMPUTE", "ADVANCED_CHECKPOINT", "SCIENTIFIC_GATE", "EXTERNAL_BLOCK", "USER_ACTION_REQUIRED"}
+
+if executed and executed.get("continuity_state_on_allowed_completion") in permitted_states and report["final_state"] == "STOP_DECLARED_CHECKPOINT":
+    continuity_state = executed.get("continuity_state_on_allowed_completion")
+elif report["final_state"] == "STOP_SCIENTIFIC_GATE":
     continuity_state = "SCIENTIFIC_GATE"
 elif report["final_state"] == "STOP_MECHANICAL_FAILURE":
     continuity_state = "ADVANCED_CHECKPOINT"
+elif not executed and prior_state.get("continuity_state") in {"SCIENTIFIC_GATE", "EXTERNAL_BLOCK", "USER_ACTION_REQUIRED"}:
+    # A no-op/support workflow must not erase a legitimate stopping condition or reset liveness.
+    continuity_state = prior_state.get("continuity_state")
 else:
     continuity_state = "ADVANCED_CHECKPOINT"
 
@@ -165,7 +179,12 @@ if not next_action:
 blocker = None
 boundary_type = "MECHANICAL_EXECUTION"
 if continuity_state == "SCIENTIFIC_GATE":
-    blocker = f"Unlisted disposition at {last_task}: {report.get('gate_disposition')}"
+    if executed and executed.get("scientific_gate_on_completion"):
+        blocker = executed.get("scientific_gate_on_completion")
+    elif report["final_state"] == "STOP_SCIENTIFIC_GATE":
+        blocker = f"Unlisted disposition at {last_task}: {report.get('gate_disposition')}"
+    else:
+        blocker = prior_state.get("scientific_gate")
     boundary_type = "NEW_SCIENTIFIC_DECISION"
 
 state = {
@@ -179,33 +198,34 @@ state = {
     "scientific_lane": queue.get("scientific_lane", "STABILITY_INHERITANCE"),
     "authorized_stage": last_task or queue.get("authorized_stage"),
     "continuity_state": continuity_state,
-    "last_completed_durable_checkpoint": last_checkpoint,
+    "last_completed_durable_checkpoint": last_checkpoint or prior_state.get("last_completed_durable_checkpoint"),
     "active_workflow_or_computation_id": None,
     "last_workflow_run_id": int(RUN_ID) if RUN_ID and RUN_ID.isdigit() else RUN_ID,
     "last_execution_commit": GITHUB_SHA,
     "next_exact_authorized_action": next_action,
     "execution_ceiling": queue.get("execution_ceiling"),
     "scientific_gate": blocker if continuity_state == "SCIENTIFIC_GATE" else None,
-    "external_block": None,
-    "user_action_required": None,
-    "last_productive_advancement": report["finished_at"] if executed else queue.get("last_productive_advancement"),
+    "external_block": prior_state.get("external_block") if continuity_state == "EXTERNAL_BLOCK" else None,
+    "user_action_required": prior_state.get("user_action_required") if continuity_state == "USER_ACTION_REQUIRED" else None,
+    "last_productive_advancement": report["finished_at"] if executed else prior_state.get("last_productive_advancement") or queue.get("last_productive_advancement"),
     "liveness_clock": {
         "lane": queue.get("scientific_lane", "STABILITY_INHERITANCE"),
         "reset_only_by_authoritative_lane_advancement": True,
         "default_stagnation_threshold_minutes": 90,
-        "last_reset": report["finished_at"] if executed else queue.get("last_productive_advancement"),
+        "last_reset": report["finished_at"] if executed else (prior_state.get("liveness_clock") or {}).get("last_reset") or queue.get("last_productive_advancement"),
+        "support_or_monitoring_activity_does_not_reset": True,
     },
     "duplicate_suppression": {
         "rule": "Suppress a completed computation only when scientific input/configuration identity is proven unchanged.",
-        "current_checkpoint_identity": last_checkpoint,
+        "current_checkpoint_identity": last_checkpoint or (prior_state.get("duplicate_suppression") or {}).get("current_checkpoint_identity"),
     },
     "protected_inputs": queue.get("protected_inputs", []),
     "five_question_test": {
         "what_scientific_lane_are_we_advancing": queue.get("scientific_lane", "STABILITY_INHERITANCE"),
-        "what_is_actually_running_or_just_completed": f"Completed durable checkpoint {last_task} in workflow {RUN_ID}." if executed else "No substantive task executed in this workflow.",
+        "what_is_actually_running_or_just_completed": f"Completed durable checkpoint {last_task} in workflow {RUN_ID}." if executed else prior_state.get("five_question_test", {}).get("what_is_actually_running_or_just_completed", "No substantive task executed in this workflow."),
         "what_is_the_next_already_authorized_action": next_action,
-        "what_prevents_that_action_immediately": blocker,
-        "does_crossing_the_boundary_require_mechanical_execution_or_new_scientific_decision": boundary_type,
+        "what_prevents_that_action_immediately": blocker if blocker is not None else prior_state.get("five_question_test", {}).get("what_prevents_that_action_immediately"),
+        "does_crossing_the_boundary_require_mechanical_execution_or_new_scientific_decision": boundary_type if executed or continuity_state == "SCIENTIFIC_GATE" else prior_state.get("five_question_test", {}).get("does_crossing_the_boundary_require_mechanical_execution_or_new_scientific_decision", boundary_type),
     },
 }
 
