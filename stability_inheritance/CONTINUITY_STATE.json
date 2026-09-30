@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0",
+  "governance": {
+    "gom": "SymC General Operations Manual v1.0",
+    "continuity_extension": "Mandatory Continuity Hardening Addendum",
+    "binding": "stability_inheritance/SI_CONTINUITY_HARDENING_BINDING_v1.0.md"
+  },
+  "scientific_lane": "ERIES_EUROPROTEAS_CROSS_SUBSTRATE",
+  "branch": "stability-inheritance",
+  "authorized_stage": "ERIES_ARCHIVE_LAYOUT_TRANSPORT_RECOVERY",
+  "continuity_state": "ACTIVE_COMPUTE",
+  "last_completed_durable_checkpoint": {
+    "task_id": "ERIES_EUROPROTEAS_ARCHIVE_LAYOUT_V01",
+    "execution_classification": "MECHANICAL_RANGE_TRANSPORT_FAILURE_PRE_LAYOUT",
+    "workflow_run_id": 36651136544,
+    "execution_commit": "3f3640f5ad886164e77e3672c4cd6f8e808cb108",
+    "artifact_id": 11069744854,
+    "artifact_digest": "sha256:4075d6b2e5446a7c6aa580bb3129de956d74a02c76c8273be23cde2501b7b2d0",
+    "protected_boundary_preserved": true,
+    "numeric_response_opened": false
+  },
+  "active_workflow_or_computation_id": 36653158566,
+  "active_execution_commit": "28c424cf70f3116860cef927ebd0dd8cabd3acea",
+  "next_exact_authorized_action": "Complete ERIES_EUROPROTEAS_ARCHIVE_LAYOUT_V01A using the transport-only v0.1a repair. Persist its result/checkpoint. Do not open archive member bodies or numeric responses.",
+  "execution_ceiling": "Complete the already-frozen metadata-only ERIES archive-layout qualification through transport-only recovery; then stop at SCIENTIFIC_GATE if matched hierarchy/channel/test construction requires a new scientific decision.",
+  "scientific_gate": null,
+  "external_block": null,
+  "user_action_required": null,
+  "last_productive_advancement": "2026-09-30T01:02:00Z",
+  "liveness_clock": {
+    "lane": "ERIES_EUROPROTEAS_CROSS_SUBSTRATE",
+    "reset_only_by_authoritative_lane_advancement": true,
+    "default_stagnation_threshold_minutes": 90,
+    "last_reset": "2026-09-30T01:02:00Z",
+    "support_or_monitoring_activity_does_not_reset": true
+  },
+  "checkpoint_resume": {
+    "rule": "Resume newest valid checkpoint in the same frozen scientific chain; do not recompute completed valid work after controller/runner/monitor failure.",
+    "newest_valid_checkpoint": "ERIES_EUROPROTEAS_ARCHIVE_LAYOUT_V01 mechanical pre-layout failure, followed by frozen v0.1a transport repair at commit 6c1a6d6f8fbbd1d8008a97707c5793ff27865dac",
+    "duplicate_run_suppressed": [
+      36652979216
+    ]
+  },
+  "duplicate_suppression": {
+    "rule": "Suppress completed identical computation only with proven scientific input/config identity.",
+    "current_scientific_identity": {
+      "RESPOND": {
+        "record_id": "15518567",
+        "zip_key": "ERIES-RESPOND.ZIP",
+        "md5": "23b1452c71729da97fd1ca59af5e8e9c"
+      },
+      "POLIS": {
+        "record_id": "15575887",
+        "zip_key": "ERIES-POLIS.ZIP",
+        "md5": "861654738941937581dc9d2b97dab98b"
+      },
+      "frozen_protocol": "ERIES_EUROPROTEAS_ARCHIVE_LAYOUT_QUALIFICATION_v0.1",
+      "repair_scope": "transport only"
+    }
+  },
+  "protected_inputs": [
+    "ERIES-RESPOND.ZIP member bodies",
+    "ERIES-POLIS.ZIP member bodies",
+    "all acceleration/displacement/force values",
+    "all spectra/FRFs/fitted parameters/outcome plots",
+    "GISIS embargoed file bodies"
+  ],
+  "five_question_test": {
+    "what_scientific_lane_are_we_advancing": "ERIES_EUROPROTEAS_CROSS_SUBSTRATE",
+    "what_is_actually_running_or_just_completed": "GitHub Actions run 36653158566 is actively executing the transport-only ERIES archive-layout recovery.",
+    "what_is_the_next_already_authorized_action": "Complete v0.1a, persist its checkpoint, and reconcile the frozen path-only layout disposition.",
+    "what_prevents_that_action_immediately": null,
+    "does_crossing_the_boundary_require_mechanical_execution_or_new_scientific_decision": "MECHANICAL_EXECUTION through v0.1a. Any later matched correspondence/channel/test choice not already frozen requires NEW_SCIENTIFIC_DECISION."
+  }
+}
