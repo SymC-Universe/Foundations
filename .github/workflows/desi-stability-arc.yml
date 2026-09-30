@@ -2,7 +2,7 @@ name: DESI Stability Arc Gate
 
 on:
   push:
-    branches: [desi-stability-arc]
+    branches: [desi-stability-arc, desi-stability-arc-main]
     paths:
       - "cosmology_desi/**"
       - ".github/workflows/desi-stability-arc.yml"
