@@ -6,66 +6,36 @@
     "binding": "stability_inheritance/SI_CONTINUITY_HARDENING_BINDING_v1.0.md"
   },
   "branch": "stability-inheritance",
-  "scientific_lane": "ERIES_EUROPROTEAS_CROSS_SUBSTRATE",
-  "authorized_stage": "ERIES_ARCHIVE_LAYOUT_PATH_ONLY_COMPLETE",
-  "continuity_state": "SCIENTIFIC_GATE",
+  "scientific_lane": "DESI_SI_CONGLOMERATION",
+  "authorized_stage": "DESI_CROSS_BLOCK_RELATIONAL_V01",
+  "continuity_state": "ACTIVE_COMPUTE",
   "last_completed_durable_checkpoint": {
-    "task_id": "ERIES_EUROPROTEAS_ARCHIVE_LAYOUT_V01B",
-    "disposition": "ERIES_ARCHIVE_LAYOUT_INSUFFICIENT",
-    "workflow_run_id": 36653283771,
-    "execution_commit": "1dfdbaa0a2f3582e4c82ab20489dae821297f038",
-    "artifact_id": 11071576477,
-    "artifact_digest": "sha256:56a0bb156225ec857316c0d468685a60bae301acd4ef81e396f91f01f17a0134",
-    "source_identity": {
-      "RESPOND": {
-        "record_id": "15518567",
-        "zip_key": "ERIES-RESPOND.ZIP",
-        "md5": "23b1452c71729da97fd1ca59af5e8e9c",
-        "member_count": 2874
-      },
-      "POLIS": {
-        "record_id": "15575887",
-        "zip_key": "ERIES-POLIS.ZIP",
-        "md5": "861654738941937581dc9d2b97dab98b",
-        "member_count": 447
-      }
-    },
-    "protected_boundary_preserved": true,
-    "numeric_response_opened": false,
-    "protocol": "stability_inheritance/ERIES_EUROPROTEAS_ARCHIVE_LAYOUT_QUALIFICATION_v0.1.md",
-    "repair_lineage": [
-      "stability_inheritance/ERIES_EUROPROTEAS_ARCHIVE_LAYOUT_TRANSPORT_REPAIR_v0.1a.md",
-      "stability_inheritance/ERIES_EUROPROTEAS_ARCHIVE_LAYOUT_ZIP64_REPAIR_v0.1b.md"
-    ],
-    "script": "stability_inheritance/intake_eries_europroteas_archive_layout_v0_1b.py",
-    "result_sha256": "1ab6bb740f4f3144f250011b37866b83a9aa1e9af3ac071828997c40ffc9a6e9"
+    "task_id": "DESI_TRACER_CONGLOMERATION_V01",
+    "disposition": "TRACER_VECTOR_ADDS_OVER_SCALAR_FIT",
+    "result_record": "stability_inheritance/DESI_TRACER_CONGLOMERATION_RESULT_v0.1.md",
+    "result_sha256": "3460333fbf62183669559ef68ed5e3de42eb6e60e38e6bbe5354fe4b1f0ee77f",
+    "execution_host": "Popstop",
+    "source_pair": "verified DESI DR1 baseline and base_mu_sigma full posterior families",
+    "prior_result": {
+      "task_id": "DESI_SHARED_COORDINATE_SI_V01",
+      "disposition": "JOINT_DIFFERENCE_REDUNDANT",
+      "result_sha256": "62bc618575430088556d4c8debd3de25ef93c51bc0e15a70b34a774bca47d415"
+    }
   },
-  "active_workflow_or_computation_id": null,
+  "active_workflow_or_computation_id": "Popstop:PID9984",
   "last_workflow_run_id": 36653543262,
   "last_execution_commit": "19bf76ad5e5015951ab8731d0d045a8e2c87e3b1",
-  "next_exact_authorized_action": "SCIENTIFIC_GATE: decide whether to prospectively authorize a documentation-only member preflight (e.g. readme/instrumentation documents only, recordings and numeric outcomes still sealed) or close/defer ERIES at the path-only insufficiency boundary.",
-  "execution_ceiling": "Complete the already-frozen metadata-only ERIES archive-layout qualification through transport-only recovery; then stop at SCIENTIFIC_GATE if matched hierarchy/channel/test construction requires a new scientific decision.",
-  "scientific_gate": {
-    "gate_id": "ERIES_DOCUMENTATION_ACCESS_BOUNDARY",
-    "reason": "The frozen path-only archive test is valid and insufficient. Proceeding requires changing the protected evidence-access boundary from central-directory metadata to selected documentation member bodies.",
-    "options_supported_by_current_evidence": [
-      "Prospectively freeze a documentation-only member preflight with an explicit whitelist and keep all recordings/numeric outcomes sealed.",
-      "Close or defer ERIES at the path-only insufficiency boundary."
-    ],
-    "prohibited_without_gate_resolution": [
-      "Open readme.pdf or instrumentation PDFs/DWG files",
-      "Open any recording member",
-      "Use filename patterns to invent a matched scientific correspondence not already frozen"
-    ]
-  },
+  "next_exact_authorized_action": "Complete DESI_CROSS_BLOCK_RELATIONAL_QUALIFICATION_v0.1, persist its result, then conglomerate the three DESI SI representation results before opening another cosmological family.",
+  "execution_ceiling": "Complete the already-frozen DESI cross-block relational test; then stop for three-result SI conglomeration/adjudication. No additional cosmological model family or dataset is authorized before that synthesis.",
+  "scientific_gate": null,
   "external_block": null,
   "user_action_required": null,
-  "last_productive_advancement": "2026-09-30T01:04:36Z",
+  "last_productive_advancement": "2026-09-30T02:57:24.402Z",
   "liveness_clock": {
-    "lane": "ERIES_EUROPROTEAS_CROSS_SUBSTRATE",
+    "lane": "DESI_SI_CONGLOMERATION",
     "reset_only_by_authoritative_lane_advancement": true,
     "default_stagnation_threshold_minutes": 90,
-    "last_reset": "2026-09-30T01:04:36Z",
+    "last_reset": "2026-09-30T02:57:24.402Z",
     "support_or_monitoring_activity_does_not_reset": true
   },
   "duplicate_suppression": {
@@ -95,29 +65,23 @@
     }
   },
   "protected_inputs": [
-    "ERIES-RESPOND.ZIP member bodies",
-    "ERIES-POLIS.ZIP member bodies",
-    "all acceleration/displacement/force values",
-    "all spectra/FRFs/fitted parameters/outcome plots",
-    "GISIS embargoed file bodies"
+    "No model-only mu0/Sigma0 as classifier features",
+    "No additional DESI/DE/neutrino model families before three-result conglomeration",
+    "No P1 evidence activation",
+    "No automatic chi/Chi/Chi_arc assignment from posterior representation tests"
   ],
   "five_question_test": {
-    "what_scientific_lane_are_we_advancing": "ERIES_EUROPROTEAS_CROSS_SUBSTRATE",
-    "what_is_actually_running_or_just_completed": "Durable checkpoint ERIES_EUROPROTEAS_ARCHIVE_LAYOUT_V01B completed in run 36653283771. Both archive central directories were indexed; no member body or numeric response was opened.",
-    "what_is_the_next_already_authorized_action": "SCIENTIFIC_GATE: decide whether to prospectively authorize a documentation-only member preflight (e.g. readme/instrumentation documents only, recordings and numeric outcomes still sealed) or close/defer ERIES at the path-only insufficiency boundary.",
-    "what_prevents_that_action_immediately": {
-      "gate_id": "ERIES_DOCUMENTATION_ACCESS_BOUNDARY",
-      "reason": "The frozen path-only archive test is valid and insufficient. Proceeding requires changing the protected evidence-access boundary from central-directory metadata to selected documentation member bodies.",
-      "options_supported_by_current_evidence": [
-        "Prospectively freeze a documentation-only member preflight with an explicit whitelist and keep all recordings/numeric outcomes sealed.",
-        "Close or defer ERIES at the path-only insufficiency boundary."
-      ],
-      "prohibited_without_gate_resolution": [
-        "Open readme.pdf or instrumentation PDFs/DWG files",
-        "Open any recording member",
-        "Use filename patterns to invent a matched scientific correspondence not already frozen"
-      ]
-    },
-    "does_crossing_the_boundary_require_mechanical_execution_or_new_scientific_decision": "NEW_SCIENTIFIC_DECISION"
+    "what_scientific_lane_are_we_advancing": "DESI_SI_CONGLOMERATION",
+    "what_is_actually_running_or_just_completed": "Popstop PID 9984 is executing the frozen DESI cross-block relational qualification after two durable DESI SI checkpoints.",
+    "what_is_the_next_already_authorized_action": "Complete the frozen cross-block test and persist/adjudicate it.",
+    "what_prevents_that_action_immediately": null,
+    "does_crossing_the_boundary_require_mechanical_execution_or_new_scientific_decision": "MECHANICAL_EXECUTION through the frozen test; selecting another cosmological family afterward requires post-result conglomeration first."
+  },
+  "active_execution_commit": "927f325700d0b1a8f436171e4fdd170f1d7545ee",
+  "deferred_lanes": {
+    "ERIES_EUROPROTEAS_CROSS_SUBSTRATE": {
+      "state": "DEFERRED_BY_USER_DIRECTION",
+      "preserved_gate": "ERIES_DOCUMENTATION_ACCESS_BOUNDARY"
+    }
   }
 }
