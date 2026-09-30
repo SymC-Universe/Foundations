@@ -914,3 +914,22 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Novelty firewall:** generic soil-structure interaction and geotechnical isolation remain native prior art. The candidate program target is qualification of preserved/reorganized relations across lower-level embedding realizations, not the claim that foundations affect structures.
 - **Next action:** execute frozen remote archive central-directory/layout qualification for RESPOND and POLIS. If enough outcome-blind hierarchy structure is present, construct a matched channel/test preflight before any numeric response scoring.
 - **Durable state:** ACTIVE_COMPUTE after queue-triggered layout preflight.
+
+
+### 2026-09-29 - GOVERNANCE_UPDATE - SI bound to current GOM continuity hardening
+
+- **Lifecycle Stage:** Program continuity / active SI execution
+- **Entry type:** GOVERNANCE_UPDATE_AND_RECOVERY
+- **Authority:** SymC General Operations Manual v1.0 plus mandatory program-wide Continuity Hardening Addendum.
+- **Binding artifact:** `stability_inheritance/SI_CONTINUITY_HARDENING_BINDING_v1.0.md`.
+- **Durable-state change:** created `stability_inheritance/CONTINUITY_STATE.json` as the machine-readable companion to this working record. Both records must agree on lane, stage, latest valid checkpoint, stopping condition, next authorized action, execution ceiling, and gate/block state.
+- **Continuity rules now explicit:** canonical SI-lane advancement only; lane-specific liveness clock; approximately 90-minute stagnation threshold; exact newest-valid-checkpoint resume; no recomputation of completed valid work after monitoring/controller failure; duplicate suppression only with scientific input/config identity proof; protected/sealed input boundaries retained during recovery; distinct `USER_ACTION_REQUIRED`; false-liveness/orphan/stale-queue detection; resource limits cannot authorize scientific simplification.
+- **Five-question durable-state test:** the SI continuity binding now requires the exact five program questions at each substantive checkpoint, recovery, gate, or block.
+- **Conveyor hardening:** `si_compute_conveyor_v0_1.py` now records task disposition, result hash, execution commit/run identity, checkpoint identity, and writes reconciled queue plus `CONTINUITY_STATE.json` in the Actions workspace. A later workflow permission/persistence update will permit those mechanical records to be committed back automatically only when branch provenance remains unchanged; no force push is authorized.
+- **Preserved ERIES failure:** workflow run 36651136544 hit HTTP 406 on the first central-directory tail request for both RESPOND and POLIS. No archive member body or numeric response was opened. The raw `ERIES_ARCHIVE_LAYOUT_INSUFFICIENT` label is not treated as a scientific/layout finding because layout was never observed. Corrected execution class = `MECHANICAL_RANGE_TRANSPORT_FAILURE_PRE_LAYOUT`.
+- **Duplicate-race preservation:** workflow run 36652979216 repeated the sealed v0.1 request because the conveyor-hardening script itself was on a watched path while the stale queue still showed the completed task as READY. This run does not count as scientific advancement and is explicitly suppressed from future lineage.
+- **Mechanical recovery:** frozen `ERIES_EUROPROTEAS_ARCHIVE_LAYOUT_TRANSPORT_REPAIR_v0.1a.md` changes only the official Zenodo download route and request headers. Source records, ZIP identities/checksums, byte-range-only rule, central-directory parser, path classifier, layout criteria, scientific interpretation ceiling, and member-body firewall remain unchanged.
+- **Current execution:** queue task `ERIES_EUROPROTEAS_ARCHIVE_LAYOUT_V01A` launched in workflow run 36653158566 from commit 28c424cf70f3116860cef927ebd0dd8cabd3acea.
+- **Current protected boundary:** ZIP central-directory metadata only. RESPOND/POLIS member bodies, all signals, spectra, FRFs, fitted values, plots, and GISIS embargoed bodies remain sealed.
+- **Execution ceiling:** finish the already-frozen archive-layout qualification through transport-only recovery. If a later matched hierarchy/channel/test mapping requires a new scientific correspondence decision, stop at `SCIENTIFIC_GATE`.
+- **Durable state:** `ACTIVE_COMPUTE`.
