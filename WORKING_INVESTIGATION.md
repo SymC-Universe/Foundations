@@ -1002,3 +1002,18 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Protected boundary:** no new model family, dataset, tracer, parameter, threshold, transformed coordinate, lowercase chi, capital Chi, or Chi_arc admission.
 - **Execution ceiling:** complete v0.1c, persist exact result + hash, then stop for the mandated three-result DESI SI conglomeration/adjudication before any new cosmological family is opened.
 - **Durable state:** `ACTIVE_COMPUTE`.
+
+
+### 2026-09-30 - GOVERNANCE_AND_PRE-RESULT_FREEZE - DESI GitHub lane reconciled while v0.1c computes
+
+- **Lifecycle Stage:** Stage 2 / DESI SI conglomeration
+- **Entry type:** EXECUTION_PLUMBING_RECONCILIATION + PRE_RESULT_ADJUDICATION_FREEZE
+- **Active science:** Popstop PID `20248` remains the authoritative v0.1c computation. GitHub documentation/plumbing changes do not count as scientific advancement.
+- **Queue repair:** `COMPUTE_CONVEYOR_QUEUE_v0.1.json` was reconciled from stale ERIES metadata to `DESI_SI_CONGLOMERATION`. Results 1 and 2 are represented as completed checkpoints; v0.1c is represented as `ACTIVE_EXTERNAL_COMPUTE`; there is no READY GitHub task and therefore no duplicate local computation is authorized.
+- **No-op conveyor hardening:** a queue-change-triggered GitHub run correctly hit the branch-advance provenance guard and failed rather than overwrite newer state. The conveyor was then patched so no-op/support runs preserve both an existing `ACTIVE_COMPUTE` state and its external active-run identity instead of fabricating an `ADVANCED_CHECKPOINT` or clearing the PID.
+- **Duplicate-suppression reconciliation:** the authoritative completed checkpoint is now `DESI_TRACER_CONGLOMERATION_V01`, not the deferred ERIES lane. The active execution identity is v0.1c on Popstop.
+- **Pre-result adjudication freeze:** `DESI_THREE_RESULT_CONGLOMERATION_ADJUDICATION_PLAN_v0.1.md` now fixes the four allowable three-result synthesis routes before the v0.1c disposition is known. `DESI_SI_CONGLOMERATION_MANIFEST_v0.1.json` binds both source families, all eight chain SHA-256 identities, Results 1-2, and the active v0.1c implementation.
+- **Numerical-validity trigger:** v0.1c emitted one or more scikit-learn `ConvergenceWarning` messages before its final result. `DESI_CROSS_BLOCK_CONVERGENCE_VALIDITY_AUDIT_v0.1.md` was therefore frozen before disposition exposure. The active run is not altered midstream; if any required fit is non-converged, its raw disposition is provisional until the same frozen design converges under the mechanical iteration-ceiling audit.
+- **Scientific impact:** NONE yet. No feature, row, weight, threshold, solver family, dataset, model family, or interpretation rule changed.
+- **Next action:** allow v0.1c to finish; determine whether the convergence audit is triggered; persist the convergence-qualified result; execute the already-frozen three-result conglomeration adjudication.
+- **Durable state:** `ACTIVE_COMPUTE`.
