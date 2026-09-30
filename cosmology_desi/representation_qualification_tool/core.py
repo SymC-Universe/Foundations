@@ -1,6 +1,6 @@
-"""Representation Qualification Engine (RQE) v0.1.
+"""Representation Qualification Engine (RQE) v0.2.
 
-This module is intentionally non-autonomous scientifically.  It applies a
+This module is intentionally non-autonomous scientifically. It applies a
 frozen preregistered policy to evidence supplied by the analysis pipeline.
 It does not invent thresholds, choose models, or promote hypotheses.
 
@@ -52,12 +52,17 @@ class GateEvidence:
     """One preregistered gate result.
 
     status must be one of: pass, fail, indeterminate, not_applicable.
+    classification is optional and records scientific role without changing
+    the frozen threshold outcome. Examples: independent, coordinate_only,
+    model_imposed, insufficient_resolution.
+
     metric/value/threshold are descriptive; the engine never computes or
     changes a scientific threshold.
     """
 
     gate: str
     status: str
+    classification: Optional[str] = None
     metric: Optional[str] = None
     value: Optional[float] = None
     threshold: Optional[float] = None
@@ -103,11 +108,7 @@ ORDER = [
 
 
 def qualify(record: QualificationRecord) -> Decision:
-    """Apply a frozen gate record to produce an auditable disposition.
-
-    Scientific thresholds must already have been applied upstream.
-    This function only enforces decision logic.
-    """
+    """Apply a frozen gate record to produce an auditable disposition."""
 
     evidence = {g.gate: g for g in record.gates}
     for g in record.gates:
@@ -135,16 +136,25 @@ def qualify(record: QualificationRecord) -> Decision:
             provenance=_provenance(record.gates),
         )
 
-    if evidence["F1_local_chi"].status == "fail":
-        return _refusal(record, evidence, "F1_local_chi",
-                        "Local chi is redundant or model-imposed.")
+    f1 = evidence["F1_local_chi"]
+    if f1.status == "fail" and f1.classification != "coordinate_only":
+        return _refusal(
+            record,
+            "F1_local_chi",
+            "Local chi failed qualification and is not retained even as a coordinate.",
+        )
 
     if evidence["F2_modal"].status == "fail":
+        rationale = [
+            "Modal representation did not add preregistered incremental value."
+        ]
+        if f1.classification == "coordinate_only":
+            rationale.append(
+                "Local chi remains a descriptive coordinate only; no independent scalar claim is licensed."
+            )
         return Decision(
             disposition=Disposition.SCALAR_ADEQUATE,
-            rationale=[
-                "Modal representation did not add preregistered incremental value."
-            ],
+            rationale=rationale,
             failed_gates=["F2_modal"],
             indeterminate_gates=[],
             provenance=_provenance(record.gates),
@@ -205,18 +215,23 @@ def qualify(record: QualificationRecord) -> Decision:
             provenance=_provenance(record.gates),
         )
 
+    rationale = [
+        "All preregistered component, integration, joint-DM/DE, and adversarial gates passed."
+    ]
+    if f1.classification == "coordinate_only":
+        rationale.append(
+            "Local chi is retained as a coordinate rather than an independent degree of freedom."
+        )
     return Decision(
         disposition=Disposition.FULL_ARCHITECTURE_REQUIRED,
-        rationale=[
-            "All preregistered component, integration, joint-DM/DE, and adversarial gates passed."
-        ],
+        rationale=rationale,
         failed_gates=[],
         indeterminate_gates=[],
         provenance=_provenance(record.gates),
     )
 
 
-def _refusal(record, evidence, gate, reason):
+def _refusal(record: QualificationRecord, gate: str, reason: str) -> Decision:
     return Decision(
         disposition=Disposition.REFUSED_REDUNDANT,
         rationale=[reason],
