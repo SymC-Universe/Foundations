@@ -7,8 +7,8 @@
   },
   "branch": "stability-inheritance",
   "scientific_lane": "DESI_SI_CONGLOMERATION",
-  "authorized_stage": "DESI_CROSS_BLOCK_RELATIONAL_V01C_READY_WAITING_VERIFIED_SOURCE",
-  "continuity_state": "USER_ACTION_REQUIRED",
+  "authorized_stage": "DESI_CROSS_BLOCK_RELATIONAL_V01C",
+  "continuity_state": "ACTIVE_COMPUTE",
   "last_completed_durable_checkpoint": {
     "task_id": "DESI_TRACER_CONGLOMERATION_V01",
     "disposition": "TRACER_VECTOR_ADDS_OVER_SCALAR_FIT",
@@ -22,26 +22,20 @@
       "result_sha256": "62bc618575430088556d4c8debd3de25ef93c51bc0e15a70b34a774bca47d415"
     }
   },
-  "active_workflow_or_computation_id": null,
+  "active_workflow_or_computation_id": "Popstop:PID20248",
   "last_workflow_run_id": 36653543262,
   "last_execution_commit": "19bf76ad5e5015951ab8731d0d045a8e2c87e3b1",
-  "next_exact_authorized_action": "After Popstop is online in Desktop Commander, verify the canonical v0.1c analyzer identity and the four baseline plus four base_mu_sigma chain SHA-256 identities, execute DESI cross-block relational v0.1c unchanged, persist the result, then stop for the required three-result DESI SI conglomeration/adjudication.",
+  "next_exact_authorized_action": "Allow Popstop PID 20248 to complete the frozen DESI cross-block relational v0.1c test; persist the result and SHA-256; then stop for mandatory three-result DESI SI conglomeration/adjudication.",
   "execution_ceiling": "Complete only the already-frozen DESI cross-block relational v0.1c test against the exact verified baseline and base_mu_sigma source pair; then stop for three-result SI conglomeration/adjudication. No new cosmological family or dataset is authorized.",
   "scientific_gate": null,
   "external_block": null,
-  "user_action_required": {
-    "blocked_stage": "DESI_CROSS_BLOCK_RELATIONAL_V01C",
-    "reason": "The online Home machine contains the baseline family and SI code/results but not the verified base_mu_sigma posterior family. Popstop, which holds the verified MG family used by the parent DESI SI tests, is offline. An attempted official re-fetch on Home was canceled after transport proved impractically slow; its incomplete 15,044,608-byte fragment was renamed chain.1.txt.partial and is not admissible evidence.",
-    "exact_user_action": "Bring Popstop online in Desktop Commander.",
-    "resume_checkpoint": "Canonical v0.1c implementation is now bound at stability_inheritance/analyze_desi_cross_block_relational_v0_1c.py, commit f96c8171e1da0e132b7b1639e32020591e2c614d, local implementation SHA-256 6be70be5ff4d4a9815aa3dc92d795c7afb1eab7692c3b97317611310e4ea12f7.",
-    "immediate_post_action": "Verify source hashes and script identity on Popstop, execute unchanged v0.1c, persist the exact result, update Function/Limit maps, and perform the mandated three-result DESI SI conglomeration before opening any new cosmological family."
-  },
-  "last_productive_advancement": "2026-09-30T02:57:24.402Z",
+  "user_action_required": null,
+  "last_productive_advancement": "2026-09-30T19:04:00.766Z",
   "liveness_clock": {
     "lane": "DESI_SI_CONGLOMERATION",
     "reset_only_by_authoritative_lane_advancement": true,
     "default_stagnation_threshold_minutes": 90,
-    "last_reset": "2026-09-30T02:57:24.402Z",
+    "last_reset": "2026-09-30T19:04:00.766Z",
     "support_or_monitoring_activity_does_not_reset": true
   },
   "duplicate_suppression": {
@@ -79,12 +73,12 @@
   ],
   "five_question_test": {
     "what_scientific_lane_are_we_advancing": "DESI_SI_CONGLOMERATION",
-    "what_is_actually_running_or_just_completed": "No scientific computation is running. The completed tracer-vector checkpoint remains the newest scientific result. The exact v0.1c memmap implementation has now been bound into the SI branch, closing the implementation-provenance gap.",
-    "what_is_the_next_already_authorized_action": "Execute the frozen DESI cross-block relational v0.1c test against the exact verified baseline and base_mu_sigma source pair.",
-    "what_prevents_that_action_immediately": "Popstop, the machine holding the verified base_mu_sigma chain family, is offline. Home does not contain that verified family.",
-    "does_crossing_the_boundary_require_mechanical_execution_or_new_scientific_decision": "USER_ACTION_REQUIRED to restore the already-verified source machine; after that, MECHANICAL_EXECUTION only. No new scientific decision is required."
+    "what_is_actually_running_or_just_completed": "Popstop PID 20248 is executing the frozen DESI cross-block relational v0.1c memmap repair against the exact verified DESI baseline and base_mu_sigma chain families.",
+    "what_is_the_next_already_authorized_action": "Persist and adjudicate the v0.1c result, then perform the mandated three-result DESI SI conglomeration.",
+    "what_prevents_that_action_immediately": "The computation is actively running.",
+    "does_crossing_the_boundary_require_mechanical_execution_or_new_scientific_decision": "MECHANICAL_EXECUTION through completion of v0.1c; no new scientific decision is authorized before the three-result adjudication."
   },
-  "active_execution_commit": null,
+  "active_execution_commit": "f96c8171e1da0e132b7b1639e32020591e2c614d",
   "deferred_lanes": {
     "ERIES_EUROPROTEAS_CROSS_SUBSTRATE": {
       "state": "DEFERRED_BY_USER_DIRECTION",
@@ -93,11 +87,13 @@
   },
   "last_controller_reconciliation": {
     "date": "2026-09-30",
-    "classification": "USER_ACTION_REQUIRED_AFTER_TRANSPORT_RECOVERY_AUDIT",
+    "classification": "USER_ACTION_RESOLVED_AND_ACTIVE_COMPUTE_RESTORED",
+    "execution_host": "Popstop",
+    "pid": 20248,
     "canonical_v01c_commit": "f96c8171e1da0e132b7b1639e32020591e2c614d",
     "local_v01c_sha256": "6be70be5ff4d4a9815aa3dc92d795c7afb1eab7692c3b97317611310e4ea12f7",
-    "prior_failure_record": "stability_inheritance/SI_CONTINUITY_FAILURE_DESI_CROSS_BLOCK_2026-09-29.md",
-    "scientific_design_change": "NONE",
-    "source_exposure_change": "NONE"
+    "baseline_hashes_verified": true,
+    "modified_gravity_hashes_verified": true,
+    "scientific_design_change": "NONE"
   }
 }
