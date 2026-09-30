@@ -22,11 +22,11 @@
       "result_sha256": "62bc618575430088556d4c8debd3de25ef93c51bc0e15a70b34a774bca47d415"
     }
   },
-  "active_workflow_or_computation_id": "Popstop:PID20248",
-  "last_workflow_run_id": 36653543262,
-  "last_execution_commit": "19bf76ad5e5015951ab8731d0d045a8e2c87e3b1",
-  "next_exact_authorized_action": "Allow Popstop PID 20248 to complete the frozen DESI cross-block relational v0.1c test; persist the result and SHA-256; then stop for mandatory three-result DESI SI conglomeration/adjudication.",
-  "execution_ceiling": "Complete only the already-frozen DESI cross-block relational v0.1c test against the exact verified baseline and base_mu_sigma source pair; then stop for three-result SI conglomeration/adjudication. No new cosmological family or dataset is authorized.",
+  "active_workflow_or_computation_id": null,
+  "last_workflow_run_id": 36763391774,
+  "last_execution_commit": "81d3fc814ea446f21f4b89ca642026aca6ae72fb",
+  "next_exact_authorized_action": "Await active Popstop PID 20248 completion of the frozen v0.1c test; persist the result; then execute the pre-result-frozen three-result conglomeration adjudication.",
+  "execution_ceiling": "Complete the already-frozen DESI cross-block relational v0.1c test on Popstop, persist its exact result and identity, then perform the already-authorized three-result DESI SI conglomeration/adjudication. Do not open a new cosmological family or dataset before that synthesis.",
   "scientific_gate": null,
   "external_block": null,
   "user_action_required": null,
@@ -68,32 +68,14 @@
     "No model-only mu0/Sigma0 as classifier features",
     "No additional DESI/DE/neutrino model families before three-result conglomeration",
     "No P1 evidence activation",
-    "No automatic chi/Chi/Chi_arc assignment from posterior representation tests",
-    "Home partial download chain.1.txt.partial is transport residue only and must never be analyzed"
+    "No automatic lowercase chi, capital Chi, or Chi_arc assignment from posterior representation tests",
+    "No row thinning, float32 conversion, feature removal, solver retuning, threshold change, or source substitution in v0.1c"
   ],
   "five_question_test": {
     "what_scientific_lane_are_we_advancing": "DESI_SI_CONGLOMERATION",
     "what_is_actually_running_or_just_completed": "Popstop PID 20248 is executing the frozen DESI cross-block relational v0.1c memmap repair against the exact verified DESI baseline and base_mu_sigma chain families.",
-    "what_is_the_next_already_authorized_action": "Persist and adjudicate the v0.1c result, then perform the mandated three-result DESI SI conglomeration.",
+    "what_is_the_next_already_authorized_action": "Await active Popstop PID 20248 completion of the frozen v0.1c test; persist the result; then execute the pre-result-frozen three-result conglomeration adjudication.",
     "what_prevents_that_action_immediately": "The computation is actively running.",
     "does_crossing_the_boundary_require_mechanical_execution_or_new_scientific_decision": "MECHANICAL_EXECUTION through completion of v0.1c; no new scientific decision is authorized before the three-result adjudication."
-  },
-  "active_execution_commit": "f96c8171e1da0e132b7b1639e32020591e2c614d",
-  "deferred_lanes": {
-    "ERIES_EUROPROTEAS_CROSS_SUBSTRATE": {
-      "state": "DEFERRED_BY_USER_DIRECTION",
-      "preserved_gate": "ERIES_DOCUMENTATION_ACCESS_BOUNDARY"
-    }
-  },
-  "last_controller_reconciliation": {
-    "date": "2026-09-30",
-    "classification": "USER_ACTION_RESOLVED_AND_ACTIVE_COMPUTE_RESTORED",
-    "execution_host": "Popstop",
-    "pid": 20248,
-    "canonical_v01c_commit": "f96c8171e1da0e132b7b1639e32020591e2c614d",
-    "local_v01c_sha256": "6be70be5ff4d4a9815aa3dc92d795c7afb1eab7692c3b97317611310e4ea12f7",
-    "baseline_hashes_verified": true,
-    "modified_gravity_hashes_verified": true,
-    "scientific_design_change": "NONE"
   }
 }
