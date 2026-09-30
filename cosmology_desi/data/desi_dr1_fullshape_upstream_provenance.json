@@ -163,14 +163,145 @@
       "public_chain_status": "unresolved_for_exact_DESI_only_baseline",
       "action": "fresh likelihood run required unless an exact released chain is subsequently qualified",
       "forbidden_substitution": "Do not replace with a CMB-combined or differently prior-weighted chain solely because it is available."
+    },
+    "de_pantheonplus": {
+      "scientific_role": "physical_dark_energy_sensitivity_suite_member_pantheonplus",
+      "model": "base_w_wa",
+      "relative_directory": "cobaya/base_w_wa/desi-reptvelocileptors-fs-bao-all_pantheonplus_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck2018-highl-plik-TTTEEE_planck-act-dr6-lensing",
+      "files": {
+        "chain.1.txt": {
+          "sha256": "9250297267d488cca4ee9420e3438880b26aa10b0e1d98226549c365e95e16ec",
+          "bytes": 130094825
+        },
+        "chain.2.txt": {
+          "sha256": "7522c95e6881905dffadd99ec0625845922b91e1719f1b99e183245ac625fc85",
+          "bytes": 130348155
+        },
+        "chain.3.txt": {
+          "sha256": "8ace63c9ce02582099981a2b8395413f99bd97861085740571f4cd841c1919c1",
+          "bytes": 131126240
+        },
+        "chain.4.txt": {
+          "sha256": "d497f04b05726fb109fe429d00a8bf2f80aa0ff28494d346de020f4c83c4b550",
+          "bytes": 130081665
+        },
+        "chain.checkpoint": {
+          "sha256": "d962ccf59c0e7791aafc96be6955c02fedd6519dbf3a7fc3a2d0113e41559f9c",
+          "bytes": 108
+        },
+        "chain.covmat": {
+          "sha256": "68faca0dabf5e1a457932fac7aee77a4c85da18f37a3d1871e915689a0d4bff5",
+          "bytes": 56894
+        },
+        "chain.input.yaml": {
+          "sha256": "1ba96bf2e234af51920a6bf79c7496b382ffd68cc5e867d646c1c1769c1da6b6",
+          "bytes": 4305
+        },
+        "chain.updated.yaml": {
+          "sha256": "e7cedc20067cf495fba3a0c761e8cf3dd14db4c38eea4ff2b6a049d79acead35",
+          "bytes": 20966
+        }
+      },
+      "full_chain_bytes": 521650885,
+      "note": "One member of the frozen three-supernova sensitivity suite. No member is primary and no member may be selected by outcome."
+    },
+    "de_union3": {
+      "scientific_role": "physical_dark_energy_sensitivity_suite_member_union3",
+      "model": "base_w_wa",
+      "relative_directory": "cobaya/base_w_wa/desi-reptvelocileptors-fs-bao-all_union3_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck2018-highl-plik-TTTEEE_planck-act-dr6-lensing",
+      "files": {
+        "chain.1.txt": {
+          "sha256": "6f9643059dc6fe49b3416acdba9193e814682f3f0a7a307f4e23bfa9b154ab6b",
+          "bytes": 128730338
+        },
+        "chain.2.txt": {
+          "sha256": "2c5c72b4a875f7d06b8e79efdf7ff6b5bc1737f0a81879f75ad1c3de82d4e037",
+          "bytes": 128355007
+        },
+        "chain.3.txt": {
+          "sha256": "accbbfca66fc22d802c3f6eb9ca45bf539a1ea574da2ff171a6375bf82f28023",
+          "bytes": 129023719
+        },
+        "chain.4.txt": {
+          "sha256": "fe33b242631da67e9f0591e44c3484bbf37dcce22d98b2d22fc70c741e449765",
+          "bytes": 128422206
+        },
+        "chain.checkpoint": {
+          "sha256": "427abf83231d0a3345f4a224dbe4ecd8b11b591124eb84249971a15e7dde057b",
+          "bytes": 107
+        },
+        "chain.covmat": {
+          "sha256": "aa80c9f408a2f9dfd9628524ca4001ffe9a4d14b2f6c0207a15fe6b74b13481d",
+          "bytes": 56894
+        },
+        "chain.input.yaml": {
+          "sha256": "d9956ff6d728c88e2c329595b9c621df362c37539895ecaea0799d2aa83edc7a",
+          "bytes": 4293
+        },
+        "chain.margestats": {
+          "sha256": "9622d3b6b0674a18ca4c35fd2f849be6f5e2c457152a219ba21dc1905c0a2812",
+          "bytes": 9334
+        },
+        "chain.updated.yaml": {
+          "sha256": "cd84dad3d2449e507a73e93b1d4e4fb4337006bb66efbe74344056e90c48d29a",
+          "bytes": 20962
+        }
+      },
+      "full_chain_bytes": 514531270,
+      "note": "One member of the frozen three-supernova sensitivity suite. No member is primary and no member may be selected by outcome."
+    },
+    "de_desy5": {
+      "scientific_role": "physical_dark_energy_sensitivity_suite_member_desy5",
+      "model": "base_w_wa",
+      "relative_directory": "cobaya/base_w_wa/desi-reptvelocileptors-fs-bao-all_desy5sn_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck2018-highl-plik-TTTEEE_planck-act-dr6-lensing",
+      "files": {
+        "chain.1.txt": {
+          "sha256": "bd902906245e9f301b7d9f755b0b607251de90b9c88d8b33fb6d0c85e001633a",
+          "bytes": 145718118
+        },
+        "chain.2.txt": {
+          "sha256": "af8ce1845b1d0d1ea97e1285d168b26103453ed4dbc7eabe958ff35ab767379d",
+          "bytes": 145582164
+        },
+        "chain.3.txt": {
+          "sha256": "a119a0bbbd9f5c0a33db34d9f966860dd5659e1ed425fd1cd271db5019dc56c3",
+          "bytes": 145583802
+        },
+        "chain.4.txt": {
+          "sha256": "859d9c132c77734edad8ee87f6398128eacba89e455a02401228d9cc69b6493e",
+          "bytes": 144774630
+        },
+        "chain.checkpoint": {
+          "sha256": "13e6f3cf1e4cf438b7acc27536dd0025a8e13db3f7dd7b44bf9b9470cfd81c15",
+          "bytes": 107
+        },
+        "chain.covmat": {
+          "sha256": "9d109018184344573b97d8f5aecf3c65bf762b89430f1404e89d42b4eaaa6725",
+          "bytes": 56916
+        },
+        "chain.input.yaml": {
+          "sha256": "7ff848855740f06696c25c949f28ab24c2545490ba9d7ffee3a4a15b0315ecbc",
+          "bytes": 4293
+        },
+        "chain.margestats": {
+          "sha256": "27764f45e78dfb509dc9a04ff2a38e93d5f00fc7b1bcc9187e7e2ed565540265",
+          "bytes": 9334
+        },
+        "chain.updated.yaml": {
+          "sha256": "0bdd079f51c24ee157cce59f5ad196460075ba6557b318e557da9fc1801927be",
+          "bytes": 20960
+        }
+      },
+      "full_chain_bytes": 581658714,
+      "note": "One member of the frozen three-supernova sensitivity suite. No member is primary and no member may be selected by outcome."
     }
   },
   "de_comparator_suite": {
     "scientific_role": "physical_dark_energy_sensitivity_suite_no_single_winner",
     "model": "base_w_wa",
-    "status": "directory_identity_and_sizes_pinned_hash_receipts_pending",
+    "status": "sha256_receipts_pinned_runner_ready",
     "cmb_definition": "Planck2018 low-l TT + low-l EE + high-l plik TTTEEE + Planck/ACT DR6 lensing",
-    "rule": "Report whether the Stability-Architecture result is shared across Pantheon+, Union3 and DESY5; do not select a supernova sample by outcome.",
+    "rule": "Report whether the dark-energy inference is shared across Pantheon+, Union3 and DESY5, subset-only, or materially supernova-sample-dependent; do not select a supernova sample by outcome.",
     "members": {
       "pantheonplus": {
         "relative_directory": "cobaya/base_w_wa/desi-reptvelocileptors-fs-bao-all_pantheonplus_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck2018-highl-plik-TTTEEE_planck-act-dr6-lensing",
