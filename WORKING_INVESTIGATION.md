@@ -887,3 +887,17 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Next action:** close the BRB lane at this information-rich checkpoint and construct/freeze the next nonredundant measured-hierarchy test. Do not mine BRB further unless a genuinely new question and fresh evidence justify reopening it.
 - **Why next:** the BRB now spans modal persistence/reorganization, scalar redundancy, physical carrier history, and partial reassembly reset. Additional same-source mining has lower information value than a distinct hierarchy.
 - **Durable state:** ADVANCED_CHECKPOINT.
+
+
+### 2026-09-29 - CONTINUITY_FAILURE - SI controller disabled after BRB closure; ERIES lane launched
+
+- **Lifecycle Stage:** Program continuity / Stage 2 P0-Q recovery
+- **Entry type:** FAILURE_AND_RECOVERY
+- **Observed / decided:** after the BRB long-term checkpoint and synthesis closure, no productive SI commit or computation advanced for more than four hours. The ChatGPT SI Continuation Controller last ran at approximately 2026-09-29T21:06Z and was subsequently found disabled. The latest productive branch commit remained the BRB synthesis closure lineage. This violates the standing no-IDLE continuity contract.
+- **Root cause classification:** orchestration/infrastructure continuity failure. No scientific blocker, user gate, or data result caused the dead time.
+- **Scientific impact:** none on prior evidence. No frozen outcome, threshold, representation, or claim changed during the gap.
+- **Recovery action:** do not resume BRB mining. A new distinct measured hierarchy was selected from the already-audited ERIES/EuroProteas candidate family and frozen before numeric response access as `ERIES_EUROPROTEAS_CROSS_SUBSTRATE_SOURCE_QUALIFICATION_v0.1.md`.
+- **New task:** `ERIES_EUROPROTEAS_SOURCE_MATRIX_V01` added READY to the guarded compute conveyor. It is metadata-only and may inspect official Zenodo source identities, access states, file names, sizes, checksums, and repository links only. Numeric experimental response bodies are prohibited.
+- **Why this lane:** it adds a nonredundant embedding/substrate relation using the same full-scale EuroProteas structure under distinct lower-level foundation/isolation realizations. Generic soil-structure interaction remains native prior art; the SI target is representation/architecture qualification, not the claim that the foundation affects the structure.
+- **Next action:** execute source-matrix qualification. If qualified, construct an outcome-blind archive-layout/channel/matched-test preflight before any response scoring.
+- **Durable state:** ACTIVE_COMPUTE after queue-triggered workflow launch.
