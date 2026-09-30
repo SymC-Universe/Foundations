@@ -750,7 +750,7 @@
     },
     {
       "id": "ERIES_EUROPROTEAS_ARCHIVE_LAYOUT_V01B",
-      "status": "READY",
+      "status": "COMPLETE_LAYOUT_INSUFFICIENT_PATH_ONLY",
       "script": "stability_inheritance/intake_eries_europroteas_archive_layout_v0_1b.py",
       "result_json": "stability_inheritance/results/eries_europroteas_archive_layout_v0_1b/result.json",
       "disposition_key": "disposition",
@@ -781,15 +781,43 @@
         "frozen_protocol": "ERIES_EUROPROTEAS_ARCHIVE_LAYOUT_QUALIFICATION_v0.1",
         "repair_scope": "ZIP64 tuple-index correction only"
       },
-      "next_authorized_action": "Persist the path-only layout disposition. If the result is QUALIFIED/PARTIAL/INSUFFICIENT with both archives successfully indexed, stop at SCIENTIFIC_GATE before choosing any new matched correspondence/channel/test. If range/index access remains mechanically unavailable, record the exact block without opening member bodies."
+      "next_authorized_action": "Persist the path-only layout disposition. If the result is QUALIFIED/PARTIAL/INSUFFICIENT with both archives successfully indexed, stop at SCIENTIFIC_GATE before choosing any new matched correspondence/channel/test. If range/index access remains mechanically unavailable, record the exact block without opening member bodies.",
+      "last_run_id": 36653283771,
+      "last_disposition": "ERIES_ARCHIVE_LAYOUT_INSUFFICIENT",
+      "result_artifact_id": 11071576477,
+      "result_artifact_digest": "sha256:56a0bb156225ec857316c0d468685a60bae301acd4ef81e396f91f01f17a0134",
+      "result_summary": {
+        "RESPOND": {
+          "indexed": true,
+          "member_count": 2874,
+          "zip64": true,
+          "pile_or_substructure": true,
+          "structure_or_europroteas": false,
+          "forced": false,
+          "free_or_pullout": true,
+          "instrumentation_or_layout": true
+        },
+        "POLIS": {
+          "indexed": true,
+          "member_count": 447,
+          "zip64": false,
+          "pile_or_substructure": false,
+          "structure_or_europroteas": false,
+          "forced": true,
+          "free_or_pullout": true,
+          "instrumentation_or_layout": true
+        },
+        "numeric_response_opened": false
+      },
+      "checkpoint_interpretation": "Valid path-only qualification result. Archive indexes are readable, but path semantics are insufficient to freeze the matched hierarchy required by the parent protocol without expanding the evidence-access boundary."
     }
   ],
   "execution_trigger": {
-    "reason": "Resume frozen ERIES archive-layout qualification from deterministic ZIP64 parser failure",
-    "sequence": 8
+    "reason": "No READY task. Frozen path-only ERIES archive qualification completed; next boundary requires scientific/evidence-access decision.",
+    "sequence": 9
   },
   "scientific_lane": "ERIES_EUROPROTEAS_CROSS_SUBSTRATE",
-  "authorized_stage": "ERIES_ARCHIVE_LAYOUT_ZIP64_PARSER_RECOVERY",
+  "authorized_stage": "ERIES_ARCHIVE_LAYOUT_PATH_ONLY_COMPLETE",
   "execution_ceiling": "Complete the already-frozen metadata-only ERIES archive-layout qualification through transport-only recovery; then stop at SCIENTIFIC_GATE if matched hierarchy/channel/test construction requires a new scientific decision.",
   "protected_inputs": [
     "ERIES-RESPOND.ZIP member bodies",
@@ -798,6 +826,6 @@
     "all spectra/FRFs/fitted parameters/outcome plots",
     "GISIS embargoed file bodies"
   ],
-  "next_authorized_action": "Execute ERIES_EUROPROTEAS_ARCHIVE_LAYOUT_V01B and persist the fully indexed path-only layout disposition.",
-  "last_productive_advancement": "2026-09-30T01:02:28Z"
+  "next_authorized_action": "SCIENTIFIC_GATE: decide whether to prospectively authorize a documentation-only member preflight (e.g. readme/instrumentation documents only, recordings and numeric outcomes still sealed) or close/defer ERIES at the path-only insufficiency boundary.",
+  "last_productive_advancement": "2026-09-30T01:04:36Z"
 }
