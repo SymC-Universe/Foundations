@@ -971,3 +971,20 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Execution ceiling:** complete the frozen cross-block relational test and then conglomerate the three DESI SI results before admitting any additional cosmological model family or dataset.
 - **Protected interpretation boundary:** no lowercase chi, capital Chi, Chi_arc, modified-gravity preference, DM/DE ontology, or causal coupling is licensed by these representation tests.
 - **Durable state:** `ACTIVE_COMPUTE`.
+
+
+### 2026-09-30 - USER_ACTION_REQUIRED - DESI cross-block v0.1c implementation bound; verified MG source host offline
+
+- **Lifecycle Stage:** Stage 2 / DESI SI conglomeration / cross-block relational qualification
+- **Entry type:** CONTINUITY_RECOVERY_AND_USER_ACTION_REQUIRED
+- **Newest scientific checkpoint:** `DESI_TRACER_CONGLOMERATION_RESULT_v0.1.md`, disposition `TRACER_VECTOR_ADDS_OVER_SCALAR_FIT`.
+- **Frozen successor:** `DESI_CROSS_BLOCK_RELATIONAL_QUALIFICATION_v0.1.md` with mechanical memory repairs v0.1a, v0.1b, and v0.1c.
+- **Implementation provenance closed:** the exact local v0.1c memmap implementation has now been committed as `stability_inheritance/analyze_desi_cross_block_relational_v0_1c.py` at commit `f96c8171e1da0e132b7b1639e32020591e2c614d`. Local implementation SHA-256 = `6be70be5ff4d4a9815aa3dc92d795c7afb1eab7692c3b97317611310e4ea12f7`.
+- **Transport/source audit:** online host `Home` contains the verified baseline chain family and completed DESI SI result lineage but does not contain the verified `base_mu_sigma` full posterior family. Targeted search found no alternate local copy.
+- **Popstop state:** `Popstop`, which holds the verified MG family used in the parent tests, is offline in Desktop Commander.
+- **Aborted fallback transport:** an official DESI re-fetch on Home was started only as a same-source transport recovery, then canceled after throughput proved unsuitable for immediate recovery. The incomplete fragment was isolated as `modified_gravity/official_chain/chain.1.txt.partial` (15,044,608 bytes) and is explicitly inadmissible to analysis.
+- **Scientific impact:** NONE. No source substitution, row thinning, float32 conversion, feature removal, threshold change, solver change, model-family change, or interpretation change occurred.
+- **Protected next action:** once Popstop is online, verify the four baseline and four MG chain SHA-256 identities plus the canonical v0.1c analyzer identity; execute the frozen v0.1c test unchanged; persist the result; then stop for the mandatory three-result DESI SI conglomeration/adjudication.
+- **Exact user action:** bring Popstop online in Desktop Commander.
+- **State:** `USER_ACTION_REQUIRED`.
+- **Why this is not stagnation:** the blocked dependency is exact and external. Monitoring/controller activity must not be reported as active computation, and the 90-minute stagnation fault does not apply while this user-action dependency remains unresolved.
