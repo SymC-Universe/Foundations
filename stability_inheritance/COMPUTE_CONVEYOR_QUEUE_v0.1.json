@@ -1,8 +1,8 @@
 {
   "version": "0.1",
-  "governance": "SymC GOM v1.0",
+  "governance": "SymC GOM v1.0 + mandatory Continuity Hardening Addendum",
   "branch": "stability-inheritance",
-  "rule": "Execute only READY tasks in listed order. Stop immediately on mechanical failure or an unlisted scientific disposition. This queue is execution plumbing, not scientific authority.",
+  "rule": "Execute only READY tasks in listed order. Stop immediately on mechanical failure, an unlisted disposition, or an explicit declared checkpoint. This queue is execution plumbing, not scientific authority. Suppress duplicate execution only when checkpoint scientific input/configuration identity proves the completed work is identical.",
   "tasks": [
     {
       "id": "PYFBS_VPT_IDENTITY_V02",
@@ -682,7 +682,7 @@
     },
     {
       "id": "ERIES_EUROPROTEAS_ARCHIVE_LAYOUT_V01",
-      "status": "READY",
+      "status": "COMPLETE_MECHANICAL_TRANSPORT_FAILURE_PRE_LAYOUT",
       "script": "stability_inheritance/intake_eries_europroteas_archive_layout_v0_1.py",
       "result_json": "stability_inheritance/results/eries_europroteas_archive_layout/result.json",
       "disposition_key": "disposition",
@@ -695,11 +695,67 @@
       "stop_after": true,
       "evidence_class": "P0-Q ARCHIVE CENTRAL-DIRECTORY / LAYOUT QUALIFICATION",
       "protocol": "stability_inheritance/ERIES_EUROPROTEAS_ARCHIVE_LAYOUT_QUALIFICATION_v0.1.md",
-      "member_body_access": "PROHIBITED"
+      "member_body_access": "PROHIBITED",
+      "last_run_id": 36651136544,
+      "last_disposition": "ERIES_ARCHIVE_LAYOUT_INSUFFICIENT",
+      "corrected_execution_classification": "MECHANICAL_RANGE_TRANSPORT_FAILURE_PRE_LAYOUT",
+      "failure": "HTTP 406 on first ZIP tail range request for both RESPOND and POLIS; no central directory or member body opened.",
+      "result_sha256": "artifact:sha256:4075d6b2e5446a7c6aa580bb3129de956d74a02c76c8273be23cde2501b7b2d0",
+      "duplicate_run_ids": [
+        36652979216
+      ],
+      "note": "Raw disposition is not accepted as a scientific/layout insufficiency conclusion because the task failed before layout observation. Duplicate run 36652979216 was triggered by conveyor-hardening code while the stale READY flag still existed; it does not count as new advancement."
+    },
+    {
+      "id": "ERIES_EUROPROTEAS_ARCHIVE_LAYOUT_V01A",
+      "status": "READY",
+      "script": "stability_inheritance/intake_eries_europroteas_archive_layout_v0_1a.py",
+      "result_json": "stability_inheritance/results/eries_europroteas_archive_layout_v0_1a/result.json",
+      "disposition_key": "disposition",
+      "continue_on_dispositions": [
+        "ERIES_ARCHIVE_LAYOUT_QUALIFIED",
+        "ERIES_ARCHIVE_LAYOUT_PARTIAL",
+        "ERIES_ARCHIVE_LAYOUT_INSUFFICIENT",
+        "ERIES_ARCHIVE_INDEX_ROUTE_UNAVAILABLE"
+      ],
+      "stop_after": true,
+      "evidence_class": "P0-Q ARCHIVE CENTRAL-DIRECTORY / LAYOUT QUALIFICATION - MECHANICAL TRANSPORT RECOVERY",
+      "protocol": "stability_inheritance/ERIES_EUROPROTEAS_ARCHIVE_LAYOUT_QUALIFICATION_v0.1.md",
+      "repair_record": "stability_inheritance/ERIES_EUROPROTEAS_ARCHIVE_LAYOUT_TRANSPORT_REPAIR_v0.1a.md",
+      "retry_class": "MECHANICAL_TRANSPORT_ONLY_NO_MEMBER_BODY_ACCESS",
+      "member_body_access": "PROHIBITED",
+      "protected_boundary": "ZIP central-directory metadata only; member bodies and numeric responses prohibited",
+      "scientific_identity": {
+        "RESPOND": {
+          "record_id": "15518567",
+          "zip_key": "ERIES-RESPOND.ZIP",
+          "md5": "23b1452c71729da97fd1ca59af5e8e9c"
+        },
+        "POLIS": {
+          "record_id": "15575887",
+          "zip_key": "ERIES-POLIS.ZIP",
+          "md5": "861654738941937581dc9d2b97dab98b"
+        },
+        "frozen_protocol": "ERIES_EUROPROTEAS_ARCHIVE_LAYOUT_QUALIFICATION_v0.1",
+        "repair_scope": "transport only"
+      },
+      "next_authorized_action": "If archive layout qualifies or is partial, reconcile the path-only result and stop at SCIENTIFIC_GATE before choosing any matched scientific correspondence/channel/test not already frozen. If the official range route remains unavailable, record EXTERNAL_BLOCK or transport limitation without opening full archives."
     }
   ],
   "execution_trigger": {
-    "reason": "Chain qualified ERIES source matrix into outcome-blind remote archive-layout preflight",
+    "reason": "Resume ERIES archive-layout qualification from preserved HTTP 406 transport failure using transport-only v0.1a repair",
     "sequence": 7
-  }
+  },
+  "scientific_lane": "ERIES_EUROPROTEAS_CROSS_SUBSTRATE",
+  "authorized_stage": "ERIES_ARCHIVE_LAYOUT_TRANSPORT_RECOVERY",
+  "execution_ceiling": "Complete the already-frozen metadata-only ERIES archive-layout qualification through transport-only recovery; then stop at SCIENTIFIC_GATE if matched hierarchy/channel/test construction requires a new scientific decision.",
+  "protected_inputs": [
+    "ERIES-RESPOND.ZIP member bodies",
+    "ERIES-POLIS.ZIP member bodies",
+    "all acceleration/displacement/force values",
+    "all spectra/FRFs/fitted parameters/outcome plots",
+    "GISIS embargoed file bodies"
+  ],
+  "next_authorized_action": "Execute ERIES_EUROPROTEAS_ARCHIVE_LAYOUT_V01A using the same frozen archive-layout protocol and transport-only repair.",
+  "last_productive_advancement": "2026-09-30T00:36:47Z"
 }
