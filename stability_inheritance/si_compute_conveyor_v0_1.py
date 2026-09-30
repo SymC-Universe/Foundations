@@ -162,8 +162,8 @@ elif report["final_state"] == "STOP_SCIENTIFIC_GATE":
     continuity_state = "SCIENTIFIC_GATE"
 elif report["final_state"] == "STOP_MECHANICAL_FAILURE":
     continuity_state = "ADVANCED_CHECKPOINT"
-elif not executed and prior_state.get("continuity_state") in {"SCIENTIFIC_GATE", "EXTERNAL_BLOCK", "USER_ACTION_REQUIRED"}:
-    # A no-op/support workflow must not erase a legitimate stopping condition or reset liveness.
+elif not executed and prior_state.get("continuity_state") in permitted_states:
+    # A no-op/support workflow must not erase a legitimate active or stopped state or reset liveness.
     continuity_state = prior_state.get("continuity_state")
 else:
     continuity_state = "ADVANCED_CHECKPOINT"
