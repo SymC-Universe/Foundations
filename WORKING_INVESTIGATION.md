@@ -933,3 +933,21 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Current protected boundary:** ZIP central-directory metadata only. RESPOND/POLIS member bodies, all signals, spectra, FRFs, fitted values, plots, and GISIS embargoed bodies remain sealed.
 - **Execution ceiling:** finish the already-frozen archive-layout qualification through transport-only recovery. If a later matched hierarchy/channel/test mapping requires a new scientific correspondence decision, stop at `SCIENTIFIC_GATE`.
 - **Durable state:** `ACTIVE_COMPUTE`.
+
+
+### 2026-09-29 - SCIENTIFIC_GATE - ERIES path-only layout is valid but insufficient
+
+- **Lifecycle Stage:** Stage 2 / P0-Q distinct measured hierarchy intake
+- **Entry type:** PLAN_EXECUTED_AND_SCIENTIFIC_GATE
+- **Source artifact / evidence identity:** frozen `ERIES_EUROPROTEAS_ARCHIVE_LAYOUT_QUALIFICATION_v0.1.md`; transport repair v0.1a; ZIP64 parser repair v0.1b; workflow run 36653283771; artifact 11071576477; artifact digest `sha256:56a0bb156225ec857316c0d468685a60bae301acd4ef81e396f91f01f17a0134`.
+- **Mechanical recovery closed:** official Zenodo byte-range transport qualified and the RESPOND ZIP64 parser defect was corrected without changing scientific design. Both archives then indexed successfully.
+- **Path-only result:** RESPOND central directory contains 2,874 member paths; POLIS contains 447. RESPOND exposes a strong `Group_pile`/pile-substructure organization and instrumentation paths but no path names explicitly identifying EuroProteas/structure/roof. POLIS exposes `Recordings/Forced`, `Recordings/Free`, instrumentation, and documentation paths but likewise no path names explicitly identifying structure/roof/foundation channel roles.
+- **Frozen disposition:** `ERIES_ARCHIVE_LAYOUT_INSUFFICIENT`.
+- **Interpretation:** this is a valid intake/qualification insufficiency, not a negative physical result. The central directories are readable, but path semantics alone do not provide enough outcome-blind hierarchy information to freeze the matched lower-level/higher-level correspondence required by the parent protocol.
+- **Exposure firewall:** no readme, instrumentation document, drawing, photo, recording, signal, spectrum, FRF, fitted value, or outcome plot was opened. Numeric response opened = false.
+- **Function/Limit impact:** adds a data-intake Limit Map boundary: `PATH_ONLY_ARCHIVE_METADATA_INSUFFICIENT_FOR_MATCHED_HIERARCHY_FREEZE`. It does not alter any Stability Inheritance scientific claim.
+- **Current gate:** `ERIES_DOCUMENTATION_ACCESS_BOUNDARY`.
+- **Decision required:** either (A) prospectively freeze a new documentation-only member preflight with an explicit whitelist for non-response readme/instrumentation documents while keeping all recordings and numeric outcomes sealed, or (B) close/defer ERIES at the path-only insufficiency boundary.
+- **Why this is a scientific gate:** the parent protocol explicitly prohibited all archive member-body access. Reading documentation would change the protected evidence-access boundary even though it would not open numeric outcomes.
+- **Current durable state:** `SCIENTIFIC_GATE`.
+- **Continuity note:** this is a legitimate stop and therefore suspends the 90-minute stagnation fault for this lane until the gate is resolved. Monitoring/controller activity must not be reported as active computation.
