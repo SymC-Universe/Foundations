@@ -901,3 +901,16 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Why this lane:** it adds a nonredundant embedding/substrate relation using the same full-scale EuroProteas structure under distinct lower-level foundation/isolation realizations. Generic soil-structure interaction remains native prior art; the SI target is representation/architecture qualification, not the claim that the foundation affects the structure.
 - **Next action:** execute source-matrix qualification. If qualified, construct an outcome-blind archive-layout/channel/matched-test preflight before any response scoring.
 - **Durable state:** ACTIVE_COMPUTE after queue-triggered workflow launch.
+
+
+### 2026-09-29 - PLAN_EXECUTED - ERIES EuroProteas source matrix qualifies without response exposure
+
+- **Lifecycle Stage:** Stage 2 / P0-Q distinct measured hierarchy intake
+- **Entry type:** PLAN_EXECUTED
+- **Source artifact / evidence identity:** stability_inheritance/ERIES_EUROPROTEAS_CROSS_SUBSTRATE_SOURCE_QUALIFICATION_v0.1.md; stability_inheritance/ERIES_EUROPROTEAS_SOURCE_QUALIFICATION_RESULT_v0.1.md; workflow run 36650984968
+- **Observed / decided:** official metadata-only intake resolved RESPOND canonical record 15518567 as an open 9,627,543,212-byte ZIP, RESPOND record 21354286 as a distinct 169-byte pointer/alias, POLIS record 15575887 as an open 1,894,712,181-byte ZIP, and GISIS record 17721150 as an embargoed identity with no public files. Disposition = ERIES_EUROPROTEAS_SOURCE_MATRIX_QUALIFIED.
+- **Exposure firewall:** no experimental response body, archive member body, signal value, spectrum, FRF, fitted parameter, or outcome plot was opened.
+- **Scientific interpretation:** source/provenance viability only. No substrate-conditioned response, predictive relation, cross-substrate correspondence, chi, Chi, Chi_arc, or inheritance result is established.
+- **Novelty firewall:** generic soil-structure interaction and geotechnical isolation remain native prior art. The candidate program target is qualification of preserved/reorganized relations across lower-level embedding realizations, not the claim that foundations affect structures.
+- **Next action:** execute frozen remote archive central-directory/layout qualification for RESPOND and POLIS. If enough outcome-blind hierarchy structure is present, construct a matched channel/test preflight before any numeric response scoring.
+- **Durable state:** ACTIVE_COMPUTE after queue-triggered layout preflight.
