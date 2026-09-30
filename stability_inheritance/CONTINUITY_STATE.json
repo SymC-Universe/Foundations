@@ -5,8 +5,8 @@
     "continuity_extension": "Mandatory Continuity Hardening Addendum",
     "binding": "stability_inheritance/SI_CONTINUITY_HARDENING_BINDING_v1.0.md"
   },
-  "scientific_lane": "ERIES_EUROPROTEAS_CROSS_SUBSTRATE",
   "branch": "stability-inheritance",
+  "scientific_lane": "ERIES_EUROPROTEAS_CROSS_SUBSTRATE",
   "authorized_stage": "ERIES_ARCHIVE_LAYOUT_PATH_ONLY_COMPLETE",
   "continuity_state": "SCIENTIFIC_GATE",
   "last_completed_durable_checkpoint": {
@@ -34,8 +34,9 @@
     "numeric_response_opened": false
   },
   "active_workflow_or_computation_id": null,
-  "active_execution_commit": null,
-  "next_exact_authorized_action": "Scientific/evidence-access decision: either freeze a new documentation-only member preflight that whitelists non-response readme/instrumentation documents while keeping recordings sealed, or close/defer ERIES at the path-only insufficiency boundary.",
+  "last_workflow_run_id": 36653543262,
+  "last_execution_commit": "19bf76ad5e5015951ab8731d0d045a8e2c87e3b1",
+  "next_exact_authorized_action": "SCIENTIFIC_GATE: decide whether to prospectively authorize a documentation-only member preflight (e.g. readme/instrumentation documents only, recordings and numeric outcomes still sealed) or close/defer ERIES at the path-only insufficiency boundary.",
   "execution_ceiling": "Complete the already-frozen metadata-only ERIES archive-layout qualification through transport-only recovery; then stop at SCIENTIFIC_GATE if matched hierarchy/channel/test construction requires a new scientific decision.",
   "scientific_gate": {
     "gate_id": "ERIES_DOCUMENTATION_ACCESS_BOUNDARY",
@@ -60,29 +61,9 @@
     "last_reset": "2026-09-30T01:04:36Z",
     "support_or_monitoring_activity_does_not_reset": true
   },
-  "checkpoint_resume": {
-    "rule": "Resume newest valid checkpoint in the same frozen scientific chain; do not recompute completed valid work after controller/runner/monitor failure.",
-    "newest_valid_checkpoint": "ERIES_EUROPROTEAS_ARCHIVE_LAYOUT_V01 mechanical pre-layout failure, followed by frozen v0.1a transport repair at commit 6c1a6d6f8fbbd1d8008a97707c5793ff27865dac",
-    "duplicate_run_suppressed": [
-      36652979216
-    ]
-  },
   "duplicate_suppression": {
-    "rule": "Suppress completed identical computation only with proven scientific input/config identity.",
-    "current_scientific_identity": {
-      "RESPOND": {
-        "record_id": "15518567",
-        "zip_key": "ERIES-RESPOND.ZIP",
-        "md5": "23b1452c71729da97fd1ca59af5e8e9c"
-      },
-      "POLIS": {
-        "record_id": "15575887",
-        "zip_key": "ERIES-POLIS.ZIP",
-        "md5": "861654738941937581dc9d2b97dab98b"
-      },
-      "frozen_protocol": "ERIES_EUROPROTEAS_ARCHIVE_LAYOUT_QUALIFICATION_v0.1",
-      "repair_scope": "transport only"
-    }
+    "rule": "Suppress a completed computation only when scientific input/configuration identity is proven unchanged.",
+    "current_checkpoint_identity": null
   },
   "protected_inputs": [
     "ERIES-RESPOND.ZIP member bodies",
@@ -94,8 +75,20 @@
   "five_question_test": {
     "what_scientific_lane_are_we_advancing": "ERIES_EUROPROTEAS_CROSS_SUBSTRATE",
     "what_is_actually_running_or_just_completed": "Durable checkpoint ERIES_EUROPROTEAS_ARCHIVE_LAYOUT_V01B completed in run 36653283771. Both archive central directories were indexed; no member body or numeric response was opened.",
-    "what_is_the_next_already_authorized_action": "No further evidence-opening action is already authorized. Resolve ERIES_DOCUMENTATION_ACCESS_BOUNDARY.",
-    "what_prevents_that_action_immediately": "The current frozen protocol expressly forbids member-body access. Path-only metadata is insufficient to freeze a matched hierarchy.",
+    "what_is_the_next_already_authorized_action": "SCIENTIFIC_GATE: decide whether to prospectively authorize a documentation-only member preflight (e.g. readme/instrumentation documents only, recordings and numeric outcomes still sealed) or close/defer ERIES at the path-only insufficiency boundary.",
+    "what_prevents_that_action_immediately": {
+      "gate_id": "ERIES_DOCUMENTATION_ACCESS_BOUNDARY",
+      "reason": "The frozen path-only archive test is valid and insufficient. Proceeding requires changing the protected evidence-access boundary from central-directory metadata to selected documentation member bodies.",
+      "options_supported_by_current_evidence": [
+        "Prospectively freeze a documentation-only member preflight with an explicit whitelist and keep all recordings/numeric outcomes sealed.",
+        "Close or defer ERIES at the path-only insufficiency boundary."
+      ],
+      "prohibited_without_gate_resolution": [
+        "Open readme.pdf or instrumentation PDFs/DWG files",
+        "Open any recording member",
+        "Use filename patterns to invent a matched scientific correspondence not already frozen"
+      ]
+    },
     "does_crossing_the_boundary_require_mechanical_execution_or_new_scientific_decision": "NEW_SCIENTIFIC_DECISION"
   }
 }
