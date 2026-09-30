@@ -54,7 +54,13 @@ jobs:
           git fetch origin stability-inheritance
           remote_head="$(git rev-parse origin/stability-inheritance)"
           if [ "$remote_head" != "$GITHUB_SHA" ]; then
-            echo "CONTINUITY_PERSISTENCE_CONFLICT: branch advanced from $GITHUB_SHA to $remote_head during run."
+            final_state="$(python -c "import json; print(json.load(open('stability_inheritance/results/compute_conveyor/run_summary.json')).get('final_state','UNKNOWN'))" 2>/dev/null || echo UNKNOWN)"
+            if [ "$final_state" = "COMPLETE_NO_READY_TASKS" ]; then
+              echo "NOOP_BRANCH_ADVANCE: branch advanced from $GITHUB_SHA to $remote_head during a no-op conveyor run."
+              echo "No scientific result requires persistence; newer branch state remains authoritative."
+              exit 0
+            fi
+            echo "CONTINUITY_PERSISTENCE_CONFLICT: branch advanced from $GITHUB_SHA to $remote_head after substantive conveyor execution."
             echo "Refusing automatic rebase/force-push. Sentinel must reconcile the newer branch checkpoint."
             exit 2
           fi
