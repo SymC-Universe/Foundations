@@ -988,3 +988,17 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Exact user action:** bring Popstop online in Desktop Commander.
 - **State:** `USER_ACTION_REQUIRED`.
 - **Why this is not stagnation:** the blocked dependency is exact and external. Monitoring/controller activity must not be reported as active computation, and the 90-minute stagnation fault does not apply while this user-action dependency remains unresolved.
+
+
+### 2026-09-30 - ACTIVE_COMPUTE - DESI cross-block v0.1c resumed on Popstop
+
+- **Lifecycle Stage:** Stage 2 / DESI SI conglomeration / cross-block relational qualification
+- **Entry type:** USER_ACTION_RESOLVED_AND_EXECUTION_RESUMED
+- **Resolved dependency:** Popstop returned online in Desktop Commander while Home remained online.
+- **Implementation identity:** `stability_inheritance/analyze_desi_cross_block_relational_v0_1c.py`, canonical commit `f96c8171e1da0e132b7b1639e32020591e2c614d`, local SHA-256 `6be70be5ff4d4a9815aa3dc92d795c7afb1eab7692c3b97317611310e4ea12f7`.
+- **Source verification:** all four baseline and all four `base_mu_sigma` DESI DR1 chain files re-hashed on Popstop and matched their frozen `prepare_receipt.json` SHA-256 identities exactly.
+- **Execution:** Popstop PID `20248` is running the unchanged v0.1c memmap implementation.
+- **Scientific design change:** NONE.
+- **Protected boundary:** no new model family, dataset, tracer, parameter, threshold, transformed coordinate, lowercase chi, capital Chi, or Chi_arc admission.
+- **Execution ceiling:** complete v0.1c, persist exact result + hash, then stop for the mandated three-result DESI SI conglomeration/adjudication before any new cosmological family is opened.
+- **Durable state:** `ACTIVE_COMPUTE`.
