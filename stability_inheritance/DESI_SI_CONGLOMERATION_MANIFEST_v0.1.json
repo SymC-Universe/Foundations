@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "governance": "SymC GOM v1.0 + mandatory Continuity Hardening Addendum",
+  "scientific_lane": "DESI_SI_CONGLOMERATION",
+  "source_pair": {
+    "baseline": {
+      "family": "cobaya/base/desi-reptvelocileptors-fs-bao-all_schoneberg2024-bbn_planck2018-ns10",
+      "chain_sha256": [
+        "a0ec1857d1c69fb0b8011862dcf6ed3a6a0b587de54e86d71d92e9c8e42b7142",
+        "d202a881d198ae87a3013ba8de46f3f764680a9f2778108bfe4237e4997bf9e4",
+        "3c2b355ee057bcfb178562504c8fdec6baf65be28cc8aa9a436b4020fefa9dd8",
+        "ec5cf19dd5fb37406a0449a9f868da646fcc77dca89e9b14fc81414b4ab935f7"
+      ]
+    },
+    "modified_gravity": {
+      "family": "cobaya/base_mu_sigma/desi-reptvelocileptors-fs-bao-all_schoneberg2024-bbn_planck2018-ns10",
+      "chain_sha256": [
+        "4c8dd823924e6f0dbee5ff1d897d79c5b5dc0913f290d3f8f9691adbdb97e678",
+        "339dcbf5e98fc2fff3081366ff91ab8c8316cfbeaef75b9eee9a2ea6c42d0bb2",
+        "445d1147fa5b5dcd80d5ec98047492e3e3053222ab48ddb553884f7e5de98811",
+        "ec8392fed80d57ed5927faebf152e400f3fd0baec447d227ffde6eb5254573b6"
+      ]
+    }
+  },
+  "results": [
+    {
+      "id": "DESI_SHARED_COORDINATE_SI_V01",
+      "disposition": "JOINT_DIFFERENCE_REDUNDANT",
+      "result_record": "stability_inheritance/DESI_SHARED_COORDINATE_SI_RESULT_v0.1.md",
+      "result_sha256": "62bc618575430088556d4c8debd3de25ef93c51bc0e15a70b34a774bca47d415"
+    },
+    {
+      "id": "DESI_TRACER_CONGLOMERATION_V01",
+      "disposition": "TRACER_VECTOR_ADDS_OVER_SCALAR_FIT",
+      "result_record": "stability_inheritance/DESI_TRACER_CONGLOMERATION_RESULT_v0.1.md",
+      "result_sha256": "3460333fbf62183669559ef68ed5e3de42eb6e60e38e6bbe5354fe4b1f0ee77f"
+    },
+    {
+      "id": "DESI_CROSS_BLOCK_RELATIONAL_V01C",
+      "disposition": "PENDING_ACTIVE_COMPUTE",
+      "protocol": "stability_inheritance/DESI_CROSS_BLOCK_RELATIONAL_QUALIFICATION_v0.1.md",
+      "script": "stability_inheritance/analyze_desi_cross_block_relational_v0_1c.py",
+      "script_commit": "f96c8171e1da0e132b7b1639e32020591e2c614d",
+      "script_sha256": "6be70be5ff4d4a9815aa3dc92d795c7afb1eab7692c3b97317611310e4ea12f7",
+      "execution_host": "Popstop",
+      "execution_pid": 20248
+    }
+  ],
+  "adjudication_plan": "stability_inheritance/DESI_THREE_RESULT_CONGLOMERATION_ADJUDICATION_PLAN_v0.1.md",
+  "protected_boundary": [
+    "No mu0/Sigma0 classifier leakage",
+    "No new cosmological family before three-result adjudication",
+    "No automatic chi/Chi/Chi_arc admission",
+    "No P1 activation"
+  ]
+}
