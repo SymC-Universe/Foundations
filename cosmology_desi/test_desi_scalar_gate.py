@@ -1,10 +1,12 @@
 import importlib.util
+import sys
 from pathlib import Path
 import numpy as np
 
 HERE = Path(__file__).resolve().parent
 spec = importlib.util.spec_from_file_location("gate", HERE / "desi_scalar_gate.py")
 gate = importlib.util.module_from_spec(spec)
+sys.modules[spec.name] = gate
 spec.loader.exec_module(gate)
 
 def test_lcdm_identity_pointwise():
