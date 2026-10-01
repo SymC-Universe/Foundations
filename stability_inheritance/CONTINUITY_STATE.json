@@ -1,7 +1,7 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "governance": {
-    "gom": "SymC General Operations Manual v1.0",
+    "gom": "SymC General Operations Manual v1.1",
     "continuity_extension": "Mandatory Continuity Hardening Addendum",
     "binding": "stability_inheritance/SI_CONTINUITY_HARDENING_BINDING_v1.0.md"
   },
@@ -36,7 +36,8 @@
     "reset_only_by_authoritative_lane_advancement": true,
     "default_stagnation_threshold_minutes": 90,
     "last_reset": "2026-10-01T11:30:00Z",
-    "support_or_monitoring_activity_does_not_reset": true
+    "support_or_monitoring_activity_does_not_reset": true,
+    "threshold_semantics": "Fallback only when no workload-specific progress expectation is available; GOM v1.1 Section 31 requires task/provider/pilot-specific progress expectations where available."
   },
   "duplicate_suppression": {
     "rule": "Suppress a completed computation only when scientific input/configuration identity is proven unchanged.",
@@ -63,5 +64,39 @@
     "what_is_the_next_already_authorized_action": "Preserve v0.1e as MECHANICAL_NUMERICAL_CONVERGENCE_BLOCK and continue nonoverlapping SI U0/U1/U2 work. Do not run the frozen three-result DESI adjudication because Result 3 is not convergence-qualified.",
     "what_prevents_that_action_immediately": "DESI Result 3 numerical rescue method is not frozen. The existing frozen audit requires stop at MECHANICAL_NUMERICAL_CONVERGENCE_BLOCK.",
     "does_crossing_the_boundary_require_mechanical_execution_or_new_scientific_decision": "NEW_SCIENTIFIC_DECISION"
+  },
+  "program_overall_state": "ACTIVE",
+  "lane_states": {
+    "DESI_SI_CONGLOMERATION": {
+      "state": "SCIENTIFIC_GATE",
+      "reason": "v0.1e hit the frozen numerical convergence ceiling; no rescue method is prospectively frozen",
+      "next_action": "Preserve blocked result; no three-result adjudication until a new prospective numerical-method gate exists."
+    },
+    "FOUNDATIONAL_PHYSICS_COSMOLOGY_NATIVE_COMPARATOR": {
+      "state": "ACTIVE_COMPUTE",
+      "executor": "VICTUS_LOCAL",
+      "task_id": "COSMO_FRESH_DESI_ONLY_MNU_V01",
+      "next_action": "Continue newest valid checkpoint without duplication; after convergence execute the separately required massive-neutrino no-wiggle sensitivity gate before inference."
+    },
+    "FOUNDATIONAL_PHYSICS_QFT_U0_U1": {
+      "state": "ADVANCED_CHECKPOINT",
+      "last_result": "QFT reduced-generator/pole clean-room core reproduced under the declared local Markovian model",
+      "next_action": "Continue the source/microscopic self-energy and covariance audit; no universal QFT chi claim."
+    },
+    "FOUNDATIONAL_PHYSICS_LINDBLAD_U0_U1": {
+      "state": "ADVANCED_CHECKPOINT",
+      "last_result": "Full 4 x 4 Liouvillian defectiveness supported under the declared clean-room convention",
+      "next_action": "Match the exact Lindblad-v4 source convention before manuscript-level promotion."
+    },
+    "FOUNDATIONAL_PHYSICS_COSMOLOGY_F2_MODAL": {
+      "state": "SCIENTIFIC_GATE",
+      "reason": "Substantial new modal-necessity execution can shape later claims and therefore requires an APQ-qualified Plan Packet under GOM v1.1 Section 15.4.",
+      "next_action": "Construct and adversarially qualify the F2 Plan Packet before substantial modal compute."
+    },
+    "PHYSICAL_HIERARCHY_P0Q": {
+      "state": "USER_DECISION_HOLD",
+      "reason": "Physical experimentation remains deferred by user direction; computational work may continue independently.",
+      "next_action": "Resume only when the user explicitly reopens physical work or supplies the required hardware/buildability evidence."
+    }
   }
 }
