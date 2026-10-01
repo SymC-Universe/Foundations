@@ -15,6 +15,7 @@ on:
 
 jobs:
   scalar-gate:
+    if: ${{ false }} # PROGRAM_WIDE_BILLING_GUARD: no paid GitHub-hosted execution
     runs-on: ubuntu-latest
     timeout-minutes: 120
     steps:
