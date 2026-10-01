@@ -21,6 +21,7 @@ concurrency:
 
 jobs:
   conveyor:
+    if: ${{ false }} # PROGRAM_WIDE_BILLING_GUARD: no paid GitHub-hosted execution
     runs-on: ubuntu-24.04
     timeout-minutes: 90
     steps:
