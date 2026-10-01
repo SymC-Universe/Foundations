@@ -1062,3 +1062,18 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Scientific design change:** NONE authorized.
 - **Exact user action:** reconnect Popstop/Asus by launching Desktop Commander Remote.
 - **Durable state:** \`USER_ACTION_REQUIRED\`.
+
+
+### 2026-10-01 - ACTIVE_COMPUTE - DESI v0.1d restored after Windows updates
+
+- **Lifecycle Stage:** Stage 2 / DESI SI conglomeration / convergence-validity recovery
+- **Entry type:** HOST_REBOOT_RECOVERY_COMPLETED
+- **Recovery observation:** Popstop/Asus and Home/Victus both returned online after Windows updates.
+- **Interrupted-run checkpoint:** expected \`desi_cross_block_relational_v0_1d.json\` was absent and no Python process/session survived the reboot, so there was no valid completed v0.1d result to preserve.
+- **Source verification:** all four baseline and all four \`base_mu_sigma\` DESI chain files on Popstop were re-hashed and matched the frozen receipts exactly.
+- **Implementation verification:** local v0.1d SHA-256 = \`2a85b40ab05332a245c135ebcd2f04af7b111acd171f5239d33277568a2d5352\`, matching the frozen convergence-qualified implementation.
+- **Execution:** exact unchanged v0.1d relaunched on Popstop as PID \`26412\`.
+- **Victus role:** Home/Victus contains the verified baseline family and prior DESI results but only the known partial MG transport residue; no manual data copy is required because Popstop retains the complete verified MG family.
+- **Scientific design change:** NONE.
+- **Next action:** allow PID \`26412\` to finish; persist convergence-qualified result or stop at the pre-frozen mechanical convergence block; if qualified, execute the frozen three-result adjudication.
+- **Durable state:** \`ACTIVE_COMPUTE\`.
