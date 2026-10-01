@@ -1,7 +1,7 @@
 # Foundational Physics Source-Locked Evidence Intake Map v0.1
 
 **Date:** 2026-10-01  
-**Governance:** SymC GOM v1.0 + mandatory Continuity Hardening Addendum  
+**Governance:** SymC GOM v1.1 + mandatory Continuity Hardening Addendum  
 **Parent:** FOUNDATIONAL_PHYSICS_STABILITY_ARCHITECTURE_INVESTIGATION_v0.1.md  
 **Status:** SOURCE-LOCKED INITIAL AUDIT / NO CLAIM PROMOTION
 
