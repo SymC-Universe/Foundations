@@ -291,5 +291,3 @@ def main():
 
 if __name__=="__main__":
     main()
-
-[executed on device: Home (421ec504-0181-407b-88d1-ef4da42276e7)]
