@@ -1,0 +1,64 @@
+name: Stability Inheritance Distributed Compute
+
+on:
+  push:
+    branches:
+      - stability-inheritance
+    paths:
+      - "stability_inheritance/DISTRIBUTED_COMPUTE_REGISTRY_v0.1.json"
+      - "stability_inheritance/distributed_compute_plan_v0_1.py"
+      - "stability_inheritance/distributed_compute_execute_v0_1.py"
+      - ".github/workflows/stability-inheritance-distributed-compute.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  plan:
+    runs-on: ubuntu-24.04
+    outputs:
+      matrix: ${{ steps.plan.outputs.matrix }}
+    steps:
+      - name: Check out authoritative branch
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: stability-inheritance
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: "3.12.14"
+      - id: plan
+        name: Build authorized task matrix
+        run: python stability_inheritance/distributed_compute_plan_v0_1.py --github-output "$GITHUB_OUTPUT"
+
+  compute:
+    needs: plan
+    if: ${{ fromJSON(needs.plan.outputs.matrix).include[0].task_id != 'NOOP' }}
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix: ${{ fromJSON(needs.plan.outputs.matrix) }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 330
+    concurrency:
+      group: si-distributed-${{ matrix.task_id }}
+      cancel-in-progress: false
+    steps:
+      - name: Check out frozen task state
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: stability-inheritance
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: "3.12.14"
+      - name: Execute registry-authorized task
+        run: python stability_inheritance/distributed_compute_execute_v0_1.py --task-id "${{ matrix.task_id }}"
+      - name: Upload task checkpoint and result manifest
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: si-distributed-${{ matrix.task_id }}
+          path: stability_inheritance/results/distributed/${{ matrix.task_id }}/
+          if-no-files-found: error
