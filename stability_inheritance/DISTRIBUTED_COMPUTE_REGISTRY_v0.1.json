@@ -2,16 +2,18 @@
   "schema_version": "0.1",
   "date": "2026-10-01",
   "governance": "SymC GOM v1.0 + mandatory Continuity Hardening Addendum",
-  "protocol": "stability_inheritance/DISTRIBUTED_COMPUTE_PROTOCOL_v0.1.md",
+  "protocol": "stability_inheritance/DISTRIBUTED_COMPUTE_PROTOCOL_v0.2.md",
   "branch": "stability-inheritance",
   "scheduler_policy": {
-    "github_hosted_parallel_slots": 2,
+    "github_hosted_parallel_slots": 4,
     "github_segment_scientific_minutes": 300,
     "local_heavy_min_available_ram_mb": 2500,
     "local_light_min_available_ram_mb": 1200,
     "local_max_committed_memory_pct_for_new_launch": 85,
     "duplicate_suppression": "scientific input/configuration identity",
-    "task_selection_authority": "science must be pre-authorized; scheduler chooses executor only"
+    "task_selection_authority": "science must be pre-authorized; scheduler chooses executor only",
+    "monitor_policy": "single condition-driven SI Compute Watch; healthy unchanged state is silent",
+    "slot_collision_rule": "no two READY/ACTIVE tasks may share executor slot"
   },
   "pools": {
     "VICTUS_LOCAL": {
@@ -23,7 +25,11 @@
       "heavy_slots": 1,
       "light_slots": 1,
       "current_resource_note": "fresh DESI-only mnu active; committed memory observed ~82%, so no second heavy task",
-      "state": "ACTIVE"
+      "state": "ACTIVE",
+      "slots": [
+        "VICTUS_HEAVY_1",
+        "VICTUS_LIGHT_1"
+      ]
     },
     "POPSTOP_LOCAL": {
       "device_label": "Popstop",
@@ -34,7 +40,11 @@
       "heavy_slots": 1,
       "light_slots": 1,
       "current_resource_note": "no Python science task active, but available RAM observed <1 GB because desktop/browser load; launch only after resource admission",
-      "state": "RESOURCE_HOLD_FOR_NEW_LOCAL_TASK"
+      "state": "RESOURCE_HOLD_FOR_NEW_LOCAL_TASK",
+      "slots": [
+        "POPSTOP_HEAVY_1",
+        "POPSTOP_LIGHT_1"
+      ]
     },
     "GITHUB_HOSTED_A": {
       "runner": "ubuntu-24.04",
@@ -60,6 +70,20 @@
     "KAGGLE_GPU_A": {
       "state": "DISABLED_UNLESS_GPU_NATIVE_TASK",
       "block": "Do not allocate GPU for CPU-native workload"
+    },
+    "GITHUB_HOSTED_C": {
+      "runner": "ubuntu-24.04",
+      "cpu": 4,
+      "ram_gb": 16,
+      "scientific_segment_minutes": 300,
+      "state": "AVAILABLE"
+    },
+    "GITHUB_HOSTED_D": {
+      "runner": "ubuntu-24.04",
+      "cpu": 4,
+      "ram_gb": 16,
+      "scientific_segment_minutes": 300,
+      "state": "AVAILABLE"
     }
   },
   "tasks": [
@@ -86,7 +110,8 @@
         "converged": false
       },
       "duplication_rule": "DO_NOT_DUPLICATE_ON_ANOTHER_POOL",
-      "next_authorized_action": "continue newest valid checkpoint; after convergence execute the no-wiggle sensitivity audit before inference"
+      "next_authorized_action": "continue newest valid checkpoint; after convergence execute the no-wiggle sensitivity audit before inference",
+      "slot_id": "VICTUS_HEAVY_1"
     },
     {
       "task_id": "LINDLAD_FULL_LIOUVILLIAN_CLEANROOM_V01",
@@ -112,7 +137,8 @@
       "artifact_id": 11162128291,
       "artifact_digest": "sha256:ad4a90107b0c242a0e99ed25ebfc2d748000a8264a51e79b40973b8af5f1a18f",
       "disposition": "FULL_LIOUVILLIAN_DEFECTIVE_UNDER_DECLARED_CONVENTION_SOURCE_MATCH_PENDING",
-      "completed_at": "2026-10-01T12:47:10.928262+00:00"
+      "completed_at": "2026-10-01T12:47:10.928262+00:00",
+      "slot_id": "GITHUB_HOSTED_A"
     },
     {
       "task_id": "QFT_GENERATOR_POLE_CLEANROOM_V01",
@@ -138,7 +164,8 @@
       "artifact_id": 11163297664,
       "artifact_digest": "sha256:e041448853e9d6564be7fca3c95013ec9417f38b20f20063577fc7eed64b1bc5",
       "disposition": "QUALIFIED_REDUCED_GENERATOR_EP_CORE",
-      "completed_at": "2026-10-01T12:47:06.912926+00:00"
+      "completed_at": "2026-10-01T12:47:06.912926+00:00",
+      "slot_id": "GITHUB_HOSTED_B"
     }
   ],
   "invariants": [
