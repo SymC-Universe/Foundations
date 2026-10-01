@@ -15,7 +15,7 @@ update_rule: "Update after every material scientific development and before ever
 - **Repository / persistent location:** SymC-Universe/Foundations
 - **Working branch:** stability-inheritance
 - **Current GOM version:** v1.1
-- **Project-specific protocol/version:** none frozen yet
+- **Project-specific protocol/version:** `stability_inheritance/DISTRIBUTED_COMPUTE_PROTOCOL_v0.1.md` for execution orchestration; no P1 Stability Inheritance scientific protocol is frozen
 - **Current lifecycle Stage:** Stage 3 / P0-Q discovery and representation qualification; the deferred physical-hierarchy APQ lane remains at Stage 2
 - **Status:** ACTIVE
 - **Last updated:** 2026-10-01
@@ -84,7 +84,7 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 
 - **Active plan / scientific route:** computational Stability Architecture reconstruction under GOM v1.1 using source requalification, synthetic/known-truth qualification, external measured native evidence, Function/Limit mapping, and explicit hierarchy/correspondence tests while the physical APQ-2 benchmark remains deferred but preserved
 - **APQ level:** APQ-2 SUBSTANTIAL
-- **Plan status:** REVISION_REQUIRED_AFTER_FIRST_PASS / v0.2 drafted, not frozen
+- **Plan status:** `REVISION_REQUIRED` / v0.2 drafted, not frozen
 - **Plan Packet identity / path / commit:** stability_inheritance/PHYSICAL_HIERARCHY_PLAN_PACKET_v0.2.md, commit 26c3ab3cc04abe17c5b5d1a86e38df479172a204
 - **Adversarial first-pass status:** COMPLETE with two BLOCKER and eight MATERIAL objections; blockers resolved by lowering first-cycle ceiling to P0-Q known-truth qualification and separating direct Χ_arc measurement from parent predictors
 - **Unresolved BLOCKER objections:** none after Plan Delta v0.1; no plan freeze yet
@@ -99,7 +99,7 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 
 - **Overall project hold:** NONE
 - **Computational lane:** ACTIVE
-- **Physical lane hold class:** USER_PHYSICAL_DEPENDENCY / P0-Q APPARATUS QUALIFICATION
+- **Physical lane hold class:** `USER_DECISION_HOLD` / P0-Q APPARATUS QUALIFICATION
 - **Physical trigger:** parent-only hardware identity and single-station buildability remain unavailable because physical experimentation is deferred by the user
 - **Last safe physical state:** parent-only physical pilot authorized at P0-Q; A5/B5 known-truth method qualification passed at code/method level only; no child coupling or decisive Q1/Q2 target exposure has occurred
 - **Affected physical work:** no child coupling, Q1 A/B assembled comparison, Q2 assembled intervention, physical threshold freeze, or carrier-resolved physical claim may advance before parent-only qualification, candidate-margin derivation, APQ-2 adjudication, and plan freeze
@@ -136,12 +136,16 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 
 ## 8. Next Exact Action
 
-- **Next action:** continue the unified foundational-physics U0/U1 source requalification and native representation qualification in parallel: QFT self-energy/covariance audit, Lindblad source-convention match, and cosmology native-modal qualification while the Victus fresh-\(m_\nu\) checkpointed chain continues.
-- **Exact computational control:** use `DISTRIBUTED_COMPUTE_PROTOCOL_v0.1.md` plus `DISTRIBUTED_COMPUTE_REGISTRY_v0.1.json`; the legacy guarded conveyor remains valid for its existing queue but is no longer the sole execution surface.
-- **Required environment / dependency:** Victus/Popstop local pools, two GitHub-hosted parallel slots, and Kaggle only after one-time authentication; raw third-party datasets remain source-governed.
-- **Last successful checkpoint:** first distributed GitHub pair completed under workflow run 36864049059: QFT reduced-generator/pole EP core reproduced; Lindblad full-Liouvillian defectiveness supported under the declared clean-room convention.
-- **Expected next output:** source-matched Lindblad adjudication, QFT microscopic reduction/covariance audit, and a qualified native cosmology modal object or explicit refusal/need-more-info state.
-- **Do not repeat / do not overwrite:** preserve stale-metadata pyFBS failures, F-16 v0.1 sine-sweep invalid test, post-result promotion-debt labels, and all previously seen evidence classes.
+- **Next action:** continue the already-authorized QFT source/microscopic self-energy-covariance audit and Lindblad source-convention match while the Victus fresh-\(m_\nu\) checkpointed chain continues; in parallel, construct and APQ-qualify the cosmology F2 modal-necessity Plan Packet before any new substantial F2 computation.
+- **Why this is next:** QFT/Lindblad source requalification and the existing Victus chain are already-authorized continuations, while GOM v1.1 Section 15.4 requires substantial P0-Q modal work that could shape later claims to be plan-qualified before decisive execution.
+- **Expected output / decision:** source-matched Lindblad status, QFT microscopic reduction/covariance status, continued \(m_\nu\) checkpoint advancement, and a frozen or held cosmology F2 Plan Packet with explicit scalar/native comparators, modal object, held-out task, nulls, uncertainty, and refusal/need-more-info branches.
+- **What must remain frozen while it runs:** all completed evidence identities and claim ceilings; DESI Result 3 blocked status; shared-DESI evidence firewall; Victus \(m_\nu\) scientific configuration; no predefinition of capital \(\Chi\) or \(\Chi_{\mathrm{arc}}\) from desired outcomes.
+- **Stop / refusal condition:** stop any lane at a new scientific choice, source/provenance conflict, numerical/structural invalidity, APQ blocker, or evidence-access boundary; mechanical recovery may continue only when scientific state is unchanged.
+- **User intervention required:** `no` for current computational/source work; physical hierarchy remains separately under `USER_DECISION_HOLD`.
+- **Exact computational control:** use `DISTRIBUTED_COMPUTE_PROTOCOL_v0.1.md` plus `DISTRIBUTED_COMPUTE_REGISTRY_v0.1.json`; four GitHub-hosted slots are qualified as capacity after the successful two-task shakedown, but only distinct already-authorized tasks may occupy them.
+- **Required environment / dependency:** Victus/Popstop local pools, qualified GitHub-hosted slots, and Kaggle only after authentication and task-specific backend parity where needed; raw third-party datasets remain source-governed.
+- **Last successful checkpoint:** distributed workflow run 36864049059 completed the first QFT/Lindblad pair; DESI v0.1e is durably blocked by convergence; Victus fresh-\(m_\nu\) remains active.
+- **Do not repeat / do not overwrite:** preserve stale-metadata pyFBS failures, F-16 v0.1 sine-sweep invalid test, post-result promotion-debt labels, all previously seen evidence classes, and completed distributed task identities.
 
 ## 9. Resume Contract
 
