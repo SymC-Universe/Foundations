@@ -87,6 +87,38 @@
       },
       "duplication_rule": "DO_NOT_DUPLICATE_ON_ANOTHER_POOL",
       "next_authorized_action": "continue newest valid checkpoint; after convergence execute the no-wiggle sensitivity audit before inference"
+    },
+    {
+      "task_id": "LINDLAD_FULL_LIOUVILLIAN_CLEANROOM_V01",
+      "scientific_lane": "FOUNDATIONAL_PHYSICS_LINDBLAD_U0_U1",
+      "evidence_class": "SOURCE-LOCKED CLEAN-ROOM GENERATOR REQUALIFICATION",
+      "protocol": "stability_inheritance/FOUNDATIONAL_PHYSICS_SOURCE_LOCKED_EVIDENCE_MAP_v0.1.md",
+      "executor": "GITHUB_HOSTED_A",
+      "resource_class": "LIGHT",
+      "status": "READY",
+      "script": "stability_inheritance/run_lindblad_full_liouvillian_cleanroom_v0_1.py",
+      "output_root": "stability_inheritance/results/distributed/LINDLAD_FULL_LIOUVILLIAN_CLEANROOM_V01/output",
+      "checkpoint_root": "stability_inheritance/results/distributed/LINDLAD_FULL_LIOUVILLIAN_CLEANROOM_V01/checkpoint",
+      "frozen_question": "Under the manuscript's driven pure-dephasing convention, does the repeated-root boundary at Gamma_phi=2 Omega remain defective in the full 4x4 Liouvillian as well as the reduced Bloch generator?",
+      "frozen_stop_condition": "report algebraic and geometric multiplicities and stop; no cross-domain or universal-optimality inference",
+      "duplication_rule": "DO_NOT_DUPLICATE_UNLESS_EXPLICIT_REPRODUCIBILITY_REPLICA",
+      "next_authorized_action": "persist clean-room result and adjudicate source-locked Lindblad evidence status"
+    },
+    {
+      "task_id": "QFT_GENERATOR_POLE_CLEANROOM_V01",
+      "scientific_lane": "FOUNDATIONAL_PHYSICS_QFT_U0_U1",
+      "evidence_class": "SOURCE-LOCKED CLEAN-ROOM REDUCED-GENERATOR REQUALIFICATION",
+      "protocol": "stability_inheritance/FOUNDATIONAL_PHYSICS_SOURCE_LOCKED_EVIDENCE_MAP_v0.1.md",
+      "executor": "GITHUB_HOSTED_B",
+      "resource_class": "LIGHT",
+      "status": "READY",
+      "script": "stability_inheritance/run_qft_generator_pole_cleanroom_v0_1.py",
+      "output_root": "stability_inheritance/results/distributed/QFT_GENERATOR_POLE_CLEANROOM_V01/output",
+      "checkpoint_root": "stability_inheritance/results/distributed/QFT_GENERATOR_POLE_CLEANROOM_V01/checkpoint",
+      "frozen_question": "For the stated local Markovian reduced equation, does the first-order generator become defective exactly when the retarded poles coalesce at gamma=2|omega|?",
+      "frozen_stop_condition": "report generator defectiveness and pole separation at the analytic boundary and stop; microscopic self-energy derivation remains separate",
+      "duplication_rule": "DO_NOT_DUPLICATE_UNLESS_EXPLICIT_REPRODUCIBILITY_REPLICA",
+      "next_authorized_action": "persist clean-room result and continue the separate self-energy/covariance source audit"
     }
   ],
   "invariants": [
