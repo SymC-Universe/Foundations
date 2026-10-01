@@ -150,7 +150,7 @@ Conglomerate target: a cosmological \(\Chi_{\mathrm{arc}}\) must preserve system
 Current DESI sublane:
 - shared-coordinate Result 1: JOINT_DIFFERENCE_REDUNDANT;
 - tracer-vector Result 2: TRACER_VECTOR_ADDS_OVER_SCALAR_FIT;
-- cross-block Result 3: convergence-qualified v0.1d actively computing at merge;
+- cross-block Result 3: v0.1e completed but failed the frozen numerical-convergence validity gate; raw `CROSS_BLOCK_RELATIONSHIP_ADDS` metrics remain provisional and the authoritative state is `MECHANICAL_NUMERICAL_CONVERGENCE_BLOCK`;
 - DM/DE and SI share DESI provenance and are not independent replications.
 
 The existing DESI_DMDE_SI_OVERLAP_FIREWALL_v0.1.md remains binding as an internal evidence-accounting rule.
