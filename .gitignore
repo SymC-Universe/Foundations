@@ -42,3 +42,6 @@ venv/
 
 # Do not ignore evidence-bearing PDF, ZIP, JSON, CSV, or data artifacts globally.
 # Those files may be intentional parts of the scientific record.
+
+# Large external DESI reproduction inputs
+cosmology_desi/.external/

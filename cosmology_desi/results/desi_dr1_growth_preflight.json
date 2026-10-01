@@ -1,0 +1,90 @@
+{
+  "status": "exploratory_engineering_only",
+  "not_confirmatory_reason": "ShapeFit+BAO compressed blocks were inspected during design and are not an unseen holdout.",
+  "coordinate": "g_SF(z_i)=f_sigma_s8(z_i)/f_sigma_s8_fid(z_i)",
+  "bins": [
+    {
+      "name": "BGS",
+      "z": 0.295,
+      "f_sigma_s8": 0.396326,
+      "f_sigma_s8_fid": 0.4723,
+      "g_SF": 0.8391403768791023,
+      "sigma_g_SF": 0.1904684807586922,
+      "q_LCDM_overlay": -0.2837000055438949,
+      "chi_delta_LCDM_overlay": 1.181551150022589
+    },
+    {
+      "name": "LRG1",
+      "z": 0.51,
+      "f_sigma_s8": 0.547632,
+      "f_sigma_s8_fid": 0.4733,
+      "g_SF": 1.157050496513839,
+      "sigma_g_SF": 0.1255030383168444,
+      "q_LCDM_overlay": -0.1124963574063737,
+      "chi_delta_LCDM_overlay": 1.0614876137009865
+    },
+    {
+      "name": "LRG2",
+      "z": 0.706,
+      "f_sigma_s8": 0.479541,
+      "f_sigma_s8_fid": 0.4608,
+      "g_SF": 1.0406705729166665,
+      "sigma_g_SF": 0.10421423249098984,
+      "q_LCDM_overlay": 0.014507597841040887,
+      "chi_delta_LCDM_overlay": 0.9928241777445328
+    },
+    {
+      "name": "LRG3",
+      "z": 0.93,
+      "f_sigma_s8": 0.438454,
+      "f_sigma_s8_fid": 0.4398,
+      "g_SF": 0.9969395179627103,
+      "sigma_g_SF": 0.09378074151580629,
+      "q_LCDM_overlay": 0.12738229048964325,
+      "chi_delta_LCDM_overlay": 0.9418123790148255
+    },
+    {
+      "name": "ELG2",
+      "z": 1.317,
+      "f_sigma_s8": 0.372661,
+      "f_sigma_s8_fid": 0.3944,
+      "g_SF": 0.944880831643002,
+      "sigma_g_SF": 0.08713896705596315,
+      "q_LCDM_overlay": 0.25942131956192194,
+      "chi_delta_LCDM_overlay": 0.8910754471414593
+    },
+    {
+      "name": "QSO",
+      "z": 1.491,
+      "f_sigma_s8": 0.436849,
+      "f_sigma_s8_fid": 0.375,
+      "g_SF": 1.1649306666666668,
+      "sigma_g_SF": 0.12228550010535955,
+      "q_LCDM_overlay": 0.3001371027634728,
+      "chi_delta_LCDM_overlay": 0.877011766657686
+    }
+  ],
+  "growth_only_fiducial_test": {
+    "chi2": 4.65174497301271,
+    "dof": 6,
+    "p_value": 0.5891896906839564
+  },
+  "weighted_constant_g_SF": {
+    "estimate": 1.025643711011333,
+    "sigma": 0.04492844107641829
+  },
+  "weighted_linear_g_SF_vs_z": {
+    "intercept": 1.017420858730062,
+    "intercept_sigma": 0.1279879558330164,
+    "slope_per_redshift": 0.00840939368372345,
+    "slope_sigma": 0.1225617778339787,
+    "interpretation": "No resolved redshift trend in this exploratory six-bin diagnostic."
+  },
+  "background_overlay": {
+    "model": "flat_LCDM",
+    "omega_m0": 0.2962,
+    "z_q0_equals_z_chi_delta_1": 0.6812465313100531,
+    "interpretation": "Coordinate overlay only; no transition or break claim was preregistered for the six sparse compressed points."
+  },
+  "interpretation": "The compressed growth coordinates are statistically compatible with their fiducial growth history. This does not validate or refute Chi_m or SI; it only confirms that this engineering representation does not show a resolved growth departure or simple redshift trend."
+}
