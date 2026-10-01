@@ -23,10 +23,10 @@
     }
   },
   "active_workflow_or_computation_id": "Popstop:session26412/python25764",
-  "last_workflow_run_id": 36763773032,
+  "last_workflow_run_id": 36825163668,
   "last_execution_commit": "81d3fc814ea446f21f4b89ca642026aca6ae72fb",
-  "next_exact_authorized_action": "Allow Popstop PID 26412 to complete the convergence-qualified v0.1d rerun. If all required fits converge, persist the qualified result and execute the frozen three-result DESI SI adjudication. If any fit reaches 2000 iterations, stop at MECHANICAL_NUMERICAL_CONVERGENCE_BLOCK.",
-  "execution_ceiling": "Complete the already-frozen DESI cross-block relational v0.1c test on Popstop, persist its exact result and identity, then perform the already-authorized three-result DESI SI conglomeration/adjudication. Do not open a new cosmological family or dataset before that synthesis.",
+  "next_exact_authorized_action": "Await Popstop session 26412 / Python worker 25764 completion; persist qualified result or stop at mechanical convergence block; if qualified execute frozen three-result adjudication.",
+  "execution_ceiling": "Complete only the frozen convergence-validity audit and three-result DESI SI adjudication. No new cosmological model family or dataset before synthesis.",
   "scientific_gate": null,
   "external_block": null,
   "user_action_required": null,
@@ -48,17 +48,6 @@
       "result_record": "stability_inheritance/DESI_TRACER_CONGLOMERATION_RESULT_v0.1.md",
       "result_sha256": "3460333fbf62183669559ef68ed5e3de42eb6e60e38e6bbe5354fe4b1f0ee77f",
       "source_pair": "verified DESI DR1 baseline + base_mu_sigma full posterior families"
-    },
-    "active_execution_identity": {
-      "task_id": "DESI_CROSS_BLOCK_RELATIONAL_V01D_CONVERGENCE_AUDIT",
-      "protocol": "stability_inheritance/DESI_CROSS_BLOCK_CONVERGENCE_VALIDITY_AUDIT_v0.1.md",
-      "script": "stability_inheritance/analyze_desi_cross_block_relational_v0_1d.py",
-      "script_commit": "e4b21eeb182c8fa85dcdf9f03467bd44c4e2d966",
-      "local_script_sha256": "2a85b40ab05332a245c135ebcd2f04af7b111acd171f5239d33277568a2d5352",
-      "host": "Popstop",
-      "pid": 18656,
-      "session_pid": 26412,
-      "python_worker_pid": 25764
     }
   },
   "protected_inputs": [
@@ -71,23 +60,8 @@
   "five_question_test": {
     "what_scientific_lane_are_we_advancing": "DESI_SI_CONGLOMERATION",
     "what_is_actually_running_or_just_completed": "Popstop PID 26412 is actively executing the frozen convergence-qualified DESI cross-block v0.1d rerun after Windows-update recovery.",
-    "what_is_the_next_already_authorized_action": "Persist the convergence-qualified result if all fits converge, then execute the pre-frozen three-result DESI SI adjudication; otherwise stop at the mechanical convergence block.",
+    "what_is_the_next_already_authorized_action": "Await Popstop session 26412 / Python worker 25764 completion; persist qualified result or stop at mechanical convergence block; if qualified execute frozen three-result adjudication.",
     "what_prevents_that_action_immediately": "The v0.1d computation is actively running.",
     "does_crossing_the_boundary_require_mechanical_execution_or_new_scientific_decision": "MECHANICAL_EXECUTION only through completion of the frozen convergence audit and already-frozen three-result adjudication."
-  },
-  "active_execution_commit": "e4b21eeb182c8fa85dcdf9f03467bd44c4e2d966",
-  "last_controller_reconciliation": {
-    "date": "2026-10-01",
-    "classification": "HOST_REBOOT_RECOVERED_ACTIVE_COMPUTE_RESTORED",
-    "execution_host": "Popstop",
-    "pid": 26412,
-    "prior_pid": "18656_stale_after_windows_update",
-    "result_checkpoint_before_restart": "v0.1d result absent; no valid completed work to preserve",
-    "script_sha256": "2a85b40ab05332a245c135ebcd2f04af7b111acd171f5239d33277568a2d5352",
-    "baseline_hashes_verified": true,
-    "modified_gravity_hashes_verified": true,
-    "scientific_design_change": "NONE",
-    "launcher_session_pid": 26412,
-    "python_worker_pid": 25764
   }
 }
