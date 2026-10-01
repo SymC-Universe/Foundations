@@ -1111,3 +1111,17 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Verification:** commit-pinned download and python -m py_compile passed before launch.
 - **Active execution:** Popstop launcher session 27236, Python worker 21616.
 - **Durable state:** ACTIVE_COMPUTE.
+
+
+### 2026-10-01 - CANONICAL_TRANSFER - DM/DE cosmology lane transferred into SI foundational-physics investigation
+
+- **User direction:** all DM/DE cosmology work is transferred into the Stability Inheritance investigation; the former standalone DM/DE lane is no longer an independent interpretation lane.
+- **Canonical handoff:** stability_inheritance/DM_DE_COSMOLOGY_TO_SI_TRANSFER_WORKSHEET_v1.0_2026-10-01.md.
+- **Transfer commit:** ab6af289b12501eec843c7b7794f7a0084bffdbd.
+- **Scope preserved:** scalar \(\chi_\delta\) identities and ceilings, DESI DR1/DR2 native cosmology results, MG/dynamical-DE/neutrino adversaries, RQE and five-component qualification methods, novelty/collision audit, transition-topology stress tests, topology redundancy, branch-history sufficiency, adversarial response geometry, curiosity-led near-one false lead, literature spine, artifact/commit map, live Victus \(m_\nu\) checkpoint, and massive-neutrino no-wiggle smoothing warning.
+- **Evidence accounting:** DESI DM/DE and DESI SI analyses using the same posterior families remain one shared evidence family under DESI_DMDE_SI_OVERLAP_FIREWALL_v0.1.md.
+- **Claim ceiling carried forward:** \(\chi_\delta\) remains a qualified model-linked coordinate; cosmological mechanical EP, capital \(\Chi\), and a cosmological SI carrier remain unestablished.
+- **Live Victus handoff:** fresh DESI-only base_mnu chain remains unconverged; latest transfer-time checkpoint \(R-1=0.1708829502\) against frozen \(R-1<0.01\). Resume newest valid checkpoint; do not restart or infer a final posterior from the partial chain.
+- **Open methodological gate:** PeakAverage BAO smoothing invokes a massive-neutrino-incomplete Eisenstein-Hu no-wiggle approximation even though CAMB supplies the physical spectrum. The effect must be bounded before the fresh DESI-only \(m_\nu\) lane supports scientific inference.
+- **Receiving continuity discrepancy:** transfer-time inspection found no Python process on Popstop and no checked v0.1e result JSON, while the prior SI record still described v0.1e as ACTIVE_COMPUTE. Treat the recorded PID as stale until a valid result or matching live process is verified; reconcile under the Continuity Hardening Addendum.
+- **Next scientific role:** use native cosmology as the comparator inside SI U1/U2; do not construct capital \(\Chi\) before F2/native modal qualification; do not count the transferred DM/DE results as independent replication of DESI SI.
