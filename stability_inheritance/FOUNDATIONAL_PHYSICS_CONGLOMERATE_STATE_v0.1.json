@@ -45,8 +45,8 @@
       "id": "C_COSMOLOGY_DARK_SECTOR",
       "scope": "cosmology + gravitation + DM/DE + DESI",
       "state": "ACTIVE_COMPUTE",
-      "active_execution": "Popstop launcher 26412 / Python worker 25764",
-      "current_stage": "DESI_CROSS_BLOCK_RELATIONAL_V01D_CONVERGENCE_AUDIT",
+      "active_execution": "Popstop launcher 27236 / Python worker 21616",
+      "current_stage": "DESI_CROSS_BLOCK_RELATIONAL_V01E_CONVERGENCE_AUDIT_SERIALIZATION_REPAIR",
       "next": "qualified Result 3 -> frozen three-result adjudication -> integrated native-cosmology/SI synthesis",
       "evidence_independence_rule": "DMDE and SI analyses using the same DESI chains are one evidence family"
     },
@@ -80,5 +80,10 @@
     "Rebuild particle-physics lane from native generators before any new chi assignment.",
     "After DESI closes, integrate cosmology native-model and representation results under one lane.",
     "Only then freeze first E2/E3/E4 cross-domain equivalence test."
-  ]
+  ],
+  "last_update": {
+    "date": "2026-10-01",
+    "event": "DESI v0.1d failed after computation at result serialization; exact-science v0.1e mechanical repair launched.",
+    "scientific_design_change": "NONE"
+  }
 }
