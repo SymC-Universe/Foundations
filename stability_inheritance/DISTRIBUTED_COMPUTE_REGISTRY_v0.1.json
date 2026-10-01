@@ -139,11 +139,11 @@
       },
       "frozen_stop_condition": "R-1 < 0.01, then preserve posterior and run separately frozen massive-neutrino no-wiggle smoothing sensitivity gate before scientific promotion",
       "latest_transferred_checkpoint": {
-        "N": 65280,
-        "acceptance_rate": 0.247394,
-        "R_minus_1": 0.08247693874540407,
+        "N": 66048,
+        "acceptance_rate": 0.247501,
+        "R_minus_1": 0.07816156318265301,
         "converged": false,
-        "source_timestamp": "2026-10-01T14:47:10.534114-05:00",
+        "source_timestamp": "2026-10-01T15:06:58.129523-05:00",
         "source": "Victus fresh_run/chain.progress + chain.checkpoint"
       },
       "duplication_rule": "DO_NOT_DUPLICATE_ON_ANOTHER_POOL",
