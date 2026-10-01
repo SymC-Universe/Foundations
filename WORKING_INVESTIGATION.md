@@ -111,10 +111,11 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 
 ## 8. Next Exact Action
 
-- **Next action:** intake the long-term Brake-Reuss Beam wear/history dataset through its official OSF route without opening response outcomes, then freeze a history-to-later-response qualification task only if the source/layout supports a clean pre/post/reassembly split.\n- **Exact computational control:** use the guarded Stability Inheritance conveyor; hourly automation remains recovery-only.
-- **Required environment / dependency:** GitHub Actions plus source-specific runtime acquisition; raw third-party datasets are not committed where redistribution is uncertain.
-- **Last successful checkpoint:** measured pyFBS native hierarchical transformation scored NATIVE_FRAMEWORK_EQUIVALENT after current-official metadata correction.
-- **Expected next output:** conditioning-aware Function/Limit map for measured hierarchy and an adjudicated choice of the next nonredundant external architecture test.
+- **Next action:** continue the unified foundational-physics U0/U1 source requalification and native representation qualification in parallel: QFT self-energy/covariance audit, Lindblad source-convention match, and cosmology native-modal qualification while the Victus fresh-\(m_\nu\) checkpointed chain continues.
+- **Exact computational control:** use `DISTRIBUTED_COMPUTE_PROTOCOL_v0.1.md` plus `DISTRIBUTED_COMPUTE_REGISTRY_v0.1.json`; the legacy guarded conveyor remains valid for its existing queue but is no longer the sole execution surface.
+- **Required environment / dependency:** Victus/Popstop local pools, two GitHub-hosted parallel slots, and Kaggle only after one-time authentication; raw third-party datasets remain source-governed.
+- **Last successful checkpoint:** first distributed GitHub pair completed under workflow run 36864049059: QFT reduced-generator/pole EP core reproduced; Lindblad full-Liouvillian defectiveness supported under the declared clean-room convention.
+- **Expected next output:** source-matched Lindblad adjudication, QFT microscopic reduction/covariance audit, and a qualified native cosmology modal object or explicit refusal/need-more-info state.
 - **Do not repeat / do not overwrite:** preserve stale-metadata pyFBS failures, F-16 v0.1 sine-sweep invalid test, post-result promotion-debt labels, and all previously seen evidence classes.
 
 ## 10. Key Artifact Map
@@ -1142,3 +1143,22 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Do not do:** no solver, regularization, tolerance, scaling, feature, source, split, or threshold retuning without a new prospective numerical-method gate.
 - **What remains authorized:** continue nonoverlapping SI U0/U1/U2 source and representation qualification, including cosmology native-modal qualification and QFT/Lindblad source requalification.
 - **Next and why:** advance the nonoverlapping foundational-physics representation audit while DESI Result 3 is scientifically gated; this preserves momentum without smuggling a post-result rescue into the frozen DESI design.
+
+
+### 2026-10-01 - DISTRIBUTED_COMPUTE_ACTIVATION - Parallel execution layer qualified
+
+- **Lifecycle Stage:** unified foundational physics / U0-U2 execution infrastructure
+- **Entry type:** CONTINUITY / COMPUTE-TOPOLOGY DEVELOPMENT
+- **User direction:** use more than one computation concurrently where resources permit; include local machines, GitHub, and Kaggle while preventing task/output confusion and reducing manual polling.
+- **Protocol:** `stability_inheritance/DISTRIBUTED_COMPUTE_PROTOCOL_v0.1.md`.
+- **Registry:** `stability_inheritance/DISTRIBUTED_COMPUTE_REGISTRY_v0.1.json`.
+- **Resource rule:** one local HEAVY slot plus one conditional LIGHT slot per physical machine; RAM/resource admission overrides idle CPU. GitHub begins with two hosted slots. Kaggle is defined but remains authentication-gated until needed by an authorized task.
+- **Victus state:** fresh DESI-only \(m_\nu\) remains one checkpointed scientific task despite two observed Python process IDs; duplication on another pool is prohibited.
+- **Popstop state:** no active Python science task at inspection, but new local launch is resource-gated because available physical RAM was below the LIGHT admission floor.
+- **GitHub shakedown:** workflow run `36864049059` launched QFT and Lindblad clean-room jobs as two independent matrix tasks and both completed successfully.
+- **QFT result:** at \(\gamma=2|\omega|\), the first-order reduced generator has algebraic multiplicity 2, geometric multiplicity 1, zero discriminant, and exactly coalesced retarded poles. Reduced-generator EP core independently reproduced.
+- **Lindblad result:** under \(\dot\rho=-i[\Omega\sigma_x/2,\rho]+(\Gamma_\phi/2)(\sigma_z\rho\sigma_z-\rho)\), the target \(-\Omega\) eigenvalue has algebraic multiplicity 2 and geometric multiplicity 1 in both the Bloch generator and full 4x4 Liouvillian at \(\Gamma_\phi=2\Omega\). Exact Lindblad-v4 convention matching remains required before manuscript-level promotion.
+- **Continuity hardening:** future GitHub distributed jobs are pinned to the triggering commit SHA; each task has a unique output/checkpoint namespace and artifact identity.
+- **Monitoring:** hourly condition watch is event-driven and should remain silent while healthy state is unchanged; it surfaces completion, block/failure, stale advancement, missing checkpoint, resource hold on an authorized task, or newly required user action.
+- **Scientific authority:** scheduler may choose where already-authorized work runs but may not invent hypotheses, comparators, thresholds, rescue methods, or evidence promotion.
+- **Next and why:** fill GitHub slots with source-locked U0/U1 work as it is frozen; reserve local heavy capacity for checkpoint-dependent chains and Kaggle for authenticated memory-heavy/near-12-hour jobs.
