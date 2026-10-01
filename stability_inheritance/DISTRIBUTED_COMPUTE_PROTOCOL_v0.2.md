@@ -1,7 +1,7 @@
 # Stability Inheritance Distributed Compute Protocol v0.2
 
 **Date:** 2026-10-01  
-**Governance:** SymC General Operations Manual v1.0 + mandatory Continuity Hardening Addendum  
+**Governance:** SymC General Operations Manual v1.1 + mandatory Continuity Hardening Addendum  
 **Supersedes:** DISTRIBUTED_COMPUTE_PROTOCOL_v0.1.md  
 **Scope:** execution orchestration only  
 **Scientific authority:** unchanged  
@@ -47,7 +47,7 @@ Use standard Linux runners for checked-in or reproducibly acquired computations.
 
 Default SI allocation is **four simultaneous distinct GitHub task slots**.
 
-A standard hosted job has a six-hour execution ceiling. SI scientific execution must therefore stop by 300 minutes per segment, reserving margin for checkpoint serialization, artifact upload, and continuity persistence.
+A standard hosted job has a six-hour execution ceiling. SI scientific execution must therefore stop by 300 minutes per segment, reserving margin for checkpoint serialization, artifact upload, and continuity persistence. The 300-minute segment target is an infrastructure safety margin, not a universal scientific checkpoint cadence; task-level checkpoint/progress cadence remains workload-specific under GOM v1.1 Sections 27 and 31.
 
 A task longer than one segment may continue only if the task has a scientifically neutral exact-resume checkpoint. Successor segments must preserve:
 - model, solver, precision, tolerance, source/input identity, seed contract, and frozen configuration;
@@ -76,6 +76,12 @@ Every Kaggle output must return to the canonical SI lineage with:
 - source/input hashes;
 - output/checkpoint hashes;
 - terminal disposition.
+
+## Backend parity and execution-mode changes
+
+Moving an already-defined task between local CPU, GitHub, Kaggle, GPU, alternate precision, alternate solver/runtime, MPI rank count, or another execution mode that could change numerical behavior requires representative production-equivalent parity qualification under GOM v1.1 Section 25.3 before decisive production use.
+
+Executor choice may change logistics. It may not silently change the scientific method, precision, solver, stochastic contract, or result semantics. A parity check may be omitted only when the change is demonstrably transport-only and cannot alter the numerical object; the reason is recorded.
 
 ## Required task identity
 
@@ -119,7 +125,7 @@ Monitoring is condition-driven, not conversational polling. One SI compute watch
 Human attention is requested only when:
 - a task completes;
 - a task fails or blocks;
-- advancement is stale for approximately 90 minutes;
+- advancement is stale beyond the workload-specific progress expectation derived from pilot/provider/native behavior; use approximately 90 minutes only as a fallback when no better expectation exists;
 - an expected checkpoint/output is missing;
 - an authorized task is held by resources;
 - a scientific gate or new user action is reached.
