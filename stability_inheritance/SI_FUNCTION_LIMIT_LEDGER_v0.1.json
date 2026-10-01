@@ -1,0 +1,228 @@
+{
+  "schema_version": "0.1",
+  "date": "2026-09-30",
+  "governance": "SymC GOM v1.0 + mandatory Continuity Hardening Addendum",
+  "status": "CLOSED_EVIDENCE_LEDGER_DESI_V01D_EXCLUDED_WHILE_ACTIVE",
+  "notation": {
+    "scalar_chi": "Admit only where native dynamics and declared task license a scalar stability coordinate.",
+    "modal_Chi": "Admit only where a scientifically justified modal/vector/state object exists.",
+    "conglomerate_Chi_arc": "Admit only as an independently justified system/conglomerate object; never from dimensionality or classifier gain alone."
+  },
+  "functions": [
+    {
+      "id": "CONDITIONAL_REPRESENTATION_ADEQUACY",
+      "domains": [
+        "F16_GVT"
+      ],
+      "evidence": "P0-Q measured + replication",
+      "source": "F16_GVT_STABILITY_ARCHITECTURE_SYNTHESIS_v0.1.md",
+      "ceiling": "within declared excitation families; not universal cross-excitation"
+    },
+    {
+      "id": "NATIVE_HIERARCHICAL_TRANSFORMATION_IMPROVES_OVER_NO_DECOUPLING",
+      "domains": [
+        "pyFBS"
+      ],
+      "evidence": "P0-Q measured",
+      "source": "PYFBS_CURRENT_METADATA_SVT_LMFBS_RESULT_v0.4.md",
+      "ceiling": "native framework equivalent; weak carrier specificity"
+    },
+    {
+      "id": "EMBEDDING_BOUNDARY_CONDITIONS_REALIZE_DIFFERENT_DYNAMICS",
+      "domains": [
+        "BARC"
+      ],
+      "evidence": "published native experimental",
+      "source": "BARC_BOUNDARY_CONDITION_ARCHITECTURE_EVIDENCE_v0.1.md",
+      "ceiling": "architecture evidence; no unique Chi_arc"
+    },
+    {
+      "id": "DOMINANT_MODAL_SUBSPACE_PERSISTS_WITH_FINE_GEOMETRY_REORGANIZATION",
+      "domains": [
+        "BRB"
+      ],
+      "evidence": "public external measured P0-Q",
+      "source": "BRB_RINGDOWN_MODAL_GEOMETRY_RESULT_v0.1.md",
+      "ceiling": "physical modal subspace admitted only for declared task"
+    },
+    {
+      "id": "LOCAL_CHI_TRACKS_MODAL_GEOMETRY",
+      "domains": [
+        "BRB"
+      ],
+      "evidence": "public external measured P0-D",
+      "source": "BRB_SCALAR_MODAL_RELATION_RESULT_v0.1.md",
+      "ceiling": "promotion debt; redundant with amplitude for held-out modal prediction"
+    },
+    {
+      "id": "HISTORY_CONDITIONED_RESPONSE_ARCHITECTURE",
+      "domains": [
+        "BRB"
+      ],
+      "evidence": "public external measured P0-Q",
+      "source": "BRB_LONGTERM_HISTORY_RESPONSE_RESULT_v0.2.md",
+      "ceiling": "native wear/contact/tribomechadynamics sufficient"
+    },
+    {
+      "id": "PARTIAL_REORGANIZATION_TOWARD_EARLIER_STATE",
+      "domains": [
+        "BRB"
+      ],
+      "evidence": "public external measured P0-Q",
+      "source": "BRB_LONGTERM_HISTORY_RESPONSE_RESULT_v0.2.md",
+      "ceiling": "partial reset, not restoration"
+    },
+    {
+      "id": "DISTRIBUTED_TRACER_VECTOR_ADDS_OVER_SCALAR_TOTAL",
+      "domains": [
+        "DESI"
+      ],
+      "evidence": "public external posterior P0-Q/P0-D",
+      "source": "DESI_TRACER_CONGLOMERATION_RESULT_v0.1.md",
+      "ceiling": "observational response vector, not physical modal Chi"
+    },
+    {
+      "id": "JOINT_SHARED_COORDINATES_ADD_HELD_OUT_MODEL_FAMILY_INFORMATION",
+      "domains": [
+        "DESI"
+      ],
+      "evidence": "public external posterior P0-Q",
+      "source": "DESI_SHARED_COORDINATE_SI_RESULT_v0.1.md",
+      "ceiling": "relationship reorganization not robust; raw joint gain is insufficient for conglomerate admission"
+    },
+    {
+      "id": "NATIVE_FRAMEWORK_EQUIVALENCE_VALID_CLOSURE",
+      "domains": [
+        "pyFBS",
+        "BARC",
+        "BRB"
+      ],
+      "evidence": "cross-domain synthesis",
+      "source": "SI_CROSS_DOMAIN_CLOSED_EVIDENCE_MATRIX_v0.1.md",
+      "ceiling": "architecture may be real while SI-specific added value is unnecessary"
+    }
+  ],
+  "limits": [
+    {
+      "id": "NO_UNIVERSAL_SCALAR_SUFFICIENCY",
+      "domains": [
+        "BRB",
+        "DESI",
+        "F16_GVT",
+        "pyFBS",
+        "BARC"
+      ],
+      "source": "SI_CROSS_DOMAIN_CLOSED_EVIDENCE_MATRIX_v0.1.md"
+    },
+    {
+      "id": "NO_AUTOMATIC_CHI_FROM_LOCAL_SCALAR_DESCRIPTOR",
+      "domains": [
+        "all"
+      ],
+      "source": "STABILITY_ARCHITECTURE_RELATION_MATRIX_v0.8.md"
+    },
+    {
+      "id": "NO_AUTOMATIC_CAPITAL_CHI_FROM_GENERIC_MULTIVARIATE_DATA",
+      "domains": [
+        "F16_GVT",
+        "pyFBS",
+        "DESI"
+      ],
+      "source": "SI_CROSS_DOMAIN_CLOSED_EVIDENCE_MATRIX_v0.1.md"
+    },
+    {
+      "id": "NO_AUTOMATIC_CHI_ARC_FROM_HIGH_DIMENSIONALITY",
+      "domains": [
+        "F16_GVT",
+        "BRB",
+        "DESI"
+      ],
+      "source": "SI_CROSS_DOMAIN_CLOSED_EVIDENCE_MATRIX_v0.1.md"
+    },
+    {
+      "id": "AMPLITUDE_ALONE_NOT_UNIVERSAL_ACROSS_EXCITATION_DESIGNS",
+      "domains": [
+        "F16_GVT"
+      ],
+      "source": "F16_GVT_STABILITY_ARCHITECTURE_SYNTHESIS_v0.1.md"
+    },
+    {
+      "id": "MAPPING_SPECIFICITY_WEAK_DESPITE_NATIVE_TRANSFORMATION_GAIN",
+      "domains": [
+        "pyFBS"
+      ],
+      "source": "PYFBS_CURRENT_METADATA_SVT_LMFBS_RESULT_v0.4.md"
+    },
+    {
+      "id": "RIGID_BOUNDARY_NOT_UNIVERSALLY_NEUTRAL",
+      "domains": [
+        "BARC"
+      ],
+      "source": "BARC_BOUNDARY_CONDITION_ARCHITECTURE_EVIDENCE_v0.1.md"
+    },
+    {
+      "id": "EXACT_MODAL_VECTOR_INVARIANCE_REFUSED_WHILE_SUBSPACE_PERSISTS",
+      "domains": [
+        "BRB"
+      ],
+      "source": "BRB_RINGDOWN_MODAL_GEOMETRY_RESULT_v0.1.md"
+    },
+    {
+      "id": "SCALAR_TRACKING_REDUNDANT_WITH_OPERATING_STATE",
+      "domains": [
+        "BRB"
+      ],
+      "source": "BRB_SCALAR_MODAL_RELATION_RESULT_v0.1.md"
+    },
+    {
+      "id": "HISTORY_ADVANTAGE_NOT_UNIFORM_ACROSS_LOCAL_DRIVE_CONDITIONS",
+      "domains": [
+        "BRB"
+      ],
+      "source": "BRB_LONGTERM_HISTORY_RESPONSE_RESULT_v0.2.md"
+    },
+    {
+      "id": "PARTIAL_RESET_NOT_STATE_RESTORATION",
+      "domains": [
+        "BRB"
+      ],
+      "source": "BRB_LONGTERM_HISTORY_RESPONSE_RESULT_v0.2.md"
+    },
+    {
+      "id": "JOINT_CLASSIFIER_GAIN_NOT_RELATIONAL_REORGANIZATION_BY_ITSELF",
+      "domains": [
+        "DESI"
+      ],
+      "source": "DESI_SHARED_COORDINATE_SI_RESULT_v0.1.md"
+    },
+    {
+      "id": "LIKELIHOOD_RESPONSE_VECTOR_NOT_PHYSICAL_MODAL_BASIS",
+      "domains": [
+        "DESI"
+      ],
+      "source": "DESI_TRACER_CONGLOMERATION_RESULT_v0.1.md"
+    },
+    {
+      "id": "MODEL_FAMILY_DISCRIMINATION_NOT_MODEL_PREFERENCE",
+      "domains": [
+        "DESI"
+      ],
+      "source": "DESI_TRACER_CONGLOMERATION_RESULT_v0.1.md"
+    }
+  ],
+  "pending": [
+    {
+      "id": "DESI_CROSS_BLOCK_RELATIONAL_V01D_CONVERGENCE_AUDIT",
+      "state": "ACTIVE_COMPUTE",
+      "excluded_from_closed_evidence": true,
+      "allowed_outcomes": [
+        "CROSS_BLOCK_RELATIONSHIP_ADDS",
+        "CROSS_BLOCK_ADDITIVE_SUFFICIENT",
+        "INTERACTION_GAIN_PAIRING_NONESSENTIAL",
+        "CROSS_BLOCK_RELATIONSHIP_INDETERMINATE",
+        "MECHANICAL_NUMERICAL_CONVERGENCE_BLOCK"
+      ],
+      "next": "After numerical validity closes, apply DESI_THREE_RESULT_CONGLOMERATION_ADJUDICATION_PLAN_v0.1.md before adding any new cosmological evidence."
+    }
+  ]
+}
