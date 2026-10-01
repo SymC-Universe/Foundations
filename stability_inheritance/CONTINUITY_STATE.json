@@ -7,8 +7,8 @@
   },
   "branch": "stability-inheritance",
   "scientific_lane": "DESI_SI_CONGLOMERATION",
-  "authorized_stage": "DESI_CROSS_BLOCK_RELATIONAL_V01D_RECOVERY_SECOND_REBOOT_PENDING",
-  "continuity_state": "USER_ACTION_REQUIRED",
+  "authorized_stage": "DESI_CROSS_BLOCK_RELATIONAL_V01D_CONVERGENCE_AUDIT",
+  "continuity_state": "ACTIVE_COMPUTE",
   "last_completed_durable_checkpoint": {
     "task_id": "DESI_TRACER_CONGLOMERATION_V01",
     "disposition": "TRACER_VECTOR_ADDS_OVER_SCALAR_FIT",
@@ -22,20 +22,14 @@
       "result_sha256": "62bc618575430088556d4c8debd3de25ef93c51bc0e15a70b34a774bca47d415"
     }
   },
-  "active_workflow_or_computation_id": null,
+  "active_workflow_or_computation_id": "Popstop:PID26412",
   "last_workflow_run_id": 36763773032,
   "last_execution_commit": "81d3fc814ea446f21f4b89ca642026aca6ae72fb",
-  "next_exact_authorized_action": "Complete the pending Popstop/Asus Windows update and reboot. After Desktop Commander reconnects, inspect for a complete v0.1d result; if none exists, rerun the exact frozen v0.1d analyzer against the same verified eight DESI chains.",
+  "next_exact_authorized_action": "Allow Popstop PID 26412 to complete the convergence-qualified v0.1d rerun. If all required fits converge, persist the qualified result and execute the frozen three-result DESI SI adjudication. If any fit reaches 2000 iterations, stop at MECHANICAL_NUMERICAL_CONVERGENCE_BLOCK.",
   "execution_ceiling": "Complete the already-frozen DESI cross-block relational v0.1c test on Popstop, persist its exact result and identity, then perform the already-authorized three-result DESI SI conglomeration/adjudication. Do not open a new cosmological family or dataset before that synthesis.",
   "scientific_gate": null,
   "external_block": null,
-  "user_action_required": {
-    "blocked_stage": "DESI_CROSS_BLOCK_RELATIONAL_V01D_RECOVERY_SECOND_REBOOT_PENDING",
-    "reason": "Popstop requires an additional Windows update/reboot. No scientific compute should be restarted between reboots.",
-    "exact_user_action": "Finish the Windows update/reboot on Popstop/Asus, then relaunch Desktop Commander Remote.",
-    "resume_checkpoint": "Frozen v0.1d analyzer and exact DESI source identities remain unchanged.",
-    "immediate_post_action": "Inspect expected v0.1d result path first. If absent/incomplete, rerun unchanged v0.1d; if complete, verify and adjudicate without recomputation."
-  },
+  "user_action_required": null,
   "last_productive_advancement": "2026-09-30T19:04:00.766Z",
   "liveness_clock": {
     "lane": "DESI_SI_CONGLOMERATION",
@@ -74,10 +68,22 @@
   ],
   "five_question_test": {
     "what_scientific_lane_are_we_advancing": "DESI_SI_CONGLOMERATION",
-    "what_is_actually_running_or_just_completed": "No scientific computation is running. Popstop is online only long enough to complete a second Windows update/reboot.",
-    "what_is_the_next_already_authorized_action": "After the second reboot, inspect for a completed v0.1d result and mechanically resume unchanged if needed.",
-    "what_prevents_that_action_immediately": "Pending Windows update/reboot on Popstop.",
-    "does_crossing_the_boundary_require_mechanical_execution_or_new_scientific_decision": "USER_ACTION_REQUIRED to complete the reboot; afterward recovery remains mechanical."
+    "what_is_actually_running_or_just_completed": "Popstop PID 26412 is actively executing the frozen convergence-qualified DESI cross-block v0.1d rerun after Windows-update recovery.",
+    "what_is_the_next_already_authorized_action": "Persist the convergence-qualified result if all fits converge, then execute the pre-frozen three-result DESI SI adjudication; otherwise stop at the mechanical convergence block.",
+    "what_prevents_that_action_immediately": "The v0.1d computation is actively running.",
+    "does_crossing_the_boundary_require_mechanical_execution_or_new_scientific_decision": "MECHANICAL_EXECUTION only through completion of the frozen convergence audit and already-frozen three-result adjudication."
   },
-  "active_execution_commit": null
+  "active_execution_commit": "e4b21eeb182c8fa85dcdf9f03467bd44c4e2d966",
+  "last_controller_reconciliation": {
+    "date": "2026-10-01",
+    "classification": "HOST_REBOOT_RECOVERED_ACTIVE_COMPUTE_RESTORED",
+    "execution_host": "Popstop",
+    "pid": 26412,
+    "prior_pid": "18656_stale_after_windows_update",
+    "result_checkpoint_before_restart": "v0.1d result absent; no valid completed work to preserve",
+    "script_sha256": "2a85b40ab05332a245c135ebcd2f04af7b111acd171f5239d33277568a2d5352",
+    "baseline_hashes_verified": true,
+    "modified_gravity_hashes_verified": true,
+    "scientific_design_change": "NONE"
+  }
 }
