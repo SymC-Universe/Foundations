@@ -857,13 +857,26 @@
     },
     {
       "id": "DESI_CROSS_BLOCK_RELATIONAL_V01D_CONVERGENCE_AUDIT",
-      "status": "ACTIVE_EXTERNAL_COMPUTE",
+      "status": "FAILED_IMPLEMENTATION_SERIALIZATION",
       "execution_mode": "LOCAL_EXTERNAL_POPSTOP",
       "protocol": "stability_inheritance/DESI_CROSS_BLOCK_CONVERGENCE_VALIDITY_AUDIT_v0.1.md",
       "script": "stability_inheritance/analyze_desi_cross_block_relational_v0_1d.py",
       "local_host": "Popstop",
       "local_pid": 18656,
       "evidence_class": "MECHANICAL NUMERICAL VALIDITY AUDIT",
+      "stop_after": true,
+      "failure_record": "stability_inheritance/SI_CONTINUITY_FAILURE_DESI_V01D_NULL_LITERAL_2026-10-01.md"
+    },
+    {
+      "id": "DESI_CROSS_BLOCK_RELATIONAL_V01E_CONVERGENCE_AUDIT_SERIALIZATION_REPAIR",
+      "status": "ACTIVE_EXTERNAL_COMPUTE",
+      "execution_mode": "LOCAL_EXTERNAL_POPSTOP",
+      "protocol": "stability_inheritance/DESI_CROSS_BLOCK_CONVERGENCE_VALIDITY_AUDIT_v0.1.md",
+      "script": "stability_inheritance/analyze_desi_cross_block_relational_v0_1e.py",
+      "local_host": "Popstop",
+      "launcher_session_pid": 27236,
+      "python_worker_pid": 21616,
+      "evidence_class": "MECHANICAL IMPLEMENTATION REPAIR / NUMERICAL VALIDITY AUDIT",
       "stop_after": true
     }
   ],
@@ -872,7 +885,7 @@
     "sequence": 10
   },
   "scientific_lane": "DESI_SI_CONGLOMERATION",
-  "authorized_stage": "DESI_CROSS_BLOCK_RELATIONAL_V01D_CONVERGENCE_AUDIT",
+  "authorized_stage": "DESI_CROSS_BLOCK_RELATIONAL_V01E_CONVERGENCE_AUDIT_SERIALIZATION_REPAIR",
   "execution_ceiling": "Complete only the frozen convergence-validity audit and three-result DESI SI adjudication. No new cosmological model family or dataset before synthesis.",
   "protected_inputs": [
     "No model-only mu0/Sigma0 as classifier features",
@@ -881,7 +894,7 @@
     "No automatic lowercase chi, capital Chi, or Chi_arc assignment from posterior representation tests",
     "No row thinning, float32 conversion, feature removal, solver retuning, threshold change, or source substitution in v0.1c"
   ],
-  "next_authorized_action": "Await Popstop session 26412 / Python worker 25764 completion; persist qualified result or stop at mechanical convergence block; if qualified execute frozen three-result adjudication.",
+  "next_authorized_action": "Await Popstop session 27236 / Python worker 21616 completion; persist qualified result or stop at mechanical convergence block; if qualified execute frozen three-result adjudication.",
   "last_productive_advancement": "2026-09-30T01:04:36Z",
   "deferred_lanes": {
     "ERIES_EUROPROTEAS_CROSS_SUBSTRATE": {
@@ -890,13 +903,14 @@
     }
   },
   "local_external_execution": {
-    "task_id": "DESI_CROSS_BLOCK_RELATIONAL_V01D_CONVERGENCE_AUDIT",
+    "task_id": "DESI_CROSS_BLOCK_RELATIONAL_V01E_CONVERGENCE_AUDIT_SERIALIZATION_REPAIR",
     "host": "Popstop",
-    "launcher_session_pid": 26412,
-    "python_worker_pid": 25764,
+    "launcher_session_pid": 27236,
+    "python_worker_pid": 21616,
     "status": "ACTIVE_COMPUTE",
-    "script": "stability_inheritance/analyze_desi_cross_block_relational_v0_1d.py",
-    "script_commit": "e4b21eeb182c8fa85dcdf9f03467bd44c4e2d966",
-    "script_sha256": "2a85b40ab05332a245c135ebcd2f04af7b111acd171f5239d33277568a2d5352"
+    "script": "stability_inheritance/analyze_desi_cross_block_relational_v0_1e.py",
+    "script_commit": "0ffc14222153c78650413c913faeb7645544dc18",
+    "script_sha256": "fd5690f92e39684d5881a97d075d1bfc98ace6beace2cde04f0a8483d9874d51",
+    "scientific_design_change": "NONE"
   }
 }
