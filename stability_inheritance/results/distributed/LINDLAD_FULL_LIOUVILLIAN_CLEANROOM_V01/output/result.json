@@ -5,9 +5,55 @@
   "Omega": 1.0,
   "Gamma_phi": 2.0,
   "analytic_EP_condition": "Gamma_phi=2*Omega",
-  "bloch_generator_xyz": [[-2.0,0.0,0.0],[0.0,-2.0,-1.0],[0.0,1.0,0.0]],
-  "bloch_eigenvalues_at_EP": [[-1.0,0.0],[-1.0,0.0],[-2.0,0.0]],
-  "full_liouvillian_eigenvalues_at_EP": [[-8.670400338387376e-17,1.409327173163291e-31],[-0.9999999999999996,2.9291218672788943e-08],[-1.0,-2.929121872478683e-08],[-1.9999999999999996,1.4566122253027914e-31]],
+  "bloch_generator_xyz": [
+    [
+      -2.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      -2.0,
+      -1.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0
+    ]
+  ],
+  "bloch_eigenvalues_at_EP": [
+    [
+      -1.0,
+      0.0
+    ],
+    [
+      -1.0,
+      0.0
+    ],
+    [
+      -2.0,
+      0.0
+    ]
+  ],
+  "full_liouvillian_eigenvalues_at_EP": [
+    [
+      -8.670400338387376e-17,
+      1.409327173163291e-31
+    ],
+    [
+      -0.9999999999999996,
+      2.9291218672788943e-08
+    ],
+    [
+      -1.0,
+      -2.929121872478683e-08
+    ],
+    [
+      -1.9999999999999996,
+      1.4566122253027914e-31
+    ]
+  ],
   "target_repeated_eigenvalue": -1.0,
   "bloch_geometric_multiplicity_at_target": 1,
   "full_liouvillian_geometric_multiplicity_at_target": 1,
