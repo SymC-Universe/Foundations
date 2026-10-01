@@ -1049,3 +1049,16 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Undermind durable file:** \`/A0_DESI_SI_METHOD_NOVELTY_ADJUDICATION_v0.1.md\` preserves cite-key-linked literature synthesis.
 - **Scientific impact on active v0.1d:** NONE. No active feature, source, split, solver, threshold, or adjudication rule changed.
 - **Next action:** complete convergence-qualified DESI v0.1d, apply the already-frozen three-result adjudication, then use the closed cross-domain and novelty artifacts to decide the next SI gate.
+
+
+### 2026-10-01 - USER_ACTION_REQUIRED - Popstop reboot interrupted DESI v0.1d execution
+
+- **Lifecycle Stage:** Stage 2 / DESI SI conglomeration / convergence-validity recovery
+- **Entry type:** HOST_REBOOT_CONTINUITY_RECOVERY
+- **Observed state:** both Desktop Commander devices reported offline after the user indicated the computer updated. Prior Popstop PID \`18656\` is therefore stale and is not reported as active compute.
+- **Scientific impact:** UNKNOWN UNTIL HOST INSPECTION. The reboot may have occurred before or after the v0.1d result file was fully persisted.
+- **Recovery rule:** inspect the expected v0.1d result path first. If a complete machine-readable result exists, verify its SHA-256, protocol identity, convergence telemetry, and source lineage and do **not** recompute valid completed work. If the result is absent/incomplete, rerun the exact frozen v0.1d analyzer against the same eight verified DESI chains.
+- **Frozen analyzer:** \`stability_inheritance/analyze_desi_cross_block_relational_v0_1d.py\`, commit \`e4b21eeb182c8fa85dcdf9f03467bd44c4e2d966\`.
+- **Scientific design change:** NONE authorized.
+- **Exact user action:** reconnect Popstop/Asus by launching Desktop Commander Remote.
+- **Durable state:** \`USER_ACTION_REQUIRED\`.
