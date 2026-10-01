@@ -7,7 +7,7 @@
   },
   "branch": "stability-inheritance",
   "scientific_lane": "DESI_SI_CONGLOMERATION",
-  "authorized_stage": "DESI_CROSS_BLOCK_RELATIONAL_V01D_CONVERGENCE_AUDIT",
+  "authorized_stage": "DESI_CROSS_BLOCK_RELATIONAL_V01E_CONVERGENCE_AUDIT_SERIALIZATION_REPAIR",
   "continuity_state": "ACTIVE_COMPUTE",
   "last_completed_durable_checkpoint": {
     "task_id": "DESI_TRACER_CONGLOMERATION_V01",
@@ -22,10 +22,10 @@
       "result_sha256": "62bc618575430088556d4c8debd3de25ef93c51bc0e15a70b34a774bca47d415"
     }
   },
-  "active_workflow_or_computation_id": "Popstop:session26412/python25764",
+  "active_workflow_or_computation_id": "Popstop:session27236/python21616",
   "last_workflow_run_id": 36825163668,
   "last_execution_commit": "81d3fc814ea446f21f4b89ca642026aca6ae72fb",
-  "next_exact_authorized_action": "Await Popstop session 26412 / Python worker 25764 completion; persist qualified result or stop at mechanical convergence block; if qualified execute frozen three-result adjudication.",
+  "next_exact_authorized_action": "Allow Popstop session 27236 / Python worker 21616 to finish the exact frozen v0.1e mechanical serialization repair. If all required fits converge, persist the qualified result and execute the frozen three-result DESI SI adjudication. If any fit reaches 2000 iterations, stop at MECHANICAL_NUMERICAL_CONVERGENCE_BLOCK.",
   "execution_ceiling": "Complete only the frozen convergence-validity audit and three-result DESI SI adjudication. No new cosmological model family or dataset before synthesis.",
   "scientific_gate": null,
   "external_block": null,
@@ -58,10 +58,22 @@
     "No row thinning, float32 conversion, feature removal, solver retuning, threshold change, or source substitution in v0.1c"
   ],
   "five_question_test": {
-    "what_scientific_lane_are_we_advancing": "DESI_SI_CONGLOMERATION",
-    "what_is_actually_running_or_just_completed": "Popstop PID 26412 is actively executing the frozen convergence-qualified DESI cross-block v0.1d rerun after Windows-update recovery.",
-    "what_is_the_next_already_authorized_action": "Await Popstop session 26412 / Python worker 25764 completion; persist qualified result or stop at mechanical convergence block; if qualified execute frozen three-result adjudication.",
-    "what_prevents_that_action_immediately": "The v0.1d computation is actively running.",
-    "does_crossing_the_boundary_require_mechanical_execution_or_new_scientific_decision": "MECHANICAL_EXECUTION only through completion of the frozen convergence audit and already-frozen three-result adjudication."
+    "what_scientific_lane_are_we_advancing": "DESI_SI_CONGLOMERATION inside the unified Foundational Physics Stability Architecture investigation",
+    "what_is_actually_running_or_just_completed": "Popstop session 27236 / Python worker 21616 is actively executing v0.1e, an exact-science mechanical serialization repair of the failed v0.1d convergence audit.",
+    "what_is_the_next_already_authorized_action": "Persist the convergence-qualified result if all fits converge, then execute the pre-frozen three-result DESI adjudication; otherwise stop at the mechanical convergence block.",
+    "what_prevents_that_action_immediately": "v0.1e is actively computing.",
+    "does_crossing_the_boundary_require_mechanical_execution_or_new_scientific_decision": "Mechanical execution only through the frozen convergence audit and already-frozen three-result adjudication."
+  },
+  "active_execution_commit": "0ffc14222153c78650413c913faeb7645544dc18",
+  "last_controller_reconciliation": {
+    "date": "2026-10-01",
+    "classification": "V01D_IMPLEMENTATION_SERIALIZATION_FAILURE_RECOVERED_AS_V01E",
+    "failed_execution": "Popstop session26412/python25764",
+    "failure": "Python NameError at final result construction because JSON null literal was used in Python metadata; no result file persisted.",
+    "repair_commit": "0ffc14222153c78650413c913faeb7645544dc18",
+    "local_script_sha256": "fd5690f92e39684d5881a97d075d1bfc98ace6beace2cde04f0a8483d9874d51",
+    "launcher_session_pid": 27236,
+    "python_worker_pid": 21616,
+    "scientific_design_change": "NONE"
   }
 }
