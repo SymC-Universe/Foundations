@@ -2,7 +2,7 @@
 title: "SymC Working Investigation Record"
 record_type: "Live scientific working record"
 status: "ACTIVE"
-governed_by: "SymC General Operations Manual v1.0"
+governed_by: "SymC General Operations Manual v1.1"
 canonical_filename: "WORKING_INVESTIGATION.md"
 update_rule: "Update after every material scientific development and before every hold; append RESUME when work restarts"
 ---
@@ -14,29 +14,54 @@ update_rule: "Update after every material scientific development and before ever
 - **Project / investigation:** Stability Inheritance
 - **Repository / persistent location:** SymC-Universe/Foundations
 - **Working branch:** stability-inheritance
-- **Current GOM version:** v1.0
+- **Current GOM version:** v1.1
 - **Project-specific protocol/version:** none frozen yet
-- **Current lifecycle Stage:** Stage 2 / P0-Q computational qualification and APQ plan construction after P0-N closure
+- **Current lifecycle Stage:** Stage 3 / P0-Q discovery and representation qualification; the deferred physical-hierarchy APQ lane remains at Stage 2
 - **Status:** ACTIVE
 - **Last updated:** 2026-10-01
-- **Last verified commit / archive / checkpoint:** ccf3c096a7314c8583053ae70134c1743bf2b7d1 - rivet raw-data route corrected to SOURCE_ACCESS_HOLD; published cross-host transfer remains architecture evidence and prior-art collision\n
+- **Last verified commit / archive / checkpoint:** ccf3c096a7314c8583053ae70134c1743bf2b7d1 - rivet raw-data route corrected to SOURCE_ACCESS_HOLD; published cross-host transfer remains architecture evidence and prior-art collision\n- **Evidence/data intake status:** `INTAKE_PASS_WITH_LIMITS` for admitted source-specific lanes; unresolved provenance/access-limited sources remain excluded or quarantined
+- **Evidence intake record / source snapshot:** source-specific intake records and the source-locked evidence map; raw third-party evidence remains source-governed
+- **Ethics/safety/rights/compliance status:** `NOT_APPLICABLE` for the current computational/literature qualification work, with source-specific rights/access constraints preserved
+- **Compliance record / approval / permission pointer:** source-specific records where applicable; no new compliance-triggering intervention is active
+
+## 2. Current Scientific State
+
+### Scientific question
+
+Under each domain's strongest native model, which scalar, modal/vector, system/conglomerate, historical, recovery, coupling, and hierarchical structures are required to represent stability-relevant behavior, and when does a proposed Stability Inheritance relation add information beyond that native description?
+
+### Smallest live claim or hypothesis
+
+Across the tested qualification systems, representation adequacy is conditional: scalar compression can be licensed yet insufficient, native modal/subspace structure can add information, and native hierarchical transformations can preserve useful structure without establishing a universal inheritance law. No P1 cross-domain Stability Inheritance mechanism or universal architecture object is presently confirmed.
+
 ### Current evidence picture
 
 The evidence base now contains several distinct architecture-supporting pieces rather than a single favored mechanism. Synthetic and randomized known-truth work maps scalar insufficiency, modal/subspace nonidentifiability, non-normal transient structure, history/measurement limits, and direct-target independence. Silverbox, Fine Steering Mirror, and Wiener-Hammerstein provide measured representation-adequacy evidence. F-16 adds measured evidence that an embedded nonlinear interface/operating regime conditions realized multi-location response organization, with prospective FullMSine support and SpecialOdd replication plus important cross-excitation and proxy limits. The current-metadata pyFBS lab testbench adds an explicit measured hierarchical transformation: independently measured component B and assembly AB, connected through native SVT/LM-FBS, partially recover independently measured component A better than a no-decoupling baseline.
 
 Native-domain results are retained as evidence toward Stability Architecture whenever they establish a constituent, relation, representation boundary, recovery property, coupling behavior, or refusal. Their native explanation limits novelty attribution but does not erase their architectural evidentiary role.
 
+### Stability representation and notation status
+
+- **Scalar \(\chi\) status:** `ADMITTED` only for separately licensed system-, mode-, or boundary-specific coordinates; no universal scalar is admitted.
+- **Scalar coordinate(s) / carrier(s):** source- and domain-specific qualified coordinates only.
+- **Modal/vector \(\Chi\) status:** `ADMITTED` as a representation level where a native resolved modal/vector object is independently qualified; no universal \(\Chi\) object is assumed.
+- **Native modal/vector object(s):** domain-native eigenspaces, poles/modes, FRF/modal structure, or equivalent resolved objects where qualified.
+- **Overall \(\Chi_{\mathrm{arc}}\) status:** `UNRESOLVED`; no single cross-domain overall reconstructed stability architecture has been frozen or confirmed.
+- **Architecture boundary / scope:** system-, regime-, and question-specific. Conglomerate/system organization is a contributing starting component, not automatically the full \(\Chi_{\mathrm{arc}}\).
+- **Legacy notation mapping required:** `legacy Chi -> Chi_arc` wherever older active source material used capital \(\Chi\) for the full architecture.
+- **Notation-sensitive claims needing review:** older SI/cosmology/foundational artifacts that used \(\Chi_{\mathrm{arc}}\) as a synonym for conglomerate/system structure or used legacy capital \(\Chi\) for the full architecture must be mapped semantically at next substantive touch; historical/published artifacts remain unchanged.
+
 ### Latest scientific development
 
-The strongest new structural result is the pyFBS current-metadata SVT/LM-FBS test. The current official notebook independently corrected the stale metadata route to `decoupling_example_SVT.xlsx`. A B/AB-only preflight reproduced the documented 6 x 6 and 12 x 12 transformed objects with Y_A still sealed. After a scoring protocol was frozen, native LM-FBS decoupling reduced normalized complex error to independently measured A from 1.25333 for the no-decoupling baseline to 1.20313, a 4.01% global improvement, and improved 80.25% of positive-frequency bins. The result is NATIVE_FRAMEWORK_EQUIVALENT for novelty and ARCHITECTURE_SUPPORTING_NATIVE_HIERARCHICAL_TRANSFORMATION for architecture evidence. Absolute recovery remains imperfect, interface conditioning is high, and the reduced-coordinate shuffle diagnostic is weak, so carrier-specific inheritance is not supported.
+The DM/DE cosmology lane has been formally transferred into the unified SI/foundational-physics investigation with its demotions, refusals, native-comparator ceilings, and shared-DESI evidence firewall preserved. DESI cross-block v0.1e completed but failed the frozen numerical-convergence validity gate, so its raw relationship-adds pattern remains provisional and the lane stops at `MECHANICAL_NUMERICAL_CONVERGENCE_BLOCK`.
 
-F-16 now provides a complementary measured lane. FullMSine prospectively supported amplitude-conditioned system-response organization at all three reserved levels, SpecialOdd prospectively replicated amplitude-specific full-response organization, direct cross-excitation transport was mixed, and the simple interface-difference proxy was not universal. Sine-sweep v0.1 failed its input-coordinate gate; an input-only repair qualified the chirp coordinate, after which a post-result P0-D analysis again favored amplitude conditioning but carries promotion debt.
+The first distributed clean-room pair also completed: the QFT reduced-generator/pole-coalescence core reproduced under its stated local Markovian model, and the Lindblad full 4 x 4 Liouvillian was defective at the declared clean-room boundary under the tested convention. The Lindblad source-convention match and QFT microscopic self-energy/covariance audit remain open. The Victus fresh DESI-only \(m_\nu\) chain remains an active checkpointed native-comparator computation and is not duplicated elsewhere.
 
 ### Current interpretation and claim ceiling
 
 The strongest supported architecture is relational and qualification-first. Lower-level/component structure, interface/coupling, operating context, measurement/representation, and history where required jointly condition realized response. The evidence does not support a universal scalar-to-modal-to-architecture ladder, one universal carrier coordinate, or a universal inheritance law.
 
-The active notation remains lowercase chi for a licensed scalar coordinate, capital Chi for a base modal/vector representation, and Chi_arc for an architecture-level/conglomerate representation reconstructed through Stability Arc analysis where scientifically licensed. None is forced onto native objects merely because they are mathematically rich.
+The active notation is lowercase \(\chi\) for a licensed scalar/local coordinate, capital \(\Chi\) for a native modal/vector representation, and \(\Chi_{\mathrm{arc}}\) for the overall reconstructed stability architecture. Conglomerate/system organization is a contributing starting component rather than a synonym for \(\Chi_{\mathrm{arc}}\). None of these levels is forced onto a native system merely for symmetry.
 
 Current claim ceiling is architecture reconstruction, representation/boundary qualification, and native-equivalent hierarchical transformation at P0-Q/P0-D. No P1 empirical Stability Inheritance claim, universal mechanism, carrier-resolved inheritance result, or unique Chi_arc object is frozen or promoted.
 
@@ -57,13 +82,13 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 
 ## 5. Active Plan and Adversarial Plan Qualification
 
-- **Active plan / scientific route:** computational Stability Architecture reconstruction under GOM v1.0 using synthetic qualification, external measured native evidence, Function/Limit mapping, and explicit hierarchy/correspondence tests while the physical APQ-2 benchmark remains deferred but preserved
+- **Active plan / scientific route:** computational Stability Architecture reconstruction under GOM v1.1 using source requalification, synthetic/known-truth qualification, external measured native evidence, Function/Limit mapping, and explicit hierarchy/correspondence tests while the physical APQ-2 benchmark remains deferred but preserved
 - **APQ level:** APQ-2 SUBSTANTIAL
 - **Plan status:** REVISION_REQUIRED_AFTER_FIRST_PASS / v0.2 drafted, not frozen
 - **Plan Packet identity / path / commit:** stability_inheritance/PHYSICAL_HIERARCHY_PLAN_PACKET_v0.2.md, commit 26c3ab3cc04abe17c5b5d1a86e38df479172a204
 - **Adversarial first-pass status:** COMPLETE with two BLOCKER and eight MATERIAL objections; blockers resolved by lowering first-cycle ceiling to P0-Q known-truth qualification and separating direct Χ_arc measurement from parent predictors
 - **Unresolved BLOCKER objections:** none after Plan Delta v0.1; no plan freeze yet
-- **Unresolved MATERIAL objections:** apparatus-specific repeatability, interface integrity, passivity/reciprocity/rank, measurement precision, and framework-operability criteria remain to be closed in a second APQ pass; notation mismatch with GOM v1.0 Section 2.1.1 remains a governance issue
+- **Unresolved MATERIAL objections:** apparatus-specific repeatability, interface integrity, passivity/reciprocity/rank, measurement precision, and framework-operability criteria remain to be closed in a second APQ pass. The prior notation-governance mismatch is resolved prospectively by GOM v1.1 and the v1.1 notation migration.
 - **Objection-ledger identity:** stability_inheritance/PHYSICAL_HIERARCHY_APQ_LEDGER_v0.1.md, commit 902db9060c35efe433222e685611591641bee13f
 - **Plan Delta identity:** stability_inheritance/PHYSICAL_HIERARCHY_PLAN_DELTA_v0.1.md, commit 3ae65a9d45bb85336ca9090c699c37e307c8ffa8
 - **Qualified plan version:** none; v0.2 is revised draft
@@ -90,7 +115,7 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - What, precisely, is inherited: scalar coordinate, modal/subspace structure, transfer property, admissible region, timescale, constraint, response capacity, or another object?
 - What qualifies as a substrate or carrier versus ordinary boundary condition, environment, or coupling?
 - When does lower-level information add value beyond the higher-level native model?
-- How should repeated perturbation/history alter the modal Chi layer and the separate Chi_arc conglomerate/system layer, and when do changes in one propagate into the other?
+- How should repeated perturbation/history alter the modal/vector \(\Chi\) layer, the contributing conglomerate/system organization, and the overall reconstructed \(\Chi_{\mathrm{arc}}\), and when do changes in one propagate into another?
 - What is the correct distinction among preservation, transformation, compensation, reorganization, emergence, and loss?
 
 ### Anomalies / outliers / failures requiring disposition
@@ -118,11 +143,22 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Expected next output:** source-matched Lindblad adjudication, QFT microscopic reduction/covariance audit, and a qualified native cosmology modal object or explicit refusal/need-more-info state.
 - **Do not repeat / do not overwrite:** preserve stale-metadata pyFBS failures, F-16 v0.1 sine-sweep invalid test, post-result promotion-debt labels, and all previously seen evidence classes.
 
+## 9. Resume Contract
+
+- **Start from:** branch `stability-inheritance`, then read this record, `stability_inheritance/CONTINUITY_STATE.json`, and `stability_inheritance/DISTRIBUTED_COMPUTE_REGISTRY_v0.1.json` before launching or resuming work.
+- **Exact file(s):** root `WORKING_INVESTIGATION.md`; `stability_inheritance/FOUNDATIONAL_PHYSICS_STABILITY_ARCHITECTURE_INVESTIGATION_v0.1.md`; source-locked evidence map; distributed-compute protocol/registry; lane-specific Plan Packets and result records.
+- **Exact command(s) / script(s):** GitHub distributed tasks execute through `stability_inheritance/distributed_compute_execute_v0_1.py --task-id <registered_task_id>`; the active Victus native-comparator chain uses `cosmology_desi/.external/dr1_fullshape/fresh_mnu/run_fresh_desi_only_mnu.py` from its existing environment/checkpoint.
+- **Required environment / dependency:** executor declared in the distributed registry; backend changes that could alter numerical behavior require representative parity qualification under GOM v1.1 Section 25.3.
+- **Required dataset/source identity:** exact source/config/checkpoint identity declared by each task; shared DESI posterior families remain one evidence family under the overlap firewall.
+- **Last successful checkpoint:** QFT and Lindblad distributed clean-room tasks completed; DESI cross-block v0.1e stopped at the numerical-convergence block; Victus fresh-\(m_\nu\) continues from its newest valid checkpoint.
+- **Expected next output:** source-matched Lindblad adjudication, QFT microscopic reduction/covariance audit, and an APQ-qualified cosmology F2 modal-necessity plan before any new substantial modal computation.
+- **Do not repeat / do not overwrite:** do not rerun completed task identities, do not retune DESI Result 3 without a new prospective method gate, do not duplicate the Victus \(m_\nu\) task, and do not rewrite historical notation in archived/published artifacts.
+
 ## 10. Key Artifact Map
 
 | Artifact | Role | Current identity / path / commit | Status |
 |---|---|---|---|
-| Project protocol | program governance | GOM v1.0 | ACTIVE |
+| Project protocol | program governance | GOM v1.1 + mandatory Continuity Hardening Addendum | ACTIVE |
 | A0 prior-art map | novelty and compatibility reconstruction | Undermind workspace b69358dd-0bd5-4a37-bd64-65f3921d9e82 | ACTIVE |
 | Preregistration / freeze record | future P1 freeze | n/a | NOT CREATED |
 | Evidence/data intake record | source identity / rights / evidence class | source-specific intake records for external measured lanes | ACTIVE |
@@ -1172,3 +1208,19 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Kaggle role:** one memory-heavy CPU lane reserved for authenticated tasks that benefit from its larger memory / near-12-hour window; lack of authentication is not itself a continuity fault.
 - **Monitoring simplification:** obsolete `SI Dead-Time Recovery` watcher disabled; `SI Compute Watch` remains the single authoritative condition-driven monitor and stays silent while state is healthy and unchanged.
 - **Continuity objective:** every active computation must be recoverable from registry identity without conversational polling; no task is inferred active from a stale PID alone.
+
+
+### 2026-10-01 - NOTATION_MIGRATION - GOM v1.1 notation migration and governance reconciliation
+
+- **Lifecycle Stage:** program-wide active-record migration / Stability Inheritance Stage 3 P0-Q with lane-specific holds
+- **Entry type:** `NOTATION_MIGRATION`
+- **Source artifact / evidence identity:** SymC General Operations Manual v1.1, 1 October 2026; canonical `WORKING_INVESTIGATION_TEMPLATE_v1.1.md`
+- **Observed / decided:** GOM v1.1 is immediately canonical and supersedes v1.0. Current program notation is lowercase \(\chi\) for licensed scalar/local coordinates, capital \(\Chi\) for modal/vector representation, and \(\Chi_{\mathrm{arc}}\) for the overall reconstructed stability architecture. Conglomerate/system organization remains a contributing starting component and is not automatically identical to \(\Chi_{\mathrm{arc}}\).
+- **Scientific interpretation:** this is a semantic/governance migration, not a scientific promotion. Admission of \(\chi\), \(\Chi\), or \(\Chi_{\mathrm{arc}}\) remains independent and domain-specific.
+- **Alternative explanation / uncertainty:** historical and published artifacts may retain older notation; active use requires an explicit semantic mapping rather than blind replacement.
+- **Impact on claim / novelty / prediction:** none. Existing claim ceilings, evidence classes, refusals, failures, promotion debt, and frozen results remain unchanged.
+- **Freeze impact:** `none`
+- **Status impact:** active SI current-state record migrated to GOM v1.1; older log entries remain historical.
+- **Next action:** finish v1.1 migration across active control artifacts, then require APQ qualification before substantial new cosmology F2 modal computation while already-authorized source audits and checkpointed native-comparator work continue.
+- **Why next:** v1.1 makes notation semantics and plan qualification explicit; migration must remove active governance drift without rewriting historical lineage.
+- **Provenance pointer:** GOM v1.1 Library source; branch `stability-inheritance`
