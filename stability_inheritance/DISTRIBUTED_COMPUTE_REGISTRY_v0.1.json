@@ -135,12 +135,16 @@
           17948,
           5308
         ],
-        "note": "same script lineage; treat as one scientific task, not two independent computations"
+        "note": "same script lineage; both PIDs remain live; treat as one scientific task, not two independent computations"
       },
       "frozen_stop_condition": "R-1 < 0.01, then preserve posterior and run separately frozen massive-neutrino no-wiggle smoothing sensitivity gate before scientific promotion",
       "latest_transferred_checkpoint": {
-        "R_minus_1": 0.1708829502,
-        "converged": false
+        "N": 62208,
+        "acceptance_rate": 0.248044,
+        "R_minus_1": 0.0877969692640543,
+        "converged": false,
+        "source_timestamp": "2026-10-01T13:21:35.484769-05:00",
+        "source": "Victus fresh_run/chain.progress + chain.checkpoint"
       },
       "duplication_rule": "DO_NOT_DUPLICATE_ON_ANOTHER_POOL",
       "next_authorized_action": "continue newest valid checkpoint; after convergence execute the no-wiggle sensitivity audit before inference",
