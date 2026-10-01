@@ -1096,3 +1096,18 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Active science unaffected:** DESI convergence-qualified v0.1d remains the active compute lane on Popstop. The conglomeration did not change its sources, features, solver, thresholds, or adjudication.
 - **Unified literature workspace:** \`Foundational Physics Stability Architecture Conglomerate 2026\`; cross-domain native-theory/equivalence deep search launched.
 - **Next program action:** finish DESI current frozen stage; complete QFT/Lindblad source requalification and particle native-generator rebuild in parallel; then freeze the first cross-domain equivalence/inheritance test only after source and target representations are independently admitted.
+
+
+### 2026-10-01 - CONTINUITY_FAILURE_RECOVERY - DESI v0.1d result serialization failed; v0.1e active
+
+- **Lifecycle Stage:** unified foundational physics / cosmology-dark-sector lane / DESI convergence validity
+- **Failure:** v0.1d completed approximately 3064 s of heavy computation and then failed at final result construction with a Python NameError because null was used as a Python literal.
+- **Root cause:** implementation/serialization only; JSON literal null had been inserted into Python metadata where None was required.
+- **Scientific impact:** no v0.1d machine-readable result was persisted, so no convergence-qualified disposition is admitted or reconstructed from memory.
+- **Durable failure record:** stability_inheritance/SI_CONTINUITY_FAILURE_DESI_V01D_NULL_LITERAL_2026-10-01.md.
+- **Mechanical repair:** v0.1e changes only the invalid metadata literal and protocol label. No scientific source, feature, split, weighting, solver, tolerance, interaction, control, threshold, or adjudication rule changed.
+- **Repair commit:** 0ffc14222153c78650413c913faeb7645544dc18.
+- **Local script SHA-256:** fd5690f92e39684d5881a97d075d1bfc98ace6beace2cde04f0a8483d9874d51.
+- **Verification:** commit-pinned download and python -m py_compile passed before launch.
+- **Active execution:** Popstop launcher session 27236, Python worker 21616.
+- **Durable state:** ACTIVE_COMPUTE.
