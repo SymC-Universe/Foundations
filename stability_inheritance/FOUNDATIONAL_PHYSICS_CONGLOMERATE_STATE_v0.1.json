@@ -1,0 +1,84 @@
+{
+  "schema_version": "0.1",
+  "date": "2026-10-01",
+  "governance": "SymC GOM v1.0 + mandatory Continuity Hardening Addendum",
+  "investigation": "FOUNDATIONAL_PHYSICS_STABILITY_ARCHITECTURE_CONGLOMERATE",
+  "authority": "umbrella scientific state; lane-specific execution controllers remain authoritative for live compute",
+  "representation_rule": {
+    "chi": "licensed scalar stability coordinate only",
+    "Chi": "native modal/vector stability representation",
+    "Chi_arc": "independently justified system/conglomerate organization",
+    "inheritance": "qualified relation among independently admitted source and descendant representations"
+  },
+  "lanes": [
+    {
+      "id": "Q_OPEN_QFT",
+      "scope": "Lindblad/open systems + QFT",
+      "state": "ADVANCED_CHECKPOINT",
+      "current_ceiling": "source-locked clean-room requalification before new cross-domain claims",
+      "admitted": [
+        "reduced-generator repeated-root/EP candidate",
+        "local Markovian QFT retarded-mode repeated-root candidate"
+      ],
+      "quarantined": [
+        "universal chi=1 information optimality",
+        "universal substrate inheritance",
+        "weak-RG fixed-manifold language without explicit derivation"
+      ]
+    },
+    {
+      "id": "P_PARTICLE",
+      "scope": "neutrinos + QCD + Higgs/electroweak + resonance/decay structure",
+      "state": "SCIENTIFIC_GATE",
+      "current_ceiling": "native-model reconstruction required before new SymC particle claim",
+      "admitted": [
+        "standard PMNS/MSW/Lindblad/QCD/Higgs/SM structures as native comparators"
+      ],
+      "quarantined": [
+        "Gamma/(2M) automatic chi",
+        "QCD-Higgs-electron cascade",
+        "legacy neutrino damping forecasts",
+        "mass-hierarchy chi inheritance"
+      ]
+    },
+    {
+      "id": "C_COSMOLOGY_DARK_SECTOR",
+      "scope": "cosmology + gravitation + DM/DE + DESI",
+      "state": "ACTIVE_COMPUTE",
+      "active_execution": "Popstop launcher 26412 / Python worker 25764",
+      "current_stage": "DESI_CROSS_BLOCK_RELATIONAL_V01D_CONVERGENCE_AUDIT",
+      "next": "qualified Result 3 -> frozen three-result adjudication -> integrated native-cosmology/SI synthesis",
+      "evidence_independence_rule": "DMDE and SI analyses using the same DESI chains are one evidence family"
+    },
+    {
+      "id": "X_CROSS_DOMAIN",
+      "scope": "cross-sector equivalence + Stability Inheritance",
+      "state": "SCIENTIFIC_GATE",
+      "current_ceiling": "no physical inheritance until source and target pass representation and equivalence qualification",
+      "equivalence_protocol": "FOUNDATIONAL_PHYSICS_CROSS_DOMAIN_EQUIVALENCE_QUALIFICATION_v0.1.md",
+      "allowed_levels": [
+        "E0 notation",
+        "E1 algebraic",
+        "E2 generator class",
+        "E3 modal/vector",
+        "E4 system/conglomerate",
+        "E5 physical inheritance"
+      ]
+    }
+  ],
+  "mandatory_files": [
+    "stability_inheritance/FOUNDATIONAL_PHYSICS_STABILITY_ARCHITECTURE_INVESTIGATION_v0.1.md",
+    "stability_inheritance/FOUNDATIONAL_PHYSICS_SOURCE_LOCKED_EVIDENCE_MAP_v0.1.md",
+    "stability_inheritance/FOUNDATIONAL_PHYSICS_CROSS_DOMAIN_EQUIVALENCE_QUALIFICATION_v0.1.md",
+    "stability_inheritance/DESI_DMDE_SI_OVERLAP_FIREWALL_v0.1.md",
+    "WORKING_INVESTIGATION.md"
+  ],
+  "next_program_actions": [
+    "Do not alter active DESI v0.1d.",
+    "Complete unified prior-art search without using the pending DESI result.",
+    "Source-lock and clean-room reproduce QFT/Lindblad foundations.",
+    "Rebuild particle-physics lane from native generators before any new chi assignment.",
+    "After DESI closes, integrate cosmology native-model and representation results under one lane.",
+    "Only then freeze first E2/E3/E4 cross-domain equivalence test."
+  ]
+}
