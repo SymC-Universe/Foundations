@@ -23,7 +23,7 @@ jobs:
       - name: Check out authoritative branch
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
-          ref: stability-inheritance
+          ref: ${{ github.sha }}
       - name: Set up Python
         uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
         with:
@@ -48,7 +48,7 @@ jobs:
       - name: Check out frozen task state
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
-          ref: stability-inheritance
+          ref: ${{ github.sha }}
       - name: Set up Python
         uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
         with:
