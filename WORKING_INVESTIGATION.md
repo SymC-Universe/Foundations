@@ -18,7 +18,7 @@ update_rule: "Update after every material scientific development and before ever
 - **Project-specific protocol/version:** none frozen yet
 - **Current lifecycle Stage:** Stage 2 / P0-Q computational qualification and APQ plan construction after P0-N closure
 - **Status:** ACTIVE
-- **Last updated:** 2026-09-28
+- **Last updated:** 2026-10-01
 - **Last verified commit / archive / checkpoint:** ccf3c096a7314c8583053ae70134c1743bf2b7d1 - rivet raw-data route corrected to SOURCE_ACCESS_HOLD; published cross-host transfer remains architecture evidence and prior-art collision\n
 ### Current evidence picture
 
@@ -1093,7 +1093,7 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Important audit failures preserved:** QFT v3 displayed information-efficiency function is monotone and cannot support its stated \(\chi=1\) optimum; QFT v3 QCD/EW perturbative hierarchy is internally reversed; Neutrinos v2 DUNE natural-unit baseline conversion is invalid by many orders of magnitude. These legacy extensions are quarantined rather than patched into current evidence.
 - **Current foundation candidate retained:** local damped-generator repeated-root / retarded-pole coalescence within the stated linear Markovian model.
 - **Cosmology status retained:** \(\chi_\delta=1\iff q=0\) remains an exact flat-\(\Lambda\)CDM model identity but is not promoted to a mechanical EP without a native repeated-root generator.
-- **Active science unaffected:** DESI convergence-qualified v0.1d remains the active compute lane on Popstop. The conglomeration did not change its sources, features, solver, thresholds, or adjudication.
+- **DESI Result 3 continuity update:** the completed v0.1e result was found at `cosmology_desi/results/desi_cross_block_relational_v0_1e.json`. The prior active PID was stale. All required interaction and pairing-destroyed interaction fits reached the frozen 2000-iteration ceiling, so the controlling convergence audit requires `MECHANICAL_NUMERICAL_CONVERGENCE_BLOCK`. The raw relationship-adds metric pattern is preserved but not promoted.
 - **Unified literature workspace:** \`Foundational Physics Stability Architecture Conglomerate 2026\`; cross-domain native-theory/equivalence deep search launched.
 - **Next program action:** finish DESI current frozen stage; complete QFT/Lindblad source requalification and particle native-generator rebuild in parallel; then freeze the first cross-domain equivalence/inheritance test only after source and target representations are independently admitted.
 
@@ -1125,3 +1125,20 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Open methodological gate:** PeakAverage BAO smoothing invokes a massive-neutrino-incomplete Eisenstein-Hu no-wiggle approximation even though CAMB supplies the physical spectrum. The effect must be bounded before the fresh DESI-only \(m_\nu\) lane supports scientific inference.
 - **Receiving continuity discrepancy:** transfer-time inspection found no Python process on Popstop and no checked v0.1e result JSON, while the prior SI record still described v0.1e as ACTIVE_COMPUTE. Treat the recorded PID as stale until a valid result or matching live process is verified; reconcile under the Continuity Hardening Addendum.
 - **Next scientific role:** use native cosmology as the comparator inside SI U1/U2; do not construct capital \(\Chi\) before F2/native modal qualification; do not count the transferred DM/DE results as independent replication of DESI SI.
+
+
+### 2026-10-01 - RECEIVING_RECONCILIATION - DM/DE transfer reviewed; DESI v0.1e continuity state corrected
+
+- **Lifecycle Stage:** unified foundational physics / Stability Inheritance receiving integration
+- **Entry type:** RECEIVING_RECONCILIATION
+- **Canonical handoff reviewed:** `stability_inheritance/DM_DE_COSMOLOGY_TO_SI_TRANSFER_WORKSHEET_v1.0_2026-10-01.md`.
+- **Transfer acceptance record:** `stability_inheritance/DM_DE_COSMOLOGY_TO_SI_TRANSFER_ACCEPTANCE_v1.0_2026-10-01.md`.
+- **Transfer scientific ceiling accepted:** (chi_\delta) remains coordinate-only/model-linked; no cosmological mechanical EP, capital (Chi), (Chi_{\rm arc}), or SI carrier is admitted from the transferred lane; shared DESI chains count as one evidence family.
+- **Continuity discovery:** receiving-side inspection found the completed v0.1e output at `cosmology_desi/results/desi_cross_block_relational_v0_1e.json`; SHA-256 `67fac38688da46e1f41a27fc8abc1c82d910a61951eb554419374ef59472fe68`.
+- **Numerical-validity result:** additive (A) fits converged, but every required (X) and (X_{\rm shift}) fit reached `max_iter=2000` with `ConvergenceWarning`.
+- **Frozen protocol consequence:** Rule 7 of `DESI_CROSS_BLOCK_CONVERGENCE_VALIDITY_AUDIT_v0.1.md` requires `MECHANICAL_NUMERICAL_CONVERGENCE_BLOCK`.
+- **Scientific interpretation:** raw `CROSS_BLOCK_RELATIONSHIP_ADDS` metrics are retained only as provisional numerical evidence and do not enter the three-result DESI adjudication.
+- **State repair:** stale Popstop PID cleared; continuity and queue files moved from `ACTIVE_COMPUTE` to `SCIENTIFIC_GATE` / blocked-complete state.
+- **Do not do:** no solver, regularization, tolerance, scaling, feature, source, split, or threshold retuning without a new prospective numerical-method gate.
+- **What remains authorized:** continue nonoverlapping SI U0/U1/U2 source and representation qualification, including cosmology native-modal qualification and QFT/Lindblad source requalification.
+- **Next and why:** advance the nonoverlapping foundational-physics representation audit while DESI Result 3 is scientifically gated; this preserves momentum without smuggling a post-result rescue into the frozen DESI design.
