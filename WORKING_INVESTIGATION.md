@@ -1150,9 +1150,9 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Lifecycle Stage:** unified foundational physics / U0-U2 execution infrastructure
 - **Entry type:** CONTINUITY / COMPUTE-TOPOLOGY DEVELOPMENT
 - **User direction:** use more than one computation concurrently where resources permit; include local machines, GitHub, and Kaggle while preventing task/output confusion and reducing manual polling.
-- **Protocol:** `stability_inheritance/DISTRIBUTED_COMPUTE_PROTOCOL_v0.1.md`.
+- **Protocol:** `stability_inheritance/DISTRIBUTED_COMPUTE_PROTOCOL_v0.2.md`.
 - **Registry:** `stability_inheritance/DISTRIBUTED_COMPUTE_REGISTRY_v0.1.json`.
-- **Resource rule:** one local HEAVY slot plus one conditional LIGHT slot per physical machine; RAM/resource admission overrides idle CPU. GitHub begins with two hosted slots. Kaggle is defined but remains authentication-gated until needed by an authorized task.
+- **Resource rule:** one local HEAVY slot plus one conditional LIGHT slot per physical machine; RAM/resource admission overrides idle CPU. GitHub now exposes four isolated hosted slots (`GITHUB_HOSTED_A` through `D`) with collision refusal. Kaggle is defined but remains authentication-gated until needed by an authorized task.
 - **Victus state:** fresh DESI-only \(m_\nu\) remains one checkpointed scientific task despite two observed Python process IDs; duplication on another pool is prohibited.
 - **Popstop state:** no active Python science task at inspection, but new local launch is resource-gated because available physical RAM was below the LIGHT admission floor.
 - **GitHub shakedown:** workflow run `36864049059` launched QFT and Lindblad clean-room jobs as two independent matrix tasks and both completed successfully.
@@ -1162,3 +1162,13 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Monitoring:** hourly condition watch is event-driven and should remain silent while healthy state is unchanged; it surfaces completion, block/failure, stale advancement, missing checkpoint, resource hold on an authorized task, or newly required user action.
 - **Scientific authority:** scheduler may choose where already-authorized work runs but may not invent hypotheses, comparators, thresholds, rescue methods, or evidence promotion.
 - **Next and why:** fill GitHub slots with source-locked U0/U1 work as it is frozen; reserve local heavy capacity for checkpoint-dependent chains and Kaggle for authenticated memory-heavy/near-12-hour jobs.
+
+
+### 2026-10-01 - CONTINUITY_HARDENING - Distributed compute v0.2 and watcher consolidation
+
+- **Execution topology:** distributed protocol promoted operationally to `DISTRIBUTED_COMPUTE_PROTOCOL_v0.2.md`.
+- **GitHub capacity:** hosted SI matrix widened from 2 to 4 distinct task slots; planner now refuses multiple READY tasks assigned to one slot.
+- **Local capacity:** Victus and Popstop retain one HEAVY plus one conditional LIGHT slot, with RAM/commit admission before launch.
+- **Kaggle role:** one memory-heavy CPU lane reserved for authenticated tasks that benefit from its larger memory / near-12-hour window; lack of authentication is not itself a continuity fault.
+- **Monitoring simplification:** obsolete `SI Dead-Time Recovery` watcher disabled; `SI Compute Watch` remains the single authoritative condition-driven monitor and stays silent while state is healthy and unchanged.
+- **Continuity objective:** every active computation must be recoverable from registry identity without conversational polling; no task is inferred active from a stale PID alone.
