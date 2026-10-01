@@ -1,0 +1,17 @@
+{
+  "task_id": "QFT_GENERATOR_POLE_CLEANROOM_V01",
+  "state": "COMPLETE",
+  "started_at": "2026-10-01T12:47:06.770841+00:00",
+  "script": "stability_inheritance/run_qft_generator_pole_cleanroom_v0_1.py",
+  "script_sha256": "73f757fa81dcecb04ed98ed05d84e6499dd8182ab903e466fdf04bb4f6a18d8f",
+  "protocol": "stability_inheritance/FOUNDATIONAL_PHYSICS_SOURCE_LOCKED_EVIDENCE_MAP_v0.1.md",
+  "scientific_lane": "FOUNDATIONAL_PHYSICS_QFT_U0_U1",
+  "evidence_class": "SOURCE-LOCKED CLEAN-ROOM REDUCED-GENERATOR REQUALIFICATION",
+  "executor": "GITHUB_HOSTED_B",
+  "resource_class": "LIGHT",
+  "github_run_id": "36864049059",
+  "github_run_attempt": "1",
+  "github_sha": "d2c0037a5b2f40f0c15869d33f68315fcda725da",
+  "completed_at": "2026-10-01T12:47:06.912926+00:00",
+  "return_code": 0
+}
