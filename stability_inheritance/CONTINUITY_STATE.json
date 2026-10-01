@@ -7,8 +7,8 @@
   },
   "branch": "stability-inheritance",
   "scientific_lane": "DESI_SI_CONGLOMERATION",
-  "authorized_stage": "DESI_CROSS_BLOCK_RELATIONAL_V01D_CONVERGENCE_AUDIT",
-  "continuity_state": "ACTIVE_COMPUTE",
+  "authorized_stage": "DESI_CROSS_BLOCK_RELATIONAL_V01D_RECOVERY_AFTER_HOST_REBOOT",
+  "continuity_state": "USER_ACTION_REQUIRED",
   "last_completed_durable_checkpoint": {
     "task_id": "DESI_TRACER_CONGLOMERATION_V01",
     "disposition": "TRACER_VECTOR_ADDS_OVER_SCALAR_FIT",
@@ -22,14 +22,20 @@
       "result_sha256": "62bc618575430088556d4c8debd3de25ef93c51bc0e15a70b34a774bca47d415"
     }
   },
-  "active_workflow_or_computation_id": "Popstop:PID18656",
+  "active_workflow_or_computation_id": null,
   "last_workflow_run_id": 36763773032,
   "last_execution_commit": "81d3fc814ea446f21f4b89ca642026aca6ae72fb",
-  "next_exact_authorized_action": "Allow Popstop PID 18656 to complete the convergence-qualified v0.1d rerun. If all required fits converge, persist the qualified result and execute the frozen three-result DESI SI adjudication. If any fit reaches 2000 iterations, stop at MECHANICAL_NUMERICAL_CONVERGENCE_BLOCK.",
+  "next_exact_authorized_action": "After Popstop reconnects, inspect whether desi_cross_block_relational_v0_1d.json was durably completed before reboot. If complete, verify hash and convergence telemetry and continue to frozen three-result adjudication. If incomplete or absent, rerun the exact frozen v0.1d convergence audit against the same verified eight DESI chains.",
   "execution_ceiling": "Complete the already-frozen DESI cross-block relational v0.1c test on Popstop, persist its exact result and identity, then perform the already-authorized three-result DESI SI conglomeration/adjudication. Do not open a new cosmological family or dataset before that synthesis.",
   "scientific_gate": null,
   "external_block": null,
-  "user_action_required": null,
+  "user_action_required": {
+    "blocked_stage": "DESI_CROSS_BLOCK_RELATIONAL_V01D_RECOVERY_AFTER_HOST_REBOOT",
+    "reason": "Windows update/reboot took Popstop offline and terminated the prior Desktop Commander session. The prior PID18656 must be treated as stale until the host is inspected.",
+    "exact_user_action": "On Popstop/Asus, open PowerShell and run: npx.cmd @wonderwhy-er/desktop-commander@latest remote",
+    "resume_checkpoint": "Frozen convergence-qualified analyzer stability_inheritance/analyze_desi_cross_block_relational_v0_1d.py at commit e4b21eeb182c8fa85dcdf9f03467bd44c4e2d966; exact DESI baseline + base_mu_sigma source identities already frozen.",
+    "immediate_post_action": "Check for completed v0.1d result first; do not recompute if valid output already exists. Otherwise mechanically rerun unchanged v0.1d."
+  },
   "last_productive_advancement": "2026-09-30T19:04:00.766Z",
   "liveness_clock": {
     "lane": "DESI_SI_CONGLOMERATION",
@@ -68,10 +74,10 @@
   ],
   "five_question_test": {
     "what_scientific_lane_are_we_advancing": "DESI_SI_CONGLOMERATION",
-    "what_is_actually_running_or_just_completed": "Popstop PID 18656 is executing the convergence-qualified v0.1d rerun under the pre-result-frozen numerical-validity audit. Raw v0.1c is preserved as provisional because multiple fits hit max_iter=400.",
-    "what_is_the_next_already_authorized_action": "Persist convergence-qualified v0.1d if all required fits converge; otherwise stop at the frozen mechanical convergence block. If qualified, run the already-frozen three-result DESI SI adjudication.",
-    "what_prevents_that_action_immediately": "v0.1d is actively computing.",
-    "does_crossing_the_boundary_require_mechanical_execution_or_new_scientific_decision": "MECHANICAL_EXECUTION only through the frozen convergence audit and pre-frozen adjudication."
+    "what_is_actually_running_or_just_completed": "No scientific computation is currently verified as active. Popstop went offline during a Windows update/reboot; prior PID18656 is stale.",
+    "what_is_the_next_already_authorized_action": "Reconnect Popstop, inspect the v0.1d result checkpoint, and either admit the completed valid result or rerun the exact frozen v0.1d computation if no valid result exists.",
+    "what_prevents_that_action_immediately": "Popstop is offline in Desktop Commander.",
+    "does_crossing_the_boundary_require_mechanical_execution_or_new_scientific_decision": "USER_ACTION_REQUIRED only to restore the authorized host connection; after reconnection, recovery is mechanical and must not change the frozen science."
   },
-  "active_execution_commit": "e4b21eeb182c8fa85dcdf9f03467bd44c4e2d966"
+  "active_execution_commit": null
 }
