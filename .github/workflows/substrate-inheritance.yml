@@ -18,6 +18,7 @@ permissions:
 
 jobs:
   validate:
+    if: ${{ false }} # PROGRAM_WIDE_BILLING_GUARD: no paid GitHub-hosted execution
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     steps:
