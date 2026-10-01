@@ -44,7 +44,7 @@ A failure is preserved as evidence and receives a root-cause classification.
 | Cosmology Stage A | cosmological \(\Chi_{\rm arc}\) from coupled expansion/growth/shear/curvature/history | NEED_MORE_INFO | system-level candidate is scientifically meaningful but not yet uniquely constructed/validated | qualify system object before SI transfer claims |
 | DESI Result 1 | shared-coordinate joint discrimination | QUALIFIED_COMPONENT | joint classifier gain exists but robust relationship reorganization failed | disposition remains JOINT_DIFFERENCE_REDUNDANT |
 | DESI Result 2 | tracer vector versus scalar fit | QUALIFIED_COMPONENT | vector carries held-out information beyond scalar total; observational response vector is not physical \(\Chi\) | retain as representation-qualification result |
-| DESI Result 3 | cross-block relational test | ACTIVE_COMPUTE | convergence-qualified v0.1d running at time of this ledger | preserve frozen audit and adjudication sequence |
+| DESI Result 3 | cross-block relational test | NEED_MORE_INFO / MECHANICAL_NUMERICAL_CONVERGENCE_BLOCK | completed v0.1e preserved the frozen design but all required X and X_shift fits reached max_iter=2000 with ConvergenceWarning; raw relationship-adds metrics are not convergence-qualified | preserve raw result; do not run three-result adjudication; any rescue requires a new prospective numerical-method gate |
 
 ## Audit failures that materially change the unified investigation
 
