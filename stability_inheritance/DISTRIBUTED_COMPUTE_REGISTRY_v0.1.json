@@ -67,7 +67,7 @@
       "cpu": 4,
       "ram_gb": 30,
       "target_scientific_minutes": 660,
-      "state": "AVAILABLE",
+      "state": "QUALIFIED_AVAILABLE",
       "block": null,
       "auth": {
         "status": "QUALIFIED_LOCAL_CLI_AUTH",
@@ -76,7 +76,29 @@
         "cli_version": "2.2.4",
         "verification": "authenticated Kaggle API dataset-list request succeeded"
       },
-      "next_action": "Run backend-parity qualification on an already-qualified lightweight SI clean-room task before assigning decisive production work."
+      "next_action": "Assign the first already-authorized memory-heavy/long CPU task when one exists; do not use Kaggle merely for availability or duplicate an active/completed task.",
+      "parity_qualification": {
+        "task_id": "SI_QFT_KAGGLE_BACKEND_PARITY_V01",
+        "kernel_ref": "symcuniverse/si-qft-backend-parity-v0-1",
+        "disposition": "KAGGLE_BACKEND_PARITY_PASS",
+        "classification": "BACKEND_PARITY_REPLICA_NOT_INDEPENDENT_EVIDENCE",
+        "canonical_source_task": "QFT_GENERATOR_POLE_CLEANROOM_V01",
+        "canonical_source_result_sha256": "8e374cdcb4cd6bd6c285dc623ed5c254ba78782fec6ab0628650245c347ba1c3",
+        "kaggle_output_sha256": "CB7BE7D60DEE40DFA42456BAC67ECFAD9A1AF3C9D849F8CC632BB50F0F9F9F80",
+        "environment": {
+          "python": "3.12.13",
+          "numpy": "2.0.2",
+          "platform": "Linux-6.12.90+-x86_64-with-glibc2.35"
+        },
+        "checks": {
+          "gamma_EP": true,
+          "chi_EP": true,
+          "generator_target_algebraic_count": true,
+          "generator_target_geometric_multiplicity": true,
+          "pole_separation_at_EP": true,
+          "analytic_discriminant_at_EP": true
+        }
+      }
     },
     "KAGGLE_GPU_A": {
       "state": "DISABLED_UNLESS_GPU_NATIVE_TASK",
