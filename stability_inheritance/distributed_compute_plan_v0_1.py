@@ -30,17 +30,23 @@ def safe_script(path_text: str) -> str:
 
 def build_matrix(data: dict) -> dict:
     include = []
+    occupied = set()
     for task in data.get("tasks", []):
         if task.get("status") != "READY":
             continue
         if not str(task.get("executor", "")).startswith("GITHUB_HOSTED"):
             continue
+        executor = str(task.get("executor", ""))
+        if executor in occupied:
+            raise RuntimeError(f"Multiple READY tasks assigned to the same GitHub slot: {executor}")
+        occupied.add(executor)
         script = safe_script(task.get("script", ""))
         include.append(
             {
                 "task_id": task["task_id"],
                 "script": script,
                 "resource_class": task.get("resource_class", "MEDIUM"),
+                "executor": executor,
             }
         )
     if not include:
