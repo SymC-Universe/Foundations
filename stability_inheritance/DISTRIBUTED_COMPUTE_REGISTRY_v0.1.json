@@ -67,8 +67,16 @@
       "cpu": 4,
       "ram_gb": 30,
       "target_scientific_minutes": 660,
-      "state": "DORMANT_UNCONFIGURED",
-      "block": "Authentication is not configured because no authorized task currently requires Kaggle. Configure only when a registered task is assigned; dormant status is not USER_ACTION_REQUIRED or a continuity fault."
+      "state": "AVAILABLE",
+      "block": null,
+      "auth": {
+        "status": "QUALIFIED_LOCAL_CLI_AUTH",
+        "controller": "Popstop",
+        "verified_utc": "2026-10-01T13:54:00Z",
+        "cli_version": "2.2.4",
+        "verification": "authenticated Kaggle API dataset-list request succeeded"
+      },
+      "next_action": "Run backend-parity qualification on an already-qualified lightweight SI clean-room task before assigning decisive production work."
     },
     "KAGGLE_GPU_A": {
       "state": "DISABLED_UNLESS_GPU_NATIVE_TASK",
