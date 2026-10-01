@@ -1,7 +1,7 @@
 # Foundational Physics Stability Architecture Conglomerate Investigation v0.1
 
 **Date:** 2026-10-01  
-**Governance:** SymC General Operations Manual v1.0 + mandatory Continuity Hardening Addendum  
+**Governance:** SymC General Operations Manual v1.1 + mandatory Continuity Hardening Addendum  
 **Status:** AUTHORITATIVE UMBRELLA INVESTIGATION / EXISTING LANES PRESERVED  
 **Scope:** cosmology + dark matter/dark energy + gravitation/strong-field cosmology + open quantum systems/QFT + particle physics  
 **Active computation at merge:** DESI cross-block convergence-qualified v0.1d on Popstop; unchanged by this merge.
@@ -10,7 +10,7 @@
 
 The foundational-physics program is now one investigation:
 
-> Across quantum, field, particle, gravitational, and cosmological systems, which stability-relevant representations are natively licensed, what information is lost or retained when moving among scalar \(\chi\), modal/vector \(\Chi\), and system/conglomerate \(\Chi_{\mathrm{arc}}\), and when does a proposed cross-scale or cross-sector Stability Inheritance relation add information beyond the strongest native theory?
+> Across quantum, field, particle, gravitational, and cosmological systems, which stability-relevant representations are natively licensed, what information is lost or retained among licensed scalar \(\chi\), modal/vector \(\Chi\), contributing system/conglomerate organization, and the overall reconstructed \(\Chi_{\mathrm{arc}}\), and when does a proposed cross-scale or cross-sector Stability Inheritance relation add information beyond the strongest native theory?
 
 This merge is scientific and organizational. It does not make the domains statistically independent, does not imply one universal mechanism, and does not promote legacy SymC hypotheses.
 
@@ -24,13 +24,15 @@ The current program-wide representation rule is
 \text{native observables and generators}
 \longrightarrow
 \left\{
-\chi,\ \Chi,\ \Chi_{\mathrm{arc}}
+\text{licensed }\chi,\ \Chi,\ \text{conglomerate/system organization},\ \text{other qualified structure}
 \right\}
 \longrightarrow
-\text{relations / transfer / coupling / inheritance tests}.
+\text{coupling / hierarchy / recovery / inheritance relations}
+\longrightarrow
+\Chi_{\mathrm{arc}}.
 \]
 
-The three representations are complementary, not a mandatory hierarchy.
+These are complementary starting components and relations, not a mandatory hierarchy. Admission at one level does not imply admission at another.
 
 ### Lowercase \(\chi\)
 
@@ -54,9 +56,9 @@ Generic multivariate data, arbitrary PCA, likelihood vectors, FRFs, or parameter
 
 ### \(\Chi_{\mathrm{arc}}\)
 
-\(\Chi_{\mathrm{arc}}\) denotes a separately justified system/conglomerate organization. It must preserve scientifically relevant coupling, constraint, participation, topology, scale, history, or system-level response that is not reducible to a single scalar or one modal basis.
+\(\Chi_{\mathrm{arc}}\) denotes the overall reconstructed stability architecture within a declared system boundary, scale, regime, and scientific question. It may incorporate admitted scalar coordinates, modal/vector structure, system/conglomerate organization, coupling, hierarchy, relational structure, recovery, inheritance, feedback, environmental embedding, and other independently qualified components.
 
-High dimensionality alone is insufficient.
+System/conglomerate organization is therefore a contributing starting component, not a synonym for \(\Chi_{\mathrm{arc}}\). High dimensionality alone is insufficient, and no unique \(\Chi_{\mathrm{arc}}\) object is assumed before independent reconstruction and qualification.
 
 ## Unified scientific lanes
 
@@ -77,7 +79,7 @@ Required requalification:
 - separate local Markovian results from finite-memory/general interacting QFT;
 - re-test finite-time response optima rather than presuming universal \(\chi=1\) information optimality;
 - compare \(\chi\) against full pole/eigenvector/modal structure \(\Chi\);
-- construct \(\Chi_{\mathrm{arc}}\) only if an independently meaningful field/system organization is identified.
+- construct \(\Chi_{\mathrm{arc}}\) only if the overall reconstructed architecture adds scientifically meaningful organization beyond the admitted native components and relations.
 
 Current claim ceiling: LOCAL_MARKOVIAN_EP_BOUNDARY_CANDIDATE_FOUNDATION.
 
