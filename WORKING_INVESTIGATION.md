@@ -15,11 +15,12 @@ update_rule: "Update after every material scientific development and before ever
 - **Repository / persistent location:** SymC-Universe/Foundations
 - **Working branch:** stability-inheritance
 - **Current GOM version:** v1.1
-- **Project-specific protocol/version:** `stability_inheritance/DISTRIBUTED_COMPUTE_PROTOCOL_v0.1.md` for execution orchestration; no P1 Stability Inheritance scientific protocol is frozen
+- **Project-specific protocol/version:** `stability_inheritance/DISTRIBUTED_COMPUTE_PROTOCOL_v0.2.md` for execution orchestration; no P1 Stability Inheritance scientific protocol is frozen
 - **Current lifecycle Stage:** Stage 3 / P0-Q discovery and representation qualification; the deferred physical-hierarchy APQ lane remains at Stage 2
 - **Status:** ACTIVE
 - **Last updated:** 2026-10-01
-- **Last verified commit / archive / checkpoint:** ccf3c096a7314c8583053ae70134c1743bf2b7d1 - rivet raw-data route corrected to SOURCE_ACCESS_HOLD; published cross-host transfer remains architecture evidence and prior-art collision\n- **Evidence/data intake status:** `INTAKE_PASS_WITH_LIMITS` for admitted source-specific lanes; unresolved provenance/access-limited sources remain excluded or quarantined
+- **Last verified commit / archive / checkpoint:** ccf3c096a7314c8583053ae70134c1743bf2b7d1 - rivet raw-data route corrected to SOURCE_ACCESS_HOLD; published cross-host transfer remains architecture evidence and prior-art collision
+- **Evidence/data intake status:** `INTAKE_PASS_WITH_LIMITS` for admitted source-specific lanes; unresolved provenance/access-limited sources remain excluded or quarantined
 - **Evidence intake record / source snapshot:** source-specific intake records and the source-locked evidence map; raw third-party evidence remains source-governed
 - **Ethics/safety/rights/compliance status:** `NOT_APPLICABLE` for the current computational/literature qualification work, with source-specific rights/access constraints preserved
 - **Compliance record / approval / permission pointer:** source-specific records where applicable; no new compliance-triggering intervention is active
@@ -142,7 +143,7 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **What must remain frozen while it runs:** all completed evidence identities and claim ceilings; DESI Result 3 blocked status; shared-DESI evidence firewall; Victus \(m_\nu\) scientific configuration; no predefinition of capital \(\Chi\) or \(\Chi_{\mathrm{arc}}\) from desired outcomes.
 - **Stop / refusal condition:** stop any lane at a new scientific choice, source/provenance conflict, numerical/structural invalidity, APQ blocker, or evidence-access boundary; mechanical recovery may continue only when scientific state is unchanged.
 - **User intervention required:** `no` for current computational/source work; physical hierarchy remains separately under `USER_DECISION_HOLD`.
-- **Exact computational control:** use `DISTRIBUTED_COMPUTE_PROTOCOL_v0.1.md` plus `DISTRIBUTED_COMPUTE_REGISTRY_v0.1.json`; four GitHub-hosted slots are qualified as capacity after the successful two-task shakedown, but only distinct already-authorized tasks may occupy them.
+- **Exact computational control:** use `DISTRIBUTED_COMPUTE_PROTOCOL_v0.2.md` plus `DISTRIBUTED_COMPUTE_REGISTRY_v0.1.json`; four GitHub-hosted slots are qualified as capacity after the successful two-task shakedown, but only distinct already-authorized tasks may occupy them.
 - **Required environment / dependency:** Victus/Popstop local pools, qualified GitHub-hosted slots, and Kaggle only after authentication and task-specific backend parity where needed; raw third-party datasets remain source-governed.
 - **Last successful checkpoint:** distributed workflow run 36864049059 completed the first QFT/Lindblad pair; DESI v0.1e is durably blocked by convergence; Victus fresh-\(m_\nu\) remains active.
 - **Do not repeat / do not overwrite:** preserve stale-metadata pyFBS failures, F-16 v0.1 sine-sweep invalid test, post-result promotion-debt labels, all previously seen evidence classes, and completed distributed task identities.
