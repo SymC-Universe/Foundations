@@ -1077,3 +1077,22 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Scientific design change:** NONE.
 - **Next action:** allow PID \`26412\` to finish; persist convergence-qualified result or stop at the pre-frozen mechanical convergence block; if qualified, execute the frozen three-result adjudication.
 - **Durable state:** \`ACTIVE_COMPUTE\`.
+
+
+### 2026-10-01 - PROGRAM_CONGLOMERATION - foundational physics merged into one investigation
+
+- **Lifecycle Stage:** program architecture / foundational-physics conglomeration
+- **Entry type:** SCIENTIFIC_ORGANIZATION + SOURCE-LOCKED AUDIT
+- **User direction:** cosmology, DM/DE, quantum field theory, open quantum systems, and particle physics are now one investigation rather than separate projects.
+- **Canonical umbrella:** \`stability_inheritance/FOUNDATIONAL_PHYSICS_STABILITY_ARCHITECTURE_INVESTIGATION_v0.1.md\`.
+- **Representation rule preserved:** lowercase \(\chi\) = licensed scalar; capital \(\Chi\) = modal/vector stability representation; \(\Chi_{\mathrm{arc}}\) = system/conglomerate organization. None is mandatory in every domain.
+- **Evidence merge rule:** existing results are preserved but not promoted merely by conglomeration. Native physics remains primary. Shared datasets count once for independence.
+- **Source-locked ledger:** \`stability_inheritance/FOUNDATIONAL_PHYSICS_SOURCE_LOCKED_EVIDENCE_MAP_v0.1.md\`.
+- **Cross-domain equivalence gate:** \`stability_inheritance/FOUNDATIONAL_PHYSICS_CROSS_DOMAIN_EQUIVALENCE_QUALIFICATION_v0.1.md\`, defining E0 notation -> E1 algebraic -> E2 generator-class -> E3 modal -> E4 system -> E5 physical inheritance.
+- **Umbrella state:** \`stability_inheritance/FOUNDATIONAL_PHYSICS_CONGLOMERATE_STATE_v0.1.json\`.
+- **Important audit failures preserved:** QFT v3 displayed information-efficiency function is monotone and cannot support its stated \(\chi=1\) optimum; QFT v3 QCD/EW perturbative hierarchy is internally reversed; Neutrinos v2 DUNE natural-unit baseline conversion is invalid by many orders of magnitude. These legacy extensions are quarantined rather than patched into current evidence.
+- **Current foundation candidate retained:** local damped-generator repeated-root / retarded-pole coalescence within the stated linear Markovian model.
+- **Cosmology status retained:** \(\chi_\delta=1\iff q=0\) remains an exact flat-\(\Lambda\)CDM model identity but is not promoted to a mechanical EP without a native repeated-root generator.
+- **Active science unaffected:** DESI convergence-qualified v0.1d remains the active compute lane on Popstop. The conglomeration did not change its sources, features, solver, thresholds, or adjudication.
+- **Unified literature workspace:** \`Foundational Physics Stability Architecture Conglomerate 2026\`; cross-domain native-theory/equivalence deep search launched.
+- **Next program action:** finish DESI current frozen stage; complete QFT/Lindblad source requalification and particle native-generator rebuild in parallel; then freeze the first cross-domain equivalence/inheritance test only after source and target representations are independently admitted.
