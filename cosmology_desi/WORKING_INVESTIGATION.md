@@ -454,3 +454,28 @@ The laptop adversarial-geometry result produced \(d_{\rm response}=1.014480039\)
 That investigation changed the epistemic state in two steps. First, the apparent dual convergence was refused: \(d_{\rm eff}\) and the rank-1 residual are algebraically linked for a two-singular-value spectrum, the \(0.718835\) value exists only after expressing the dimensionless residual \(0.00718835\) as a percentage, the fixed-norm random-direction null did not make the residual unusual, and the near-\(1\) value was not invariant to rescaling or observable removal. Second, the failed coincidence exposed a stronger representation problem that was not the original question: amplitude-weighted structure was almost rank one while direction-normalized response retained substantial multidimensional structure. Thus a scalar can preserve most total response power while discarding information about which adversary produced the response.
 
 This side path is retained as a useful epistemic development: **curiosity motivated the test; the numerical pattern was rejected; the failure revealed a better question.** It now motivates explicit separation of response magnitude, response direction, and representation sufficiency in F2/F3 rather than any claim based on the near-match itself.
+
+
+## Branch-history sufficiency and Victus fresh-\(m_\nu\) status — 2026-10-01
+
+The DR2 BAO transition-topology lane was pushed beyond root-count classification. Root-count class was found to be exactly redundant with the sign of present-day \(q_0\), so root-count entropy itself is not treated as independent information. The subsequent branch-history sufficiency audit tested whether the locations of the recent and earlier \(q=0\) crossings retain information beyond present state and whether that information is absorbed by the native CPL variables.
+
+Held-out prediction showed that \(q_0\) alone leaves substantial branch-location information unresolved: \(R^2\approx0.4404\) for branch separation, \(0.7180\) for the recent-branch offset from \(z_{\chi_\delta=1}\), and \(0.3407\) for the earlier-branch offset. Adding native CPL history improves these substantially. Using \((\Omega_m,w_0,w_a)\) gives \(R^2\approx0.9182,0.9704,0.9313\), respectively, and a quadratic native-CPL comparator raises them to \(0.99335,0.99863,0.99544\).
+
+Disposition: branch geometry is a useful descriptive compression of model history, but current evidence does **not** support treating it as an independent cosmological degree of freedom or SI carrier. The epistemic lesson is retained: transition history can be lost by a present-state scalar while still remaining reconstructible from the native model.
+
+The fresh DESI-only \(m_\nu\) Victus lane is **not yet converged**. At the latest checked convergence test it had
+\[
+R-1=0.2623078,
+\]
+while the frozen sampler contract requires
+\[
+R-1<0.01.
+\]
+The chain remains live and checkpointed, and the worker continues accumulating CPU time. Therefore the run is classified as active/checkpoint-valid rather than scientifically complete.
+
+A methodological warning is also open. The DESI DR1 full-shape likelihood uses CAMB-derived physical spectra and explicitly carries \(\Omega_{\nu,\mathrm{massive}}\) and \(f_\nu\), but its peak-average BAO smoothing step invokes the Cosmoprimo EisensteinHuNoWiggleEngine, which emits the warning that it cannot cope with massive neutrinos. Source inspection shows the no-wiggle engine defines \(\omega_m=\omega_{\rm cdm}+\omega_b\), excluding massive-neutrino density from the Eisenstein-Hu smoothing formula. This does not automatically invalidate the full physical spectrum, because CAMB supplies the actual \(P(k)\), but it creates a possible \(m_\nu\)-dependent smoothing approximation that must be bounded before this lane can support scientific inference. This is now an explicit open methodological gate rather than a hidden warning.
+
+Canonical branch-history outputs:
+- cosmology_desi/laptop_parallel_results/BRANCH_HISTORY_SUFFICIENCY_REPORT.md
+- cosmology_desi/laptop_parallel_results/branch_history_sufficiency.csv
