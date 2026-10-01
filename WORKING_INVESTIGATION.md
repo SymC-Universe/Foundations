@@ -1245,3 +1245,18 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Next action:** continue already-authorized QFT/Lindblad source requalification and Victus checkpointed computation while constructing the cosmology F2 APQ Plan Packet.
 - **Why next:** these actions advance qualified work without crossing the scientific gates made explicit by v1.1.
 - **Provenance pointer:** Foundations commit `f71f05e909b39c2d491b8f97bb23fc2fe00dacc4`; Infrastructure bootstrap commit `f96ba71b46a249d3971a032caa2f62dbcd30827d`
+
+### 2026-10-01 - KAGGLE_BACKEND_PARITY - Kaggle CPU pool qualified
+
+- **Lifecycle Stage:** distributed compute infrastructure
+- **Entry type:** BACKEND_PARITY / EXECUTOR_QUALIFICATION
+- **Pool:** `KAGGLE_CPU_A`.
+- **Authentication:** Kaggle CLI 2.2.4 authenticated successfully from Popstop.
+- **Parity kernel:** `symcuniverse/si-qft-backend-parity-v0-1`.
+- **Parity source:** completed source-locked `QFT_GENERATOR_POLE_CLEANROOM_V01`; this run is explicitly a backend/runtime replica and does not count as independent scientific evidence.
+- **Result:** `KAGGLE_BACKEND_PARITY_PASS`. Kaggle reproduced `gamma_EP=2`, `chi_EP=1`, algebraic multiplicity 2, geometric multiplicity 1, zero retarded-pole separation, and zero analytic discriminant.
+- **Kaggle environment:** Python 3.12.13, NumPy 2.0.2, Linux x86_64.
+- **Output SHA-256:** `CB7BE7D60DEE40DFA42456BAC67ECFAD9A1AF3C9D849F8CC632BB50F0F9F9F80`.
+- **Disposition:** Kaggle CPU pool is `QUALIFIED_AVAILABLE` for future already-authorized CPU tasks whose backend change is compatible with the frozen method. No decisive task is launched merely because capacity exists.
+- **What is next and why:** route the next memory-heavy or >GitHub-segment authorized task to Kaggle when one becomes READY; retain Home for the active DESI (m_\nu) chain and keep Popstop off new local science until RAM admission passes.
+
