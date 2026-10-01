@@ -479,3 +479,16 @@ A methodological warning is also open. The DESI DR1 full-shape likelihood uses C
 Canonical branch-history outputs:
 - cosmology_desi/laptop_parallel_results/BRANCH_HISTORY_SUFFICIENCY_REPORT.md
 - cosmology_desi/laptop_parallel_results/branch_history_sufficiency.csv
+
+
+## 2026-10-01 - TRANSFER_CLOSED - standalone DM/DE interpretation moved to Stability Inheritance
+
+User direction transfers the full DM/DE cosmology investigation into the Stability Inheritance / Foundational Physics umbrella. This source record remains authoritative for historical lineage and source-branch artifacts, but it is no longer an independent interpretation lane.
+
+Canonical receiving worksheet:
+stability_inheritance/DM_DE_COSMOLOGY_TO_SI_TRANSFER_WORKSHEET_v1.0_2026-10-01.md
+on branch stability-inheritance, transfer commit ab6af289b12501eec843c7b7794f7a0084bffdbd.
+
+All future scientific interpretation, cross-domain comparison, representation qualification, and writing synthesis should proceed from the SI receiving record while preserving the DESI overlap firewall and the source results/refusals recorded here.
+
+The local Victus fresh DESI-only \(m_\nu\) computation remains a live source computation and is not canceled by this organizational transfer. At transfer-time check it remained unconverged with \(R-1=0.1708829502\) versus frozen \(R-1<0.01\). Its output, once convergence and the no-wiggle smoothing sensitivity gate are resolved, must enter through the SI receiving lineage rather than reopen a standalone DM/DE interpretation lane.
