@@ -836,7 +836,7 @@
     },
     {
       "id": "DESI_CROSS_BLOCK_RELATIONAL_V01C",
-      "status": "ACTIVE_EXTERNAL_COMPUTE",
+      "status": "COMPLETE_PROVISIONAL_NONCONVERGED",
       "execution_mode": "LOCAL_EXTERNAL_POPSTOP",
       "protocol": "stability_inheritance/DESI_CROSS_BLOCK_RELATIONAL_QUALIFICATION_v0.1.md",
       "repair_lineage": [
@@ -850,7 +850,21 @@
       "protected_boundary": "Exact verified DESI baseline + base_mu_sigma source pair; mu0/Sigma0 excluded; no scientific design changes",
       "evidence_class": "P0-Q CROSS-BLOCK RELATIONAL REPRESENTATION QUALIFICATION",
       "stop_after": true,
-      "next_authorized_action": "Persist exact result and stop for three-result DESI SI conglomeration/adjudication."
+      "next_authorized_action": "Persist exact result and stop for three-result DESI SI conglomeration/adjudication.",
+      "raw_disposition": "CROSS_BLOCK_RELATIONSHIP_ADDS",
+      "result_sha256": "54d76ed074d31dce99e06fa92be7ea068d656962711a4432e29a13d0bba05252",
+      "validity": "PROVISIONAL_NUMERICAL_CONVERGENCE"
+    },
+    {
+      "id": "DESI_CROSS_BLOCK_RELATIONAL_V01D_CONVERGENCE_AUDIT",
+      "status": "ACTIVE_EXTERNAL_COMPUTE",
+      "execution_mode": "LOCAL_EXTERNAL_POPSTOP",
+      "protocol": "stability_inheritance/DESI_CROSS_BLOCK_CONVERGENCE_VALIDITY_AUDIT_v0.1.md",
+      "script": "stability_inheritance/analyze_desi_cross_block_relational_v0_1d.py",
+      "local_host": "Popstop",
+      "local_pid": 18656,
+      "evidence_class": "MECHANICAL NUMERICAL VALIDITY AUDIT",
+      "stop_after": true
     }
   ],
   "execution_trigger": {
@@ -858,8 +872,8 @@
     "sequence": 10
   },
   "scientific_lane": "DESI_SI_CONGLOMERATION",
-  "authorized_stage": "DESI_CROSS_BLOCK_RELATIONAL_V01C",
-  "execution_ceiling": "Complete the already-frozen DESI cross-block relational v0.1c test on Popstop, persist its exact result and identity, then perform the already-authorized three-result DESI SI conglomeration/adjudication. Do not open a new cosmological family or dataset before that synthesis.",
+  "authorized_stage": "DESI_CROSS_BLOCK_RELATIONAL_V01D_CONVERGENCE_AUDIT",
+  "execution_ceiling": "Complete only the frozen convergence-validity audit and three-result DESI SI adjudication. No new cosmological model family or dataset before synthesis.",
   "protected_inputs": [
     "No model-only mu0/Sigma0 as classifier features",
     "No additional DESI/DE/neutrino model families before three-result conglomeration",
@@ -867,7 +881,7 @@
     "No automatic lowercase chi, capital Chi, or Chi_arc assignment from posterior representation tests",
     "No row thinning, float32 conversion, feature removal, solver retuning, threshold change, or source substitution in v0.1c"
   ],
-  "next_authorized_action": "Await active Popstop PID 20248 completion of the frozen v0.1c test; persist the result; then execute the pre-result-frozen three-result conglomeration adjudication.",
+  "next_authorized_action": "Await Popstop PID 18656 convergence-qualified v0.1d completion; persist qualified result or stop at mechanical convergence block; if qualified execute frozen three-result adjudication.",
   "last_productive_advancement": "2026-09-30T01:04:36Z",
   "deferred_lanes": {
     "ERIES_EUROPROTEAS_CROSS_SUBSTRATE": {
@@ -876,12 +890,12 @@
     }
   },
   "local_external_execution": {
-    "task_id": "DESI_CROSS_BLOCK_RELATIONAL_V01C",
+    "task_id": "DESI_CROSS_BLOCK_RELATIONAL_V01D_CONVERGENCE_AUDIT",
     "host": "Popstop",
-    "pid": 20248,
+    "pid": 18656,
     "status": "ACTIVE_COMPUTE",
-    "canonical_script": "stability_inheritance/analyze_desi_cross_block_relational_v0_1c.py",
-    "canonical_script_commit": "f96c8171e1da0e132b7b1639e32020591e2c614d",
-    "script_sha256": "6be70be5ff4d4a9815aa3dc92d795c7afb1eab7692c3b97317611310e4ea12f7"
+    "script": "stability_inheritance/analyze_desi_cross_block_relational_v0_1d.py",
+    "script_commit": "e4b21eeb182c8fa85dcdf9f03467bd44c4e2d966",
+    "script_sha256": "2a85b40ab05332a245c135ebcd2f04af7b111acd171f5239d33277568a2d5352"
   }
 }
