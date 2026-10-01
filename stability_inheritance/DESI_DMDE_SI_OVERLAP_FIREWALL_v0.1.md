@@ -1,7 +1,7 @@
 # DESI DM/DE ↔ Stability Inheritance Overlap Firewall v0.1
 
 **Date:** 2026-10-01
-**Governance:** SymC GOM v1.0 + mandatory Continuity Hardening Addendum
+**Governance:** SymC GOM v1.1 + mandatory Continuity Hardening Addendum
 **Purpose:** Permit efficient reuse of DESI source material while preventing duplicate-evidence inflation, claim leakage, and accidental merger of the DM/DE and Stability Inheritance scientific questions.
 
 ## Shared material
