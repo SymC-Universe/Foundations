@@ -1,0 +1,15 @@
+{
+  "task_id": "QFT_GENERATOR_POLE_CLEANROOM_V01",
+  "native_reduced_equation": "qddot + gamma qdot + omega^2 q = 0",
+  "omega": 1.0,
+  "gamma_EP": 2.0,
+  "chi_EP": 1.0,
+  "first_order_generator_at_EP": [[0.0,1.0],[-1.0,-2.0]],
+  "generator_eigenvalues_at_EP": [[-1.0,0.0],[-1.0,0.0]],
+  "generator_target_algebraic_count": 2,
+  "generator_target_geometric_multiplicity": 1,
+  "retarded_poles_at_EP": [[0.0,-1.0],[0.0,-1.0]],
+  "pole_separation_at_EP": 0.0,
+  "analytic_discriminant_at_EP": 0.0,
+  "claim_ceiling": "clean-room local Markovian reduced-generator/pole qualification only; microscopic self-energy derivation and covariance wording remain separate source-audit tasks"
+}
