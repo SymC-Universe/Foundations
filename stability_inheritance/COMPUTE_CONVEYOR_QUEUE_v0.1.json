@@ -881,7 +881,7 @@
     "No automatic lowercase chi, capital Chi, or Chi_arc assignment from posterior representation tests",
     "No row thinning, float32 conversion, feature removal, solver retuning, threshold change, or source substitution in v0.1c"
   ],
-  "next_authorized_action": "Await Popstop PID 18656 convergence-qualified v0.1d completion; persist qualified result or stop at mechanical convergence block; if qualified execute frozen three-result adjudication.",
+  "next_authorized_action": "Await Popstop session 26412 / Python worker 25764 completion; persist qualified result or stop at mechanical convergence block; if qualified execute frozen three-result adjudication.",
   "last_productive_advancement": "2026-09-30T01:04:36Z",
   "deferred_lanes": {
     "ERIES_EUROPROTEAS_CROSS_SUBSTRATE": {
@@ -892,7 +892,8 @@
   "local_external_execution": {
     "task_id": "DESI_CROSS_BLOCK_RELATIONAL_V01D_CONVERGENCE_AUDIT",
     "host": "Popstop",
-    "pid": 18656,
+    "launcher_session_pid": 26412,
+    "python_worker_pid": 25764,
     "status": "ACTIVE_COMPUTE",
     "script": "stability_inheritance/analyze_desi_cross_block_relational_v0_1d.py",
     "script_commit": "e4b21eeb182c8fa85dcdf9f03467bd44c4e2d966",
