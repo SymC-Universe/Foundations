@@ -1032,3 +1032,20 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Scientific design:** unchanged. Only `max_iter=2000` plus per-fit `n_iter_` and `ConvergenceWarning` telemetry are added under the frozen audit.
 - **Next action:** if all fits converge, persist v0.1d and execute the frozen three-result adjudication; if any fit hits 2000, stop at `MECHANICAL_NUMERICAL_CONVERGENCE_BLOCK`.
 - **Durable state:** `ACTIVE_COMPUTE`.
+
+
+### 2026-09-30 - NONCONTAMINATING_SUPPORT_ADVANCEMENT - SI synthesis, reproducibility, and deep novelty gate
+
+- **Lifecycle Stage:** Stage 2 / SI program integration while DESI numerical-validity computation remains active
+- **Entry type:** SUPPORTING_SYNTHESIS_AND_P0N / DOES_NOT RESET SCIENTIFIC LIVENESS CLOCK
+- **Outcome firewall:** all synthesis and novelty work in this checkpoint excludes the active DESI v0.1d result.
+- **Cross-domain matrix:** added \`stability_inheritance/SI_CROSS_DOMAIN_CLOSED_EVIDENCE_MATRIX_v0.1.md\`, integrating only adjudicated F-16, pyFBS, BARC, BRB, and DESI Results 1-2. The matrix preserves separate \(\chi\), \(\Chi\), and \(\Chi_{\mathrm{arc}}\) admission rules and includes positive, redundant, native-equivalent, contextual, and refusal outcomes.
+- **Reproducibility architecture:** added \`stability_inheritance/SI_REPRODUCIBILITY_ARCHITECTURE_v0.1.md\`, defining the canonical source -> protocol -> implementation -> execution -> raw result -> adjudication -> Function/Limit -> claim-ceiling chain, reproduction tiers R0-R3, numerical-validity separation, and minimum eventual public release packet.
+- **Machine-readable Function/Limit ledger:** added \`stability_inheritance/SI_FUNCTION_LIMIT_LEDGER_v0.1.json\` with 10 closed-evidence Function entries, 14 Limit entries, and an explicitly excluded pending DESI v0.1d slot.
+- **Deep novelty search:** completed in the existing Undermind workspace \`Stability Inheritance v1.0 - A0 Prior-Art Conglomeration\`. No exact end-to-end collision was found for the complete scalar -> residual vector -> additive -> pairing-specific relational -> refusal sequence.
+- **Full-text collision result:** individual ingredients are strongly prior art: C2ST, sample-pairing destruction, conditional permutation/conditional independence, PID synergy/redundancy, cosmological complementary summary statistics, staged diagnostic frameworks, and indeterminate outcomes.
+- **Novelty adjudication:** added \`stability_inheritance/DESI_SI_DEEP_PRIOR_ART_NOVELTY_ADJUDICATION_v0.1.md\`. Current classification = \`COMPOSITION_LEVEL_NOVELTY_CANDIDATE / NEW_INTEGRATION + NEW_DISCRIMINATING_TEST\`; new statistical primitive and field-first claims are refused.
+- **Strong future statistical comparators identified:** Partial Information Decomposition and formal conditional permutation/conditional-independence testing. These are future separately frozen comparators only and do not alter the active DESI test.
+- **Undermind durable file:** \`/A0_DESI_SI_METHOD_NOVELTY_ADJUDICATION_v0.1.md\` preserves cite-key-linked literature synthesis.
+- **Scientific impact on active v0.1d:** NONE. No active feature, source, split, solver, threshold, or adjudication rule changed.
+- **Next action:** complete convergence-qualified DESI v0.1d, apply the already-frozen three-result adjudication, then use the closed cross-domain and novelty artifacts to decide the next SI gate.
