@@ -1,0 +1,99 @@
+{
+  "schema_version": "0.1",
+  "date": "2026-10-01",
+  "governance": "SymC GOM v1.0 + mandatory Continuity Hardening Addendum",
+  "protocol": "stability_inheritance/DISTRIBUTED_COMPUTE_PROTOCOL_v0.1.md",
+  "branch": "stability-inheritance",
+  "scheduler_policy": {
+    "github_hosted_parallel_slots": 2,
+    "github_segment_scientific_minutes": 300,
+    "local_heavy_min_available_ram_mb": 2500,
+    "local_light_min_available_ram_mb": 1200,
+    "local_max_committed_memory_pct_for_new_launch": 85,
+    "duplicate_suppression": "scientific input/configuration identity",
+    "task_selection_authority": "science must be pre-authorized; scheduler chooses executor only"
+  },
+  "pools": {
+    "VICTUS_LOCAL": {
+      "device_label": "Home",
+      "cpu": "AMD Ryzen 5 5600G",
+      "cores": 6,
+      "logical_processors": 12,
+      "ram_gb_approx": 8,
+      "heavy_slots": 1,
+      "light_slots": 1,
+      "current_resource_note": "fresh DESI-only mnu active; committed memory observed ~82%, so no second heavy task",
+      "state": "ACTIVE"
+    },
+    "POPSTOP_LOCAL": {
+      "device_label": "Popstop",
+      "cpu": "AMD Ryzen 7 7435HS",
+      "cores": 8,
+      "logical_processors": 16,
+      "ram_gb_approx": 8,
+      "heavy_slots": 1,
+      "light_slots": 1,
+      "current_resource_note": "no Python science task active, but available RAM observed <1 GB because desktop/browser load; launch only after resource admission",
+      "state": "RESOURCE_HOLD_FOR_NEW_LOCAL_TASK"
+    },
+    "GITHUB_HOSTED_A": {
+      "runner": "ubuntu-24.04",
+      "cpu": 4,
+      "ram_gb": 16,
+      "scientific_segment_minutes": 300,
+      "state": "AVAILABLE"
+    },
+    "GITHUB_HOSTED_B": {
+      "runner": "ubuntu-24.04",
+      "cpu": 4,
+      "ram_gb": 16,
+      "scientific_segment_minutes": 300,
+      "state": "AVAILABLE"
+    },
+    "KAGGLE_CPU_A": {
+      "cpu": 4,
+      "ram_gb": 30,
+      "target_scientific_minutes": 660,
+      "state": "USER_ACTION_REQUIRED",
+      "block": "Kaggle CLI/API authentication not configured on either local controller"
+    },
+    "KAGGLE_GPU_A": {
+      "state": "DISABLED_UNLESS_GPU_NATIVE_TASK",
+      "block": "Do not allocate GPU for CPU-native workload"
+    }
+  },
+  "tasks": [
+    {
+      "task_id": "COSMO_FRESH_DESI_ONLY_MNU_V01",
+      "scientific_lane": "FOUNDATIONAL_PHYSICS_COSMOLOGY_NATIVE_COMPARATOR",
+      "evidence_class": "NATIVE PHYSICAL COMPARATOR / FRESH DESI-ONLY MNU",
+      "executor": "VICTUS_LOCAL",
+      "resource_class": "HEAVY_CHECKPOINTED",
+      "status": "ACTIVE_COMPUTE",
+      "script": "cosmology_desi/.external/dr1_fullshape/fresh_mnu/run_fresh_desi_only_mnu.py",
+      "checkpoint_root": "cosmology_desi/.external/dr1_fullshape/fresh_mnu/fresh_run",
+      "output_root": "cosmology_desi/.external/dr1_fullshape/fresh_mnu/fresh_run",
+      "process_identity": {
+        "observed_python_pids": [
+          17948,
+          5308
+        ],
+        "note": "same script lineage; treat as one scientific task, not two independent computations"
+      },
+      "frozen_stop_condition": "R-1 < 0.01, then preserve posterior and run separately frozen massive-neutrino no-wiggle smoothing sensitivity gate before scientific promotion",
+      "latest_transferred_checkpoint": {
+        "R_minus_1": 0.1708829502,
+        "converged": false
+      },
+      "duplication_rule": "DO_NOT_DUPLICATE_ON_ANOTHER_POOL",
+      "next_authorized_action": "continue newest valid checkpoint; after convergence execute the no-wiggle sensitivity audit before inference"
+    }
+  ],
+  "invariants": [
+    "one task_id maps to one scientific computation unless explicit replica design says otherwise",
+    "no shared active output/checkpoint directory",
+    "no automatic scientific retuning after mechanical failure",
+    "GitHub/Kaggle segmentation only at scientifically neutral exact-resume boundaries",
+    "support activity does not reset scientific liveness"
+  ]
+}
