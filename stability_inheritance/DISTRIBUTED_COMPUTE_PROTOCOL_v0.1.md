@@ -1,7 +1,7 @@
 # Stability Inheritance Distributed Compute Protocol v0.1
 
 **Date:** 2026-10-01  
-**Governance:** SymC General Operations Manual v1.0 + mandatory Continuity Hardening Addendum  
+**Governance:** SymC General Operations Manual v1.1 + mandatory Continuity Hardening Addendum  
 **Scope:** execution orchestration only  
 **Scientific authority:** unchanged  
 **Status:** ACTIVE INFRASTRUCTURE BASELINE
@@ -40,11 +40,11 @@ GitHub-hosted standard Linux runners are used for:
 - independent numerical qualification;
 - bounded segments of longer checkpointable jobs.
 
-Default distributed SI allocation is two simultaneous GitHub-hosted slots.
+The GitHub execution environment has passed a two-task production-equivalent shakedown. The qualified capacity may therefore expand to four simultaneous GitHub-hosted slots when four distinct already-authorized tasks exist; unused capacity does not create scientific work.
 
 A single GitHub-hosted segment must stop by 300 minutes of scientific execution, leaving margin below the platform job ceiling for checkpoint serialization, artifact upload, and continuity persistence.
 
-A >300-minute scientific task may use consecutive GitHub segments only when the native method supports an exact scientifically neutral resume. Segmentation may not:
+A >300-minute scientific task may use consecutive GitHub segments only when the native method supports an exact scientifically neutral resume. The 300-minute segment target is an infrastructure safety margin, not a universal scientific checkpoint cadence; task-level progress and checkpoint cadence remain workload-specific under Sections 27 and 31. Segmentation may not:
 - change random seeds except where the frozen design explicitly defines continuation seeds;
 - restart warmup/burn-in as new evidence;
 - thin data;
@@ -65,6 +65,12 @@ Kaggle is reserved primarily for:
 Kaggle remains disabled until authentication is configured.
 
 Kaggle output must be copied into the canonical SI evidence lineage with source, notebook/version, output, and checksum identity before it counts as a durable checkpoint.
+
+## Backend parity rule
+
+Moving an already-defined scientific task between local CPU, GitHub, Kaggle, GPU, alternate precision, alternate solver/runtime, MPI rank count, or another execution mode that could change numerical behavior requires a representative production-equivalent parity qualification under GOM v1.1 Section 25.3 before that backend is used for decisive production output. Executor choice may change logistics; it may not silently change the scientific method, precision, solver, stochastic contract, or result semantics.
+
+A parity check is unnecessary only when the execution change is demonstrably transport-only and cannot change the numerical object. The reason is recorded.
 
 ## Resource admission classes
 
