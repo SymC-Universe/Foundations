@@ -1,7 +1,7 @@
 {
   "schema_version": "0.1",
   "date": "2026-10-01",
-  "governance": "SymC GOM v1.0 + mandatory Continuity Hardening Addendum",
+  "governance": "SymC GOM v1.1 + mandatory Continuity Hardening Addendum",
   "protocol": "stability_inheritance/DISTRIBUTED_COMPUTE_PROTOCOL_v0.2.md",
   "branch": "stability-inheritance",
   "scheduler_policy": {
@@ -13,7 +13,10 @@
     "duplicate_suppression": "scientific input/configuration identity",
     "task_selection_authority": "science must be pre-authorized; scheduler chooses executor only",
     "monitor_policy": "single condition-driven SI Compute Watch; healthy unchanged state is silent",
-    "slot_collision_rule": "no two READY/ACTIVE tasks may share executor slot"
+    "slot_collision_rule": "no two READY/ACTIVE tasks may share executor slot",
+    "github_capacity_qualification": "Two-task production-equivalent shakedown completed successfully; four-slot capacity is qualified for distinct already-authorized tasks.",
+    "progress_stall_policy": "Use task-specific progress expectations from pilot/provider/native workload when available; approximately 90 minutes is only a continuity fallback when no better expectation is frozen.",
+    "backend_parity": "Any execution-mode change capable of changing numerical behavior requires representative parity qualification before decisive production use."
   },
   "pools": {
     "VICTUS_LOCAL": {
@@ -173,6 +176,9 @@
     "no shared active output/checkpoint directory",
     "no automatic scientific retuning after mechanical failure",
     "GitHub/Kaggle segmentation only at scientifically neutral exact-resume boundaries",
-    "support activity does not reset scientific liveness"
+    "support activity does not reset scientific liveness",
+    "executor capacity does not create scientific authority or require filling idle slots",
+    "backend changes capable of affecting numerical behavior require representative parity qualification before decisive production use",
+    "progress-stall thresholds are workload-specific; 90 minutes is a fallback continuity trigger only when no better task-specific expectation exists"
   ]
 }
