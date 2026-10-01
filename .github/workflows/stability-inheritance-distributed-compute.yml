@@ -16,6 +16,7 @@ permissions:
 
 jobs:
   plan:
+    if: ${{ false }} # PROGRAM_WIDE_BILLING_GUARD: no paid GitHub-hosted execution
     runs-on: ubuntu-24.04
     outputs:
       matrix: ${{ steps.plan.outputs.matrix }}
@@ -34,7 +35,7 @@ jobs:
 
   compute:
     needs: plan
-    if: ${{ fromJSON(needs.plan.outputs.matrix).include[0].task_id != 'NOOP' }}
+    if: ${{ false }} # PROGRAM_WIDE_BILLING_GUARD: no paid GitHub-hosted execution
     strategy:
       fail-fast: false
       max-parallel: 4
