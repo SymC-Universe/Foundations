@@ -1017,3 +1017,18 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Scientific impact:** NONE yet. No feature, row, weight, threshold, solver family, dataset, model family, or interpretation rule changed.
 - **Next action:** allow v0.1c to finish; determine whether the convergence audit is triggered; persist the convergence-qualified result; execute the already-frozen three-result conglomeration adjudication.
 - **Durable state:** `ACTIVE_COMPUTE`.
+
+
+### 2026-09-30 - ACTIVE_COMPUTE - DESI v0.1d convergence-qualified rerun
+
+- **Lifecycle Stage:** Stage 2 / DESI SI conglomeration / numerical validity
+- **Entry type:** MECHANICAL_RECOVERY_EXECUTION
+- **Raw v0.1c result:** provisional `CROSS_BLOCK_RELATIONSHIP_ADDS`, preserved at SHA-256 `54d76ed074d31dce99e06fa92be7ea068d656962711a4432e29a13d0bba05252`.
+- **Validity trigger:** multiple required v0.1c logistic fits reached `max_iter=400`; the pre-result-frozen convergence audit therefore applies.
+- **Serialization failure preserved:** first v0.1d launch failed at parse time because a remote-tool footer had contaminated the GitHub script copy. No DESI data were read by that failed process. Durable record: `SI_CONTINUITY_FAILURE_DESI_V01D_SERIALIZATION_2026-09-30.md`.
+- **Canonical repair:** v0.1c cleaned at commit `e6022b993050d53c4779caac3abac91345b851a2`; convergence analyzer repaired at commit `e4b21eeb182c8fa85dcdf9f03467bd44c4e2d966`.
+- **Local verification:** commit-pinned v0.1d downloaded to Popstop, `python -m py_compile` passed, local SHA-256 `2a85b40ab05332a245c135ebcd2f04af7b111acd171f5239d33277568a2d5352`.
+- **Active execution:** Popstop PID `18656`.
+- **Scientific design:** unchanged. Only `max_iter=2000` plus per-fit `n_iter_` and `ConvergenceWarning` telemetry are added under the frozen audit.
+- **Next action:** if all fits converge, persist v0.1d and execute the frozen three-result adjudication; if any fit hits 2000, stop at `MECHANICAL_NUMERICAL_CONVERGENCE_BLOCK`.
+- **Durable state:** `ACTIVE_COMPUTE`.
