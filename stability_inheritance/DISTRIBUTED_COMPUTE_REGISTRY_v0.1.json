@@ -67,8 +67,8 @@
       "cpu": 4,
       "ram_gb": 30,
       "target_scientific_minutes": 660,
-      "state": "USER_ACTION_REQUIRED",
-      "block": "Kaggle CLI/API authentication not configured on either local controller"
+      "state": "DORMANT_UNCONFIGURED",
+      "block": "Authentication is not configured because no authorized task currently requires Kaggle. Configure only when a registered task is assigned; dormant status is not USER_ACTION_REQUIRED or a continuity fault."
     },
     "KAGGLE_GPU_A": {
       "state": "DISABLED_UNLESS_GPU_NATIVE_TASK",
