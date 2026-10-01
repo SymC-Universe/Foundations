@@ -4,7 +4,7 @@
 **Governance:** SymC General Operations Manual v1.1 + mandatory Continuity Hardening Addendum  
 **Status:** AUTHORITATIVE UMBRELLA INVESTIGATION / EXISTING LANES PRESERVED  
 **Scope:** cosmology + dark matter/dark energy + gravitation/strong-field cosmology + open quantum systems/QFT + particle physics  
-**Active computation at merge:** DESI cross-block convergence-qualified v0.1d on Popstop; unchanged by this merge.
+**Current execution note:** DESI cross-block Result 3 is durably stopped at `MECHANICAL_NUMERICAL_CONVERGENCE_BLOCK`; Victus `COSMO_FRESH_DESI_ONLY_MNU_V01` is the active checkpointed cosmology-native-comparator computation. Distributed execution capacity does not create scientific authority.
 
 ## Governing scientific question
 
