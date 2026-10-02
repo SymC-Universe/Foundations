@@ -135,15 +135,15 @@
           17948,
           5308
         ],
-        "note": "same script lineage; both Python processes verified present on Victus 2026-10-02; count as one scientific task"
+        "note": "same script lineage; both Python processes verified present on Victus 2026-10-02 17:26 CDT; count as one scientific task"
       },
       "frozen_stop_condition": "R-1 < 0.01, then preserve posterior and run separately frozen massive-neutrino no-wiggle smoothing sensitivity gate before scientific promotion",
       "latest_transferred_checkpoint": {
-        "N": 117504,
-        "acceptance_rate": 0.248294,
-        "R_minus_1": 0.05046276477235569,
+        "N": 124416,
+        "acceptance_rate": 0.248626,
+        "R_minus_1": 0.03953142614196523,
         "converged": false,
-        "source_timestamp": "2026-10-02T14:02:14.417656-05:00",
+        "source_timestamp": "2026-10-02T17:08:47.107163-05:00",
         "source": "Victus fresh_run/chain.progress + chain.checkpoint"
       },
       "duplication_rule": "DO_NOT_DUPLICATE_ON_ANOTHER_POOL",
