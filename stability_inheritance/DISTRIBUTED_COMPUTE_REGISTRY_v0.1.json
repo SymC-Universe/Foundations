@@ -27,7 +27,7 @@
       "ram_gb_approx": 8,
       "heavy_slots": 1,
       "light_slots": 1,
-      "current_resource_note": "fresh DESI-only mnu active; committed memory observed ~82%, so no second heavy task",
+      "current_resource_note": "fresh DESI-only mnu active and advancing; no second heavy task while existing HEAVY slot is occupied",
       "state": "ACTIVE",
       "slots": [
         "VICTUS_HEAVY_1",
@@ -135,15 +135,15 @@
           17948,
           5308
         ],
-        "note": "same script lineage; both Python processes remain present on Victus and count as one scientific task"
+        "note": "same script lineage; both Python processes verified present on Victus 2026-10-02; count as one scientific task"
       },
       "frozen_stop_condition": "R-1 < 0.01, then preserve posterior and run separately frozen massive-neutrino no-wiggle smoothing sensitivity gate before scientific promotion",
       "latest_transferred_checkpoint": {
-        "N": 91392,
-        "acceptance_rate": 0.248303,
-        "R_minus_1": 0.06104114398345597,
+        "N": 117504,
+        "acceptance_rate": 0.248294,
+        "R_minus_1": 0.05046276477235569,
         "converged": false,
-        "source_timestamp": "2026-10-02T02:23:52.998211-05:00",
+        "source_timestamp": "2026-10-02T14:02:14.417656-05:00",
         "source": "Victus fresh_run/chain.progress + chain.checkpoint"
       },
       "duplication_rule": "DO_NOT_DUPLICATE_ON_ANOTHER_POOL",
