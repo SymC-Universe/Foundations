@@ -5,7 +5,7 @@
   "protocol": "stability_inheritance/DISTRIBUTED_COMPUTE_PROTOCOL_v0.2.md",
   "branch": "stability-inheritance",
   "scheduler_policy": {
-    "github_hosted_parallel_slots": 4,
+    "github_hosted_parallel_slots": 0,
     "github_segment_scientific_minutes": 300,
     "local_heavy_min_available_ram_mb": 2500,
     "local_light_min_available_ram_mb": 1200,
@@ -16,7 +16,8 @@
     "slot_collision_rule": "no two READY/ACTIVE tasks may share executor slot",
     "github_capacity_qualification": "Two-task production-equivalent shakedown completed successfully; four-slot capacity is qualified for distinct already-authorized tasks.",
     "progress_stall_policy": "Use task-specific progress expectations from pilot/provider/native workload when available; approximately 90 minutes is only a continuity fallback when no better expectation is frozen.",
-    "backend_parity": "Any execution-mode change capable of changing numerical behavior requires representative parity qualification before decisive production use."
+    "backend_parity": "Any execution-mode change capable of changing numerical behavior requires representative parity qualification before decisive production use.",
+    "github_billing_guard": "ACTIVE_NO_GITHUB_HOSTED_EXECUTION"
   },
   "pools": {
     "VICTUS_LOCAL": {
@@ -54,14 +55,16 @@
       "cpu": 4,
       "ram_gb": 16,
       "scientific_segment_minutes": 300,
-      "state": "AVAILABLE"
+      "state": "DISABLED_BILLING_GUARD",
+      "block": "PROGRAM_WIDE_BILLING_GUARD: GitHub-hosted execution is disabled. Do not treat this pool as launchable capacity unless the user explicitly reverses the zero-paid-GitHub-compute rule."
     },
     "GITHUB_HOSTED_B": {
       "runner": "ubuntu-24.04",
       "cpu": 4,
       "ram_gb": 16,
       "scientific_segment_minutes": 300,
-      "state": "AVAILABLE"
+      "state": "DISABLED_BILLING_GUARD",
+      "block": "PROGRAM_WIDE_BILLING_GUARD: GitHub-hosted execution is disabled. Do not treat this pool as launchable capacity unless the user explicitly reverses the zero-paid-GitHub-compute rule."
     },
     "KAGGLE_CPU_A": {
       "cpu": 4,
@@ -109,14 +112,16 @@
       "cpu": 4,
       "ram_gb": 16,
       "scientific_segment_minutes": 300,
-      "state": "AVAILABLE"
+      "state": "DISABLED_BILLING_GUARD",
+      "block": "PROGRAM_WIDE_BILLING_GUARD: GitHub-hosted execution is disabled. Do not treat this pool as launchable capacity unless the user explicitly reverses the zero-paid-GitHub-compute rule."
     },
     "GITHUB_HOSTED_D": {
       "runner": "ubuntu-24.04",
       "cpu": 4,
       "ram_gb": 16,
       "scientific_segment_minutes": 300,
-      "state": "AVAILABLE"
+      "state": "DISABLED_BILLING_GUARD",
+      "block": "PROGRAM_WIDE_BILLING_GUARD: GitHub-hosted execution is disabled. Do not treat this pool as launchable capacity unless the user explicitly reverses the zero-paid-GitHub-compute rule."
     }
   },
   "tasks": [
@@ -139,11 +144,11 @@
       },
       "frozen_stop_condition": "R-1 < 0.01, then preserve posterior and run separately frozen massive-neutrino no-wiggle smoothing sensitivity gate before scientific promotion",
       "latest_transferred_checkpoint": {
-        "N": 124416,
-        "acceptance_rate": 0.248626,
-        "R_minus_1": 0.03953142614196523,
+        "N": 137472,
+        "acceptance_rate": 0.24839,
+        "R_minus_1": 0.045643663995680234,
         "converged": false,
-        "source_timestamp": "2026-10-02T17:08:47.107163-05:00",
+        "source_timestamp": "2026-10-02T22:56:59.669114-05:00",
         "source": "Victus fresh_run/chain.progress + chain.checkpoint"
       },
       "duplication_rule": "DO_NOT_DUPLICATE_ON_ANOTHER_POOL",
