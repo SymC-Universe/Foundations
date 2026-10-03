@@ -32,13 +32,13 @@
   "scientific_gate": null,
   "external_block": null,
   "user_action_required": null,
-  "last_productive_advancement": "2026-10-02T05:54:40.225945Z",
+  "last_productive_advancement": "2026-10-03T12:19:14.456549Z",
   "liveness_clock": {
     "lane": "STABILITY_INHERITANCE_FOUNDATIONAL_PHYSICS_MULTILANE",
     "reset_only_by_authoritative_lane_advancement": true,
     "support_or_monitoring_activity_does_not_reset": true,
     "threshold_semantics": "Track each material lane independently using workload-specific progress expectations. Approximately 90 minutes is a fallback only where no better task-specific expectation exists.",
-    "last_reset": "2026-10-02T05:54:40.225945Z"
+    "last_reset": "2026-10-03T12:19:14.456549Z"
   },
   "duplicate_suppression": {
     "rule": "Suppress a completed computation only when scientific input/configuration identity is proven unchanged.",
@@ -79,11 +79,11 @@
       "task_id": "COSMO_FRESH_DESI_ONLY_MNU_V01",
       "next_action": "Continue newest valid checkpoint without duplication; after convergence execute the separately required massive-neutrino no-wiggle sensitivity gate before inference.",
       "last_checkpoint": {
-        "N": 88320,
-        "acceptance_rate": 0.248528,
-        "R_minus_1": 0.06934981534291634,
+        "N": 156672,
+        "acceptance_rate": 0.248267,
+        "R_minus_1": 0.037435448523083885,
         "converged": false,
-        "source_timestamp": "2026-10-02T00:54:40.225945-05:00",
+        "source_timestamp": "2026-10-03T07:19:14.456549-05:00",
         "source": "Victus fresh_run/chain.progress + chain.checkpoint"
       }
     },
