@@ -18,8 +18,8 @@ update_rule: "Update after every material scientific development and before ever
 - **Project-specific protocol/version:** `stability_inheritance/DISTRIBUTED_COMPUTE_PROTOCOL_v0.2.md` for execution orchestration; no P1 Stability Inheritance scientific protocol is frozen
 - **Current lifecycle Stage:** Stage 3 / P0-Q discovery and representation qualification; the deferred physical-hierarchy APQ lane remains at Stage 2
 - **Status:** ACTIVE
-- **Last updated:** 2026-10-01
-- **Last verified commit / archive / checkpoint:** f71f05e909b39c2d491b8f97bb23fc2fe00dacc4 - full GOM v1.1 reconciliation record committed after end-to-end governance review
+- **Last updated:** 2026-10-07
+- **Last verified commit / archive / checkpoint:** fe8ee7aa79e711bfd0171b9df1d8cbf1303bb98b - completed Victus fresh-DESI-only mnu checkpoint durably persisted at N=358656; scientific inference remains stopped at the pre-existing no-wiggle sensitivity gate
 - **Evidence/data intake status:** `INTAKE_PASS_WITH_LIMITS` for admitted source-specific lanes; unresolved provenance/access-limited sources remain excluded or quarantined
 - **Evidence intake record / source snapshot:** source-specific intake records and the source-locked evidence map; raw third-party evidence remains source-governed
 - **Ethics/safety/rights/compliance status:** `NOT_APPLICABLE` for the current computational/literature qualification work, with source-specific rights/access constraints preserved
@@ -56,7 +56,7 @@ Native-domain results are retained as evidence toward Stability Architecture whe
 
 The DM/DE cosmology lane has been formally transferred into the unified SI/foundational-physics investigation with its demotions, refusals, native-comparator ceilings, and shared-DESI evidence firewall preserved. DESI cross-block v0.1e completed but failed the frozen numerical-convergence validity gate, so its raw relationship-adds pattern remains provisional and the lane stops at `MECHANICAL_NUMERICAL_CONVERGENCE_BLOCK`.
 
-The first distributed clean-room pair also completed: the QFT reduced-generator/pole-coalescence core reproduced under its stated local Markovian model, and the Lindblad full 4 x 4 Liouvillian was defective at the declared clean-room boundary under the tested convention. The Lindblad source-convention match and QFT microscopic self-energy/covariance audit remain open. The Victus fresh DESI-only \(m_\nu\) chain remains an active checkpointed native-comparator computation and is not duplicated elsewhere.
+The first distributed clean-room pair also completed: the QFT reduced-generator/pole-coalescence core reproduced under its stated local Markovian model, and the Lindblad full 4 x 4 Liouvillian was defective at the declared clean-room boundary under the tested convention. The Lindblad source-convention match and QFT microscopic self-energy/covariance audit remain open. The Victus fresh DESI-only \(m_\nu\) chain subsequently reached its frozen sampler convergence stop at \(N=358656\), was preserved without duplication, and is now stopped at the pre-existing massive-neutrino no-wiggle sensitivity scientific gate before inference or promotion.
 
 ### Current interpretation and claim ceiling
 
@@ -137,26 +137,26 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 
 ## 8. Next Exact Action
 
-- **Next action:** continue the already-authorized QFT source/microscopic self-energy-covariance audit and Lindblad source-convention match while the Victus fresh-\(m_\nu\) checkpointed chain continues; in parallel, construct and APQ-qualify the cosmology F2 modal-necessity Plan Packet before any new substantial F2 computation.
-- **Why this is next:** QFT/Lindblad source requalification and the existing Victus chain are already-authorized continuations, while GOM v1.1 Section 15.4 requires substantial P0-Q modal work that could shape later claims to be plan-qualified before decisive execution.
-- **Expected output / decision:** source-matched Lindblad status, QFT microscopic reduction/covariance status, continued \(m_\nu\) checkpoint advancement, and a frozen or held cosmology F2 Plan Packet with explicit scalar/native comparators, modal object, held-out task, nulls, uncertainty, and refusal/need-more-info branches.
+- **Next action:** preserve the completed Victus fresh-\(m_\nu\) posterior without duplication and stop that lane at the pre-existing no-wiggle sensitivity gate; continue the already-authorized QFT source/microscopic self-energy-covariance audit and Lindblad source-convention match, and construct and APQ-qualify the cosmology F2 modal-necessity Plan Packet before any new substantial F2 computation.
+- **Why this is next:** Victus sampling is complete and its next boundary is already a scientific gate; QFT/Lindblad source requalification remains already authorized, while GOM v1.1 Section 15.4 requires substantial P0-Q modal work that could shape later claims to be plan-qualified before decisive execution.
+- **Expected output / decision:** source-matched Lindblad status, QFT microscopic reduction/covariance status, preserved Victus posterior pending the no-wiggle sensitivity gate, and a frozen or held cosmology F2 Plan Packet with explicit scalar/native comparators, modal object, held-out task, nulls, uncertainty, and refusal/need-more-info branches.
 - **What must remain frozen while it runs:** all completed evidence identities and claim ceilings; DESI Result 3 blocked status; shared-DESI evidence firewall; Victus \(m_\nu\) scientific configuration; no predefinition of capital \(\Chi\) or \(\Chi_{\mathrm{arc}}\) from desired outcomes.
 - **Stop / refusal condition:** stop any lane at a new scientific choice, source/provenance conflict, numerical/structural invalidity, APQ blocker, or evidence-access boundary; mechanical recovery may continue only when scientific state is unchanged.
 - **User intervention required:** `no` for current computational/source work; physical hierarchy remains separately under `USER_DECISION_HOLD`.
-- **Exact computational control:** use `DISTRIBUTED_COMPUTE_PROTOCOL_v0.2.md` plus `DISTRIBUTED_COMPUTE_REGISTRY_v0.1.json`; four GitHub-hosted slots are qualified as capacity after the successful two-task shakedown, but only distinct already-authorized tasks may occupy them.
-- **Required environment / dependency:** Victus/Popstop local pools, qualified GitHub-hosted slots, and Kaggle only after authentication and task-specific backend parity where needed; raw third-party datasets remain source-governed.
-- **Last successful checkpoint:** distributed workflow run 36864049059 completed the first QFT/Lindblad pair; DESI v0.1e is durably blocked by convergence; Victus fresh-\(m_\nu\) remains active.
+- **Exact computational control:** use `DISTRIBUTED_COMPUTE_PROTOCOL_v0.2.md` plus `DISTRIBUTED_COMPUTE_REGISTRY_v0.1.json`; GitHub-hosted scientific execution is disabled by the program-wide billing guard, and only already-authorized distinct tasks may use admitted zero-cost local or qualified Kaggle capacity.
+- **Required environment / dependency:** admitted Victus/Popstop local pools and qualified Kaggle only when an already-authorized task actually requires them and task-specific backend parity is satisfied; GitHub-hosted scientific execution remains disabled by the billing guard; raw third-party datasets remain source-governed.
+- **Last successful checkpoint:** Victus `COSMO_FRESH_DESI_ONLY_MNU_V01` completed normally at \(N=358656\), \(R-1=0.009956121314505536\), `converged=true`, with posterior/checkpoint outputs preserved; DESI v0.1e remains durably blocked and GitHub-hosted distributed execution remains disabled by the billing guard.
 - **Do not repeat / do not overwrite:** preserve stale-metadata pyFBS failures, F-16 v0.1 sine-sweep invalid test, post-result promotion-debt labels, all previously seen evidence classes, and completed distributed task identities.
 
 ## 9. Resume Contract
 
 - **Start from:** branch `stability-inheritance`, then read this record, `stability_inheritance/CONTINUITY_STATE.json`, and `stability_inheritance/DISTRIBUTED_COMPUTE_REGISTRY_v0.1.json` before launching or resuming work.
 - **Exact file(s):** root `WORKING_INVESTIGATION.md`; `stability_inheritance/FOUNDATIONAL_PHYSICS_STABILITY_ARCHITECTURE_INVESTIGATION_v0.1.md`; source-locked evidence map; distributed-compute protocol/registry; lane-specific Plan Packets and result records.
-- **Exact command(s) / script(s):** GitHub distributed tasks execute through `stability_inheritance/distributed_compute_execute_v0_1.py --task-id <registered_task_id>`; the active Victus native-comparator chain uses `cosmology_desi/.external/dr1_fullshape/fresh_mnu/run_fresh_desi_only_mnu.py` from its existing environment/checkpoint.
+- **Exact command(s) / script(s):** GitHub-hosted scientific execution is currently disabled by the billing guard. The completed Victus native-comparator sampler used `cosmology_desi/.external/dr1_fullshape/fresh_mnu/run_fresh_desi_only_mnu.py`; do not restart or duplicate it. Any future registered execution must follow the distributed-compute registry and protocol without changing frozen science.
 - **Required environment / dependency:** executor declared in the distributed registry; backend changes that could alter numerical behavior require representative parity qualification under GOM v1.1 Section 25.3.
 - **Required dataset/source identity:** exact source/config/checkpoint identity declared by each task; shared DESI posterior families remain one evidence family under the overlap firewall.
-- **Last successful checkpoint:** QFT and Lindblad distributed clean-room tasks completed; DESI cross-block v0.1e stopped at the numerical-convergence block; Victus fresh-\(m_\nu\) continues from its newest valid checkpoint.
-- **Expected next output:** source-matched Lindblad adjudication, QFT microscopic reduction/covariance audit, and an APQ-qualified cosmology F2 modal-necessity plan before any new substantial modal computation.
+- **Last successful checkpoint:** QFT and Lindblad distributed clean-room tasks completed; DESI cross-block v0.1e stopped at the numerical-convergence block; Victus fresh-\(m_\nu\) completed at \(N=358656\) and is preserved at the no-wiggle sensitivity gate.
+- **Expected next output:** source-matched Lindblad adjudication, QFT microscopic reduction/covariance audit, and an APQ-qualified cosmology F2 modal-necessity plan before any new substantial modal computation; no Victus posterior inference before the pre-existing no-wiggle sensitivity gate is satisfied.
 - **Do not repeat / do not overwrite:** do not rerun completed task identities, do not retune DESI Result 3 without a new prospective method gate, do not duplicate the Victus \(m_\nu\) task, and do not rewrite historical notation in archived/published artifacts.
 
 ## 10. Key Artifact Map
