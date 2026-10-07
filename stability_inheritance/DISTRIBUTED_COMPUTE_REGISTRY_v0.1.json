@@ -28,7 +28,7 @@
       "ram_gb_approx": 8,
       "heavy_slots": 1,
       "light_slots": 1,
-      "current_resource_note": "fresh DESI-only mnu active and advancing; no second heavy task while existing HEAVY slot is occupied",
+      "current_resource_note": "fresh DESI-only mnu sampler completed normally and released its scientific process; do not duplicate/restart that completed task. No new task is assigned merely because capacity is free.",
       "state": "ACTIVE",
       "slots": [
         "VICTUS_HEAVY_1",
@@ -131,7 +131,7 @@
       "evidence_class": "NATIVE PHYSICAL COMPARATOR / FRESH DESI-ONLY MNU",
       "executor": "VICTUS_LOCAL",
       "resource_class": "HEAVY_CHECKPOINTED",
-      "status": "ACTIVE_COMPUTE",
+      "status": "COMPLETE",
       "script": "cosmology_desi/.external/dr1_fullshape/fresh_mnu/run_fresh_desi_only_mnu.py",
       "checkpoint_root": "cosmology_desi/.external/dr1_fullshape/fresh_mnu/fresh_run",
       "output_root": "cosmology_desi/.external/dr1_fullshape/fresh_mnu/fresh_run",
@@ -140,20 +140,31 @@
           17948,
           5308
         ],
-        "note": "same script lineage; both Python processes verified present on Victus 2026-10-03 07:33 CDT; count as one scientific task"
+        "note": "Registered same-lineage Python processes are no longer present; fresh verification on 2026-10-07 after normal sampler convergence found no matching run_fresh_desi_only_mnu.py process."
       },
       "frozen_stop_condition": "R-1 < 0.01, then preserve posterior and run separately frozen massive-neutrino no-wiggle smoothing sensitivity gate before scientific promotion",
       "latest_transferred_checkpoint": {
-        "N": 295680,
-        "acceptance_rate": 0.248451,
-        "R_minus_1": 0.019707615896170722,
-        "converged": false,
-        "source_timestamp": "2026-10-05T20:16:53.912653-05:00",
-        "source": "Victus fresh_run/chain.progress + chain.checkpoint"
+        "N": 358656,
+        "acceptance_rate": 0.247717,
+        "R_minus_1": 0.009956121314505536,
+        "converged": true,
+        "bounds_R_minus_1": 0.044543,
+        "accepted_samples_total": 448320,
+        "source_timestamp": "2026-10-07T00:58:01.778639-05:00",
+        "source": "Victus fresh_run/chain.progress + chain.checkpoint + mcmc.stdout.log"
       },
       "duplication_rule": "DO_NOT_DUPLICATE_ON_ANOTHER_POOL",
-      "next_authorized_action": "continue newest valid checkpoint; after convergence execute the no-wiggle sensitivity audit before inference",
-      "slot_id": "VICTUS_HEAVY_1"
+      "next_authorized_action": "Preserve the completed posterior; do not rerun or duplicate the sampler; do not infer/promote from the posterior until the pre-existing massive-neutrino no-wiggle smoothing sensitivity gate is satisfied under an already-frozen or prospectively qualified implementation.",
+      "slot_id": "VICTUS_HEAVY_1",
+      "completed_at": "2026-10-07T05:58:01.778639Z",
+      "disposition": "SAMPLER_CONVERGED_POSTERIOR_PRESERVED_NO_WIGGLE_SENSITIVITY_GATE_PENDING",
+      "output_identity": {
+        "chain_size_bytes": 434871370,
+        "chain_sha256": "7c27ea2a85fa1af7e378e9e4163bc0471e413aa8290208464afab2305a382111",
+        "checkpoint_sha256": "380b966e61d269d02164eba29a8e468ee8b454bf07df46cd00b4fd202ccf40b9",
+        "progress_sha256": "82a3868fb343fb4fea240b777c0d94170c27f8a382fc7cf50c325847b5fe8d04",
+        "stdout_sha256": "a1e642cf069c2390d231e5eb6dbcc4072d7bb80431da0cba0ec097a03c7eece4"
+      }
     },
     {
       "task_id": "LINDLAD_FULL_LIOUVILLIAN_CLEANROOM_V01",

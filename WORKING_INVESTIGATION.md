@@ -1260,3 +1260,20 @@ P0-N/A0 is closed for plan construction. No P1 scientific hypothesis, comparator
 - **Disposition:** Kaggle CPU pool is `QUALIFIED_AVAILABLE` for future already-authorized CPU tasks whose backend change is compatible with the frozen method. No decisive task is launched merely because capacity exists.
 - **What is next and why:** route the next memory-heavy or >GitHub-segment authorized task to Kaggle when one becomes READY; retain Home for the active DESI (m_\nu) chain and keep Popstop off new local science until RAM admission passes.
 
+
+
+### 2026-10-07 - ADVANCED_CHECKPOINT / SCIENTIFIC_GATE - Victus fresh-DESI-only mnu sampler completed
+
+- **Lifecycle Stage:** unified foundational physics / cosmology native-comparator lane
+- **Entry type:** MECHANICAL_CONTINUITY_RECONCILIATION
+- **Task:** `COSMO_FRESH_DESI_ONLY_MNU_V01` on Victus/Home.
+- **Observed completion:** final sampler checkpoint `N=358656`, acceptance `0.247717`, means `R-1=0.009956121314505536`, bounds `R-1=0.044543`, `converged: true`; `mcmc.stdout.log` records “The run has converged” and “Sampling complete after 448320 accepted steps.”
+- **Process state:** registered PIDs `17948` and `5308` are no longer present and no matching `run_fresh_desi_only_mnu.py` process is running, consistent with normal completion.
+- **Preserved output:** `fresh_run/chain.1.txt`, 434871370 bytes, SHA-256 `7c27ea2a85fa1af7e378e9e4163bc0471e413aa8290208464afab2305a382111`; checkpoint SHA-256 `380b966e61d269d02164eba29a8e468ee8b454bf07df46cd00b4fd202ccf40b9`.
+- **Scientific interpretation:** sampler completion only. This does **not** promote the posterior or resolve the previously identified massive-neutrino no-wiggle smoothing issue.
+- **Scientific gate:** preserve the posterior and stop before inference/promotion until the existing massive-neutrino no-wiggle smoothing sensitivity requirement is satisfied. Do not invent or retune a sensitivity implementation from continuity authority.
+- **Duplication rule:** do not restart or duplicate the completed sampler on another pool.
+- **Scientific design change:** NONE.
+- **User action required:** NONE.
+- **Distributed execution:** GitHub-hosted scientific execution remains disabled by the billing guard; no Popstop scientific-process check is required because no registered task is assigned there.
+- **Durable state:** sampler `COMPLETE`; cosmology native-comparator lane at `SCIENTIFIC_GATE` for inference/promotion.

@@ -8,37 +8,61 @@
   "branch": "stability-inheritance",
   "scientific_lane": "STABILITY_INHERITANCE_FOUNDATIONAL_PHYSICS_MULTILANE",
   "authorized_stage": "PARALLEL_U0_U1_U2_WITH_LANE_SPECIFIC_GATES",
-  "continuity_state": "ACTIVE_COMPUTE",
+  "continuity_state": "ADVANCED_CHECKPOINT",
   "last_completed_durable_checkpoint": {
-    "task_id": "LINDLAD_FULL_LIOUVILLIAN_CLEANROOM_V01",
-    "disposition": "FULL_LIOUVILLIAN_DEFECTIVE_UNDER_DECLARED_CONVENTION_SOURCE_MATCH_PENDING",
-    "result_record": "stability_inheritance/LINDLAD_FULL_LIOUVILLIAN_CLEANROOM_RESULT_v0.1.md",
-    "result_sha256": "c46acb420ec83d50c3c896cde7a953ae59d894d7c650ea9fc6e476c814471cff",
-    "execution_host": "GITHUB_HOSTED_A",
-    "workflow_run_id": 36864049059,
-    "companion_checkpoint": {
-      "task_id": "QFT_GENERATOR_POLE_CLEANROOM_V01",
-      "disposition": "QUALIFIED_REDUCED_GENERATOR_EP_CORE",
-      "result_record": "stability_inheritance/QFT_GENERATOR_POLE_CLEANROOM_RESULT_v0.1.md",
-      "result_sha256": "8e374cdcb4cd6bd6c285dc623ed5c254ba78782fec6ab0628650245c347ba1c3",
-      "execution_host": "GITHUB_HOSTED_B"
+    "task_id": "COSMO_FRESH_DESI_ONLY_MNU_V01",
+    "disposition": "SAMPLER_CONVERGED_NO_WIGGLE_SENSITIVITY_GATE_PENDING",
+    "execution_host": "VICTUS_LOCAL",
+    "completed_at": "2026-10-07T05:58:01.778639Z",
+    "final_checkpoint": {
+      "N": 358656,
+      "acceptance_rate": 0.247717,
+      "R_minus_1": 0.009956121314505536,
+      "converged": true,
+      "bounds_R_minus_1": 0.044543,
+      "accepted_samples_total": 448320,
+      "source_timestamp": "2026-10-07T00:58:01.778639-05:00",
+      "source": "Victus fresh_run/chain.progress + chain.checkpoint + mcmc.stdout.log"
+    },
+    "output_identity": {
+      "chain_path": "cosmology_desi/.external/dr1_fullshape/fresh_mnu/fresh_run/chain.1.txt",
+      "chain_size_bytes": 434871370,
+      "chain_sha256": "7c27ea2a85fa1af7e378e9e4163bc0471e413aa8290208464afab2305a382111",
+      "checkpoint_sha256": "380b966e61d269d02164eba29a8e468ee8b454bf07df46cd00b4fd202ccf40b9",
+      "progress_sha256": "82a3868fb343fb4fea240b777c0d94170c27f8a382fc7cf50c325847b5fe8d04",
+      "stdout_sha256": "a1e642cf069c2390d231e5eb6dbcc4072d7bb80431da0cba0ec097a03c7eece4"
+    },
+    "prior_durable_checkpoint": {
+      "task_id": "LINDLAD_FULL_LIOUVILLIAN_CLEANROOM_V01",
+      "disposition": "FULL_LIOUVILLIAN_DEFECTIVE_UNDER_DECLARED_CONVENTION_SOURCE_MATCH_PENDING",
+      "result_record": "stability_inheritance/LINDLAD_FULL_LIOUVILLIAN_CLEANROOM_RESULT_v0.1.md",
+      "result_sha256": "c46acb420ec83d50c3c896cde7a953ae59d894d7c650ea9fc6e476c814471cff",
+      "execution_host": "GITHUB_HOSTED_A",
+      "workflow_run_id": 36864049059,
+      "companion_checkpoint": {
+        "task_id": "QFT_GENERATOR_POLE_CLEANROOM_V01",
+        "disposition": "QUALIFIED_REDUCED_GENERATOR_EP_CORE",
+        "result_record": "stability_inheritance/QFT_GENERATOR_POLE_CLEANROOM_RESULT_v0.1.md",
+        "result_sha256": "8e374cdcb4cd6bd6c285dc623ed5c254ba78782fec6ab0628650245c347ba1c3",
+        "execution_host": "GITHUB_HOSTED_B"
+      }
     }
   },
-  "active_workflow_or_computation_id": "VICTUS_LOCAL:COSMO_FRESH_DESI_ONLY_MNU_V01",
+  "active_workflow_or_computation_id": null,
   "last_workflow_run_id": 36857421905,
   "last_execution_commit": "48468f66dee63d189b166e25a8d5cc589017ccad",
-  "next_exact_authorized_action": "Continue the existing Victus fresh-DESI-only mnu checkpointed task without duplication; continue the already-authorized QFT microscopic/source-covariance audit and Lindblad source-convention match; construct and APQ-qualify the cosmology F2 modal-necessity Plan Packet before any substantial F2 modal computation.",
+  "next_exact_authorized_action": "Preserve the completed Victus fresh-DESI-only mnu posterior without duplication and stop that lane at its existing massive-neutrino no-wiggle smoothing sensitivity gate before any scientific inference or promotion; continue only already-authorized QFT/Lindblad source requalification and cosmology F2 APQ construction within their existing ceilings.",
   "execution_ceiling": "Advance only already-authorized P0-Q/source-requalification work. Do not rescue DESI Result 3 without a new prospective method gate, do not launch substantial cosmology F2 modal compute before APQ qualification, do not open physical hierarchy work while USER_DECISION_HOLD remains, and do not promote any P1 cross-domain claim.",
   "scientific_gate": null,
   "external_block": null,
   "user_action_required": null,
-  "last_productive_advancement": "2026-10-06T15:55:10.141521Z",
+  "last_productive_advancement": "2026-10-07T05:58:01.778639Z",
   "liveness_clock": {
     "lane": "STABILITY_INHERITANCE_FOUNDATIONAL_PHYSICS_MULTILANE",
     "reset_only_by_authoritative_lane_advancement": true,
     "support_or_monitoring_activity_does_not_reset": true,
     "threshold_semantics": "Track each material lane independently using workload-specific progress expectations. Approximately 90 minutes is a fallback only where no better task-specific expectation exists.",
-    "last_reset": "2026-10-06T15:55:10.141521Z"
+    "last_reset": "2026-10-07T05:58:01.778639Z"
   },
   "duplicate_suppression": {
     "rule": "Suppress a completed computation only when scientific input/configuration identity is proven unchanged.",
@@ -61,10 +85,10 @@
   ],
   "five_question_test": {
     "what_scientific_lane_are_we_advancing": "Multiple authorized SI/foundational-physics lanes: active Victus native-comparator compute, QFT/Lindblad source requalification, and pre-execution APQ construction for cosmology F2.",
-    "what_is_actually_running_or_just_completed": "Victus COSMO_FRESH_DESI_ONLY_MNU_V01 is the active checkpointed scientific computation. QFT and Lindblad distributed clean-room tasks completed. DESI Result 3 is blocked at its numerical-validity gate.",
-    "what_is_the_next_already_authorized_action": "Continue Victus without duplication; continue QFT/Lindblad source audits; build the cosmology F2 APQ Plan Packet.",
-    "what_prevents_that_action_immediately": "Nothing prevents the already-authorized non-DESI work. DESI Result 3 and cosmology F2 substantial compute each have their own scientific gates.",
-    "does_crossing_the_boundary_require_mechanical_execution_or_new_scientific_decision": "Mechanical/source work may continue within its existing ceiling. DESI rescue, F2 substantial execution before APQ, P1 promotion, or reopening the physical lane requires the corresponding scientific/user gate."
+    "what_is_actually_running_or_just_completed": "Victus COSMO_FRESH_DESI_ONLY_MNU_V01 completed normally at the frozen sampler convergence stop (N=358656, R-1=0.009956121314505536, converged=true); its Python processes exited and the posterior/checkpoint outputs are preserved. QFT and Lindblad distributed clean-room tasks remain completed. DESI Result 3 remains blocked at its numerical-validity gate.",
+    "what_is_the_next_already_authorized_action": "Preserve the completed Victus posterior without duplication and do not infer from it until the existing massive-neutrino no-wiggle smoothing sensitivity gate is satisfied; continue QFT/Lindblad source audits and construct the cosmology F2 APQ Plan Packet within existing authority.",
+    "what_prevents_that_action_immediately": "The Victus sampler itself is complete. Scientific inference/promotion from that posterior remains prevented by the pre-existing massive-neutrino no-wiggle smoothing sensitivity gate. No new user action is required.",
+    "does_crossing_the_boundary_require_mechanical_execution_or_new_scientific_decision": "Preserving the completed checkpoint/output is mechanical. Any sensitivity implementation not already frozen/prospectively qualified, any DESI rescue, F2 substantial execution before APQ, P1 promotion, or reopening the physical lane requires its corresponding scientific/user gate."
   },
   "program_overall_state": "ACTIVE",
   "lane_states": {
@@ -74,18 +98,21 @@
       "next_action": "Preserve blocked result; no three-result adjudication until a new prospective numerical-method gate exists."
     },
     "FOUNDATIONAL_PHYSICS_COSMOLOGY_NATIVE_COMPARATOR": {
-      "state": "ACTIVE_COMPUTE",
+      "state": "SCIENTIFIC_GATE",
       "executor": "VICTUS_LOCAL",
       "task_id": "COSMO_FRESH_DESI_ONLY_MNU_V01",
-      "next_action": "Continue newest valid checkpoint without duplication; after convergence execute the separately required massive-neutrino no-wiggle sensitivity gate before inference.",
+      "next_action": "Preserve the completed posterior and do not duplicate/restart the sampler. Stop before inference/promotion until the existing massive-neutrino no-wiggle smoothing sensitivity gate is satisfied under an already-frozen or prospectively qualified implementation.",
       "last_checkpoint": {
-        "N": 327936,
-        "acceptance_rate": 0.24804,
-        "R_minus_1": 0.01293889909311313,
-        "converged": false,
-        "source_timestamp": "2026-10-06T10:55:10.141521-05:00",
-        "source": "Victus fresh_run/chain.progress + chain.checkpoint"
-      }
+        "N": 358656,
+        "acceptance_rate": 0.247717,
+        "R_minus_1": 0.009956121314505536,
+        "converged": true,
+        "bounds_R_minus_1": 0.044543,
+        "accepted_samples_total": 448320,
+        "source_timestamp": "2026-10-07T00:58:01.778639-05:00",
+        "source": "Victus fresh_run/chain.progress + chain.checkpoint + mcmc.stdout.log"
+      },
+      "reason": "COSMO_FRESH_DESI_ONLY_MNU_V01 reached its frozen sampler convergence stop and completed normally; scientific inference/promotion remains gated by the pre-existing massive-neutrino no-wiggle smoothing sensitivity requirement."
     },
     "FOUNDATIONAL_PHYSICS_QFT_U0_U1": {
       "state": "ADVANCED_CHECKPOINT",
